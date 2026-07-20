@@ -1,0 +1,14 @@
+Clean rebuild from the fully working Version 0.8.1 release.
+
+Verified:
+- Embedded game and Jeopardy data preserved
+- Game registry and loader preserved
+- JavaScript syntax passes validation
+- No duplicate IDs or missing element references
+- No remaining fixed two-team score logic
+
+Added:
+- One unified setup panel
+- 1–8 teams
+- Dynamic scoreboard and Jeopardy awards
+- Multi-team rotation, winner calculation, and saved team data

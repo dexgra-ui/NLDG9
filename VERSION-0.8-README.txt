@@ -1,0 +1,57 @@
+NO LABELS, DESIGNED BY GOD
+VERSION 0.8 — THE MINISTRY EXPERIENCE
+
+BUILT IN THIS RELEASE
+
+HOME
+- New cinematic ministry hero
+- Four primary ministry pathways
+- Latest studies, devotionals, podcast preview, article, and game
+- Stronger family ministry and generational vision
+
+OUR MINISTRY
+- Why We Exist
+- Mission
+- Vision
+- Core Values
+- How We Serve
+- Ministry growth timeline
+- Church and family use
+
+GAME CENTER 3.0
+- Featured game hero
+- Quick Launch
+- Game collections and filters
+- Audience, difficulty, and time details
+- Church Presentation Mode section
+- Keyboard support in the game platform:
+  F = fullscreen
+  Space = next visible quiz question
+  1 / 2 = select active team
+- Presentation launch URL:
+  games.html?presentation=1
+
+BIBLE STUDY HUB 2.0
+- Featured study
+- Topic collections
+- Search and category filters
+- Local Continue Reading card
+- Scripture memory section
+
+PODCAST CENTER 2.0
+- Podcast artwork and launch-ready layout
+- Future audio player design
+- Episode page preview
+- Show notes
+- Scripture references
+- Discussion questions
+- Related Bible study
+
+VISUAL SYSTEM
+- Unified Version 0.8 styling
+- Improved mobile and tablet layouts
+- Ministry invitation footer
+- Version label throughout
+
+UPLOAD
+Upload the complete contents of this folder to replace the current site.

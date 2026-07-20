@@ -1,0 +1,36 @@
+NO LABELS, DESIGNED BY GOD
+VERSION 0.8.1 — STABILITY RELEASE
+
+FIXES AND CORRECTIONS
+
+GAME CENTER
+- All six advertised games now use one verified game registry.
+- Scripture or Suspicion launches correctly.
+- Who Am I? launches correctly.
+- Finish the Verse launches correctly.
+- Bible Jeopardy launches correctly.
+- Numbered Memory Match launches correctly.
+- Lightning Round launches correctly.
+- Invalid game or age-group requests now fail safely instead of opening a broken screen.
+- Direct game links are handled consistently.
+- Larger touch targets improve iPad use.
+- Keyboard focus indicators were added.
+- Game engine version updated to 4.4.1.
+
+AGE-GROUP SELECTIONS
+- Preschool, Kids, Teens, Adults, and Family cards are now clickable.
+- Each card opens the correct age-group game library.
+- Cards work with touch, mouse, and keyboard.
+
+GAME COLLECTIONS
+- Duplicate filter event code was removed.
+- Quick Play, Team Competition, Memory Builders, and All Games selections now use one filter handler.
+- Empty results are handled correctly.
+
+GENERAL
+- Version labels updated to 0.8.1.
+- Accessibility and touch behavior improved.
+- No new experimental features were added.
+
+UPLOAD
+Replace the complete contents of the current GitHub Pages site with the complete contents of this ZIP.

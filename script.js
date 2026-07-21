@@ -108,7 +108,8 @@ if(continueSection&&continueCard){
     const saved=JSON.parse(localStorage.getItem('nldg-last-study')||'null');
     if(saved?.url){
       continueSection.hidden=false;
-      continueCard.innerHTML=`<article class="continue-card"><span>Continue Study</span><h3>${saved.title}</h3><p>Your place is saved on this device.</p><a class="button primary" href="${saved.url}">Continue Reading</a></article>`;
+      const progress=saved.progress?` You are ${saved.progress}% complete.`:'';
+      continueCard.innerHTML=`<article class="continue-card"><span>Continue Study</span><h3>${saved.title}</h3><p>Your place is saved on this device.${progress}</p><a class="button primary" href="${saved.url}">Continue Reading</a></article>`;
     }
   }catch(error){}
 }
@@ -146,3 +147,23 @@ document.querySelectorAll('[data-game-filter],[data-collection]').forEach(contro
     }
   });
 });
+
+if(studyPageId){
+  const loadScript=src=>new Promise((resolve,reject)=>{
+    const existing=[...document.scripts].find(script=>script.src.endsWith(src));
+    if(existing){resolve();return;}
+    const script=document.createElement('script');
+    script.src=src;
+    script.onload=resolve;
+    script.onerror=reject;
+    document.body.appendChild(script);
+  });
+  if(!document.querySelector('link[href="study-experience.css"]')){
+    const stylesheet=document.createElement('link');
+    stylesheet.rel='stylesheet';
+    stylesheet.href='study-experience.css';
+    document.head.appendChild(stylesheet);
+  }
+  const ready=window.NLDG_STUDIES?Promise.resolve():loadScript('study-data.js');
+  ready.then(()=>loadScript('study-experience.js')).catch(error=>console.warn('Interactive study tools could not load.',error));
+}

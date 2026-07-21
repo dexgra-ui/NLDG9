@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NLDG Version 0.9.0 Builder</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:850px;margin:40px auto;padding:20px;background:#06122d;color:white}
+main{background:#10275f;border:2px solid #ffd34e;border-radius:22px;padding:28px}
+h1{margin-top:0} button,input{font:inherit}
+input{display:block;width:100%;padding:16px;margin:18px 0;background:white;color:#111;border-radius:12px}
+button{padding:15px 22px;border:0;border-radius:12px;background:#ffd34e;color:#241d00;font-weight:800}
+#status{margin-top:18px;padding:14px;border-radius:12px;background:#081735;white-space:pre-wrap}
+</style>
+</head>
+<body>
+<main>
+<h1>No Labels, Designed by God</h1>
+<h2>Version 0.9.0 Native Sprint 2 Builder</h2>
+<p>Select the current <strong>games.html</strong>. The builder creates one replacement file with Sprint 2 embedded directly inside it.</p>
+<input id="file" type="file" accept=".html,text/html">
+<button id="build">Build games-v0.9.0.html</button>
+<div id="status">No file selected.</div>
+</main>
+<script>
+const BLOCK = "<!-- NLDG VERSION 0.9.0 SPRINT 2 START -->\n<script>\n(() => {\n  \"use strict\";\n\n  const host = window;\n  const doc = document;\n  const storageKey = \"nldg-sprint2-settings\";\n  const historyKey = \"nldg-tournament-history\";\n  const settings = Object.assign(\n    { autoRotate: true },\n    JSON.parse(localStorage.getItem(storageKey) || \"{}\")\n  );\n  let roundSnapshots = JSON.parse(localStorage.getItem(historyKey) || \"[]\");\n\n  const $ = id => doc.getElementById(id);\n  const escapeHtml = value => String(value ?? \"\").replace(/[&<>\"']/g, char => ({\n    \"&\": \"&amp;\", \"<\": \"&lt;\", \">\": \"&gt;\", '\"': \"&quot;\", \"'\": \"&#039;\"\n  }[char]));\n  const teams = () => Array.isArray(host.state?.teams) ? host.state.teams : [];\n  const activeIndex = () => Number(host.state?.activeTeam || 0);\n\n  function rankedTeams() {\n    return teams()\n      .map((team, index) => ({\n        index,\n        name: team.name || `Team ${index + 1}`,\n        score: Number(team.score || 0),\n        color: team.color || \"#2f6fed\"\n      }))\n      .sort((a, b) => b.score - a.score || a.index - b.index);\n  }\n\n  function injectStyles() {\n    const style = doc.createElement(\"style\");\n    style.textContent = `\n      .sprint2-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}\n      .sprint2-toggle{display:flex;align-items:center;gap:7px;padding:10px 12px;border-radius:12px;background:#12295e;font-weight:900}\n      .sprint2-toggle input{width:20px;height:20px}\n      .live-rankings{position:fixed;right:14px;bottom:14px;z-index:140;width:min(330px,calc(100vw - 28px));max-height:48vh;overflow:auto;padding:12px;border:2px solid rgba(255,211,78,.48);border-radius:18px;background:rgba(3,10,30,.96);box-shadow:0 20px 60px rgba(0,0,0,.45)}\n      .live-rankings.hidden{display:none!important}\n      .rankings-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}\n      .rankings-head strong{color:#ffd34e;font-size:18px}\n      .ranking-row{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:8px;padding:9px 7px;border-left:5px solid var(--team-color);border-radius:9px;background:rgba(255,255,255,.05);margin-top:7px}\n      .ranking-row.active{outline:2px solid #ffd34e}\n      .ranking-score{color:#ffd34e;font-weight:1000}\n      .summary-table{width:100%;border-collapse:separate;border-spacing:0 8px}\n      .summary-table td{padding:12px;background:rgba(255,255,255,.06)}\n      .summary-table td:first-child{border-radius:10px 0 0 10px}\n      .summary-table td:last-child{border-radius:0 10px 10px 0;color:#ffd34e;font-weight:1000;text-align:right}\n      .round-history{max-height:190px;overflow:auto;text-align:left;width:100%;padding:8px 12px;border-radius:12px;background:rgba(255,255,255,.04)}\n      @media(max-width:800px){.live-rankings{position:static;width:100%;max-height:none;margin:10px 0}.sprint2-controls{justify-content:center}}\n      body.playing .live-rankings{bottom:max(12px,env(safe-area-inset-bottom))}\n    `;\n    doc.head.appendChild(style);\n  }\n\n  function injectControls() {\n    const topActions = doc.querySelector(\".top-actions\");\n    if (topActions && !$(\"sprint2Controls\")) {\n      const wrap = doc.createElement(\"div\");\n      wrap.id = \"sprint2Controls\";\n      wrap.className = \"sprint2-controls\";\n      wrap.innerHTML = `\n        <button type=\"button\" class=\"btn gold\" id=\"nextTeamBtn\">Next Team \u279c</button>\n        <label class=\"sprint2-toggle\"><input type=\"checkbox\" id=\"autoRotateTeams\"> Auto Rotate</label>\n        <button type=\"button\" class=\"btn\" id=\"toggleRankingsBtn\">\ud83d\udcca Rankings</button>\n        <button type=\"button\" class=\"btn\" id=\"tournamentSummaryBtn\">\ud83c\udfc6 Summary</button>`;\n      topActions.prepend(wrap);\n    }\n\n    if (!$(\"liveRankings\")) {\n      const panel = doc.createElement(\"aside\");\n      panel.id = \"liveRankings\";\n      panel.className = \"live-rankings\";\n      panel.setAttribute(\"aria-live\", \"polite\");\n      doc.body.appendChild(panel);\n    }\n\n    if (!$(\"sprint2SummaryOverlay\")) {\n      const overlay = doc.createElement(\"div\");\n      overlay.id = \"sprint2SummaryOverlay\";\n      overlay.className = \"overlay hidden\";\n      overlay.innerHTML = `\n        <div class=\"overlay-card center\">\n          <div class=\"winner-icon\">\ud83c\udfc6</div>\n          <h2>Tournament Summary</h2>\n          <div id=\"sprint2SummaryContent\"></div>\n          <div class=\"host-controls\">\n            <button type=\"button\" class=\"btn gold xl\" id=\"closeSprint2Summary\">Continue Playing</button>\n            <button type=\"button\" class=\"btn danger\" id=\"clearSprint2History\">Clear History</button>\n          </div>\n        </div>`;\n      doc.body.appendChild(overlay);\n    }\n\n    $(\"autoRotateTeams\").checked = settings.autoRotate;\n    $(\"nextTeamBtn\").onclick = () => rotateTeam(true);\n    $(\"autoRotateTeams\").onchange = event => {\n      settings.autoRotate = event.target.checked;\n      localStorage.setItem(storageKey, JSON.stringify(settings));\n      renderRankings();\n    };\n    $(\"toggleRankingsBtn\").onclick = () => $(\"liveRankings\").classList.toggle(\"hidden\");\n    $(\"tournamentSummaryBtn\").onclick = showSummary;\n    $(\"closeSprint2Summary\").onclick = () => $(\"sprint2SummaryOverlay\").classList.add(\"hidden\");\n    $(\"clearSprint2History\").onclick = () => {\n      roundSnapshots = [];\n      localStorage.removeItem(historyKey);\n      showSummary();\n    };\n  }\n\n  function rotateTeam(force = false) {\n    if (!force && !settings.autoRotate) return;\n    const list = teams();\n    if (list.length < 2) return;\n    const next = (activeIndex() + 1) % list.length;\n    if (typeof host.setActiveTeam === \"function\") host.setActiveTeam(next);\n    else if (host.state) host.state.activeTeam = next;\n    renderRankings();\n  }\n\n  function renderRankings() {\n    const panel = $(\"liveRankings\");\n    if (!panel) return;\n    const ranking = rankedTeams();\n    panel.innerHTML =\n      `<div class=\"rankings-head\"><strong>Live Rankings</strong><span>${settings.autoRotate ? \"Auto rotation on\" : \"Manual rotation\"}</span></div>` +\n      ranking.map((team, position) => `\n        <div class=\"ranking-row ${team.index === activeIndex() ? \"active\" : \"\"}\" style=\"--team-color:${team.color}\">\n          <strong>${position + 1}</strong>\n          <span>${escapeHtml(team.name)}</span>\n          <span class=\"ranking-score\">${team.score}</span>\n        </div>`).join(\"\");\n  }\n\n  function captureRound() {\n    const tournament = host.state?.tournament;\n    roundSnapshots.push({\n      at: new Date().toISOString(),\n      round: tournament?.round || roundSnapshots.length + 1,\n      scores: rankedTeams().map(team => ({ name: team.name, score: team.score }))\n    });\n    roundSnapshots = roundSnapshots.slice(-20);\n    localStorage.setItem(historyKey, JSON.stringify(roundSnapshots));\n    renderRankings();\n  }\n\n  function showSummary() {\n    const ranking = rankedTeams();\n    const content = $(\"sprint2SummaryContent\");\n    const tournament = host.state?.tournament;\n    content.innerHTML = `\n      <p>${tournament?.active ? `Round ${tournament.round} of ${tournament.total}` : \"Current standings\"}</p>\n      <table class=\"summary-table\"><tbody>\n        ${ranking.map((team, position) => `<tr><td>${position + 1}. ${escapeHtml(team.name)}</td><td>${team.score} points</td></tr>`).join(\"\")}\n      </tbody></table>\n      <div class=\"round-history\">\n        <strong>Round History</strong>\n        ${roundSnapshots.length\n          ? roundSnapshots.map(snapshot => `<p>Round ${snapshot.round}: ${snapshot.scores.map(score => `${escapeHtml(score.name)} ${score.score}`).join(\" \u2022 \")}</p>`).join(\"\")\n          : \"<p>No completed rounds recorded yet.</p>\"}\n      </div>`;\n    $(\"sprint2SummaryOverlay\").classList.remove(\"hidden\");\n  }\n\n  function patchScoreUpdates() {\n    if (typeof host.renderScoreboard === \"function\") {\n      const original = host.renderScoreboard;\n      host.renderScoreboard = function (...args) {\n        const result = original.apply(this, args);\n        renderRankings();\n        return result;\n      };\n    }\n\n    if (typeof host.awardJeopardy === \"function\") {\n      const originalAward = host.awardJeopardy;\n      host.awardJeopardy = function (team) {\n        const result = originalAward.call(this, team);\n        if (settings.autoRotate && Number(team) === activeIndex()) rotateTeam();\n        renderRankings();\n        return result;\n      };\n      if (typeof host.renderJeopardyAwardButtons === \"function\") {\n        host.renderJeopardyAwardButtons();\n      }\n    }\n\n    if (typeof host.nextQuiz === \"function\") {\n      const originalNext = host.nextQuiz;\n      host.nextQuiz = function () {\n        if (!settings.autoRotate && host.state) {\n          const current = activeIndex();\n          const originalSet = host.setActiveTeam;\n          host.setActiveTeam = () => {};\n          try {\n            return originalNext.call(this);\n          } finally {\n            host.setActiveTeam = originalSet;\n            host.state.activeTeam = current;\n            if (originalSet) originalSet(current);\n            renderRankings();\n          }\n        }\n        const result = originalNext.call(this);\n        renderRankings();\n        return result;\n      };\n      const nextButton = $(\"quizNextBtn\");\n      if (nextButton) nextButton.onclick = host.nextQuiz;\n    }\n  }\n\n  function install() {\n    if (!host.state || typeof host.showView !== \"function\") {\n      setTimeout(install, 100);\n      return;\n    }\n\n    injectStyles();\n    injectControls();\n    patchScoreUpdates();\n    renderRankings();\n\n    doc.addEventListener(\"nldg:round-complete\", captureRound);\n    doc.addEventListener(\"keydown\", event => {\n      const tag = (doc.activeElement?.tagName || \"\").toLowerCase();\n      if ([\"input\", \"select\", \"textarea\"].includes(tag)) return;\n      if (event.key.toLowerCase() === \"n\") rotateTeam(true);\n      if (event.key.toLowerCase() === \"r\" && event.shiftKey) showSummary();\n    });\n  }\n\n  install();\n})();\n</script>\n<!-- NLDG VERSION 0.9.0 SPRINT 2 END -->";
+const START = "<!-- NLDG VERSION 0.9.0 SPRINT 2 START -->";
+const END = "<!-- NLDG VERSION 0.9.0 SPRINT 2 END -->";
+const statusBox = document.getElementById("status");
+
+document.getElementById("build").onclick = async () => {
+  const file = document.getElementById("file").files[0];
+  if (!file) {
+    statusBox.textContent = "Select the current games.html first.";
+    return;
+  }
+  let text = await file.text();
+  text = text.replace(/\s*<script\s+src=["']sprint2\.js["']\s*><\/script>\s*/gi, "\n");
+  const start = text.indexOf(START);
+  const end = text.indexOf(END);
+  if (start >= 0 && end > start) {
+    text = text.slice(0, start) + BLOCK + text.slice(end + END.length);
+  } else if (text.includes("</body>")) {
+    text = text.replace("</body>", BLOCK + "\n</body>");
+  } else {
+    statusBox.textContent = "Build stopped: the selected file does not contain </body>.";
+    return;
+  }
+  text = text.replaceAll("Version 0.9 • Sprint 1", "Version 0.9.0 • Sprint 2");
+  text = text.replaceAll("VERSION 0.8.1", "VERSION 0.9.0");
+
+  const checks = [
+    ["Sprint 2 embedded", text.includes("Next Team") && text.includes("Live Rankings")],
+    ["No separate sprint2.js", !text.includes('src="sprint2.js"') && !text.includes("src='sprint2.js'")],
+    ["HTML closing tags retained", text.includes("</body>") && text.includes("</html>")]
+  ];
+  const failed = checks.filter(item => !item[1]);
+  if (failed.length) {
+    statusBox.textContent = "Build failed: " + failed.map(item => item[0]).join(", ");
+    return;
+  }
+
+  const blob = new Blob([text], {type:"text/html"});
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "games-v0.9.0.html";
+  link.click();
+  URL.revokeObjectURL(link.href);
+  statusBox.textContent = checks.map(item => "PASS: " + item[0]).join("\n") +
+    "\n\nCreated games-v0.9.0.html. Rename it to games.html before uploading.";
+};
+</script>
+</body>
+</html>

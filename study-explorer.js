@@ -21,14 +21,14 @@
     }));
     const topics=[...topicMap.keys()].sort((a,b)=>a.localeCompare(b));
     topicGrid.innerHTML=topics.map(topic=>`<button type="button" data-topic="${escapeHtml(topic)}"><span>📘</span><h3>${escapeHtml(topic.replace(/\b\w/g,letter=>letter.toUpperCase()))}</h3><small>${topicMap.get(topic).length} ${topicMap.get(topic).length===1?'study':'studies'}</small></button>`).join('');
-    const showTopic=topic=>{
+    const showTopic=(topic,shouldScroll=true)=>{
       const matches=topicMap.get(topic)||[];
       if(topicHeading)topicHeading.textContent=`${topic.replace(/\b\w/g,letter=>letter.toUpperCase())} Studies`;
       topicResults.innerHTML=matches.map(card).join('');
-      topicResults.closest('section')?.scrollIntoView({behavior:'smooth',block:'start'});
+      if(shouldScroll)topicResults.closest('section')?.scrollIntoView({behavior:'smooth',block:'start'});
     };
     topicGrid.querySelectorAll('[data-topic]').forEach(button=>button.addEventListener('click',()=>showTopic(button.dataset.topic)));
-    if(topics[0])showTopic(topics[0]);
+    if(topics[0])showTopic(topics[0],false);
   }
 
   const bookGrid=document.getElementById('book-grid');
@@ -43,13 +43,13 @@
     });
     const books=[...bookMap.keys()].sort((a,b)=>a.localeCompare(b));
     bookGrid.innerHTML=books.map(book=>`<button type="button" data-book="${escapeHtml(book)}"><span>📖</span><h3>${escapeHtml(book)}</h3><small>${bookMap.get(book).length} ${bookMap.get(book).length===1?'study':'studies'}</small></button>`).join('');
-    const showBook=book=>{
+    const showBook=(book,shouldScroll=true)=>{
       const matches=bookMap.get(book)||[];
       if(scriptureHeading)scriptureHeading.textContent=`Studies in ${book}`;
       scriptureResults.innerHTML=matches.map(card).join('');
-      scriptureResults.closest('section')?.scrollIntoView({behavior:'smooth',block:'start'});
+      if(shouldScroll)scriptureResults.closest('section')?.scrollIntoView({behavior:'smooth',block:'start'});
     };
     bookGrid.querySelectorAll('[data-book]').forEach(button=>button.addEventListener('click',()=>showBook(button.dataset.book)));
-    if(books[0])showBook(books[0]);
+    if(books[0])showBook(books[0],false);
   }
 })();

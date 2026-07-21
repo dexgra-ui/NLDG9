@@ -1,5 +1,5 @@
-const CACHE='nldg-v5-0-2-shell';
-const CORE=['./','index.html','styles.css','platform.css?v=5.0.2','content-library.js','script.js','personalization.js','dashboard.html','dashboard.css','dashboard.js','resource-center.html','search.html','studies.html','play.html','no-labels-approved-logo.png','manifest.webmanifest'];
+const CACHE='nldg-v5-1-discipleship';
+const CORE=['./','index.html','styles.css','platform.css?v=5.0.2','content-library.js','script.js','personalization.js?v=5.1.0','discipleship-study.js?v=5.1.0','dashboard.html','dashboard.css?v=5.1.0','dashboard.js?v=5.1.0','study-experience.js','resource-center.html','search.html','studies.html','play.html','no-labels-approved-logo.png','manifest.webmanifest'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;event.respondWith(fetch(event.request).then(response=>{const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy));return response;}).catch(()=>caches.match(event.request).then(cached=>cached||caches.match('index.html'))));});

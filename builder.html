@@ -25,6 +25,11 @@
   <section class="builder-shell">
     <aside class="builder-sidebar">
       <div class="builder-sidebar-heading"><div><p class="kicker">Your workspace</p><h2>Drafts</h2></div><button id="new-study" type="button">+ New</button></div>
+      <nav class="builder-jump-nav" aria-label="Builder sections">
+        <button type="button" data-jump="study-content">Study Content</button>
+        <button class="leader-jump" type="button" data-jump="leader-notes">🔒 Leader Notes</button>
+        <button type="button" data-jump="export-actions">Export</button>
+      </nav>
       <div id="draft-list" class="draft-list" aria-live="polite"></div>
     </aside>
 
@@ -33,6 +38,7 @@
         <input id="draft-id" type="hidden">
         <div class="builder-section-heading"><div><p class="kicker">Study editor</p><h2 id="editor-title">New Bible Study</h2></div><span id="save-status" aria-live="polite"></span></div>
 
+        <div id="study-content" class="builder-anchor" aria-hidden="true"></div>
         <details class="builder-panel" open>
           <summary>Template and organization</summary>
           <div class="builder-grid two-column panel-content">
@@ -83,18 +89,26 @@
           </div>
         </details>
 
-        <details class="builder-panel leader-panel">
-          <summary>Leader notes <span>Not published to readers</span></summary>
-          <div class="panel-content">
-            <label>Icebreaker question<textarea id="leader-icebreaker" rows="3"></textarea></label>
-            <label>Teaching emphasis<textarea id="leader-emphasis" rows="4"></textarea></label>
-            <label>Common misconceptions<textarea id="leader-misconceptions" rows="4"></textarea></label>
-            <label>Facilitation and timing notes<textarea id="leader-timing" rows="4"></textarea></label>
-            <label>Leader follow-up<textarea id="leader-follow-up" rows="3"></textarea></label>
+        <section id="leader-notes" class="leader-notes-section" aria-labelledby="leader-notes-title">
+          <div class="leader-notes-heading">
+            <div><p class="kicker">Private planning workspace</p><h2 id="leader-notes-title">🔒 Leader Notes</h2></div>
+            <span>Never included in the public study page</span>
           </div>
-        </details>
+          <p class="leader-intro">Use this area to prepare the lesson, guide discussion, and plan follow-up. These notes are saved with the draft and exported separately.</p>
+          <div class="panel-content leader-grid">
+            <label>Icebreaker question<textarea id="leader-icebreaker" rows="3" placeholder="What opening question will help the group engage?"></textarea></label>
+            <label>Teaching emphasis<textarea id="leader-emphasis" rows="4" placeholder="What truth must the leader make clear?"></textarea></label>
+            <label>Common misconceptions<textarea id="leader-misconceptions" rows="4" placeholder="What confusion or harmful interpretation should be addressed?"></textarea></label>
+            <label>Facilitation and timing notes<textarea id="leader-timing" rows="4" placeholder="Opening 5 min, Scripture 10 min, discussion 20 min..."></textarea></label>
+            <label>Prayer focus<textarea id="leader-prayer-focus" rows="3" placeholder="What should the group pray about together?"></textarea></label>
+            <label>Additional Scriptures<textarea id="leader-scriptures" rows="3" placeholder="Enter one supporting passage per line."></textarea></label>
+            <label>Supplies or media needed<textarea id="leader-supplies" rows="3" placeholder="Handouts, video, whiteboard, game materials..."></textarea></label>
+            <label>Optional video or resource link<input id="leader-resource" type="url" placeholder="https://..."></label>
+            <label class="leader-full">Leader follow-up<textarea id="leader-follow-up" rows="3" placeholder="What should the leader check on during the week?"></textarea></label>
+          </div>
+        </section>
 
-        <div class="builder-actions">
+        <div id="export-actions" class="builder-actions">
           <button class="button secondary" id="save-draft" type="button">Save Now</button>
           <button class="button secondary" id="duplicate-draft" type="button">Duplicate</button>
           <button class="button secondary danger" id="delete-draft" type="button">Delete</button>

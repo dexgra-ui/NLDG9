@@ -4,7 +4,7 @@ document.querySelectorAll('nav a').forEach(link=>link.addEventListener('click',(
 document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
 
 (function platformIntegration(){
-  if(!document.querySelector('link[href="platform.css"]')){const link=document.createElement('link');link.rel='stylesheet';link.href='platform.css';document.head.appendChild(link);}
+  if(!document.querySelector('link[data-platform-styles]')){const link=document.createElement('link');link.rel='stylesheet';link.href='platform.css?v=5.0.2';link.dataset.platformStyles='true';document.head.appendChild(link);}
   const replaceBranding=root=>{const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let node;while(node=walker.nextNode()){if(node.parentElement?.closest('script,style'))continue;node.nodeValue=node.nodeValue.replaceAll('Brotherhood Bible Games','No Labels Games');}};
   replaceBranding(document.body);
   const ensureLibrary=()=>new Promise((resolve,reject)=>{if(window.NLDG_LIBRARY){resolve();return;}const script=document.createElement('script');script.src='content-library.js';script.onload=resolve;script.onerror=reject;document.head.appendChild(script);});
@@ -45,7 +45,7 @@ if(studyPageId){const loadScript=src=>new Promise((resolve,reject)=>{const exist
   if(!document.querySelector('link[rel="manifest"]')){const manifest=document.createElement('link');manifest.rel='manifest';manifest.href='manifest.webmanifest';document.head.appendChild(manifest);}
   const loadPersonalization=()=>{if(window.NLDG_PERSONAL||document.querySelector('script[src="personalization.js"]'))return;const script=document.createElement('script');script.src='personalization.js';document.body.appendChild(script);};
   if(window.NLDG_CONTENT)loadPersonalization();else window.addEventListener('load',loadPersonalization,{once:true});
-  if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+  if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js?v=5.0.2').catch(()=>{}));
   let installPrompt;
   window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();installPrompt=event;const header=document.querySelector('.site-header');if(!header||document.querySelector('.install-app-button'))return;const button=document.createElement('button');button.type='button';button.className='install-app-button';button.textContent='Install App';button.addEventListener('click',async()=>{if(!installPrompt)return;installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;button.remove();});header.appendChild(button);});
 })();

@@ -25,9 +25,9 @@
   const categoryDetails={
     'Identity in Christ':{icon:'🪪',description:'Grace, worth, purpose, and belonging.'},
     'Christian Living':{icon:'🌱',description:'Living faithfully with grace and truth.'},
-    'Faith & Culture':{icon:'🌍',description:'Biblical wisdom for a divided world.'},
+    'Faith & Today’s World':{icon:'🌍',description:'Biblical wisdom for life in today’s world.'},
     'Hope & Endurance':{icon:'⚓',description:'Trusting Christ through difficult seasons.'},
-    'Men’s Discipleship':{icon:'🛡️',description:'Freedom, spiritual growth, and faithful habits.'}
+    'Brotherhood':{icon:'🛡️',description:'Freedom, spiritual growth, and faithful brotherhood.'}
   };
   const card=study=>{
     const state=readState()[study.id]||{};
@@ -44,7 +44,7 @@
       const count=studies.filter(study=>study.category===category).length;
       const detail=categoryDetails[category]||{icon:'📘',description:'Explore studies in this collection.'};
       return `<button data-collection="${escapeHtml(category)}"><span>${detail.icon}</span><h3>${escapeHtml(category)}</h3><p>${escapeHtml(detail.description)}</p><small>${count} ${count===1?'study':'studies'}</small></button>`;
-    }).join('')+`<button data-collection="all"><span>✨</span><h3>View Everything</h3><p>Browse the complete study library.</p><small>${studies.length} studies</small></button>`;
+    }).join('')+`<button data-collection="all"><span>✨</span><h3>Complete Library</h3><p>Browse every published Bible study.</p><small>${studies.length} studies</small></button>`;
   }
 
   const renderDashboard=()=>{

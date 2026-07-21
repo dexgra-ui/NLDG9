@@ -14,7 +14,7 @@
 
   const collect=()=>{
     const data={draftId:$('draft-id').value||uid(),featured:$('featured').checked};
-    fields.forEach(id=>data[id]=$ (id).value.trim());
+    fields.forEach(id=>data[id]=$(id).value.trim());
     data.duration=Number(data.duration)||45;
     data.updated=Date.now();
     return data;
@@ -28,10 +28,11 @@
     $('status').value=data?.status||'draft';
     $('featured').checked=Boolean(data?.featured);
     $('editor-title').textContent=data?.title||'New Bible Study';
-    renderPreview();renderDraftList();
+    renderPreview();
+    renderDraftList();
   };
 
-  const save=statusMessage='Draft saved.'=>{
+  const save=(statusMessage='Draft saved.')=>{
     const data=collect();
     if(!data.title){$('save-status').textContent='Add a title before saving.';return null;}
     if(!data['study-id'])data['study-id']=slug(data.title);
@@ -67,15 +68,50 @@
 
   const studyHtml=data=>`<!doctype html>\n<html lang="en">\n<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#06122d"><meta name="description" content="${escapeHtml(data.description)}"><title>${escapeHtml(data.title)} | No Labels, Designed by God</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="study-experience.css"></head>\n<body data-study-page="${escapeHtml(data['study-id'])}" data-study-title="${escapeHtml(data.title)}">\n<header class="site-header"><a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God</strong><small>A family ministry built to last.</small></span></a><a class="button secondary" href="studies.html">Bible Studies</a></header>\n<main><section class="page-hero study-detail-hero"><p class="kicker">${escapeHtml(data.series)} • ${escapeHtml(data.category)}</p><h1>${escapeHtml(data.title)}</h1><p class="lead">${escapeHtml(data.description)}</p><div class="study-meta"><span>📖 ${escapeHtml(data.scripture)}</span><span>⏱ ${data.duration} minutes</span><span>${escapeHtml(data.difficulty)}</span></div></section><article class="section study-content"><section><p class="kicker">Theme</p><h2>${escapeHtml(data.theme)}</h2></section><section><p class="kicker">Big Idea</p><blockquote>${escapeHtml(data['big-idea'])}</blockquote></section><section><p class="kicker">Background</p><h2>Understanding the passage</h2><p>${escapeHtml(data.background).replaceAll('\n','<br>')}</p></section><section><p class="kicker">SOAP Study</p><h2>Scripture</h2><p>${escapeHtml(data['soap-scripture']).replaceAll('\n','<br>')}</p><h2>Observation</h2><p>${escapeHtml(data.observation).replaceAll('\n','<br>')}</p><h2>Application</h2><p>${escapeHtml(data.application).replaceAll('\n','<br>')}</p><h2>Prayer</h2><p>${escapeHtml(data.prayer).replaceAll('\n','<br>')}</p></section><section><p class="kicker">Reflection</p><h2>Personal questions</h2><ol>${lines(data.reflection).map(q=>`<li>${escapeHtml(q)}</li>`).join('')}</ol></section><section><p class="kicker">Group Discussion</p><h2>Talk it through</h2><ol>${lines(data.discussion).map(q=>`<li>${escapeHtml(q)}</li>`).join('')}</ol></section><section><p class="kicker">Weekly Challenge</p><h2>Put the Word into practice</h2><p>${escapeHtml(data.challenge)}</p></section><p><a class="button secondary" href="studies.html">Return to Bible Study Hub</a></p></article></main><script src="study-data.js"></script><script src="study-experience.js"></script><script src="script.js"></script></body></html>`;
 
-  const download=(filename,content,type='text/plain')=>{const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download=filename;document.body.appendChild(link);link.click();link.remove();URL.revokeObjectURL(url);};
+  const download=(filename,content,type='text/plain')=>{
+    const blob=new Blob([content],{type});
+    const url=URL.createObjectURL(blob);
+    const link=document.createElement('a');
+    link.href=url;
+    link.download=filename;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+  };
 
   $('new-study').addEventListener('click',()=>populate(null));
   $('save-draft').addEventListener('click',()=>save());
-  $('duplicate-draft').addEventListener('click',()=>{const data=collect();data.draftId=uid();data.title=data.title?`${data.title} Copy`:'Untitled Study Copy';data['study-id']=data['study-id']?`${data['study-id']}-copy`:'';populate(data);save('Duplicate created.');});
-  $('delete-draft').addEventListener('click',()=>{const id=$('draft-id').value;if(!id)return;writeDrafts(readDrafts().filter(item=>item.draftId!==id));populate(null);$('save-status').textContent='Draft deleted.';});
-  $('export-study').addEventListener('click',()=>{const data=save('Study ready for export.');if(!data)return;download(`study-${data['study-id']}.html`,studyHtml(data),'text/html');download(`${data['study-id']}-metadata.json`,JSON.stringify(studyObject(data),null,2),'application/json');});
-  $('draft-list').addEventListener('click',event=>{const button=event.target.closest('[data-draft-id]');if(!button)return;populate(readDrafts().find(item=>item.draftId===button.dataset.draftId));});
-  form.addEventListener('input',event=>{if(event.target.id==='title'&&!$('study-id').value)$('study-id').value=slug(event.target.value);renderPreview();});
+  $('duplicate-draft').addEventListener('click',()=>{
+    const data=collect();
+    data.draftId=uid();
+    data.title=data.title?`${data.title} Copy`:'Untitled Study Copy';
+    data['study-id']=data['study-id']?`${data['study-id']}-copy`:'';
+    populate(data);
+    save('Duplicate created.');
+  });
+  $('delete-draft').addEventListener('click',()=>{
+    const id=$('draft-id').value;
+    if(!id)return;
+    writeDrafts(readDrafts().filter(item=>item.draftId!==id));
+    populate(null);
+    $('save-status').textContent='Draft deleted.';
+  });
+  $('export-study').addEventListener('click',()=>{
+    const data=save('Study ready for export.');
+    if(!data)return;
+    download(`study-${data['study-id']}.html`,studyHtml(data),'text/html');
+    download(`${data['study-id']}-metadata.json`,JSON.stringify(studyObject(data),null,2),'application/json');
+  });
+  $('draft-list').addEventListener('click',event=>{
+    const button=event.target.closest('[data-draft-id]');
+    if(!button)return;
+    populate(readDrafts().find(item=>item.draftId===button.dataset.draftId));
+  });
+  form.addEventListener('input',event=>{
+    if(event.target.id==='title'&&!$('study-id').value)$('study-id').value=slug(event.target.value);
+    renderPreview();
+  });
   form.addEventListener('change',renderPreview);
 
   const drafts=readDrafts();

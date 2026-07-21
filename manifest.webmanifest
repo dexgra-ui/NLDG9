@@ -1,0 +1,14 @@
+{
+  "name": "No Labels, Designed by God",
+  "short_name": "No Labels",
+  "description": "Bible studies, ministry resources, podcasts, and interactive No Labels Games.",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#06122d",
+  "theme_color": "#06122d",
+  "icons": [
+    {"src":"no-labels-approved-logo.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"no-labels-approved-logo.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}

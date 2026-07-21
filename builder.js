@@ -3,7 +3,7 @@
   if(!form)return;
 
   const STORAGE_KEY='nldg-builder-drafts-v1';
-  const fields=['template','ministry','title','study-id','series','category','book','scripture','audience','topics','difficulty','duration','status','featured-image','description','theme','big-idea','background','soap-scripture','observation','application','prayer','reflection','discussion','challenge','leader-icebreaker','leader-emphasis','leader-misconceptions','leader-timing','leader-follow-up'];
+  const fields=['template','ministry','title','study-id','series','category','book','scripture','audience','topics','difficulty','duration','status','featured-image','description','theme','big-idea','background','soap-scripture','observation','application','prayer','reflection','discussion','challenge','leader-icebreaker','leader-emphasis','leader-misconceptions','leader-timing','leader-prayer-focus','leader-scriptures','leader-supplies','leader-resource','leader-follow-up'];
   const $=id=>document.getElementById(id);
   const split=value=>String(value||'').split(',').map(item=>item.trim()).filter(Boolean);
   const lines=value=>String(value||'').split('\n').map(item=>item.trim()).filter(Boolean);
@@ -82,7 +82,17 @@
   });
 
   const leaderObject=data=>({
-    studyId:data['study-id'],title:data.title,icebreaker:data['leader-icebreaker'],teachingEmphasis:data['leader-emphasis'],commonMisconceptions:data['leader-misconceptions'],facilitationTiming:data['leader-timing'],followUp:data['leader-follow-up']
+    studyId:data['study-id'],
+    title:data.title,
+    icebreaker:data['leader-icebreaker'],
+    teachingEmphasis:data['leader-emphasis'],
+    commonMisconceptions:data['leader-misconceptions'],
+    facilitationTiming:data['leader-timing'],
+    prayerFocus:data['leader-prayer-focus'],
+    additionalScriptures:lines(data['leader-scriptures']),
+    suppliesOrMedia:data['leader-supplies'],
+    resourceLink:data['leader-resource'],
+    followUp:data['leader-follow-up']
   });
 
   const studyHtml=data=>`<!doctype html>\n<html lang="en">\n<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#06122d"><meta name="description" content="${escapeHtml(data.description)}"><title>${escapeHtml(data.title)} | No Labels, Designed by God</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="study-experience.css"></head>\n<body data-study-page="${escapeHtml(data['study-id'])}" data-study-title="${escapeHtml(data.title)}">\n<header class="site-header"><a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God</strong><small>A family ministry built to last.</small></span></a><a class="button secondary" href="studies.html">Bible Studies</a></header>\n<main><section class="page-hero study-detail-hero"><p class="kicker">${escapeHtml(data.series||data.ministry)} • ${escapeHtml(data.category)}</p><h1>${escapeHtml(data.title)}</h1><p class="lead">${escapeHtml(data.description)}</p><div class="study-meta"><span>📖 ${escapeHtml(data.scripture)}</span><span>⏱ ${data.duration} minutes</span><span>${escapeHtml(data.difficulty)}</span></div></section><article class="section study-content">${data['featured-image']?`<img src="${escapeHtml(data['featured-image'])}" alt="" style="width:100%;max-height:460px;object-fit:cover;border-radius:22px">`:''}<section><p class="kicker">Theme</p><h2>${escapeHtml(data.theme)}</h2></section><section><p class="kicker">Big Idea</p><blockquote>${escapeHtml(data['big-idea'])}</blockquote></section><section><p class="kicker">Background</p><h2>Understanding the passage</h2><p>${escapeHtml(data.background).replaceAll('\n','<br>')}</p></section><section><p class="kicker">SOAP Study</p><h2>Scripture</h2><p>${escapeHtml(data['soap-scripture']).replaceAll('\n','<br>')}</p><h2>Observation</h2><p>${escapeHtml(data.observation).replaceAll('\n','<br>')}</p><h2>Application</h2><p>${escapeHtml(data.application).replaceAll('\n','<br>')}</p><h2>Prayer</h2><p>${escapeHtml(data.prayer).replaceAll('\n','<br>')}</p></section><section><p class="kicker">Reflection</p><h2>Personal questions</h2><ol>${lines(data.reflection).map(q=>`<li>${escapeHtml(q)}</li>`).join('')}</ol></section><section><p class="kicker">Group Discussion</p><h2>Talk it through</h2><ol>${lines(data.discussion).map(q=>`<li>${escapeHtml(q)}</li>`).join('')}</ol></section><section><p class="kicker">Weekly Challenge</p><h2>Put the Word into practice</h2><p>${escapeHtml(data.challenge)}</p></section><p><a class="button secondary" href="studies.html">Return to Bible Study Hub</a></p></article></main><script src="study-data.js"></script><script src="study-experience.js"></script><script src="script.js"></script></body></html>`;
@@ -115,6 +125,7 @@
   $('template').addEventListener('change',event=>applyTemplate(event.target.value));
   $('format-scripture').addEventListener('click',()=>{$('scripture').value=formatScripture($('scripture').value);renderPreview();scheduleAutoSave();});
   document.querySelectorAll('[data-preview-mode]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-preview-mode]').forEach(item=>item.classList.remove('active'));button.classList.add('active');$('preview-frame').className=`preview-frame ${button.dataset.previewMode}`;}));
+  document.querySelectorAll('[data-jump]').forEach(button=>button.addEventListener('click',()=>{const target=$(button.dataset.jump);if(!target)return;target.scrollIntoView({behavior:'smooth',block:'start'});if(button.dataset.jump==='leader-notes')target.classList.add('leader-highlight');setTimeout(()=>target.classList.remove('leader-highlight'),1400);}));
 
   form.addEventListener('input',event=>{if(event.target.id==='title'&&!$('study-id').value)$('study-id').value=slug(event.target.value);renderPreview();scheduleAutoSave();});
   form.addEventListener('change',event=>{if(event.target.id!=='template'){renderPreview();scheduleAutoSave();}});

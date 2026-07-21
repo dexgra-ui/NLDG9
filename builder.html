@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#06122d">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Ministry Builder | No Labels, Designed by God</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="builder.css">
+</head>
+<body class="builder-page">
+<header class="site-header">
+  <a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God</strong><small>Ministry Builder</small></span></a>
+  <a class="button secondary" href="studies.html">View Study Hub</a>
+</header>
+<main>
+  <section class="page-hero builder-hero">
+    <p class="kicker">Sprint 4.1 • Builder Foundation</p>
+    <h1>Create ministry content without editing code.</h1>
+    <p class="lead">Build a structured Bible study, save drafts on this device, preview the result, and export files for publishing.</p>
+    <p class="builder-security-note"><strong>Current access:</strong> This page is intentionally unlinked and excluded from search engines, but GitHub Pages cannot provide secure authentication. Direct publishing will require a protected backend in a later sprint.</p>
+  </section>
+
+  <section class="builder-shell">
+    <aside class="builder-sidebar">
+      <div class="builder-sidebar-heading"><div><p class="kicker">Your workspace</p><h2>Drafts</h2></div><button id="new-study" type="button">+ New</button></div>
+      <div id="draft-list" class="draft-list" aria-live="polite"></div>
+    </aside>
+
+    <section class="builder-editor">
+      <form id="study-builder-form">
+        <input id="draft-id" type="hidden">
+        <div class="builder-section-heading"><div><p class="kicker">Study details</p><h2 id="editor-title">New Bible Study</h2></div><span id="save-status" aria-live="polite"></span></div>
+
+        <div class="builder-grid two-column">
+          <label>Title<input id="title" required placeholder="Learning to See Yourself Through God’s Eyes"></label>
+          <label>Study ID<input id="study-id" required pattern="[a-z0-9-]+" placeholder="identity-in-christ"></label>
+          <label>Series<input id="series" placeholder="Faith & Truth in Today’s World"></label>
+          <label>Category<select id="category"><option>Identity in Christ</option><option>Christian Living</option><option>Faith & Today’s World</option><option>Hope & Endurance</option><option>Brotherhood</option></select></label>
+          <label>Primary Bible book<input id="book" placeholder="Ephesians"></label>
+          <label>Scripture<input id="scripture" placeholder="Ephesians 2:1-10"></label>
+          <label>Audience<input id="audience" placeholder="Adults, Small Groups"></label>
+          <label>Topics<input id="topics" placeholder="identity, grace, purpose"></label>
+          <label>Difficulty<select id="difficulty"><option>Beginner</option><option>Intermediate</option><option>All Levels</option><option>Advanced</option></select></label>
+          <label>Duration in minutes<input id="duration" type="number" min="5" step="5" value="45"></label>
+          <label>Status<select id="status"><option value="draft">Draft</option><option value="published">Published</option></select></label>
+          <label class="checkbox-label"><input id="featured" type="checkbox"> Feature this study</label>
+        </div>
+
+        <label>Description<textarea id="description" rows="3" placeholder="One sentence explaining what participants will learn."></textarea></label>
+        <label>Theme<textarea id="theme" rows="3" placeholder="The central theme of the study."></textarea></label>
+        <label>Big Idea<textarea id="big-idea" rows="3" placeholder="The one truth participants should remember."></textarea></label>
+        <label>Background<textarea id="background" rows="5" placeholder="Biblical, historical, and practical context."></textarea></label>
+
+        <div class="builder-grid two-column">
+          <label>SOAP Scripture<textarea id="soap-scripture" rows="4"></textarea></label>
+          <label>SOAP Observation<textarea id="observation" rows="4"></textarea></label>
+          <label>SOAP Application<textarea id="application" rows="4"></textarea></label>
+          <label>SOAP Prayer<textarea id="prayer" rows="4"></textarea></label>
+        </div>
+
+        <label>Reflection questions<textarea id="reflection" rows="5" placeholder="Enter one question per line."></textarea></label>
+        <label>Group discussion questions<textarea id="discussion" rows="5" placeholder="Enter one question per line."></textarea></label>
+        <label>Weekly challenge<textarea id="challenge" rows="3"></textarea></label>
+
+        <div class="builder-actions">
+          <button class="button secondary" id="save-draft" type="button">Save Draft</button>
+          <button class="button secondary" id="duplicate-draft" type="button">Duplicate</button>
+          <button class="button secondary danger" id="delete-draft" type="button">Delete</button>
+          <button class="button primary" id="export-study" type="button">Export Study</button>
+        </div>
+      </form>
+    </section>
+
+    <aside class="builder-preview" aria-label="Live study preview">
+      <div class="builder-section-heading"><div><p class="kicker">Live preview</p><h2>Study Page</h2></div></div>
+      <article id="study-preview" class="preview-card"></article>
+    </aside>
+  </section>
+</main>
+<footer class="ministry-footer"><small>© <span data-year></span> No Labels, Designed by God. Ministry Builder 4.1</small></footer>
+<script src="builder.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

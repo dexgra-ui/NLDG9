@@ -1,0 +1,50 @@
+NLDG9 SPRINT 2 UPLOAD PACKAGE
+
+PURPOSE
+This package creates the exact approved Sprint 2 replacement file for the
+main dexgra-ui/NLDG9 repository.
+
+HOW TO CREATE THE UPLOAD FILE
+1. Open CREATE-GAMES-FILE.html in Safari, Chrome, Edge, or Firefox.
+2. Press "Create games.html."
+3. Your browser will download games.html.
+
+HOW TO UPLOAD TO GITHUB
+1. Open the dexgra-ui/NLDG9 repository.
+2. Open the repository root.
+3. Choose Add file, then Upload files.
+4. Upload the newly created games.html.
+5. Replace the existing games.html when prompted.
+6. Commit the change.
+
+ONLY REPLACE
+games.html
+
+DO NOT DELETE OR REPLACE
+CNAME
+index.html
+styles.css
+script.js
+manifest.json
+or any other website file.
+
+APPROVED SOURCE
+dexgra-ui/NLDG9-Sprint-2
+Branch: main
+File: games.html
+Git blob recorded during verification:
+4050efa9ca723f306bf391ef817fe44842e42ab4
+
+SPRINT 2 FEATURES
+- Next, Previous, and Skip Team controls
+- Automatic or manual team rotation
+- Active-team indicator
+- Custom positive or negative scoring
+- Score history and Undo Score
+- Live rankings and leaderboard
+- Tournament final standings
+- Play Again
+- Keyboard team controls
+- Jeopardy advancement
+- Tournament summary
+- Round history

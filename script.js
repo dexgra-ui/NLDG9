@@ -45,7 +45,12 @@ if(studyPageId){const loadScript=src=>new Promise((resolve,reject)=>{const exist
   if(!document.querySelector('link[rel="manifest"]')){const manifest=document.createElement('link');manifest.rel='manifest';manifest.href='manifest.webmanifest';document.head.appendChild(manifest);}
   const loadPersonalization=()=>{if(window.NLDG_PERSONAL||document.querySelector('script[src="personalization.js"]'))return;const script=document.createElement('script');script.src='personalization.js';document.body.appendChild(script);};
   if(window.NLDG_CONTENT)loadPersonalization();else window.addEventListener('load',loadPersonalization,{once:true});
-  if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js?v=5.0.2').catch(()=>{}));
+  if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js?v=5.1.0').catch(()=>{}));
   let installPrompt;
   window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();installPrompt=event;const header=document.querySelector('.site-header');if(!header||document.querySelector('.install-app-button'))return;const button=document.createElement('button');button.type='button';button.className='install-app-button';button.textContent='Install App';button.addEventListener('click',async()=>{if(!installPrompt)return;installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;button.remove();});header.appendChild(button);});
+})();
+
+(function sprintFiveOneBootstrap(){
+  if(!document.querySelector('link[data-quality-styles]')){const link=document.createElement('link');link.rel='stylesheet';link.href='quality.css?v=5.1.0';link.dataset.qualityStyles='true';document.head.appendChild(link);}
+  if(!document.querySelector('script[data-quality-layer]')){const script=document.createElement('script');script.src='quality.js?v=5.1.0';script.defer=true;script.dataset.qualityLayer='true';document.body.appendChild(script);}
 })();

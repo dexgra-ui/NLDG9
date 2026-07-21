@@ -8,105 +8,452 @@
   <style>
     :root { color-scheme: dark; }
     * { box-sizing: border-box; }
-    html, body {
-      margin: 0;
-      min-height: 100%;
-      font-family: Arial, Helvetica, sans-serif;
-      background: radial-gradient(circle at top,#1d4c9e 0,#081735 45%,#030713 100%);
-      color: #f7f9ff;
+    html,body {
+      margin:0;
+      min-height:100%;
+      font-family:Arial,Helvetica,sans-serif;
+      background:radial-gradient(circle at top,#1d4c9e 0,#081735 45%,#030713 100%);
+      color:#f7f9ff;
     }
     body {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      padding:24px;
     }
     main {
-      width: min(760px,100%);
-      padding: 32px;
-      border: 2px solid rgba(255,211,78,.55);
-      border-radius: 24px;
-      background: rgba(8,22,58,.96);
-      box-shadow: 0 24px 70px rgba(0,0,0,.45);
-      text-align: center;
+      width:min(760px,100%);
+      padding:32px;
+      border:2px solid rgba(255,211,78,.55);
+      border-radius:24px;
+      background:rgba(8,22,58,.96);
+      box-shadow:0 24px 70px rgba(0,0,0,.45);
+      text-align:center;
     }
     .spinner {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 24px;
-      border: 7px solid rgba(255,255,255,.18);
-      border-top-color: #ffd34e;
-      border-radius: 50%;
-      animation: spin .8s linear infinite;
+      width:64px;height:64px;margin:0 auto 24px;
+      border:7px solid rgba(255,255,255,.18);
+      border-top-color:#ffd34e;border-radius:50%;
+      animation:spin .8s linear infinite;
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    h1 { margin: 0 0 12px; font-size: clamp(30px,6vw,52px); }
-    p { line-height: 1.55; color: #cbd5f3; }
-    button, a {
-      display: inline-block;
-      margin-top: 14px;
-      padding: 13px 18px;
-      border: 0;
-      border-radius: 13px;
-      background: linear-gradient(#fff0a4,#ffd34e);
-      color: #2d2400;
-      font: inherit;
-      font-weight: 900;
-      text-decoration: none;
-      cursor: pointer;
+    @keyframes spin { to { transform:rotate(360deg); } }
+    h1 { margin:0 0 12px;font-size:clamp(30px,6vw,52px); }
+    p { line-height:1.55;color:#cbd5f3; }
+    button {
+      margin-top:14px;padding:13px 18px;border:0;border-radius:13px;
+      background:linear-gradient(#fff0a4,#ffd34e);color:#2d2400;
+      font:inherit;font-weight:900;cursor:pointer;
     }
-    #error { display: none; }
+    #error { display:none; }
   </style>
 </head>
 <body>
   <main id="loading">
     <div class="spinner" aria-hidden="true"></div>
     <h1>Brotherhood Bible Games</h1>
-    <p>Loading the NLDG9 Sprint 2 tournament game engine…</p>
+    <p>Loading Sprint 2.1 interface and gameplay polish…</p>
   </main>
 
   <main id="error">
     <h1>Unable to load the game</h1>
-    <p>
-      The Sprint 2 game file could not be reached. Confirm that this device has
-      internet access, then try again.
-    </p>
+    <p>The approved Sprint 2 engine could not be reached. Check the internet connection and try again.</p>
     <button type="button" onclick="location.reload()">Try Again</button>
   </main>
 
-  <script>
-    (async function loadSprint2() {
-      const approvedSource =
-        "https://raw.githubusercontent.com/dexgra-ui/NLDG9-Sprint-2/main/games.html";
+<script>
+(async function loadSprint21(){
+  const source = "https://raw.githubusercontent.com/dexgra-ui/NLDG9-Sprint-2/main/games.html";
 
-      try {
-        const response = await fetch(approvedSource, {
-          cache: "no-store",
-          mode: "cors"
-        });
+  const sprint21CSS = String.raw`
+  /* NLDG9 Sprint 2.1 polish layer */
+  :root{
+    --s21-scorebar-h:96px;
+    --s21-toolbar-h:74px;
+    --s21-gap:10px;
+  }
 
-        if (!response.ok) {
-          throw new Error("GitHub returned HTTP " + response.status);
-        }
+  body.playing .scorebar{
+    height:var(--s21-scorebar-h)!important;
+  }
 
-        const html = await response.text();
+  body.playing .tournament-toolbar,
+  body.playing #tournamentToolbar,
+  body.playing .shared-toolbar{
+    position:fixed!important;
+    z-index:120!important;
+    top:calc(max(8px,env(safe-area-inset-top)) + var(--s21-scorebar-h) + var(--s21-gap))!important;
+    left:max(12px,env(safe-area-inset-left))!important;
+    right:max(12px,env(safe-area-inset-right))!important;
+    min-height:var(--s21-toolbar-h)!important;
+    margin:0!important;
+    padding:10px 14px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    flex-wrap:wrap!important;
+    gap:10px!important;
+    border-radius:18px!important;
+    background:rgba(3,10,30,.97)!important;
+    border:2px solid rgba(255,255,255,.16)!important;
+    box-shadow:0 12px 34px rgba(0,0,0,.45)!important;
+    backdrop-filter:blur(10px);
+  }
 
-        if (
-          !html.toLowerCase().includes("<!doctype html") ||
-          !html.includes("No Labels, Designed by God")
-        ) {
-          throw new Error("The approved game file failed validation.");
-        }
+  body.playing #quizView,
+  body.playing #memoryView,
+  body.playing #jeopardyView{
+    inset:calc(max(8px,env(safe-area-inset-top)) + var(--s21-scorebar-h) + var(--s21-toolbar-h) + (var(--s21-gap) * 2)) 0 0!important;
+  }
 
-        document.open();
-        document.write(html);
-        document.close();
-      } catch (error) {
-        console.error("NLDG9 Sprint 2 loader:", error);
-        document.getElementById("loading").style.display = "none";
-        document.getElementById("error").style.display = "block";
+  body.playing .game-panel{
+    padding-top:18px!important;
+  }
+
+  body.playing .game-heading{
+    position:relative!important;
+    z-index:1!important;
+    padding-top:4px!important;
+    margin-bottom:6px!important;
+  }
+
+  body.playing .game-heading h3{
+    opacity:1!important;
+    visibility:visible!important;
+    color:#f7f9ff!important;
+    text-shadow:0 3px 14px rgba(0,0,0,.8)!important;
+  }
+
+  body.playing .back-library{
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    min-width:150px!important;
+  }
+
+  .team.active{
+    outline:4px solid #ffd34e!important;
+    box-shadow:0 0 0 3px rgba(255,211,78,.18),0 0 28px rgba(255,211,78,.42)!important;
+    transform:translateY(-1px);
+  }
+
+  button,.btn,.answer,.menu-card,.jcell,.memory-card{
+    touch-action:manipulation;
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  button:focus-visible,.btn:focus-visible,.answer:focus-visible,.jcell:focus-visible{
+    outline:4px solid #fff0a4!important;
+    outline-offset:3px!important;
+  }
+
+  .s21-help-button{
+    position:fixed;
+    z-index:130;
+    right:max(16px,env(safe-area-inset-right));
+    bottom:max(16px,env(safe-area-inset-bottom));
+    width:52px;height:52px;border-radius:50%;
+    display:grid;place-items:center;
+    padding:0!important;margin:0!important;
+    background:linear-gradient(#fff0a4,#ffd34e)!important;
+    color:#2d2400!important;
+    border:0!important;
+    font-size:24px!important;
+    font-weight:1000!important;
+    box-shadow:0 10px 30px rgba(0,0,0,.45);
+  }
+
+  .s21-overlay{
+    position:fixed;inset:0;z-index:3000;
+    display:grid;place-items:center;
+    padding:20px;
+    background:rgba(2,6,18,.88);
+    backdrop-filter:blur(8px);
+  }
+
+  .s21-overlay-card{
+    width:min(760px,96vw);
+    max-height:90vh;
+    overflow:auto;
+    padding:28px;
+    border-radius:24px;
+    border:2px solid rgba(255,211,78,.55);
+    background:linear-gradient(#10275f,#06122f);
+    box-shadow:0 30px 90px rgba(0,0,0,.65);
+  }
+
+  .s21-overlay-card h2{margin-top:0;font-size:clamp(30px,5vw,50px)}
+  .s21-shortcuts{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;text-align:left}
+  .s21-shortcuts kbd{
+    min-width:72px;text-align:center;
+    padding:7px 10px;border-radius:9px;
+    background:#eef3ff;color:#101936;
+    font-weight:900;box-shadow:inset 0 -3px 0 rgba(0,0,0,.18)
+  }
+
+  .s21-close{
+    width:100%;margin-top:22px!important;
+    background:linear-gradient(#fff0a4,#ffd34e)!important;
+    color:#2d2400!important;
+  }
+
+  .s21-toast{
+    position:fixed;z-index:3100;
+    left:50%;bottom:max(24px,env(safe-area-inset-bottom));
+    transform:translateX(-50%) translateY(30px);
+    opacity:0;
+    max-width:min(700px,90vw);
+    padding:13px 18px;border-radius:999px;
+    background:rgba(3,10,30,.96);
+    color:#ffd34e;border:1px solid rgba(255,211,78,.45);
+    font-weight:900;text-align:center;
+    transition:.22s ease;
+    pointer-events:none;
+  }
+  .s21-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  .s21-feedback-pop{animation:s21Pop .35s ease}
+  @keyframes s21Pop{
+    0%{transform:scale(.9);opacity:.45}
+    70%{transform:scale(1.05)}
+    100%{transform:scale(1);opacity:1}
+  }
+
+  @media (orientation:landscape) and (max-height:850px){
+    :root{--s21-scorebar-h:78px;--s21-toolbar-h:64px;--s21-gap:6px}
+    body.playing .tournament-toolbar,
+    body.playing #tournamentToolbar,
+    body.playing .shared-toolbar{padding:7px 10px!important}
+  }
+
+  @media (max-width:760px){
+    :root{--s21-scorebar-h:100px;--s21-toolbar-h:122px}
+    body.playing .tournament-toolbar,
+    body.playing #tournamentToolbar,
+    body.playing .shared-toolbar{
+      justify-content:flex-start!important;
+      overflow-x:auto!important;
+      flex-wrap:nowrap!important;
+    }
+    body.playing .tournament-toolbar > *,
+    body.playing #tournamentToolbar > *,
+    body.playing .shared-toolbar > *{flex:0 0 auto!important}
+    body.playing .back-library{min-width:120px!important}
+  }
+  `;
+
+  const sprint21JS = String.raw`
+  (function sprint21Enhancements(){
+    const VERSION = "2.1";
+    const STORAGE_KEY = "nldg9-sprint21-state";
+    let lastTap = 0;
+
+    function toast(message){
+      let el = document.querySelector(".s21-toast");
+      if(!el){
+        el = document.createElement("div");
+        el.className = "s21-toast";
+        document.body.appendChild(el);
       }
-    })();
-  </script>
+      el.textContent = message;
+      el.classList.add("show");
+      clearTimeout(el._timer);
+      el._timer = setTimeout(()=>el.classList.remove("show"),1800);
+    }
+
+    function preventRapidDoubleTap(event){
+      const target = event.target.closest("button,.btn,.answer,.jcell,.memory-card,.menu-card");
+      if(!target) return;
+      const now = Date.now();
+      if(now-lastTap < 320){
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        return false;
+      }
+      lastTap = now;
+    }
+
+    function showHelp(){
+      if(document.querySelector(".s21-overlay")) return;
+      const overlay = document.createElement("div");
+      overlay.className = "s21-overlay";
+      overlay.innerHTML = `
+        <div class="s21-overlay-card" role="dialog" aria-modal="true" aria-labelledby="s21HelpTitle">
+          <h2 id="s21HelpTitle">Sprint 2.1 Controls</h2>
+          <div class="s21-shortcuts">
+            <kbd>N</kbd><span>Next team</span>
+            <kbd>Shift + R</kbd><span>Open rankings</span>
+            <kbd>1–8</kbd><span>Select a team when supported</span>
+            <kbd>Esc</kbd><span>Close this help window</span>
+          </div>
+          <p>Progress is saved automatically on this device. The active team receives a gold highlight.</p>
+          <button class="btn s21-close" type="button">Close</button>
+        </div>`;
+      document.body.appendChild(overlay);
+      overlay.querySelector(".s21-close").addEventListener("click",()=>overlay.remove());
+      overlay.addEventListener("click",e=>{if(e.target===overlay) overlay.remove()});
+    }
+
+    function addHelpButton(){
+      if(document.querySelector(".s21-help-button")) return;
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "s21-help-button";
+      button.setAttribute("aria-label","Open keyboard controls");
+      button.textContent = "?";
+      button.addEventListener("click",showHelp);
+      document.body.appendChild(button);
+    }
+
+    function saveState(){
+      try{
+        const teams = [...document.querySelectorAll(".team")].map(team=>({
+          name: team.querySelector("input")?.value || "",
+          score: team.querySelector(".score")?.textContent || "0",
+          active: team.classList.contains("active")
+        }));
+        const usedCells = [...document.querySelectorAll(".jcell.used")].map((cell,index)=>index);
+        const state = {
+          version: VERSION,
+          savedAt: Date.now(),
+          url: location.href,
+          teams,
+          usedCells
+        };
+        localStorage.setItem(STORAGE_KEY,JSON.stringify(state));
+      }catch(error){
+        console.warn("Sprint 2.1 save failed",error);
+      }
+    }
+
+    function restoreState(){
+      try{
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if(!raw) return;
+        const state = JSON.parse(raw);
+        if(!state?.teams?.length) return;
+        const teams = [...document.querySelectorAll(".team")];
+        state.teams.forEach((saved,index)=>{
+          const team = teams[index];
+          if(!team) return;
+          const input = team.querySelector("input");
+          const score = team.querySelector(".score");
+          if(input && saved.name) input.value = saved.name;
+          if(score) score.textContent = saved.score;
+          team.classList.toggle("active",!!saved.active);
+        });
+        toast("Saved tournament restored");
+      }catch(error){
+        console.warn("Sprint 2.1 restore failed",error);
+      }
+    }
+
+    function observeFeedback(){
+      const feedback = document.querySelector(".feedback");
+      if(!feedback) return;
+      const observer = new MutationObserver(()=>{
+        if(!feedback.textContent.trim()) return;
+        feedback.classList.remove("s21-feedback-pop");
+        void feedback.offsetWidth;
+        feedback.classList.add("s21-feedback-pop");
+      });
+      observer.observe(feedback,{childList:true,subtree:true,characterData:true});
+    }
+
+    function markToolbar(){
+      const candidates = [...document.querySelectorAll("div,nav,section")];
+      for(const node of candidates){
+        const text = node.textContent || "";
+        if(
+          text.includes("Next Team") &&
+          text.includes("Skip Team") &&
+          text.includes("Undo Score") &&
+          !node.classList.contains("team")
+        ){
+          const childMatches = [...node.children].filter(child=>{
+            const t = child.textContent || "";
+            return t.includes("Next Team") || t.includes("Skip Team") || t.includes("Undo Score");
+          });
+          if(childMatches.length >= 2){
+            node.classList.add("tournament-toolbar");
+            break;
+          }
+        }
+      }
+    }
+
+    function initialize(){
+      markToolbar();
+      addHelpButton();
+      restoreState();
+      observeFeedback();
+
+      document.addEventListener("click",preventRapidDoubleTap,true);
+      document.addEventListener("click",event=>{
+        if(event.target.closest("button,.btn,.answer,.jcell,.memory-card,.menu-card")){
+          setTimeout(saveState,80);
+        }
+      },true);
+      document.addEventListener("input",()=>setTimeout(saveState,80),true);
+      window.addEventListener("beforeunload",saveState);
+      window.addEventListener("orientationchange",()=>{
+        setTimeout(()=>window.dispatchEvent(new Event("resize")),250);
+      });
+
+      document.addEventListener("keydown",event=>{
+        if(event.key === "Escape"){
+          document.querySelector(".s21-overlay")?.remove();
+        }
+        if(event.key === "?" || (event.shiftKey && event.key === "/")){
+          event.preventDefault();
+          showHelp();
+        }
+      });
+
+      const bodyObserver = new MutationObserver(()=>{
+        markToolbar();
+        addHelpButton();
+      });
+      bodyObserver.observe(document.body,{childList:true,subtree:true});
+
+      console.info("NLDG9 Sprint 2.1 loaded");
+    }
+
+    if(document.readyState === "loading"){
+      document.addEventListener("DOMContentLoaded",()=>setTimeout(initialize,150));
+    }else{
+      setTimeout(initialize,150);
+    }
+  })();
+  `;
+
+  try{
+    const response = await fetch(source,{cache:"no-store",mode:"cors"});
+    if(!response.ok) throw new Error("GitHub returned HTTP "+response.status);
+    let html = await response.text();
+
+    if(!html.toLowerCase().includes("<!doctype html") ||
+       !html.includes("No Labels, Designed by God")){
+      throw new Error("The approved Sprint 2 source failed validation.");
+    }
+
+    html = html.replace(
+      "</head>",
+      `<style id="nldg9-sprint21-css">${sprint21CSS}</style></head>`
+    );
+    html = html.replace(
+      "</body>",
+      `<script id="nldg9-sprint21-js">${sprint21JS}<\/script></body>`
+    );
+
+    document.open();
+    document.write(html);
+    document.close();
+  }catch(error){
+    console.error("NLDG9 Sprint 2.1 loader:",error);
+    document.getElementById("loading").style.display="none";
+    document.getElementById("error").style.display="block";
+  }
+})();
+</script>
 </body>
 </html>

@@ -16,19 +16,26 @@
 </header>
 <main>
   <section class="page-hero builder-hero">
-    <p class="kicker">Sprint 4.2 • Intelligent Study Builder</p>
-    <h1>Shape the lesson. See the experience.</h1>
-    <p class="lead">Choose a ministry template, build each section, preview desktop or mobile, and let auto-save protect your work.</p>
-    <p class="builder-security-note"><strong>Current access:</strong> This workspace remains unlinked and stores drafts only on this device. Secure sign-in and direct publishing require a protected backend.</p>
+    <p class="kicker">Sprint 4.3 • Publishing Engine</p>
+    <h1>Write once. Prepare everything for publishing.</h1>
+    <p class="lead">Validate the lesson, create a version, and generate the study page plus every data entry needed by the ministry site.</p>
+    <p class="builder-security-note"><strong>Publishing model:</strong> GitHub Pages cannot securely accept direct browser publishing. The Builder creates a complete, update-ready publish package. Authenticated one-click repository commits remain a later integration.</p>
+  </section>
+
+  <section class="publishing-dashboard" aria-label="Content status dashboard">
+    <article><span>Drafts</span><strong id="count-draft">0</strong></article>
+    <article><span>Needs Review</span><strong id="count-review">0</strong></article>
+    <article><span>Published</span><strong id="count-published">0</strong></article>
+    <article><span>Archived</span><strong id="count-archived">0</strong></article>
   </section>
 
   <section class="builder-shell">
     <aside class="builder-sidebar">
-      <div class="builder-sidebar-heading"><div><p class="kicker">Your workspace</p><h2>Drafts</h2></div><button id="new-study" type="button">+ New</button></div>
+      <div class="builder-sidebar-heading"><div><p class="kicker">Your workspace</p><h2>Content</h2></div><button id="new-study" type="button">+ New</button></div>
       <nav class="builder-jump-nav" aria-label="Builder sections">
         <button type="button" data-jump="study-content">Study Content</button>
         <button class="leader-jump" type="button" data-jump="leader-notes">🔒 Leader Notes</button>
-        <button type="button" data-jump="export-actions">Export</button>
+        <button class="publish-jump" type="button" data-jump="publish-center">Publish Center</button>
       </nav>
       <div id="draft-list" class="draft-list" aria-live="polite"></div>
     </aside>
@@ -54,7 +61,7 @@
             <label>Topics<input id="topics" placeholder="identity, grace, purpose"></label>
             <label>Difficulty<select id="difficulty"><option>Beginner</option><option>Intermediate</option><option>All Levels</option><option>Advanced</option></select></label>
             <label>Duration in minutes<input id="duration" type="number" min="5" step="5" value="45"></label>
-            <label>Status<select id="status"><option value="draft">Draft</option><option value="published">Published</option></select></label>
+            <label>Workflow status<select id="status"><option value="draft">Draft</option><option value="review">Needs Review</option><option value="published">Published</option><option value="archived">Archived</option></select></label>
             <label>Featured image URL<input id="featured-image" type="url" placeholder="https://example.com/image.jpg"></label>
             <label class="checkbox-label"><input id="featured" type="checkbox"> Feature this study</label>
           </div>
@@ -70,7 +77,7 @@
           </div>
         </details>
 
-        <details class="builder-panel" open data-section="soap">
+        <details class="builder-panel" open>
           <summary>SOAP study</summary>
           <div class="builder-grid two-column panel-content">
             <label>SOAP Scripture<textarea id="soap-scripture" rows="4"></textarea></label>
@@ -90,30 +97,36 @@
         </details>
 
         <section id="leader-notes" class="leader-notes-section" aria-labelledby="leader-notes-title">
-          <div class="leader-notes-heading">
-            <div><p class="kicker">Private planning workspace</p><h2 id="leader-notes-title">🔒 Leader Notes</h2></div>
-            <span>Never included in the public study page</span>
-          </div>
+          <div class="leader-notes-heading"><div><p class="kicker">Private planning workspace</p><h2 id="leader-notes-title">🔒 Leader Notes</h2></div><span>Never included in the public study page</span></div>
           <p class="leader-intro">Use this area to prepare the lesson, guide discussion, and plan follow-up. These notes are saved with the draft and exported separately.</p>
           <div class="panel-content leader-grid">
-            <label>Icebreaker question<textarea id="leader-icebreaker" rows="3" placeholder="What opening question will help the group engage?"></textarea></label>
-            <label>Teaching emphasis<textarea id="leader-emphasis" rows="4" placeholder="What truth must the leader make clear?"></textarea></label>
-            <label>Common misconceptions<textarea id="leader-misconceptions" rows="4" placeholder="What confusion or harmful interpretation should be addressed?"></textarea></label>
-            <label>Facilitation and timing notes<textarea id="leader-timing" rows="4" placeholder="Opening 5 min, Scripture 10 min, discussion 20 min..."></textarea></label>
-            <label>Prayer focus<textarea id="leader-prayer-focus" rows="3" placeholder="What should the group pray about together?"></textarea></label>
-            <label>Additional Scriptures<textarea id="leader-scriptures" rows="3" placeholder="Enter one supporting passage per line."></textarea></label>
-            <label>Supplies or media needed<textarea id="leader-supplies" rows="3" placeholder="Handouts, video, whiteboard, game materials..."></textarea></label>
+            <label>Icebreaker question<textarea id="leader-icebreaker" rows="3"></textarea></label>
+            <label>Teaching emphasis<textarea id="leader-emphasis" rows="4"></textarea></label>
+            <label>Common misconceptions<textarea id="leader-misconceptions" rows="4"></textarea></label>
+            <label>Facilitation and timing notes<textarea id="leader-timing" rows="4"></textarea></label>
+            <label>Prayer focus<textarea id="leader-prayer-focus" rows="3"></textarea></label>
+            <label>Additional Scriptures<textarea id="leader-scriptures" rows="3"></textarea></label>
+            <label>Supplies or media needed<textarea id="leader-supplies" rows="3"></textarea></label>
             <label>Optional video or resource link<input id="leader-resource" type="url" placeholder="https://..."></label>
-            <label class="leader-full">Leader follow-up<textarea id="leader-follow-up" rows="3" placeholder="What should the leader check on during the week?"></textarea></label>
+            <label class="leader-full">Leader follow-up<textarea id="leader-follow-up" rows="3"></textarea></label>
           </div>
         </section>
 
-        <div id="export-actions" class="builder-actions">
-          <button class="button secondary" id="save-draft" type="button">Save Now</button>
-          <button class="button secondary" id="duplicate-draft" type="button">Duplicate</button>
-          <button class="button secondary danger" id="delete-draft" type="button">Delete</button>
-          <button class="button primary" id="export-study" type="button">Export Study</button>
-        </div>
+        <section id="publish-center" class="publish-center" aria-labelledby="publish-title">
+          <div class="publish-heading"><div><p class="kicker">Publish center</p><h2 id="publish-title">Prepare the release</h2></div><span id="publish-readiness">Not checked</span></div>
+          <div class="publish-steps" aria-label="Publishing workflow"><span>1. Validate</span><span>2. Preview</span><span>3. Version</span><span>4. Package</span></div>
+          <div id="validation-results" class="validation-results" aria-live="polite"><p>Run validation to check required content and publishing metadata.</p></div>
+          <div class="version-history"><div><strong>Version history</strong><small>Saved locally on this device</small></div><div id="version-list"></div></div>
+          <div class="builder-actions">
+            <button class="button secondary" id="validate-study" type="button">Validate Study</button>
+            <button class="button secondary" id="save-version" type="button">Create Version</button>
+            <button class="button secondary" id="save-draft" type="button">Save Now</button>
+            <button class="button secondary" id="duplicate-draft" type="button">Duplicate</button>
+            <button class="button secondary danger" id="delete-draft" type="button">Delete</button>
+            <button class="button primary" id="publish-package" type="button">Generate Publish Package</button>
+          </div>
+          <p class="package-note">The package includes the study HTML, public metadata, search entry, library entry, publish manifest, and private leader notes.</p>
+        </section>
       </form>
     </section>
 
@@ -123,7 +136,7 @@
     </aside>
   </section>
 </main>
-<footer class="ministry-footer"><small>© <span data-year></span> No Labels, Designed by God. Ministry Builder 4.2</small></footer>
+<footer class="ministry-footer"><small>© <span data-year></span> No Labels, Designed by God. Ministry Builder 4.3</small></footer>
 <script src="builder.js"></script>
 <script src="script.js"></script>
 </body>

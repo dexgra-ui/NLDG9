@@ -1,135 +1,65 @@
 (function(){
   const form=document.getElementById('study-builder-form');
   if(!form)return;
-
   const STORAGE_KEY='nldg-builder-drafts-v1';
+  const VERSION_KEY='nldg-builder-versions-v1';
   const fields=['template','ministry','title','study-id','series','category','book','scripture','audience','topics','difficulty','duration','status','featured-image','description','theme','big-idea','background','soap-scripture','observation','application','prayer','reflection','discussion','challenge','leader-icebreaker','leader-emphasis','leader-misconceptions','leader-timing','leader-prayer-focus','leader-scriptures','leader-supplies','leader-resource','leader-follow-up'];
   const $=id=>document.getElementById(id);
-  const split=value=>String(value||'').split(',').map(item=>item.trim()).filter(Boolean);
-  const lines=value=>String(value||'').split('\n').map(item=>item.trim()).filter(Boolean);
+  const split=value=>String(value||'').split(',').map(v=>v.trim()).filter(Boolean);
+  const lines=value=>String(value||'').split('\n').map(v=>v.trim()).filter(Boolean);
   const escapeHtml=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
-  const readDrafts=()=>{try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');}catch(error){return [];}};
-  const writeDrafts=drafts=>{try{localStorage.setItem(STORAGE_KEY,JSON.stringify(drafts));}catch(error){showStatus('Draft could not be saved on this device.',true);}};
+  const readJson=(key,fallback=[])=>{try{return JSON.parse(localStorage.getItem(key)||JSON.stringify(fallback));}catch{return fallback;}};
+  const writeJson=(key,value)=>{try{localStorage.setItem(key,JSON.stringify(value));return true;}catch{return false;}};
   const uid=()=>`draft-${Date.now()}-${Math.random().toString(36).slice(2,7)}`;
   const slug=value=>String(value||'').toLowerCase().normalize('NFKD').replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-').replace(/-+/g,'-');
-  const showStatus=(message,isError=false)=>{const el=$('save-status');el.textContent=message;el.classList.toggle('error',isError);};
-
+  const showStatus=(message,error=false)=>{const el=$('save-status');el.textContent=message;el.classList.toggle('error',error);};
   const templateDefaults={
     'bible-study':{ministry:'General Ministry',duration:45,difficulty:'Beginner'},
     'soap-study':{ministry:'General Ministry',duration:35,difficulty:'Beginner'},
-    'brotherhood':{ministry:'Brotherhood',category:'Brotherhood',audience:'Men’s Ministry, Small Groups',duration:45,difficulty:'All Levels'},
+    brotherhood:{ministry:'Brotherhood',category:'Brotherhood',audience:'Men’s Ministry, Small Groups',duration:45,difficulty:'All Levels'},
     'small-group':{ministry:'Small Groups',audience:'Adults, Small Groups',duration:60,difficulty:'All Levels'},
-    'youth':{ministry:'Youth Ministry',audience:'Youth, Small Groups',duration:40,difficulty:'Beginner'},
-    'children':{ministry:'Children’s Ministry',audience:'Children, Families',duration:25,difficulty:'Beginner'},
-    'devotional':{ministry:'General Ministry',audience:'Individuals',duration:15,difficulty:'Beginner'}
+    youth:{ministry:'Youth Ministry',audience:'Youth, Small Groups',duration:40,difficulty:'Beginner'},
+    children:{ministry:'Children’s Ministry',audience:'Children, Families',duration:25,difficulty:'Beginner'},
+    devotional:{ministry:'General Ministry',audience:'Individuals',duration:15,difficulty:'Beginner'}
   };
 
-  const collect=()=>{
-    const data={draftId:$('draft-id').value||uid(),featured:$('featured').checked};
-    fields.forEach(id=>data[id]=$(id).value.trim());
-    data.duration=Number(data.duration)||45;
-    data.updated=Date.now();
-    return data;
-  };
+  const collect=()=>{const data={draftId:$('draft-id').value||uid(),featured:$('featured').checked};fields.forEach(id=>data[id]=$(id).value.trim());data.duration=Number(data.duration)||45;data.updated=Date.now();return data;};
+  const save=(message='Saved.',silent=false)=>{const data=collect();if(!data.title){if(!silent)showStatus('Add a title before saving.',true);return null;}if(!data['study-id'])data['study-id']=slug(data.title);$('study-id').value=data['study-id'];const drafts=readJson(STORAGE_KEY);const i=drafts.findIndex(x=>x.draftId===data.draftId);if(i>=0)drafts[i]=data;else drafts.unshift(data);if(!writeJson(STORAGE_KEY,drafts)){showStatus('Draft could not be saved.',true);return null;}$('draft-id').value=data.draftId;showStatus(message);renderDraftList();renderDashboard();return data;};
+  const populate=data=>{$('draft-id').value=data?.draftId||uid();fields.forEach(id=>$(id).value=data?.[id]??(id==='duration'?45:''));$('template').value=data?.template||'bible-study';$('ministry').value=data?.ministry||'General Ministry';$('category').value=data?.category||'Identity in Christ';$('difficulty').value=data?.difficulty||'Beginner';$('status').value=data?.status||'draft';$('featured').checked=Boolean(data?.featured);renderPreview();renderDraftList();renderDashboard();renderVersions();showStatus(data?'Draft loaded.':'New study ready.');};
+  const renderDraftList=()=>{const drafts=readJson(STORAGE_KEY).sort((a,b)=>b.updated-a.updated);const active=$('draft-id').value;$('draft-list').innerHTML=drafts.length?drafts.map(item=>`<button type="button" class="draft-item ${item.draftId===active?'active':''}" data-draft-id="${escapeHtml(item.draftId)}"><strong>${escapeHtml(item.title||'Untitled Study')}</strong><small>${escapeHtml(item.status||'draft')} • ${new Date(item.updated).toLocaleDateString()}</small></button>`).join(''):'<p class="preview-empty">No content yet. Start your first study.</p>';};
+  const renderDashboard=()=>{const counts={draft:0,review:0,published:0,archived:0};readJson(STORAGE_KEY).forEach(item=>counts[item.status||'draft']=(counts[item.status||'draft']||0)+1);Object.keys(counts).forEach(key=>{const el=$(`count-${key}`);if(el)el.textContent=counts[key];});};
+  const renderPreview=()=>{const d=collect(),reflection=lines(d.reflection),discussion=lines(d.discussion),image=d['featured-image']?`<img class="preview-featured-image" src="${escapeHtml(d['featured-image'])}" alt="">`:'';$('editor-title').textContent=d.title||'New Bible Study';$('study-preview').innerHTML=`${image}<p class="kicker">${escapeHtml(d.series||d.ministry||'Bible Study')} • ${escapeHtml(d.category||'Category')}</p><h1>${escapeHtml(d.title||'Your study title')}</h1><p>${escapeHtml(d.description||'Your study description will appear here.')}</p><div class="preview-meta"><span>📖 ${escapeHtml(d.scripture||'Key Scripture')}</span><span>⏱ ${d.duration} minutes</span><span>${escapeHtml(d.difficulty)}</span></div>${d.theme?`<h2>Theme</h2><p>${escapeHtml(d.theme)}</p>`:''}${d['big-idea']?`<h2>Big Idea</h2><blockquote>${escapeHtml(d['big-idea'])}</blockquote>`:''}${d.background?`<h2>Background</h2><p>${escapeHtml(d.background).replaceAll('\n','<br>')}</p>`:''}<h2>SOAP Study</h2>${d['soap-scripture']?`<h3>Scripture</h3><p>${escapeHtml(d['soap-scripture']).replaceAll('\n','<br>')}</p>`:''}${d.observation?`<h3>Observation</h3><p>${escapeHtml(d.observation).replaceAll('\n','<br>')}</p>`:''}${d.application?`<h3>Application</h3><p>${escapeHtml(d.application).replaceAll('\n','<br>')}</p>`:''}${d.prayer?`<h3>Prayer</h3><p>${escapeHtml(d.prayer).replaceAll('\n','<br>')}</p>`:''}${reflection.length?`<h2>Reflection</h2><ol>${reflection.map(q=>`<li>${escapeHtml(q)}</li>`).join('')}</ol>`:''}${discussion.length?`<h2>Group Discussion</h2><ol>${discussion.map(q=>`<li>${escapeHtml(q)}</li>`).join('')}</ol>`:''}${d.challenge?`<h2>Weekly Challenge</h2><p>${escapeHtml(d.challenge)}</p>`:''}<p class="export-note">Live preview • ${escapeHtml(d.template)} template</p>`;};
 
-  const populate=data=>{
-    $('draft-id').value=data?.draftId||uid();
-    fields.forEach(id=>{$(id).value=data?.[id]??(id==='duration'?45:'');});
-    $('template').value=data?.template||'bible-study';
-    $('ministry').value=data?.ministry||'General Ministry';
-    $('category').value=data?.category||'Identity in Christ';
-    $('difficulty').value=data?.difficulty||'Beginner';
-    $('status').value=data?.status||'draft';
-    $('featured').checked=Boolean(data?.featured);
-    $('editor-title').textContent=data?.title||'New Bible Study';
-    renderPreview();
-    renderDraftList();
-    showStatus(data?'Draft loaded.':'New study ready.');
-  };
+  const studyObject=d=>({id:d['study-id'],type:'Study',template:d.template,ministry:d.ministry,title:d.title,description:d.description,url:`study-${d['study-id']}.html`,category:d.category,series:d.series,scripture:split(d.scripture),book:d.book,topics:split(d.topics),audience:split(d.audience),difficulty:d.difficulty,duration:Number(d.duration)||45,featuredImage:d['featured-image'],featured:Boolean(d.featured),status:d.status,updated:new Date(d.updated).toISOString()});
+  const leaderObject=d=>({studyId:d['study-id'],title:d.title,icebreaker:d['leader-icebreaker'],teachingEmphasis:d['leader-emphasis'],commonMisconceptions:d['leader-misconceptions'],facilitationTiming:d['leader-timing'],prayerFocus:d['leader-prayer-focus'],additionalScriptures:lines(d['leader-scriptures']),suppliesOrMedia:d['leader-supplies'],resourceLink:d['leader-resource'],followUp:d['leader-follow-up']});
+  const searchObject=d=>({title:d.title,type:'Bible Study',url:`study-${d['study-id']}.html`,description:d.description,keywords:[d.category,d.series,d.book,d.scripture,d.difficulty,...split(d.topics),...split(d.audience)].filter(Boolean)});
+  const manifestObject=d=>({engineVersion:'4.3',generatedAt:new Date().toISOString(),studyId:d['study-id'],files:[`study-${d['study-id']}.html`,`${d['study-id']}-metadata.json`,`${d['study-id']}-library-entry.json`,`${d['study-id']}-search-entry.json`,`${d['study-id']}-leader-notes.json`],integrationTargets:['study-data.js','search-data.js','Topic Explorer','Scripture Explorer','Study Hub'],instructions:'Add the HTML file to the site root, merge the library entry into study-data.js, and merge the search entry into search-data.js.'});
+  const studyHtml=d=>`<!doctype html>\n<html lang="en">\n<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#06122d"><meta name="description" content="${escapeHtml(d.description)}"><title>${escapeHtml(d.title)} | No Labels, Designed by God</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="study-experience.css"></head>\n<body data-study-page="${escapeHtml(d['study-id'])}" data-study-title="${escapeHtml(d.title)}"><header class="site-header"><a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God</strong><small>A family ministry built to last.</small></span></a><a class="button secondary" href="studies.html">Bible Studies</a></header><main><section class="page-hero study-detail-hero"><p class="kicker">${escapeHtml(d.series||d.ministry)} • ${escapeHtml(d.category)}</p><h1>${escapeHtml(d.title)}</h1><p class="lead">${escapeHtml(d.description)}</p><div class="study-meta"><span>📖 ${escapeHtml(d.scripture)}</span><span>⏱ ${d.duration} minutes</span><span>${escapeHtml(d.difficulty)}</span></div></section><article class="section study-content">${d['featured-image']?`<img src="${escapeHtml(d['featured-image'])}" alt="" style="width:100%;max-height:460px;object-fit:cover;border-radius:22px">`:''}<section><p class="kicker">Theme</p><h2>${escapeHtml(d.theme)}</h2></section><section><p class="kicker">Big Idea</p><blockquote>${escapeHtml(d['big-idea'])}</blockquote></section><section><p class="kicker">Background</p><h2>Understanding the passage</h2><p>${escapeHtml(d.background).replaceAll('\n','<br>')}</p></section><section><p class="kicker">SOAP Study</p><h2>Scripture</h2><p>${escapeHtml(d['soap-scripture']).replaceAll('\n','<br>')}</p><h2>Observation</h2><p>${escapeHtml(d.observation).replaceAll('\n','<br>')}</p><h2>Application</h2><p>${escapeHtml(d.application).replaceAll('\n','<br>')}</p><h2>Prayer</h2><p>${escapeHtml(d.prayer).replaceAll('\n','<br>')}</p></section><section><p class="kicker">Reflection</p><h2>Personal questions</h2><ol>${lines(d.reflection).map(q=>`<li>${escapeHtml(q)}</li>`).join('')}</ol></section><section><p class="kicker">Group Discussion</p><h2>Talk it through</h2><ol>${lines(d.discussion).map(q=>`<li>${escapeHtml(q)}</li>`).join('')}</ol></section><section><p class="kicker">Weekly Challenge</p><h2>Put the Word into practice</h2><p>${escapeHtml(d.challenge)}</p></section><p><a class="button secondary" href="studies.html">Return to Bible Study Hub</a></p></article></main><script src="study-data.js"></script><script src="study-experience.js"></script><script src="script.js"></script></body></html>`;
+  const download=(name,content,type='text/plain')=>{const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=name;document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),500);};
 
-  const save=(statusMessage='Saved.',silent=false)=>{
-    const data=collect();
-    if(!data.title){if(!silent)showStatus('Add a title before saving.',true);return null;}
-    if(!data['study-id'])data['study-id']=slug(data.title);
-    $('study-id').value=data['study-id'];
-    const drafts=readDrafts();
-    const index=drafts.findIndex(item=>item.draftId===data.draftId);
-    if(index>=0)drafts[index]=data;else drafts.unshift(data);
-    writeDrafts(drafts);
-    $('draft-id').value=data.draftId;
-    showStatus(statusMessage);
-    renderDraftList();
-    return data;
-  };
-
-  const renderDraftList=()=>{
-    const drafts=readDrafts().sort((a,b)=>b.updated-a.updated);
-    const active=$('draft-id').value;
-    $('draft-list').innerHTML=drafts.length?drafts.map(item=>`<button type="button" class="draft-item ${item.draftId===active?'active':''}" data-draft-id="${escapeHtml(item.draftId)}"><strong>${escapeHtml(item.title||'Untitled Study')}</strong><small>${escapeHtml(item.template||'bible-study')} • ${escapeHtml(item.status||'draft')} • ${new Date(item.updated).toLocaleDateString()}</small></button>`).join(''):'<p class="preview-empty">No drafts yet. Start your first study.</p>';
-  };
-
-  const renderPreview=()=>{
-    const data=collect();
-    const questions=lines(data.reflection);
-    const discussion=lines(data.discussion);
-    $('editor-title').textContent=data.title||'New Bible Study';
-    const image=data['featured-image']?`<img class="preview-featured-image" src="${escapeHtml(data['featured-image'])}" alt="">`:'';
-    $('study-preview').innerHTML=`${image}<p class="kicker">${escapeHtml(data.series||data.ministry||'Bible Study')} • ${escapeHtml(data.category||'Category')}</p><h1>${escapeHtml(data.title||'Your study title')}</h1><p>${escapeHtml(data.description||'Your study description will appear here.')}</p><div class="preview-meta"><span>📖 ${escapeHtml(data.scripture||'Key Scripture')}</span><span>⏱ ${data.duration||45} minutes</span><span>${escapeHtml(data.difficulty||'Beginner')}</span></div>${data.theme?`<h2>Theme</h2><p>${escapeHtml(data.theme)}</p>`:''}${data['big-idea']?`<h2>Big Idea</h2><blockquote>${escapeHtml(data['big-idea'])}</blockquote>`:''}${data.background?`<h2>Background</h2><p>${escapeHtml(data.background).replaceAll('\n','<br>')}</p>`:''}<h2>SOAP Study</h2>${data['soap-scripture']?`<h3>Scripture</h3><p>${escapeHtml(data['soap-scripture']).replaceAll('\n','<br>')}</p>`:''}${data.observation?`<h3>Observation</h3><p>${escapeHtml(data.observation).replaceAll('\n','<br>')}</p>`:''}${data.application?`<h3>Application</h3><p>${escapeHtml(data.application).replaceAll('\n','<br>')}</p>`:''}${data.prayer?`<h3>Prayer</h3><p>${escapeHtml(data.prayer).replaceAll('\n','<br>')}</p>`:''}${questions.length?`<h2>Reflection</h2><ol>${questions.map(q=>`<li>${escapeHtml(q)}</li>`).join('')}</ol>`:''}${discussion.length?`<h2>Group Discussion</h2><ol>${discussion.map(q=>`<li>${escapeHtml(q)}</li>`).join('')}</ol>`:''}${data.challenge?`<h2>Weekly Challenge</h2><p>${escapeHtml(data.challenge)}</p>`:''}<p class="export-note">Live preview • ${escapeHtml(data.template||'bible-study')} template</p>`;
-  };
-
-  const studyObject=data=>({
-    id:data['study-id'],type:'Study',template:data.template,ministry:data.ministry,title:data.title,description:data.description,url:`study-${data['study-id']}.html`,category:data.category,series:data.series,scripture:split(data.scripture),book:data.book,topics:split(data.topics),audience:split(data.audience),difficulty:data.difficulty,duration:Number(data.duration)||45,featuredImage:data['featured-image'],featured:Boolean(data.featured),status:data.status
-  });
-
-  const leaderObject=data=>({
-    studyId:data['study-id'],
-    title:data.title,
-    icebreaker:data['leader-icebreaker'],
-    teachingEmphasis:data['leader-emphasis'],
-    commonMisconceptions:data['leader-misconceptions'],
-    facilitationTiming:data['leader-timing'],
-    prayerFocus:data['leader-prayer-focus'],
-    additionalScriptures:lines(data['leader-scriptures']),
-    suppliesOrMedia:data['leader-supplies'],
-    resourceLink:data['leader-resource'],
-    followUp:data['leader-follow-up']
-  });
-
-  const studyHtml=data=>`<!doctype html>\n<html lang="en">\n<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#06122d"><meta name="description" content="${escapeHtml(data.description)}"><title>${escapeHtml(data.title)} | No Labels, Designed by God</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="study-experience.css"></head>\n<body data-study-page="${escapeHtml(data['study-id'])}" data-study-title="${escapeHtml(data.title)}">\n<header class="site-header"><a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God</strong><small>A family ministry built to last.</small></span></a><a class="button secondary" href="studies.html">Bible Studies</a></header>\n<main><section class="page-hero study-detail-hero"><p class="kicker">${escapeHtml(data.series||data.ministry)} • ${escapeHtml(data.category)}</p><h1>${escapeHtml(data.title)}</h1><p class="lead">${escapeHtml(data.description)}</p><div class="study-meta"><span>📖 ${escapeHtml(data.scripture)}</span><span>⏱ ${data.duration} minutes</span><span>${escapeHtml(data.difficulty)}</span></div></section><article class="section study-content">${data['featured-image']?`<img src="${escapeHtml(data['featured-image'])}" alt="" style="width:100%;max-height:460px;object-fit:cover;border-radius:22px">`:''}<section><p class="kicker">Theme</p><h2>${escapeHtml(data.theme)}</h2></section><section><p class="kicker">Big Idea</p><blockquote>${escapeHtml(data['big-idea'])}</blockquote></section><section><p class="kicker">Background</p><h2>Understanding the passage</h2><p>${escapeHtml(data.background).replaceAll('\n','<br>')}</p></section><section><p class="kicker">SOAP Study</p><h2>Scripture</h2><p>${escapeHtml(data['soap-scripture']).replaceAll('\n','<br>')}</p><h2>Observation</h2><p>${escapeHtml(data.observation).replaceAll('\n','<br>')}</p><h2>Application</h2><p>${escapeHtml(data.application).replaceAll('\n','<br>')}</p><h2>Prayer</h2><p>${escapeHtml(data.prayer).replaceAll('\n','<br>')}</p></section><section><p class="kicker">Reflection</p><h2>Personal questions</h2><ol>${lines(data.reflection).map(q=>`<li>${escapeHtml(q)}</li>`).join('')}</ol></section><section><p class="kicker">Group Discussion</p><h2>Talk it through</h2><ol>${lines(data.discussion).map(q=>`<li>${escapeHtml(q)}</li>`).join('')}</ol></section><section><p class="kicker">Weekly Challenge</p><h2>Put the Word into practice</h2><p>${escapeHtml(data.challenge)}</p></section><p><a class="button secondary" href="studies.html">Return to Bible Study Hub</a></p></article></main><script src="study-data.js"></script><script src="study-experience.js"></script><script src="script.js"></script></body></html>`;
-
-  const download=(filename,content,type='text/plain')=>{const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download=filename;document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),500);};
-
-  const applyTemplate=template=>{
-    const defaults=templateDefaults[template]||templateDefaults['bible-study'];
-    Object.entries(defaults).forEach(([id,value])=>{if($(id)&&!$(id).value.trim())$(id).value=value;});
-    if(template==='brotherhood')$('category').value='Brotherhood';
-    renderPreview();
-    scheduleAutoSave();
-  };
-
+  const validate=d=>{const checks=[['Title',d.title],['Study ID',d['study-id']&&/^[a-z0-9-]+$/.test(d['study-id'])],['Description',d.description],['Scripture',d.scripture],['Bible book',d.book],['Category',d.category],['Audience',d.audience],['Topics',d.topics],['Theme',d.theme],['Big Idea',d['big-idea']],['SOAP content',d['soap-scripture']&&d.observation&&d.application&&d.prayer],['Reflection questions',lines(d.reflection).length],['Featured image',d['featured-image']]];return checks.map(([label,pass])=>({label,pass:Boolean(pass)}));};
+  const runValidation=()=>{const d=collect(),results=validate(d),passed=results.filter(x=>x.pass).length,ready=passed===results.length;$('validation-results').innerHTML=`<div class="validation-summary"><strong>${passed}/${results.length} checks passed</strong><span>${ready?'Ready to package':'Complete the highlighted items'}</span></div><ul>${results.map(x=>`<li class="${x.pass?'pass':'fail'}">${x.pass?'✓':'!'} ${escapeHtml(x.label)}</li>`).join('')}</ul>`;$('publish-readiness').textContent=ready?'Ready':'Needs attention';$('publish-readiness').className=ready?'ready':'warning';return ready;};
+  const createVersion=()=>{const d=save('Version saved.');if(!d)return;const versions=readJson(VERSION_KEY,{}),list=versions[d.draftId]||[];list.unshift({version:list.length+1,created:Date.now(),data:d});versions[d.draftId]=list.slice(0,10);writeJson(VERSION_KEY,versions);renderVersions();};
+  const renderVersions=()=>{const list=(readJson(VERSION_KEY,{})[$('draft-id').value]||[]);$('version-list').innerHTML=list.length?list.map(v=>`<button type="button" data-version="${v.version}"><strong>Version ${v.version}</strong><small>${new Date(v.created).toLocaleString()}</small></button>`).join(''):'<small>No versions created yet.</small>';};
+  const generatePackage=()=>{const d=save('Preparing publish package.');if(!d)return;if(!runValidation()){showStatus('Validation must pass before packaging.',true);$('publish-center').scrollIntoView({behavior:'smooth'});return;}d.status='published';$('status').value='published';save('✓ Publish package generated');const metadata=studyObject(d);download(`study-${d['study-id']}.html`,studyHtml(d),'text/html');download(`${d['study-id']}-metadata.json`,JSON.stringify(metadata,null,2),'application/json');download(`${d['study-id']}-library-entry.json`,JSON.stringify(metadata,null,2),'application/json');download(`${d['study-id']}-search-entry.json`,JSON.stringify(searchObject(d),null,2),'application/json');download(`${d['study-id']}-leader-notes.json`,JSON.stringify(leaderObject(d),null,2),'application/json');download(`${d['study-id']}-publish-manifest.json`,JSON.stringify(manifestObject(d),null,2),'application/json');createVersion();};
   const formatScripture=value=>String(value||'').trim().replace(/\s*[-–—]\s*/g,'–').replace(/\s*:\s*/g,':').replace(/\s+/g,' ');
-
-  let autoSaveTimer;
-  const scheduleAutoSave=()=>{
-    clearTimeout(autoSaveTimer);
-    showStatus('Unsaved changes');
-    autoSaveTimer=setTimeout(()=>{const saved=save('✓ Auto-saved',true);if(!saved&&$('title').value.trim())showStatus('Could not auto-save.',true);},1200);
-  };
+  let autoSaveTimer;const scheduleAutoSave=()=>{clearTimeout(autoSaveTimer);showStatus('Unsaved changes');autoSaveTimer=setTimeout(()=>save('✓ Auto-saved',true),1200);};
 
   $('new-study').addEventListener('click',()=>populate(null));
   $('save-draft').addEventListener('click',()=>save('✓ Saved now'));
-  $('duplicate-draft').addEventListener('click',()=>{const data=collect();data.draftId=uid();data.title=data.title?`${data.title} Copy`:'Untitled Study Copy';data['study-id']=data['study-id']?`${data['study-id']}-copy`:'';populate(data);save('Duplicate created.');});
-  $('delete-draft').addEventListener('click',()=>{const id=$('draft-id').value;if(!id)return;writeDrafts(readDrafts().filter(item=>item.draftId!==id));populate(null);showStatus('Draft deleted.');});
-  $('export-study').addEventListener('click',()=>{const data=save('Study ready for export.');if(!data)return;download(`study-${data['study-id']}.html`,studyHtml(data),'text/html');download(`${data['study-id']}-metadata.json`,JSON.stringify(studyObject(data),null,2),'application/json');download(`${data['study-id']}-leader-notes.json`,JSON.stringify(leaderObject(data),null,2),'application/json');});
-  $('draft-list').addEventListener('click',event=>{const button=event.target.closest('[data-draft-id]');if(!button)return;populate(readDrafts().find(item=>item.draftId===button.dataset.draftId));});
-  $('template').addEventListener('change',event=>applyTemplate(event.target.value));
+  $('duplicate-draft').addEventListener('click',()=>{const d=collect();d.draftId=uid();d.title=d.title?`${d.title} Copy`:'Untitled Study Copy';d['study-id']=d['study-id']?`${d['study-id']}-copy`:'';d.status='draft';populate(d);save('Duplicate created.');});
+  $('delete-draft').addEventListener('click',()=>{const id=$('draft-id').value;writeJson(STORAGE_KEY,readJson(STORAGE_KEY).filter(x=>x.draftId!==id));populate(null);showStatus('Content deleted.');});
+  $('validate-study').addEventListener('click',runValidation);
+  $('save-version').addEventListener('click',createVersion);
+  $('publish-package').addEventListener('click',generatePackage);
+  $('draft-list').addEventListener('click',e=>{const b=e.target.closest('[data-draft-id]');if(b)populate(readJson(STORAGE_KEY).find(x=>x.draftId===b.dataset.draftId));});
+  $('version-list').addEventListener('click',e=>{const b=e.target.closest('[data-version]');if(!b)return;const item=(readJson(VERSION_KEY,{})[$('draft-id').value]||[]).find(v=>String(v.version)===b.dataset.version);if(item)populate(item.data);});
+  $('template').addEventListener('change',e=>{const defaults=templateDefaults[e.target.value]||templateDefaults['bible-study'];Object.entries(defaults).forEach(([id,value])=>{if($(id)&&!$(id).value.trim())$(id).value=value;});renderPreview();scheduleAutoSave();});
   $('format-scripture').addEventListener('click',()=>{$('scripture').value=formatScripture($('scripture').value);renderPreview();scheduleAutoSave();});
-  document.querySelectorAll('[data-preview-mode]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-preview-mode]').forEach(item=>item.classList.remove('active'));button.classList.add('active');$('preview-frame').className=`preview-frame ${button.dataset.previewMode}`;}));
-  document.querySelectorAll('[data-jump]').forEach(button=>button.addEventListener('click',()=>{const target=$(button.dataset.jump);if(!target)return;target.scrollIntoView({behavior:'smooth',block:'start'});if(button.dataset.jump==='leader-notes')target.classList.add('leader-highlight');setTimeout(()=>target.classList.remove('leader-highlight'),1400);}));
+  document.querySelectorAll('[data-preview-mode]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-preview-mode]').forEach(x=>x.classList.remove('active'));button.classList.add('active');$('preview-frame').className=`preview-frame ${button.dataset.previewMode}`;}));
+  document.querySelectorAll('[data-jump]').forEach(button=>button.addEventListener('click',()=>{const target=$(button.dataset.jump);if(target)target.scrollIntoView({behavior:'smooth',block:'start'});}));
+  form.addEventListener('input',e=>{if(e.target.id==='title'&&!$('study-id').value)$('study-id').value=slug(e.target.value);renderPreview();scheduleAutoSave();});
+  form.addEventListener('change',e=>{if(e.target.id!=='template'){renderPreview();scheduleAutoSave();}});
 
-  form.addEventListener('input',event=>{if(event.target.id==='title'&&!$('study-id').value)$('study-id').value=slug(event.target.value);renderPreview();scheduleAutoSave();});
-  form.addEventListener('change',event=>{if(event.target.id!=='template'){renderPreview();scheduleAutoSave();}});
-
-  const drafts=readDrafts();
-  populate(drafts[0]||null);
+  const drafts=readJson(STORAGE_KEY);populate(drafts[0]||null);
 })();

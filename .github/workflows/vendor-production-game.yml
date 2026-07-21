@@ -1,0 +1,50 @@
+name: Vendor production game
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - agent/production-game-fix
+    paths:
+      - .github/workflows/vendor-production-game.yml
+
+permissions:
+  contents: write
+
+jobs:
+  vendor-game:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out NLDG9
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Download approved native game
+        run: |
+          curl --fail --location --retry 3 \
+            https://raw.githubusercontent.com/dexgra-ui/NLDG9-Sprint-2/main/games.html \
+            --output games.html
+
+      - name: Verify downloaded game
+        run: |
+          grep -qi '<!doctype html' games.html
+          grep -q 'No Labels, Designed by God' games.html
+          grep -q 'GAME_REGISTRY' games.html
+          grep -q 'EMBEDDED_JEOPARDY' games.html
+          if grep -q 'api.github.com/repos/dexgra-ui/NLDG9-Sprint-2' games.html; then
+            echo 'Remote loader detected in vendored file.'
+            exit 1
+          fi
+
+      - name: Commit native production game
+        run: |
+          if git diff --quiet -- games.html; then
+            echo 'games.html is already current.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add games.html
+          git commit -m 'Vendor native Sprint 2 game engine'
+          git push origin HEAD:${{ github.ref_name }}

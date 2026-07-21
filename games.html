@@ -389,6 +389,34 @@ body:not(.playing) .scorebar {
 .custom-score-group button{min-width:44px}
 @media(max-width:700px){.active-team-label{width:100%;order:-1}.tournament-hostbar .btn{font-size:12px;padding:7px 8px}.scorebar .team{padding-top:31px}.rank-badge{top:5px}}
 
+
+
+/* NLDG 0.9.2 SCOREBAR SPACING FIX */
+body.playing {
+  --nldg-scorebar-height: 180px;
+}
+
+body.playing .scorebar {
+  height: auto !important;
+  min-height: 0;
+  max-height: min(42dvh, 320px);
+  overflow-y: auto;
+}
+
+body.playing #quizView,
+body.playing #memoryView,
+body.playing #jeopardyView {
+  inset: calc(max(8px, env(safe-area-inset-top)) + var(--nldg-scorebar-height) + 8px) 0 0 !important;
+}
+
+@media (orientation: landscape) and (max-height: 850px) {
+  body.playing #quizView,
+  body.playing #memoryView,
+  body.playing #jeopardyView {
+    inset: calc(max(6px, env(safe-area-inset-top)) + var(--nldg-scorebar-height) + 6px) 0 0 !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1176,5 +1204,28 @@ try{
 }
 
 </script>
+
+<script>
+/* NLDG 0.9.2 SCOREBAR HEIGHT OBSERVER */
+(() => {
+  const scorebar = document.getElementById('scorebar');
+  if (!scorebar || !('ResizeObserver' in window)) return;
+
+  const syncScorebarHeight = () => {
+    if (scorebar.classList.contains('hidden')) return;
+    const height = Math.ceil(scorebar.getBoundingClientRect().height);
+    document.documentElement.style.setProperty('--nldg-scorebar-height', `${height}px`);
+    document.body.style.setProperty('--nldg-scorebar-height', `${height}px`);
+  };
+
+  const observer = new ResizeObserver(syncScorebarHeight);
+  observer.observe(scorebar);
+  window.addEventListener('orientationchange', () => setTimeout(syncScorebarHeight, 250));
+  window.addEventListener('resize', syncScorebarHeight);
+  document.addEventListener('nldg:open-library', () => requestAnimationFrame(syncScorebarHeight));
+  requestAnimationFrame(syncScorebarHeight);
+})();
+</script>
+
 </body>
 </html>

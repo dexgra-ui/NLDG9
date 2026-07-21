@@ -1,32 +1,67 @@
-# NLDG Version 0.9.0 Native Sprint 2
+# No Labels, Designed by God
 
-This creates one replacement `games.html`. It does not require `sprint2.js`.
+Production website for the No Labels, Designed by God family ministry.
 
-## Easiest method on iPad or computer
+## Current release
 
-1. Open `build-v0.9.0.html` in a browser.
-2. Select the current `games.html` from the GitHub repository.
-3. Press **Build games-v0.9.0.html**.
-4. Rename the created file to `games.html`.
-5. Replace the repository's existing `games.html`.
+**Version 0.9.1 — Sprint 2 Production Stabilization**
 
-## Command-line method
+This release makes `NLDG9` the single production repository. The approved Bible game engine is stored directly in this repository instead of being fetched and rewritten in each visitor's browser.
 
-Place the current `games.html` beside `build_native_v0_9.py`, then run:
+## Ministry sections
 
-`python build_native_v0_9.py games.html games-v0.9.0.html`
+- Home
+- Bible Studies
+- Devotionals
+- Articles and Reflections
+- Resources
+- Podcast Center
+- Ministry News
+- Search
+- Our Ministry
+- Bible Game Center
 
-Rename the result to `games.html` and upload it.
+## Game Center
 
-## Sprint 2 features embedded natively
+The production game engine supports:
 
-- Next Team host control
-- Automatic or manual team rotation
-- Live rankings
-- Jeopardy advancement
-- Tournament summary
-- Round history
-- N shortcut for Next Team
-- Shift+R shortcut for Tournament Summary
+- Scripture or Suspicion
+- Who Am I?
+- Finish the Verse
+- Bible Jeopardy
+- Numbered Memory Match
+- Lightning Round
+- Preschool, Kids, Teens, Adults, and Family libraries
+- 1–8 teams
+- Next, Previous, and Skip Team controls
+- Custom scoring and Undo Score
+- Live rankings and final standings
+- Tournament rounds and replay
+- Presentation mode and keyboard controls
 
-The builder removes an earlier `<script src="sprint2.js"></script>` line automatically if present.
+## Production architecture
+
+`games.html` is a native, self-contained production file with its game data and engine embedded. It must not load the game source from GitHub at runtime.
+
+The workflow at `.github/workflows/vendor-production-game.yml` copies the approved native engine from the Sprint 2 development repository into this production branch and verifies that the copied file is not a remote loader.
+
+## Deployment
+
+The site is deployed through GitHub Pages from the production repository.
+
+Before merging a release:
+
+1. Open the homepage and every navigation link.
+2. Launch all six games.
+3. Test direct game links and presentation mode.
+4. Test 1, 2, 4, and 8 teams.
+5. Verify Next, Previous, Skip, Undo, rankings, final standings, and replay.
+6. Test portrait and landscape layouts on iPad and phone.
+7. Confirm the footer and Game Center show Version 0.9.1.
+
+## Repository roles
+
+- `NLDG9`: production website and deployed game
+- `NLDG9-Sprint-2`: development and source archive for the Sprint 2 game engine
+
+Production visitors should never depend on the development repository being available at runtime.

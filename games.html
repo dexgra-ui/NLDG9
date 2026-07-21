@@ -4,273 +4,1177 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#0b1d4d">
+  <link rel="manifest" href="manifest.json">
+  
   <title>Games | No Labels, Designed by God</title>
-  <style>
-    :root { color-scheme: dark; }
-    * { box-sizing: border-box; }
-    html,body {
-      margin:0;
-      min-height:100%;
-      font-family:Arial,Helvetica,sans-serif;
-      background:radial-gradient(circle at top,#1d4c9e 0,#081735 45%,#030713 100%);
-      color:#f7f9ff;
-    }
-    body {
-      min-height:100vh;
-      display:grid;
-      place-items:center;
-      padding:24px;
-    }
-    main {
-      width:min(760px,100%);
-      padding:32px;
-      border:2px solid rgba(255,211,78,.55);
-      border-radius:24px;
-      background:rgba(8,22,58,.96);
-      box-shadow:0 24px 70px rgba(0,0,0,.45);
-      text-align:center;
-    }
-    .spinner {
-      width:64px;height:64px;margin:0 auto 24px;
-      border:7px solid rgba(255,255,255,.18);
-      border-top-color:#ffd34e;border-radius:50%;
-      animation:spin .8s linear infinite;
-    }
-    @keyframes spin { to { transform:rotate(360deg); } }
-    h1 { margin:0 0 12px;font-size:clamp(30px,6vw,52px); }
-    p { line-height:1.55;color:#cbd5f3; }
-    button {
-      margin-top:14px;padding:13px 18px;border:0;border-radius:13px;
-      background:linear-gradient(#fff0a4,#ffd34e);color:#2d2400;
-      font:inherit;font-weight:900;cursor:pointer;
-    }
-    #error { display:none; }
-    #details {
-      margin-top:14px;
-      font-size:14px;
-      color:#fff0a4;
-      overflow-wrap:anywhere;
-    }
-  </style>
+<style>
+
+:root{
+  --bg:#040a1a;--panel:#0a1940;--panel2:#10275f;--blue:#174bd2;--blue2:#0d2f91;
+  --gold:#ffd34e;--gold2:#fff0a4;--text:#f7f9ff;--muted:#cbd5f3;
+  --green:#35c779;--red:#ef5c5c;--shadow:0 20px 60px rgba(0,0,0,.4)
+}
+*{box-sizing:border-box} html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:
+radial-gradient(circle at top,#1d4c9e 0,#081735 42%,#030713 100%);color:var(--text)}
+button,input,select{font:inherit}button{cursor:pointer}.hidden{display:none!important}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background:
+repeating-linear-gradient(120deg,transparent 0 34px,rgba(255,255,255,.08) 35px 36px)}
+.app{max-width:1600px;margin:auto;padding:12px;position:relative}
+.topbar{position:sticky;top:6px;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+background:linear-gradient(180deg,rgba(17,38,90,.98),rgba(5,16,44,.98));border:2px solid rgba(255,211,78,.5);
+border-radius:20px;padding:12px 16px;box-shadow:var(--shadow)}
+.brand{display:flex;align-items:center;gap:12px}.brand-icon{width:58px;height:58px;border-radius:17px;display:grid;place-items:center;
+background:linear-gradient(145deg,var(--gold),#fff3b2);font-size:34px}.brand h1{margin:0;font-size:clamp(21px,3vw,33px)}
+.brand small{color:var(--muted);font-weight:800}.top-actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:1px solid rgba(255,255,255,.15);border-radius:13px;padding:12px 16px;font-weight:900;background:#243b78;color:white}
+.btn:hover{filter:brightness(1.1);transform:translateY(-1px)}.btn.primary{background:linear-gradient(#2454da,#15389a)}
+.btn.gold{background:linear-gradient(var(--gold2),var(--gold));color:#2d2400}.btn.success{background:var(--green)}
+.btn.danger{background:var(--red)}.btn.xl{font-size:24px;padding:17px 28px}
+.view{animation:viewIn .2s ease-out}@keyframes viewIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.hero{text-align:center;padding:70px 12px 36px}.hero h2{font-size:clamp(48px,8vw,98px);line-height:.92;margin:0;text-transform:uppercase;
+text-shadow:0 6px 0 #071538,0 0 36px rgba(80,139,255,.55)}.hero p{font-size:clamp(20px,2.6vw,31px);color:var(--muted)}
+.verse{max-width:860px;margin:24px auto 0;padding:16px 20px;background:rgba(4,13,36,.7);border:1px solid rgba(255,211,78,.4);
+border-radius:18px;font-weight:800}.section-title{text-align:center;font-size:clamp(32px,4vw,54px);margin:24px 0}
+.card-grid{display:grid;grid-template-columns:repeat(3,minmax(220px,1fr));gap:18px}.menu-card{min-height:210px;text-align:left;
+border:2px solid rgba(255,255,255,.12);border-radius:24px;padding:23px;color:white;background:linear-gradient(160deg,#183776,#0a1b45);
+box-shadow:var(--shadow)}.menu-card:hover{transform:translateY(-4px);border-color:var(--gold)}.menu-card span{font-size:50px}
+.menu-card h4{font-size:28px;margin:10px 0}.menu-card p{font-size:18px;color:var(--muted);margin:0}
+.library-head{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}.toolbar{display:flex;gap:10px;flex-wrap:wrap}
+.toolbar label{background:#12295e;border-radius:14px;padding:11px 13px;font-weight:900}.toolbar select{margin-left:7px}
+.badge{display:inline-block;background:var(--gold);color:#2d2400;padding:8px 12px;border-radius:999px;font-weight:1000}
+.scorebar{position:sticky;top:94px;z-index:20;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:15px 0}
+.team{background:linear-gradient(#173570,#0a1b45);border:2px solid rgba(255,255,255,.14);border-radius:18px;padding:10px;text-align:center}
+.team.active{outline:4px solid var(--gold)}.team input{width:100%;text-align:center;background:transparent;color:white;border:0;
+border-bottom:2px solid #4c6eb6;font-size:20px;font-weight:1000}.score{font-size:46px;color:var(--gold);font-weight:1000}
+.score-actions{display:flex;justify-content:center;gap:7px}.score-actions button{border:0;border-radius:9px;padding:7px 12px;font-weight:1000}
+.game-panel{min-height:65vh;background:linear-gradient(180deg,rgba(8,22,58,.98),rgba(3,10,30,.98));border:2px solid rgba(255,255,255,.15);
+border-radius:26px;padding:22px;box-shadow:var(--shadow)}.game-panel.narrow{max-width:900px;margin:auto}.game-heading{display:flex;justify-content:space-between;
+align-items:center;gap:12px;flex-wrap:wrap}.game-heading h3{font-size:clamp(32px,4vw,56px);margin:0}
+.progress{height:16px;border-radius:999px;background:#162856;overflow:hidden;margin:14px 0}.progress span{display:block;height:100%;
+background:linear-gradient(90deg,var(--gold),#ff9f2e);width:0}.question{min-height:180px;display:grid;place-items:center;text-align:center;
+font-size:clamp(35px,5vw,68px);font-weight:1000;line-height:1.1;padding:20px}.answer-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.answer{min-height:108px;border:2px solid rgba(255,255,255,.12);border-radius:18px;padding:22px;background:linear-gradient(#2855bf,#133584);
+color:white;font-size:clamp(23px,3vw,37px);font-weight:1000}.answer.selected{outline:5px solid var(--gold)}
+.answer.correct{background:linear-gradient(#43d588,#20965b)}.answer.wrong{background:linear-gradient(#f77272,#ba3030)}
+.feedback{text-align:center;min-height:45px;margin:14px 0;color:var(--gold);font-size:clamp(24px,3vw,38px);font-weight:1000}
+.host-controls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.timer{width:92px;height:92px;border-radius:50%;display:grid;
+place-items:center;background:radial-gradient(var(--gold2),var(--gold));color:#2b2200;font-size:38px;font-weight:1000}
+.memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.memory-card{min-height:130px;border:2px solid rgba(255,255,255,.15);
+border-radius:18px;background:linear-gradient(#315de2,#122e89);color:var(--gold);font-size:44px;font-weight:1000}
+.memory-card.open,.memory-card.matched{background:white;color:#111d3e;outline:4px solid var(--gold)}.memory-card.matched{background:#c6f1d8}
+.jeopardy-board{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.jcell{min-height:94px;border:2px solid rgba(255,255,255,.1);
+border-radius:12px;background:linear-gradient(#174dd4,#0d2e91);color:var(--gold);font-size:29px;font-weight:1000;text-shadow:0 3px 8px #000}
+.jcell.header{background:linear-gradient(#151c4f,#070d28);color:white;font-size:18px;line-height:1.15}.jcell.used{background:#111833;color:#5f6b8e}
+.overlay{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:clamp(16px,4vw,50px);background:
+radial-gradient(circle at 50% 18%,rgba(52,103,225,.75),transparent 38%),linear-gradient(#081b48,#030a1f)}
+.overlay-card{width:min(1200px,96vw);min-height:min(700px,92vh);display:flex;flex-direction:column;justify-content:center;gap:20px;
+border:3px solid rgba(255,211,78,.45);border-radius:30px;padding:clamp(24px,5vw,62px);background:linear-gradient(#091c49,#030a1d);
+box-shadow:0 30px 90px rgba(0,0,0,.6)}.overlay-card.center{text-align:center;align-items:center}.jeopardy-meta{text-align:center;color:var(--gold);
+font-size:clamp(24px,3.4vw,46px);font-weight:1000;text-transform:uppercase}.overlay-question{text-align:center;font-size:clamp(42px,6vw,86px);
+font-weight:1000;line-height:1.08}.overlay-answer{text-align:center;color:var(--gold);font-size:clamp(38px,5vw,70px);font-weight:1000;
+padding:20px;border-radius:16px;background:#111f45}.winner-icon{font-size:100px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-grid label{display:flex;flex-direction:column;gap:7px;font-weight:900}.form-grid input,.form-grid select{padding:12px;border-radius:10px;border:0}
+.status-box{margin:20px 0;padding:16px;border-radius:14px;background:#132b61;font-size:20px;font-weight:800}
+.intro{position:fixed;inset:0;z-index:1500;display:grid;place-items:center;text-align:center;padding:20px;background:
+radial-gradient(circle,#2355b5,#07122e 65%,#020612)}.intro-card h1{font-size:clamp(52px,10vw,116px);line-height:.88;margin:0;text-transform:uppercase;
+text-shadow:0 8px 0 #071538,0 0 50px #477ff0}.intro-card p{font-size:clamp(22px,3vw,36px);color:var(--gold)}.intro-icon{font-size:78px}
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:2000;overflow:hidden}.confetti i{position:absolute;font-style:normal;animation:fall 1.5s linear forwards}
+@keyframes fall{from{transform:translateY(-10vh) rotate(0)}to{transform:translateY(110vh) rotate(720deg)}}
+@media(max-width:900px){.card-grid{grid-template-columns:1fr}.answer-grid{grid-template-columns:1fr}.memory-grid{grid-template-columns:repeat(3,1fr)}
+.jeopardy-board{grid-template-columns:repeat(5,minmax(60px,1fr));gap:6px}.jcell{font-size:20px;min-height:72px}.jcell.header{font-size:13px}
+.form-grid{grid-template-columns:1fr}.topbar,.scorebar{position:static}.game-panel{padding:14px}}
+
+.website-link{display:inline-flex;align-items:center;text-decoration:none}
+
+
+/* V4.3 game engine and direct-launch fix */
+body.playing{overflow:hidden;overscroll-behavior:none}
+body.playing:before{display:none}
+body.playing .app{width:100%;max-width:none;height:100dvh;margin:0;padding:0}
+body.playing .topbar{display:none}
+body.playing .scorebar{position:fixed;z-index:100;top:max(8px,env(safe-area-inset-top));left:max(10px,env(safe-area-inset-left));right:max(10px,env(safe-area-inset-right));height:96px;margin:0;grid-template-columns:1fr 1fr;gap:10px;background:rgba(3,10,30,.95);border-radius:18px;padding:8px;box-shadow:0 12px 34px rgba(0,0,0,.42)}
+body.playing .team{min-width:0;padding:5px 9px;border-radius:13px}
+body.playing .team input{font-size:15px}
+body.playing .score{font-size:30px;line-height:1}
+body.playing .score-actions button{padding:3px 10px}
+body.playing main{height:100dvh}
+body.playing #quizView,body.playing #memoryView,body.playing #jeopardyView{position:fixed;z-index:50;inset:calc(max(8px,env(safe-area-inset-top)) + 104px) 0 0;overflow:auto;-webkit-overflow-scrolling:touch;padding:0 max(10px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left));background:radial-gradient(circle at 50% 0,#153c88 0,#071735 42%,#030713 100%)}
+body.playing .game-panel{width:min(1500px,100%);min-height:100%;margin:0 auto;border-radius:22px 22px 0 0;padding:clamp(14px,2.2vw,28px);display:flex;flex-direction:column}
+body.playing .game-heading{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;flex:0 0 auto}
+body.playing .game-heading h3{min-width:0;text-align:center;font-size:clamp(25px,3.2vw,48px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.back-library{background:#152d66;white-space:nowrap}
+body.playing .progress{flex:0 0 auto;margin:10px 0}
+body.playing .question{min-height:0;flex:1 1 auto;padding:clamp(10px,2vw,24px);font-size:clamp(28px,4.1vw,62px);line-height:1.08;overflow-wrap:anywhere;word-break:normal}
+body.playing .answer-grid{flex:0 0 auto;grid-template-columns:1fr 1fr;gap:12px}
+body.playing .answer{min-height:82px;padding:14px;font-size:clamp(20px,2.6vw,34px);line-height:1.08;overflow-wrap:anywhere}
+body.playing .feedback{flex:0 0 auto;min-height:38px;margin:9px 0;font-size:clamp(19px,2.4vw,32px)}
+body.playing .host-controls{flex:0 0 auto}
+body.playing .memory-grid,body.playing .jeopardy-board{flex:1 1 auto}
+body.playing .board-panel{overflow:auto}
+@media (orientation:landscape) and (max-height:850px){body.playing .scorebar{height:78px}body.playing #quizView,body.playing #memoryView,body.playing #jeopardyView{inset:calc(max(6px,env(safe-area-inset-top)) + 84px) 0 0}body.playing .team input{font-size:13px}body.playing .score{font-size:24px}body.playing .score-actions{display:none}body.playing .game-heading h3{font-size:clamp(22px,2.8vw,40px)}body.playing .timer{width:60px;height:60px;font-size:27px}body.playing .question{font-size:clamp(27px,3.7vw,54px);padding:8px 14px}body.playing .answer{min-height:70px;padding:10px;font-size:clamp(19px,2.4vw,31px)}body.playing .feedback{margin:5px 0}}
+@media(max-width:700px){body.playing .scorebar{height:84px}body.playing #quizView,body.playing #memoryView,body.playing #jeopardyView{inset:calc(max(6px,env(safe-area-inset-top)) + 90px) 0 0}body.playing .game-heading{grid-template-columns:auto 1fr}body.playing .game-heading .timer,body.playing .game-heading #resetBoardBtn{grid-column:1/-1;justify-self:center}.back-library{padding:8px 10px;font-size:14px}body.playing .answer-grid{grid-template-columns:1fr}body.playing .question{font-size:clamp(25px,7.2vw,42px)}}
+
+
+/* V4.3 compact iPad spacing */
+html, body {
+  min-height: 100%;
+}
+
+.app {
+  min-height: 100dvh;
+}
+
+main {
+  display: block;
+}
+
+.view {
+  min-height: 0;
+}
+
+/* Home screen: remove oversized empty zones */
+#home {
+  padding: 8px 0 24px;
+}
+
+#home .hero {
+  min-height: 0;
+  padding: clamp(20px, 3vw, 42px) clamp(14px, 3vw, 34px);
+  margin-bottom: 14px;
+}
+
+#home .hero h2 {
+  margin-bottom: 10px;
+}
+
+#home .hero p {
+  margin: 0 auto 14px;
+}
+
+#home .verse {
+  margin-top: 14px;
+}
+
+#home .section-title {
+  margin: 18px 0 14px;
+}
+
+#home .card-grid {
+  margin-top: 0;
+}
+
+/* Group cards fit cleanly on one landscape screen */
+#home .menu-card {
+  min-height: 150px;
+  padding: 18px;
+}
+
+#home .menu-card span {
+  margin-bottom: 6px;
+}
+
+#home .menu-card h4 {
+  margin: 4px 0;
+}
+
+/* Library should begin immediately under the header/score area */
+#library {
+  padding: 12px 0 28px;
+}
+
+#library .library-head {
+  margin: 0 auto 14px;
+  padding-top: 0;
+}
+
+#library .section-title {
+  margin: 4px 0 8px;
+}
+
+#library .toolbar {
+  margin: 0;
+}
+
+#library .card-grid {
+  margin-top: 12px;
+}
+
+#library .menu-card {
+  min-height: 112px;
+}
+
+/* Score bar should never become a mostly empty screen */
+.scorebar {
+  margin: 10px 0;
+}
+
+body:not(.playing) .scorebar {
+  position: static;
+  min-height: 0;
+}
+
+/* iPad landscape */
+@media (orientation: landscape) and (min-width: 900px) {
+  .app {
+    padding: 8px 12px 14px;
+  }
+
+  .topbar {
+    min-height: 68px;
+    padding: 8px 12px;
+  }
+
+  .brand h1 {
+    font-size: clamp(18px, 1.8vw, 26px);
+  }
+
+  .brand small {
+    font-size: 12px;
+  }
+
+  #home {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  #home .hero {
+    padding: 18px 26px;
+  }
+
+  #home .hero h2 {
+    font-size: clamp(38px, 4.3vw, 62px);
+    line-height: 1;
+  }
+
+  #home .hero p {
+    font-size: clamp(18px, 1.7vw, 25px);
+  }
+
+  #home .verse {
+    padding: 12px 18px;
+    font-size: clamp(16px, 1.5vw, 22px);
+  }
+
+  #home .section-title {
+    font-size: clamp(30px, 3vw, 44px);
+  }
+
+  #home .card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  #home .menu-card {
+    min-height: 135px;
+  }
+
+  #library .library-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  #library .section-title {
+    font-size: clamp(32px, 3.4vw, 50px);
+  }
+
+  #library .card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  #library .menu-card {
+    min-height: 120px;
+  }
+
+  .scorebar {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .team {
+    padding: 10px 16px;
+  }
+}
+
+/* Short landscape screens */
+@media (orientation: landscape) and (max-height: 760px) {
+  .topbar {
+    position: static;
+  }
+
+  #home .hero {
+    padding: 12px 20px;
+    margin-bottom: 8px;
+  }
+
+  #home .hero h2 {
+    font-size: clamp(32px, 4vw, 52px);
+  }
+
+  #home .hero p {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  #home .verse {
+    margin-top: 8px;
+    padding: 9px 14px;
+  }
+
+  #home .section-title {
+    margin: 10px 0;
+  }
+
+  #home .menu-card {
+    min-height: 110px;
+    padding: 12px;
+  }
+
+  #library {
+    padding-top: 6px;
+  }
+
+  #library .menu-card {
+    min-height: 96px;
+    padding: 12px 16px;
+  }
+
+  #library .library-head {
+    margin-bottom: 8px;
+  }
+}
+
+
+.presentation-note{position:fixed;left:50%;bottom:24px;z-index:9999;display:flex;gap:12px;align-items:center;transform:translate(-50%,30px);opacity:0;padding:14px 18px;border:1px solid rgba(255,255,255,.18);border-radius:14px;background:#06122d;color:#fff;box-shadow:0 16px 50px rgba(0,0,0,.45);transition:.35s ease}
+.presentation-note.show{transform:translate(-50%,0);opacity:1}.presentation-note span{opacity:.72}
+.presentation-ready .app{max-width:none}
+@media(max-width:700px){.presentation-note{width:calc(100% - 28px);align-items:flex-start;flex-direction:column}}
+.engine-status{display:inline-flex;margin:.45rem 0 1rem;padding:.5rem .75rem;border-radius:999px;background:rgba(54,211,153,.12);color:#8df0c3;font-size:.78rem;font-weight:800;letter-spacing:.04em}
+.menu-card{min-height:150px;touch-action:manipulation}
+.menu-card:focus-visible,.answer:focus-visible,.jcell:focus-visible{outline:4px solid #ffd55f;outline-offset:3px}
+@media(max-width:700px){.menu-card{min-height:132px}}
+
+.dynamic-scoreboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;width:100%}
+.scorebar{display:block}.scorebar .team{border-top:5px solid var(--team-color,#2f6fed)}
+.scorebar .team.active{outline:none;box-shadow:0 0 0 3px var(--team-color,#2f6fed)}
+.tournament-setup-panel{max-width:1120px;margin:auto}.setup-heading{display:flex;justify-content:space-between;gap:24px}
+.setup-badge{padding:10px 16px;border:1px solid rgba(255,213,95,.45);border-radius:999px;color:#ffd55f;font-weight:900}
+.tournament-options{grid-template-columns:repeat(4,minmax(150px,1fr))}
+.team-editor-heading{display:flex;justify-content:space-between;align-items:end;margin:30px 0 12px}
+.team-name-grid{display:grid;grid-template-columns:repeat(2,minmax(220px,1fr));gap:14px}
+.team-name-field{padding:14px;border:1px solid rgba(255,255,255,.14);border-left:6px solid var(--team-color);border-radius:14px}
+.team-name-field span{display:block;margin-bottom:8px;font-weight:900}.team-name-field input{width:100%}
+.scoreboard-preview{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+.preview-team{display:flex;justify-content:space-between;padding:14px;border-radius:12px;border-top:5px solid var(--team-color);background:rgba(255,255,255,.04)}
+.jeopardy-award-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;width:100%}
+@media(max-width:850px){.tournament-options{grid-template-columns:repeat(2,1fr)}.team-name-grid{grid-template-columns:1fr}.setup-heading{flex-direction:column}}
+@media(max-width:520px){.tournament-options{grid-template-columns:1fr}.dynamic-scoreboard{grid-template-columns:1fr 1fr}}
+
+/* Version 0.9 Sprint 2: shared tournament controls, rankings, and summary */
+.scorebar-shell{display:grid;gap:10px}
+.tournament-hostbar{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:8px;border-radius:14px;background:rgba(4,10,26,.94);border:1px solid rgba(255,255,255,.12)}
+.tournament-hostbar .btn{padding:8px 11px;font-size:14px}
+.active-team-label{min-width:180px;text-align:center;font-weight:1000;color:var(--gold)}
+.rank-badge{position:absolute;top:7px;left:8px;display:grid;place-items:center;min-width:28px;height:28px;padding:0 7px;border-radius:999px;background:#07122e;color:var(--gold);font-weight:1000;border:1px solid rgba(255,211,78,.5)}
+.scorebar .team{position:relative;padding-top:35px}
+.leaderboard-list{display:grid;gap:10px;width:min(760px,100%);margin:0 auto}
+.leaderboard-row{display:grid;grid-template-columns:54px 1fr auto;align-items:center;gap:12px;padding:14px 18px;border-radius:14px;background:#10275f;border-left:7px solid var(--team-color)}
+.leaderboard-row strong{font-size:clamp(20px,3vw,34px)}
+.leaderboard-row span:last-child{font-size:clamp(24px,4vw,42px);font-weight:1000;color:var(--gold)}
+.summary-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.custom-score-group{display:flex;gap:6px;align-items:center;justify-content:center;flex-wrap:wrap}
+.custom-score-group button{min-width:44px}
+@media(max-width:700px){.active-team-label{width:100%;order:-1}.tournament-hostbar .btn{font-size:12px;padding:7px 8px}.scorebar .team{padding-top:31px}.rank-badge{top:5px}}
+
+</style>
 </head>
 <body>
-  <main id="loading">
-    <div class="spinner" aria-hidden="true"></div>
-    <h1>Brotherhood Bible Games</h1>
-    <p>Loading Sprint 2.1…</p>
-  </main>
+  <div id="intro" class="intro">
+    <div class="intro-card">
+      <div class="intro-icon">📖</div>
+      <h1>No Labels<br>Designed by God</h1>
+      <p>Interactive Bible Games for Every Generation</p>
+      <button class="btn gold xl" id="startShowBtn">Start the Show ▶</button>
+    </div>
+  </div>
 
-  <main id="error">
-    <h1>Unable to load the game</h1>
-    <p>The game source did not load within 12 seconds.</p>
-    <button type="button" onclick="location.reload()">Try Again</button>
-    <div id="details"></div>
-  </main>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">📖</div>
+        <div>
+          <h1>No Labels, Designed by God</h1>
+          <small>Interactive Bible Games for Every Generation</small>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button class="btn" id="soundBtn">🔊 Sound: On</button>
+        <button class="btn" id="fullscreenBtn">⛶ Fullscreen</button>
+        <button class="btn danger" id="resetScoresBtn">↺ Reset Scores</button>
+        <button class="btn primary" data-nav="home">🏠 Game Home</button>
+        <a class="btn website-link" href="index.html">🌐 Ministry Site</a>
+      </div>
+    </header>
 
+    <section id="scorebar" class="scorebar hidden" aria-label="Tournament scoreboard">
+      <div class="scorebar-shell">
+        <div id="dynamicScoreboard" class="dynamic-scoreboard"></div>
+        <div id="tournamentHostbar" class="tournament-hostbar">
+          <button id="previousTeamBtn" class="btn" type="button">← Previous</button>
+          <button id="nextTeamBtn" class="btn primary" type="button">Next Team →</button>
+          <button id="skipTeamBtn" class="btn" type="button">Skip Team</button>
+          <span id="activeTeamLabel" class="active-team-label">Active: Team Grace</span>
+          <button id="undoScoreBtn" class="btn" type="button" disabled>↶ Undo Score</button>
+          <button id="leaderboardBtn" class="btn gold" type="button">🏆 Rankings</button>
+          <button id="endTournamentQuickBtn" class="btn danger hidden" type="button">End Tournament</button>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section id="home" class="view">
+        <div class="hero">
+          <h2>No Labels.<br>Designed by God.</h2>
+          <p>One Bible game platform for children, teens, adults, families, and the whole church.</p>
+          <div class="verse">“For we are God’s handiwork, created in Christ Jesus to do good works.” — Ephesians 2:10</div>
+        </div>
+
+        <h3 class="section-title">Choose Your Group</h3>
+        <div class="card-grid">
+          <button class="menu-card" data-group="preschool"><span>👶</span><h4>Preschool</h4><p>Ages 4–6</p></button>
+          <button class="menu-card" data-group="kids"><span>🧒</span><h4>Kids</h4><p>Ages 7–12</p></button>
+          <button class="menu-card" data-group="teens"><span>🎓</span><h4>Teens</h4><p>Deeper challenge</p></button>
+          <button class="menu-card" data-group="adults"><span>👨🏾</span><h4>Adults</h4><p>Bible study level</p></button>
+          <button class="menu-card" data-group="family"><span>👨‍👩‍👧</span><h4>Family Play</h4><p>Every generation</p></button>
+          <button class="menu-card" id="openTournamentBtn"><span>🏆</span><h4>Church Tournament</h4><p>Multi-round competition</p></button>
+        </div>
+      </section>
+
+      <section id="library" class="view hidden">
+        <div class="library-head">
+          <div>
+            <div id="tournamentBadge" class="badge hidden">🏆 Tournament Active</div>
+            <h3 class="section-title"><span id="groupLabel">Kids</span> Game Library</h3>
+          </div>
+          <div class="toolbar">
+            <label>Questions
+              <select id="roundLength">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="15">15</option>
+              </select>
+            </label>
+            <label><input type="checkbox" id="hostMode"> Host Reveal Mode</label>
+          </div>
+        </div>
+        <div class="card-grid">
+          <button class="menu-card" data-game="suspicion"><span>🧐</span><h4>Scripture or Suspicion</h4><p>Truth or misconception</p></button>
+          <button class="menu-card" data-game="jeopardy"><span>💰</span><h4>Bible Jeopardy</h4><p>Category game board</p></button>
+          <button class="menu-card" data-game="quiz"><span>🦁</span><h4>Who Am I?</h4><p>People, places, and events</p></button>
+          <button class="menu-card" data-game="finish"><span>📜</span><h4>Finish the Verse</h4><p>Scripture memory</p></button>
+          <button class="menu-card" data-game="memory"><span>🧠</span><h4>Numbered Memory Match</h4><p>Call the card numbers</p></button>
+          <button class="menu-card" data-game="lightning"><span>⚡</span><h4>Lightning Round</h4><p>15-second timer</p></button>
+        </div>
+      </section>
+
+      <section id="quizView" class="view hidden">
+        <div class="game-panel">
+          <div class="game-heading">
+            <button class="btn back-library" data-back-library>← Game Library</button>
+            <h3 id="quizTitle">Quiz</h3>
+            <div id="quizTimer" class="timer hidden">15</div>
+          </div>
+          <div class="progress"><span id="quizProgress"></span></div>
+          <div id="quizQuestion" class="question"></div>
+          <div id="quizAnswers" class="answer-grid"></div>
+          <div id="quizFeedback" class="feedback"></div>
+          <div class="host-controls">
+            <button id="quizRevealBtn" class="btn gold hidden">Reveal Answer</button>
+            <button id="quizNextBtn" class="btn primary hidden">Next Question ➜</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="memoryView" class="view hidden">
+        <div class="game-panel">
+          <div class="game-heading">
+            <button class="btn back-library" data-back-library>← Game Library</button>
+            <h3>Numbered Memory Match</h3>
+          </div>
+          <div id="memoryGrid" class="memory-grid"></div>
+          <div id="memoryFeedback" class="feedback"></div>
+        </div>
+      </section>
+
+      <section id="jeopardyView" class="view hidden">
+        <div class="game-panel board-panel">
+          <div class="game-heading">
+            <button class="btn back-library" data-back-library>← Game Library</button>
+            <h3>Bible Jeopardy</h3>
+            <button id="resetBoardBtn" class="btn">Reset Board</button>
+          </div>
+          <div id="jeopardyBoard" class="jeopardy-board"></div>
+        </div>
+      </section>
+
+      <section id="tournamentView" class="view hidden">
+<div class="game-panel tournament-setup-panel">
+  <div class="setup-heading">
+    <div><div class="eyebrow">Version 0.9 • Sprint 2</div><h3 class="section-title">Church Tournament Setup</h3>
+    <p>Create one to eight teams. This setup controls the scoreboard used by every game.</p></div>
+    <div class="setup-badge">🏆 Multi-Team</div>
+  </div>
+  <div class="form-grid tournament-options">
+    <label>Number of Teams<select id="teamCount"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option></select></label>
+    <label>Audience<select id="tournamentGroup">
+      <option value="preschool">Preschool</option><option value="kids" selected>Kids</option>
+      <option value="teens">Teens</option><option value="adults">Adults</option><option value="family">Family</option>
+    </select></label>
+    <label>Rounds<select id="tournamentRounds"><option value="3">3</option><option value="5" selected>5</option><option value="7">7</option></select></label>
+    <label>First Team<select id="firstTeamMode"><option value="first">Team 1</option><option value="random">Choose Randomly</option></select></label>
+  </div>
+  <div class="team-editor-heading"><h4>Team Names</h4><span>Names update the live scoreboard.</span></div>
+  <div id="teamNames" class="team-name-grid"></div>
+  <div class="scoreboard-preview-wrap"><h4>Scoreboard Preview</h4><div id="scoreboardPreview" class="scoreboard-preview"></div></div>
+  <div id="tournamentStatus" class="status-box">No tournament is active.</div>
+  <div class="host-controls"><button id="beginTournamentBtn" class="btn success xl">▶ Start Tournament</button>
+  <button id="endTournamentBtn" class="btn danger">End Tournament</button></div>
+</div>
+</section>
+    </main>
+  </div>
+
+  <div id="jeopardyQuestionOverlay" class="overlay hidden">
+    <div class="overlay-card">
+      <div id="jeopardyMeta" class="jeopardy-meta"></div>
+      <div id="jeopardyQuestion" class="overlay-question"></div>
+      <div id="jeopardyAnswer" class="overlay-answer hidden"></div>
+      <div id="jeopardyFeedback" class="feedback"></div>
+      <div class="host-controls">
+        <button id="revealJeopardyBtn" class="btn gold">Reveal Answer</button>
+        <div id="jeopardyAwardTeams" class="jeopardy-award-grid hidden"></div>
+        <button id="returnBoardBtn" class="btn primary hidden">Return to Board</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="leaderboardOverlay" class="overlay hidden">
+    <div class="overlay-card center">
+      <div class="winner-icon">🏆</div>
+      <h2>Live Rankings</h2>
+      <div id="leaderboardList" class="leaderboard-list"></div>
+      <button id="closeLeaderboardBtn" class="btn primary">Return to Game</button>
+    </div>
+  </div>
+
+  <div id="winnerOverlay" class="overlay hidden">
+    <div class="overlay-card center">
+      <div class="winner-icon">🏆</div>
+      <h2 id="winnerTitle">Tournament Champion</h2>
+      <p id="winnerText"></p>
+      <div id="finalStandings" class="leaderboard-list"></div>
+      <div class="summary-actions">
+        <button id="playAgainBtn" class="btn gold xl">Play Again</button>
+        <button id="closeWinnerBtn" class="btn primary xl">Return Home</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="confetti" class="confetti"></div>
+
+  
 <script>
-(async function loadSprint21(){
-  const apiUrl =
-    "https://api.github.com/repos/dexgra-ui/NLDG9-Sprint-2/contents/games.html?ref=main";
+const EMBEDDED_QUESTIONS={"preschool": {"label": "Preschool", "quiz": [["Who built the ark?", "Noah", ["Noah", "Paul", "Peter"]], ["Who defeated Goliath?", "David", ["David", "Moses", "Jonah"]], ["Who was born in Bethlehem?", "Jesus", ["Jesus", "Noah", "Daniel"]], ["Who was swallowed by a great fish?", "Jonah", ["Jonah", "Joseph", "John"]], ["Who was in the lions' den?", "Daniel", ["Daniel", "David", "Samuel"]], ["Who was Jesus' mother?", "Mary", ["Mary", "Ruth", "Esther"]], ["What did Jesus calm?", "A storm", ["A storm", "A mountain", "A city"]], ["Who climbed a tree to see Jesus?", "Zacchaeus", ["Zacchaeus", "Peter", "Moses"]]], "suspicion": [["Noah built an ark.", "Scripture"], ["David defeated Goliath.", "Scripture"], ["Jonah was swallowed by a lion.", "Suspicion"], ["Jesus was born in Bethlehem.", "Scripture"], ["Daniel slept in a fish.", "Suspicion"]], "finish": [["For God so loved the ____.", "world", ["world", "boat", "desert"]], ["The Lord is my ____.", "shepherd", ["shepherd", "soldier", "king"]], ["God is ____.", "love", ["love", "sleep", "rain"]], ["Be kind to one ____.", "another", ["another", "animal", "angel"]]]}, "kids": {"label": "Kids", "quiz": [["Who interpreted Pharaoh's dreams?", "Joseph", ["Joseph", "Joshua", "John", "Peter"]], ["Who became queen and saved her people?", "Esther", ["Esther", "Ruth", "Miriam", "Mary"]], ["Who led Israel around Jericho?", "Joshua", ["Joshua", "Moses", "David", "Paul"]], ["Who asked God for wisdom?", "Solomon", ["Solomon", "Saul", "Samson", "Samuel"]], ["Who baptized Jesus?", "John the Baptist", ["John the Baptist", "Peter", "Andrew", "Philip"]], ["Who denied Jesus three times?", "Peter", ["Peter", "Thomas", "Matthew", "James"]], ["Who was known for great strength?", "Samson", ["Samson", "Solomon", "Stephen", "Silas"]], ["Who was taken to heaven in a whirlwind?", "Elijah", ["Elijah", "Elisha", "Isaiah", "Ezekiel"]]], "suspicion": [["Jesus fed five thousand with five loaves and two fish.", "Scripture"], ["Moses built the walls of Jericho.", "Suspicion"], ["Paul and Silas sang in prison.", "Scripture"], ["Esther was swallowed by a great fish.", "Suspicion"], ["Jesus walked on water.", "Scripture"]], "finish": [["Trust in the Lord with all your ____.", "heart", ["heart", "money", "army", "voice"]], ["The joy of the Lord is your ____.", "strength", ["strength", "shield", "house", "crown"]], ["Your word is a lamp for my ____.", "feet", ["feet", "boat", "bread", "hands"]], ["Love your ____.", "neighbor", ["neighbor", "crown", "river", "horse"]]]}, "teens": {"label": "Teens", "quiz": [["Which prophet confronted King David after his sin?", "Nathan", ["Nathan", "Elijah", "Amos", "Micah"]], ["Who wrote the book of Acts?", "Luke", ["Luke", "Paul", "John", "Mark"]], ["Where were believers first called Christians?", "Antioch", ["Antioch", "Rome", "Corinth", "Ephesus"]], ["Who was Paul's young ministry companion?", "Timothy", ["Timothy", "Thomas", "Tobias", "Thaddeus"]], ["Who explained Scripture to the Ethiopian official?", "Philip", ["Philip", "Peter", "Stephen", "Barnabas"]], ["Who said, 'Here am I; send me'?", "Isaiah", ["Isaiah", "Jeremiah", "Ezekiel", "Hosea"]]], "suspicion": [["The Bereans examined the Scriptures daily.", "Scripture"], ["Paul taught that grace gives permission to continue in sin.", "Suspicion"], ["Jesus said peacemakers will be called children of God.", "Scripture"], ["Timothy was one of the original twelve apostles.", "Suspicion"]], "finish": [["Do justice, love mercy, and walk ____ with your God.", "humbly", ["humbly", "quickly", "silently", "alone"]], ["Faith is confidence in what we ____ for.", "hope", ["hope", "pay", "build", "fight"]], ["Be transformed by the renewing of your ____.", "mind", ["mind", "house", "schedule", "strength"]], ["The truth will set you ____.", "free", ["free", "apart", "above", "first"]]]}, "adults": {"label": "Adults", "quiz": [["Which council addressed Gentile circumcision?", "Jerusalem Council", ["Jerusalem Council", "Nicaea", "Sanhedrin", "Areopagus"]], ["Who was high priest when Samuel was a boy?", "Eli", ["Eli", "Abiathar", "Zadok", "Caiaphas"]], ["Which prophet married Gomer?", "Hosea", ["Hosea", "Amos", "Joel", "Micah"]], ["Who succeeded Elijah?", "Elisha", ["Elisha", "Isaiah", "Jeremiah", "Ezekiel"]], ["Which letter includes the armor of God?", "Ephesians", ["Ephesians", "Colossians", "Philippians", "Romans"]], ["Who was the seller of purple cloth in Philippi?", "Lydia", ["Lydia", "Dorcas", "Priscilla", "Phoebe"]]], "suspicion": [["The phrase 'God helps those who help themselves' is a Bible verse.", "Suspicion"], ["James teaches that faith without works is dead.", "Scripture"], ["Jesus said his kingdom is not of this world.", "Scripture"], ["The Bible teaches every hardship is caused by personal sin.", "Suspicion"]], "finish": [["There is now no condemnation for those who are in Christ ____.", "Jesus", ["Jesus", "Moses", "David", "Israel"]], ["We walk by faith, not by ____.", "sight", ["sight", "works", "law", "fear"]], ["Perfect love drives out ____.", "fear", ["fear", "hope", "truth", "mercy"]], ["Be quick to listen, slow to speak and slow to become ____.", "angry", ["angry", "weary", "afraid", "silent"]]]}, "family": {"label": "Family Play", "quiz": [["Who built the ark?", "Noah", ["Noah", "Paul", "Peter"]], ["Who defeated Goliath?", "David", ["David", "Moses", "Jonah"]], ["Who was born in Bethlehem?", "Jesus", ["Jesus", "Noah", "Daniel"]], ["Who interpreted Pharaoh's dreams?", "Joseph", ["Joseph", "Joshua", "John", "Peter"]], ["Who became queen and saved her people?", "Esther", ["Esther", "Ruth", "Miriam", "Mary"]], ["Who led Israel around Jericho?", "Joshua", ["Joshua", "Moses", "David", "Paul"]], ["Which prophet confronted King David after his sin?", "Nathan", ["Nathan", "Elijah", "Amos", "Micah"]], ["Who wrote the book of Acts?", "Luke", ["Luke", "Paul", "John", "Mark"]], ["Which council addressed Gentile circumcision?", "Jerusalem Council", ["Jerusalem Council", "Nicaea", "Sanhedrin", "Areopagus"]], ["Who was high priest when Samuel was a boy?", "Eli", ["Eli", "Abiathar", "Zadok", "Caiaphas"]]], "suspicion": [["Jesus fed five thousand with five loaves and two fish.", "Scripture"], ["Moses built the walls of Jericho.", "Suspicion"], ["Paul and Silas sang in prison.", "Scripture"], ["Esther was swallowed by a great fish.", "Suspicion"], ["Jesus walked on water.", "Scripture"], ["The phrase 'God helps those who help themselves' is a Bible verse.", "Suspicion"], ["James teaches that faith without works is dead.", "Scripture"], ["Jesus said his kingdom is not of this world.", "Scripture"], ["The Bible teaches every hardship is caused by personal sin.", "Suspicion"]], "finish": [["For God so loved the ____.", "world", ["world", "boat", "desert"]], ["The Lord is my ____.", "shepherd", ["shepherd", "soldier", "king"]], ["God is ____.", "love", ["love", "sleep", "rain"]], ["Be kind to one ____.", "another", ["another", "animal", "angel"]], ["Trust in the Lord with all your ____.", "heart", ["heart", "money", "army", "voice"]], ["The joy of the Lord is your ____.", "strength", ["strength", "shield", "house", "crown"]], ["Your word is a lamp for my ____.", "feet", ["feet", "boat", "bread", "hands"]], ["Love your ____.", "neighbor", ["neighbor", "crown", "river", "horse"]]]}};
+const EMBEDDED_JEOPARDY={"preschool": {"👤 People": [{"question": "Who built the ark?", "answer": "Noah"}, {"question": "Who fought Goliath?", "answer": "David"}, {"question": "Who was Jesus' mother?", "answer": "Mary"}, {"question": "Who was in the lions' den?", "answer": "Daniel"}, {"question": "Who led God's people out of Egypt?", "answer": "Moses"}], "📍 Places": [{"question": "Where was Jesus born?", "answer": "Bethlehem"}, {"question": "Where did Daniel face lions?", "answer": "A lions' den"}, {"question": "Where did Moses receive the commandments?", "answer": "Mount Sinai"}, {"question": "Where was baby Jesus laid?", "answer": "A manger"}, {"question": "Where did Jonah sail?", "answer": "On a ship"}], "📖 Books": [{"question": "What is the first Bible book?", "answer": "Genesis"}, {"question": "What book has songs and prayers?", "answer": "Psalms"}, {"question": "What is the last Bible book?", "answer": "Revelation"}, {"question": "Which part comes first?", "answer": "Old Testament"}, {"question": "Which books tell about Jesus?", "answer": "The Gospels"}], "💡 Teachings": [{"question": "Jesus taught us to love our what?", "answer": "Neighbor"}, {"question": "God is what?", "answer": "Love"}, {"question": "Should we forgive others?", "answer": "Yes"}, {"question": "What should we do when we need help?", "answer": "Pray"}, {"question": "Jesus welcomed whom?", "answer": "Children"}], "🌍 Events": [{"question": "What did God create?", "answer": "The heavens and earth"}, {"question": "What did Jesus calm?", "answer": "A storm"}, {"question": "What happened after Jesus died?", "answer": "He rose again"}, {"question": "What did Noah see after the flood?", "answer": "A rainbow"}, {"question": "What sea did Moses cross?", "answer": "The Red Sea"}]}, "kids": {"👤 People": [{"question": "Who interpreted Pharaoh's dreams?", "answer": "Joseph"}, {"question": "Who became queen?", "answer": "Esther"}, {"question": "Who was very strong?", "answer": "Samson"}, {"question": "Who baptized Jesus?", "answer": "John the Baptist"}, {"question": "Who asked for wisdom?", "answer": "Solomon"}], "📍 Places": [{"question": "At what city did the walls fall?", "answer": "Jericho"}, {"question": "Where was Jesus born?", "answer": "Bethlehem"}, {"question": "Where did Jesus grow up?", "answer": "Nazareth"}, {"question": "Where did Moses receive the law?", "answer": "Mount Sinai"}, {"question": "In what river was Jesus baptized?", "answer": "Jordan River"}], "📖 Books": [{"question": "Which book begins the Bible?", "answer": "Genesis"}, {"question": "Which book follows the Gospels?", "answer": "Acts"}, {"question": "Which book tells Esther's story?", "answer": "Esther"}, {"question": "Which book contains many songs?", "answer": "Psalms"}, {"question": "What is the final Bible book?", "answer": "Revelation"}], "💡 Teachings": [{"question": "What is the greatest commandment?", "answer": "Love God"}, {"question": "What is the second greatest?", "answer": "Love your neighbor"}, {"question": "What does Jesus call peacemakers?", "answer": "Children of God"}, {"question": "What should believers do without ceasing?", "answer": "Pray"}, {"question": "Faith without what is dead?", "answer": "Works"}], "🌍 Events": [{"question": "Who defeated Goliath?", "answer": "David"}, {"question": "What happened at Pentecost?", "answer": "The Holy Spirit came"}, {"question": "What did Jesus feed five thousand?", "answer": "Loaves and fish"}, {"question": "What happened to Jericho's walls?", "answer": "They fell"}, {"question": "What happened on the third day?", "answer": "Jesus rose"}]}, "teens": {"👤 People": [{"question": "Who mentored Timothy?", "answer": "Paul"}, {"question": "Who taught the Ethiopian official?", "answer": "Philip"}, {"question": "Who confronted David?", "answer": "Nathan"}, {"question": "Who taught Apollos?", "answer": "Priscilla and Aquila"}, {"question": "Who said, Here am I; send me?", "answer": "Isaiah"}], "📍 Places": [{"question": "Where were believers first called Christians?", "answer": "Antioch"}, {"question": "Where did Paul address philosophers?", "answer": "Athens"}, {"question": "Which church examined Scripture daily?", "answer": "Berea"}, {"question": "Where were Paul and Silas imprisoned?", "answer": "Philippi"}, {"question": "Where did Jesus pray before arrest?", "answer": "Gethsemane"}], "📖 Books": [{"question": "Which book says faith without works is dead?", "answer": "James"}, {"question": "Which book contains the armor of God?", "answer": "Ephesians"}, {"question": "Who wrote Acts?", "answer": "Luke"}, {"question": "Which book follows Acts?", "answer": "Romans"}, {"question": "Which Gospel begins with the Word?", "answer": "John"}], "💡 Teachings": [{"question": "What sets people free?", "answer": "Truth"}, {"question": "What are believers called to walk by?", "answer": "Faith"}, {"question": "What should Christians speak in love?", "answer": "Truth"}, {"question": "What fruit includes love, joy, and peace?", "answer": "Fruit of the Spirit"}, {"question": "What renews the believer?", "answer": "The mind"}], "🌍 Events": [{"question": "What happened at Pentecost?", "answer": "The Holy Spirit came"}, {"question": "What happened on Damascus road?", "answer": "Saul met Jesus"}, {"question": "What did Jesus do during the storm?", "answer": "Calmed it"}, {"question": "What happened when Paul and Silas sang?", "answer": "The prison shook"}, {"question": "What did disciples find at the tomb?", "answer": "It was empty"}]}, "adults": {"👤 People": [{"question": "Who carried Romans?", "answer": "Phoebe"}, {"question": "Who succeeded Elijah?", "answer": "Elisha"}, {"question": "Which prophet married Gomer?", "answer": "Hosea"}, {"question": "Who sold purple cloth?", "answer": "Lydia"}, {"question": "Who was high priest when Samuel was young?", "answer": "Eli"}], "📍 Places": [{"question": "Where was the Jerusalem Council?", "answer": "Jerusalem"}, {"question": "Where did Paul speak at the Areopagus?", "answer": "Athens"}, {"question": "Which church was lukewarm?", "answer": "Laodicea"}, {"question": "Where did Paul meet Lydia?", "answer": "Philippi"}, {"question": "Where was John when receiving Revelation?", "answer": "Patmos"}], "📖 Books": [{"question": "Which Old Testament book never names God?", "answer": "Esther"}, {"question": "Which letter includes the armor of God?", "answer": "Ephesians"}, {"question": "Which Gospel has the Good Samaritan?", "answer": "Luke"}, {"question": "Which book records the early church?", "answer": "Acts"}, {"question": "Which epistle develops justification by faith?", "answer": "Romans"}], "💡 Teachings": [{"question": "What does Micah 6:8 require?", "answer": "Do justice, love mercy, walk humbly"}, {"question": "What is faith without works?", "answer": "Dead"}, {"question": "What did Jesus say of his kingdom?", "answer": "Not of this world"}, {"question": "What should believers become?", "answer": "Transformed"}, {"question": "What drives out fear?", "answer": "Perfect love"}], "🌍 Events": [{"question": "Which council addressed Gentile circumcision?", "answer": "Jerusalem Council"}, {"question": "What did Josiah do after hearing the law?", "answer": "Repented"}, {"question": "What occurred at Pentecost?", "answer": "The Spirit filled believers"}, {"question": "What happened to the Philippian jailer?", "answer": "He believed and was baptized"}, {"question": "What occurred on Emmaus road?", "answer": "The risen Jesus appeared"}]}, "family": {"👤 People": [{"question": "Who interpreted Pharaoh's dreams?", "answer": "Joseph"}, {"question": "Who became queen?", "answer": "Esther"}, {"question": "Who was very strong?", "answer": "Samson"}, {"question": "Who baptized Jesus?", "answer": "John the Baptist"}, {"question": "Who asked for wisdom?", "answer": "Solomon"}], "📍 Places": [{"question": "At what city did the walls fall?", "answer": "Jericho"}, {"question": "Where was Jesus born?", "answer": "Bethlehem"}, {"question": "Where did Jesus grow up?", "answer": "Nazareth"}, {"question": "Where did Moses receive the law?", "answer": "Mount Sinai"}, {"question": "In what river was Jesus baptized?", "answer": "Jordan River"}], "📖 Books": [{"question": "Which book begins the Bible?", "answer": "Genesis"}, {"question": "Which book follows the Gospels?", "answer": "Acts"}, {"question": "Which book tells Esther's story?", "answer": "Esther"}, {"question": "Which book contains many songs?", "answer": "Psalms"}, {"question": "What is the final Bible book?", "answer": "Revelation"}], "💡 Teachings": [{"question": "What is the greatest commandment?", "answer": "Love God"}, {"question": "What is the second greatest?", "answer": "Love your neighbor"}, {"question": "What does Jesus call peacemakers?", "answer": "Children of God"}, {"question": "What should believers do without ceasing?", "answer": "Pray"}, {"question": "Faith without what is dead?", "answer": "Works"}], "🌍 Events": [{"question": "Who defeated Goliath?", "answer": "David"}, {"question": "What happened at Pentecost?", "answer": "The Holy Spirit came"}, {"question": "What did Jesus feed five thousand?", "answer": "Loaves and fish"}, {"question": "What happened to Jericho's walls?", "answer": "They fell"}, {"question": "What happened on the third day?", "answer": "Jesus rose"}]}};
 
-  const sprint21CSS = `
-  :root{
-    --s21-scorebar-h:96px;
-    --s21-toolbar-h:74px;
-    --s21-gap:10px;
+const savedTeams = JSON.parse(localStorage.getItem("nldg-teams") || "null");
+const state = {
+  group: "kids",
+  teams: Array.isArray(savedTeams) && savedTeams.length ? savedTeams : [
+    {name:"Team Grace",score:0,color:"#2f6fed"},
+    {name:"Team Truth",score:0,color:"#35c779"}
+  ],
+  activeTeam: 0,
+  soundOn: true,
+  stars: Number(localStorage.getItem("nldg-stars") || 0),
+  tournament: JSON.parse(localStorage.getItem("nldg-tournament") || "null"),
+  scoreHistory: []
+};
+
+function saveTournament(){
+  if(state.tournament) localStorage.setItem("nldg-tournament", JSON.stringify(state.tournament));
+  else localStorage.removeItem("nldg-tournament");
+}
+function saveTeams(){ localStorage.setItem("nldg-teams",JSON.stringify(state.teams)); }
+
+
+let audioCtx = null;
+function context(){
+  const Audio = window.AudioContext || window.webkitAudioContext;
+  if(!Audio) return null;
+  if(!audioCtx) audioCtx = new Audio();
+  if(audioCtx.state === "suspended") audioCtx.resume().catch(()=>{});
+  return audioCtx;
+}
+function unlockAudio(){
+  const c=context(); if(!c) return;
+  const o=c.createOscillator(),g=c.createGain();
+  g.gain.value=.0001;o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+.01);
+}
+function beep(kind="tap", enabled=true){
+  if(!enabled) return;
+  const c=context(); if(!c) return;
+  const tones={tap:[420,.1],good:[790,.22],bad:[170,.25],win:[980,.4],time:[115,.6]};
+  const [f,d]=tones[kind]||tones.tap;
+  const o=c.createOscillator(),g=c.createGain();
+  o.frequency.value=f;o.connect(g);g.connect(c.destination);
+  g.gain.setValueAtTime(.13,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+d);
+  o.start();o.stop(c.currentTime+d);
+}
+
+
+
+const $ = id => document.getElementById(id);
+
+const views=["home","library","quizView","memoryView","jeopardyView","tournamentView"];
+function showView(id){
+  views.forEach(v=>{const el=$(v); if(el) el.classList.toggle("hidden",v!==id)});
+  const playing=["quizView","memoryView","jeopardyView"].includes(id);
+  document.body.classList.toggle("playing",playing);
+  document.body.dataset.activeView=id;
+  $("scorebar").classList.toggle("hidden", !["quizView","memoryView","jeopardyView","library"].includes(id));
+  window.scrollTo({top:0,behavior:playing?"auto":"smooth"});
+}
+function teamName(index){ return state.teams[index]?.name || `Team ${index+1}`; }
+function nextTeamIndex(){ return state.teams.length ? (state.activeTeam+1)%state.teams.length : 0; }
+function previousTeamIndex(){ return state.teams.length ? (state.activeTeam-1+state.teams.length)%state.teams.length : 0; }
+function escapeHtml(value=""){ return String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c])); }
+function rankedTeams(){
+  return state.teams.map((team,index)=>({...team,index,score:Number(team.score)||0}))
+    .sort((a,b)=>b.score-a.score||a.index-b.index);
+}
+function rankForTeam(index){ return rankedTeams().findIndex(team=>team.index===index)+1; }
+function renderLeaderboard(targetId="leaderboardList"){
+  const target=$(targetId); if(!target)return;
+  target.innerHTML=rankedTeams().map((team,position)=>`<div class="leaderboard-row" style="--team-color:${team.color||TEAM_COLORS[team.index]||"#2f6fed"}"><span>${position===0?"🥇":position===1?"🥈":position===2?"🥉":position+1}</span><strong>${escapeHtml(team.name)}</strong><span>${team.score}</span></div>`).join("");
+}
+function renderScoreboard(){
+  const board=$("dynamicScoreboard"); if(!board)return;
+  board.innerHTML=state.teams.map((team,index)=>`
+  <article class="team ${index===state.activeTeam?"active":""}" data-team="${index}" style="--team-color:${team.color||"#2f6fed"}">
+    <span class="rank-badge" title="Current rank">#${rankForTeam(index)}</span>
+    <input class="score-team-name" data-team-name="${index}" value="${escapeHtml(team.name)}">
+    <div class="score">${team.score||0}</div>
+    <div class="score-actions custom-score-group">
+      <button type="button" data-score-team="${index}" data-score-delta="-100">−100</button>
+      <button type="button" data-score-team="${index}" data-score-delta="100">+100</button>
+      <button type="button" data-custom-score="${index}">Custom</button>
+    </div>
+  </article>`).join("");
+  board.querySelectorAll(".team").forEach(card=>card.onclick=e=>{if(!["INPUT","BUTTON"].includes(e.target.tagName))setActiveTeam(Number(card.dataset.team));});
+  board.querySelectorAll("[data-score-team]").forEach(btn=>btn.onclick=()=>addScore(Number(btn.dataset.scoreTeam),Number(btn.dataset.scoreDelta)));
+  board.querySelectorAll("[data-custom-score]").forEach(btn=>btn.onclick=()=>customScore(Number(btn.dataset.customScore)));
+  board.querySelectorAll("[data-team-name]").forEach(input=>input.onchange=()=>{
+    const i=Number(input.dataset.teamName); state.teams[i].name=input.value.trim()||`Team ${i+1}`; saveTeams(); renderScoreboard(); renderJeopardyAwardButtons();
+  });
+  if($("activeTeamLabel")) $("activeTeamLabel").textContent=`Active: ${teamName(state.activeTeam)}`;
+  if($("undoScoreBtn")) $("undoScoreBtn").disabled=state.scoreHistory.length===0;
+  if($("endTournamentQuickBtn")) $("endTournamentQuickBtn").classList.toggle("hidden",!state.tournament?.active);
+}
+function updateScores(){ renderScoreboard(); renderLeaderboard(); }
+function setActiveTeam(team){ if(!state.teams[team])return; state.activeTeam=team; renderScoreboard(); beep("tap",state.soundOn); }
+function moveActiveTeam(direction=1){ setActiveTeam(direction<0?previousTeamIndex():nextTeamIndex()); }
+function skipTeam(){ moveActiveTeam(1); }
+function addScore(team,amount,options={}){
+  if(!state.teams[team]||!Number.isFinite(Number(amount)))return;
+  const previous=Number(state.teams[team].score)||0;
+  const next=Math.max(0,previous+Number(amount));
+  if(next===previous)return;
+  if(options.record!==false) state.scoreHistory.push({team,previous,next,amount:Number(amount)});
+  state.teams[team].score=next; saveTeams(); updateScores(); beep(amount>0?"good":"tap",state.soundOn);
+}
+function customScore(team){
+  const raw=prompt(`Enter points for ${teamName(team)}. Use a negative number to subtract.`,"200");
+  if(raw===null)return;
+  const amount=Number(raw);
+  if(!Number.isFinite(amount)||amount===0){alert("Enter a valid non-zero number.");return;}
+  addScore(team,amount);
+}
+function undoLastScore(){
+  const action=state.scoreHistory.pop(); if(!action)return;
+  if(state.teams[action.team]) state.teams[action.team].score=action.previous;
+  saveTeams(); updateScores(); beep("tap",state.soundOn);
+}
+function resetScores(confirmFirst=true){
+  if(confirmFirst&&!confirm("Reset all team scores to zero?"))return;
+  state.teams.forEach(t=>t.score=0); state.scoreHistory=[]; saveTeams(); updateScores();
+}
+function syncTeamButtons(){ renderJeopardyAwardButtons(); }
+function renderJeopardyAwardButtons(){
+  const wrap=$("jeopardyAwardTeams"); if(!wrap)return;
+  wrap.innerHTML=state.teams.map((team,index)=>`<button type="button" class="btn success" data-award-team="${index}">Award ${escapeHtml(team.name)}</button>`).join("");
+  wrap.querySelectorAll("[data-award-team]").forEach(btn=>btn.onclick=()=>awardJeopardy(Number(btn.dataset.awardTeam)));
+}
+function confetti(){
+  const box=$("confetti"),items=["⭐","🎉","✨","🌈"];
+  for(let i=0;i<24;i++){
+    const e=document.createElement("i");
+    e.textContent=items[Math.floor(Math.random()*items.length)];
+    e.style.left=Math.random()*100+"vw";
+    e.style.fontSize=(18+Math.random()*28)+"px";
+    e.style.animationDelay=Math.random()*.3+"s";
+    box.appendChild(e);setTimeout(()=>e.remove(),1900);
   }
-
-  body.playing .scorebar{
-    height:var(--s21-scorebar-h)!important;
-  }
-
-  body.playing .tournament-toolbar,
-  body.playing #tournamentToolbar,
-  body.playing .shared-toolbar{
-    position:fixed!important;
-    z-index:120!important;
-    top:calc(max(8px,env(safe-area-inset-top)) + var(--s21-scorebar-h) + var(--s21-gap))!important;
-    left:max(12px,env(safe-area-inset-left))!important;
-    right:max(12px,env(safe-area-inset-right))!important;
-    min-height:var(--s21-toolbar-h)!important;
-    margin:0!important;
-    padding:10px 14px!important;
-    display:flex!important;
-    align-items:center!important;
-    justify-content:center!important;
-    flex-wrap:wrap!important;
-    gap:10px!important;
-    border-radius:18px!important;
-    background:rgba(3,10,30,.97)!important;
-    border:2px solid rgba(255,255,255,.16)!important;
-    box-shadow:0 12px 34px rgba(0,0,0,.45)!important;
-    backdrop-filter:blur(10px);
-  }
-
-  body.playing #quizView,
-  body.playing #memoryView,
-  body.playing #jeopardyView{
-    inset:calc(max(8px,env(safe-area-inset-top)) + var(--s21-scorebar-h) + var(--s21-toolbar-h) + (var(--s21-gap) * 2)) 0 0!important;
-  }
-
-  body.playing .game-panel{
-    padding-top:18px!important;
-  }
-
-  body.playing .game-heading{
-    position:relative!important;
-    z-index:1!important;
-    padding-top:4px!important;
-    margin-bottom:6px!important;
-  }
-
-  body.playing .game-heading h3{
-    opacity:1!important;
-    visibility:visible!important;
-    color:#f7f9ff!important;
-    text-shadow:0 3px 14px rgba(0,0,0,.8)!important;
-  }
-
-  body.playing .back-library{
-    opacity:1!important;
-    visibility:visible!important;
-    pointer-events:auto!important;
-    min-width:150px!important;
-  }
-
-  .team.active{
-    outline:4px solid #ffd34e!important;
-    box-shadow:0 0 0 3px rgba(255,211,78,.18),0 0 28px rgba(255,211,78,.42)!important;
-  }
-
-  button,.btn,.answer,.menu-card,.jcell,.memory-card{
-    touch-action:manipulation;
-    -webkit-tap-highlight-color:transparent;
-  }
-
-  @media (orientation:landscape) and (max-height:850px){
-    :root{--s21-scorebar-h:78px;--s21-toolbar-h:64px;--s21-gap:6px}
-    body.playing .tournament-toolbar,
-    body.playing #tournamentToolbar,
-    body.playing .shared-toolbar{padding:7px 10px!important}
-  }
-
-  @media (max-width:760px){
-    :root{--s21-scorebar-h:100px;--s21-toolbar-h:122px}
-    body.playing .tournament-toolbar,
-    body.playing #tournamentToolbar,
-    body.playing .shared-toolbar{
-      justify-content:flex-start!important;
-      overflow-x:auto!important;
-      flex-wrap:nowrap!important;
-    }
-  }
-  `;
-
-  const sprint21JS = `
-  (function(){
-    let lastTap = 0;
-
-    function markToolbar(){
-      const nodes = [...document.querySelectorAll("div,nav,section")];
-      for(const node of nodes){
-        const text = node.textContent || "";
-        if(
-          text.includes("Next Team") &&
-          text.includes("Skip Team") &&
-          text.includes("Undo Score")
-        ){
-          node.classList.add("tournament-toolbar");
-          return;
-        }
-      }
-    }
-
-    document.addEventListener("click",function(event){
-      const target = event.target.closest("button,.btn,.answer,.jcell,.memory-card,.menu-card");
-      if(!target) return;
-      const now = Date.now();
-      if(now-lastTap < 300){
-        event.preventDefault();
-        event.stopImmediatePropagation();
-      }
-      lastTap = now;
-    },true);
-
-    function initialize(){
-      markToolbar();
-      const observer = new MutationObserver(markToolbar);
-      observer.observe(document.body,{childList:true,subtree:true});
-      console.info("NLDG9 Sprint 2.1 loaded");
-    }
-
-    if(document.readyState === "loading"){
-      document.addEventListener("DOMContentLoaded",initialize);
+}
+async function toggleFullscreen(){
+  try{
+    if(document.fullscreenElement||document.webkitFullscreenElement){
+      if(document.exitFullscreen) await document.exitFullscreen();
+      else if(document.webkitExitFullscreen) await document.webkitExitFullscreen();
     }else{
-      initialize();
+      const el=document.documentElement;
+      if(el.requestFullscreen) await el.requestFullscreen();
+      else if(el.webkitRequestFullscreen) await el.webkitRequestFullscreen();
+      else alert("On iPad, use Share → Add to Home Screen.");
     }
-  })();
-  `;
+  }catch{alert("Fullscreen is blocked here. On iPad, use Share → Add to Home Screen.")}
+}
+function syncFullscreenButton(){
+  $("fullscreenBtn").textContent=(document.fullscreenElement||document.webkitFullscreenElement)?"⤢ Exit Fullscreen":"⛶ Fullscreen";
+}
 
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 12000);
 
-  try {
-    const response = await fetch(apiUrl, {
-      cache: "no-store",
-      headers: { "Accept": "application/vnd.github+json" },
-      signal: controller.signal
-    });
 
-    if (!response.ok) {
-      throw new Error("GitHub API returned HTTP " + response.status);
-    }
 
-    const data = await response.json();
+let round=[],index=0,mode="quiz",timerHandle=null,answered=false,pending=null;
 
-    if (!data.content || data.encoding !== "base64") {
-      throw new Error("GitHub did not return the expected file content.");
-    }
+function startQuiz(type,title,data,timed=false){
+  mode=type;
+  $("quizTitle").textContent=title;
+  $("quizTimer").classList.toggle("hidden",!timed);
+  showView("quizView");
 
-    const normalized = data.content.replace(/\s/g, "");
-    const binary = atob(normalized);
-    const bytes = Uint8Array.from(binary, c => c.charCodeAt(0));
-    let html = new TextDecoder("utf-8").decode(bytes);
-
-    if (
-      !html.toLowerCase().includes("<!doctype html") ||
-      !html.includes("No Labels, Designed by God")
-    ) {
-      throw new Error("The Sprint 2 file failed validation.");
-    }
-
-    html = html.replace(
-      "</head>",
-      '<style id="nldg9-sprint21-css">' + sprint21CSS + "</style></head>"
-    );
-
-    html = html.replace(
-      "</body>",
-      '<script id="nldg9-sprint21-js">' +
-      sprint21JS.replace(/<\/script>/gi, "<\\/script>") +
-      "<\\/script></body>"
-    );
-
-    clearTimeout(timeout);
-    document.open();
-    document.write(html);
-    document.close();
-
-  } catch (error) {
-    clearTimeout(timeout);
-    console.error("NLDG9 Sprint 2.1 loader:", error);
-    document.getElementById("loading").style.display = "none";
-    document.getElementById("error").style.display = "block";
-    document.getElementById("details").textContent =
-      error.name === "AbortError"
-        ? "The request timed out."
-        : error.message;
+  if(!Array.isArray(data) || data.length===0){
+    round=[];
+    $("quizQuestion").textContent="This question set could not load.";
+    $("quizAnswers").innerHTML="";
+    $("quizFeedback").textContent="Return to the Game Library and choose the game again.";
+    $("quizProgress").style.width="0%";
+    $("quizRevealBtn").classList.add("hidden");
+    $("quizNextBtn").classList.add("hidden");
+    console.error("Missing question data:", {type,title,data,group:state.group});
+    return;
   }
-})();
+
+  const count=Math.max(1,Number($("roundLength").value||10));
+  round=[...data].sort(()=>Math.random()-.5).slice(0,Math.min(count,data.length));
+  index=0;
+  renderQuiz(timed);
+}
+function renderQuiz(timed){
+  clearInterval(timerHandle);answered=false;pending=null;
+  const item=round[index];
+  if(!item){finish();return}
+  let question,answer,choices;
+  if(mode==="suspicion"){[question,answer]=item;choices=["Scripture","Suspicion"]}
+  else [question,answer,choices]=item;
+
+  if(!question || !answer || !Array.isArray(choices) || choices.length===0){
+    $("quizQuestion").textContent="This question is unavailable.";
+    $("quizAnswers").innerHTML="";
+    $("quizFeedback").textContent="Tap Next Question to continue.";
+    $("quizNextBtn").classList.remove("hidden");
+    console.error("Malformed question:", item);
+    return;
+  }
+
+  $("quizQuestion").textContent=question;
+  $("quizFeedback").textContent="";
+  $("quizAnswers").innerHTML="";
+  $("quizNextBtn").classList.add("hidden");
+  $("quizRevealBtn").classList.add("hidden");
+  [...choices].sort(()=>Math.random()-.5).forEach(choice=>{
+    const btn=document.createElement("button");
+    btn.className="answer";btn.textContent=choice;
+    btn.onclick=()=>choose(btn,choice,answer);
+    $("quizAnswers").appendChild(btn);
+  });
+  $("quizProgress").style.width=`${index/round.length*100}%`;
+  if(timed) startTimer(15);
+}
+function choose(btn,choice,correct){
+  if(answered) return;
+  if($("hostMode").checked){
+    pending={btn,choice,correct};
+    document.querySelectorAll("#quizAnswers .answer").forEach(b=>b.classList.remove("selected"));
+    btn.classList.add("selected");
+    $("quizFeedback").textContent="Answer selected. Host, reveal when ready.";
+    $("quizRevealBtn").classList.remove("hidden");
+    beep("tap",state.soundOn);
+    return;
+  }
+  complete(btn,choice,correct);
+}
+function complete(btn,choice,correct){
+  answered=true;clearInterval(timerHandle);
+  document.querySelectorAll("#quizAnswers .answer").forEach(b=>{
+    b.disabled=true;b.classList.remove("selected");
+    if(b.textContent===correct)b.classList.add("correct");
+    else if(b===btn)b.classList.add("wrong");
+  });
+  const ok=choice===correct;
+  $("quizFeedback").textContent=ok?"Correct! 🌟":`The answer is ${correct}.`;
+  if(ok){addScore(state.activeTeam,100);state.stars++;localStorage.setItem("nldg-stars",state.stars);confetti()}
+  else beep("bad",state.soundOn);
+  $("quizNextBtn").classList.remove("hidden");
+}
+function revealQuiz(){if(pending){complete(pending.btn,pending.choice,pending.correct);pending=null;$("quizRevealBtn").classList.add("hidden")}}
+function nextQuiz(){
+  index++;
+  if(index>=round.length){finish();return}
+  setActiveTeam(nextTeamIndex());
+  renderQuiz(mode==="lightning");
+}
+function startTimer(seconds){
+  let remaining=seconds;$("quizTimer").textContent=remaining;
+  timerHandle=setInterval(()=>{
+    remaining--;$("quizTimer").textContent=remaining;
+    if(remaining<=0){
+      clearInterval(timerHandle);
+      if(!answered){
+        answered=true;beep("time",state.soundOn);
+        $("quizFeedback").textContent="Time is up!";
+        document.querySelectorAll("#quizAnswers .answer").forEach(b=>b.disabled=true);
+        $("quizNextBtn").classList.remove("hidden");
+      }
+    }
+  },1000);
+}
+function finish(){
+  clearInterval(timerHandle);
+  $("quizProgress").style.width="100%";
+  $("quizQuestion").textContent="Round Complete! 🎉";
+  $("quizAnswers").innerHTML="";
+  const high=Math.max(...state.teams.map(team=>team.score||0));
+  const leaders=state.teams.filter(team=>(team.score||0)===high);
+  $("quizFeedback").textContent=leaders.length>1
+    ?`${leaders.map(team=>team.name).join(" and ")} are tied with ${high} points!`
+    :`${leaders[0].name} leads with ${high} points!`;
+  $("quizNextBtn").classList.add("hidden");
+  confetti();beep("win",state.soundOn);
+  document.dispatchEvent(new CustomEvent("nldg:round-complete"));
+}
+
+
+
+
+const PAIRS=[["Noah","Ark"],["David","Sling"],["Jonah","Fish"],["Daniel","Lions"],["Moses","Red Sea"],["Jesus","Manger"],["Paul","Letters"],["Esther","Queen"],["Joshua","Jericho"],["Peter","Rock"]];
+let deck=[],first=null,locked=false,matches=0;
+function startMemory(){
+  const count=state.group==="preschool"?6:state.group==="kids"?8:10;
+  deck=PAIRS.slice(0,count).flatMap((p,id)=>p.map(text=>({id,text,open:false,matched:false}))).sort(()=>Math.random()-.5);
+  first=null;locked=false;matches=0;showView("memoryView");renderMemory();
+}
+function renderMemory(){
+  $("memoryGrid").innerHTML="";
+  deck.forEach((card,i)=>{
+    const b=document.createElement("button");
+    b.className="memory-card"+(card.open?" open":"")+(card.matched?" matched":"");
+    b.textContent=(card.open||card.matched)?card.text:(i+1);
+    b.onclick=()=>flip(i);$("memoryGrid").appendChild(b);
+  });
+  $("memoryFeedback").textContent=`Matches: ${matches} of ${deck.length/2}`;
+}
+function flip(i){
+  if(locked||deck[i].open||deck[i].matched)return;
+  deck[i].open=true;beep("tap",state.soundOn);renderMemory();
+  if(first===null){first=i;return}
+  locked=true;
+  setTimeout(()=>{
+    if(deck[first].id===deck[i].id){
+      deck[first].matched=deck[i].matched=true;matches++;addScore(state.activeTeam,100);confetti();
+    }else{deck[first].open=deck[i].open=false;beep("bad",state.soundOn)}
+    first=null;locked=false;setActiveTeam(nextTeamIndex());renderMemory();
+    if(matches===deck.length/2){$("memoryFeedback").textContent="Every match found! 🏆";document.dispatchEvent(new CustomEvent("nldg:round-complete"))}
+  },650);
+}
+
+
+
+
+const CATS=["👤 People","📍 Places","📖 Books","💡 Teachings","🌍 Events"];
+let current={answer:"",value:0,cell:null,category:""};
+let banks={};
+
+async function loadJeopardyData(){
+  const res=await fetch("data/jeopardy.json",{cache:"no-store"});
+  if(!res.ok) throw new Error("Could not load Jeopardy data");
+  banks=await res.json();
+}
+function startJeopardy(){
+  const bank=banks[state.group]||banks.kids;
+  if(!bank){alert("Jeopardy questions could not load.");return}
+  $("jeopardyBoard").innerHTML="";
+  CATS.forEach(cat=>{
+    const h=document.createElement("button");h.className="jcell header";h.textContent=cat;h.disabled=true;$("jeopardyBoard").appendChild(h);
+  });
+  for(let row=0;row<5;row++){
+    CATS.forEach(cat=>{
+      const item=bank[cat][row];
+      const b=document.createElement("button");
+      b.className="jcell";b.textContent=(row+1)*100;
+      b.onclick=()=>openQuestion(b,cat,item,(row+1)*100);
+      $("jeopardyBoard").appendChild(b);
+    });
+  }
+  showView("jeopardyView");
+}
+function openQuestion(cell,category,item,value){
+  if(cell.classList.contains("used"))return;
+  current={answer:item.answer,value,cell,category};
+  cell.classList.add("used");cell.innerHTML="✓<br><small>USED</small>";
+  $("jeopardyMeta").textContent=`${category} · ${value} POINTS`;
+  $("jeopardyQuestion").textContent=item.question;
+  $("jeopardyAnswer").textContent="Answer: "+item.answer;
+  $("jeopardyAnswer").classList.add("hidden");
+  $("jeopardyFeedback").textContent="Discuss, then reveal the answer.";
+  $("revealJeopardyBtn").classList.remove("hidden");
+  $("jeopardyAwardTeams").classList.add("hidden");
+  $("returnBoardBtn").classList.add("hidden");
+  syncTeamButtons();
+  $("jeopardyQuestionOverlay").classList.remove("hidden");
+  document.body.style.overflow="hidden";
+  beep("tap",state.soundOn);
+}
+function revealJeopardy(){
+  $("jeopardyAnswer").classList.remove("hidden");
+  $("revealJeopardyBtn").classList.add("hidden");
+  renderJeopardyAwardButtons();
+  $("jeopardyAwardTeams").classList.remove("hidden");
+  $("returnBoardBtn").classList.remove("hidden");
+  $("jeopardyFeedback").textContent=`Worth ${current.value} points`;
+  beep("good",state.soundOn);
+}
+function awardJeopardy(team){
+  addScore(team,current.value);confetti();
+  $("jeopardyFeedback").textContent=`${teamName(team)} receives ${current.value} points!`;
+  $("jeopardyAwardTeams").classList.add("hidden");
+  setActiveTeam((team+1)%state.teams.length);
+}
+function closeJeopardy(){
+  $("jeopardyQuestionOverlay").classList.add("hidden");
+  document.body.style.overflow="";
+}
+function resetJeopardyBoard(){
+  if(!confirm("Reset every Jeopardy tile?"))return;
+  startJeopardy();
+}
+
+
+
+
+const TEAM_COLORS=["#2f6fed","#35c779","#f2b84b","#e85d75","#9b6cff","#31b8c6","#f47a45","#7f8fa6"];
+function currentSetupTeams(){
+  return [...document.querySelectorAll("[data-setup-team]")].map((input,index)=>({
+    name:input.value.trim()||`Team ${index+1}`, score:state.teams[index]?.score||0, color:TEAM_COLORS[index]
+  }));
+}
+function renderTeamEditors(){
+  const count=Math.max(1,Math.min(8,Number($("teamCount").value)||2));
+  $("teamNames").innerHTML=Array.from({length:count},(_,index)=>`
+  <label class="team-name-field" style="--team-color:${TEAM_COLORS[index]}">
+    <span>Team ${index+1}</span><input data-setup-team="${index}" value="${escapeHtml(state.teams[index]?.name||`Team ${index+1}`)}">
+  </label>`).join("");
+  document.querySelectorAll("[data-setup-team]").forEach(input=>input.oninput=renderSetupPreview);
+  renderSetupPreview();
+}
+function renderSetupPreview(){
+  const teams=currentSetupTeams();
+  $("scoreboardPreview").innerHTML=teams.map((team,index)=>`
+  <div class="preview-team ${index===0?"active":""}" style="--team-color:${team.color}">
+    <strong>${escapeHtml(team.name)}</strong><span>${team.score}</span>
+  </div>`).join("");
+}
+function openTournament(){ $("teamCount").value=String(Math.max(1,state.teams.length)); renderTeamEditors(); updateStatus(); showView("tournamentView"); }
+function beginTournament(){
+  state.teams=currentSetupTeams();
+  state.activeTeam=$("firstTeamMode").value==="random"?Math.floor(Math.random()*state.teams.length):0;
+  state.tournament={active:true,round:1,total:Number($("tournamentRounds").value),group:$("tournamentGroup").value,teamCount:state.teams.length};
+  state.group=state.tournament.group; state.scoreHistory=[]; resetScores(false); saveTeams(); saveTournament();
+  $("tournamentBadge").classList.remove("hidden");
+  document.dispatchEvent(new CustomEvent("nldg:open-library",{detail:{group:state.group}}));
+}
+function showTournamentSummary(endActive=true){
+  const ranking=rankedTeams();
+  const high=ranking[0]?.score||0;
+  const winners=ranking.filter(team=>team.score===high);
+  $("winnerTitle").textContent=winners.length>1?"Tournament Tie!":"Tournament Champion";
+  $("winnerText").textContent=winners.length>1
+    ?`${winners.map(team=>team.name).join(" and ")} finished tied with ${high} points.`
+    :`${winners[0]?.name||"A team"} wins with ${high} points!`;
+  renderLeaderboard("finalStandings");
+  $("winnerOverlay").classList.remove("hidden"); confetti(); beep("win",state.soundOn);
+  if(endActive){ state.tournament=null; saveTournament(); $("tournamentBadge").classList.add("hidden"); }
+}
+function endTournament(){
+  if(state.tournament?.active && !confirm("End the tournament and show final standings?"))return;
+  showTournamentSummary(true); updateStatus(); renderScoreboard();
+}
+function playTournamentAgain(){
+  $("winnerOverlay").classList.add("hidden");
+  state.teams.forEach(team=>team.score=0); state.scoreHistory=[]; saveTeams();
+  openTournament();
+}
+function onRoundComplete(){
+  if(!state.tournament?.active)return;
+  if(state.tournament.round>=state.tournament.total){ showTournamentSummary(true); return; }
+  state.tournament.round++; saveTournament(); updateStatus();
+}
+function updateStatus(){
+  const box=$("tournamentStatus"); if(!box)return;
+  box.textContent=state.tournament?.active
+    ?`Round ${state.tournament.round} of ${state.tournament.total} • ${state.teams.length} teams`
+    :"No tournament is active. Choose your teams and start when ready.";
+}
+
+let quizData=EMBEDDED_QUESTIONS;
+const GAME_REGISTRY={
+  suspicion:{title:"Scripture or Suspicion",type:"quiz",source:"suspicion",timed:false},
+  jeopardy:{title:"Bible Jeopardy",type:"jeopardy"},
+  quiz:{title:"Who Am I? Bible Challenge",type:"quiz",source:"quiz",timed:false},
+  finish:{title:"Finish the Verse",type:"quiz",source:"finish",timed:false},
+  memory:{title:"Numbered Memory Match",type:"memory"},
+  lightning:{title:"Lightning Round",type:"quiz",source:"quiz",timed:true}
+};
+function loadData(){ banks=EMBEDDED_JEOPARDY; }
+
+function launchGame(gameId){
+  const game=GAME_REGISTRY[gameId];
+  const groupData=quizData[state.group];
+  if(!game){
+    console.error("Unknown game requested:",gameId);
+    alert("That game is not available in this version.");
+    return false;
+  }
+  if(!groupData){
+    console.error("Unknown age group:",state.group);
+    alert("That age group could not load. Please return to the Game Center.");
+    return false;
+  }
+  try{
+    if(game.type==="jeopardy") startJeopardy();
+    else if(game.type==="memory") startMemory();
+    else startQuiz(gameId,game.title,groupData[game.source],game.timed);
+    history.replaceState(null,"",`games.html?group=${encodeURIComponent(state.group)}&game=${encodeURIComponent(gameId)}`);
+    return true;
+  }catch(error){
+    console.error("Game launch failed:",{gameId,group:state.group,error});
+    alert("This game could not start. Refresh the page and try again.");
+    return false;
+  }
+}
+
+function openLibrary(group){
+  const safeGroup=quizData[group]?group:"family";
+  state.group=safeGroup;
+  $("groupLabel").textContent=quizData[safeGroup].label;
+  $("tournamentBadge").classList.toggle("hidden",!state.tournament?.active);
+  showView("library");
+  if(!new URLSearchParams(location.search).get("game")) history.replaceState(null,"",`games.html?group=${encodeURIComponent(safeGroup)}`);
+}
+
+function autoLaunchFromUrl(){
+  const params=new URLSearchParams(window.location.search);
+  const requestedGroup=params.get("group");
+  const requestedGame=params.get("game");
+  const presentation=params.get("presentation");
+
+  if(requestedGroup || requestedGame || presentation==="1"){
+    $("intro").classList.add("hidden");
+    openLibrary(requestedGroup || "family");
+  }
+
+  if(presentation==="1"){
+    document.body.classList.add("presentation-ready");
+    const note=document.createElement("div");
+    note.className="presentation-note";
+    note.innerHTML="<strong>Church Presentation Mode</strong><span>Tap Fullscreen when you are ready to project.</span>";
+    document.body.appendChild(note);
+    requestAnimationFrame(()=>note.classList.add("show"));
+  }
+
+  if(requestedGame){
+    requestAnimationFrame(()=>launchGame(requestedGame));
+  }
+}
+
+function setupPresentationKeys(){
+  document.addEventListener("keydown",event=>{
+    const tag=(document.activeElement?.tagName||"").toLowerCase();
+    if(tag==="input"||tag==="select"||tag==="textarea") return;
+    if(event.key.toLowerCase()==="f"){event.preventDefault();toggleFullscreen()}
+    if(event.key===" "){
+      const next=$("quizNextBtn");
+      if(next && !next.classList.contains("hidden")){event.preventDefault();next.click()}
+    }
+    if(/^[1-8]$/.test(event.key)) setActiveTeam(Number(event.key)-1);
+    if(event.key==="ArrowRight") moveActiveTeam(1);
+    if(event.key==="ArrowLeft") moveActiveTeam(-1);
+  });
+}
+
+function setupEvents(){
+  $("startShowBtn").onclick=()=>{$("intro").classList.add("hidden");beep("win",state.soundOn)};
+  $("soundBtn").onclick=()=>{state.soundOn=!state.soundOn;$("soundBtn").textContent=`${state.soundOn?"🔊":"🔇"} Sound: ${state.soundOn?"On":"Off"}`;if(state.soundOn)beep("good",true)};
+  $("fullscreenBtn").onclick=toggleFullscreen;
+  $("resetScoresBtn").onclick=()=>resetScores(true);
+  $("previousTeamBtn").onclick=()=>moveActiveTeam(-1);
+  $("nextTeamBtn").onclick=()=>moveActiveTeam(1);
+  $("skipTeamBtn").onclick=skipTeam;
+  $("undoScoreBtn").onclick=undoLastScore;
+  $("leaderboardBtn").onclick=()=>{renderLeaderboard();$("leaderboardOverlay").classList.remove("hidden")};
+  $("closeLeaderboardBtn").onclick=()=>$("leaderboardOverlay").classList.add("hidden");
+  $("endTournamentQuickBtn").onclick=endTournament;
+  document.addEventListener("fullscreenchange",syncFullscreenButton);
+  document.addEventListener("webkitfullscreenchange",syncFullscreenButton);
+  document.addEventListener("pointerdown",unlockAudio,{once:true,passive:true});
+  document.querySelectorAll("[data-nav='home']").forEach(b=>b.onclick=()=>showView("home"));
+  document.querySelectorAll("[data-back-library]").forEach(b=>b.onclick=()=>showView("library"));
+  document.querySelectorAll("[data-group]").forEach(b=>b.onclick=()=>openLibrary(b.dataset.group));
+  
+  document.querySelectorAll("[data-game]").forEach(button=>{
+    button.onclick=()=>launchGame(button.dataset.game);
+    button.setAttribute("aria-label",`Launch ${button.querySelector("h4")?.textContent||button.dataset.game}`);
+  });
+
+  $("quizRevealBtn").onclick=revealQuiz;$("quizNextBtn").onclick=nextQuiz;
+  $("revealJeopardyBtn").onclick=revealJeopardy;
+  $("returnBoardBtn").onclick=closeJeopardy;$("resetBoardBtn").onclick=resetJeopardyBoard;
+  $("openTournamentBtn").onclick=openTournament;
+  $("teamCount").onchange=renderTeamEditors;
+  $("beginTournamentBtn").onclick=beginTournament;
+  $("endTournamentBtn").onclick=endTournament;
+  $("closeWinnerBtn").onclick=()=>{$("winnerOverlay").classList.add("hidden");showView("home")};
+  $("playAgainBtn").onclick=playTournamentAgain;
+  document.addEventListener("nldg:round-complete",onRoundComplete);
+  document.addEventListener("nldg:open-library",e=>openLibrary(e.detail.group));
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeJeopardy()});
+}
+
+try{
+  loadData();
+  setupEvents();updateScores();syncTeamButtons();updateStatus();
+  if(state.tournament?.active)$("tournamentBadge").classList.remove("hidden");
+  setupPresentationKeys();
+  autoLaunchFromUrl();
+}catch(error){
+  console.error(error);
+  alert("The game data could not load. Please upload every Version 4 file and refresh.");
+}
+
 </script>
 </body>
 </html>

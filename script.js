@@ -1,6 +1,9 @@
+const navigationScopeFix=document.createElement('style');
+navigationScopeFix.textContent='@media(max-width:850px){.breadcrumbs,.content-sequence{position:static;top:auto;left:auto;right:auto;padding:0;background:transparent;border:0;border-radius:0}.breadcrumbs{display:flex}.content-sequence{display:grid}.nav-open .breadcrumbs{display:flex}.nav-open .content-sequence{display:grid}}';
+document.head.appendChild(navigationScopeFix);
 const menu=document.querySelector('.menu');
 if(menu)menu.addEventListener('click',()=>document.body.classList.toggle('nav-open'));
-document.querySelectorAll('nav a').forEach(link=>link.addEventListener('click',()=>document.body.classList.remove('nav-open')));
+document.querySelectorAll('.site-header nav a').forEach(link=>link.addEventListener('click',()=>document.body.classList.remove('nav-open')));
 document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
 
 (function platformIntegration(){

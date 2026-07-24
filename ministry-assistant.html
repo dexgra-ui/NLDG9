@@ -1,1 +1,78 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Intelligent Bible Study | No Labels, Designed by God</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="ministry-assistant.css?v=7.1.0"></head><body><header class="assistant-header"><a href="index.html" class="brand">No Labels, Designed by God</a><nav><a href="dashboard.html">My Journey</a><a href="community.html">Community</a><a href="ministry-tools.html">Ministry Tools</a></nav></header><main class="assistant-shell"><section class="hero"><p class="eyebrow">Sprint 7.1</p><h1>Intelligent Bible Study</h1><p>Explore passages, themes, context, cross-references, and ministry preparation without confusing study tools with Scripture itself.</p><div class="boundary"><strong>Study boundary:</strong> The built-in index contains curated study prompts and references, not a full licensed Bible text or live AI. Open and read every passage in your preferred Bible translation.</div></section><section class="study-launcher"><label>Passage or topic<input id="studySearch" placeholder="Try Mark 4:35-41, Micah 6:8, faith, grace, prayer..."></label><button id="exploreStudy" class="primary">Explore</button><div id="topicChips" class="topic-chips"></div></section><section class="workspace"><aside class="mode-nav" aria-label="Assistant modes"><button data-mode="bible" class="active">Bible Study</button><button data-mode="sermon">Sermon Prep</button><button data-mode="lesson">Lesson Prep</button><button data-mode="group">Small Group</button><button data-mode="coach">Discipleship Coach</button><button data-mode="discover">Content Discovery</button><button data-mode="saved">Study Notebooks</button></aside><section class="assistant-panel"><div id="studyExplorer" class="study-explorer"></div><div id="modeIntro"></div><form id="assistantForm"><label for="request">What are you preparing or studying?</label><textarea id="request" rows="5" required></textarea><div class="form-row"><label>Audience<select id="audience"><option>Personal study</option><option>Adults</option><option>Men</option><option>Women</option><option>Youth</option><option>Family</option><option>New believers</option></select></label><label>Depth<select id="depth"><option>Brief</option><option selected>Balanced</option><option>Detailed</option></select></label></div><button type="submit" class="primary">Build guided study</button></form><article id="response" class="response" aria-live="polite"></article></section><aside class="session-sidebar"><h2>Study Notebook</h2><input id="sessionTitle" placeholder="Notebook title"><button id="saveSession">Save study</button><button id="exportSession">Export notes</button><button id="sendToTools">Send to Ministry Tools</button><button id="linkJourney">Link to My Journey</button><hr><h3>Integrity checklist</h3><label><input type="checkbox"> I read the passage directly.</label><label><input type="checkbox"> I checked the surrounding context.</label><label><input type="checkbox"> I verified cross-references.</label><label><input type="checkbox"> I separated Scripture from study suggestions.</label><label><input type="checkbox"> I prayed and sought discernment.</label></aside></section></main><script src="scripture-study-data.js?v=7.1.0"></script><script src="ministry-assistant.js?v=7.1.0"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Interactive Bible Study | No Labels, Designed by God</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="ministry-assistant.css?v=7.1.1">
+</head>
+<body>
+<header class="assistant-header">
+  <a href="index.html" class="brand">No Labels, Designed by God</a>
+  <nav><a href="dashboard.html">My Journey</a><a href="community.html">Community</a><a href="ministry-tools.html">Ministry Tools</a></nav>
+</header>
+<main class="assistant-shell">
+  <section class="hero">
+    <p class="eyebrow">Sprint 7.1.1</p>
+    <h1>Interactive Bible Study</h1>
+    <p>Study the passage, record what you observe, examine context, and carry the work into discipleship and ministry.</p>
+    <div class="boundary"><strong>Study boundary:</strong> This workspace provides curated references and study prompts, not a full licensed Bible text, live AI, divine direction, or authoritative interpretation. Read every passage in your preferred Bible translation and verify each connection in context.</div>
+  </section>
+
+  <section class="study-launcher">
+    <label>Passage or topic<input id="studySearch" placeholder="Try Mark 4:35-41, Micah 6:8, faith, grace, prayer..."></label>
+    <button id="exploreStudy" class="primary">Open study</button>
+    <div id="topicChips" class="topic-chips"></div>
+  </section>
+
+  <nav class="mode-nav" aria-label="Assistant modes">
+    <button data-mode="bible" class="active">Bible Study</button><button data-mode="sermon">Sermon Prep</button><button data-mode="lesson">Lesson Prep</button><button data-mode="group">Small Group</button><button data-mode="coach">Discipleship Coach</button><button data-mode="discover">Content Discovery</button><button data-mode="saved">Study Notebooks</button>
+  </nav>
+
+  <section class="interactive-workspace">
+    <aside class="passage-pane pane">
+      <div class="pane-heading"><p class="label">Passage</p><h2 id="passageTitle">Choose a passage</h2></div>
+      <div id="passageSummary" class="passage-summary"><p>Open a curated passage or topic above. Then read the full text in your Bible.</p></div>
+      <div id="movementList"></div>
+      <div class="observation-tools">
+        <h3>Observation markers</h3>
+        <p class="helper">Select a marker, then add a note about what you see in the text.</p>
+        <div id="markerButtons" class="marker-buttons"></div>
+        <textarea id="markerNote" rows="3" placeholder="Example: The disciples ask whether Jesus cares..."></textarea>
+        <button id="addMarker" class="secondary">Add observation</button>
+        <div id="observationList" class="observation-list"></div>
+      </div>
+    </aside>
+
+    <section class="notes-pane pane">
+      <div id="modeIntro"></div>
+      <div class="note-tabs" role="tablist">
+        <button data-note-tab="observe" class="active">Observe</button><button data-note-tab="interpret">Interpret</button><button data-note-tab="apply">Apply</button><button data-note-tab="prayer">Prayer</button>
+      </div>
+      <label id="noteLabel" for="studyNotes">Observation notes</label>
+      <textarea id="studyNotes" rows="12" placeholder="Write only what you can see in the passage before moving to interpretation."></textarea>
+      <p id="autosaveStatus" class="autosave-status">Notes stay on this device.</p>
+      <form id="assistantForm">
+        <label for="request">Guided study request</label>
+        <textarea id="request" rows="4" required></textarea>
+        <div class="form-row">
+          <label>Audience<select id="audience"><option>Personal study</option><option>Adults</option><option>Men</option><option>Women</option><option>Youth</option><option>Family</option><option>New believers</option></select></label>
+          <label>Depth<select id="depth"><option>Brief</option><option selected>Balanced</option><option>Detailed</option></select></label>
+        </div>
+        <button type="submit" class="primary">Build guided study</button>
+      </form>
+      <article id="response" class="response" aria-live="polite"></article>
+    </section>
+
+    <aside class="tools-pane pane">
+      <section id="contextPanel"><p class="label">Study Tools</p><h2>Context and connections</h2><p>Passage details will appear here.</p></section>
+      <section><h3>Study Notebook</h3><input id="sessionTitle" placeholder="Notebook title"><button id="saveSession">Save study</button><button id="exportSession">Export notes</button><button id="sendToTools">Send to Ministry Tools</button><button id="linkJourney">Link to My Journey</button></section>
+      <section><h3>Integrity checklist</h3><label><input type="checkbox"> I read the passage directly.</label><label><input type="checkbox"> I checked the surrounding context.</label><label><input type="checkbox"> I verified cross-references.</label><label><input type="checkbox"> I separated Scripture from suggestions.</label><label><input type="checkbox"> I prayed and sought discernment.</label></section>
+    </aside>
+  </section>
+</main>
+<script src="scripture-study-data.js?v=7.1.1"></script>
+<script src="ministry-assistant.js?v=7.1.1"></script>
+</body>
+</html>

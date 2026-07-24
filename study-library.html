@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Scripture Study Library | No Labels, Designed by God</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="study-library.css?v=7.2.0">
+</head>
+<body>
+<header class="library-header">
+  <a class="brand" href="index.html">No Labels, Designed by God</a>
+  <nav><a href="ministry-assistant.html">Bible Study</a><a href="dashboard.html">My Journey</a><a href="ministry-tools.html">Ministry Tools</a></nav>
+</header>
+<main class="library-shell">
+  <section class="library-hero">
+    <p class="eyebrow">Sprint 7.2</p>
+    <h1>Scripture Study Library</h1>
+    <p>Find, continue, organize, and carry forward the studies you have saved on this device.</p>
+  </section>
+  <section class="library-controls" aria-label="Study library filters">
+    <label class="search-field">Search studies<input id="librarySearch" type="search" placeholder="Search passage, title, topic, audience, or notes"></label>
+    <label>Study type<select id="modeFilter"><option value="all">All study types</option><option value="bible">Bible Study</option><option value="sermon">Sermon Prep</option><option value="lesson">Lesson Prep</option><option value="group">Small Group</option><option value="coach">Discipleship Coach</option><option value="discover">Content Discovery</option></select></label>
+    <label>Sort<select id="sortFilter"><option value="updated">Recently updated</option><option value="created">Recently created</option><option value="title">Title</option><option value="passage">Passage</option></select></label>
+    <label class="favorite-filter"><input id="favoritesOnly" type="checkbox"> Favorites only</label>
+  </section>
+  <section class="library-summary" aria-live="polite">
+    <div><strong id="studyCount">0</strong><span>Studies</span></div>
+    <div><strong id="favoriteCount">0</strong><span>Favorites</span></div>
+    <div><strong id="passageCount">0</strong><span>Passages</span></div>
+  </section>
+  <section id="libraryResults" class="library-grid"></section>
+  <section id="emptyLibrary" class="empty-state" hidden>
+    <h2>No matching studies</h2>
+    <p>Start a study or adjust the search and filters.</p>
+    <a class="primary-link" href="ministry-assistant.html">Open Interactive Bible Study</a>
+  </section>
+</main>
+<script src="study-library.js?v=7.2.0"></script>
+</body>
+</html>

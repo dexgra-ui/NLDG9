@@ -48,7 +48,7 @@
   const categories=[...new Set(studies.map(study=>study.category).filter(Boolean))].sort();
   if(filter)filter.innerHTML='<option value="all">All types</option>'+categories.map(category=>`<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`).join('');
 
-  if(collections){
+  if(collections&&!collections.dataset.static){
     collections.innerHTML=journeyCollections.map(item=>{
       const classes=['journey-collection-card',item.featured?'is-featured':'',item.status==='planned'?'is-planned':''].filter(Boolean).join(' ');
       const action=item.status==='planned'

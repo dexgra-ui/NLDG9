@@ -24,14 +24,19 @@
   const escapeHtml=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
   const readState=()=>{try{return JSON.parse(localStorage.getItem('nldg-study-state')||'{}');}catch(error){return {};}};
   const writeState=state=>{try{localStorage.setItem('nldg-study-state',JSON.stringify(state));}catch(error){}};
-  const categoryDetails={
-    'Identity in Christ':{icon:'🪪',description:'Grace, worth, purpose, and belonging.'},
-    'Christian Living':{icon:'🌱',description:'Living faithfully with grace and truth.'},
-    'Faith & Today’s World':{icon:'🌍',description:'Biblical wisdom for life in today’s world.'},
-    'Hope & Endurance':{icon:'⚓',description:'Trusting Christ through difficult seasons.'},
-    'Brotherhood':{icon:'🛡️',description:'Freedom, spiritual growth, and faithful brotherhood.'},
-    'Sunday School':{icon:'🏫',description:'Prepared lessons for classes, groups, and personal study.'}
-  };
+
+  const journeyCollections=[
+    {id:'current-events',icon:'🌎',title:'Faith & Truth in Today’s World',eyebrow:'Featured collection',description:'A 42-week study connecting Scripture with culture, technology, justice, mental health, and Christian hope.',meta:'21 of 42 lessons available',status:'available',href:'current-events-series.html',action:'Continue the Series',featured:true},
+    {id:'new-believer',icon:'🌱',title:'New Believer Path',eyebrow:'Foundations',description:'Learn the basics of following Jesus, trusting Scripture, prayer, identity, and life in the church.',meta:'Guided path in development',status:'planned',action:'Coming Soon'},
+    {id:'mens-discipleship',icon:'🛡️',title:'Men’s Discipleship',eyebrow:'Brotherhood',description:'Studies built for men growing in freedom, integrity, leadership, spiritual discipline, and faithful brotherhood.',meta:'Brotherhood studies available',status:'available',filter:'Brotherhood',action:'Explore the Path'},
+    {id:'sunday-school',icon:'📖',title:'Sunday School',eyebrow:'Classes & small groups',description:'Prepared Bible lessons for teaching, group discussion, personal study, and weekly discipleship.',meta:`${sundaySchool.length} published ${sundaySchool.length===1?'lesson':'lessons'}`,status:sundaySchool.length?'available':'planned',filter:'Sunday School',action:sundaySchool.length?'Browse Lessons':'Coming Soon'},
+    {id:'christian-living',icon:'❤️',title:'Christian Living',eyebrow:'Everyday discipleship',description:'Practical studies about prayer, forgiveness, rest, stewardship, serving, endurance, and living faithfully.',meta:'Published studies available',status:'available',filter:'Christian Living',action:'Browse the Collection'},
+    {id:'technology-ai',icon:'💻',title:'Technology & AI',eyebrow:'Digital discipleship',description:'Follow Christ wisely through artificial intelligence, social media, online identity, misinformation, privacy, and digital habits.',meta:'7 lessons available in Current Events',status:'available',href:'current-events-series.html?week=15',action:'Start the Collection'},
+    {id:'difficult-questions',icon:'❓',title:'Difficult Questions',eyebrow:'Faith under examination',description:'A growing collection for doubt, suffering, truth, evil, science, other beliefs, and challenging questions.',meta:'Collection in development',status:'planned',action:'Coming Soon'},
+    {id:'marriage-family',icon:'💍',title:'Marriage & Family',eyebrow:'Christ-centered homes',description:'Resources for marriage, communication, parenting, family discipleship, conflict, and growing together.',meta:'Collection in development',status:'planned',action:'Coming Soon'},
+    {id:'leadership',icon:'🧭',title:'Leadership',eyebrow:'Serve and equip',description:'Studies for teachers, mentors, ministry leaders, and those learning to lead like Jesus.',meta:'Collection in development',status:'planned',action:'Coming Soon'}
+  ];
+
   const card=study=>{
     const state=readState()[study.id]||{};
     const scripture=(study.scripture||[]).join(', ');
@@ -39,9 +44,22 @@
     const progress=state.completed?100:Math.round(state.progress||0);
     return `<article class="study-card" data-study-id="${escapeHtml(study.id)}" data-category="${escapeHtml(study.category)}" data-search="${escapeHtml([study.title,study.description,scripture,tags].join(' ').toLowerCase())}"><div class="study-topline"><span>${escapeHtml(study.category)}</span><small>${escapeHtml(study.difficulty||'All Levels')}</small></div><h3>${escapeHtml(study.title)}</h3><p>${escapeHtml(study.description)}</p><div class="study-meta"><span>📖 ${escapeHtml(scripture||'Scripture study')}</span><span>⏱ ${escapeHtml(study.duration||45)} minutes</span></div>${progress?`<div class="study-card-progress"><span>${state.completed?'Completed':`${progress}% complete`}</span><progress max="100" value="${progress}">${progress}%</progress></div>`:''}<div class="study-experience-actions"><a class="study-open" data-study-id="${escapeHtml(study.id)}" href="${escapeHtml(study.url)}">${progress&&!state.completed?'Continue':'Open Lesson'} →</a><button class="favorite-study" type="button" data-favorite-id="${escapeHtml(study.id)}" aria-label="${state.favorite?'Remove from favorites':'Add to favorites'}" aria-pressed="${state.favorite?'true':'false'}">${state.favorite?'★':'☆'}</button></div></article>`;
   };
+
   const categories=[...new Set(studies.map(study=>study.category).filter(Boolean))].sort();
   if(filter)filter.innerHTML='<option value="all">All types</option>'+categories.map(category=>`<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`).join('');
-  if(collections)collections.innerHTML=categories.map(category=>{const count=studies.filter(study=>study.category===category).length;const detail=categoryDetails[category]||{icon:'📘',description:'Explore studies in this collection.'};return `<button type="button" data-collection="${escapeHtml(category)}"><span>${detail.icon}</span><h3>${escapeHtml(category)}</h3><p>${escapeHtml(detail.description)}</p><small>${count} ${count===1?'lesson':'lessons'}</small></button>`;}).join('')+`<button type="button" data-collection="all"><span>✨</span><h3>Complete Library</h3><p>Browse every published study and lesson.</p><small>${studies.length} lessons</small></button>`;
+
+  if(collections){
+    collections.innerHTML=journeyCollections.map(item=>{
+      const classes=['journey-collection-card',item.featured?'is-featured':'',item.status==='planned'?'is-planned':''].filter(Boolean).join(' ');
+      const action=item.status==='planned'
+        ?`<span class="collection-action is-disabled" aria-disabled="true">${escapeHtml(item.action)}</span>`
+        :item.href
+          ?`<a class="collection-action" href="${escapeHtml(item.href)}">${escapeHtml(item.action)} <span aria-hidden="true">→</span></a>`
+          :`<button class="collection-action" type="button" data-journey-filter="${escapeHtml(item.filter||'all')}">${escapeHtml(item.action)} <span aria-hidden="true">→</span></button>`;
+      return `<article class="${classes}"><div class="collection-card-top"><span class="collection-icon" aria-hidden="true">${item.icon}</span><span class="collection-status ${item.status==='planned'?'planned':'ready'}">${item.status==='planned'?'In Development':'Available'}</span></div><p class="collection-eyebrow">${escapeHtml(item.eyebrow)}</p><h3>${escapeHtml(item.title)}</h3><p class="collection-description">${escapeHtml(item.description)}</p><div class="collection-card-footer"><small>${escapeHtml(item.meta)}</small>${action}</div></article>`;
+    }).join('');
+  }
+
   const renderGrid=()=>{
     const term=(search?.value||'').trim().toLowerCase();
     const type=filter?.value||'all';
@@ -52,6 +70,7 @@
     if(grid)grid.innerHTML=matches.map(card).join('');
     if(empty)empty.hidden=matches.length!==0;
   };
+
   const renderDashboard=()=>{
     const state=readState();
     const completed=studies.filter(study=>state[study.id]?.completed).length;
@@ -62,6 +81,7 @@
     const recent=studies.map(study=>({study,state:state[study.id]||{}})).filter(item=>item.state.lastOpened||item.state.updated).sort((a,b)=>(b.state.lastOpened||b.state.updated||0)-(a.state.lastOpened||a.state.updated||0))[0];
     if(continueSection&&continueCard){continueSection.hidden=!recent;continueCard.innerHTML=recent?card(recent.study):'';}
   };
+
   renderGrid();
   renderDashboard();
   const featuredStudy=studies.find(study=>study.featured)||studies[0];
@@ -69,8 +89,13 @@
   search?.addEventListener('input',renderGrid);
   filter?.addEventListener('change',renderGrid);
   document.addEventListener('click',event=>{
-    const collection=event.target.closest('[data-collection]');
-    if(collection&&filter){filter.value=collection.dataset.collection;renderGrid();document.getElementById('study-grid')?.scrollIntoView({behavior:'smooth',block:'start'});return;}
+    const journeyFilter=event.target.closest('[data-journey-filter]');
+    if(journeyFilter&&filter){
+      filter.value=journeyFilter.dataset.journeyFilter;
+      renderGrid();
+      document.getElementById('library-tools')?.scrollIntoView({behavior:'smooth',block:'start'});
+      return;
+    }
     const openLink=event.target.closest('.study-open[data-study-id]');
     if(openLink){const state=readState();const id=openLink.dataset.studyId;state[id]={...(state[id]||{}),lastOpened:Date.now(),updated:Date.now()};writeState(state);return;}
     const button=event.target.closest('[data-favorite-id]');

@@ -9,9 +9,10 @@
   const escapeHtml=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
   let active='All';
   const href=item=>`article.html?slug=${encodeURIComponent(item.slug)}`;
-  const card=item=>`<article class="article-card"><span class="category">${escapeHtml(item.category)}</span><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.excerpt)}</p><div class="article-meta"><span>${escapeHtml(item.author)}</span><span>${item.readingTime} min read</span></div><a href="${href(item)}">Read article →</a></article>`;
+  const scripture=item=>(item.scripture||[])[0]||'';
+  const card=item=>`<article class="article-card"><span class="category">${escapeHtml(item.category)}</span><h3>${escapeHtml(item.title)}</h3>${scripture(item)?`<span class="article-scripture">${escapeHtml(scripture(item))}</span>`:''}<p>${escapeHtml(item.excerpt)}</p><div class="article-meta"><span>${escapeHtml(item.author)}</span><span>${item.readingTime} min read</span></div><a href="${href(item)}">Read article →</a></article>`;
   const lead=articles.find(item=>item.featured)||articles[0];
-  if(lead)featured.innerHTML=`<div class="featured-visual"><span aria-hidden="true">✍🏽</span></div><div class="featured-copy"><p class="article-eyebrow">Featured Writing</p><h2>${escapeHtml(lead.title)}</h2><p>${escapeHtml(lead.excerpt)}</p><div class="article-meta"><span>${escapeHtml(lead.category)}</span><span>${lead.readingTime} min read</span></div><a class="read-link" href="${href(lead)}">Read featured article →</a></div>`;
+  if(lead)featured.innerHTML=`<div class="featured-visual"><span aria-hidden="true">✍🏽</span></div><div class="featured-copy"><p class="article-eyebrow">Featured Writing</p><h2>${escapeHtml(lead.title)}</h2>${scripture(lead)?`<span class="article-scripture">${escapeHtml(scripture(lead))}</span>`:''}<p>${escapeHtml(lead.excerpt)}</p><div class="article-meta"><span>${escapeHtml(lead.category)}</span><span>${lead.readingTime} min read</span></div><a class="read-link" href="${href(lead)}">Read featured article →</a></div>`;
   const categories=['All',...[...new Set(articles.map(item=>item.category))]];
   if(categoryRow)categoryRow.innerHTML=categories.map(category=>`<button type="button" class="category-button ${category==='All'?'active':''}" data-category="${escapeHtml(category)}">${escapeHtml(category)}</button>`).join('');
   function render(){

@@ -1,0 +1,12 @@
+(function(){
+ const root=document.getElementById('article-detail');
+ if(!root)return;
+ const escapeHtml=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
+ const slug=new URLSearchParams(location.search).get('slug');
+ const article=window.NLDG_ARTICLE_API?.bySlug(slug)||window.NLDG_ARTICLES?.[0];
+ if(!article){root.innerHTML='<p>Article not found.</p>';return;}
+ document.title=`${article.title} | No Labels, Designed by God`;
+ const sections=article.content||[];
+ const related=window.NLDG_ARTICLE_API.related(article,3);
+ root.innerHTML=`<header class="article-header"><a class="series-back-link" href="articles.html">← Article & Writing Center</a><p class="article-eyebrow">${escapeHtml(article.category)}</p><h1>${escapeHtml(article.title)}</h1><p class="dek">${escapeHtml(article.excerpt)}</p><div class="article-meta"><span>${escapeHtml(article.author)}</span><span>${escapeHtml(article.publishedAt)}</span><span>${article.readingTime} min read</span></div></header><div class="article-layout"><aside class="article-aside"><strong>In this article</strong>${sections.map((section,index)=>`<a href="#section-${index+1}">${escapeHtml(section.heading)}</a>`).join('')}<a href="#reflection">Reflection</a><a href="#prayer">Prayer</a></aside><article class="article-body">${sections.map((section,index)=>`<section id="section-${index+1}"><h2>${escapeHtml(section.heading)}</h2>${(section.paragraphs||[]).map(paragraph=>`<p>${escapeHtml(paragraph)}</p>`).join('')}</section>`).join('')}<section id="reflection" class="reflection-box"><h2>Reflection Questions</h2><ol>${(article.questions||[]).map(question=>`<li>${escapeHtml(question)}</li>`).join('')}</ol></section><section id="prayer" class="prayer-box"><h2>Prayer</h2><p>${escapeHtml(article.prayer)}</p></section></article></div><section class="article-section"><div class="section-head"><div><p class="article-eyebrow">Continue reading</p><h2>Related articles</h2></div></div><div class="related-grid">${related.map(item=>`<a href="article.html?slug=${encodeURIComponent(item.slug)}">${escapeHtml(item.title)} →</a>`).join('')}</div></section>`;
+})();

@@ -5,6 +5,24 @@ const menu=document.querySelector('.menu');
 if(menu)menu.addEventListener('click',()=>document.body.classList.toggle('nav-open'));
 document.querySelectorAll('.site-header nav a').forEach(link=>link.addEventListener('click',()=>document.body.classList.remove('nav-open')));
 document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
+(function ensureSocialLinks(){
+  document.querySelectorAll('.footer-links').forEach(footerLinks=>{
+    const links=[
+      {label:'Facebook ↗',href:'https://www.facebook.com/NoLabelsDesignedbyGod',aria:'Follow No Labels, Designed by God on Facebook'},
+      {label:'Substack ↗',href:'https://substack.com/@nolabelsdesignedbygod',aria:'Read No Labels, Designed by God on Substack'}
+    ];
+    links.forEach(item=>{
+      if(footerLinks.querySelector(`a[href="${item.href}"]`))return;
+      const link=document.createElement('a');
+      link.href=item.href;
+      link.target='_blank';
+      link.rel='noopener noreferrer';
+      link.setAttribute('aria-label',item.aria);
+      link.textContent=item.label;
+      footerLinks.appendChild(link);
+    });
+  });
+})();
 
 (function platformIntegration(){
   if(!document.querySelector('link[data-platform-styles]')){const link=document.createElement('link');link.rel='stylesheet';link.href='platform.css?v=5.0.2';link.dataset.platformStyles='true';document.head.appendChild(link);}

@@ -15,10 +15,11 @@
   const savedStudies=()=>read(SAVED,[]).map(item=>({
     id:`saved-${item.id}`,
     sourceId:item.id,
+    source:item,
     type:'Saved Study',
     title:item.title||item.study?.ref||'Saved Bible Study',
     description:(Object.values(item.notes||{}).find(Boolean)||item.request||'A study saved on this device.').replace(/<[^>]+>/g,'').slice(0,190),
-    url:'study-library.html#saved',
+    url:'ministry-assistant.html',
     scripture:[item.study?.ref].filter(Boolean),
     topics:[...(item.study?.themes||[]),...(item.tags||[])],
     updatedAt:item.updated||item.created,
@@ -37,7 +38,7 @@
     week:item.week,
     status:item.status,
     duration:45
-  })):[];
+  })) : [];
   const allItems=()=>[...catalog,...lessonItems(),...savedStudies()];
   let query='';
   let filter='all';
@@ -73,7 +74,12 @@
   });}
   function tags(item){return [...(item.scripture||[]).slice(0,1),...(item.topics||[]).slice(0,2)].filter(Boolean);}
   function icon(item){return ({studies:'📖',sunday:'🧑‍🏫',devotionals:'🌅',articles:'📝',games:'🎮',resources:'🧰',saved:'🔖'})[category(item)]||'📚';}
-  function recordHistory(item){const list=read(HISTORY,[]).filter(entry=>entry.id!==item.id);list.unshift({id:item.id,title:item.title,url:item.url,type:item.type,openedAt:Date.now()});write(HISTORY,list.slice(0,20));}
+  function recordHistory(item){
+    if(item.local&&item.source)write('nldg-study-library-open',item.source);
+    const list=read(HISTORY,[]).filter(entry=>entry.id!==item.id);
+    list.unshift({id:item.id,title:item.title,url:item.url,type:item.type,openedAt:Date.now()});
+    write(HISTORY,list.slice(0,20));
+  }
   function toggleFavorite(item){const favs=favoriteSet();const key=item.local?item.sourceId:item.id;favs.has(key)?favs.delete(key):favs.add(key);write(FAVORITES,[...favs]);render();}
   function card(item){const favs=favoriteSet();const key=item.local?item.sourceId:item.id;const complete=isComplete(item);return `<article class="library-card ${complete?'is-complete':''}"><div class="library-card-top"><span class="library-type">${icon(item)} ${esc(item.type)}</span><button class="library-favorite" data-favorite="${esc(item.id)}" aria-label="Toggle favorite">${favs.has(key)?'★':'☆'}</button></div><h3>${esc(item.title)}</h3><p>${esc(item.description||'Open this resource to continue your discipleship journey.')}</p><div class="library-tags">${tags(item).map(tag=>`<span>${esc(tag)}</span>`).join('')}</div><div class="library-card-meta">${item.series?`${esc(item.series)} · `:''}${item.duration?`${item.duration} min`:item.local?'Saved on this device':esc(item.audience?.[0]||'Ministry resource')}</div><div class="library-card-actions"><a href="${esc(item.url)}" data-open="${esc(item.id)}">${item.local?'Continue':'Open'}</a>${complete?'<span class="complete-label">✓ Complete</span>':''}</div></article>`;}
   function resolve(id){return allItems().find(item=>item.id===id);}

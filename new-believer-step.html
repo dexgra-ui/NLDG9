@@ -7,7 +7,7 @@
 <meta name="description" content="A guided lesson from the New Believers Path.">
 <title>New Believers Path | No Labels, Designed by God</title>
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="new-believers.css">
+<link rel="stylesheet" href="new-believers.css?v=20260726-scripture-review">
 </head>
 <body>
 <header class="site-header"><a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God</strong><small>A family ministry built to last.</small></span></a><button class="menu" aria-expanded="false">Menu</button><nav><a href="index.html">Home</a><a class="active" href="new-believers.html">Start Here</a><a href="studies.html">Bible Studies</a><a href="devotionals.html">Devotionals</a><a href="articles.html">Articles</a><a href="resource-center.html">Resource Center</a><a href="about.html">Our Ministry</a><a class="play-link" href="play.html">🎮 Games</a></nav></header>
@@ -24,6 +24,7 @@
 <div class="lesson-path-main" id="lessonMain"></div>
 <aside class="lesson-path-side">
 <div class="lesson-side-card"><strong id="goalTitle">Step goal</strong><p id="lessonGoal"></p><p class="lesson-time" id="lessonTime"></p></div>
+<div class="lesson-side-card lesson-principle"><strong>Scripture-first approach</strong><p>Read the passages in context. Distinguish what Scripture clearly says from interpretation, tradition, and application. Areas where Christians differ are identified honestly.</p></div>
 <div class="lesson-side-card"><strong>Before marking complete</strong><div class="lesson-checklist" id="lessonChecklist"></div><button id="completeStep" class="complete-step" disabled></button><p id="lessonStatus" class="lesson-status"></p></div>
 <div class="lesson-side-card"><strong>My response</strong><p>Write a prayer, question, or next step. Notes stay on this device.</p><textarea id="lessonNotes" class="lesson-notes" rows="7" placeholder="What is God showing me?"></textarea><button id="saveNotes" class="save-notes">Save Notes</button><p id="notesStatus" class="lesson-status"></p></div>
 <div class="lesson-side-card"><strong>Need more time?</strong><p>There is no pressure to rush. Return to the Scriptures and talk through your questions with a mature believer or church leader.</p></div>
@@ -33,7 +34,7 @@
 <nav class="lesson-step-nav"><a id="previousStep" class="lesson-step-link" href="#"><span>Previous step</span><strong></strong></a><a id="nextStep" class="lesson-step-link" href="#"><span>Next step</span><strong></strong></a></nav>
 </main>
 <footer class="ministry-footer"><div class="footer-invitation"><img src="no-labels-approved-logo.png" alt=""><div><strong>No Labels, Designed by God</strong><p>Wherever you are in your walk with Christ, you are welcome here.</p></div></div><div class="footer-links"><a href="new-believers.html">New Believers Path</a><a href="studies.html">Bible Studies</a><a href="devotionals.html">Devotionals</a><a href="about.html">Our Ministry</a></div><small>© <span data-year></span> No Labels, Designed by God.</small></footer>
-<script src="new-believers-data.js"></script>
+<script src="new-believers-data.js?v=20260726-scripture-review"></script>
 <script>
 const params=new URLSearchParams(location.search);let stepNumber=Number(params.get('step'));if(!Number.isInteger(stepNumber)||stepNumber<1||stepNumber>10)stepNumber=1;
 const steps=window.NEW_BELIEVER_STEPS||[],item=steps.find(entry=>entry.step===stepNumber)||steps[0];

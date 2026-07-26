@@ -7,7 +7,7 @@
 <meta name="description" content="A complete ten-step Bible-based path for exploring faith and beginning life with Jesus.">
 <title>New Believers Path | No Labels, Designed by God</title>
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="new-believers.css">
+<link rel="stylesheet" href="new-believers.css?v=20260726-scripture-review">
 </head>
 <body>
 <header class="site-header"><a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God</strong><small>A family ministry built to last.</small></span></a><button class="menu" aria-expanded="false">Menu</button><nav><a href="index.html">Home</a><a class="active" href="new-believers.html">Start Here</a><a href="studies.html">Bible Studies</a><a href="devotionals.html">Devotionals</a><a href="articles.html">Articles</a><a href="resource-center.html">Resource Center</a><a href="about.html">Our Ministry</a><a class="play-link" href="play.html">🎮 Games</a></nav></header>
@@ -20,15 +20,24 @@
 <article><p class="kicker">Exploring Christianity?</p><h2>You are welcome to begin before you have every answer.</h2><p>Use this path to understand who Jesus is, what Christians mean by salvation, and what it looks like to trust Him. Honest questions are not a threat to faith. They can become part of the journey toward truth.</p></article>
 <article><p class="kicker">Recently trusted Christ?</p><h2>New life needs a strong foundation.</h2><p>This path will help you understand assurance, Scripture, prayer, the Holy Spirit, the church, baptism, temptation, sharing your faith, and daily discipleship.</p></article>
 </section>
+<section class="section path-doctrine">
+<div><p class="kicker">How this path teaches</p><h2>Scripture first. Interpretations labeled honestly.</h2><p>Each lesson begins with the biblical text, explains what the passage clearly teaches, and then identifies areas where faithful Christians may understand secondary questions differently.</p></div>
+<div class="path-doctrine-grid">
+<article class="path-doctrine-card"><strong>Read in context</strong><p>We consider the surrounding passage, original audience, literary form, and wider biblical story.</p></article>
+<article class="path-doctrine-card"><strong>Separate text and interpretation</strong><p>Scripture is authoritative. Our explanations and traditions remain open to careful examination and correction.</p></article>
+<article class="path-doctrine-card"><strong>Name Christian differences</strong><p>Secondary disagreements are acknowledged without treating them as requirements for salvation.</p></article>
+<article class="path-doctrine-card"><strong>Disclose our perspective</strong><p>When Wesleyan-Holiness teaching shapes a lesson, that perspective is identified openly rather than presented as the only Christian wording.</p></article>
+</div>
+</section>
 <div class="path-progress" aria-live="polite"><div class="path-progress-top"><strong id="progressLabel">Your progress: 0 of 10 steps</strong><span>Your progress and lesson notes are saved on this device.</span></div><div class="path-progress-track"><i id="progressBar"></i></div></div>
 <section id="pathway" class="section">
-<div class="section-heading"><p class="kicker">The complete journey</p><h2>Ten foundations for following Jesus.</h2><p>Every step is now available. Work through them in order or return to the area where you need the most help.</p></div>
+<div class="section-heading"><p class="kicker">The complete journey</p><h2>Ten foundations for following Jesus.</h2><p>Every step is available. Work through them in order or return to the area where you need the most help.</p></div>
 <div class="path-grid" id="pathGrid"></div>
 </section>
 <section class="section path-guide"><div><p class="kicker">How to use this path</p><h2>Move slowly enough for truth to take root.</h2><p>This is not a test to pass. It is a guide for learning, reflecting, responding, and building healthy habits as you follow Jesus.</p></div><div class="path-guide-card"><h3>For each step</h3><ol><li>Read the listed Scripture passages.</li><li>Work through the teaching.</li><li>Answer the reflection questions honestly.</li><li>Write private notes saved on your device.</li><li>Practice the suggested next step.</li><li>Pray in your own words.</li><li>Talk with a mature Christian or local church leader.</li></ol></div></section>
 </main>
 <footer class="ministry-footer"><div class="footer-invitation"><img src="no-labels-approved-logo.png" alt=""><div><strong>No Labels, Designed by God</strong><p>We believe every person is created in the image of God. Wherever you are in your walk with Christ, you are welcome here.</p></div></div><div class="footer-links"><a href="new-believers.html">Start Here</a><a href="studies.html">Study</a><a href="devotionals.html">Devotionals</a><a href="resource-center.html">Grow</a><a href="about.html">Our Ministry</a></div><small>© <span data-year></span> No Labels, Designed by God.</small></footer>
-<script src="new-believers-data.js"></script>
+<script src="new-believers-data.js?v=20260726-scripture-review"></script>
 <script>
 const completed=JSON.parse(localStorage.getItem('nldg-new-believers-progress')||'[]'),steps=window.NEW_BELIEVER_STEPS||[],grid=document.getElementById('pathGrid');
 grid.innerHTML=steps.map(item=>`<a class="path-step ${completed.includes(item.step)?'complete':''}" data-step="${item.step}" href="new-believer-step.html?step=${item.step}"><span class="path-step-number">${item.step}</span><div><h3>${item.title}</h3><p>${item.goal}</p><div class="path-step-meta"><span>${item.keyScriptures.split(' • ')[0]}</span><span>${item.keyScriptures.split(' • ')[1]||''}</span><span>${item.minutes}</span></div></div><span class="path-step-status">${completed.includes(item.step)?'Completed ✓':item.step===1?'Begin →':'Open Step →'}</span></a>`).join('');

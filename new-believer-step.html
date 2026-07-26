@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#06122d">
+<meta name="description" content="A guided lesson from the New Believers Path.">
+<title>New Believers Path | No Labels, Designed by God</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="new-believers.css">
+</head>
+<body>
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God</strong><small>A family ministry built to last.</small></span></a><button class="menu" aria-expanded="false">Menu</button><nav><a href="index.html">Home</a><a class="active" href="new-believers.html">Start Here</a><a href="studies.html">Bible Studies</a><a href="devotionals.html">Devotionals</a><a href="articles.html">Articles</a><a href="resource-center.html">Resource Center</a><a href="about.html">Our Ministry</a><a class="play-link" href="play.html">🎮 Games</a></nav></header>
+<main class="lesson-path-shell">
+<div class="lesson-path-breadcrumb"><a href="new-believers.html">New Believers Path</a><span>›</span><span id="breadcrumbStep"></span></div>
+<div class="lesson-mini-progress"><strong id="miniProgressLabel"></strong><div><i id="miniProgressBar"></i></div></div>
+<section class="lesson-path-hero">
+<p class="step-label" id="stepLabel"></p>
+<h1 id="lessonTitle"></h1>
+<p id="lessonIntro"></p>
+<div class="lesson-key-scripture"><strong>Key Scriptures</strong><span id="keyScriptures"></span></div>
+</section>
+<div class="lesson-path-layout">
+<div class="lesson-path-main" id="lessonMain"></div>
+<aside class="lesson-path-side">
+<div class="lesson-side-card"><strong id="goalTitle">Step goal</strong><p id="lessonGoal"></p><p class="lesson-time" id="lessonTime"></p></div>
+<div class="lesson-side-card"><strong>Before marking complete</strong><div class="lesson-checklist" id="lessonChecklist"></div><button id="completeStep" class="complete-step" disabled></button><p id="lessonStatus" class="lesson-status"></p></div>
+<div class="lesson-side-card"><strong>My response</strong><p>Write a prayer, question, or next step. Notes stay on this device.</p><textarea id="lessonNotes" class="lesson-notes" rows="7" placeholder="What is God showing me?"></textarea><button id="saveNotes" class="save-notes">Save Notes</button><p id="notesStatus" class="lesson-status"></p></div>
+<div class="lesson-side-card"><strong>Need more time?</strong><p>There is no pressure to rush. Return to the Scriptures and talk through your questions with a mature believer or church leader.</p></div>
+<div class="lesson-side-card lesson-print-card"><button id="printLesson" class="save-notes">Print This Step</button></div>
+</aside>
+</div>
+<nav class="lesson-step-nav"><a id="previousStep" class="lesson-step-link" href="#"><span>Previous step</span><strong></strong></a><a id="nextStep" class="lesson-step-link" href="#"><span>Next step</span><strong></strong></a></nav>
+</main>
+<footer class="ministry-footer"><div class="footer-invitation"><img src="no-labels-approved-logo.png" alt=""><div><strong>No Labels, Designed by God</strong><p>Wherever you are in your walk with Christ, you are welcome here.</p></div></div><div class="footer-links"><a href="new-believers.html">New Believers Path</a><a href="studies.html">Bible Studies</a><a href="devotionals.html">Devotionals</a><a href="about.html">Our Ministry</a></div><small>© <span data-year></span> No Labels, Designed by God.</small></footer>
+<script src="new-believers-data.js"></script>
+<script>
+const params=new URLSearchParams(location.search);let stepNumber=Number(params.get('step'));if(!Number.isInteger(stepNumber)||stepNumber<1||stepNumber>10)stepNumber=1;
+const steps=window.NEW_BELIEVER_STEPS||[],item=steps.find(entry=>entry.step===stepNumber)||steps[0];
+const completed=JSON.parse(localStorage.getItem('nldg-new-believers-progress')||'[]');
+document.title=`${item.title} | New Believers Path`;document.getElementById('breadcrumbStep').textContent=`Step ${item.step}`;document.getElementById('stepLabel').textContent=`Step ${item.step} of 10`;document.getElementById('lessonTitle').textContent=item.title;document.getElementById('lessonIntro').textContent=item.intro;document.getElementById('keyScriptures').textContent=item.keyScriptures;document.getElementById('lessonGoal').textContent=item.goal;document.getElementById('lessonTime').textContent=item.minutes;
+const main=document.getElementById('lessonMain');
+function renderSection(section){const paragraphs=(section.paragraphs||[]).map(text=>`<p>${text}</p>`).join('');const points=section.points?`<ul class="truth-list">${section.points.map(point=>`<li><strong>${point}</strong></li>`).join('')}</ul>`:'';const read=section.read?`<h3>Read</h3><p>${section.read}</p>`:'';const highlight=section.highlight?`<div class="lesson-key-scripture"><strong>${section.highlightTitle||'Remember'}</strong><span>${section.highlight}</span></div>`:'';return `<section class="lesson-path-block"><h2>${section.title}</h2>${paragraphs}${points}${read}${highlight}</section>`}
+main.innerHTML=item.sections.map(renderSection).join('')+`<section class="lesson-path-block"><h2>Pause and consider</h2><ul class="reflection-questions">${item.questions.map(question=>`<li>${question}</li>`).join('')}</ul></section><section class="lesson-path-block"><h2>Live it today</h2><ol>${item.actions.map(action=>`<li>${action}</li>`).join('')}</ol></section><section class="lesson-path-block lesson-prayer"><h2>Prayer</h2><p>${item.prayer}</p></section><section class="lesson-path-block related-path-resources"><h2>Related resources</h2><div>${item.related.map(link=>`<a class="button secondary" href="${link.href}">${link.label}</a>`).join('')}</div></section>`;
+const checklist=document.getElementById('lessonChecklist'),button=document.getElementById('completeStep'),status=document.getElementById('lessonStatus');
+const checkKey=`nldg-new-believers-checks-${item.step}`,savedChecks=JSON.parse(localStorage.getItem(checkKey)||'[]');
+checklist.innerHTML=item.checklist.map((label,index)=>`<label><input type="checkbox" class="step-check" data-index="${index}" ${savedChecks.includes(index)?'checked':''}> ${label}</label>`).join('');
+const checks=[...document.querySelectorAll('.step-check')];
+function refresh(){button.disabled=!checks.every(check=>check.checked);localStorage.setItem(checkKey,JSON.stringify(checks.filter(check=>check.checked).map(check=>Number(check.dataset.index))))}
+checks.forEach(check=>check.addEventListener('change',refresh));button.textContent=`Mark Step ${item.step} Complete`;refresh();
+if(completed.includes(item.step)){checks.forEach(check=>check.checked=true);refresh();button.textContent=`Step ${item.step} Completed ✓`;status.textContent='Your progress is saved on this device.'}
+button.addEventListener('click',()=>{const saved=JSON.parse(localStorage.getItem('nldg-new-believers-progress')||'[]');if(!saved.includes(item.step))saved.push(item.step);saved.sort((a,b)=>a-b);localStorage.setItem('nldg-new-believers-progress',JSON.stringify(saved));button.textContent=`Step ${item.step} Completed ✓`;status.textContent=item.step===10?'You completed the New Believers Path. Keep growing with Jesus and His church.':`Step ${item.step} is complete. Continue when you are ready.`;updateMiniProgress(saved)});
+const notes=document.getElementById('lessonNotes'),notesStatus=document.getElementById('notesStatus'),notesKey=`nldg-new-believers-notes-${item.step}`;notes.value=localStorage.getItem(notesKey)||'';document.getElementById('saveNotes').onclick=()=>{localStorage.setItem(notesKey,notes.value);notesStatus.textContent='Notes saved on this device.';setTimeout(()=>notesStatus.textContent='',2200)};
+document.getElementById('printLesson').onclick=()=>window.print();
+function updateMiniProgress(list){const count=list.filter(step=>step>=1&&step<=10).length;document.getElementById('miniProgressLabel').textContent=`Path progress: ${count} of 10 steps`;document.getElementById('miniProgressBar').style.width=`${count*10}%`};updateMiniProgress(completed);
+function setStepLink(id,target,label){const link=document.getElementById(id);if(!target){link.href='new-believers.html';link.querySelector('span').textContent=label;link.querySelector('strong').textContent='Path Overview';return}link.href=`new-believer-step.html?step=${target.step}`;link.querySelector('strong').textContent=target.title}
+setStepLink('previousStep',steps.find(entry=>entry.step===item.step-1),'Return to');setStepLink('nextStep',steps.find(entry=>entry.step===item.step+1),item.step===10?'Return to':'Next step');
+</script>
+<script src="script.js"></script>
+</body>
+</html>

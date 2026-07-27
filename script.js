@@ -1,9 +1,10 @@
+const navigationScript=document.createElement('script');
+navigationScript.src='site-navigation.js?v=1.0.0';
+navigationScript.async=false;
+document.head.appendChild(navigationScript);
 const navigationScopeFix=document.createElement('style');
 navigationScopeFix.textContent='@media(max-width:850px){.breadcrumbs,.content-sequence{position:static;top:auto;left:auto;right:auto;padding:0;background:transparent;border:0;border-radius:0}.breadcrumbs{display:flex}.content-sequence{display:grid}.nav-open .breadcrumbs{display:flex}.nav-open .content-sequence{display:grid}}';
 document.head.appendChild(navigationScopeFix);
-const menu=document.querySelector('.menu');
-if(menu)menu.addEventListener('click',()=>document.body.classList.toggle('nav-open'));
-document.querySelectorAll('.site-header nav a').forEach(link=>link.addEventListener('click',()=>document.body.classList.remove('nav-open')));
 document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
 (function ensureSocialLinks(){
   document.querySelectorAll('.footer-links').forEach(footerLinks=>{
@@ -25,7 +26,7 @@ document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().g
 })();
 
 (function platformIntegration(){
-  if(!document.querySelector('link[data-platform-styles]')){const link=document.createElement('link');link.rel='stylesheet';link.href='platform.css?v=5.0.2';link.dataset.platformStyles='true';document.head.appendChild(link);}
+  if(!document.querySelector('link[data-platform-styles]')){const link=document.createElement('link');link.rel='stylesheet';link.href='platform.css?v=5.2.0';link.dataset.platformStyles='true';document.head.appendChild(link);}
   const replaceBranding=root=>{const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let node;while(node=walker.nextNode()){if(node.parentElement?.closest('script,style'))continue;node.nodeValue=node.nodeValue.replaceAll('Brotherhood Bible Games','No Labels Games');}};
   replaceBranding(document.body);
   const ensureLibrary=()=>new Promise((resolve,reject)=>{if(window.NLDG_LIBRARY){resolve();return;}const script=document.createElement('script');script.src='content-library.js';script.onload=resolve;script.onerror=reject;document.head.appendChild(script);});
@@ -67,7 +68,7 @@ if(studyPageId){const loadScript=src=>new Promise((resolve,reject)=>{const exist
   const loadPersonalization=()=>{if(window.NLDG_PERSONAL)return;const existing=document.querySelector('script[data-personalization]');if(existing)return;const script=document.createElement('script');script.src='personalization.js?v=5.1.0';script.dataset.personalization='true';document.body.appendChild(script);};
   if(window.NLDG_CONTENT)loadPersonalization();else window.addEventListener('load',loadPersonalization,{once:true});
   if(!document.querySelector('link[href^="dashboard.css"]')){const style=document.createElement('link');style.rel='stylesheet';style.href='dashboard.css?v=5.1.0';document.head.appendChild(style);}
-  if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js?v=5.1.0').catch(()=>{}));
+  if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js?v=5.2.0').catch(()=>{}));
   let installPrompt;
   window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();installPrompt=event;const header=document.querySelector('.site-header');if(!header||document.querySelector('.install-app-button'))return;const button=document.createElement('button');button.type='button';button.className='install-app-button';button.textContent='Install App';button.addEventListener('click',async()=>{if(!installPrompt)return;installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;button.remove();});header.appendChild(button);});
 })();

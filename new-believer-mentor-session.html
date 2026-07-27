@@ -7,12 +7,13 @@
 <meta name="description" content="A guided mentor session for the New Believers Path.">
 <title>Mentor Session | No Labels, Designed by God</title>
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="new-believer-mentor.css">
+<link rel="stylesheet" href="new-believer-mentor.css?v=20260727-complete">
 </head>
 <body>
 <header class="site-header"><a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God</strong><small>New Believer Mentor Guide</small></span></a><button class="menu" aria-expanded="false">Menu</button><nav><a href="index.html">Home</a><a href="new-believers.html">Start Here</a><a href="studies.html">Bible Studies</a><a href="devotionals.html">Devotionals</a><a class="active" href="resource-center.html">Resource Center</a><a href="about.html">Our Ministry</a><a class="play-link" href="play.html">🎮 Games</a></nav></header>
 <main class="mentor-shell">
 <div class="mentor-breadcrumb"><a href="new-believer-mentor.html">Mentor Guide</a><span>›</span><span id="sessionCrumb"></span></div>
+<div class="mentor-mini-progress"><strong id="mentorMiniLabel"></strong><div><i id="mentorMiniBar"></i></div></div>
 <section class="mentor-session-hero">
 <p class="session-label" id="sessionLabel"></p>
 <h1 id="sessionTitle"></h1>
@@ -30,31 +31,25 @@
 <div class="mentor-side-card"><button id="printSession" class="mentor-button" type="button">Print This Session</button></div>
 </aside>
 </div>
+<nav class="mentor-session-nav"><a id="previousSession" href="#"><span>Previous session</span><strong></strong></a><a id="nextSession" href="#"><span>Next session</span><strong></strong></a></nav>
 </main>
 <footer class="ministry-footer"><div class="footer-invitation"><img src="no-labels-approved-logo.png" alt=""><div><strong>No Labels, Designed by God</strong><p>Helping people begin, grow, and walk with Jesus in community.</p></div></div><div class="footer-links"><a href="new-believers.html">Learner Path</a><a href="new-believer-mentor.html">Mentor Guide</a><a href="studies.html">Bible Studies</a><a href="resource-center.html">Resources</a></div><small>© <span data-year></span> No Labels, Designed by God.</small></footer>
-<script src="new-believer-mentor-data.js"></script>
+<script src="new-believer-mentor-data.js?v=20260727-complete"></script>
+<script src="new-believer-mentor-sessions-2-5.js?v=20260727-complete"></script>
+<script src="new-believer-mentor-sessions-6-10.js?v=20260727-complete"></script>
 <script>
-const params=new URLSearchParams(location.search);let sessionNumber=Number(params.get('session'));if(!Number.isInteger(sessionNumber))sessionNumber=1;
-const sessions=window.NEW_BELIEVER_MENTOR_SESSIONS||[],item=sessions.find(entry=>entry.session===sessionNumber&&entry.status==='available')||sessions.find(entry=>entry.status==='available');
-if(!item){location.replace('new-believer-mentor.html')}
+const params=new URLSearchParams(location.search);let sessionNumber=Number(params.get('session'));if(!Number.isInteger(sessionNumber)||sessionNumber<1||sessionNumber>10)sessionNumber=1;
+const sessions=window.NEW_BELIEVER_MENTOR_SESSIONS||[],item=sessions.find(entry=>entry.session===sessionNumber)||sessions[0];if(!item){location.replace('new-believer-mentor.html')}
 document.title=`${item.title} | Mentor Session ${item.session}`;document.getElementById('sessionCrumb').textContent=`Session ${item.session}`;document.getElementById('sessionLabel').textContent=`Mentor Session ${item.session} of 10`;document.getElementById('sessionTitle').textContent=item.title;document.getElementById('sessionSummary').textContent=item.summary;document.getElementById('sessionTime').textContent=item.time;document.getElementById('sessionScriptures').textContent=item.scriptures;document.getElementById('sessionGoal').textContent=item.goal;document.getElementById('learnerStep').href=item.learnerStep;
-const list=items=>`<ul>${items.map(text=>`<li>${text}</li>`).join('')}</ul>`;
-const flow=item.flow.map(part=>`<article class="mentor-flow-card"><div class="mentor-flow-card-header"><h3>${part.title}</h3><span>${part.minutes}</span></div>${(part.paragraphs||[]).map(text=>`<p>${text}</p>`).join('')}${part.points?list(part.points):''}${part.questions?`<h4>Conversation questions</h4><ul class="mentor-question-list">${part.questions.map(text=>`<li>${text}</li>`).join('')}</ul>`:''}</article>`).join('');
-document.getElementById('mentorMain').innerHTML=`
-<section class="mentor-block"><h2>Prepare before the meeting</h2>${list(item.prepare)}</section>
-<section class="mentor-block mentor-central-truth"><h2>Central biblical truth</h2><p><strong>${item.truth}</strong></p></section>
-<section class="mentor-block"><h2>Suggested session flow</h2>${flow}</section>
-<section class="mentor-block"><h2>Listen for these misunderstandings</h2>${list(item.listenFor)}</section>
-<section class="mentor-block mentor-warning"><h2>What the mentor should not do</h2>${list(item.doNot)}</section>
-<section class="mentor-block"><h2>Follow-up and next steps</h2>${list(item.nextSteps)}</section>
-<section class="mentor-block mentor-central-truth"><h2>Prayer</h2><p>${item.prayer}</p></section>`;
-const checklist=document.getElementById('mentorChecklist'),checkKey=`nldg-mentor-session-checks-${item.session}`,savedChecks=JSON.parse(localStorage.getItem(checkKey)||'[]');
-checklist.innerHTML=item.checklist.map((label,index)=>`<label><input class="mentor-check" type="checkbox" data-index="${index}" ${savedChecks.includes(index)?'checked':''}> ${label}</label>`).join('');
-const checks=[...document.querySelectorAll('.mentor-check')],completeButton=document.getElementById('completeSession'),completionStatus=document.getElementById('completionStatus');
-function refreshChecks(){const selected=checks.filter(check=>check.checked).map(check=>Number(check.dataset.index));localStorage.setItem(checkKey,JSON.stringify(selected));completeButton.disabled=!checks.every(check=>check.checked)}checks.forEach(check=>check.addEventListener('change',refreshChecks));refreshChecks();
-const completed=JSON.parse(localStorage.getItem('nldg-mentor-sessions-complete')||'[]');if(completed.includes(item.session)){checks.forEach(check=>check.checked=true);refreshChecks();completeButton.textContent=`Session ${item.session} Completed ✓`;completionStatus.textContent='Mentor progress is saved on this device.'}
-completeButton.onclick=()=>{const saved=JSON.parse(localStorage.getItem('nldg-mentor-sessions-complete')||'[]');if(!saved.includes(item.session))saved.push(item.session);localStorage.setItem('nldg-mentor-sessions-complete',JSON.stringify(saved.sort((a,b)=>a-b)));completeButton.textContent=`Session ${item.session} Completed ✓`;completionStatus.textContent='Session complete. Follow up with the learner as planned.'};
+const list=items=>`<ul>${items.map(text=>`<li>${text}</li>`).join('')}</ul>`;const flow=item.flow.map(part=>`<article class="mentor-flow-card"><div class="mentor-flow-card-header"><h3>${part.title}</h3><span>${part.minutes}</span></div>${(part.paragraphs||[]).map(text=>`<p>${text}</p>`).join('')}${part.points?list(part.points):''}${part.questions?`<h4>Conversation questions</h4><ul class="mentor-question-list">${part.questions.map(text=>`<li>${text}</li>`).join('')}</ul>`:''}</article>`).join('');
+document.getElementById('mentorMain').innerHTML=`<section class="mentor-block"><h2>Prepare before the meeting</h2>${list(item.prepare)}</section><section class="mentor-block mentor-central-truth"><h2>Central biblical truth</h2><p><strong>${item.truth}</strong></p></section><section class="mentor-block"><h2>Suggested session flow</h2>${flow}</section><section class="mentor-block"><h2>Listen for these misunderstandings or needs</h2>${list(item.listenFor)}</section><section class="mentor-block mentor-warning"><h2>What the mentor should not do</h2>${list(item.doNot)}</section><section class="mentor-block"><h2>Follow-up and next steps</h2>${list(item.nextSteps)}</section><section class="mentor-block mentor-central-truth"><h2>Prayer</h2><p>${item.prayer}</p></section>`;
+const checklist=document.getElementById('mentorChecklist'),checkKey=`nldg-mentor-session-checks-${item.session}`,savedChecks=JSON.parse(localStorage.getItem(checkKey)||'[]');checklist.innerHTML=item.checklist.map((label,index)=>`<label><input class="mentor-check" type="checkbox" data-index="${index}" ${savedChecks.includes(index)?'checked':''}> ${label}</label>`).join('');
+const checks=[...document.querySelectorAll('.mentor-check')],completeButton=document.getElementById('completeSession'),completionStatus=document.getElementById('completionStatus');function refreshChecks(){const selected=checks.filter(check=>check.checked).map(check=>Number(check.dataset.index));localStorage.setItem(checkKey,JSON.stringify(selected));completeButton.disabled=!checks.every(check=>check.checked)}checks.forEach(check=>check.addEventListener('change',refreshChecks));refreshChecks();
+let completed=JSON.parse(localStorage.getItem('nldg-mentor-sessions-complete')||'[]');function updateProgress(list){const count=[...new Set(list.filter(number=>number>=1&&number<=10))].length;document.getElementById('mentorMiniLabel').textContent=`Mentor progress: ${count} of 10 sessions`;document.getElementById('mentorMiniBar').style.width=`${count*10}%`}updateProgress(completed);
+if(completed.includes(item.session)){checks.forEach(check=>check.checked=true);refreshChecks();completeButton.textContent=`Session ${item.session} Completed ✓`;completionStatus.innerHTML=item.session===10?'All ten mentor sessions are complete. Continue walking with the learner beyond the guide.':'Mentor progress is saved on this device.'}
+completeButton.onclick=()=>{const saved=JSON.parse(localStorage.getItem('nldg-mentor-sessions-complete')||'[]');if(!saved.includes(item.session))saved.push(item.session);saved.sort((a,b)=>a-b);localStorage.setItem('nldg-mentor-sessions-complete',JSON.stringify(saved));completed=saved;completeButton.textContent=`Session ${item.session} Completed ✓`;completionStatus.innerHTML=item.session===10?'All ten mentor sessions are complete. Continue walking with the learner beyond the guide.':`Session complete. <a href="new-believer-mentor-session.html?session=${item.session+1}">Open Session ${item.session+1} →</a>`;updateProgress(saved)};
 const notes=document.getElementById('mentorNotes'),notesKey=`nldg-mentor-notes-${item.session}`,notesStatus=document.getElementById('notesStatus');notes.value=localStorage.getItem(notesKey)||'';document.getElementById('saveMentorNotes').onclick=()=>{localStorage.setItem(notesKey,notes.value);notesStatus.textContent='Mentor notes saved on this device.';setTimeout(()=>notesStatus.textContent='',2500)};document.getElementById('printSession').onclick=()=>window.print();
+function setNav(id,target,label){const link=document.getElementById(id);if(!target){link.href='new-believer-mentor.html';link.querySelector('span').textContent=label;link.querySelector('strong').textContent='Mentor Guide Overview';return}link.href=`new-believer-mentor-session.html?session=${target.session}`;link.querySelector('strong').textContent=target.title}setNav('previousSession',sessions.find(entry=>entry.session===item.session-1),'Return to');setNav('nextSession',sessions.find(entry=>entry.session===item.session+1),item.session===10?'Return to':'Next session');
 </script>
 <script src="script.js"></script>
 </body>

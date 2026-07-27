@@ -114,7 +114,8 @@ function initializeNavigation(){
   const sectionRoots={
     start:['Start Here','new-believers.html'],studies:['Bible Studies','studies.html'],devotionals:['Devotionals','devotionals.html'],articles:['Articles','articles.html'],resources:['Resource Center','resource-center.html'],podcast:['Podcast','podcast.html'],news:['News','news.html'],search:['Search','search.html'],about:['Our Ministry','about.html'],games:['Games','play.html']
   };
-  if(main&&page!=='index.html'&&!main.querySelector('.breadcrumbs')){
+  if(main&&page!=='index.html'){
+    main.querySelector('.breadcrumbs')?.remove();
     const current=(document.querySelector('h1')?.textContent||document.title.split('|')[0]||'Current page').trim();
     const trail=[['Home','index.html']];
     const root=sectionRoots[section];

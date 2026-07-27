@@ -7,7 +7,7 @@
 <meta name="description" content="A guided lesson from the New Believers Path.">
 <title>New Believers Path | No Labels, Designed by God</title>
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="new-believers.css?v=20260726-scripture-review">
+<link rel="stylesheet" href="new-believers.css?v=20260727-next-steps">
 </head>
 <body>
 <header class="site-header"><a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God</strong><small>A family ministry built to last.</small></span></a><button class="menu" aria-expanded="false">Menu</button><nav><a href="index.html">Home</a><a class="active" href="new-believers.html">Start Here</a><a href="studies.html">Bible Studies</a><a href="devotionals.html">Devotionals</a><a href="articles.html">Articles</a><a href="resource-center.html">Resource Center</a><a href="about.html">Our Ministry</a><a class="play-link" href="play.html">🎮 Games</a></nav></header>
@@ -49,13 +49,13 @@ checklist.innerHTML=item.checklist.map((label,index)=>`<label><input type="check
 const checks=[...document.querySelectorAll('.step-check')];
 function refresh(){button.disabled=!checks.every(check=>check.checked);localStorage.setItem(checkKey,JSON.stringify(checks.filter(check=>check.checked).map(check=>Number(check.dataset.index))))}
 checks.forEach(check=>check.addEventListener('change',refresh));button.textContent=`Mark Step ${item.step} Complete`;refresh();
-if(completed.includes(item.step)){checks.forEach(check=>check.checked=true);refresh();button.textContent=`Step ${item.step} Completed ✓`;status.textContent='Your progress is saved on this device.'}
-button.addEventListener('click',()=>{const saved=JSON.parse(localStorage.getItem('nldg-new-believers-progress')||'[]');if(!saved.includes(item.step))saved.push(item.step);saved.sort((a,b)=>a-b);localStorage.setItem('nldg-new-believers-progress',JSON.stringify(saved));button.textContent=`Step ${item.step} Completed ✓`;status.textContent=item.step===10?'You completed the New Believers Path. Keep growing with Jesus and His church.':`Step ${item.step} is complete. Continue when you are ready.`;updateMiniProgress(saved)});
+if(completed.includes(item.step)){checks.forEach(check=>check.checked=true);refresh();button.textContent=`Step ${item.step} Completed ✓`;status.innerHTML=item.step===10?'Your path progress is saved. <a href="new-believer-complete.html">Continue to Your Next Steps →</a>':'Your progress is saved on this device.'}
+button.addEventListener('click',()=>{const saved=JSON.parse(localStorage.getItem('nldg-new-believers-progress')||'[]');if(!saved.includes(item.step))saved.push(item.step);saved.sort((a,b)=>a-b);localStorage.setItem('nldg-new-believers-progress',JSON.stringify(saved));button.textContent=`Step ${item.step} Completed ✓`;status.innerHTML=item.step===10?'You completed the New Believers Path. <a href="new-believer-complete.html">Continue to Your Next Steps →</a>':`Step ${item.step} is complete. Continue when you are ready.`;updateMiniProgress(saved)});
 const notes=document.getElementById('lessonNotes'),notesStatus=document.getElementById('notesStatus'),notesKey=`nldg-new-believers-notes-${item.step}`;notes.value=localStorage.getItem(notesKey)||'';document.getElementById('saveNotes').onclick=()=>{localStorage.setItem(notesKey,notes.value);notesStatus.textContent='Notes saved on this device.';setTimeout(()=>notesStatus.textContent='',2200)};
 document.getElementById('printLesson').onclick=()=>window.print();
 function updateMiniProgress(list){const count=list.filter(step=>step>=1&&step<=10).length;document.getElementById('miniProgressLabel').textContent=`Path progress: ${count} of 10 steps`;document.getElementById('miniProgressBar').style.width=`${count*10}%`};updateMiniProgress(completed);
-function setStepLink(id,target,label){const link=document.getElementById(id);if(!target){link.href='new-believers.html';link.querySelector('span').textContent=label;link.querySelector('strong').textContent='Path Overview';return}link.href=`new-believer-step.html?step=${target.step}`;link.querySelector('strong').textContent=target.title}
-setStepLink('previousStep',steps.find(entry=>entry.step===item.step-1),'Return to');setStepLink('nextStep',steps.find(entry=>entry.step===item.step+1),item.step===10?'Return to':'Next step');
+function setStepLink(id,target,label){const link=document.getElementById(id);if(!target){if(id==='nextStep'&&item.step===10){link.href='new-believer-complete.html';link.querySelector('span').textContent='Continue';link.querySelector('strong').textContent='Your Next Steps';return}link.href='new-believers.html';link.querySelector('span').textContent=label;link.querySelector('strong').textContent='Path Overview';return}link.href=`new-believer-step.html?step=${target.step}`;link.querySelector('strong').textContent=target.title}
+setStepLink('previousStep',steps.find(entry=>entry.step===item.step-1),'Return to');setStepLink('nextStep',steps.find(entry=>entry.step===item.step+1),'Next step');
 </script>
 <script src="script.js"></script>
 </body>

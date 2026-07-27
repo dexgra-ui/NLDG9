@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#06122d">
+<meta name="description" content="Celebrate completing the New Believers Path and build a practical plan for continued discipleship.">
+<title>Your Next Steps | New Believers Path</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="new-believers.css?v=20260727-next-steps">
+</head>
+<body>
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God</strong><small>A family ministry built to last.</small></span></a><button class="menu" aria-expanded="false">Menu</button><nav><a href="index.html">Home</a><a class="active" href="new-believers.html">Start Here</a><a href="studies.html">Bible Studies</a><a href="devotionals.html">Devotionals</a><a href="resource-center.html">Resource Center</a><a href="about.html">Our Ministry</a><a class="play-link" href="play.html">🎮 Games</a></nav></header>
+<main class="completion-shell">
+<div class="lesson-path-breadcrumb"><a href="new-believers.html">New Believers Path</a><span>›</span><span>Your Next Steps</span></div>
+<section class="completion-hero">
+<div><p class="kicker">New Believers Path</p><h1>This is not the finish line.<br><span>It is a foundation.</span></h1><p>You have worked through ten essential areas of Christian faith and discipleship. Growth continues as you remain with Jesus, learn Scripture, pray, belong to His people, and respond to His grace.</p><div class="actions"><a class="button primary" href="#nextStepsPlan">Build My Next-Steps Plan</a><a class="button secondary" href="new-believers.html">Review the Path</a></div></div>
+<div class="completion-status-card" id="completionState" aria-live="polite"></div>
+</section>
+<section class="section completion-scripture"><p>“Continue to live your lives in him, rooted and built up in him, strengthened in the faith as you were taught.”</p><strong>Colossians 2:6–7</strong></section>
+<section class="section">
+<div class="section-heading"><p class="kicker">Keep growing</p><h2>Six faithful next steps.</h2><p>You do not need to do everything at once. Choose clear, realistic actions that help you remain responsive to God.</p></div>
+<div class="completion-grid">
+<article><span>📖</span><h3>Remain in Scripture and prayer</h3><p>Keep a simple daily rhythm of reading, reflection, honest prayer, and obedience.</p><a href="studies.html">Continue studying →</a></article>
+<article><span>⛪</span><h3>Belong to a healthy local church</h3><p>Gather consistently, receive teaching and care, build relationships, and learn how the church practices accountability.</p><a href="new-believer-step.html?step=6">Review Step 6 →</a></article>
+<article><span>💧</span><h3>Discuss baptism and Communion</h3><p>Talk with a trustworthy pastor about Scripture, your baptism history, and the practices of the local church.</p><a href="new-believer-step.html?step=7">Review Step 7 →</a></article>
+<article><span>🤝</span><h3>Find a mature believer or mentor</h3><p>Ask someone who demonstrates humility, biblical wisdom, and Christlike character to walk with you.</p><a href="new-believer-step.html?step=10">Review Step 10 →</a></article>
+<article><span>👐</span><h3>Serve with your gifts</h3><p>Begin with small acts of love and service. Gifts become clearer through faithful participation in community.</p><a href="resource-center.html">Explore resources →</a></article>
+<article><span>🗣️</span><h3>Share your hope naturally</h3><p>Pray for people, listen carefully, speak about Jesus truthfully, and support people beyond an initial decision.</p><a href="new-believer-step.html?step=9">Review Step 9 →</a></article>
+</div>
+</section>
+<section id="nextStepsPlan" class="section completion-plan">
+<div class="completion-plan-copy"><p class="kicker">My next season</p><h2>Turn the path into a practical plan.</h2><p>These notes remain on this device. Keep the plan realistic, review it with a mature believer, and adjust it as your circumstances change.</p><div class="completion-plan-actions"><button id="savePlan" class="button primary" type="button">Save My Plan</button><button id="printPlan" class="button secondary" type="button">Print My Plan</button><p id="planStatus" class="lesson-status" role="status"></p></div></div>
+<div class="completion-plan-fields">
+<label>My Scripture and prayer rhythm<textarea id="planRhythm" rows="4" placeholder="Example: Read one section of Mark and pray for ten minutes after breakfast."></textarea></label>
+<label>My church and Christian community<textarea id="planChurch" rows="4" placeholder="Where will I gather, connect, or ask questions?"></textarea></label>
+<label>My mentor or trusted support<textarea id="planMentor" rows="4" placeholder="Who can walk with me, and when will I ask them?"></textarea></label>
+<label>My baptism or Communion questions<textarea id="planSacraments" rows="4" placeholder="What do I need to discuss with a pastor or church leader?"></textarea></label>
+<label>My next step in service<textarea id="planService" rows="4" placeholder="What small act of service can I begin with?"></textarea></label>
+<label>My next area of study or growth<textarea id="planGrowth" rows="4" placeholder="Which lesson, Scripture, or subject needs more attention?"></textarea></label>
+</div>
+</section>
+<section class="section completion-warning"><div><p class="kicker">Remember</p><h2>Completion is not spiritual graduation.</h2><p>Finishing these lessons does not mean you have mastered the Christian life. It means you have a foundation for continuing to know Jesus, receive grace, grow in holy love, and walk with His people.</p></div><div class="actions"><a class="button primary" href="studies.html">Browse Bible Studies</a><a class="button secondary" href="devotionals.html">Read Devotionals</a></div></section>
+</main>
+<footer class="ministry-footer"><div class="footer-invitation"><img src="no-labels-approved-logo.png" alt=""><div><strong>No Labels, Designed by God</strong><p>Wherever you are in your walk with Christ, you are welcome here.</p></div></div><div class="footer-links"><a href="new-believers.html">New Believers Path</a><a href="studies.html">Bible Studies</a><a href="devotionals.html">Devotionals</a><a href="resource-center.html">Resources</a><a href="about.html">Our Ministry</a></div><small>© <span data-year></span> No Labels, Designed by God.</small></footer>
+<script src="new-believers-data.js?v=20260726-scripture-review"></script>
+<script>
+const completed=JSON.parse(localStorage.getItem('nldg-new-believers-progress')||'[]').filter(step=>step>=1&&step<=10),state=document.getElementById('completionState'),steps=window.NEW_BELIEVER_STEPS||[];
+const count=[...new Set(completed)].length,missing=steps.filter(item=>!completed.includes(item.step));
+if(count===10){state.innerHTML=`<span class="completion-badge">10 of 10 steps completed</span><h2>Path complete</h2><p>Take time to thank God, review what you learned, and share your next-steps plan with a mature Christian or church leader.</p><strong>Your progress remains saved on this device.</strong>`}else{state.innerHTML=`<span class="completion-badge">${count} of 10 steps completed</span><h2>Keep going</h2><p>You can begin planning your next season now, but ${missing.length===1?'one step remains':'some steps remain'} in the path.</p><div class="completion-missing">${missing.map(item=>`<a href="new-believer-step.html?step=${item.step}">Step ${item.step}: ${item.title}</a>`).join('')}</div>`}
+const fields=['Rhythm','Church','Mentor','Sacraments','Service','Growth'];fields.forEach(name=>{document.getElementById(`plan${name}`).value=localStorage.getItem(`nldg-new-believers-plan-${name.toLowerCase()}`)||''});
+document.getElementById('savePlan').onclick=()=>{fields.forEach(name=>localStorage.setItem(`nldg-new-believers-plan-${name.toLowerCase()}`,document.getElementById(`plan${name}`).value));const status=document.getElementById('planStatus');status.textContent='Your next-steps plan is saved on this device.';setTimeout(()=>status.textContent='',3000)};
+document.getElementById('printPlan').onclick=()=>window.print();
+</script>
+<script src="script.js"></script>
+</body>
+</html>

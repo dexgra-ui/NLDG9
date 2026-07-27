@@ -1,7 +1,9 @@
 (()=>{
+const escapeHtml=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
 function initializeNavigation(){
   const header=document.querySelector('.site-header');
   const nav=header?.querySelector('nav');
+  const main=document.querySelector('main');
   if(!header||!nav)return;
 
   const page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
@@ -21,7 +23,7 @@ function initializeNavigation(){
 
   const startPages=new Set(['new-believers.html','new-believer-step.html','new-believer-complete.html','new-believer-mentor.html','new-believer-mentor-session.html','new-believer-toolkit.html','new-believer-toolkit-packet.html']);
   const resourcePages=new Set(['resource-center.html','resources.html','teaching-library.html']);
-  const studyPages=new Set(['studies.html','study-library.html','dashboard.html','community.html','ministry-tools.html','ministry-assistant.html','topics.html','scripture-index.html','current-events-series.html','james-series.html','technology-ai.html','sunday-school.html']);
+  const studyPages=new Set(['studies.html','study-library.html','dashboard.html','community.html','ministry-tools.html','ministry-assistant.html','topics.html','scripture-index.html','current-events-series.html','james-series.html','technology-ai.html','sunday-school.html','sunday-school-lesson.html']);
   const gamePages=new Set(['play.html','games.html','host-test-checklist.html','multi-team-game-v095.html','scripture-or-suspicion.html','who-am-i.html','finish-the-verse.html','bible-jeopardy.html','memory-match.html','lightning-round.html']);
 
   let section='home';
@@ -33,7 +35,7 @@ function initializeNavigation(){
   else if(page.startsWith('article'))section='articles';
   else if(page.startsWith('podcast'))section='podcast';
   else if(page.startsWith('news'))section='news';
-  else if(page.startsWith('search'))section='search';
+  else if(page.startsWith('search')||page==='site-map.html')section='search';
   else if(page.startsWith('about'))section='about';
 
   nav.id='primary-navigation';
@@ -44,14 +46,27 @@ function initializeNavigation(){
     return `<a href="${href}"${classes?` class="${classes}"`:''}${active?' aria-current="page"':''}>${label}</a>`;
   }).join('');
 
+  if(main){
+    main.id=main.id||'main-content';
+    if(!document.querySelector('.skip-link')){
+      const skip=document.createElement('a');
+      skip.className='skip-link';
+      skip.href=`#${main.id}`;
+      skip.textContent='Skip to main content';
+      document.body.insertBefore(skip,document.body.firstChild);
+    }
+  }
+
   const menu=header.querySelector('.menu');
-  const setOpen=open=>{
+  const setOpen=(open,returnFocus=false)=>{
     document.body.classList.toggle('nav-open',open);
     if(menu){
       menu.setAttribute('aria-expanded',String(open));
       menu.setAttribute('aria-label',open?'Close site menu':'Open site menu');
       menu.textContent=open?'Close':'Menu';
+      if(returnFocus)menu.focus();
     }
+    if(open)setTimeout(()=>nav.querySelector('a')?.focus(),0);
   };
   if(menu){
     menu.setAttribute('aria-controls',nav.id);
@@ -60,8 +75,9 @@ function initializeNavigation(){
     menu.addEventListener('click',()=>setOpen(!document.body.classList.contains('nav-open')));
   }
   nav.addEventListener('click',event=>{if(event.target.closest('a'))setOpen(false)});
-  document.addEventListener('keydown',event=>{if(event.key==='Escape')setOpen(false)});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&document.body.classList.contains('nav-open'))setOpen(false,true)});
   document.addEventListener('click',event=>{if(document.body.classList.contains('nav-open')&&!header.contains(event.target))setOpen(false)});
+  window.addEventListener('resize',()=>{if(innerWidth>1600&&document.body.classList.contains('nav-open'))setOpen(false)});
 
   let context;
   if(section==='start')context={label:'New Believers navigation',links:[
@@ -70,7 +86,7 @@ function initializeNavigation(){
     ['Discipleship Toolkit','new-believer-toolkit.html',['new-believer-toolkit.html','new-believer-toolkit-packet.html'].includes(page)]
   ]};
   if(section==='studies')context={label:'Bible Studies navigation',links:[
-    ['Study Home','studies.html',['studies.html','current-events-series.html','james-series.html','technology-ai.html','sunday-school.html'].includes(page)||page.startsWith('study-')||page.startsWith('lesson-')],
+    ['Study Home','studies.html',['studies.html','current-events-series.html','james-series.html','technology-ai.html','sunday-school.html','sunday-school-lesson.html'].includes(page)||page.startsWith('study-')||page.startsWith('lesson-')],
     ['My Library','study-library.html',['study-library.html','topics.html','scripture-index.html'].includes(page)],
     ['My Journey','dashboard.html',['dashboard.html','community.html'].includes(page)],
     ['Ministry Tools','ministry-tools.html',['ministry-tools.html','ministry-assistant.html'].includes(page)]
@@ -93,6 +109,43 @@ function initializeNavigation(){
     sectionNav.setAttribute('aria-label',context.label);
     sectionNav.innerHTML=`<div class="section-navigation-inner">${context.links.map(([label,href,active])=>`<a href="${href}"${active?' class="active" aria-current="page"':''}>${label}</a>`).join('')}</div>`;
     header.insertAdjacentElement('afterend',sectionNav);
+  }
+
+  const sectionRoots={
+    start:['Start Here','new-believers.html'],studies:['Bible Studies','studies.html'],devotionals:['Devotionals','devotionals.html'],articles:['Articles','articles.html'],resources:['Resource Center','resource-center.html'],podcast:['Podcast','podcast.html'],news:['News','news.html'],search:['Search','search.html'],about:['Our Ministry','about.html'],games:['Games','play.html']
+  };
+  if(main&&page!=='index.html'&&!main.querySelector('.breadcrumbs')){
+    const current=(document.querySelector('h1')?.textContent||document.title.split('|')[0]||'Current page').trim();
+    const trail=[['Home','index.html']];
+    const root=sectionRoots[section];
+    if(root&&page!==root[1])trail.push(root);
+    if(page==='new-believer-mentor-session.html')trail.push(['Mentor Guide','new-believer-mentor.html']);
+    if(page==='new-believer-toolkit-packet.html')trail.push(['Discipleship Toolkit','new-believer-toolkit.html']);
+    if(page==='sunday-school-lesson.html')trail.push(['Sunday School','sunday-school.html']);
+    const crumbs=document.createElement('nav');
+    crumbs.className='breadcrumbs';
+    crumbs.setAttribute('aria-label','Breadcrumb');
+    crumbs.innerHTML=`${trail.map(([label,href])=>`<a href="${href}">${escapeHtml(label)}</a><span aria-hidden="true">›</span>`).join('')}<span aria-current="page">${escapeHtml(current)}</span>`;
+    main.prepend(crumbs);
+  }
+
+  document.querySelectorAll('a[href="resources.html"],a[href="./resources.html"]').forEach(link=>link.href='resource-center.html');
+
+  const footerLinks=document.querySelector('.footer-links');
+  if(footerLinks){
+    footerLinks.setAttribute('aria-label','Footer navigation');
+    footerLinks.innerHTML=`
+      <a href="new-believers.html">Start Here</a>
+      <a href="studies.html">Bible Studies</a>
+      <a href="devotionals.html">Devotionals</a>
+      <a href="articles.html">Articles</a>
+      <a href="resource-center.html">Resources</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="play.html">Games</a>
+      <a href="about.html">Our Ministry</a>
+      <a href="site-map.html">Site Map</a>
+      <a href="https://www.facebook.com/NoLabelsDesignedbyGod" target="_blank" rel="noopener noreferrer" aria-label="Follow No Labels, Designed by God on Facebook">Facebook ↗</a>
+      <a href="https://substack.com/@nolabelsdesignedbygod" target="_blank" rel="noopener noreferrer" aria-label="Read No Labels, Designed by God on Substack">Substack ↗</a>`;
   }
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initializeNavigation,{once:true});else initializeNavigation();

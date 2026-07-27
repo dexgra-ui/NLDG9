@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#06122d">
+<meta name="description" content="A Scripture-centered mentor guide for walking with people through the New Believers Path.">
+<title>New Believer Mentor Guide | No Labels, Designed by God</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="new-believer-mentor.css">
+</head>
+<body>
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God</strong><small>New Believer Mentor Guide</small></span></a><button class="menu" aria-expanded="false">Menu</button><nav><a href="index.html">Home</a><a href="new-believers.html">Start Here</a><a href="studies.html">Bible Studies</a><a href="devotionals.html">Devotionals</a><a href="articles.html">Articles</a><a class="active" href="resource-center.html">Resource Center</a><a href="about.html">Our Ministry</a><a class="play-link" href="play.html">🎮 Games</a></nav></header>
+<main>
+<section class="mentor-hero">
+<div><p class="kicker">New Believer Mentor Guide</p><h1>Do not leave people to <span>walk alone.</span></h1><p class="lead">A companion guide for mentors, pastors, family members, and ministry leaders walking beside someone through the ten-step New Believers Path.</p><div class="actions"><a class="button primary" href="new-believer-mentor-session.html?session=1">Begin Session 1</a><a class="button secondary" href="new-believers.html">View Learner Path</a></div></div>
+<div class="mentor-hero-card"><span>Relational discipleship</span><strong>Listen. Open Scripture. Walk together.</strong><p>The mentor is not the answer. The mentor helps the learner encounter Jesus, understand Scripture, ask honest questions, and take faithful next steps.</p></div>
+</section>
+<section class="section">
+<div class="section-heading"><p class="kicker">The mentoring posture</p><h2>Guide without controlling.</h2><p>Healthy discipleship combines biblical clarity with patience, humility, safety, and genuine relationship.</p></div>
+<div class="mentor-principles">
+<article><strong>Scripture first</strong><p>Begin with the biblical text and distinguish it from interpretation, tradition, and personal opinion.</p></article>
+<article><strong>Listen carefully</strong><p>Learn the person’s story, questions, fears, background, and pace before trying to correct everything.</p></article>
+<article><strong>Never manipulate</strong><p>Do not pressure decisions, use shame, demand loyalty, or confuse strong emotion with spiritual maturity.</p></article>
+<article><strong>Know your limits</strong><p>Pastoral care does not replace medical, mental-health, legal, recovery, or emergency support.</p></article>
+</div>
+</section>
+<section class="section">
+<div class="section-heading"><p class="kicker">Ten conversations</p><h2>A mentor session for every step.</h2><p>Session 1 is ready. The remaining sessions will follow the same Scripture-centered and practical structure.</p></div>
+<div class="mentor-session-grid" id="mentorSessionGrid"></div>
+</section>
+<section class="section mentor-guide-note">
+<div><p class="kicker">Before you mentor</p><h2>Relationship comes before the lesson plan.</h2><p>The guide provides structure, but the person in front of you matters more than finishing every question. Slow down when needed, follow up consistently, and make room for the learner to think, pray, and grow.</p></div>
+<div><h3>Every session will include</h3><p>Preparation, central Scripture, a suggested meeting flow, conversation questions, common misunderstandings, practical next steps, prayer, follow-up, safety boundaries, private notes, and a mentor checklist.</p></div>
+</section>
+</main>
+<footer class="ministry-footer"><div class="footer-invitation"><img src="no-labels-approved-logo.png" alt=""><div><strong>No Labels, Designed by God</strong><p>Helping people begin, grow, and walk with Jesus in community.</p></div></div><div class="footer-links"><a href="new-believers.html">Learner Path</a><a href="new-believer-mentor.html">Mentor Guide</a><a href="studies.html">Bible Studies</a><a href="resource-center.html">Resources</a><a href="about.html">Our Ministry</a></div><small>© <span data-year></span> No Labels, Designed by God.</small></footer>
+<script src="new-believer-mentor-data.js"></script>
+<script>
+const sessions=window.NEW_BELIEVER_MENTOR_SESSIONS||[],grid=document.getElementById('mentorSessionGrid');
+grid.innerHTML=sessions.map(item=>{const ready=item.status==='available';return `<${ready?'a':'article'} class="mentor-session-card ${ready?'':'planned'}" ${ready?`href="new-believer-mentor-session.html?session=${item.session}"`:''}><span class="mentor-session-number">${item.session}</span><div><h3>${item.title}</h3><p>${item.summary}</p></div><span class="mentor-session-status">${ready?'Open session →':'In development'}</span></${ready?'a':'article'}>`}).join('');
+</script>
+<script src="script.js"></script>
+</body>
+</html>

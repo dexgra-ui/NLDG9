@@ -23,7 +23,7 @@ function initializeNavigation(){
 
   const startPages=new Set(['new-believers.html','new-believer-step.html','new-believer-complete.html','new-believer-mentor.html','new-believer-mentor-session.html','new-believer-toolkit.html','new-believer-toolkit-packet.html']);
   const resourcePages=new Set(['resource-center.html','resources.html','teaching-library.html']);
-  const studyPages=new Set(['studies.html','study-library.html','dashboard.html','community.html','ministry-tools.html','ministry-assistant.html','topics.html','scripture-index.html','current-events-series.html','james-series.html','technology-ai.html','sunday-school.html','sunday-school-lesson.html','women-of-faith.html','women-of-faith-known-by-god.html']);
+  const studyPages=new Set(['studies.html','study-library.html','dashboard.html','community.html','ministry-tools.html','ministry-assistant.html','topics.html','scripture-index.html','current-events-series.html','james-series.html','technology-ai.html','sunday-school.html','sunday-school-lesson.html','women-of-faith.html','women-of-faith-known-by-god.html','women-of-faith-women-jesus-saw.html','women-of-faith-identity-beyond-roles.html','women-of-faith-hard-seasons.html','women-of-faith-strength-surrender.html']);
   const gamePages=new Set(['play.html','games.html','host-test-checklist.html','multi-team-game-v095.html','scripture-or-suspicion.html','who-am-i.html','finish-the-verse.html','bible-jeopardy.html','memory-match.html','lightning-round.html']);
 
   let section='home';
@@ -79,6 +79,7 @@ function initializeNavigation(){
   document.addEventListener('click',event=>{if(document.body.classList.contains('nav-open')&&!header.contains(event.target))setOpen(false)});
   window.addEventListener('resize',()=>{if(innerWidth>1600&&document.body.classList.contains('nav-open'))setOpen(false)});
 
+  const isWomenOfFaithPage=page==='women-of-faith.html'||page.startsWith('women-of-faith-');
   let context;
   if(section==='start')context={label:'New Believers navigation',links:[
     ['Learner Path','new-believers.html',['new-believers.html','new-believer-step.html','new-believer-complete.html'].includes(page)],
@@ -87,7 +88,7 @@ function initializeNavigation(){
   ]};
   if(section==='studies')context={label:'Bible Studies navigation',links:[
     ['Study Home','studies.html',['studies.html','current-events-series.html','james-series.html','technology-ai.html','sunday-school.html','sunday-school-lesson.html'].includes(page)||page.startsWith('study-')||page.startsWith('lesson-')],
-    ['Women of Faith','women-of-faith.html',['women-of-faith.html','women-of-faith-known-by-god.html'].includes(page)],
+    ['Women of Faith','women-of-faith.html',isWomenOfFaithPage],
     ['My Library','study-library.html',['study-library.html','topics.html','scripture-index.html'].includes(page)],
     ['My Journey','dashboard.html',['dashboard.html','community.html'].includes(page)],
     ['Ministry Tools','ministry-tools.html',['ministry-tools.html','ministry-assistant.html'].includes(page)]
@@ -124,7 +125,7 @@ function initializeNavigation(){
     if(page==='new-believer-mentor-session.html')trail.push(['Mentor Guide','new-believer-mentor.html']);
     if(page==='new-believer-toolkit-packet.html')trail.push(['Discipleship Toolkit','new-believer-toolkit.html']);
     if(page==='sunday-school-lesson.html')trail.push(['Sunday School','sunday-school.html']);
-    if(page==='women-of-faith-known-by-god.html')trail.push(['Women of Faith','women-of-faith.html']);
+    if(page!=='women-of-faith.html'&&page.startsWith('women-of-faith-'))trail.push(['Women of Faith','women-of-faith.html']);
     const crumbs=document.createElement('nav');
     crumbs.className='breadcrumbs';
     crumbs.setAttribute('aria-label','Breadcrumb');

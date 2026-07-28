@@ -23,13 +23,13 @@ function initializeNavigation(){
 
   const startPages=new Set(['new-believers.html','new-believer-step.html','new-believer-complete.html','new-believer-mentor.html','new-believer-mentor-session.html','new-believer-toolkit.html','new-believer-toolkit-packet.html']);
   const resourcePages=new Set(['resource-center.html','resources.html','teaching-library.html']);
-  const studyPages=new Set(['studies.html','study-library.html','dashboard.html','community.html','ministry-tools.html','ministry-assistant.html','topics.html','scripture-index.html','current-events-series.html','james-series.html','technology-ai.html','sunday-school.html','sunday-school-lesson.html','women-of-faith.html','women-of-faith-known-by-god.html','women-of-faith-women-jesus-saw.html','women-of-faith-identity-beyond-roles.html','women-of-faith-hard-seasons.html','women-of-faith-strength-surrender.html','women-of-faith-healing-hurt-rejection.html','women-of-faith-healthy-community.html','women-of-faith-calling-gifts.html','women-of-faith-prayer-discernment.html','women-of-faith-helping-another-woman-grow.html']);
+  const studyPages=new Set(['studies.html','study-library.html','dashboard.html','community.html','ministry-tools.html','ministry-assistant.html','topics.html','scripture-index.html','current-events-series.html','james-series.html','technology-ai.html','sunday-school.html','sunday-school-lesson.html','women-of-faith.html']);
   const gamePages=new Set(['play.html','games.html','host-test-checklist.html','multi-team-game-v095.html','scripture-or-suspicion.html','who-am-i.html','finish-the-verse.html','bible-jeopardy.html','memory-match.html','lightning-round.html']);
 
   let section='home';
   if(startPages.has(page))section='start';
   else if(resourcePages.has(page))section='resources';
-  else if(studyPages.has(page)||page.startsWith('study-')||page.startsWith('lesson-'))section='studies';
+  else if(studyPages.has(page)||page.startsWith('study-')||page.startsWith('lesson-')||page.startsWith('women-of-faith-')||page==='men-of-faith.html'||page.startsWith('men-of-faith-'))section='studies';
   else if(gamePages.has(page)||page.includes('game'))section='games';
   else if(page.startsWith('devotional'))section='devotionals';
   else if(page.startsWith('article'))section='articles';
@@ -80,6 +80,7 @@ function initializeNavigation(){
   window.addEventListener('resize',()=>{if(innerWidth>1600&&document.body.classList.contains('nav-open'))setOpen(false)});
 
   const isWomenOfFaithPage=page==='women-of-faith.html'||page.startsWith('women-of-faith-');
+  const isMenOfFaithPage=page==='men-of-faith.html'||page.startsWith('men-of-faith-');
   let context;
   if(section==='start')context={label:'New Believers navigation',links:[
     ['Learner Path','new-believers.html',['new-believers.html','new-believer-step.html','new-believer-complete.html'].includes(page)],
@@ -88,6 +89,7 @@ function initializeNavigation(){
   ]};
   if(section==='studies')context={label:'Bible Studies navigation',links:[
     ['Study Home','studies.html',['studies.html','current-events-series.html','james-series.html','technology-ai.html','sunday-school.html','sunday-school-lesson.html'].includes(page)||page.startsWith('study-')||page.startsWith('lesson-')],
+    ['Men of Faith','men-of-faith.html',isMenOfFaithPage],
     ['Women of Faith','women-of-faith.html',isWomenOfFaithPage],
     ['My Library','study-library.html',['study-library.html','topics.html','scripture-index.html'].includes(page)],
     ['My Journey','dashboard.html',['dashboard.html','community.html'].includes(page)],
@@ -126,6 +128,7 @@ function initializeNavigation(){
     if(page==='new-believer-toolkit-packet.html')trail.push(['Discipleship Toolkit','new-believer-toolkit.html']);
     if(page==='sunday-school-lesson.html')trail.push(['Sunday School','sunday-school.html']);
     if(page!=='women-of-faith.html'&&page.startsWith('women-of-faith-'))trail.push(['Women of Faith','women-of-faith.html']);
+    if(page!=='men-of-faith.html'&&page.startsWith('men-of-faith-'))trail.push(['Men of Faith','men-of-faith.html']);
     const crumbs=document.createElement('nav');
     crumbs.className='breadcrumbs';
     crumbs.setAttribute('aria-label','Breadcrumb');
@@ -141,6 +144,7 @@ function initializeNavigation(){
     footerLinks.innerHTML=`
       <a href="new-believers.html">Start Here</a>
       <a href="studies.html">Bible Studies</a>
+      <a href="men-of-faith.html">Men of Faith</a>
       <a href="women-of-faith.html">Women of Faith</a>
       <a href="devotionals.html">Devotionals</a>
       <a href="articles.html">Articles</a>

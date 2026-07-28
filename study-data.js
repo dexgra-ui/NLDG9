@@ -1,10 +1,10 @@
 (function(){
   if(window.NLDG_LIBRARY)return;
   if(document.readyState==='loading'){
-    document.write('<script src="content-library.js"><\/script>');
+    document.write('<script src="content-library.js?v=20260728-1"><\/script>');
     return;
   }
   const script=document.createElement('script');
-  script.src='content-library.js';
+  script.src='content-library.js?v=20260728-1';
   document.head.appendChild(script);
 })();

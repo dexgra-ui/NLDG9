@@ -1,12 +1,11 @@
 # Accessibility Audit
 
-Generated: 2026-07-29T12:59:36.205Z
+Generated: 2026-07-29T13:04:15.366Z
 
-Result: **FAILED** with 2 failure(s) and 1 warning(s).
+Result: **FAILED** with 1 failure(s) and 1 warning(s).
 
 ## Failures
 
-- my-journey: color-contrast (serious) — Elements must meet minimum color contrast ratio thresholds. #export-notes: Fix any of the following:   Element has insufficient color contrast of 1.21 (foreground color: #000000, background color: #0f1a34, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1
 - my-journey: select-name (critical) — Select element must have an accessible name. #prayer-study: Fix any of the following:   Element does not have an implicit (wrapped) <label>   Element does not have an explicit <label>   aria-label attribute does not exist or is empty   aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty   Element has no title attribute   Element's default semantics were not overridden with role="none" or role="presentation"
 
 ## Warnings for review
@@ -83,7 +82,7 @@ Result: **FAILED** with 2 failure(s) and 1 warning(s).
 - resource-center: axe checked 4.12.1; 0 violation group(s).
 - search: axe checked 4.12.1; 0 violation group(s).
 - my-library: axe checked 4.12.1; 0 violation group(s).
-- my-journey: axe checked 4.12.1; 2 violation group(s).
+- my-journey: axe checked 4.12.1; 1 violation group(s).
 - ministry-tools: axe checked 4.12.1; 0 violation group(s).
 - game-center: axe checked 4.12.1; 0 violation group(s).
 - church-games: axe checked 4.12.1; 0 violation group(s).

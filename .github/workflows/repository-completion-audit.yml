@@ -1,0 +1,99 @@
+name: Repository Completion Audit
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'README.md'
+      - 'CONTENT-PUBLISHING.md'
+      - 'templates/**'
+      - 'index.html'
+      - 'site-map.html'
+      - 'site-map.js'
+      - 'manifest.webmanifest'
+      - 'sw.js'
+      - 'scripts/repository-completion-audit.mjs'
+      - '.github/workflows/repository-completion-audit.yml'
+      - '*.html'
+      - '*.css'
+      - '*.js'
+  push:
+    branches: [main]
+    paths:
+      - 'README.md'
+      - 'CONTENT-PUBLISHING.md'
+      - 'templates/**'
+      - 'index.html'
+      - 'site-map.html'
+      - 'site-map.js'
+      - 'manifest.webmanifest'
+      - 'sw.js'
+      - 'scripts/repository-completion-audit.mjs'
+      - '.github/workflows/repository-completion-audit.yml'
+      - '*.html'
+      - '*.css'
+      - '*.js'
+
+permissions:
+  contents: write
+
+jobs:
+  repository-completion:
+    name: Version 1.0 platform review
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install audit tools
+        run: |
+          npm install --no-save playwright axe-core
+          npx playwright install --with-deps chromium
+
+      - name: Start local site
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/nldg-http.log 2>&1 &
+          echo $! > /tmp/nldg-http.pid
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4173/index.html > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/nldg-http.log
+          exit 1
+
+      - name: Run repository completion audit
+        run: node scripts/repository-completion-audit.mjs
+
+      - name: Upload repository completion report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: repository-completion-audit
+          path: repository-completion-audit-results
+          if-no-files-found: error
+
+      - name: Publish Markdown report
+        if: always() && github.ref == 'refs/heads/main'
+        run: |
+          if [ ! -f repository-completion-audit-results/repository-completion-review.md ]; then
+            echo "No repository completion report was generated."
+            exit 0
+          fi
+          cp repository-completion-audit-results/repository-completion-review.md REPOSITORY-COMPLETION-REVIEW.md
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add REPOSITORY-COMPLETION-REVIEW.md
+          if git diff --cached --quiet; then
+            echo "Repository completion report is unchanged."
+            exit 0
+          fi
+          git commit -m "Publish repository completion review"
+          git pull --rebase origin main
+          git push

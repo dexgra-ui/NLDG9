@@ -97,6 +97,7 @@ function initializeNavigation(){
     ['Marriage & Family','marriage-family.html',isMarriageFamilyPage],
     ['Difficult Questions','difficult-questions.html',isDifficultQuestionsPage],
     ['Leadership','leadership.html',isLeadershipPage],
+    ['Leadership Toolkit','leadership-toolkit.html',['leadership-toolkit.html','leadership-toolkit-packet.html'].includes(page)],
     ['My Library','study-library.html',['study-library.html','topics.html','scripture-index.html'].includes(page)],
     ['My Journey','dashboard.html',['dashboard.html','community.html'].includes(page)],
     ['Ministry Tools','ministry-tools.html',['ministry-tools.html','ministry-assistant.html'].includes(page)]
@@ -137,7 +138,8 @@ function initializeNavigation(){
     if(page!=='men-of-faith.html'&&page.startsWith('men-of-faith-'))trail.push(['Men of Faith','men-of-faith.html']);
     if(page==='marriage-family-study.html')trail.push(['Marriage & Family','marriage-family.html']);
     if(page==='difficult-questions-study.html')trail.push(['Difficult Questions','difficult-questions.html']);
-    if(page==='leadership-study.html')trail.push(['Leadership','leadership.html']);
+    if(page==='leadership-study.html'||page==='leadership-toolkit.html'||page==='leadership-toolkit-packet.html')trail.push(['Leadership','leadership.html']);
+    if(page==='leadership-toolkit-packet.html')trail.push(['Leadership Toolkit','leadership-toolkit.html']);
     const crumbs=document.createElement('nav');
     crumbs.className='breadcrumbs';
     crumbs.setAttribute('aria-label','Breadcrumb');
@@ -158,6 +160,7 @@ function initializeNavigation(){
       <a href="marriage-family.html">Marriage & Family</a>
       <a href="difficult-questions.html">Difficult Questions</a>
       <a href="leadership.html">Leadership</a>
+      <a href="leadership-toolkit.html">Leadership Toolkit</a>
       <a href="devotionals.html">Devotionals</a>
       <a href="articles.html">Articles</a>
       <a href="resource-center.html">Resources</a>

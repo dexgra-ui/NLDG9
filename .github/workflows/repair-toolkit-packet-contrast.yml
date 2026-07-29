@@ -1,0 +1,41 @@
+name: Repair Toolkit Packet Contrast
+
+on:
+  push:
+    branches:
+      - agent/leadership-toolkit
+    paths:
+      - '.github/workflows/repair-toolkit-packet-contrast.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out toolkit branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/leadership-toolkit
+          fetch-depth: 0
+
+      - name: Restore shared navigation contrast on packet page
+        run: |
+          cat >> leadership-toolkit.css <<'CSS'
+
+.packet-page .site-header .brand,.packet-page .site-header .brand strong,.packet-page .site-header .brand small,.packet-page .site-header nav a,.packet-page .section-navigation a,.packet-page .ministry-footer,.packet-page .ministry-footer a,.packet-page .ministry-footer strong{color:#fff}
+.packet-page .breadcrumbs{background:#eef2f8;border-color:#b8c3d6;color:#07142f}
+.packet-page .breadcrumbs a,.packet-page .breadcrumbs span{color:#07142f}
+.packet-page .content-sequence,.packet-page .related-content{display:none}
+CSS
+
+      - name: Remove one-time workflow and commit repair
+        run: |
+          rm -f .github/workflows/repair-toolkit-packet-contrast.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add leadership-toolkit.css .github/workflows/repair-toolkit-packet-contrast.yml
+          git commit -m "Repair printable Toolkit screen contrast"
+          git pull --rebase origin agent/leadership-toolkit
+          git push origin agent/leadership-toolkit

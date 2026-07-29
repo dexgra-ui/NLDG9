@@ -30,7 +30,7 @@ document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().g
   const replaceBranding=root=>{const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let node;while(node=walker.nextNode()){if(node.parentElement?.closest('script,style'))continue;node.nodeValue=node.nodeValue.replaceAll('Brotherhood Bible Games','No Labels Games');}};
   replaceBranding(document.body);
   const loadScript=(src,test)=>new Promise((resolve,reject)=>{if(test()){resolve();return;}const existing=[...document.scripts].find(script=>script.src.includes(src.split('?')[0]));if(existing){if(test()){resolve();return;}existing.addEventListener('load',resolve,{once:true});existing.addEventListener('error',reject,{once:true});return;}const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=reject;document.head.appendChild(script);});
-  const ensureLibrary=()=>loadScript('content-library.js?v=20260728-4',()=>Boolean(window.NLDG_LIBRARY)).then(()=>loadScript('marriage-family-library.js?v=1.0.0',()=>Boolean(window.NLDG_MARRIAGE_FAMILY_LIBRARY_LOADED)));
+  const ensureLibrary=()=>loadScript('content-library.js?v=20260728-4',()=>Boolean(window.NLDG_LIBRARY)).then(()=>loadScript('marriage-family-library.js?v=1.0.0',()=>Boolean(window.NLDG_MARRIAGE_FAMILY_LIBRARY_LOADED))).then(()=>loadScript('devotional-library.js?v=1.0.0',()=>Boolean(window.NLDG_DEVOTIONAL_LIBRARY_LOADED)));
   const escapeHtml=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
   const card=item=>`<article class="unified-content-card"><span class="content-type">${escapeHtml(item.type)}</span><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description||'')}</p>${item.scripture?.length?`<small>📖 ${escapeHtml(item.scripture.join(', '))}</small>`:''}<a href="${escapeHtml(item.url||'#')}">Open resource →</a></article>`;
   window.NLDG_CONTENT_CARD=card;
@@ -69,9 +69,9 @@ if(studyPageId){const loadScript=src=>new Promise((resolve,reject)=>{const exist
 (function sprintFiveBootstrap(){
   if(!document.querySelector('link[rel="manifest"]')){const manifest=document.createElement('link');manifest.rel='manifest';manifest.href='manifest.webmanifest';document.head.appendChild(manifest);}
   const loadPersonalization=()=>{if(window.NLDG_PERSONAL)return;const existing=document.querySelector('script[data-personalization]');if(existing)return;const script=document.createElement('script');script.src='personalization.js?v=5.1.0';script.dataset.personalization='true';document.body.appendChild(script);};
-  if(window.NLDG_MARRIAGE_FAMILY_LIBRARY_LOADED)loadPersonalization();else window.addEventListener('nldg-library-ready',loadPersonalization,{once:true});
+  if(window.NLDG_DEVOTIONAL_LIBRARY_LOADED)loadPersonalization();else window.addEventListener('nldg-library-ready',loadPersonalization,{once:true});
   if(!document.querySelector('link[href^="dashboard.css"]')){const style=document.createElement('link');style.rel='stylesheet';style.href='dashboard.css?v=5.1.0';document.head.appendChild(style);}
-  if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js?v=5.9.0').catch(()=>{}));
+  if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js?v=6.0.0').catch(()=>{}));
   let installPrompt;
   window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();installPrompt=event;const header=document.querySelector('.site-header');if(!header||document.querySelector('.install-app-button'))return;const button=document.createElement('button');button.type='button';button.className='install-app-button';button.textContent='Install App';button.addEventListener('click',async()=>{if(!installPrompt)return;installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;button.remove();});header.appendChild(button);});
 })();

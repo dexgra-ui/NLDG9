@@ -9,7 +9,7 @@ on:
       - 'scripts/responsive-audit.mjs'
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   visual-audit:
@@ -52,3 +52,22 @@ jobs:
           name: responsive-visual-audit
           path: responsive-audit-results
           if-no-files-found: error
+
+      - name: Publish Markdown report
+        if: always()
+        run: |
+          if [ ! -f responsive-audit-results/responsive-audit-report.md ]; then
+            echo "No responsive report was generated."
+            exit 0
+          fi
+          cp responsive-audit-results/responsive-audit-report.md RESPONSIVE-AUDIT.md
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add RESPONSIVE-AUDIT.md
+          if git diff --cached --quiet; then
+            echo "Responsive report is unchanged."
+            exit 0
+          fi
+          git commit -m "Publish responsive visual audit report"
+          git pull --rebase origin main
+          git push

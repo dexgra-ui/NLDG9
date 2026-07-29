@@ -1,16 +1,16 @@
 # Accessibility Audit
 
-Generated: 2026-07-29T13:30:02.874Z
+Generated: 2026-07-29T16:11:13.275Z
 
-Result: **PASSED** with 0 failure(s) and 0 warning(s).
+Result: **FAILED** with 1 failure(s) and 1 warning(s).
 
 ## Failures
 
-No serious automated accessibility failures were found.
+- church-games: color-contrast (serious) — Elements must meet minimum color contrast ratio thresholds. #beginTournamentBtn: Fix any of the following:   Element has insufficient color contrast of 2.18 (foreground color: #ffffff, background color: #35c779, font size: 18.0pt (24px), font weight: bold). Expected contrast ratio of 3:1
 
 ## Warnings for review
 
-No moderate accessibility warnings were found.
+- church-games: heading-level jumps found: 1→3 before “Church Tournament Setup”.
 
 ## Checks completed
 
@@ -85,5 +85,5 @@ No moderate accessibility warnings were found.
 - my-journey: axe checked 4.12.1; 0 violation group(s).
 - ministry-tools: axe checked 4.12.1; 0 violation group(s).
 - game-center: axe checked 4.12.1; 0 violation group(s).
-- church-games: axe checked 4.12.1; 0 violation group(s).
+- church-games: axe checked 4.12.1; 1 violation group(s).
 - team-game: axe checked 4.12.1; 0 violation group(s).

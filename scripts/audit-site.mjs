@@ -34,7 +34,7 @@ function stripQueryAndHash(value) {
 
 function isIgnoredReference(value) {
   const trimmed = value.trim();
-  return !trimmed || trimmed === '#' || trimmed.startsWith('#') || trimmed.includes('${') || trimmed.includes('<%') || /^(?:https?:|mailto:|tel:|sms:|data:|blob:|javascript:|about:|//)/i.test(trimmed);
+  return !trimmed || trimmed === '#' || trimmed.startsWith('#') || trimmed.startsWith('//') || trimmed.includes('${') || trimmed.includes('<%') || /^(?:https?:|mailto:|tel:|sms:|data:|blob:|javascript:|about:)/i.test(trimmed);
 }
 
 function resolveReference(sourceFile, reference) {

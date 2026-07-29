@@ -20,20 +20,25 @@ This checklist protects the ministry experience as the site grows. The goal is n
 
 ## Phase 2: Link and content-state audit
 
-**Status: In progress**
+**Status: Complete**
 
-The repository now includes `scripts/audit-site.mjs` and a GitHub Actions workflow that automatically scans internal links, required routes, collection and study destinations, local assets, stale public status labels, visible version labels, legacy redirects, query-based history, Marriage & Family sequence references, and devotional IDs. A Markdown audit report is produced for every run.
+The repository includes `scripts/audit-site.mjs` and a GitHub Actions workflow that automatically scans internal links, required routes, collection and study destinations, local assets, stale public status labels, visible version labels, legacy redirects, query-based history, Marriage & Family sequence references, and devotional IDs. A Markdown audit report is produced for every run.
 
-- [ ] Test every primary navigation link.
-- [ ] Test every footer and Site Map link.
-- [ ] Test every collection card and study link.
-- [ ] Verify every previous and next study destination.
-- [ ] Find stale `In Development`, `Coming Soon`, and outdated version labels.
+The audit reviewed more than 1,100 internal references. During this phase, it found and helped correct stale public version labels, outdated Resources links, and the missing Jeopardy data file. Approved planned labels remain only on collections that are genuinely still in development.
+
+- [x] Test every primary navigation link.
+- [x] Test every footer and Site Map link.
+- [x] Test every collection card and study link.
+- [x] Verify every previous and next study destination.
+- [x] Find and correct stale `In Development`, `Coming Soon`, and outdated version labels.
 - [x] Confirm legacy routes redirect instead of creating duplicate destinations.
 - [x] Confirm query-based pages preserve the correct study in saved history.
 - [x] Add automated repository checks so broken internal routes are caught after future changes.
+- [x] Refresh the offline cache with audited pages and Jeopardy data.
 
 ## Phase 3: Responsive visual review
+
+**Status: Next**
 
 - [ ] Review at 375 px mobile width.
 - [ ] Review at 768 px tablet width.

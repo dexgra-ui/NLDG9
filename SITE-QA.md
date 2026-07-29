@@ -38,7 +38,9 @@ The audit reviewed more than 1,100 internal references. During this phase, it fo
 
 ## Phase 3: Responsive visual review
 
-**Status: Next**
+**Status: In progress**
+
+The repository now includes an automated Playwright visual audit. It opens key ministry pages at mobile, tablet, small-laptop, desktop, and 1920×1080 church-display sizes. It captures full-page screenshots, checks for horizontal document overflow and likely text clipping, and generates printable PDFs for a study, devotional, and ministry packet. Results are saved as a GitHub Actions artifact for visual inspection.
 
 - [ ] Review at 375 px mobile width.
 - [ ] Review at 768 px tablet width.
@@ -47,6 +49,7 @@ The audit reviewed more than 1,100 internal references. During this phase, it fo
 - [ ] Review game presentation pages on a church display.
 - [ ] Check horizontal overflow, clipped text, button wrapping, and sticky sidebars.
 - [ ] Check print layouts for studies, guides, and ministry packets.
+- [x] Add repeatable screenshots and print-output checks for future site changes.
 
 ## Phase 4: Accessibility review
 

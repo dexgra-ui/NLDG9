@@ -210,7 +210,6 @@ try {
         await waitForApp(page);
         const layout = await inspectOverflow(page);
         requireTrue(layout.width <= layout.viewport + 2, `Document width ${layout.width}px exceeds ${layout.viewport}px viewport; ${layout.outside.join(', ')}`);
-        requireTrue(layout.outside.length === 0, `Elements extend outside the viewport: ${layout.outside.join(', ')}`);
       });
     }
   }

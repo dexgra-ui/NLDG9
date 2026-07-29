@@ -40,7 +40,7 @@ async function checkViewport(name,viewport,startGame=false){
     if(startGame){
       await gameFrame.locator('#beginTournamentBtn').click();
       await gameFrame.waitForSelector('#quizView:not(.hidden)',{state:'visible'});
-      await gameFrame.waitForSelector('#question');
+      await gameFrame.waitForSelector('#quizQuestion',{state:'visible'});
       const playCheck=await gameFrame.evaluate(()=>{
         const note=document.querySelector('.presentation-note');
         const noteRect=note?.getBoundingClientRect();
@@ -48,7 +48,7 @@ async function checkViewport(name,viewport,startGame=false){
         return {
           noteVisible:Boolean(note&&noteRect&&noteRect.width>0&&noteRect.height>0&&getComputedStyle(note).visibility!=='hidden'),
           bottomBlocked:Boolean(bottomElement?.closest('.presentation-note')),
-          questionVisible:Boolean(document.querySelector('#question')?.textContent.trim()),
+          questionVisible:Boolean(document.querySelector('#quizQuestion')?.textContent.trim()),
           horizontalOverflow:document.documentElement.scrollWidth>document.documentElement.clientWidth+2
         };
       });

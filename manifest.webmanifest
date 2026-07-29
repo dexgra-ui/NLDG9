@@ -1,7 +1,7 @@
 {
   "name": "No Labels, Designed by God",
   "short_name": "No Labels",
-  "description": "Bible studies, ministry resources, podcasts, and interactive No Labels Games.",
+  "description": "Bible studies, discipleship journeys, leadership tools, ministry resources, podcasts, and interactive No Labels Games.",
   "start_url": "index.html",
   "scope": "./",
   "display": "standalone",

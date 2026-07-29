@@ -20,13 +20,18 @@ This checklist protects the ministry experience as the site grows. The goal is n
 
 ## Phase 2: Link and content-state audit
 
+**Status: In progress**
+
+The repository now includes `scripts/audit-site.mjs` and a GitHub Actions workflow that automatically scans internal links, required routes, collection and study destinations, local assets, stale public status labels, visible version labels, legacy redirects, query-based history, Marriage & Family sequence references, and devotional IDs. A Markdown audit report is produced for every run.
+
 - [ ] Test every primary navigation link.
 - [ ] Test every footer and Site Map link.
 - [ ] Test every collection card and study link.
 - [ ] Verify every previous and next study destination.
 - [ ] Find stale `In Development`, `Coming Soon`, and outdated version labels.
-- [ ] Confirm legacy routes redirect instead of creating duplicate destinations.
-- [ ] Confirm query-based pages preserve the correct study in saved history.
+- [x] Confirm legacy routes redirect instead of creating duplicate destinations.
+- [x] Confirm query-based pages preserve the correct study in saved history.
+- [x] Add automated repository checks so broken internal routes are caught after future changes.
 
 ## Phase 3: Responsive visual review
 

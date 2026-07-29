@@ -1,27 +1,38 @@
 # No Labels, Designed by God
 
-Production website for the No Labels, Designed by God family ministry.
+Production website and installable ministry platform for No Labels, Designed by God.
 
 ## Current release
 
-**Version 0.9.1 — Sprint 2 Production Stabilization**
+**Version 1.0.0 — Ministry Platform Release**
 
-This release makes `NLDG9` the single production repository. The approved Bible game engine is stored directly in this repository instead of being fetched and rewritten in each visitor's browser.
+This release brings the ministry website, discipleship journeys, leadership resources, interactive games, search, personalization, printable tools, accessibility testing, and offline support together in one production repository.
 
-## Ministry sections
+## Ministry journeys
 
-- Home
-- Bible Studies
-- Devotionals
-- Articles and Reflections
-- Resources
-- Podcast Center
-- Ministry News
-- Search
-- Our Ministry
-- Bible Game Center
+- New Believers discipleship path and mentor resources
+- Men of Faith ten-study journey
+- Women of Faith ten-study journey
+- Marriage & Family ten-study journey
+- Difficult Questions ten-study journey
+- Leadership ten-study journey
+- Leadership Toolkit and printable ministry packet
+- Faith & Truth in Today’s World current-events study series
+- Faith That Works study through James
 
-## Game Center
+## Ministry platform
+
+- Shared searchable content library
+- Browse by topic and Scripture
+- Related-content recommendations
+- Saved favorites, progress, notes, and continue-reading state on the visitor’s device
+- My Journey dashboard and personal library
+- Resource Center, teaching tools, devotionals, articles, podcast, and ministry news centers
+- Installable progressive web app with offline caching
+- Responsive layouts for phone, tablet, laptop, and desktop
+- Automated site, accessibility, Leadership, and Toolkit quality audits
+
+## No Labels Games
 
 The production game engine supports:
 
@@ -39,29 +50,37 @@ The production game engine supports:
 - Tournament rounds and replay
 - Presentation mode and keyboard controls
 
-## Production architecture
+`games.html` is a native, self-contained production file. Production visitors do not depend on another repository or a runtime GitHub fetch to launch the games.
 
-`games.html` is a native, self-contained production file with its game data and engine embedded. It must not load the game source from GitHub at runtime.
+## Publishing ministry content
 
-The workflow at `.github/workflows/vendor-production-game.yml` copies the approved native engine from the Sprint 2 development repository into this production branch and verifies that the copied file is not a remote loader.
+The shared content registry is the source of truth for search, homepage discovery, topic and Scripture browsing, related content, and the generated site-map index. See `CONTENT-PUBLISHING.md` for the publishing workflow and templates.
 
-## Deployment
+New content normally requires:
 
-The site is deployed through GitHub Pages from the production repository.
+1. Create the content page from the template.
+2. Add one metadata entry to the shared content registry or the appropriate journey library.
+3. Run the repository audits.
+
+The service worker caches the application shell at installation and stores newly visited resources for later offline use. New ministry pages do not need to be manually added to the core cache unless they must be available immediately after installation without first being opened.
+
+## Quality checks
 
 Before merging a release:
 
-1. Open the homepage and every navigation link.
-2. Launch all six games.
-3. Test direct game links and presentation mode.
-4. Test 1, 2, 4, and 8 teams.
-5. Verify Next, Previous, Skip, Undo, rankings, final standings, and replay.
-6. Test portrait and landscape layouts on iPad and phone.
-7. Confirm the footer and Game Center show Version 0.9.1.
+1. Run the Site Quality Audit.
+2. Run the Accessibility Audit.
+3. Run any journey-specific audit affected by the change.
+4. Open the homepage, search, Resource Center, site map, and changed ministry pages.
+5. Test portrait and landscape layouts on phone and tablet.
+6. Launch all six games and verify scoring, navigation, standings, presentation mode, and replay.
+7. Confirm there are no placeholder forms, broken links, missing metadata, or unfinished public messages.
+
+## Deployment
+
+The site is deployed through GitHub Pages from `main`.
 
 ## Repository roles
 
-- `NLDG9`: production website and deployed game
-- `NLDG9-Sprint-2`: development and source archive for the Sprint 2 game engine
-
-Production visitors should never depend on the development repository being available at runtime.
+- `NLDG9`: production website, ministry platform, and deployed game engine
+- `NLDG9-Sprint-2`: historical development and source archive for the Sprint 2 game engine

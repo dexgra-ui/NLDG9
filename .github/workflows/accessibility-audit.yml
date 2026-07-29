@@ -1,0 +1,73 @@
+name: Accessibility Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/accessibility-audit.yml'
+      - 'scripts/accessibility-audit.mjs'
+
+permissions:
+  contents: write
+
+jobs:
+  accessibility:
+    name: WCAG, keyboard, focus, structure, and labels
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install accessibility tools
+        run: |
+          npm install --no-save playwright axe-core
+          npx playwright install --with-deps chromium
+
+      - name: Start local site
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/nldg-http.log 2>&1 &
+          echo $! > /tmp/nldg-http.pid
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4173/index.html > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/nldg-http.log
+          exit 1
+
+      - name: Run accessibility audit
+        run: node scripts/accessibility-audit.mjs
+
+      - name: Upload accessibility report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: accessibility-audit
+          path: accessibility-audit-results
+          if-no-files-found: error
+
+      - name: Publish Markdown report
+        if: always()
+        run: |
+          if [ ! -f accessibility-audit-results/accessibility-audit-report.md ]; then
+            echo "No accessibility report was generated."
+            exit 0
+          fi
+          cp accessibility-audit-results/accessibility-audit-report.md ACCESSIBILITY-AUDIT.md
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ACCESSIBILITY-AUDIT.md
+          if git diff --cached --quiet; then
+            echo "Accessibility report is unchanged."
+            exit 0
+          fi
+          git commit -m "Publish accessibility audit report"
+          git pull --rebase origin main
+          git push

@@ -4,134 +4,70 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#06122d">
-<meta name="description" content="Read a devotional from No Labels, Designed by God.">
+<meta name="description" content="Read a Scripture-centered devotional from No Labels, Designed by God.">
 <title>Devotional | No Labels, Designed by God</title>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="devotionals-v2.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God</strong><small>A family ministry built to last.</small></span></a>
+  <a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God</strong><small>Devotional Center</small></span></a>
   <button class="menu" aria-expanded="false">Menu</button>
-  <nav><a href="index.html">Home</a><a href="studies.html">Bible Studies</a><a class="active" href="devotionals.html">Devotionals</a><a href="articles.html">Articles</a><a href="resources.html">Resources</a><a href="podcast.html">Podcast</a><a href="news.html">News</a><a href="search.html">Search</a><a href="about.html">Our Ministry</a><a class="play-link" href="play.html">🎮 Play Games</a></nav>
+  <nav></nav>
 </header>
 <main class="reader-shell">
-  <div class="reader-breadcrumb"><a href="devotionals.html">Devotionals</a><span>›</span><span id="crumb">Devotional</span></div>
   <article>
     <header class="reader-hero">
       <p class="devo-theme" id="theme"></p>
-      <h1 id="title"></h1>
+      <h1 id="title">Devotional</h1>
       <span class="reader-reference" id="reference"></span>
       <p class="reader-summary" id="summary"></p>
-      <div class="reader-actions"><button class="button primary" id="print">Print Devotional</button><button class="button secondary" id="copy">Copy Link</button><a class="button secondary" href="devotionals.html">All Devotionals</a></div>
+      <div class="reader-actions"><button class="button primary" id="print" type="button">Print Devotional</button><button class="button secondary" id="copy" type="button">Copy Link</button><a class="button secondary" href="devotionals.html">All Devotionals</a></div>
     </header>
     <div class="reader-content">
       <div class="reader-main">
         <section class="reader-block"><h2>Scripture Focus</h2><p id="scriptureFocus"></p><p><strong id="readPassage"></strong></p></section>
         <section class="reader-block"><h2>Reflection</h2><div id="reflection"></div></section>
         <section class="reader-block"><h2>Pause and Consider</h2><ul id="questions"></ul></section>
-        <section class="reader-block"><h2>Live It Today</h2><p id="action"></p></section>
+        <section class="reader-block"><h2>Live It Today</h2><div id="action"></div></section>
         <section class="reader-block prayer"><h2>Prayer</h2><p id="prayer"></p></section>
       </div>
       <aside class="reader-side">
         <div class="reader-side-card"><strong>Devotional rhythm</strong><p>Read slowly. Reflect honestly. Respond faithfully. Pray simply.</p></div>
         <div class="reader-side-card"><strong id="time"></strong><p>This devotional is designed for a quiet moment, family discussion, or small-group opening.</p></div>
-        <div class="reader-side-card"><strong>Remember</strong><p>Your identity is not determined by the loudest label. It is rooted in the God who created and calls you.</p></div>
+        <div class="reader-side-card"><strong>Remember</strong><p>God’s character remains trustworthy even when your feelings and circumstances are changing.</p></div>
       </aside>
     </div>
-    <nav class="reader-nav"><a id="previous" href="#"><span>Previous devotional</span><strong></strong></a><a id="next" href="#"><span>Next devotional</span><strong></strong></a></nav>
+    <nav class="reader-nav" aria-label="Previous and next devotionals"><a id="previous" href="#"><span>Previous devotional</span><strong></strong></a><a id="next" href="#"><span>Next devotional</span><strong></strong></a></nav>
   </article>
 </main>
-<footer class="ministry-footer"><div class="footer-invitation"><img src="no-labels-approved-logo.png" alt=""><div><strong>No Labels, Designed by God</strong><p>We believe every person is created in the image of God. Wherever you are in your walk with Christ, you are welcome here.</p></div></div><div class="footer-links"><a href="studies.html">Study</a><a href="podcast.html">Listen</a><a href="play.html">Play</a><a href="resources.html">Grow</a><a href="about.html">Our Ministry</a></div><small>© <span data-year></span> No Labels, Designed by God.</small></footer>
+<footer class="ministry-footer"><div class="footer-invitation"><img src="no-labels-approved-logo.png" alt=""><div><strong>No Labels, Designed by God</strong><p>Short Scripture-centered reflections for real life.</p></div></div><div class="footer-links"></div><small>© <span data-year></span> No Labels, Designed by God.</small></footer>
+<script src="devotional-data.js?v=1.0.0"></script>
 <script>
-const DEVOTIONALS=[
-{
- id:'you-are-known',theme:'Identity',title:'You Are Known',reference:'Psalm 139:13–14',minutes:'5-minute devotional',summary:'Before the world formed an opinion about you, God already knew you and created you with purpose.',
- scriptureFocus:'Psalm 139 reminds us that God’s knowledge of us is personal and intentional. We are not accidents, unfinished thoughts, or people God merely tolerates. Our lives are known by the One who formed us.',
- reflection:[
-  'People often know only the part of us they can see. They may judge us by one decision, one weakness, one diagnosis, one failure, or one season of life. God sees the whole person. He knows the places where we are strong and the places where we are still growing.',
-  'Being fully known by God does not lead to rejection. It leads to wonder. We can stop pretending that we have everything together and begin living honestly before Him. The God who knows you completely is still at work in you.'
- ],
- questions:['Which label or opinion has been speaking louder than God’s truth about you?','How would your day change if you remembered that God knows you completely and still calls you His?'],
- action:'Write down one negative label you have carried. Beside it, write: “God knows the whole story.” Let that truth guide the way you speak to yourself today.',
- prayer:'God, thank You for knowing me completely. Help me stop measuring my worth by the opinions of others. Teach me to see myself through the truth of Your love and purpose. Amen.'
-},
-{
- id:'not-your-past',theme:'Grace',title:'You Are Not Your Past',reference:'2 Corinthians 5:17',minutes:'6-minute devotional',summary:'In Christ, your story is still being written. Grace gives room to grow without pretending the past never happened.',
- scriptureFocus:'Paul describes life in Christ as new creation. The gospel does not deny what happened before. It declares that the past no longer has the final word over who we are becoming.',
- reflection:[
-  'Some memories teach us. Others try to imprison us. Shame tells us that our worst moment is our truest identity. Grace tells the truth about sin and failure while also telling the truth about redemption.',
-  'New life does not mean instant perfection. It means we are no longer trapped in the old direction. God can use even painful chapters to form humility, compassion, wisdom, and a testimony of His faithfulness.'
- ],
- questions:['What part of your past are you still treating like a permanent identity?','What evidence of God’s new work can you already see in your life?'],
- action:'Choose one small action that agrees with the person God is forming you to be. Make the call, offer the apology, begin the habit, or accept the help.',
- prayer:'Jesus, thank You that my past does not have the final word. Give me courage to walk in the new life You provide. Help me learn from yesterday without living under its condemnation. Amen.'
-},
-{
- id:'you-are-held',theme:'Hope',title:'You Are Held',reference:'Romans 8:38–39',minutes:'5-minute devotional',summary:'Circumstances may change quickly, but the love of God remains steady.',
- scriptureFocus:'Romans 8 ends with confidence that nothing in all creation can separate believers from God’s love in Christ. Paul does not promise a life without hardship. He promises a love that hardship cannot remove.',
- reflection:[
-  'There are days when faith feels strong and days when we are simply trying to make it through. God’s love is not measured by the strength of our emotions. We are not more loved on our best day or less loved on our weakest one.',
-  'To be held by God does not mean we will never feel afraid. It means fear is not holding us alone. We can face uncertainty knowing that God’s presence is deeper than the situation surrounding us.'
- ],
- questions:['Where do you feel most uncertain or vulnerable right now?','What would it look like to entrust that specific concern to God today?'],
- action:'Pause three times today and pray one sentence: “God, hold me steady in Your love.”',
- prayer:'Father, when life feels uncertain, remind me that Your love is steady. Hold my mind, my heart, and my future. Help me trust that nothing can separate me from You. Amen.'
-},
-{
- id:'created-for-good-works',theme:'Purpose',title:'Created for Good Works',reference:'Ephesians 2:10',minutes:'6-minute devotional',summary:'Purpose is not something you earn. It begins with the God who designed you and continues through faithful obedience.',
- scriptureFocus:'Ephesians teaches that salvation is God’s gift and that believers are His workmanship. Good works do not purchase grace. They become the fruit of a life being shaped by grace.',
- reflection:[
-  'Purpose is sometimes imagined as one large assignment that must be discovered. Scripture often shows purpose through ordinary faithfulness: serving, encouraging, forgiving, giving, teaching, listening, and showing up when people need us.',
-  'You may not see the full picture of what God is doing through your life. Faithfulness does not require knowing every outcome. It requires taking the next obedient step with the opportunities already in front of you.'
- ],
- questions:['What good work may already be in front of you today?','Are you waiting for a large calling while overlooking a small act of obedience?'],
- action:'Serve one person today without looking for recognition. Let the action be an offering to God.',
- prayer:'God, thank You for creating me with purpose. Open my eyes to the good I can do today. Keep me faithful in small things and willing to follow wherever You lead. Amen.'
-},
-{
- id:'more-than-a-label',theme:'Identity',title:'You Are More Than a Label',reference:'Genesis 1:27',minutes:'6-minute devotional',summary:'Labels may describe an experience, but they cannot measure your God-given worth.',
- scriptureFocus:'Genesis begins human identity with the image of God. Before occupation, status, success, failure, race, health, or reputation, every person possesses dignity because humanity was created to reflect the Creator.',
- reflection:[
-  'Labels can be useful when they help us understand an experience. They become harmful when they shrink a whole person into one category. A diagnosis is real, but it is not the whole person. A mistake matters, but it is not the whole story. A title may describe a role, but it cannot define the soul.',
-  'Seeing the image of God in ourselves builds healthy dignity. Seeing it in others changes how we speak, serve, disagree, and forgive. We do not have to erase differences to recognize sacred worth.'
- ],
- questions:['Which label has become too large in the way you see yourself?','Who needs to be seen as a person made in God’s image rather than as a category?'],
- action:'Speak one sentence of God-given dignity over yourself and one sentence of encouragement to someone else.',
- prayer:'Creator God, teach me to see myself and others as people made in Your image. Keep labels in their proper place and help me honor the worth You have placed in every person. Amen.'
-},
-{
- id:'peace-is-a-practice',theme:'Spiritual Growth',title:'Peace Is a Practice',reference:'Matthew 5:9',minutes:'7-minute devotional',summary:'Peacemaking requires courage, patience, truth, and love.',
- scriptureFocus:'Jesus blesses peacemakers, not merely peace-lovers. Peacemaking is active. It seeks healing, tells the truth with love, listens carefully, and refuses to make conflict worse.',
- reflection:[
-  'Avoiding every difficult conversation may produce quiet, but quiet is not always peace. Biblical peace is connected to wholeness and restored relationship. Sometimes peace begins with an apology. Sometimes it begins with a boundary. Sometimes it begins by listening before preparing a response.',
-  'We cannot control how everyone responds, but we can control whether our words carry grace, honesty, and humility. Peacemakers do not surrender truth. They refuse to use truth as a weapon.'
- ],
- questions:['Is there a conflict where you have been avoiding a faithful next step?','What would truth spoken with love sound like in that situation?'],
- action:'Before your next difficult conversation, pray for the other person by name. Enter the conversation seeking understanding and faithfulness rather than victory.',
- prayer:'Jesus, make me a person who carries Your peace. Give me courage to face conflict honestly, humility to listen, wisdom to set healthy boundaries, and love that reflects Your character. Amen.'
-},
-{
- id:'hope-that-holds',theme:'Hope',title:'Hope That Holds',reference:'Romans 15:13',minutes:'5-minute devotional',summary:'Biblical hope is more than wishful thinking. It is a confident expectation rooted in God’s promises, giving us strength to endure today while looking forward to what He has prepared.',
- scriptureFocus:'“May the God of hope fill you with all joy and peace as you trust in him, so that you may overflow with hope by the power of the Holy Spirit.” Romans 15:13 (NIV)',
- reflection:[
-  'Hope is one of the greatest gifts God gives His children. Yet the hope found in Christ is very different from the way the world uses the word. We often say, “I hope things get better,” or, “I hope everything works out.” Those statements express uncertainty. Biblical hope is confidence because it rests on the character of God rather than on changing circumstances.',
-  'Paul calls God “the God of hope.” Our hope does not begin with our own optimism or determination. It begins with the One who has always been faithful. Every promise God has made has proven trustworthy, and because He does not change, we can face an uncertain future with confidence.',
-  'Notice that Paul connects hope with trust. As we trust God, He fills us with joy and peace. That does not mean every problem disappears. It means His presence steadies us even when life feels unstable. Joy and peace are not the absence of trouble; they are the evidence that God is with us in the middle of it.',
-  'Many of us have walked through seasons when hope felt distant. We have faced illness, loss, disappointment, unanswered prayers, or uncertain futures. In those moments, hope is not pretending everything is fine. Hope is choosing to believe that God is still at work even when we cannot yet see the outcome.',
-  'Because of Jesus, our hope reaches beyond today’s struggles. His death and resurrection assure us that sin has been defeated, death is not the end, and eternal life awaits everyone who trusts in Him. Whatever we face today, we do so knowing that our future is secure in Christ.',
-  'When your hope is anchored in God, you can encourage others who are struggling. Your confidence in His faithfulness becomes a testimony that points people to Him. As Paul says, we are meant to overflow with hope, not keep it to ourselves.',
-  'Today, remember that your circumstances do not define your future. God does. Place your trust in Him, and allow His hope to fill your heart with peace, joy, and confidence.'
- ],
- questions:['Where have I been placing my hope, in my circumstances or in God’s promises?','What situation do I need to trust God with today?','How can my hope in Christ encourage someone else this week?'],
- action:'Read Romans 15 and reflect on God’s faithfulness. Write down one promise from Scripture that strengthens your hope. Share an encouraging Bible verse with someone who may be discouraged, and thank God for the eternal hope you have through Jesus Christ.',
- prayer:'Heavenly Father, thank You for being the God of hope. When life feels uncertain, remind me that my confidence rests in You and not in my circumstances. Fill my heart with Your joy and peace as I learn to trust You more each day. Help me to encourage others with the hope I have found in Christ, and keep my eyes fixed on the eternal promises that can never fail. In Jesus’ name, Amen.'
+const escapeHtml=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
+const DEVOTIONALS=window.NLDG_DEVOTIONALS||[];
+const params=new URLSearchParams(location.search);
+let index=DEVOTIONALS.findIndex(item=>item.id===params.get('id'));
+if(index<0)index=0;
+const item=DEVOTIONALS[index];
+if(item){
+ document.title=`${item.title} | No Labels, Designed by God`;
+ document.getElementById('theme').textContent=item.theme;
+ document.getElementById('title').textContent=item.title;
+ document.getElementById('reference').textContent=item.reference;
+ document.getElementById('summary').textContent=item.summary;
+ document.getElementById('scriptureFocus').textContent=item.scriptureFocus;
+ document.getElementById('readPassage').textContent=`Read the full passage: ${item.reference}`;
+ document.getElementById('reflection').innerHTML=item.reflection.map(text=>`<p>${escapeHtml(text)}</p>`).join('');
+ document.getElementById('questions').innerHTML=item.questions.map(text=>`<li>${escapeHtml(text)}</li>`).join('');
+ document.getElementById('action').innerHTML=Array.isArray(item.action)?`<ul>${item.action.map(text=>`<li>${escapeHtml(text)}</li>`).join('')}</ul>`:`<p>${escapeHtml(item.action)}</p>`;
+ document.getElementById('prayer').textContent=item.prayer;
+ document.getElementById('time').textContent=item.minutes;
+ const setNav=(id,navIndex)=>{const target=DEVOTIONALS[(navIndex+DEVOTIONALS.length)%DEVOTIONALS.length],link=document.getElementById(id);link.href=`devotional.html?id=${target.id}`;link.querySelector('strong').textContent=target.title};
+ setNav('previous',index-1);setNav('next',index+1);
 }
-];
-const params=new URLSearchParams(location.search);let index=DEVOTIONALS.findIndex(item=>item.id===params.get('id'));if(index<0)index=0;const item=DEVOTIONALS[index];
-document.title=`${item.title} | No Labels, Designed by God`;document.getElementById('crumb').textContent=item.title;document.getElementById('theme').textContent=item.theme;document.getElementById('title').textContent=item.title;document.getElementById('reference').textContent=item.reference;document.getElementById('summary').textContent=item.summary;document.getElementById('scriptureFocus').textContent=item.scriptureFocus;document.getElementById('readPassage').textContent=`Read the full passage: ${item.reference}`;document.getElementById('reflection').innerHTML=item.reflection.map(text=>`<p>${text}</p>`).join('');document.getElementById('questions').innerHTML=item.questions.map(text=>`<li>${text}</li>`).join('');document.getElementById('action').textContent=item.action;document.getElementById('prayer').textContent=item.prayer;document.getElementById('time').textContent=item.minutes;
-function setNav(id,navIndex){const target=DEVOTIONALS[(navIndex+DEVOTIONALS.length)%DEVOTIONALS.length],link=document.getElementById(id);link.href=`devotional.html?id=${target.id}`;link.querySelector('strong').textContent=target.title}setNav('previous',index-1);setNav('next',index+1);
-document.getElementById('print').onclick=()=>window.print();document.getElementById('copy').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);document.getElementById('copy').textContent='Link Copied'}catch{prompt('Copy this link:',location.href)}};
+document.getElementById('print').onclick=()=>window.print();
+document.getElementById('copy').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);document.getElementById('copy').textContent='Link Copied'}catch{prompt('Copy this link:',location.href)}};
 </script>
 <script src="script.js"></script>
 </body>

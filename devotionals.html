@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#06122d">
-<meta name="description" content="Short Bible devotionals for identity, hope, grace, purpose, peace, and spiritual growth.">
+<meta name="description" content="Short Bible devotionals for identity, faith, hope, grace, purpose, peace, and spiritual growth.">
 <title>Devotionals | No Labels, Designed by God</title>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="devotionals-v2.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God</strong><small>A family ministry built to last.</small></span></a>
+  <a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God</strong><small>Devotional Center</small></span></a>
   <button class="menu" aria-expanded="false">Menu</button>
-  <nav><a href="index.html">Home</a><a href="studies.html">Bible Studies</a><a class="active" href="devotionals.html">Devotionals</a><a href="articles.html">Articles</a><a href="resources.html">Resources</a><a href="podcast.html">Podcast</a><a href="news.html">News</a><a href="search.html">Search</a><a href="about.html">Our Ministry</a><a class="play-link" href="play.html">🎮 Play Games</a></nav>
+  <nav></nav>
 </header>
 <main>
 <section class="devo-hero">
@@ -22,11 +22,12 @@
 </section>
 <section class="devo-filter" aria-label="Devotional filters">
   <label>Search devotionals<input id="devoSearch" type="search" placeholder="Search by title, Scripture, or topic"></label>
-  <label>Theme<select id="devoTheme"><option value="all">All themes</option><option value="identity">Identity</option><option value="grace">Grace</option><option value="hope">Hope</option><option value="purpose">Purpose</option><option value="spiritual-growth">Spiritual Growth</option></select></label>
+  <label>Theme<select id="devoTheme"><option value="all">All themes</option><option value="faith">Faith</option><option value="identity">Identity</option><option value="grace">Grace</option><option value="hope">Hope</option><option value="purpose">Purpose</option><option value="spiritual-growth">Spiritual Growth</option></select></label>
 </section>
 <section id="all-devotionals" class="section">
   <div class="section-heading"><p class="kicker">Weekly encouragement</p><h2>Truth for where you are.</h2><p>Every devotional includes a Scripture focus, reflection, questions, a practical response, and prayer.</p></div>
   <div id="devoGrid" class="devo-grid">
+    <article class="devo-card" data-theme="faith" data-search="when god feels silent psalm 13 faith waiting unanswered prayer trust unfailing love"><span class="devo-ref">Psalm 13:1–6</span><h2>When God Feels Silent</h2><p>There are seasons when God seems silent, but His silence is never His absence.</p><div class="devo-meta"><span>Faith</span><span>6 minutes</span></div><a href="devotional.html?id=when-god-feels-silent">Read devotional →</a></article>
     <article class="devo-card" data-theme="hope" data-search="hope that holds romans 15 hope joy peace trust holy spirit promises"><span class="devo-ref">Romans 15:13</span><h2>Hope That Holds</h2><p>Biblical hope is more than wishful thinking. It is a confident expectation rooted in God’s promises.</p><div class="devo-meta"><span>Hope</span><span>5 minutes</span></div><a href="devotional.html?id=hope-that-holds">Read devotional →</a></article>
     <article class="devo-card" data-theme="identity" data-search="you are known psalm 139 identity known purpose"><span class="devo-ref">Psalm 139:13–14</span><h2>You Are Known</h2><p>Before the world formed an opinion about you, God already knew you and created you with purpose.</p><div class="devo-meta"><span>Identity</span><span>5 minutes</span></div><a href="devotional.html?id=you-are-known">Read devotional →</a></article>
     <article class="devo-card" data-theme="grace" data-search="you are not your past 2 corinthians 5 grace new creation"><span class="devo-ref">2 Corinthians 5:17</span><h2>You Are Not Your Past</h2><p>In Christ, your story is still being written. Grace gives room to grow without denying where you have been.</p><div class="devo-meta"><span>Grace</span><span>6 minutes</span></div><a href="devotional.html?id=not-your-past">Read devotional →</a></article>
@@ -42,7 +43,7 @@
   <div class="devo-rhythm-grid"><div><strong>1. Read</strong><span>Begin with the Scripture reference.</span></div><div><strong>2. Reflect</strong><span>Notice what challenges or encourages you.</span></div><div><strong>3. Respond</strong><span>Choose one faithful action for today.</span></div><div><strong>4. Pray</strong><span>Speak honestly with God.</span></div></div>
 </section>
 </main>
-<footer class="ministry-footer"><div class="footer-invitation"><img src="no-labels-approved-logo.png" alt=""><div><strong>No Labels, Designed by God</strong><p>We believe every person is created in the image of God. Wherever you are in your walk with Christ, you are welcome here.</p></div></div><div class="footer-links"><a href="studies.html">Study</a><a href="podcast.html">Listen</a><a href="play.html">Play</a><a href="resources.html">Grow</a><a href="about.html">Our Ministry</a></div><small>© <span data-year></span> No Labels, Designed by God.</small></footer>
+<footer class="ministry-footer"><div class="footer-invitation"><img src="no-labels-approved-logo.png" alt=""><div><strong>No Labels, Designed by God</strong><p>Short Scripture-centered reflections for real life.</p></div></div><div class="footer-links"></div><small>© <span data-year></span> No Labels, Designed by God.</small></footer>
 <script>
 const search=document.getElementById('devoSearch'),theme=document.getElementById('devoTheme'),cards=[...document.querySelectorAll('.devo-card')],empty=document.getElementById('devoEmpty');
 function filterDevotionals(){const query=search.value.trim().toLowerCase(),selected=theme.value;let shown=0;cards.forEach(card=>{const matchesText=!query||card.dataset.search.includes(query),matchesTheme=selected==='all'||card.dataset.theme===selected,visible=matchesText&&matchesTheme;card.hidden=!visible;if(visible)shown++});empty.hidden=shown!==0}

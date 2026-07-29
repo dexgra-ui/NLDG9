@@ -1,23 +1,17 @@
 # Accessibility Audit
 
-Generated: 2026-07-29T12:33:35.082Z
+Generated: 2026-07-29T12:59:36.205Z
 
-Result: **FAILED** with 5 failure(s) and 4 warning(s).
+Result: **FAILED** with 2 failure(s) and 1 warning(s).
 
 ## Failures
 
-- my-journey: color-contrast (serious) — Elements must meet minimum color contrast ratio thresholds. button[data-start-plan="jesus-30"]: Fix any of the following:   Element has insufficient color contrast of 1.36 (foreground color: #000000, background color: #152444, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1 \| button[data-start-plan="growing-faith"]: Fix any of the following:   Element has insufficient color contrast of 1.36 (foreground color: #000000, background color: #152444, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1 \| button[data-start-plan="new-believer"]: Fix any of the following:   Element has insufficient color contrast of 1.36 (foreground color: #000000, background color: #152444, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1 \| button[data-start-plan="identity-christ"]: Fix any of the following:   Element has insufficient color contrast of 1.36 (foreground color: #000000, background color: #152444, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1 \| button[data-start-plan="men-bible"]: Fix any of the following:   Element has insufficient color contrast of 1.36 (foreground color: #000000, background color: #152444, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1
-- my-journey: select-name (critical) — Select element must have an accessible name. select[name="category"]: Fix any of the following:   Element does not have an implicit (wrapped) <label>   Element does not have an explicit <label>   aria-label attribute does not exist or is empty   aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty   Element has no title attribute   Element's default semantics were not overridden with role="none" or role="presentation" \| #goal-form > .journey-study-link[name="studyId"]: Fix any of the following:   Element does not have an implicit (wrapped) <label>   Element does not have an explicit <label>   aria-label attribute does not exist or is empty   aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty   Element has no title attribute   Element's default semantics were not overridden with role="none" or role="presentation" \| #reflection-form > .journey-study-link[name="studyId"]: Fix any of the following:   Element does not have an implicit (wrapped) <label>   Element does not have an explicit <label>   aria-label attribute does not exist or is empty   aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty   Element has no title attribute   Element's default semantics were not overridden with role="none" or role="presentation" \| select[name="translation"]: Fix any of the following:   Element does not have an implicit (wrapped) <label>   Element does not have an explicit <label>   aria-label attribute does not exist or is empty   aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty   Element has no title attribute   Element's default semantics were not overridden with role="none" or role="presentation" \| #prayer-category: Fix any of the following:   Element does not have an implicit (wrapped) <label>   Element does not have an explicit <label>   aria-label attribute does not exist or is empty   aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty   Element has no title attribute   Element's default semantics were not overridden with role="none" or role="presentation"
-- game-center: color-contrast (serious) — Elements must meet minimum color contrast ratio thresholds. .church-screen-preview > small: Fix any of the following:   Element has insufficient color contrast of 4.02 (foreground color: #727a8a, background color: #f5f7fb, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1
-- church-games: color-contrast (serious) — Elements must meet minimum color contrast ratio thresholds. #resetScoresBtn: Fix any of the following:   Element has insufficient color contrast of 3.3 (foreground color: #ffffff, background color: #ef5c5c, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1
-- church-games: label (critical) — Form elements must have labels. input[data-team-name="0"]: Fix any of the following:   Element does not have an implicit (wrapped) <label>   Element does not have an explicit <label>   aria-label attribute does not exist or is empty   aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty   Element has no title attribute   Element has no placeholder attribute   Element's default semantics were not overridden with role="none" or role="presentation" \| input[data-team-name="1"]: Fix any of the following:   Element does not have an implicit (wrapped) <label>   Element does not have an explicit <label>   aria-label attribute does not exist or is empty   aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty   Element has no title attribute   Element has no placeholder attribute   Element's default semantics were not overridden with role="none" or role="presentation"
+- my-journey: color-contrast (serious) — Elements must meet minimum color contrast ratio thresholds. #export-notes: Fix any of the following:   Element has insufficient color contrast of 1.21 (foreground color: #000000, background color: #0f1a34, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1
+- my-journey: select-name (critical) — Select element must have an accessible name. #prayer-study: Fix any of the following:   Element does not have an implicit (wrapped) <label>   Element does not have an explicit <label>   aria-label attribute does not exist or is empty   aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty   Element has no title attribute   Element's default semantics were not overridden with role="none" or role="presentation"
 
 ## Warnings for review
 
-- resource-center: heading-level jumps found: 1→3 before “No Labels Games”.
-- search: heading-level jumps found: 1→3 before “Learning to See Yourself Through God’s Eyes”.
-- church-games: heading-level jumps found: 1→3 before “Family Play Game Library”.
-- team-game: no visible H1 heading was found.
+- church-games: heading-level jumps found: 2→4 before “Scripture or Suspicion”.
 
 ## Checks completed
 
@@ -91,6 +85,6 @@ Result: **FAILED** with 5 failure(s) and 4 warning(s).
 - my-library: axe checked 4.12.1; 0 violation group(s).
 - my-journey: axe checked 4.12.1; 2 violation group(s).
 - ministry-tools: axe checked 4.12.1; 0 violation group(s).
-- game-center: axe checked 4.12.1; 1 violation group(s).
-- church-games: axe checked 4.12.1; 2 violation group(s).
+- game-center: axe checked 4.12.1; 0 violation group(s).
+- church-games: axe checked 4.12.1; 0 violation group(s).
 - team-game: axe checked 4.12.1; 0 violation group(s).

@@ -1027,13 +1027,20 @@ function renderSetupPreview(){
   </div>`).join("");
 }
 function openTournament(){ $("teamCount").value=String(Math.max(1,state.teams.length)); renderTeamEditors(); updateStatus(); showView("tournamentView"); }
+let pendingPresentationGame=null;
 function beginTournament(){
   state.teams=currentSetupTeams();
   state.activeTeam=$("firstTeamMode").value==="random"?Math.floor(Math.random()*state.teams.length):0;
   state.tournament={active:true,round:1,total:Number($("tournamentRounds").value),group:$("tournamentGroup").value,teamCount:state.teams.length};
   state.group=state.tournament.group; state.scoreHistory=[]; resetScores(false); saveTeams(); saveTournament();
   $("tournamentBadge").classList.remove("hidden");
-  document.dispatchEvent(new CustomEvent("nldg:open-library",{detail:{group:state.group}}));
+  if(pendingPresentationGame){
+    const gameId=pendingPresentationGame;
+    pendingPresentationGame=null;
+    launchGame(gameId);
+  }else{
+    document.dispatchEvent(new CustomEvent("nldg:open-library",{detail:{group:state.group}}));
+  }
 }
 function showTournamentSummary(endActive=true){
   const ranking=rankedTeams();
@@ -1096,7 +1103,8 @@ function launchGame(gameId){
     if(game.type==="jeopardy") startJeopardy();
     else if(game.type==="memory") startMemory();
     else startQuiz(gameId,game.title,groupData[game.source],game.timed);
-    history.replaceState(null,"",`games.html?group=${encodeURIComponent(state.group)}&game=${encodeURIComponent(gameId)}`);
+    const presentationQuery=document.body.classList.contains("presentation-ready")?"&presentation=1":"";
+    history.replaceState(null,"",`games.html?group=${encodeURIComponent(state.group)}&game=${encodeURIComponent(gameId)}${presentationQuery}`);
     return true;
   }catch(error){
     console.error("Game launch failed:",{gameId,group:state.group,error});
@@ -1111,7 +1119,11 @@ function openLibrary(group){
   $("groupLabel").textContent=quizData[safeGroup].label;
   $("tournamentBadge").classList.toggle("hidden",!state.tournament?.active);
   showView("library");
-  if(!new URLSearchParams(location.search).get("game")) history.replaceState(null,"",`games.html?group=${encodeURIComponent(safeGroup)}`);
+  const params=new URLSearchParams(location.search);
+  if(!params.get("game")){
+    const presentationQuery=document.body.classList.contains("presentation-ready")?"&presentation=1":"";
+    history.replaceState(null,"",`games.html?group=${encodeURIComponent(safeGroup)}${presentationQuery}`);
+  }
 }
 
 function autoLaunchFromUrl(){
@@ -1120,18 +1132,24 @@ function autoLaunchFromUrl(){
   const requestedGame=params.get("game");
   const presentation=params.get("presentation");
 
-  if(requestedGroup || requestedGame || presentation==="1"){
-    $("intro").classList.add("hidden");
-    openLibrary(requestedGroup || "family");
-  }
-
   if(presentation==="1"){
+    $("intro").classList.add("hidden");
     document.body.classList.add("presentation-ready");
+    const safeGroup=quizData[requestedGroup]?requestedGroup:"family";
+    $("tournamentGroup").value=safeGroup;
+    pendingPresentationGame=GAME_REGISTRY[requestedGame]?requestedGame:null;
+    openTournament();
     const note=document.createElement("div");
     note.className="presentation-note";
-    note.innerHTML="<strong>Church Presentation Mode</strong><span>Tap Fullscreen when you are ready to project.</span>";
+    note.innerHTML="<strong>Church Presentation Mode</strong><span>Set up the teams first, then start the tournament and choose a game.</span>";
     document.body.appendChild(note);
     requestAnimationFrame(()=>note.classList.add("show"));
+    return;
+  }
+
+  if(requestedGroup || requestedGame){
+    $("intro").classList.add("hidden");
+    openLibrary(requestedGroup || "family");
   }
 
   if(requestedGame){

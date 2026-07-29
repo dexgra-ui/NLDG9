@@ -218,7 +218,7 @@ async function testGames(context) {
     await waitForApp(page);
     const introButton = page.locator('#startShowBtn');
     if (await introButton.count() && await introButton.isVisible()) await introButton.click();
-    await page.click('#openTournamentBtn');
+    requireTrue(!(await page.locator('#tournamentView').evaluate(element => element.classList.contains('hidden'))), 'Presentation mode did not open team setup first.');
     await page.selectOption('#teamCount', '8');
     await page.dispatchEvent('#teamCount', 'change');
     await page.waitForTimeout(150);

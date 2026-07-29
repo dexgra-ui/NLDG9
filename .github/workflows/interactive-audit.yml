@@ -1,6 +1,6 @@
 name: Interactive Feature Audit
 
-# QA rerun: church presentation now begins with team setup.
+# QA rerun: presentation team setup and notice overlay corrected.
 on:
   workflow_dispatch:
   push:

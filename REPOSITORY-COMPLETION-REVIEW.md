@@ -1,6 +1,6 @@
 # Repository Completion Review
 
-Generated: 2026-07-29T18:48:35.087Z
+Generated: 2026-07-29T22:20:14.298Z
 
 Result: **PASSED** with 0 failure(s) and 0 warning(s).
 
@@ -19,10 +19,13 @@ No repository completion warnings were found.
 - Homepage links to the live Substack and Facebook channels.
 - Site map contains its generated registry index.
 - Site-map generator reads published shared-library entries.
-- Version 1.0 offline shell includes the generated site map.
+- Version 1.0 offline shell includes the generated site map and corrected Interactive Bible Study assets.
 - Publishing guide documents the one-registry workflow.
 - Registry template includes safe draft status and publishing metadata.
 - Content page template contains semantic structure and placeholders.
+- Interactive Bible Study uses the standard site shell and isolated workspace classes.
+- Interactive Bible Study no longer uses collision-prone generic classes.
+- Interactive Bible Study styles are scoped to the assistant page.
 - home passed structure and 375px layout checks.
 - new-believers passed structure and 375px layout checks.
 - studies passed structure and 375px layout checks.
@@ -43,6 +46,7 @@ No repository completion warnings were found.
 - site-map passed structure and 375px layout checks.
 - dashboard passed structure and 375px layout checks.
 - ministry-tools passed structure and 375px layout checks.
+- interactive-study passed structure and 375px layout checks.
 - game-center passed structure and 375px layout checks.
 - home passed structure and 768px layout checks.
 - new-believers passed structure and 768px layout checks.
@@ -64,6 +68,7 @@ No repository completion warnings were found.
 - site-map passed structure and 768px layout checks.
 - dashboard passed structure and 768px layout checks.
 - ministry-tools passed structure and 768px layout checks.
+- interactive-study passed structure and 768px layout checks.
 - game-center passed structure and 768px layout checks.
 - home passed structure and 1440px layout checks.
 - new-believers passed structure and 1440px layout checks.
@@ -85,6 +90,7 @@ No repository completion warnings were found.
 - site-map passed structure and 1440px layout checks.
 - dashboard passed structure and 1440px layout checks.
 - ministry-tools passed structure and 1440px layout checks.
+- interactive-study passed structure and 1440px layout checks.
 - game-center passed structure and 1440px layout checks.
-- Generated site-map index rendered 84 registry links.
+- Generated site-map index rendered 85 registry links.
 - Global search finds the Leadership Toolkit.

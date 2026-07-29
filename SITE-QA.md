@@ -55,21 +55,25 @@ The first run found that section navigation widened several Bible Study, Resourc
 
 ## Phase 4: Accessibility review
 
-**Status: In progress**
+**Status: Complete**
 
-The repository now includes an accessibility audit powered by Playwright and axe-core. It checks key ministry pages for WCAG 2.0 and 2.1 Level A and AA issues, keyboard navigation, mobile-menu operation, focus visibility, skip links, heading structure, form labels, image alternatives, positive tabindex values, and active navigation states. A Markdown report is published after each run.
+The accessibility audit uses Playwright and axe-core to check key ministry pages for WCAG 2.0 and 2.1 Level A and AA issues, keyboard navigation, mobile-menu operation, focus visibility, skip links, heading structure, form labels, image alternatives, positive tabindex values, and active navigation states.
 
-- [ ] Complete keyboard-only navigation tests.
-- [ ] Confirm visible focus styles.
-- [ ] Confirm skip links reach main content.
-- [ ] Review headings for a logical order.
-- [ ] Confirm form fields have labels and useful instructions.
-- [ ] Confirm active menu and filter states are announced properly.
-- [ ] Review contrast in cards, buttons, labels, and progress indicators.
-- [ ] Confirm decorative images use empty alternative text and meaningful images use descriptive text.
+The first run found missing select labels, low-contrast buttons and helper text, unlabeled team-name inputs, heading-level gaps, and a missing wrapper heading. Those findings were corrected. The final report passed with zero failures and zero warnings across all tested pages.
+
+- [x] Complete keyboard-only navigation tests.
+- [x] Confirm visible focus styles.
+- [x] Confirm skip links reach main content.
+- [x] Review headings for a logical order.
+- [x] Confirm form fields have accessible labels and useful instructions.
+- [x] Confirm active menu and filter states are announced properly.
+- [x] Review contrast in cards, buttons, labels, and progress indicators.
+- [x] Confirm decorative images use empty alternative text and meaningful images use descriptive text.
 - [x] Add repeatable automated WCAG and keyboard checks for future changes.
 
 ## Phase 5: Interactive feature review
+
+**Status: In progress**
 
 - [ ] Test favorites from study page, Search, My Library, and My Journey.
 - [ ] Test completed and incomplete study states.

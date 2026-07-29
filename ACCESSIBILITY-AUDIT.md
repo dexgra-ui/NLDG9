@@ -1,16 +1,16 @@
 # Accessibility Audit
 
-Generated: 2026-07-29T13:04:15.366Z
+Generated: 2026-07-29T13:11:33.319Z
 
-Result: **FAILED** with 1 failure(s) and 1 warning(s).
+Result: **PASSED** with 0 failure(s) and 0 warning(s).
 
 ## Failures
 
-- my-journey: select-name (critical) — Select element must have an accessible name. #prayer-study: Fix any of the following:   Element does not have an implicit (wrapped) <label>   Element does not have an explicit <label>   aria-label attribute does not exist or is empty   aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty   Element has no title attribute   Element's default semantics were not overridden with role="none" or role="presentation"
+No serious automated accessibility failures were found.
 
 ## Warnings for review
 
-- church-games: heading-level jumps found: 2→4 before “Scripture or Suspicion”.
+No moderate accessibility warnings were found.
 
 ## Checks completed
 
@@ -82,7 +82,7 @@ Result: **FAILED** with 1 failure(s) and 1 warning(s).
 - resource-center: axe checked 4.12.1; 0 violation group(s).
 - search: axe checked 4.12.1; 0 violation group(s).
 - my-library: axe checked 4.12.1; 0 violation group(s).
-- my-journey: axe checked 4.12.1; 1 violation group(s).
+- my-journey: axe checked 4.12.1; 0 violation group(s).
 - ministry-tools: axe checked 4.12.1; 0 violation group(s).
 - game-center: axe checked 4.12.1; 0 violation group(s).
 - church-games: axe checked 4.12.1; 0 violation group(s).

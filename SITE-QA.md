@@ -38,20 +38,26 @@ The audit reviewed more than 1,100 internal references. During this phase, it fo
 
 ## Phase 3: Responsive visual review
 
-**Status: In progress**
+**Status: Complete**
 
-The repository now includes an automated Playwright visual audit. It opens key ministry pages at mobile, tablet, small-laptop, desktop, and 1920×1080 church-display sizes. It captures full-page screenshots, checks for horizontal document overflow and likely text clipping, and generates printable PDFs for a study, devotional, and ministry packet. Results are saved as a GitHub Actions artifact for visual inspection.
+The Playwright visual audit opened key ministry pages at mobile, tablet, small-laptop, desktop, and 1920×1080 church-display sizes. It captured full-page screenshots, checked horizontal document overflow and likely text clipping, and generated printable PDFs for a study, devotional, and ministry packet.
 
-- [ ] Review at 375 px mobile width.
-- [ ] Review at 768 px tablet width.
-- [ ] Review at 1024 px tablet and small laptop width.
-- [ ] Review at 1440 px desktop width.
-- [ ] Review game presentation pages on a church display.
-- [ ] Check horizontal overflow, clipped text, button wrapping, and sticky sidebars.
-- [ ] Check print layouts for studies, guides, and ministry packets.
+The first run found that section navigation widened several Bible Study, Resource Center, New Believer, and Game Center pages on mobile and tablet. The navigation container was corrected and the audit was rerun. The final report passed with zero failures and zero clipping warnings across all tested sizes.
+
+- [x] Review at 375 px mobile width.
+- [x] Review at 768 px tablet width.
+- [x] Review at 1024 px tablet and small laptop width.
+- [x] Review at 1440 px desktop width.
+- [x] Review game presentation pages on a 1920×1080 church display.
+- [x] Check horizontal overflow, likely clipped text, button wrapping, and sticky layouts.
+- [x] Generate print layouts for a study, devotional, and ministry packet.
 - [x] Add repeatable screenshots and print-output checks for future site changes.
 
 ## Phase 4: Accessibility review
+
+**Status: In progress**
+
+The repository now includes an accessibility audit powered by Playwright and axe-core. It checks key ministry pages for WCAG 2.0 and 2.1 Level A and AA issues, keyboard navigation, mobile-menu operation, focus visibility, skip links, heading structure, form labels, image alternatives, positive tabindex values, and active navigation states. A Markdown report is published after each run.
 
 - [ ] Complete keyboard-only navigation tests.
 - [ ] Confirm visible focus styles.
@@ -61,6 +67,7 @@ The repository now includes an automated Playwright visual audit. It opens key m
 - [ ] Confirm active menu and filter states are announced properly.
 - [ ] Review contrast in cards, buttons, labels, and progress indicators.
 - [ ] Confirm decorative images use empty alternative text and meaningful images use descriptive text.
+- [x] Add repeatable automated WCAG and keyboard checks for future changes.
 
 ## Phase 5: Interactive feature review
 

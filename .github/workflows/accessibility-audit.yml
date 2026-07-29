@@ -19,7 +19,7 @@ jobs:
     name: WCAG, keyboard, focus, structure, and labels
     runs-on: ubuntu-latest
     env:
-      AUDIT_REVISION: '2'
+      AUDIT_REVISION: '3'
     steps:
       - name: Check out repository
         uses: actions/checkout@v4

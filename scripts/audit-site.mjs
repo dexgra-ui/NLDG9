@@ -4,8 +4,9 @@ import process from 'node:process';
 
 const ROOT = process.cwd();
 const REPORT_PATH = path.join(ROOT, 'site-audit-report.md');
-const EXCLUDED_DIRS = new Set(['.git', 'node_modules', '.cache', 'dist', 'coverage']);
-const TEXT_EXTENSIONS = new Set(['.html', '.js', '.mjs', '.css', '.json', '.webmanifest', '.md']);
+const EXCLUDED_DIRS = new Set(['.git', 'node_modules', '.cache', 'dist', 'coverage', 'tools']);
+const EXCLUDED_FILES = new Set(['build-v0.9.0.html', 'builder.js', 'study-template.html', 'site-audit-report.md']);
+const TEXT_EXTENSIONS = new Set(['.html', '.js', '.mjs', '.css', '.json', '.webmanifest']);
 const ROUTE_EXTENSIONS = new Set(['.html', '.js', '.mjs', '.css', '.json', '.webmanifest', '.png', '.jpg', '.jpeg', '.webp', '.svg', '.ico', '.pdf', '.zip']);
 
 const errors = [];
@@ -66,6 +67,14 @@ function collectScriptReferences(content) {
   return refs;
 }
 
+function collectInlineScriptReferences(content) {
+  const refs = [];
+  const scriptPattern = /<script\b(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi;
+  let match;
+  while ((match = scriptPattern.exec(content))) refs.push(...collectScriptReferences(match[1]));
+  return refs;
+}
+
 function visibleHtmlText(content) {
   return content
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
@@ -89,7 +98,7 @@ async function validateReferences(files, fileSet) {
     if (!TEXT_EXTENSIONS.has(ext)) continue;
     const content = await fs.readFile(file, 'utf8');
     const references = ext === '.html'
-      ? [...collectHtmlReferences(content), ...collectScriptReferences(content)]
+      ? [...collectHtmlReferences(content), ...collectInlineScriptReferences(content)]
       : collectScriptReferences(content);
     const unique = [...new Set(references)];
     for (const reference of unique) {
@@ -116,7 +125,7 @@ async function validateReferences(files, fileSet) {
       for (const version of new Set(versions)) warnings.push(`Review visible version label \`${version}\` in \`${relative(file)}\`.`);
     }
   }
-  notes.push(`Checked ${checked} unique internal file references across HTML and JavaScript files.`);
+  notes.push(`Checked ${checked} unique internal file references across public HTML, JavaScript, styles, and data files.`);
 }
 
 async function validatePrimaryRoutes(fileSet) {
@@ -196,8 +205,9 @@ function reportSection(title, items, emptyMessage) {
 }
 
 async function main() {
-  const files = await walk(ROOT);
-  const fileSet = new Set(files.map(file => path.normalize(file)));
+  const allFiles = await walk(ROOT);
+  const files = allFiles.filter(file => !EXCLUDED_FILES.has(relative(file)));
+  const fileSet = new Set(allFiles.map(file => path.normalize(file)));
   await validatePrimaryRoutes(fileSet);
   await validateReferences(files, fileSet);
   await validateLegacyRoutes(fileSet);

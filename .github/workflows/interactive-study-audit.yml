@@ -1,0 +1,93 @@
+name: Interactive Bible Study Audit
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'ministry-assistant.html'
+      - 'ministry-assistant.css'
+      - 'ministry-assistant.js'
+      - 'scripture-study-data.js'
+      - 'styles.css'
+      - 'platform.css'
+      - 'script.js'
+      - 'site-navigation.js'
+      - 'scripts/interactive-study-audit.mjs'
+      - '.github/workflows/interactive-study-audit.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'ministry-assistant.html'
+      - 'ministry-assistant.css'
+      - 'ministry-assistant.js'
+      - 'scripture-study-data.js'
+      - 'styles.css'
+      - 'platform.css'
+      - 'script.js'
+      - 'site-navigation.js'
+      - 'scripts/interactive-study-audit.mjs'
+      - '.github/workflows/interactive-study-audit.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  interactive-study:
+    name: Mobile layout, accessibility, and study workflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install audit tools
+        run: |
+          npm install --no-save playwright axe-core
+          npx playwright install --with-deps chromium
+
+      - name: Start local site
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/nldg-http.log 2>&1 &
+          echo $! > /tmp/nldg-http.pid
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4173/ministry-assistant.html > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/nldg-http.log
+          exit 1
+
+      - name: Run Interactive Bible Study audit
+        run: node scripts/interactive-study-audit.mjs
+
+      - name: Upload audit report and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: interactive-study-audit
+          path: interactive-study-audit-results
+          if-no-files-found: error
+
+      - name: Publish Markdown report
+        if: always() && github.ref == 'refs/heads/main'
+        run: |
+          if [ ! -f interactive-study-audit-results/interactive-study-quality-review.md ]; then
+            echo "No Interactive Bible Study report was generated."
+            exit 0
+          fi
+          cp interactive-study-audit-results/interactive-study-quality-review.md INTERACTIVE-STUDY-QUALITY.md
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add INTERACTIVE-STUDY-QUALITY.md
+          if git diff --cached --quiet; then
+            echo "Interactive Bible Study report is unchanged."
+            exit 0
+          fi
+          git commit -m "Publish Interactive Bible Study quality report"
+          git pull --rebase origin main
+          git push

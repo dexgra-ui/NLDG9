@@ -58,9 +58,11 @@
     scrollTimer=setTimeout(()=>{
       const doc=document.documentElement;
       const available=Math.max(1,doc.scrollHeight-window.innerHeight);
-      const previous=readState()[studyId]?.progress||0;
-      const progress=Math.max(previous,(window.scrollY/available)*100);
-      const saved=updateStudy({progress:Math.min(99,progress),url:study.url,title:study.title});
+      const previousState=readState()[studyId]||{};
+      const previous=previousState.progress||0;
+      const measured=Math.max(previous,(window.scrollY/available)*100);
+      const progress=previousState.completed?100:Math.min(99,measured);
+      const saved=updateStudy({progress,url:study.url,title:study.title});
       setProgress(saved.progress);
       localStorage.setItem('nldg-last-study',JSON.stringify({id:study.id,title:study.title,url:study.url,progress:Math.round(saved.progress||0),updated:Date.now()}));
     },150);

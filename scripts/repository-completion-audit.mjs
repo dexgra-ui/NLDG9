@@ -31,6 +31,7 @@ const pages=[
   ['site-map','site-map.html'],
   ['dashboard','dashboard.html'],
   ['ministry-tools','ministry-tools.html'],
+  ['interactive-study','ministry-assistant.html'],
   ['game-center','play.html']
 ];
 
@@ -45,8 +46,8 @@ const record=(condition,success,failure)=>{
 };
 
 async function staticChecks(){
-  const [readme,index,siteMap,siteMapScript,serviceWorker,publishing,entryTemplate,pageTemplate]=await Promise.all([
-    read('README.md'),read('index.html'),read('site-map.html'),read('site-map.js'),read('sw.js'),read('CONTENT-PUBLISHING.md'),read('templates/content-entry.template.js'),read('templates/content-page.template.html')
+  const [readme,index,siteMap,siteMapScript,serviceWorker,publishing,entryTemplate,pageTemplate,assistantHtml,assistantCss]=await Promise.all([
+    read('README.md'),read('index.html'),read('site-map.html'),read('site-map.js'),read('sw.js'),read('CONTENT-PUBLISHING.md'),read('templates/content-entry.template.js'),read('templates/content-page.template.html'),read('ministry-assistant.html'),read('ministry-assistant.css')
   ]);
 
   record(readme.includes('Version 1.0.0'),'README identifies Version 1.0.0.','README does not identify Version 1.0.0.');
@@ -54,10 +55,13 @@ async function staticChecks(){
   record(index.includes('substack.com/@nolabelsdesignedbygod')&&index.includes('facebook.com/NoLabelsDesignedbyGod'),'Homepage links to the live Substack and Facebook channels.','Homepage is missing one or both live ministry channels.');
   record(siteMap.includes('site-map-content-index')&&siteMap.includes('site-map.js'),'Site map contains its generated registry index.','Site map is not connected to the generated registry index.');
   record(siteMapScript.includes('window.NLDG_CONTENT')&&siteMapScript.includes('status!==\'draft\''),'Site-map generator reads published shared-library entries.','Site-map generator is not using the published shared library correctly.');
-  record(serviceWorker.includes("nldg-v10-0-0-ministry-platform")&&serviceWorker.includes("'site-map.js'"),'Version 1.0 offline shell includes the generated site map.','Service worker version or generated site-map cache entry is missing.');
+  record(serviceWorker.includes("nldg-v10-0-0-")&&serviceWorker.includes("'site-map.js'")&&serviceWorker.includes("'ministry-assistant.css?v=8.0.0'")&&serviceWorker.includes("'ministry-assistant.js?v=8.0.0'"),'Version 1.0 offline shell includes the generated site map and corrected Interactive Bible Study assets.','Service worker version, generated site-map cache entry, or corrected Interactive Bible Study assets are missing.');
   record(publishing.includes('source of truth')&&publishing.includes('Required metadata'),'Publishing guide documents the one-registry workflow.','Publishing guide is incomplete.');
   record(entryTemplate.includes("status: 'draft'")&&entryTemplate.includes('publishedAt'),'Registry template includes safe draft status and publishing metadata.','Registry template is missing required publishing safeguards.');
   record(pageTemplate.includes('{{PAGE TITLE}}')&&pageTemplate.includes('id="main-content"'),'Content page template contains semantic structure and placeholders.','Content page template is incomplete.');
+  record(assistantHtml.includes('class="assistant-page"')&&assistantHtml.includes('class="site-header"')&&assistantHtml.includes('class="assistant-mode-nav"'),'Interactive Bible Study uses the standard site shell and isolated workspace classes.','Interactive Bible Study is missing its standard site shell or isolated workspace classes.');
+  record(!assistantHtml.includes('class="hero"')&&!assistantHtml.includes('class="mode-nav"')&&!assistantHtml.includes('class="primary"')&&!assistantHtml.includes('class="secondary"'),'Interactive Bible Study no longer uses collision-prone generic classes.','Interactive Bible Study still uses collision-prone generic classes.');
+  record(assistantCss.includes('.assistant-page .assistant-mode-nav')&&assistantCss.includes('.assistant-page .assistant-hero'),'Interactive Bible Study styles are scoped to the assistant page.','Interactive Bible Study styles are not fully scoped.');
 }
 
 async function auditPage(page,name,url,width){

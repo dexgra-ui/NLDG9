@@ -7,6 +7,19 @@ on:
     paths:
       - '.github/workflows/interactive-audit.yml'
       - 'scripts/interactive-audit.mjs'
+      - 'personalization.js'
+      - 'dashboard.js'
+      - 'study-experience.js'
+      - 'unified-library.js'
+      - 'new-believer-step.html'
+      - 'new-believer-complete.html'
+      - 'new-believer-mentor-session.html'
+      - 'games.html'
+      - 'search.html'
+      - 'topics.html'
+      - 'scripture-index.html'
+      - 'study-library.html'
+      - 'marriage-family-study.html'
 
 permissions:
   contents: write

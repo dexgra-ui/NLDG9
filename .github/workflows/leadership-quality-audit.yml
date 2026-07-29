@@ -1,0 +1,86 @@
+name: Leadership Quality Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - review/leadership-quality
+    paths:
+      - '.github/workflows/leadership-quality-audit.yml'
+      - 'scripts/leadership-quality-audit.mjs'
+      - 'leadership.html'
+      - 'leadership-study.html'
+      - 'leadership-data.js'
+      - 'leadership-study.js'
+      - 'leadership-library.js'
+      - 'leadership.css'
+      - 'study-experience.js'
+      - 'study-experience.css'
+      - 'script.js'
+      - 'site-navigation.js'
+      - 'studies.html'
+      - 'studies-hub.js'
+      - 'study-data.js'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/leadership-quality-audit.yml'
+      - 'scripts/leadership-quality-audit.mjs'
+      - 'leadership.html'
+      - 'leadership-study.html'
+      - 'leadership-data.js'
+      - 'leadership-study.js'
+      - 'leadership-library.js'
+      - 'leadership.css'
+      - 'study-experience.js'
+      - 'study-experience.css'
+      - 'script.js'
+      - 'site-navigation.js'
+      - 'studies.html'
+      - 'studies-hub.js'
+      - 'study-data.js'
+
+permissions:
+  contents: read
+
+jobs:
+  leadership-quality:
+    name: Ten studies, persistence, responsive layout, accessibility, and print
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install browser test tools
+        run: |
+          npm install --no-save playwright axe-core
+          npx playwright install --with-deps chromium
+
+      - name: Start local site
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/nldg-leadership-http.log 2>&1 &
+          echo $! > /tmp/nldg-leadership-http.pid
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4173/leadership.html > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/nldg-leadership-http.log
+          exit 1
+
+      - name: Run Leadership quality audit
+        run: node scripts/leadership-quality-audit.mjs
+
+      - name: Upload Leadership quality results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: leadership-quality-audit
+          path: leadership-quality-results
+          if-no-files-found: error

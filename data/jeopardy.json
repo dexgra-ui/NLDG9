@@ -1,0 +1,187 @@
+{
+  "preschool": {
+    "👤 People": [
+      {"question":"Who built the ark?","answer":"Noah"},
+      {"question":"Who fought Goliath?","answer":"David"},
+      {"question":"Who was Jesus' mother?","answer":"Mary"},
+      {"question":"Who was in the lions' den?","answer":"Daniel"},
+      {"question":"Who led God's people out of Egypt?","answer":"Moses"}
+    ],
+    "📍 Places": [
+      {"question":"Where was Jesus born?","answer":"Bethlehem"},
+      {"question":"Where was baby Jesus laid?","answer":"A manger"},
+      {"question":"Where did Adam and Eve live?","answer":"The Garden of Eden"},
+      {"question":"Where did Daniel face the lions?","answer":"A lions' den"},
+      {"question":"Where did Noah and his family stay during the flood?","answer":"The ark"}
+    ],
+    "📖 Books": [
+      {"question":"What is the first book of the Bible?","answer":"Genesis"},
+      {"question":"Which book has many songs and prayers?","answer":"Psalms"},
+      {"question":"What is the final book of the Bible?","answer":"Revelation"},
+      {"question":"Which part of the Bible comes first?","answer":"The Old Testament"},
+      {"question":"Which books tell us about Jesus' life?","answer":"The Gospels"}
+    ],
+    "💡 Teachings": [
+      {"question":"God is what?","answer":"Love"},
+      {"question":"Who should we love?","answer":"God and others"},
+      {"question":"What should we do when we need help?","answer":"Pray"},
+      {"question":"Should we forgive other people?","answer":"Yes"},
+      {"question":"Jesus welcomed whom?","answer":"Children"}
+    ],
+    "🌍 Events": [
+      {"question":"What did Noah see after the flood?","answer":"A rainbow"},
+      {"question":"What sea did Moses cross?","answer":"The Red Sea"},
+      {"question":"What did Jesus calm?","answer":"A storm"},
+      {"question":"What did David use against Goliath?","answer":"A sling and a stone"},
+      {"question":"What happened after Jesus died?","answer":"He rose again"}
+    ]
+  },
+  "kids": {
+    "👤 People": [
+      {"question":"Who interpreted Pharaoh's dreams?","answer":"Joseph"},
+      {"question":"Who became queen and saved her people?","answer":"Esther"},
+      {"question":"Who baptized Jesus?","answer":"John the Baptist"},
+      {"question":"Who asked God for wisdom?","answer":"Solomon"},
+      {"question":"Who was known for great strength?","answer":"Samson"}
+    ],
+    "📍 Places": [
+      {"question":"At what city did the walls fall?","answer":"Jericho"},
+      {"question":"Where did Jesus grow up?","answer":"Nazareth"},
+      {"question":"Where did Moses receive the commandments?","answer":"Mount Sinai"},
+      {"question":"In what river was Jesus baptized?","answer":"The Jordan River"},
+      {"question":"Where were believers first called Christians?","answer":"Antioch"}
+    ],
+    "📖 Books": [
+      {"question":"Which book tells about the early church?","answer":"Acts"},
+      {"question":"Which book tells Esther's story?","answer":"Esther"},
+      {"question":"Which book contains the armor of God?","answer":"Ephesians"},
+      {"question":"Which Gospel begins with the Word?","answer":"John"},
+      {"question":"Which book includes the fruit of the Spirit?","answer":"Galatians"}
+    ],
+    "💡 Teachings": [
+      {"question":"What is the greatest commandment?","answer":"Love God"},
+      {"question":"What is the second greatest commandment?","answer":"Love your neighbor"},
+      {"question":"What sets people free?","answer":"Truth"},
+      {"question":"What should believers do without ceasing?","answer":"Pray"},
+      {"question":"Faith without what is dead?","answer":"Works"}
+    ],
+    "🌍 Events": [
+      {"question":"What happened at Pentecost?","answer":"The Holy Spirit came"},
+      {"question":"What happened to Jericho's walls?","answer":"They fell"},
+      {"question":"What did Jesus use to feed five thousand?","answer":"Five loaves and two fish"},
+      {"question":"What did the disciples find at Jesus' tomb?","answer":"It was empty"},
+      {"question":"What happened when Paul and Silas sang in prison?","answer":"The prison shook"}
+    ]
+  },
+  "teens": {
+    "👤 People": [
+      {"question":"Who confronted David after his sin?","answer":"Nathan"},
+      {"question":"Who explained Scripture to the Ethiopian official?","answer":"Philip"},
+      {"question":"Who mentored Timothy?","answer":"Paul"},
+      {"question":"Who taught Apollos more accurately?","answer":"Priscilla and Aquila"},
+      {"question":"Who was the first Christian martyr?","answer":"Stephen"}
+    ],
+    "📍 Places": [
+      {"question":"Which church examined Scripture daily?","answer":"Berea"},
+      {"question":"Where did Paul speak to philosophers?","answer":"Athens"},
+      {"question":"Where did Jesus meet the Samaritan woman?","answer":"Jacob's well"},
+      {"question":"Where did Jesus pray before His arrest?","answer":"Gethsemane"},
+      {"question":"Where was Saul headed when he met Jesus?","answer":"Damascus"}
+    ],
+    "📖 Books": [
+      {"question":"Who wrote Acts?","answer":"Luke"},
+      {"question":"Which book says faith without works is dead?","answer":"James"},
+      {"question":"Which letter contains the armor of God?","answer":"Ephesians"},
+      {"question":"Which book follows Acts?","answer":"Romans"},
+      {"question":"Which Gospel includes the Good Samaritan?","answer":"Luke"}
+    ],
+    "💡 Teachings": [
+      {"question":"What renews the believer?","answer":"The mind"},
+      {"question":"What should Christians speak in love?","answer":"Truth"},
+      {"question":"What should believers do with anxiety?","answer":"Cast it on God"},
+      {"question":"What is the greatest of faith, hope, and love?","answer":"Love"},
+      {"question":"What should believers do in everything?","answer":"Give thanks"}
+    ],
+    "🌍 Events": [
+      {"question":"What happened on the Damascus road?","answer":"Saul met Jesus"},
+      {"question":"What happened when Peter was imprisoned?","answer":"An angel freed him"},
+      {"question":"What happened at the Transfiguration?","answer":"Jesus' glory was revealed"},
+      {"question":"What happened after Stephen's death?","answer":"Believers scattered"},
+      {"question":"What happened when Jesus called Lazarus?","answer":"Lazarus came out of the tomb"}
+    ]
+  },
+  "adults": {
+    "👤 People": [
+      {"question":"Who carried Paul's letter to the Romans?","answer":"Phoebe"},
+      {"question":"Which prophet married Gomer?","answer":"Hosea"},
+      {"question":"Who succeeded Elijah?","answer":"Elisha"},
+      {"question":"Who was high priest when Samuel was young?","answer":"Eli"},
+      {"question":"Who advised caution about persecuting the apostles?","answer":"Gamaliel"}
+    ],
+    "📍 Places": [
+      {"question":"Which church was described as lukewarm?","answer":"Laodicea"},
+      {"question":"Where did Paul meet Lydia?","answer":"Philippi"},
+      {"question":"Where did Paul speak at the Areopagus?","answer":"Athens"},
+      {"question":"Where was the Jerusalem Council held?","answer":"Jerusalem"},
+      {"question":"Where did Paul stay after the shipwreck?","answer":"Malta"}
+    ],
+    "📖 Books": [
+      {"question":"Which Old Testament book never names God?","answer":"Esther"},
+      {"question":"Which letter discusses the fruit of the Spirit?","answer":"Galatians"},
+      {"question":"Which Gospel emphasizes Jesus as the Word?","answer":"John"},
+      {"question":"Which letter contains the faith chapter?","answer":"Hebrews"},
+      {"question":"Which book records the Jerusalem Council?","answer":"Acts"}
+    ],
+    "💡 Teachings": [
+      {"question":"What fulfills the law?","answer":"Love"},
+      {"question":"What does perfect love drive out?","answer":"Fear"},
+      {"question":"What should believers present as a living sacrifice?","answer":"Their bodies"},
+      {"question":"What is the wisdom from above first of all?","answer":"Pure"},
+      {"question":"What should believers pursue with everyone?","answer":"Peace and holiness"}
+    ],
+    "🌍 Events": [
+      {"question":"What issue did the Jerusalem Council address?","answer":"Gentile circumcision"},
+      {"question":"What happened when Eutychus fell from a window?","answer":"Paul raised him"},
+      {"question":"What happened to Elymas for opposing Paul?","answer":"He was struck blind"},
+      {"question":"What happened when Ananias and Sapphira lied?","answer":"They died"},
+      {"question":"What happened when Paul was shipwrecked?","answer":"Everyone survived"}
+    ]
+  },
+  "family": {
+    "👤 People": [
+      {"question":"Who built the ark?","answer":"Noah"},
+      {"question":"Who became queen and saved her people?","answer":"Esther"},
+      {"question":"Who baptized Jesus?","answer":"John the Baptist"},
+      {"question":"Who met Jesus on the Damascus road?","answer":"Saul"},
+      {"question":"Who was called the son of encouragement?","answer":"Barnabas"}
+    ],
+    "📍 Places": [
+      {"question":"Where were believers first called Christians?","answer":"Antioch"},
+      {"question":"Where did Paul speak at the Areopagus?","answer":"Athens"},
+      {"question":"Where did Jesus pray before His arrest?","answer":"Gethsemane"},
+      {"question":"Where did Paul and Silas sing in prison?","answer":"Philippi"},
+      {"question":"Where did John receive Revelation?","answer":"Patmos"}
+    ],
+    "📖 Books": [
+      {"question":"Which book says faith without works is dead?","answer":"James"},
+      {"question":"Which letter includes the armor of God?","answer":"Ephesians"},
+      {"question":"Who wrote Acts?","answer":"Luke"},
+      {"question":"Which Gospel begins with the Word?","answer":"John"},
+      {"question":"Which book tells about the early church?","answer":"Acts"}
+    ],
+    "💡 Teachings": [
+      {"question":"What sets people free?","answer":"Truth"},
+      {"question":"What are believers called to walk by?","answer":"Faith"},
+      {"question":"What should Christians speak in love?","answer":"Truth"},
+      {"question":"What fruit includes love, joy, and peace?","answer":"The fruit of the Spirit"},
+      {"question":"What is the greatest commandment?","answer":"Love God"}
+    ],
+    "🌍 Events": [
+      {"question":"What happened at Pentecost?","answer":"The Holy Spirit came"},
+      {"question":"What happened on the Damascus road?","answer":"Saul met Jesus"},
+      {"question":"What happened when Paul and Silas sang?","answer":"The prison shook"},
+      {"question":"What did the disciples find at the tomb?","answer":"It was empty"},
+      {"question":"What happened to Jericho's walls?","answer":"They fell"}
+    ]
+  }
+}

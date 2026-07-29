@@ -97,6 +97,26 @@ window.NLDG_DEVOTIONALS=[
  questions:['Am I allowing my feelings to define my view of God?','What evidence of God’s faithfulness can I remember from my own life?','How can I continue trusting Him while I wait for His direction?'],
  action:['Spend a few quiet minutes in prayer, even if you do not have the words to say.','Read Psalm 13 slowly and notice David’s journey from questioning to trusting.','Write down three ways God has been faithful to you in the past.','Encourage someone who may also be going through a season of waiting.'],
  prayer:'Father, there are times when I struggle to understand what You are doing. When You seem silent, help me remember that You are never absent. Strengthen my faith to trust Your unfailing love, even when I cannot see the outcome. Teach me to wait with patience, to cling to Your promises, and to rest in the assurance that You are always working for Your glory and my good. Thank You for never leaving me or forsaking me. In Jesus’ name, Amen.'
+},
+{
+ id:'the-courage-to-lead',theme:'Godly Leadership',title:'The Courage to Lead',reference:'Joshua 1:9',minutes:'5-minute devotional',summary:'Godly leadership does not require us to be fearless. It requires us to trust that God is with us and move forward with courage, integrity, and faith.',
+ scriptureFocus:'“Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.” Joshua 1:9 (NIV)',
+ reflection:[
+  'Joshua was stepping into a responsibility that had once belonged to Moses. The people were looking to him for direction, the Promised Land was still ahead, and there were battles waiting on the other side of the Jordan. Joshua had every reason to feel uncertain.',
+  'God did not tell him that leadership would be easy. He told Joshua to be strong and courageous because He would be with him. That is where godly leadership begins.',
+  'Courage does not mean fear disappears. It means fear does not get to make the decision. A courageous leader may still feel nervous, overwhelmed, or unsure, but chooses to move forward in faith because God is present.',
+  'Leadership is often connected to titles, positions, and authority. Biblical leadership begins with character. God is more concerned with the person we are becoming than the position we hold.',
+  'A godly leader seeks to grow in courage, humility, wisdom, patience, integrity, and compassion. These qualities are formed over time as we walk with God, receive correction, face difficult situations, and remain faithful when no one is applauding us.',
+  'Leadership also requires difficult decisions. There will be moments when doing what is right is not popular. People may misunderstand your choices. You may even question whether you are capable of carrying the responsibility God has placed before you.',
+  'When those moments come, remember what God told Joshua: The Lord your God will be with you wherever you go.',
+  'Your confidence does not have to rest entirely in your ability. It can rest in the God who called you, guides you, and remains with you.',
+  'Godly leadership is not about controlling people. It is about serving them. It means using your influence to help others grow, move forward, and draw closer to God. It means leading with truth and love.',
+  'You may lead in your church, family, workplace, or community. You may not have an official title at all. Wherever God has given you influence, you have an opportunity to reflect His character.',
+  'You do not have to know every answer. You do not have to pretend that you have everything together. Remain faithful, humble, teachable, and willing to follow God as you lead others.'
+ ],
+ questions:['What qualities have you seen in godly leaders who influenced your life?','Which leadership quality does God need to develop more deeply within you?','Is fear preventing you from stepping into something God has called you to do?'],
+ action:['Choose one leadership quality you want God to develop in you.','Ask God to show you one practical way to demonstrate that quality today.','Encourage someone who is carrying a leadership responsibility.','Before making an important decision, pause and ask God for wisdom.'],
+ prayer:'Lord, help me recognize and develop the qualities of godly leadership. Give me strength when responsibilities feel heavy and courage when I must make difficult decisions. Teach me to lead with humility, wisdom, love, and integrity. When fear or discouragement rises, remind me that I do not lead alone. You are with me wherever I go. Shape my character so my leadership points others toward You. In Jesus’ name, Amen.'
 }
 ];
 window.NLDG_DEVOTIONAL_API={all:()=>[...window.NLDG_DEVOTIONALS],byId:id=>window.NLDG_DEVOTIONALS.find(item=>item.id===id)};

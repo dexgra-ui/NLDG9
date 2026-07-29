@@ -5,7 +5,7 @@ import process from 'node:process';
 const ROOT = process.cwd();
 const REPORT_PATH = path.join(ROOT, 'site-audit-report.md');
 const EXCLUDED_DIRS = new Set(['.git', 'node_modules', '.cache', 'dist', 'coverage', 'tools']);
-const EXCLUDED_FILES = new Set(['build-v0.9.0.html', 'builder.js', 'study-template.html', 'site-audit-report.md']);
+const EXCLUDED_FILES = new Set(['build-v0.9.0.html', 'builder.js', 'study-template.html', 'site-audit-report.md', 'scripts/accessibility-audit.mjs', 'scripts/responsive-audit.mjs', 'scripts/interactive-audit.mjs']);
 const TEXT_EXTENSIONS = new Set(['.html', '.js', '.mjs', '.css', '.json', '.webmanifest']);
 const ROUTE_EXTENSIONS = new Set(['.html', '.js', '.mjs', '.css', '.json', '.webmanifest', '.png', '.jpg', '.jpeg', '.webp', '.svg', '.ico', '.pdf', '.zip']);
 

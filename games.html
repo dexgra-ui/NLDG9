@@ -12,7 +12,7 @@
 :root{
   --bg:#040a1a;--panel:#0a1940;--panel2:#10275f;--blue:#174bd2;--blue2:#0d2f91;
   --gold:#ffd34e;--gold2:#fff0a4;--text:#f7f9ff;--muted:#cbd5f3;
-  --green:#35c779;--red:#ef5c5c;--shadow:0 20px 60px rgba(0,0,0,.4)
+  --green:#237a4b;--red:#ef5c5c;--shadow:0 20px 60px rgba(0,0,0,.4)
 }
 *{box-sizing:border-box} html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:
 radial-gradient(circle at top,#1d4c9e 0,#081735 42%,#030713 100%);color:var(--text)}
@@ -551,7 +551,7 @@ body.playing #jeopardyView {
       <section id="tournamentView" class="view hidden">
 <div class="game-panel tournament-setup-panel">
   <div class="setup-heading">
-    <div><div class="eyebrow">Church Tournament</div><h3 class="section-title">Church Tournament Setup</h3>
+    <div><div class="eyebrow">Church Tournament</div><h2 class="section-title">Church Tournament Setup</h2>
     <p>Create one to eight teams. This setup controls the scoreboard used by every game.</p></div>
     <div class="setup-badge">🏆 Multi-Team</div>
   </div>
@@ -564,9 +564,9 @@ body.playing #jeopardyView {
     <label>Rounds<select id="tournamentRounds"><option value="3">3</option><option value="5" selected>5</option><option value="7">7</option></select></label>
     <label>First Team<select id="firstTeamMode"><option value="first">Team 1</option><option value="random">Choose Randomly</option></select></label>
   </div>
-  <div class="team-editor-heading"><h4>Team Names</h4><span>Names update the live scoreboard.</span></div>
+  <div class="team-editor-heading"><h3>Team Names</h3><span>Names update the live scoreboard.</span></div>
   <div id="teamNames" class="team-name-grid"></div>
-  <div class="scoreboard-preview-wrap"><h4>Scoreboard Preview</h4><div id="scoreboardPreview" class="scoreboard-preview"></div></div>
+  <div class="scoreboard-preview-wrap"><h3>Scoreboard Preview</h3><div id="scoreboardPreview" class="scoreboard-preview"></div></div>
   <div id="tournamentStatus" class="status-box">No tournament is active.</div>
   <div class="host-controls"><button id="beginTournamentBtn" class="btn success xl">▶ Start Tournament</button>
   <button id="endTournamentBtn" class="btn danger">End Tournament</button></div>

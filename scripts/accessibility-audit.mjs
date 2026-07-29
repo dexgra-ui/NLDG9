@@ -16,6 +16,8 @@ const pages = [
   { name: 'women-of-faith', url: 'women-of-faith.html' },
   { name: 'marriage-family', url: 'marriage-family.html' },
   { name: 'marriage-family-study', url: 'marriage-family-study.html?study=1' },
+  { name: 'difficult-questions', url: 'difficult-questions.html' },
+  { name: 'difficult-questions-study', url: 'difficult-questions-study.html?study=1' },
   { name: 'new-believers', url: 'new-believers.html' },
   { name: 'devotionals', url: 'devotionals.html' },
   { name: 'when-god-feels-silent', url: 'devotional.html?id=when-god-feels-silent' },

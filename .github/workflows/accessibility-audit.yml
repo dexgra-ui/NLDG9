@@ -7,6 +7,9 @@ on:
     paths:
       - '.github/workflows/accessibility-audit.yml'
       - 'scripts/accessibility-audit.mjs'
+      - '*.html'
+      - '*.css'
+      - '*.js'
 
 permissions:
   contents: write

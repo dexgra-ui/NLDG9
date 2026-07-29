@@ -85,10 +85,8 @@ function visibleHtmlText(content) {
     .replace(/\s+/g, ' ');
 }
 
-function statusContextAllowed(file, content, index) {
-  if (relative(file) !== 'studies.html') return false;
-  const window = content.slice(Math.max(0, index - 650), index + 650);
-  return /is-planned|collection-status planned|Difficult Questions|Leadership/i.test(window);
+function statusContextAllowed() {
+  return false;
 }
 
 async function validateReferences(files, fileSet) {
@@ -133,7 +131,7 @@ async function validatePrimaryRoutes(fileSet) {
     'index.html','new-believers.html','studies.html','devotionals.html','articles.html',
     'resource-center.html','podcast.html','news.html','search.html','about.html','play.html',
     'site-map.html','study-library.html','dashboard.html','ministry-tools.html',
-    'men-of-faith.html','women-of-faith.html','marriage-family.html'
+    'men-of-faith.html','women-of-faith.html','marriage-family.html','difficult-questions.html','leadership.html'
   ];
   for (const route of required) {
     if (!fileSet.has(path.join(ROOT, route))) errors.push(`Required primary route is missing: \`${route}\`.`);
@@ -173,18 +171,26 @@ async function validateQueryHistory(fileSet) {
   if (checks.every(([, pattern]) => pattern.test(content))) notes.push('Confirmed query-based study pages preserve full URLs in matching and saved history.');
 }
 
-async function validateStudySequences(fileSet) {
-  const marriageDataPath = path.join(ROOT, 'marriage-family-data.js');
-  if (fileSet.has(marriageDataPath)) {
-    const content = await fs.readFile(marriageDataPath, 'utf8');
-    const slugs = new Set([...content.matchAll(/slug:\s*["']([^"']+)["']/g)].map(match => match[1]));
-    const previous = [...content.matchAll(/previous:\s*["']([^"']+)["']/g)].map(match => match[1]);
-    const next = [...content.matchAll(/next:\s*["']([^"']+)["']/g)].map(match => match[1]);
-    for (const slug of [...previous, ...next]) {
-      if (!slugs.has(slug)) errors.push(`Marriage & Family sequence points to missing study slug: \`${slug}\`.`);
-    }
-    notes.push(`Verified ${previous.length + next.length} Marriage & Family previous/next references.`);
+async function validateSequence(fileSet, fileName, label) {
+  const dataPath = path.join(ROOT, fileName);
+  if (!fileSet.has(dataPath)) {
+    errors.push(`${label} data file is missing: \`${fileName}\`.`);
+    return;
   }
+  const content = await fs.readFile(dataPath, 'utf8');
+  const slugs = new Set([...content.matchAll(/slug:\s*["']([^"']+)["']/g)].map(match => match[1]));
+  const previous = [...content.matchAll(/previous:\s*["']([^"']+)["']/g)].map(match => match[1]);
+  const next = [...content.matchAll(/next:\s*["']([^"']+)["']/g)].map(match => match[1]);
+  for (const slug of [...previous, ...next]) {
+    if (!slugs.has(slug)) errors.push(`${label} sequence points to missing study slug: \`${slug}\`.`);
+  }
+  notes.push(`Verified ${previous.length + next.length} ${label} previous/next references.`);
+}
+
+async function validateStudySequences(fileSet) {
+  await validateSequence(fileSet,'marriage-family-data.js','Marriage & Family');
+  await validateSequence(fileSet,'difficult-questions-data.js','Difficult Questions');
+  await validateSequence(fileSet,'leadership-data.js','Leadership');
 
   const devotionalDataPath = path.join(ROOT, 'devotional-data.js');
   if (fileSet.has(devotionalDataPath)) {
@@ -223,7 +229,7 @@ async function main() {
     `Result: **${errors.length ? 'FAILED' : 'PASSED'}** with ${errors.length} error(s) and ${warnings.length} warning(s).`,
     '',
     ...reportSection('Errors', errors, 'No broken internal targets or required-route failures were found.'),
-    ...reportSection('Warnings for editorial review', warnings, 'No stale status or visible version labels were found outside approved planned collections.'),
+    ...reportSection('Warnings for editorial review', warnings, 'No stale status or visible version labels were found.'),
     ...reportSection('Checks completed', notes, 'No checks were recorded.')
   ].join('\n');
 

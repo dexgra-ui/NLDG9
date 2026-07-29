@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071735">
+<meta name="description" content="Church presentation shell for No Labels Bible Games.">
+<title>Church Presentation Mode | No Labels, Designed by God</title>
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#030713}
+iframe{display:block;width:100%;height:100%;border:0;background:#030713}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+</style>
+</head>
+<body>
+<h1 class="sr-only">No Labels Games Church Presentation Mode</h1>
+<iframe id="presentationFrame" title="No Labels Games church presentation" allow="fullscreen" allowfullscreen></iframe>
+<script>
+const outerParams=new URLSearchParams(location.search);
+outerParams.set('presentation','1');
+const frame=document.getElementById('presentationFrame');
+frame.src=`games.html?${outerParams.toString()}`;
+
+function installPresentationFix(){
+  try{
+    const doc=frame.contentDocument;
+    if(!doc?.body)return;
+    if(!doc.getElementById('nldg-presentation-note-fix')){
+      const style=doc.createElement('style');
+      style.id='nldg-presentation-note-fix';
+      style.textContent=`
+        .presentation-note.presentation-note-inline{
+          position:static!important;
+          inset:auto!important;
+          width:100%!important;
+          max-width:none!important;
+          margin:0 0 18px!important;
+          padding:14px 16px!important;
+          transform:none!important;
+          opacity:1!important;
+          pointer-events:auto!important;
+          display:grid!important;
+          grid-template-columns:auto minmax(0,1fr) auto!important;
+          align-items:center!important;
+          gap:12px!important;
+          border-color:rgba(255,213,95,.45)!important;
+          box-shadow:none!important;
+        }
+        .presentation-note.presentation-note-inline span{opacity:.82!important}
+        .presentation-note-close{
+          min-height:40px!important;
+          border:1px solid rgba(255,255,255,.22)!important;
+          border-radius:10px!important;
+          padding:7px 11px!important;
+          background:#243b78!important;
+          color:#fff!important;
+          font:inherit!important;
+          font-weight:900!important;
+          cursor:pointer!important;
+        }
+        @media(max-width:700px){
+          .presentation-note.presentation-note-inline{
+            grid-template-columns:1fr auto!important;
+            width:100%!important;
+          }
+          .presentation-note.presentation-note-inline strong{grid-column:1/2}
+          .presentation-note.presentation-note-inline span{grid-column:1/-1}
+          .presentation-note-close{grid-column:2/3;grid-row:1}
+        }
+      `;
+      doc.head.appendChild(style);
+    }
+    const relocate=()=>{
+      const note=doc.querySelector('.presentation-note');
+      const panel=doc.querySelector('#tournamentView .tournament-setup-panel');
+      if(!note||!panel)return;
+      if(!note.classList.contains('presentation-note-inline')){
+        note.classList.add('presentation-note-inline');
+        const close=doc.createElement('button');
+        close.type='button';
+        close.className='presentation-note-close';
+        close.textContent='Dismiss';
+        close.setAttribute('aria-label','Dismiss Church Presentation Mode instructions');
+        close.addEventListener('click',()=>note.remove());
+        note.appendChild(close);
+      }
+      if(note.parentElement!==panel)panel.prepend(note);
+    };
+    relocate();
+    if(!doc.body.dataset.presentationNoteObserver){
+      doc.body.dataset.presentationNoteObserver='1';
+      new MutationObserver(relocate).observe(doc.body,{childList:true,subtree:true});
+    }
+    doc.querySelectorAll('a[href="play.html"]').forEach(link=>link.target='_top');
+  }catch{}
+}
+frame.addEventListener('load',()=>{
+  installPresentationFix();
+  setTimeout(installPresentationFix,100);
+  setTimeout(installPresentationFix,500);
+});
+setInterval(installPresentationFix,750);
+</script>
+</body>
+</html>

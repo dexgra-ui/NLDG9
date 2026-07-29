@@ -81,7 +81,7 @@
     setProgress(next?100:readState()[studyId]?.progress||0);
   });
 
-  const content=document.querySelector('.lesson-wrap,.study-content,article');
+  const content=document.querySelector('.lesson-wrap,.study-content,.wof-study-content,.mof-study-content,.mf-study-content,article');
   if(content){
     const notes=document.createElement('section');
     notes.className='study-notes';
@@ -97,7 +97,8 @@
   }
 
   const seriesStudies=studies.filter(item=>item.series===study.series);
-  if(seriesStudies.length>1&&content){
+  const hasCustomNavigation=Boolean(content?.querySelector('.lesson-actions,.series-navigation,[data-series-navigation="custom"]'));
+  if(seriesStudies.length>1&&content&&!hasCustomNavigation){
     const index=seriesStudies.findIndex(item=>item.id===study.id);
     const previous=seriesStudies[index-1];
     const next=seriesStudies[index+1];

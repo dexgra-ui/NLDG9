@@ -3,6 +3,8 @@ name: Site Quality Audit
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - '.github/workflows/repair-audit-failures.yml'
   pull_request:
     branches: [main]
   workflow_dispatch:

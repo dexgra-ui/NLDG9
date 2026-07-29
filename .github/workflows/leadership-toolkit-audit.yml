@@ -1,0 +1,82 @@
+name: Leadership Toolkit Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - agent/leadership-toolkit
+    paths:
+      - '.github/workflows/leadership-toolkit-audit.yml'
+      - 'scripts/leadership-toolkit-audit.mjs'
+      - 'leadership-toolkit.html'
+      - 'leadership-toolkit-packet.html'
+      - 'leadership-toolkit.css'
+      - 'leadership-toolkit.js'
+      - 'leadership.html'
+      - 'resource-center.html'
+      - 'site-map.html'
+      - 'site-navigation.js'
+      - 'content-library.js'
+      - 'script.js'
+      - 'sw.js'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/leadership-toolkit-audit.yml'
+      - 'scripts/leadership-toolkit-audit.mjs'
+      - 'leadership-toolkit.html'
+      - 'leadership-toolkit-packet.html'
+      - 'leadership-toolkit.css'
+      - 'leadership-toolkit.js'
+      - 'leadership.html'
+      - 'resource-center.html'
+      - 'site-map.html'
+      - 'site-navigation.js'
+      - 'content-library.js'
+      - 'script.js'
+      - 'sw.js'
+
+permissions:
+  contents: read
+
+jobs:
+  toolkit-quality:
+    name: Six tools, persistence, navigation, responsive layout, accessibility, and print
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install browser test tools
+        run: |
+          npm install --no-save playwright axe-core
+          npx playwright install --with-deps chromium
+
+      - name: Start local site
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/nldg-toolkit-http.log 2>&1 &
+          echo $! > /tmp/nldg-toolkit-http.pid
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4173/leadership-toolkit.html > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/nldg-toolkit-http.log
+          exit 1
+
+      - name: Run Leadership Toolkit audit
+        run: node scripts/leadership-toolkit-audit.mjs
+
+      - name: Upload Leadership Toolkit results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: leadership-toolkit-audit
+          path: leadership-toolkit-audit-results
+          if-no-files-found: error

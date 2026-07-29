@@ -1,0 +1,96 @@
+name: Integrate Leadership Toolkit
+
+on:
+  push:
+    branches:
+      - agent/leadership-toolkit
+    paths:
+      - '.github/workflows/integrate-leadership-toolkit.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out toolkit branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/leadership-toolkit
+          fetch-depth: 0
+
+      - name: Connect Toolkit across the platform
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          def replace(path_name, old, new, count=1):
+              path = Path(path_name)
+              text = path.read_text(encoding='utf-8')
+              if old not in text:
+                  raise SystemExit(f'Anchor not found in {path_name}: {old[:100]}')
+              path.write_text(text.replace(old, new, count), encoding='utf-8')
+
+          replace(
+              'content-library.js',
+              "  {id:'ministry-updates',type:'News',title:'Ministry Platform Updates'",
+              "  {id:'leadership-toolkit',type:'Leader Guide',title:'Leadership Toolkit',description:'Six practical, Scripture-centered workspaces for decisions, team covenants, accountability, conflict repair, leader development, and ministry transitions.',url:'leadership-toolkit.html',category:'Leadership',series:'Leadership',scripture:['Mark 10:43-45','1 Peter 5:1-5','2 Timothy 2:2'],book:'Various',topics:['leadership','decision-making','teams','accountability','safeguarding','conflict','mentoring','transition'],audience:['Pastors','Ministry Leaders','Teams','Mentors','Emerging Leaders'],featured:true,status:'published',publishedAt:'2026-07-29',updatedAt:'2026-07-29'},\n  {id:'leadership-toolkit-packet',type:'Printable Resource',title:'Leadership Toolkit Printable Packet',description:'A printable six-tool packet for leadership meetings, retreats, mentoring, accountability, conflict repair, development, and transitions.',url:'leadership-toolkit-packet.html',category:'Leadership',series:'Leadership',topics:['leadership','printable','worksheet','team covenant','accountability','transition'],audience:['Pastors','Ministry Leaders','Teams','Mentors'],status:'published',publishedAt:'2026-07-29',updatedAt:'2026-07-29'},\n  {id:'ministry-updates',type:'News',title:'Ministry Platform Updates'"
+          )
+
+          replace(
+              'site-navigation.js',
+              "    ['Leadership','leadership.html',isLeadershipPage],",
+              "    ['Leadership','leadership.html',isLeadershipPage],\n    ['Leadership Toolkit','leadership-toolkit.html',['leadership-toolkit.html','leadership-toolkit-packet.html'].includes(page)],"
+          )
+          replace(
+              'site-navigation.js',
+              "    if(page==='leadership-study.html')trail.push(['Leadership','leadership.html']);",
+              "    if(page==='leadership-study.html'||page==='leadership-toolkit.html'||page==='leadership-toolkit-packet.html')trail.push(['Leadership','leadership.html']);\n    if(page==='leadership-toolkit-packet.html')trail.push(['Leadership Toolkit','leadership-toolkit.html']);"
+          )
+          replace(
+              'site-navigation.js',
+              '      <a href="leadership.html">Leadership</a>',
+              '      <a href="leadership.html">Leadership</a>\n      <a href="leadership-toolkit.html">Leadership Toolkit</a>'
+          )
+
+          replace(
+              'resource-center.html',
+              '<a href="studies.html"><span>🖨️</span><h3>Printable Studies</h3>',
+              '<a href="leadership-toolkit.html"><span>🧭</span><h3>Leadership Toolkit</h3><p>Use six practical tools for decisions, team covenants, accountability, conflict repair, leader development, and transitions.</p><strong>Open leadership toolkit →</strong></a><a href="studies.html"><span>🖨️</span><h3>Printable Studies</h3>'
+          )
+
+          replace(
+              'site-map.html',
+              '<article><span>🧭</span><h2>Leadership</h2><a href="leadership.html">Leadership Center</a>',
+              '<article><span>🧭</span><h2>Leadership</h2><a href="leadership.html">Leadership Center</a><a href="leadership-toolkit.html">Leadership Toolkit</a><a href="leadership-toolkit-packet.html">Printable Leadership Toolkit</a>'
+          )
+          replace(
+              'site-map.html',
+              '<a href="new-believer-toolkit.html">Discipleship Toolkit</a></article>',
+              '<a href="new-believer-toolkit.html">Discipleship Toolkit</a><a href="leadership-toolkit.html">Leadership Toolkit</a><a href="leadership-toolkit-packet.html">Printable Leadership Toolkit</a></article>',
+              1
+          )
+
+          replace('sw.js', "const CACHE='nldg-v8-3-0-leadership';", "const CACHE='nldg-v8-4-0-leadership-toolkit';")
+          replace('sw.js', "content-library.js?v=20260728-4", "content-library.js?v=20260729-5")
+          replace(
+              'sw.js',
+              "'leadership.css?v=1.0.0','no-labels-approved-logo.png'",
+              "'leadership.css?v=1.0.0','leadership-toolkit.html','leadership-toolkit-packet.html','leadership-toolkit.css?v=1.0.0','leadership-toolkit.js?v=1.0.0','no-labels-approved-logo.png'"
+          )
+
+          replace('script.js', "site-navigation.js?v=1.8.0", "site-navigation.js?v=1.9.0")
+          replace('script.js', "content-library.js?v=20260728-4", "content-library.js?v=20260729-5")
+          replace('script.js', "sw.js?v=6.3.0", "sw.js?v=6.4.0")
+          PY
+
+      - name: Remove one-time workflow and commit integration
+        run: |
+          rm -f .github/workflows/integrate-leadership-toolkit.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content-library.js site-navigation.js resource-center.html site-map.html sw.js script.js .github/workflows/integrate-leadership-toolkit.yml
+          git commit -m "Integrate Leadership Toolkit across ministry platform"
+          git pull --rebase origin agent/leadership-toolkit
+          git push origin agent/leadership-toolkit

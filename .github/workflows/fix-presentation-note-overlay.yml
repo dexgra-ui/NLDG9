@@ -1,0 +1,41 @@
+name: Fix Presentation Notice Overlay
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/fix-presentation-note-overlay.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    name: Allow team setup controls through notice
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Make presentation notice non-interactive
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('games.html')
+          text = path.read_text(encoding='utf-8')
+          old = '.presentation-note{position:fixed;left:50%;bottom:24px;z-index:9999;display:flex;gap:12px;align-items:center;transform:translate(-50%,30px);opacity:0;padding:14px 18px;border:1px solid rgba(255,255,255,.18);border-radius:14px;background:#06122d;color:#fff;box-shadow:0 16px 50px rgba(0,0,0,.45);transition:.35s ease}'
+          new = '.presentation-note{position:fixed;left:50%;bottom:24px;z-index:9999;display:flex;gap:12px;align-items:center;transform:translate(-50%,30px);opacity:0;padding:14px 18px;border:1px solid rgba(255,255,255,.18);border-radius:14px;background:#06122d;color:#fff;box-shadow:0 16px 50px rgba(0,0,0,.45);transition:.35s ease;pointer-events:none}'
+          if old not in text:
+              raise SystemExit('Presentation notice style was not found.')
+          path.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+
+      - name: Commit correction
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add games.html
+          git commit -m "Keep presentation notice from blocking controls"
+          git pull --rebase origin main
+          git push

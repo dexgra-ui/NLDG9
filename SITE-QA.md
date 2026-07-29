@@ -73,19 +73,26 @@ The first run found missing select labels, low-contrast buttons and helper text,
 
 ## Phase 5: Interactive feature review
 
-**Status: In progress**
+**Status: Complete**
 
-- [ ] Test favorites from study page, Search, My Library, and My Journey.
-- [ ] Test completed and incomplete study states.
-- [ ] Test saved notes and exported notes.
-- [ ] Test continue-reading history, including pages with query parameters.
-- [ ] Test study progress after refreshing and returning later.
-- [ ] Test Search, Topic Explorer, Scripture Explorer, and collection filters.
-- [ ] Test New Believer completion and next-season plan.
-- [ ] Test mentor session checklists and progress.
-- [ ] Test game scoring, 1–8 teams, reset controls, and presentation mode.
+The automated interactive review now passes with zero failures. It verifies study favorites, completion, progress, notes, reload persistence, My Library and My Journey synchronization, notes export, query-based continue-reading history, Search and explorer filters, New Believer Step 10 completion, mentor-session progress, and church game controls.
+
+Church Presentation Mode was corrected so it now opens the one-to-eight-team setup first. After the host names the teams, chooses the audience and rounds, and starts the tournament, the Game Library opens. A presentation link that already names a game also pauses for team setup before launching that game. The presentation notice no longer blocks the Start Tournament button.
+
+- [x] Test study favorites, completion, progress, notes, and reload persistence.
+- [x] Test My Library favorites and completed filters.
+- [x] Test My Journey favorites and completed studies.
+- [x] Test saved dashboard notes and notes export.
+- [x] Test continue-reading history, including pages with query parameters.
+- [x] Test Search, Topic Explorer, Scripture Explorer, and library filters.
+- [x] Test New Believer Step 10 completion, notes, persistence, and next-step handoff.
+- [x] Test mentor session checklists, notes, completion, and reload persistence.
+- [x] Test game team setup, eight-team scoring, undo, reset, and church presentation flow.
+- [x] Add repeatable automated interactive checks for future changes.
 
 ## Phase 6: Final public-release review
+
+**Status: Next**
 
 - [ ] Review all page titles and descriptions.
 - [ ] Confirm each major journey has a clear beginning and next step.

@@ -95,13 +95,16 @@ async function inspectLayout(page) {
       .filter(element => {
         const style = getComputedStyle(element);
         if (style.display === 'none' || style.visibility === 'hidden') return false;
-        if (element.closest('[hidden], .hidden')) return false;
+        if (element.closest('[hidden], .hidden, .sr-only')) return false;
         const hasText = (element.textContent || '').trim().length > 0;
-        const clippedHorizontally = element.scrollWidth > element.clientWidth + 3;
-        const clippedVertically = element.scrollHeight > element.clientHeight + 3;
-        const intentionallyScrollable = ['auto', 'scroll'].includes(style.overflowX) || ['auto', 'scroll'].includes(style.overflowY);
+        if (!hasText) return false;
+        const overflowX = ['hidden', 'clip'].includes(style.overflowX);
+        const overflowY = ['hidden', 'clip'].includes(style.overflowY);
+        const clippedHorizontally = overflowX && element.scrollWidth > element.clientWidth + 3;
+        const clippedVertically = overflowY && element.scrollHeight > element.clientHeight + 3;
+        const noWrapOverflow = style.whiteSpace === 'nowrap' && element.scrollWidth > element.clientWidth + 3;
         const intentionalEllipsis = style.textOverflow === 'ellipsis';
-        return hasText && !intentionallyScrollable && !intentionalEllipsis && (clippedHorizontally || clippedVertically);
+        return !intentionalEllipsis && (clippedHorizontally || clippedVertically || noWrapOverflow);
       })
       .slice(0, 12)
       .map(element => ({

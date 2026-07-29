@@ -1,16 +1,16 @@
 # Accessibility Audit
 
-Generated: 2026-07-29T16:27:31.025Z
+Generated: 2026-07-29T16:54:06.677Z
 
-Result: **FAILED** with 1 failure(s) and 1 warning(s).
+Result: **PASSED** with 0 failure(s) and 0 warning(s).
 
 ## Failures
 
-- church-games: color-contrast (serious) — Elements must meet minimum color contrast ratio thresholds. #beginTournamentBtn: Fix any of the following:   Element has insufficient color contrast of 2.18 (foreground color: #ffffff, background color: #35c779, font size: 18.0pt (24px), font weight: bold). Expected contrast ratio of 3:1
+No serious automated accessibility failures were found.
 
 ## Warnings for review
 
-- church-games: heading-level jumps found: 1→3 before “Church Tournament Setup”.
+No moderate accessibility warnings were found.
 
 ## Checks completed
 
@@ -26,6 +26,10 @@ Result: **FAILED** with 1 failure(s) and 1 warning(s).
 - marriage-family: visible focus detected on 6 of the first 6 keyboard stops.
 - marriage-family-study: structure, headings, images, skip link, menu state, and navigation state checked.
 - marriage-family-study: visible focus detected on 6 of the first 6 keyboard stops.
+- difficult-questions: structure, headings, images, skip link, menu state, and navigation state checked.
+- difficult-questions: visible focus detected on 6 of the first 6 keyboard stops.
+- difficult-questions-study: structure, headings, images, skip link, menu state, and navigation state checked.
+- difficult-questions-study: visible focus detected on 6 of the first 6 keyboard stops.
 - new-believers: structure, headings, images, skip link, menu state, and navigation state checked.
 - new-believers: visible focus detected on 6 of the first 6 keyboard stops.
 - devotionals: structure, headings, images, skip link, menu state, and navigation state checked.
@@ -56,6 +60,8 @@ Result: **FAILED** with 1 failure(s) and 1 warning(s).
 - women-of-faith mobile menu: keyboard menu open, focus movement, Escape close, and focus return checked.
 - marriage-family mobile menu: keyboard menu open, focus movement, Escape close, and focus return checked.
 - marriage-family-study mobile menu: keyboard menu open, focus movement, Escape close, and focus return checked.
+- difficult-questions mobile menu: keyboard menu open, focus movement, Escape close, and focus return checked.
+- difficult-questions-study mobile menu: keyboard menu open, focus movement, Escape close, and focus return checked.
 - new-believers mobile menu: keyboard menu open, focus movement, Escape close, and focus return checked.
 - devotionals mobile menu: keyboard menu open, focus movement, Escape close, and focus return checked.
 - when-god-feels-silent mobile menu: keyboard menu open, focus movement, Escape close, and focus return checked.
@@ -75,6 +81,8 @@ Result: **FAILED** with 1 failure(s) and 1 warning(s).
 - women-of-faith: axe checked 4.12.1; 0 violation group(s).
 - marriage-family: axe checked 4.12.1; 0 violation group(s).
 - marriage-family-study: axe checked 4.12.1; 0 violation group(s).
+- difficult-questions: axe checked 4.12.1; 0 violation group(s).
+- difficult-questions-study: axe checked 4.12.1; 0 violation group(s).
 - new-believers: axe checked 4.12.1; 0 violation group(s).
 - devotionals: axe checked 4.12.1; 0 violation group(s).
 - when-god-feels-silent: axe checked 4.12.1; 0 violation group(s).
@@ -85,5 +93,5 @@ Result: **FAILED** with 1 failure(s) and 1 warning(s).
 - my-journey: axe checked 4.12.1; 0 violation group(s).
 - ministry-tools: axe checked 4.12.1; 0 violation group(s).
 - game-center: axe checked 4.12.1; 0 violation group(s).
-- church-games: axe checked 4.12.1; 1 violation group(s).
+- church-games: axe checked 4.12.1; 0 violation group(s).
 - team-game: axe checked 4.12.1; 0 violation group(s).

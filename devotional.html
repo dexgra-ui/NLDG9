@@ -6,6 +6,8 @@
 <meta name="theme-color" content="#06122d">
 <meta name="description" content="Read a Scripture-centered devotional from No Labels, Designed by God.">
 <title>Devotional | No Labels, Designed by God</title>
+<link rel="canonical" href="https://nolabelsdesignedbygod.org/devotionals.html">
+<meta property="og:type" content="article"><meta property="og:site_name" content="No Labels, Designed by God"><meta property="og:title" content="Devotional Center"><meta property="og:description" content="Read a Scripture-centered devotional from No Labels, Designed by God."><meta property="og:url" content="https://nolabelsdesignedbygod.org/devotionals.html"><meta property="og:image" content="https://nolabelsdesignedbygod.org/no-labels-approved-logo.png"><meta property="og:image:alt" content="No Labels, Designed by God ministry logo"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Devotional Center"><meta name="twitter:description" content="Read a Scripture-centered devotional from No Labels, Designed by God."><meta name="twitter:image" content="https://nolabelsdesignedbygod.org/no-labels-approved-logo.png">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="devotionals-v2.css">
 </head>
@@ -22,7 +24,7 @@
       <h1 id="title">Devotional</h1>
       <span class="reader-reference" id="reference"></span>
       <p class="reader-summary" id="summary"></p>
-      <div class="reader-actions"><button class="button primary" id="print" type="button">Print Devotional</button><button class="button secondary" id="copy" type="button">Copy Link</button><a class="button secondary" href="devotionals.html">All Devotionals</a></div>
+      <div class="reader-actions"><button class="button primary" id="print" type="button">Print Devotional</button><button class="button secondary" id="copy" type="button">Copy Link</button><a class="button secondary" id="allDevotionalsLink" href="devotionals.html">All Devotionals</a></div>
     </header>
     <div class="reader-content">
       <div class="reader-main">
@@ -44,32 +46,8 @@
 <footer class="ministry-footer"><div class="footer-invitation"><img src="no-labels-approved-logo.png" alt=""><div><strong>No Labels, Designed by God</strong><p>Short Scripture-centered reflections for real life.</p></div></div><div class="footer-links"></div><small>© <span data-year></span> No Labels, Designed by God.</small></footer>
 <script src="devotional-data.js?v=1.1.0"></script>
 <script src="brotherhood-devotional-data.js?v=1.0.0"></script>
-<script>
-const escapeHtml=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
-const DEVOTIONALS=window.NLDG_DEVOTIONALS||[];
-const params=new URLSearchParams(location.search);
-let index=DEVOTIONALS.findIndex(item=>item.id===params.get('id'));
-if(index<0)index=0;
-const item=DEVOTIONALS[index];
-if(item){
- document.title=`${item.title} | No Labels, Designed by God`;
- document.getElementById('theme').textContent=item.theme;
- document.getElementById('title').textContent=item.title;
- document.getElementById('reference').textContent=item.reference;
- document.getElementById('summary').textContent=item.summary;
- document.getElementById('scriptureFocus').textContent=item.scriptureFocus;
- document.getElementById('readPassage').textContent=`Read the full passage: ${item.reference}`;
- document.getElementById('reflection').innerHTML=item.reflection.map(text=>`<p>${escapeHtml(text)}</p>`).join('');
- document.getElementById('questions').innerHTML=item.questions.map(text=>`<li>${escapeHtml(text)}</li>`).join('');
- document.getElementById('action').innerHTML=Array.isArray(item.action)?`<ul>${item.action.map(text=>`<li>${escapeHtml(text)}</li>`).join('')}</ul>`:`<p>${escapeHtml(item.action)}</p>`;
- document.getElementById('prayer').textContent=item.prayer;
- document.getElementById('time').textContent=item.minutes;
- const setNav=(id,navIndex)=>{const target=DEVOTIONALS[(navIndex+DEVOTIONALS.length)%DEVOTIONALS.length],link=document.getElementById(id);link.href=`devotional.html?id=${target.id}`;link.querySelector('strong').textContent=target.title};
- setNav('previous',index-1);setNav('next',index+1);
-}
-document.getElementById('print').onclick=()=>window.print();
-document.getElementById('copy').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);document.getElementById('copy').textContent='Link Copied'}catch{prompt('Copy this link:',location.href)}};
-</script>
+<script src="seo.js?v=1.0.0"></script>
+<script src="devotional-reader.js?v=1.0.0"></script>
 <script src="script.js"></script>
 </body>
 </html>

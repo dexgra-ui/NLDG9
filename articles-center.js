@@ -8,7 +8,7 @@
   if(!grid||!featured)return;
   const escapeHtml=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
   let active='All';
-  const href=item=>`article.html?slug=${encodeURIComponent(item.slug)}`;
+  const href=item=>`articles/${encodeURIComponent(item.slug)}.html`;
   const scripture=item=>(item.scripture||[])[0]||'';
   const card=item=>`<article class="article-card"><span class="category">${escapeHtml(item.category)}</span><h3>${escapeHtml(item.title)}</h3>${scripture(item)?`<span class="article-scripture">${escapeHtml(scripture(item))}</span>`:''}<p>${escapeHtml(item.excerpt)}</p><div class="article-meta"><span>${escapeHtml(item.author)}</span><span>${item.readingTime} min read</span></div><a href="${href(item)}">Read article →</a></article>`;
   const lead=articles.find(item=>item.featured)||articles[0];

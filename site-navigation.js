@@ -36,7 +36,7 @@ function initializeNavigation(){
   else if(page.startsWith('podcast'))section='podcast';
   else if(page.startsWith('news'))section='news';
   else if(page.startsWith('search')||page==='site-map.html')section='search';
-  else if(page.startsWith('about'))section='about';
+  else if(page.startsWith('about')||page.startsWith('mission')||page.startsWith('contact'))section='about';
 
   nav.id='primary-navigation';
   nav.setAttribute('aria-label','Primary navigation');
@@ -113,6 +113,11 @@ function initializeNavigation(){
     ['Church Presentation','games.html?presentation=1',page==='games.html'],
     ['Host Checklist','host-test-checklist.html',page==='host-test-checklist.html']
   ]};
+  if(section==='about')context={label:'Ministry information navigation',links:[
+    ['Our Ministry','about.html',page==='about.html'],
+    ['Our Mission','mission.html',page==='mission.html'],
+    ['Contact & Feedback','contact.html',page==='contact.html']
+  ]};
 
   if(context&&!document.querySelector('.section-navigation')){
     const sectionNav=document.createElement('nav');
@@ -167,6 +172,7 @@ function initializeNavigation(){
       <a href="podcast.html">Podcast</a>
       <a href="play.html">Games</a>
       <a href="about.html">Our Ministry</a>
+      <a href="mission.html">Our Mission</a>
       <a href="site-map.html">Site Map</a>
       <a href="https://www.facebook.com/NoLabelsDesignedbyGod" target="_blank" rel="noopener noreferrer" aria-label="Follow No Labels, Designed by God on Facebook">Facebook ↗</a>
       <a href="https://substack.com/@nolabelsdesignedbygod" target="_blank" rel="noopener noreferrer" aria-label="Read No Labels, Designed by God on Substack">Substack ↗</a>`;

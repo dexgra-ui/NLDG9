@@ -79,8 +79,8 @@ try{
  await hostPage.goto(`${BASE_URL}/play.html`,{waitUntil:'networkidle'});
  await hostPage.waitForSelector('[data-survey-showdown]');
  await hostPage.waitForFunction(()=>[...document.querySelectorAll('[data-survey-showdown]')].some(element=>element.textContent.includes('Laptop Required')&&element.textContent.includes('TV / Projector')));
- const gameCenterText=await hostPage.locator('[data-survey-showdown]').allInnerTexts();
- pass(gameCenterText.join(' ').includes('Laptop Required')&&gameCenterText.join(' ').includes('TV / Projector'),'Game Center does not clearly show the device requirement.');
+ const gameCenterText=await hostPage.locator('[data-survey-showdown]').evaluateAll(elements=>elements.map(element=>element.textContent||'').join(' '));
+ pass(gameCenterText.includes('Laptop Required')&&gameCenterText.includes('TV / Projector'),'Game Center does not clearly show the device requirement.');
  pass(await hostPage.locator('a[href*="bible-survey-host.html"]').count()>=1,'Game Center does not launch the laptop host.');
 
  await hostPage.goto(`${BASE_URL}/search.html`,{waitUntil:'networkidle'});

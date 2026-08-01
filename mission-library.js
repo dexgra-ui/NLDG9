@@ -12,7 +12,6 @@ function register(){
  return true;
 }
 if(register())return;
-window.addEventListener('nldg-library-ready',register);
 let attempts=0;
 const timer=setInterval(()=>{attempts++;if(register()||attempts>50)clearInterval(timer)},120);
 })();

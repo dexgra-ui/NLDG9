@@ -8,6 +8,10 @@ const surveyIntegration=document.createElement('script');
 surveyIntegration.src=`${root}survey-game-integration.js?v=2.0.0`;
 surveyIntegration.async=false;
 document.head.appendChild(surveyIntegration);
+const missionLibrary=document.createElement('script');
+missionLibrary.src=`${root}mission-library.js?v=1.0.0`;
+missionLibrary.async=false;
+document.head.appendChild(missionLibrary);
 const ensure=()=>{
  document.querySelectorAll('.ministry-footer').forEach(footer=>{
   let links=footer.querySelector('.footer-links');

@@ -5,7 +5,7 @@ const nested=/\/(?:articles|devotionals)\//i.test(location.pathname);
 const isContact=/(^|\/)contact\.html$/i.test(location.pathname);
 const root=nested?'../':'';
 const surveyIntegration=document.createElement('script');
-surveyIntegration.src=`${root}survey-game-integration.js?v=1.0.0`;
+surveyIntegration.src=`${root}survey-game-integration.js?v=2.0.0`;
 surveyIntegration.async=false;
 document.head.appendChild(surveyIntegration);
 const ensure=()=>{

@@ -1,0 +1,35 @@
+.mission-hero{position:relative;overflow:hidden;background:radial-gradient(circle at 85% 15%,rgba(255,211,78,.18),transparent 28%),linear-gradient(145deg,#071735,#102a68)}
+.mission-hero::after{content:"";position:absolute;width:280px;height:280px;right:-80px;bottom:-120px;border:36px solid rgba(255,255,255,.04);border-radius:50%}
+.mission-hero>*{position:relative;z-index:1}
+.mission-hero .lead{max-width:900px}
+.mission-hero-actions,.mission-cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.mission-statement{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,.8fr);gap:28px;align-items:center}
+.mission-statement h2{max-width:780px}
+.mission-statement blockquote{margin:0;padding:28px;border:2px solid rgba(255,211,78,.45);border-radius:22px;background:linear-gradient(145deg,rgba(255,211,78,.12),rgba(7,23,59,.92));box-shadow:0 22px 48px rgba(0,0,0,.2)}
+.mission-statement blockquote p{margin:0 0 14px;color:#fff;font-size:clamp(1.35rem,2.4vw,2rem);font-weight:900;line-height:1.2}
+.mission-statement cite{color:var(--gold,#ffd34e);font-style:normal;font-weight:900}
+.mission-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.mission-card-grid article{padding:22px;border:1px solid rgba(255,255,255,.12);border-radius:20px;background:linear-gradient(145deg,rgba(16,42,104,.82),rgba(7,23,59,.94));box-shadow:0 16px 32px rgba(0,0,0,.16)}
+.mission-card-grid article>span{display:grid;width:48px;height:48px;place-items:center;margin-bottom:16px;border-radius:14px;background:rgba(255,211,78,.12);font-size:1.55rem}
+.mission-card-grid h3{margin:0 0 10px}
+.mission-card-grid p{margin:0;color:var(--muted,#c9d4ef)}
+.mission-audience{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:28px;align-items:center;background:linear-gradient(145deg,rgba(4,14,40,.88),rgba(16,42,104,.6))}
+.audience-list{display:flex;gap:10px;flex-wrap:wrap;align-content:center}
+.audience-list span{padding:10px 14px;border:1px solid rgba(255,255,255,.15);border-radius:999px;background:rgba(255,255,255,.06);font-weight:900}
+.mission-service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.mission-service-grid a{display:block;padding:22px;border:1px solid rgba(255,255,255,.13);border-radius:20px;background:linear-gradient(145deg,rgba(9,26,67,.98),rgba(16,42,104,.78));color:inherit;text-decoration:none;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.mission-service-grid a:hover,.mission-service-grid a:focus-visible{transform:translateY(-3px);border-color:rgba(255,211,78,.7);box-shadow:0 18px 34px rgba(0,0,0,.22)}
+.mission-service-grid span{font-size:1.7rem}
+.mission-service-grid h3{margin:12px 0 8px}
+.mission-service-grid p{margin:0;color:var(--muted,#c9d4ef)}
+.mission-outcome{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:28px;align-items:center}
+.outcome-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.outcome-grid article{padding:18px;border-left:4px solid var(--gold,#ffd34e);border-radius:0 16px 16px 0;background:rgba(7,23,59,.9)}
+.outcome-grid strong{display:block;margin-bottom:5px;font-size:1.2rem}
+.outcome-grid p{margin:0;color:var(--muted,#c9d4ef)}
+.mission-cta{display:grid;grid-template-columns:minmax(0,1.3fr) auto;gap:28px;align-items:center;border:2px solid rgba(255,211,78,.35);background:radial-gradient(circle at right,rgba(255,211,78,.12),transparent 38%),linear-gradient(145deg,#071735,#102a68)}
+.mission-cta h2{max-width:840px}
+.mission-cta-actions{justify-content:flex-end;margin-top:0}
+@media(max-width:980px){.mission-card-grid,.mission-service-grid{grid-template-columns:1fr 1fr}.mission-statement,.mission-audience,.mission-outcome,.mission-cta{grid-template-columns:1fr}.mission-cta-actions{justify-content:flex-start}}
+@media(max-width:640px){.mission-card-grid,.mission-service-grid,.outcome-grid{grid-template-columns:1fr}.mission-hero-actions,.mission-cta-actions{display:grid}.mission-hero-actions .button,.mission-cta-actions .button{text-align:center}.mission-statement blockquote{padding:22px}.audience-list span{width:100%;text-align:center}}
+@media(prefers-reduced-motion:reduce){.mission-service-grid a{transition:none}.mission-service-grid a:hover,.mission-service-grid a:focus-visible{transform:none}}

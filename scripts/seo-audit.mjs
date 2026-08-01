@@ -8,7 +8,7 @@ const exists=file=>fs.existsSync(path.join(root,file));
 const assert=(condition,message)=>{if(!condition)failures.push(message)};
 const articlePages=['family-nobody-talks-about','grace-accountability','faith-hard-seasons','truth-online','church-shows-up','jesus-loves-you'].map(slug=>`articles/${slug}.html`);
 const devotionalPages=['you-are-known','not-your-past','you-are-held','created-for-good-works','more-than-a-label','peace-is-a-practice','hope-that-holds','when-god-feels-silent','the-courage-to-lead','faithful-in-what-god-has-given-you','faith-for-the-next-decision','growing-into-the-leader-god-is-forming'].map(id=>`devotionals/${id}.html`);
-const pages=['index.html','articles.html','devotionals.html','contact.html',...articlePages,...devotionalPages];
+const pages=['index.html','articles.html','devotionals.html','contact.html','mission.html',...articlePages,...devotionalPages];
 const canonicals=new Map();
 
 for(const file of pages){
@@ -30,7 +30,7 @@ assert(exists('sitemap.xml'),'sitemap.xml is missing');
 if(exists('robots.txt'))assert(read('robots.txt').includes('https://nolabelsdesignedbygod.org/sitemap.xml'),'robots.txt: sitemap address is missing');
 if(exists('sitemap.xml')){
  const sitemap=read('sitemap.xml');
- for(const file of ['contact.html',...articlePages,...devotionalPages])assert(sitemap.includes(`https://nolabelsdesignedbygod.org/${file}`),`sitemap.xml: missing ${file}`);
+ for(const file of ['contact.html','mission.html',...articlePages,...devotionalPages])assert(sitemap.includes(`https://nolabelsdesignedbygod.org/${file}`),`sitemap.xml: missing ${file}`);
 }
 
 assert(exists('contact-links.js'),'contact-links.js is missing');
@@ -42,6 +42,17 @@ if(exists('contact.html')){
  assert(contact.includes('"@type":"ContactPage"'),'contact.html: ContactPage structured data is missing');
 }
 if(exists('contact-links.js'))assert(read('contact-links.js').includes('team@nolabelsdesignedbygod.org'),'contact-links.js: ministry email is missing');
+
+assert(exists('mission.css'),'mission.css is missing');
+assert(exists('mission-library.js'),'mission-library.js is missing');
+if(exists('mission.html')){
+ const mission=read('mission.html');
+ assert(mission.includes('"@type":"AboutPage"'),'mission.html: AboutPage structured data is missing');
+ assert(mission.includes('To help people move beyond the labels'),'mission.html: mission statement is missing');
+ assert(mission.includes('What we believe')&&mission.includes('Who we serve')&&mission.includes('How we serve'),'mission.html: core mission sections are incomplete');
+}
+if(exists('mission-library.js'))assert(read('mission-library.js').includes("id:'our-mission'")&&read('mission-library.js').includes("url:'mission.html'"),'mission-library.js: search registration is incomplete');
+if(exists('contact-links.js'))assert(read('contact-links.js').includes('mission-library.js?v=1.0.0'),'contact-links.js: mission search loader is missing');
 
 if(failures.length){
  console.error(`SEO and social preview audit FAILED with ${failures.length} problem(s):`);

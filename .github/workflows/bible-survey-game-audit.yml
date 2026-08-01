@@ -4,10 +4,12 @@ on:
   workflow_dispatch:
   pull_request:
     paths:
+      - 'bible-survey-host.html'
       - 'bible-survey-game.html'
       - 'survey-game-integration.js'
       - 'contact-links.js'
       - 'sitemap.xml'
+      - 'sw.js'
       - 'play.html'
       - 'search.html'
       - 'scripts/bible-survey-game-audit.mjs'
@@ -15,10 +17,12 @@ on:
   push:
     branches: [main]
     paths:
+      - 'bible-survey-host.html'
       - 'bible-survey-game.html'
       - 'survey-game-integration.js'
       - 'contact-links.js'
       - 'sitemap.xml'
+      - 'sw.js'
       - 'play.html'
       - 'search.html'
       - 'scripts/bible-survey-game-audit.mjs'
@@ -26,7 +30,7 @@ on:
 
 jobs:
   audit:
-    name: Responsive layout, accessibility, gameplay, search, and Game Center
+    name: Laptop host, private answers, audience display, accessibility, and search
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -46,7 +50,7 @@ jobs:
         run: |
           python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/nldg-http.log 2>&1 &
           for attempt in {1..30}; do
-            if curl --fail --silent http://127.0.0.1:4173/bible-survey-game.html > /dev/null; then
+            if curl --fail --silent http://127.0.0.1:4173/bible-survey-host.html > /dev/null; then
               exit 0
             fi
             sleep 1
@@ -54,5 +58,5 @@ jobs:
           cat /tmp/nldg-http.log
           exit 1
 
-      - name: Run Bible Survey Showdown audit
+      - name: Run Bible Survey Showdown laptop audit
         run: node scripts/bible-survey-game-audit.mjs

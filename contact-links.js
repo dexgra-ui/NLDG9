@@ -4,6 +4,10 @@ window.NLDG_CONTACT_LINKS_LOADED=true;
 const nested=/\/(?:articles|devotionals)\//i.test(location.pathname);
 const isContact=/(^|\/)contact\.html$/i.test(location.pathname);
 const root=nested?'../':'';
+const surveyIntegration=document.createElement('script');
+surveyIntegration.src=`${root}survey-game-integration.js?v=1.0.0`;
+surveyIntegration.async=false;
+document.head.appendChild(surveyIntegration);
 const ensure=()=>{
  document.querySelectorAll('.ministry-footer').forEach(footer=>{
   let links=footer.querySelector('.footer-links');

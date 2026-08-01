@@ -57,6 +57,7 @@ try{
  await hostPage.click('#startGame');
  await hostPage.waitForSelector('#hostView:not(.hidden)');
  await audiencePage.waitForSelector('#gameView:not(.hidden)');
+ await hostPage.waitForSelector('[data-host-answer]');
  pass(await hostPage.locator('[data-host-answer]').count()>=5,'Private host answer key did not render.');
  pass((await hostPage.locator('[data-host-answer]').first().innerText()).length>3,'Private answer key does not show answer text.');
  pass(await audiencePage.locator('.answer-tile.revealed').count()===0,'Audience board revealed an answer before the host selected it.');
@@ -77,6 +78,7 @@ try{
 
  await hostPage.goto(`${BASE_URL}/play.html`,{waitUntil:'networkidle'});
  await hostPage.waitForSelector('[data-survey-showdown]');
+ await hostPage.waitForFunction(()=>[...document.querySelectorAll('[data-survey-showdown]')].some(element=>element.textContent.includes('Laptop Required')&&element.textContent.includes('TV / Projector')));
  const gameCenterText=await hostPage.locator('[data-survey-showdown]').allInnerTexts();
  pass(gameCenterText.join(' ').includes('Laptop Required')&&gameCenterText.join(' ').includes('TV / Projector'),'Game Center does not clearly show the device requirement.');
  pass(await hostPage.locator('a[href*="bible-survey-host.html"]').count()>=1,'Game Center does not launch the laptop host.');

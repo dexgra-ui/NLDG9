@@ -1,0 +1,122 @@
+window.NLDG_LEADER_GUIDES={
+'men-identity-before-performance':{
+ bigIdea:'God gives identity before He assigns responsibility. A man’s worth is received through grace, not earned through performance.',
+ objectives:['Distinguish identity from achievement and role','Recognize performance-based measures of worth','Practice living from acceptance in Christ rather than striving for it'],
+ background:'In Mark 1:9–11 the Father names Jesus as His beloved Son before Jesus begins His public ministry. Ephesians 2 follows the same gospel movement: grace creates a people, and good works follow as the fruit of salvation rather than its price.',
+ theology:['Adoption places believers in God’s family','Grace precedes works','Calling flows from identity rather than creating identity'],
+ connections:['Genesis 1:26–27 — dignity begins with God’s image','Romans 8:14–17 — believers receive the Spirit of adoption','Colossians 3:1–4 — life is hidden with Christ'],
+ outline:['The voices that try to name us','The Father’s declaration before performance','Grace, belonging, and purpose','Working faithfully without worshiping achievement'],
+ coaching:['Ask which roles feel hardest to separate from personal worth','Do not dismiss work, provision, or responsibility; place them under identity in Christ','Give quieter men time to name pressures they rarely discuss'],
+ misunderstandings:['Identity in Christ does not remove responsibility','Grace is not permission for passivity','Healthy ambition differs from using success to prove worth'],
+ application:['Name one label you have allowed to define you','Receive one biblical truth about your identity each morning','Encourage another man without tying his worth to success'],
+ prayer:'Pray that men receive the Father’s love, release false measures of worth, and serve from security rather than fear.'
+},
+'men-free-indeed':{
+ bigIdea:'Jesus gives real freedom by bringing people into truth, repentance, grace, and faithful practices that weaken sin’s control.',
+ objectives:['Define freedom biblically rather than as unrestricted choice','Identify habits and lies that maintain bondage','Develop a grace-centered plan for accountability and change'],
+ background:'John 8:31–36 connects freedom with remaining in Jesus’ teaching. Paul develops the same truth in Romans 6: believers are no longer under sin’s mastery, yet they must actively offer themselves to God.',
+ theology:['Freedom is deliverance for obedience, not independence from God','Sanctification includes both divine grace and practiced obedience','Confession and accountability oppose secrecy'],
+ connections:['Exodus 12–14 — God frees Israel from slavery','Psalm 119:44–45 — obedience and freedom belong together','Galatians 5:1,13 — freedom serves love'],
+ outline:['False definitions of freedom','Truth exposes the lie','Grace breaks shame without excusing sin','Structures that protect new habits'],
+ coaching:['Avoid forcing public disclosure of sensitive struggles','Encourage qualified counseling or recovery support when appropriate','Keep the group from turning accountability into surveillance or control'],
+ misunderstandings:['A struggle does not mean Christ has abandoned someone','Forgiveness does not eliminate consequences or needed safeguards','Accountability must be voluntary, wise, and specific'],
+ application:['Identify one trigger, one lie, and one faithful response','Contact one trustworthy accountability partner','Replace one harmful routine with a concrete life-giving practice'],
+ prayer:'Pray for truthful confession, freedom from shame, courage to seek help, and endurance in new patterns.'
+},
+'men-integrity':{
+ bigIdea:'Integrity joins private choices, public character, truthful repentance, and responsible repair before God and others.',
+ objectives:['Recognize the relationship between hidden habits and public trust','Understand repentance as more than regret','Practice transparent and accountable decision-making'],
+ background:'Psalm 15 describes the person who may dwell with God in terms of truthful speech, faithful commitments, and just treatment of others. Joseph in Genesis 39 demonstrates integrity when obedience is costly and unseen.',
+ theology:['God’s holiness reaches hidden life','Repentance includes turning and repair','Character is formed through repeated faithful choices'],
+ connections:['Proverbs 4:23–27 — guard the heart and path','Luke 16:10 — faithfulness in little things','1 John 1:5–9 — walking in the light'],
+ outline:['The divided life','God sees what others do not','Truthful repentance and repair','Building structures that make integrity sustainable'],
+ coaching:['Do not let the group celebrate confession while ignoring people harmed','Separate temptation from chosen deception','Encourage practical controls around money, devices, relationships, and authority'],
+ misunderstandings:['Privacy is not the same as secrecy','Confession does not automatically restore trust','Integrity is not perfection; it includes honest repentance'],
+ application:['Correct one hidden inconsistency','Make one truthful disclosure to an appropriate person','Create one boundary that protects future faithfulness'],
+ prayer:'Pray for clean hands, truthful hearts, courage to confess, and patience to rebuild trust.'
+},
+'men-honest-strength':{
+ bigIdea:'Christlike strength tells the truth about pain, receives help, practices lament, and remains faithful without pretending.',
+ objectives:['Challenge emotional silence as the only model of strength','Use biblical lament as faithful prayer','Identify safe people and healthy ways to seek support'],
+ background:'The Psalms repeatedly bring fear, grief, anger, and confusion before God. In Gethsemane Jesus names His sorrow and asks trusted disciples to remain near. Paul speaks openly about weakness so Christ’s power, not personal image, is central.',
+ theology:['Jesus’ humanity dignifies honest emotion','Lament is faith speaking from pain','The body of Christ carries burdens together'],
+ connections:['Psalm 42 — speaking hope to a troubled soul','1 Kings 19 — Elijah receives rest, food, presence, and direction','Galatians 6:2 — carry one another’s burdens'],
+ outline:['The cost of pretending','Jesus and honest sorrow','Lament, help, and faithful action','Strength that remains accountable and present'],
+ coaching:['Do not pressure men to disclose trauma publicly','Take statements of self-harm, abuse, or immediate danger seriously','Normalize professional mental-health care alongside prayer and community'],
+ misunderstandings:['Emotional honesty is not emotional domination','Vulnerability does not remove boundaries','Faith does not require denying depression, grief, or trauma'],
+ application:['Name one emotion without judging it','Share one burden with a safe person','Write a short prayer of lament that ends in honest trust'],
+ prayer:'Pray for courage to tell the truth, safe community, healing, and steadfast hope.'
+},
+'men-servant-leadership':{
+ bigIdea:'Jesus uses authority to serve, protect, tell the truth, develop others, accept accountability, and repair harm.',
+ objectives:['Contrast kingdom leadership with domination','Explain why listening and accountability belong to authority','Identify one concrete way to use influence for another person’s good'],
+ background:'Mark 10 follows a dispute over status among the disciples. Jesus contrasts Gentile rulers who “lord it over” others with His own mission to serve and give His life. In John 13, Jesus washes feet while fully conscious of His authority, showing that service flows from secure identity rather than weakness.',
+ theology:['All authority remains accountable to God','The cross defines Christian greatness','Leadership is stewardship, never ownership of people'],
+ connections:['Deuteronomy 17:14–20 — leaders remain under God’s word','Ezekiel 34 — God condemns shepherds who feed themselves','Philippians 2:3–8 — Christ’s humility shapes community'],
+ outline:['How the world uses power','Jesus redefines greatness','Listening, protection, and difficult truth','Repentance and repair when leaders cause harm'],
+ coaching:['Ask who is affected by a leader’s decisions but rarely heard','Distinguish service from people-pleasing or avoidance','Do not allow submission language to excuse coercion, threats, abuse, or secrecy'],
+ misunderstandings:['Servant leadership still makes decisions and confronts harm','Holding a title does not prove spiritual maturity','Forgiveness does not require immediate restoration to leadership'],
+ application:['Ask someone affected by your leadership what you need to hear','Complete one unnoticed act of service','Invite one specific area of correction from a trusted person'],
+ prayer:'Pray that leaders use influence with humility, courage, protection, transparency, and love.'
+},
+'men-relationships':{
+ bigIdea:'Faithfulness in relationships is practiced through listening, truthful speech, responsibility, boundaries, apology, forgiveness, and repair.',
+ objectives:['Identify patterns that damage communication','Practice biblical listening and truthful speech','Understand apology and repair as responsibilities rather than techniques'],
+ background:'Romans 12 places relational faithfulness inside the life of worship. Ephesians 4 connects new life in Christ with truthful speech, regulated anger, useful words, forgiveness, and kindness. James warns that quick speech and uncontrolled anger do not produce God’s righteousness.',
+ theology:['Reconciliation reflects the gospel','Words reveal and shape the heart','Love seeks both truth and the good of the other person'],
+ connections:['Proverbs 18:13 — answering before listening','Matthew 5:23–24 — taking initiative toward reconciliation','Colossians 3:12–14 — compassion, patience, and forgiveness'],
+ outline:['Listening before defending','Speaking truth without cruelty','Anger, boundaries, and responsibility','Apology, restitution, and rebuilding trust'],
+ coaching:['Do not assume every relationship should be reconciled without safety','Avoid making one person responsible for managing another’s anger','Use realistic examples from family, friendship, work, and church'],
+ misunderstandings:['Forgiveness and restored access are not identical','Boundaries can serve love and safety','An apology without changed behavior is incomplete'],
+ application:['Listen to one person without interrupting or preparing a defense','Make one specific apology without excuses','Clarify one healthy boundary respectfully'],
+ prayer:'Pray for patient listening, truthful words, restrained anger, courage to apologize, and wisdom about boundaries.'
+},
+'men-brotherhood':{
+ bigIdea:'Biblical brotherhood creates honest, responsible, grace-filled relationships where men are known, corrected, supported, and restored.',
+ objectives:['Describe healthy accountability','Identify the difference between support and enabling','Develop practical rhythms of brotherhood'],
+ background:'Ecclesiastes 4 celebrates mutual help rather than isolated strength. Galatians 6 calls spiritually mature believers to restore gently while watching themselves. James 5 joins confession and prayer in a community seeking healing.',
+ theology:['The church is a body, not a collection of isolated individuals','Grace creates truthful community','Restoration requires gentleness and responsibility'],
+ connections:['1 Samuel 18–20 — covenant friendship under pressure','Proverbs 27:5–6,17 — faithful correction and sharpening','Hebrews 10:24–25 — intentional encouragement'],
+ outline:['Why isolation is dangerous','Being known without being controlled','Correction, restoration, and responsibility','Building dependable rhythms of presence'],
+ coaching:['Establish confidentiality and its safety limits','Do not turn accountability into interrogation','Ensure the group does not protect harmful behavior to preserve loyalty'],
+ misunderstandings:['Confidentiality cannot cover abuse or imminent danger','Support does not mean removing every consequence','Brotherhood should not isolate men from spouses, families, or the wider church'],
+ application:['Schedule a regular check-in with another man','Ask one honest question and listen without fixing','Show up practically for someone carrying a burden'],
+ prayer:'Pray for trustworthy friendships, honest confession, gentle correction, and faithful presence.'
+},
+'men-temptation-integrity':{
+ bigIdea:'Sexual integrity honors God and other people through truth, dignity, consent, wise boundaries, accountability, and grace-filled repentance.',
+ objectives:['Understand temptation without minimizing chosen behavior','Recognize the dignity and agency of other people','Create practical safeguards for integrity and recovery'],
+ background:'James traces temptation from desire to sin and death without blaming God. Jesus’ teaching in Matthew 5 moves beyond outward behavior to the heart and calls for decisive action against patterns that lead to sin. First Corinthians 6 grounds sexual holiness in union with Christ and the body’s belonging to God.',
+ theology:['Bodies matter to God','Grace forgives and trains believers toward holiness','Love never treats another person as an object'],
+ connections:['Genesis 39 — fleeing a compromising situation','Job 31:1 — covenantal discipline of attention','1 Thessalonians 4:3–8 — holiness, self-control, and honor'],
+ outline:['Desire, temptation, and chosen action','Dignity, consent, and refusing objectification','Radical boundaries and practical help','Repentance, recovery, and protecting others'],
+ coaching:['Use non-graphic language and never demand disclosure','Refer addiction, trauma, misconduct, or illegal material to qualified help and appropriate authorities','Center the safety and dignity of people who may have been harmed'],
+ misunderstandings:['Temptation itself is not identical to sin','Marriage does not erase consent or personal dignity','Private repentance does not replace accountability for misconduct'],
+ application:['Remove one predictable access point to temptation','Contact an appropriate accountability or recovery resource','Practice seeing every person as someone made in God’s image'],
+ prayer:'Pray for purity of heart, truthful accountability, protection of others, healing, and enduring grace.'
+},
+'men-stewardship':{
+ bigIdea:'Faithful stewardship manages time, money, work, health, gifts, and influence as resources entrusted by God for love and service.',
+ objectives:['Replace ownership thinking with stewardship','Evaluate priorities through faithfulness rather than comparison','Choose one practical stewardship habit'],
+ background:'Jesus’ parables of stewardship emphasize accountability for what has been entrusted, not equal outcomes or identical capacity. First Peter 4 applies stewardship to spiritual gifts, and Proverbs repeatedly joins diligence with wisdom, honesty, and care for others.',
+ theology:['God is the owner and giver','Stewardship includes limits, rest, and generosity','Faithfulness matters more than public impressiveness'],
+ connections:['Genesis 2:15 — work as cultivated responsibility','Deuteronomy 8:17–18 — ability and provision come from God','Matthew 25:14–30 — accountable use of entrusted resources'],
+ outline:['What has God entrusted to me?','Faithfulness, capacity, and limits','Money, work, health, gifts, and influence','Generosity and long-term responsibility'],
+ coaching:['Avoid equating wealth with faithfulness or poverty with failure','Include men with disability, unemployment, caregiving duties, or limited resources','Keep financial discussion practical without pressuring disclosure'],
+ misunderstandings:['Stewardship is broader than money','Rest can be faithful stewardship','Generosity should not neglect necessary responsibilities or enable exploitation'],
+ application:['Review one week of time or spending without shame','Choose one resource to manage more intentionally','Use one gift or resource to serve someone else'],
+ prayer:'Pray for wisdom, contentment, diligence, generosity, and faithfulness within real limits.'
+},
+'men-help-another-grow':{
+ bigIdea:'Disciple-making helps another person follow Jesus through Scripture, prayer, presence, example, wise questions, boundaries, and multiplication.',
+ objectives:['Define mentoring as discipleship rather than control','Practice listening and asking formative questions','Develop a simple plan to help another person grow'],
+ background:'Paul’s relationship with Timothy combines affection, teaching, example, encouragement, and entrusted responsibility. Second Timothy 2:2 envisions multiplication across generations of disciples, while Matthew 28 centers the process on obedience to Jesus rather than loyalty to a human mentor.',
+ theology:['Jesus remains the true teacher and Lord','Discipleship is relational and reproducible','Spiritual authority must remain humble and accountable'],
+ connections:['Deuteronomy 6:4–9 — truth taught through daily life','Proverbs 20:5 — drawing out the heart with understanding','1 Thessalonians 2:7–12 — nurture, example, and encouragement'],
+ outline:['The difference between mentoring and managing','Scripture, prayer, questions, and example','Boundaries, humility, and referral','Helping disciples help others'],
+ coaching:['Do not promise expertise you do not have','Avoid creating dependence on the mentor','Know when pastoral, medical, legal, financial, or mental-health expertise is needed'],
+ misunderstandings:['A mentor is not a savior or therapist','Discipleship does not require identical personalities or callings','Confidentiality has limits when safety is at risk'],
+ application:['Identify one person you can encourage consistently','Plan one meeting around Scripture, listening, prayer, and a next step','Ask how you can support growth without taking control'],
+ prayer:'Pray for humility, patience, discernment, faithful example, and multiplication centered on Jesus.'
+}
+};

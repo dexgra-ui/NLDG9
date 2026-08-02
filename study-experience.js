@@ -110,4 +110,9 @@
     nav.innerHTML=`${previous?`<a class="button secondary" href="${previous.url}">← ${previous.title}</a>`:'<span></span>'}<div class="series-current"><small>${study.series}</small><strong>${index+1} of ${seriesStudies.length}</strong></div>${next?`<a class="button secondary" href="${next.url}">${next.title} →</a>`:'<span></span>'}`;
     content.appendChild(nav);
   }
+
+  const addStylesheet=href=>{if(document.querySelector(`link[href="${href}"]`))return;const link=document.createElement('link');link.rel='stylesheet';link.href=href;document.head.appendChild(link);};
+  const loadScript=src=>new Promise((resolve,reject)=>{const existing=[...document.scripts].find(script=>script.src.includes(src.split('?')[0]));if(existing){resolve();return;}const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=reject;document.body.appendChild(script);});
+  addStylesheet('expanded-leader-guide.css?v=1.0.0');
+  loadScript('leader-guide-data.js?v=1.0.0').then(()=>loadScript('expanded-leader-guide.js?v=1.0.0')).catch(error=>console.warn('Expanded leader guide could not load.',error));
 })();

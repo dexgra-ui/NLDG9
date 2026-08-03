@@ -34,4 +34,8 @@
  const findPanels=()=>document.querySelectorAll('.teaching-view-panel,.v2-teaching-view').forEach(attach);
  findPanels();
  new MutationObserver(findPanels).observe(document.body,{childList:true,subtree:true});
+ const addStylesheet=href=>{if([...document.styleSheets].some(sheet=>sheet.href?.includes(href.split('?')[0])))return;const link=document.createElement('link');link.rel='stylesheet';link.href=href;document.head.appendChild(link);};
+ const loadScript=src=>{if([...document.scripts].some(script=>script.src.includes(src.split('?')[0])))return;const script=document.createElement('script');script.src=src;document.body.appendChild(script);};
+ addStylesheet('presentation-mode.css?v=1.0.0');
+ loadScript('presentation-mode.js?v=1.0.0');
 })();

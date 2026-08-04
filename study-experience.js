@@ -49,5 +49,6 @@
   const loadScript=src=>new Promise((resolve,reject)=>{const existing=[...document.scripts].find(script=>script.src.includes(src.split('?')[0]));if(existing){resolve();return;}const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=reject;document.body.appendChild(script);});
   addStylesheet('expanded-leader-guide.css?v=1.1.0');
   addStylesheet('teaching-dashboard.css?v=1.0.0');
-  loadScript('leader-guide-data.js?v=1.0.0').then(()=>loadScript('expanded-leader-guide.js?v=1.1.0')).then(()=>loadScript('teaching-dashboard.js?v=1.0.0')).catch(error=>console.warn('Study teaching tools could not load.',error));
+  addStylesheet('teaching-notebook.css?v=1.0.0');
+  loadScript('leader-guide-data.js?v=1.0.0').then(()=>loadScript('expanded-leader-guide.js?v=1.1.0')).then(()=>loadScript('teaching-dashboard.js?v=1.0.0')).then(()=>loadScript('teaching-notebook.js?v=1.0.0')).then(()=>loadScript('presentation-mode.js?v=1.1.0')).catch(error=>console.warn('Study teaching tools could not load.',error));
 })();

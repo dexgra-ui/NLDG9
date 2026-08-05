@@ -8,6 +8,9 @@
   if(!panel||panel.dataset.dashboardReady==='true')return;
   panel.dataset.dashboardReady='true';
   const state=read();
+  let cycleId=state.cycleId||Date.now();
+  let sessionStartedAt=state.sessionStartedAt||null;
+  let completionRecorded=Boolean(state.completionRecorded||state.completedAt);
   const dashboard=document.createElement('section');
   dashboard.className='teaching-dashboard';
   dashboard.setAttribute('aria-label','Teaching session dashboard');
@@ -15,21 +18,26 @@
   panel.prepend(dashboard);
   const inputs=[...dashboard.querySelectorAll('[data-dashboard-step]')];
   inputs.forEach(input=>input.checked=Boolean(state.completed?.includes(input.dataset.dashboardStep)));
-  const paint=()=>{
+  const paint=(recordActivity=false)=>{
+   const previous=read();
    const completed=inputs.filter(input=>input.checked).map(input=>input.dataset.dashboardStep);
    const count=completed.length;
    const percent=Math.round((count/steps.length)*100);
+   const complete=count===steps.length;
+   if(recordActivity&&count>0&&!sessionStartedAt){sessionStartedAt=Date.now();window.NLDGTeachingAnalytics?.track?.('session-started',{cycleId})}
+   let completedAt=previous.completedAt||null;
+   if(complete&&!completionRecorded){completionRecorded=true;completedAt=Date.now();if(recordActivity)window.NLDGTeachingAnalytics?.track?.('session-completed',{cycleId,progress:100})}
    dashboard.querySelector('[data-dashboard-percent]').textContent=`${percent}%`;
    dashboard.querySelector('[data-dashboard-count]').textContent=`${count} of ${steps.length} complete`;
    dashboard.querySelector('[data-dashboard-fill]').style.width=`${percent}%`;
    const next=steps.find(([id])=>!completed.includes(id));
    dashboard.querySelector('[data-dashboard-resume]').textContent=next?`Resume with ${next[1]}`:'Session checklist complete';
-   dashboard.classList.toggle('is-complete',count===steps.length);
-   write({...read(),completed,progress:percent,updated:Date.now(),completedAt:count===steps.length?(read().completedAt||Date.now()):null});
+   dashboard.classList.toggle('is-complete',complete);
+   write({...previous,completed,progress:percent,updated:Date.now(),completedAt,completionRecorded,sessionStartedAt,cycleId});
   };
-  inputs.forEach(input=>input.addEventListener('change',()=>{paint();const status=dashboard.querySelector('[data-dashboard-status]');status.textContent='Progress saved.';setTimeout(()=>status.textContent='',1200);}));
-  dashboard.querySelector('[data-dashboard-reset]').addEventListener('click',()=>{inputs.forEach(input=>input.checked=false);write({completed:[],progress:0,updated:Date.now(),completedAt:null});paint();const status=dashboard.querySelector('[data-dashboard-status]');status.textContent='Session reset.';setTimeout(()=>status.textContent='',1500);});
-  paint();
+  inputs.forEach(input=>input.addEventListener('change',()=>{paint(true);const status=dashboard.querySelector('[data-dashboard-status]');status.textContent='Progress saved.';setTimeout(()=>status.textContent='',1200)}));
+  dashboard.querySelector('[data-dashboard-reset]').addEventListener('click',()=>{const previous=read();if(previous.progress||previous.sessionStartedAt||previous.completedAt)window.NLDGTeachingAnalytics?.track?.('session-reset',{cycleId});inputs.forEach(input=>input.checked=false);cycleId=Date.now();sessionStartedAt=null;completionRecorded=false;write({completed:[],progress:0,updated:Date.now(),completedAt:null,completionRecorded:false,sessionStartedAt:null,cycleId});paint(false);const status=dashboard.querySelector('[data-dashboard-status]');status.textContent='New teaching session ready.';setTimeout(()=>status.textContent='',1500)});
+  paint(false);
  };
  const findPanels=()=>document.querySelectorAll('.teaching-view-panel,.v2-teaching-view').forEach(attach);
  findPanels();

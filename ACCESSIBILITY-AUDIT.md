@@ -1,6 +1,6 @@
 # Accessibility Audit
 
-Generated: 2026-08-05T16:40:37.733Z
+Generated: 2026-08-05T17:02:00.466Z
 
 Result: **PASSED** with 0 failure(s) and 0 warning(s).
 
@@ -75,23 +75,23 @@ No moderate accessibility warnings were found.
 
 ## Technical details
 
-- home: axe checked 4.12.1; 0 violation group(s).
-- study-center: axe checked 4.12.1; 0 violation group(s).
-- men-of-faith: axe checked 4.12.1; 0 violation group(s).
-- women-of-faith: axe checked 4.12.1; 0 violation group(s).
-- marriage-family: axe checked 4.12.1; 0 violation group(s).
-- marriage-family-study: axe checked 4.12.1; 0 violation group(s).
-- difficult-questions: axe checked 4.12.1; 0 violation group(s).
-- difficult-questions-study: axe checked 4.12.1; 0 violation group(s).
-- new-believers: axe checked 4.12.1; 0 violation group(s).
-- devotionals: axe checked 4.12.1; 0 violation group(s).
-- when-god-feels-silent: axe checked 4.12.1; 0 violation group(s).
-- articles: axe checked 4.12.1; 0 violation group(s).
-- resource-center: axe checked 4.12.1; 0 violation group(s).
-- search: axe checked 4.12.1; 0 violation group(s).
-- my-library: axe checked 4.12.1; 0 violation group(s).
-- my-journey: axe checked 4.12.1; 0 violation group(s).
-- ministry-tools: axe checked 4.12.1; 0 violation group(s).
-- game-center: axe checked 4.12.1; 0 violation group(s).
-- church-games: axe checked 4.12.1; 0 violation group(s).
-- team-game: axe checked 4.12.1; 0 violation group(s).
+- home: axe checked 4.13.0; 0 violation group(s).
+- study-center: axe checked 4.13.0; 0 violation group(s).
+- men-of-faith: axe checked 4.13.0; 0 violation group(s).
+- women-of-faith: axe checked 4.13.0; 0 violation group(s).
+- marriage-family: axe checked 4.13.0; 0 violation group(s).
+- marriage-family-study: axe checked 4.13.0; 0 violation group(s).
+- difficult-questions: axe checked 4.13.0; 0 violation group(s).
+- difficult-questions-study: axe checked 4.13.0; 0 violation group(s).
+- new-believers: axe checked 4.13.0; 0 violation group(s).
+- devotionals: axe checked 4.13.0; 0 violation group(s).
+- when-god-feels-silent: axe checked 4.13.0; 0 violation group(s).
+- articles: axe checked 4.13.0; 0 violation group(s).
+- resource-center: axe checked 4.13.0; 0 violation group(s).
+- search: axe checked 4.13.0; 0 violation group(s).
+- my-library: axe checked 4.13.0; 0 violation group(s).
+- my-journey: axe checked 4.13.0; 0 violation group(s).
+- ministry-tools: axe checked 4.13.0; 0 violation group(s).
+- game-center: axe checked 4.13.0; 0 violation group(s).
+- church-games: axe checked 4.13.0; 0 violation group(s).
+- team-game: axe checked 4.13.0; 0 violation group(s).

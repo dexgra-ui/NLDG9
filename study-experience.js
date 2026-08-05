@@ -53,5 +53,6 @@
   addStylesheet('leader-resource-drawer.css?v=1.0.0');
   addStylesheet('scripture-study-panel.css?v=1.0.0');
   addStylesheet('discussion-manager.css?v=1.0.0');
-  loadScript('leader-guide-data.js?v=1.0.0').then(()=>loadScript('expanded-leader-guide.js?v=1.1.0')).then(()=>loadScript('teaching-dashboard.js?v=1.0.0')).then(()=>loadScript('teaching-notebook.js?v=1.1.0')).then(()=>loadScript('scripture-study-data.js?v=7.2.0')).then(()=>loadScript('scripture-study-panel.js?v=1.0.0')).then(()=>loadScript('discussion-manager.js?v=1.0.0')).then(()=>loadScript('leader-resource-drawer.js?v=1.0.0')).then(()=>loadScript('presentation-mode.js?v=1.1.0')).catch(error=>console.warn('Study teaching tools could not load.',error));
+  addStylesheet('print-center.css?v=1.0.0');
+  loadScript('leader-guide-data.js?v=1.0.0').then(()=>loadScript('expanded-leader-guide.js?v=1.1.0')).then(()=>loadScript('teaching-dashboard.js?v=1.0.0')).then(()=>loadScript('teaching-notebook.js?v=1.1.0')).then(()=>loadScript('scripture-study-data.js?v=7.2.0')).then(()=>loadScript('scripture-study-panel.js?v=1.0.0')).then(()=>loadScript('discussion-manager.js?v=1.0.0')).then(()=>loadScript('leader-resource-drawer.js?v=1.0.0')).then(()=>loadScript('print-center.js?v=1.0.0')).then(()=>loadScript('presentation-mode.js?v=1.1.0')).catch(error=>console.warn('Study teaching tools could not load.',error));
 })();

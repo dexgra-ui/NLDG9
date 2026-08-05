@@ -1,6 +1,6 @@
 # Interactive Bible Study Quality Review
 
-Generated: 2026-08-01T15:35:41.052Z
+Generated: 2026-08-05T17:00:32.996Z
 
 Result: **PASSED** with 0 failure(s) and 0 warning(s).
 
@@ -26,7 +26,7 @@ No Interactive Bible Study warnings were found.
 - phone-375: mode buttons remain compact.
 - phone-375: mode buttons do not become full-page cards.
 - phone-375: study workspace is a single readable column.
-- phone-375: axe 4.12.1 completed with 0 serious or critical violation group(s).
+- phone-375: axe 4.13.0 completed with 0 serious or critical violation group(s).
 - Curated passage opens from the launcher.
 - Sermon preparation mode opens.
 - Study notes persist after reload on the device.
@@ -63,4 +63,4 @@ No Interactive Bible Study warnings were found.
 - desktop-1440: passage launcher is visible.
 - desktop-1440: all seven study modes are visible.
 - desktop-1440: legacy collision-prone layout classes are absent.
-- desktop-1440: axe 4.12.1 completed with 0 serious or critical violation group(s).
+- desktop-1440: axe 4.13.0 completed with 0 serious or critical violation group(s).

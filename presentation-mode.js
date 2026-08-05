@@ -7,7 +7,7 @@
  const makeSlides=panel=>{
   const title=document.querySelector('h1')?.textContent?.trim()||panel.querySelector('h2')?.textContent?.trim()||'Teaching Session';
   const slides=[{kicker:'Teaching Session',title,body:'Use the arrow keys or spacebar to move through the lesson.'}];
-  const candidates=[...panel.querySelectorAll('section')].filter(section=>!section.classList.contains('teaching-dashboard')&&!section.classList.contains('presentation-launch'));
+  const candidates=[...panel.querySelectorAll('section')].filter(section=>!section.classList.contains('teaching-dashboard')&&!section.classList.contains('presentation-launch')&&!section.classList.contains('teaching-notebook'));
   candidates.forEach(section=>{
    const heading=section.querySelector('h2,h3')?.textContent?.trim();
    if(!heading)return;
@@ -35,14 +35,17 @@
   overlay.setAttribute('role','dialog');
   overlay.setAttribute('aria-modal','true');
   overlay.setAttribute('aria-label','Teaching presentation');
-  overlay.innerHTML=`<div class="presentation-topbar"><div><strong data-presentation-title></strong><span data-presentation-count></span></div><div class="presentation-actions"><button type="button" data-toggle-notes aria-pressed="false">Speaker Notes</button><button type="button" data-fullscreen>Fullscreen</button><button type="button" data-close-presentation>Exit</button></div></div><main class="presentation-stage" tabindex="-1"><p class="presentation-kicker" data-slide-kicker></p><h1 data-slide-title></h1><div class="presentation-body" data-slide-body></div></main><aside class="presentation-notes" hidden><label>Private speaker notes<textarea rows="5" data-speaker-notes placeholder="Transitions, reminders, names, or timing notes"></textarea></label><span data-note-status aria-live="polite"></span></aside><div class="presentation-controls"><button type="button" data-prev-slide>← Previous</button><span>← → or Spacebar</span><button type="button" data-next-slide>Next →</button></div>`;
+  overlay.innerHTML=`<div class="presentation-topbar"><div><strong data-presentation-title></strong><span data-presentation-count></span></div><div class="presentation-actions"><button type="button" data-toggle-notes aria-pressed="false">Speaker Notes</button><button type="button" data-fullscreen>Fullscreen</button><button type="button" data-close-presentation>Exit</button></div></div><main class="presentation-stage" tabindex="-1"><p class="presentation-kicker" data-slide-kicker></p><h1 data-slide-title></h1><div class="presentation-body" data-slide-body></div></main><aside class="presentation-notes" hidden><label>Private speaker notes<textarea rows="7" data-speaker-notes placeholder="Transitions, reminders, names, or timing notes"></textarea></label><div class="presentation-note-actions"><button type="button" data-import-notebook>Refresh from Teaching Notebook</button><span data-note-status aria-live="polite"></span></div></aside><div class="presentation-controls"><button type="button" data-prev-slide>← Previous</button><span>← → or Spacebar</span><button type="button" data-next-slide>Next →</button></div>`;
   document.body.appendChild(overlay);
   document.body.classList.add('presentation-open');
   const notes=overlay.querySelector('[data-speaker-notes]');
   const state=read();
-  notes.value=state.notes||'';
+  const notebookNotes=window.NLDGTeachingNotebook?.speakerNotes?.()||'';
+  notes.value=state.notes||notebookNotes;
   let saveTimer;
-  notes.addEventListener('input',()=>{clearTimeout(saveTimer);overlay.querySelector('[data-note-status]').textContent='Saving…';saveTimer=setTimeout(()=>{write({...read(),notes:notes.value,index});overlay.querySelector('[data-note-status]').textContent='Notes saved.';},400)});
+  const saveNotes=()=>{write({...read(),notes:notes.value,index});overlay.querySelector('[data-note-status]').textContent='Notes saved.';};
+  notes.addEventListener('input',()=>{clearTimeout(saveTimer);overlay.querySelector('[data-note-status]').textContent='Saving…';saveTimer=setTimeout(saveNotes,400)});
+  overlay.querySelector('[data-import-notebook]').addEventListener('click',()=>{const latest=window.NLDGTeachingNotebook?.speakerNotes?.()||'';if(latest){notes.value=latest;saveNotes();overlay.querySelector('[data-note-status]').textContent='Notebook notes refreshed.';}else overlay.querySelector('[data-note-status]').textContent='No notebook notes yet.';});
   const render=()=>{
    const slide=slides[index];
    overlay.querySelector('[data-presentation-title]').textContent=slides[0].title;

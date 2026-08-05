@@ -10,6 +10,7 @@
   ['follow-up','Follow-Up Actions','People to contact, resources to send, or issues needing pastoral care.'],
   ['next-week','Next Lesson Preparation','Record homework, supplies, handoffs, and next-week reminders.']
  ];
+ const mounted=new Map();
  const pageKey=()=>document.body.dataset.studyPage||`faith-truth-week-${new URLSearchParams(location.search).get('week')||'unknown'}`;
  const storageKey=()=>`nldg-teaching-notebook-${pageKey()}`;
  const read=()=>{try{return JSON.parse(localStorage.getItem(storageKey())||'{}')}catch{return{}}};
@@ -17,6 +18,17 @@
  const countWords=value=>(String(value||'').trim().match(/\S+/g)||[]).length;
  const formatTime=value=>value?new Intl.DateTimeFormat(undefined,{dateStyle:'medium',timeStyle:'short'}).format(value):'Not edited yet';
  const speakerSummary=data=>['opening','testimony','main-points','discussion'].map(id=>data.notes?.[id]?.trim()).filter(Boolean).join('\n\n');
+ const notify=()=>window.dispatchEvent(new CustomEvent('nldg:notebook-updated',{detail:{pageKey:pageKey(),speakerNotes:speakerSummary(read())}}));
+ const append=(sectionId,text)=>{
+  const allowed=sections.some(([id])=>id===sectionId);const value=String(text||'').trim();
+  if(!allowed||!value)return false;
+  const state=read(),notes={...(state.notes||{})},existing=String(notes[sectionId]||'').trim();
+  notes[sectionId]=existing?`${existing}\n\n${value}`:value;
+  const updated=Date.now();write({...state,notes,updated,cycleStarted:state.cycleStarted||updated});
+  const instance=mounted.get(pageKey());
+  if(instance){const field=instance.fields.find(item=>item.dataset.notebookField===sectionId);if(field)field.value=notes[sectionId];instance.paint();instance.notebook.querySelector('[data-notebook-updated]').textContent=formatTime(updated);instance.notebook.querySelector('[data-notebook-status]').textContent='Added from Scripture Study';setTimeout(()=>{if(instance.notebook.isConnected)instance.notebook.querySelector('[data-notebook-status]').textContent=''},1500)}
+  notify();return true;
+ };
  const attach=panel=>{
   if(!panel||panel.dataset.notebookReady==='true')return;
   panel.dataset.notebookReady='true';
@@ -44,16 +56,15 @@
    write({...read(),notes,includeInPrint:notebook.querySelector('[data-notebook-print]').checked,updated,cycleStarted:read().cycleStarted||updated});
    notebook.querySelector('[data-notebook-updated]').textContent=formatTime(updated);
    notebook.querySelector('[data-notebook-status]').textContent='Saved';
-   window.dispatchEvent(new CustomEvent('nldg:notebook-updated',{detail:{pageKey:pageKey(),speakerNotes:speakerSummary(read())}}));
-   setTimeout(()=>notebook.querySelector('[data-notebook-status]').textContent='',1200);
+   notify();setTimeout(()=>notebook.querySelector('[data-notebook-status]').textContent='',1200);
   };
-  fields.forEach(field=>field.addEventListener('input',()=>{notebook.querySelector('[data-notebook-status]').textContent='Saving…';clearTimeout(saveTimer);saveTimer=setTimeout(save,450);}));
+  fields.forEach(field=>field.addEventListener('input',()=>{notebook.querySelector('[data-notebook-status]').textContent='Saving…';clearTimeout(saveTimer);saveTimer=setTimeout(save,450)}));
   notebook.querySelector('[data-notebook-print]').addEventListener('change',save);
-  notebook.querySelector('[data-notebook-expand]').addEventListener('click',event=>{const details=[...notebook.querySelectorAll('details')];const shouldOpen=details.some(item=>!item.open);details.forEach(item=>item.open=shouldOpen);event.currentTarget.textContent=shouldOpen?'Collapse All':'Expand All';});
-  notebook.querySelector('[data-notebook-reset]').addEventListener('click',()=>{if(!confirm('Start a new teaching cycle and clear this lesson notebook?'))return;fields.forEach(field=>field.value='');write({notes:{},includeInPrint:false,updated:Date.now(),cycleStarted:Date.now()});notebook.querySelector('[data-notebook-print]').checked=false;paint();notebook.querySelector('[data-notebook-status]').textContent='New cycle started.';});
-  paint();
+  notebook.querySelector('[data-notebook-expand]').addEventListener('click',event=>{const details=[...notebook.querySelectorAll('details')];const shouldOpen=details.some(item=>!item.open);details.forEach(item=>item.open=shouldOpen);event.currentTarget.textContent=shouldOpen?'Collapse All':'Expand All'});
+  notebook.querySelector('[data-notebook-reset]').addEventListener('click',()=>{if(!confirm('Start a new teaching cycle and clear this lesson notebook?'))return;fields.forEach(field=>field.value='');write({notes:{},includeInPrint:false,updated:Date.now(),cycleStarted:Date.now()});notebook.querySelector('[data-notebook-print]').checked=false;paint();notebook.querySelector('[data-notebook-status]').textContent='New cycle started.';notify()});
+  mounted.set(pageKey(),{notebook,fields,paint});paint();
  };
- window.NLDGTeachingNotebook={read:()=>read(),speakerNotes:()=>speakerSummary(read())};
+ window.NLDGTeachingNotebook={read:()=>read(),speakerNotes:()=>speakerSummary(read()),append};
  const find=()=>document.querySelectorAll('.teaching-view-panel,.v2-teaching-view').forEach(attach);
  find();new MutationObserver(find).observe(document.body,{childList:true,subtree:true});
 })();

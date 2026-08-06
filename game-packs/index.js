@@ -1,0 +1,1 @@
+window.NLDG_GAME_PACK_INDEX={version:'1.0.0',packs:[{id:'general-bible',name:'General Bible',src:'game-packs/general-bible.js',status:'active',games:['scripture-or-suspicion','jeopardy','wheel','survey'],audiences:['kids','teens','adults','family','mixed']} ]};

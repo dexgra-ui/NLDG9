@@ -54,17 +54,23 @@ for(const packId of packIds)if(!indexSource.includes(`id:'${packId}'`)&&!indexSo
 
 const integrations=[
  {name:'Scripture or Suspicion',file:'scripture-or-suspicion.html',checks:[['engine script',/game-packs\/game-pack-engine\.js/],['pack index or pack script',/game-packs\/(?:index|general-bible)\.js/],['question selection',/NLDG_GAME_PACKS(?:\?\.)?\.select|NLDG_GAME_PACKS\?\.select|engine\?\.select/],['play-history recording',/NLDG_GAME_PACKS\?\.record|NLDG_GAME_PACKS\.record/]]},
- {name:'Bible Jeopardy',file:'bible-jeopardy.html',checks:[['engine script',/game-packs\/game-pack-engine\.js/],['pack index',/game-packs\/index\.js/],['Jeopardy filter',/game:'jeopardy'/],['question selection',/\.select\(/],['play-history recording',/\.record\(/],['pack selector',/id="pack"/],['difficulty selector',/id="difficulty"/],['Scripture reference display',/id="reference"/]]}
+ {name:'Bible Jeopardy',file:'bible-jeopardy.html',checks:[['engine script',/game-packs\/game-pack-engine\.js/],['pack index',/game-packs\/index\.js/],['Jeopardy filter',/game:'jeopardy'/],['question selection',/\.select\(/],['play-history recording',/\.record\(/],['pack selector',/id="pack"/],['difficulty selector',/id="difficulty"/],['Scripture reference display',/id="reference"/]]},
+ {name:'Faith Wheel',file:'faith-wheel.html',checks:[['Faith Wheel title',/<title>Faith Wheel/],['engine script',/game-packs\/game-pack-engine\.js/],['pack index',/game-packs\/index\.js/],['wheel filter',/game:'wheel'/],['puzzle selection',/\.select\(/],['play-history recording',/\.record\(/],['pack selector',/id="pack"/],['difficulty selector',/id="difficulty"/],['round control',/id="roundCount"/],['Scripture reference display',/id="reference"/],['teaching moment',/id="teaching"/] ]}
 ];
 for(const integration of integrations){
- const source=fs.readFileSync(path.join(root,integration.file),'utf8');
+ const filePath=path.join(root,integration.file);
+ if(!fs.existsSync(filePath)){errors.push(`${integration.name} page is missing.`);continue;}
+ const source=fs.readFileSync(filePath,'utf8');
  for(const [label,pattern] of integration.checks)if(!pattern.test(source))errors.push(`${integration.name} integration missing ${label}.`);
 }
 
+if(fs.existsSync(path.join(root,'wheel-of-faith.html')))errors.push('Retired Wheel of Faith page still exists. Use Faith Wheel branding only.');
 const jeopardyCount=registered.flatMap(pack=>pack.questions||[]).filter(question=>question.game==='jeopardy').length;
+const wheelCount=registered.flatMap(pack=>pack.questions||[]).filter(question=>question.game==='wheel').length;
 if(jeopardyCount<25)errors.push(`Bible Jeopardy needs at least 25 pack clues; found ${jeopardyCount}.`);
+if(wheelCount<20)errors.push(`Faith Wheel needs at least 20 pack puzzles; found ${wheelCount}.`);
 
-const report=['# Game Pack Audit','',`Packs: **${registered.length}**`,`Questions: **${[...questionIds].length}**`,`Jeopardy clues: **${jeopardyCount}**`,`Errors: **${errors.length}**`,`Warnings: **${warnings.length}**`,'','## Errors','',...(errors.length?errors.map(item=>`- ${item}`):['- None']),'','## Warnings','',...(warnings.length?warnings.map(item=>`- ${item}`):['- None'])].join('\n');
+const report=['# Game Pack Audit','',`Packs: **${registered.length}**`,`Questions: **${[...questionIds].length}**`,`Jeopardy clues: **${jeopardyCount}**`,`Faith Wheel puzzles: **${wheelCount}**`,`Errors: **${errors.length}**`,`Warnings: **${warnings.length}**`,'','## Errors','',...(errors.length?errors.map(item=>`- ${item}`):['- None']),'','## Warnings','',...(warnings.length?warnings.map(item=>`- ${item}`):['- None'])].join('\n');
 fs.writeFileSync(path.join(root,'GAME-PACK-AUDIT.md'),report+'\n');
 console.log(report);
 if(errors.length)process.exit(1);

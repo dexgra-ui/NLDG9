@@ -1,0 +1,30 @@
+name: Game Pack Audit
+
+on:
+  pull_request:
+    paths:
+      - 'game-packs/**'
+      - 'scripture-or-suspicion.html'
+      - 'scripts/game-pack-audit.mjs'
+      - '.github/workflows/game-pack-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate game packs and reference integration
+        run: node scripts/game-pack-audit.mjs
+      - name: Upload game pack report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: game-pack-audit
+          path: GAME-PACK-AUDIT.md

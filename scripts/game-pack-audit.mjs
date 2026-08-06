@@ -51,16 +51,20 @@ for(const pack of registered){
 
 const indexSource=fs.readFileSync(path.join(directory,indexFile),'utf8');
 for(const packId of packIds)if(!indexSource.includes(`id:'${packId}'`)&&!indexSource.includes(`id:"${packId}"`))errors.push(`${packId}: absent from the pack index.`);
-const gamePage=fs.readFileSync(path.join(root,'scripture-or-suspicion.html'),'utf8');
-const integrationChecks=[
- ['engine script',/game-packs\/game-pack-engine\.js/],
- ['General Bible pack',/game-packs\/general-bible\.js/],
- ['question selection',/NLDG_GAME_PACKS(?:\?\.)?\.select|NLDG_GAME_PACKS\?\.select|engine\?\.select/],
- ['play-history recording',/NLDG_GAME_PACKS\?\.record|NLDG_GAME_PACKS\.record/]
-];
-for(const [label,pattern] of integrationChecks)if(!pattern.test(gamePage))errors.push(`Scripture or Suspicion integration missing ${label}.`);
 
-const report=['# Game Pack Audit','',`Packs: **${registered.length}**`,`Questions: **${[...questionIds].length}**`,`Errors: **${errors.length}**`,`Warnings: **${warnings.length}**`,'','## Errors','',...(errors.length?errors.map(item=>`- ${item}`):['- None']),'','## Warnings','',...(warnings.length?warnings.map(item=>`- ${item}`):['- None'])].join('\n');
+const integrations=[
+ {name:'Scripture or Suspicion',file:'scripture-or-suspicion.html',checks:[['engine script',/game-packs\/game-pack-engine\.js/],['pack index or pack script',/game-packs\/(?:index|general-bible)\.js/],['question selection',/NLDG_GAME_PACKS(?:\?\.)?\.select|NLDG_GAME_PACKS\?\.select|engine\?\.select/],['play-history recording',/NLDG_GAME_PACKS\?\.record|NLDG_GAME_PACKS\.record/]]},
+ {name:'Bible Jeopardy',file:'bible-jeopardy.html',checks:[['engine script',/game-packs\/game-pack-engine\.js/],['pack index',/game-packs\/index\.js/],['Jeopardy filter',/game:'jeopardy'/],['question selection',/\.select\(/],['play-history recording',/\.record\(/],['pack selector',/id="pack"/],['difficulty selector',/id="difficulty"/],['Scripture reference display',/id="reference"/]]}
+];
+for(const integration of integrations){
+ const source=fs.readFileSync(path.join(root,integration.file),'utf8');
+ for(const [label,pattern] of integration.checks)if(!pattern.test(source))errors.push(`${integration.name} integration missing ${label}.`);
+}
+
+const jeopardyCount=registered.flatMap(pack=>pack.questions||[]).filter(question=>question.game==='jeopardy').length;
+if(jeopardyCount<25)errors.push(`Bible Jeopardy needs at least 25 pack clues; found ${jeopardyCount}.`);
+
+const report=['# Game Pack Audit','',`Packs: **${registered.length}**`,`Questions: **${[...questionIds].length}**`,`Jeopardy clues: **${jeopardyCount}**`,`Errors: **${errors.length}**`,`Warnings: **${warnings.length}**`,'','## Errors','',...(errors.length?errors.map(item=>`- ${item}`):['- None']),'','## Warnings','',...(warnings.length?warnings.map(item=>`- ${item}`):['- None'])].join('\n');
 fs.writeFileSync(path.join(root,'GAME-PACK-AUDIT.md'),report+'\n');
 console.log(report);
 if(errors.length)process.exit(1);

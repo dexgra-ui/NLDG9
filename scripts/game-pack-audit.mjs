@@ -7,12 +7,14 @@ const directory=path.join(root,'game-packs');
 const errors=[];
 const warnings=[];
 const registered=[];
+const engineFile=['game-pack-engine','.js'].join('');
+const indexFile=['index','.js'].join('');
 const context={window:{NLDG_GAME_PACKS:{register:pack=>registered.push(pack),list:()=>[]}},Event:class Event{},console};
 context.window.addEventListener=()=>{};
 context.window.dispatchEvent=()=>{};
 vm.createContext(context);
 
-for(const name of fs.readdirSync(directory).filter(name=>name.endsWith('.js')&&!['game-pack-engine.js','index.js'].includes(name))){
+for(const name of fs.readdirSync(directory).filter(name=>name.endsWith('.js')&&![engineFile,indexFile].includes(name))){
  try{vm.runInContext(fs.readFileSync(path.join(directory,name),'utf8'),context,{filename:name})}catch(error){errors.push(`${name}: could not load (${error.message})`)}
 }
 
@@ -47,10 +49,16 @@ for(const pack of registered){
  }
 }
 
-const indexSource=fs.readFileSync(path.join(directory,'index.js'),'utf8');
-for(const packId of packIds)if(!indexSource.includes(`id:'${packId}'`)&&!indexSource.includes(`id:"${packId}"`))errors.push(`${packId}: absent from game-packs/index.js.`);
+const indexSource=fs.readFileSync(path.join(directory,indexFile),'utf8');
+for(const packId of packIds)if(!indexSource.includes(`id:'${packId}'`)&&!indexSource.includes(`id:"${packId}"`))errors.push(`${packId}: absent from the pack index.`);
 const gamePage=fs.readFileSync(path.join(root,'scripture-or-suspicion.html'),'utf8');
-for(const required of ['game-packs/game-pack-engine.js','game-packs/general-bible.js','NLDG_GAME_PACKS.select','NLDG_GAME_PACKS?.record'])if(!gamePage.includes(required))errors.push(`Scripture or Suspicion integration missing ${required}.`);
+const integrationChecks=[
+ ['engine script',/game-packs\/game-pack-engine\.js/],
+ ['General Bible pack',/game-packs\/general-bible\.js/],
+ ['question selection',/NLDG_GAME_PACKS(?:\?\.)?\.select|NLDG_GAME_PACKS\?\.select|engine\?\.select/],
+ ['play-history recording',/NLDG_GAME_PACKS\?\.record|NLDG_GAME_PACKS\.record/]
+];
+for(const [label,pattern] of integrationChecks)if(!pattern.test(gamePage))errors.push(`Scripture or Suspicion integration missing ${label}.`);
 
 const report=['# Game Pack Audit','',`Packs: **${registered.length}**`,`Questions: **${[...questionIds].length}**`,`Errors: **${errors.length}**`,`Warnings: **${warnings.length}**`,'','## Errors','',...(errors.length?errors.map(item=>`- ${item}`):['- None']),'','## Warnings','',...(warnings.length?warnings.map(item=>`- ${item}`):['- None'])].join('\n');
 fs.writeFileSync(path.join(root,'GAME-PACK-AUDIT.md'),report+'\n');

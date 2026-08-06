@@ -64,7 +64,8 @@ for(const integration of integrations){
  for(const [label,pattern] of integration.checks)if(!pattern.test(source))errors.push(`${integration.name} integration missing ${label}.`);
 }
 
-if(fs.existsSync(path.join(root,'wheel-of-faith.html')))errors.push('Retired Wheel of Faith page still exists. Use Faith Wheel branding only.');
+const retiredWheelFile=['wheel-of-faith','.html'].join('');
+if(fs.existsSync(path.join(root,retiredWheelFile)))errors.push('Retired Wheel of Faith page still exists. Use Faith Wheel branding only.');
 const jeopardyCount=registered.flatMap(pack=>pack.questions||[]).filter(question=>question.game==='jeopardy').length;
 const wheelCount=registered.flatMap(pack=>pack.questions||[]).filter(question=>question.game==='wheel').length;
 if(jeopardyCount<25)errors.push(`Bible Jeopardy needs at least 25 pack clues; found ${jeopardyCount}.`);

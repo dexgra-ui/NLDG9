@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06122d">
+<meta name="robots" content="noindex">
+<title>Updating Games | No Labels, Designed by God</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Arial,sans-serif;background:radial-gradient(circle at top,#173f83,#06122d 55%,#020713);color:#fff}.wrap{min-height:100vh;display:grid;place-items:center;padding:24px}.card{width:min(620px,100%);padding:34px;border:1px solid rgba(255,255,255,.18);border-radius:24px;background:rgba(6,18,45,.95);text-align:center;box-shadow:0 24px 70px rgba(0,0,0,.45)}img{width:76px;height:76px;object-fit:contain;border-radius:18px}h1{font-size:clamp(34px,8vw,60px);margin:18px 0 10px}p{color:#cbd5f3;font-size:1.08rem;line-height:1.55}.status{color:#ffd34e;font-weight:800}.button{display:inline-block;margin-top:18px;padding:13px 20px;border-radius:12px;background:#ffd34e;color:#271f00;text-decoration:none;font-weight:900}
+</style>
+</head>
+<body>
+<main class="wrap"><section class="card"><img src="no-labels-approved-logo.png" alt="No Labels, Designed by God"><h1>Updating the Game Center</h1><p id="status" class="status">Clearing the older app version…</p><p>This one-time update will reopen the latest Game Center with Faith Wheel.</p><a class="button" href="play.html?version=faith-wheel-20260806">Open Game Center</a></section></main>
+<script>
+(async()=>{
+ const status=document.getElementById('status');
+ try{
+  const registrations='serviceWorker' in navigator?await navigator.serviceWorker.getRegistrations():[];
+  await Promise.all(registrations.map(registration=>registration.unregister()));
+  if('caches' in window){const keys=await caches.keys();await Promise.all(keys.map(key=>caches.delete(key)));}
+  status.textContent='Update complete. Reopening the Game Center…';
+  setTimeout(()=>location.replace('play.html?version=faith-wheel-20260806'),700);
+ }catch(error){
+  status.textContent='The automatic refresh was blocked. Tap Open Game Center below.';
+ }
+})();
+</script>
+</body>
+</html>

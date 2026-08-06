@@ -12,6 +12,10 @@ const missionLibrary=document.createElement('script');
 missionLibrary.src=`${root}mission-library.js?v=1.0.0`;
 missionLibrary.async=false;
 document.head.appendChild(missionLibrary);
+const leaderMode=document.createElement('script');
+leaderMode.src=`${root}universal-leader-mode.js?v=1.0.0`;
+leaderMode.async=false;
+document.head.appendChild(leaderMode);
 const ensure=()=>{
  document.querySelectorAll('.ministry-footer').forEach(footer=>{
   let links=footer.querySelector('.footer-links');

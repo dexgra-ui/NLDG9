@@ -71,6 +71,10 @@ for(const link of faithWheelLinks){
  if(!/href=["']faith-wheel\.html(?:\?[^"']*)?["']/.test(link))errors.push('Faith Wheel must launch its dedicated setup directly instead of the generic tournament wrapper.');
 }
 if(!/link\.dataset\.game===['"]faith-wheel\.html['"]\?`faith-wheel\.html\?group=/.test(gameCenterSource))errors.push('Audience-filtered Game Center launches must preserve the direct Faith Wheel route.');
+for(const wrapperFile of ['multi-team-game-v095.html','multi-team-game-v094.html']){
+ const wrapperSource=fs.readFileSync(path.join(root,wrapperFile),'utf8');
+ if(!/faith-wheel\.html/.test(wrapperSource)||!/location\.replace\([\s\S]*?faith-wheel\.html\?group=/.test(wrapperSource))errors.push(`${wrapperFile}: legacy Faith Wheel links must redirect to the dedicated game instead of falling back to Scripture or Suspicion.`);
+}
 
 const retiredWheelFile=['wheel-of-faith','.html'].join('');
 if(fs.existsSync(path.join(root,retiredWheelFile)))errors.push('Retired Wheel of Faith page still exists. Use Faith Wheel branding only.');

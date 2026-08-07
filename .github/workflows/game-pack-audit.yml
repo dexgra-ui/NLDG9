@@ -7,6 +7,8 @@ on:
       - 'scripture-or-suspicion.html'
       - 'faith-wheel.html'
       - 'play.html'
+      - 'multi-team-game-v094.html'
+      - 'multi-team-game-v095.html'
       - 'scripts/game-pack-audit.mjs'
       - '.github/workflows/game-pack-audit.yml'
   workflow_dispatch:

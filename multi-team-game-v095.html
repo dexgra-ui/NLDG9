@@ -12,12 +12,17 @@
 <iframe id="wrapper" title="No Labels Bible game" allow="fullscreen" allowfullscreen></iframe>
 <script>
 const params=new URLSearchParams(location.search);
-const allowed=['scripture-or-suspicion.html','who-am-i.html','finish-the-verse.html','lightning-round.html','memory-match.html','bible-jeopardy.html'];
+const requestedGame=params.get('game');
 const groups=['preschool','kids','teens','adults','family'];
-const game=allowed.includes(params.get('game'))?params.get('game'):allowed[0];
 const group=groups.includes(params.get('group'))?params.get('group'):'family';
 const wrapper=document.getElementById('wrapper');
-wrapper.src=`multi-team-game-v094.html?game=${encodeURIComponent(game)}&group=${encodeURIComponent(group)}`;
+if(requestedGame==='faith-wheel.html'){
+  location.replace(`faith-wheel.html?group=${encodeURIComponent(group)}`);
+}else{
+  const allowed=['scripture-or-suspicion.html','who-am-i.html','finish-the-verse.html','lightning-round.html','memory-match.html','bible-jeopardy.html'];
+  const game=allowed.includes(requestedGame)?requestedGame:allowed[0];
+  wrapper.src=`multi-team-game-v094.html?game=${encodeURIComponent(game)}&group=${encodeURIComponent(group)}`;
+}
 function cleanGame(){
   try{
     const outerDoc=wrapper.contentDocument;

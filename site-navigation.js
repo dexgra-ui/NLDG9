@@ -36,7 +36,7 @@ function initializeNavigation(){
   else if(page.startsWith('podcast'))section='podcast';
   else if(page.startsWith('news'))section='news';
   else if(page.startsWith('search')||page==='site-map.html')section='search';
-  else if(page.startsWith('about')||page.startsWith('mission')||page.startsWith('contact'))section='about';
+  else if(page.startsWith('about')||page.startsWith('mission')||page.startsWith('contact')||page==='privacy.html'||page==='terms.html')section='about';
 
   nav.id='primary-navigation';
   nav.setAttribute('aria-label','Primary navigation');
@@ -174,6 +174,8 @@ function initializeNavigation(){
       <a href="about.html">Our Ministry</a>
       <a href="mission.html">Our Mission</a>
       <a href="site-map.html">Site Map</a>
+      <a href="privacy.html"${page==='privacy.html'?' aria-current="page"':''}>Privacy Policy</a>
+      <a href="terms.html"${page==='terms.html'?' aria-current="page"':''}>Terms of Use</a>
       <a href="https://www.facebook.com/NoLabelsDesignedbyGod" target="_blank" rel="noopener noreferrer" aria-label="Follow No Labels, Designed by God on Facebook">Facebook ↗</a>
       <a href="https://substack.com/@nolabelsdesignedbygod" target="_blank" rel="noopener noreferrer" aria-label="Read No Labels, Designed by God on Substack">Substack ↗</a>`;
   }

@@ -1,12 +1,12 @@
 # Repository Completion Review
 
-Generated: 2026-08-07T02:09:12.796Z
+Generated: 2026-08-07T14:56:34.078Z
 
-Result: **PASSED** with 0 failure(s) and 0 warning(s).
+Result: **FAILED** with 1 failure(s) and 0 warning(s).
 
 ## Failures
 
-No repository completion failures were found.
+- Service worker version, generated site-map cache entry, or corrected Interactive Bible Study assets are missing.
 
 ## Warnings
 
@@ -19,7 +19,6 @@ No repository completion warnings were found.
 - Homepage links to the live Substack and Facebook channels.
 - Site map contains its generated registry index.
 - Site-map generator reads published shared-library entries.
-- Version 1.0 offline shell includes the generated site map and corrected Interactive Bible Study assets.
 - Publishing guide documents the one-registry workflow.
 - Registry template includes safe draft status and publishing metadata.
 - Content page template contains semantic structure and placeholders.
@@ -92,5 +91,5 @@ No repository completion warnings were found.
 - ministry-tools passed structure and 1440px layout checks.
 - interactive-study passed structure and 1440px layout checks.
 - game-center passed structure and 1440px layout checks.
-- Generated site-map index rendered 100 registry links.
+- Generated site-map index rendered 105 registry links.
 - Global search finds the Leadership Toolkit.

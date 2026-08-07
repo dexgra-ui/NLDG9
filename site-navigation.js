@@ -173,7 +173,9 @@ function initializeNavigation(){
       <a href="play.html">Games</a>
       <a href="about.html">Our Ministry</a>
       <a href="mission.html">Our Mission</a>
-      <a href="site-map.html">Site Map</a>\n      <a href="privacy.html"${page==='privacy.html'?' aria-current="page"':''}>Privacy Policy</a>\n      <a href="terms.html"${page==='terms.html'?' aria-current="page"':''}>Terms of Use</a>
+      <a href="site-map.html">Site Map</a>
+      <a href="privacy.html"${page==='privacy.html'?' aria-current="page"':''}>Privacy Policy</a>
+      <a href="terms.html"${page==='terms.html'?' aria-current="page"':''}>Terms of Use</a>
       <a href="https://www.facebook.com/NoLabelsDesignedbyGod" target="_blank" rel="noopener noreferrer" aria-label="Follow No Labels, Designed by God on Facebook">Facebook ↗</a>
       <a href="https://substack.com/@nolabelsdesignedbygod" target="_blank" rel="noopener noreferrer" aria-label="Read No Labels, Designed by God on Substack">Substack ↗</a>`;
   }

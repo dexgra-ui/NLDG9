@@ -1,5 +1,5 @@
 const navigationScript=document.createElement('script');
-navigationScript.src='site-navigation.js?v=1.9.0';
+navigationScript.src='site-navigation.js?v=1.9.1';
 navigationScript.async=false;
 document.head.appendChild(navigationScript);
 const contactLinksScript=document.createElement('script');

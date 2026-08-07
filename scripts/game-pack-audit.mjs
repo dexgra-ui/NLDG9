@@ -64,6 +64,14 @@ for(const integration of integrations){
  for(const [label,pattern] of integration.checks)if(!pattern.test(source))errors.push(`${integration.name} integration missing ${label}.`);
 }
 
+const gameCenterSource=fs.readFileSync(path.join(root,'play.html'),'utf8');
+const faithWheelLinks=[...gameCenterSource.matchAll(/<a\b[^>]*data-game=["']faith-wheel\.html["'][^>]*>/g)].map(match=>match[0]);
+if(faithWheelLinks.length<2)errors.push('Game Center must expose Faith Wheel in Quick Launch and the game card.');
+for(const link of faithWheelLinks){
+ if(!/href=["']faith-wheel\.html(?:\?[^"']*)?["']/.test(link))errors.push('Faith Wheel must launch its dedicated setup directly instead of the generic tournament wrapper.');
+}
+if(!/link\.dataset\.game===['"]faith-wheel\.html['"]\?`faith-wheel\.html\?group=/.test(gameCenterSource))errors.push('Audience-filtered Game Center launches must preserve the direct Faith Wheel route.');
+
 const retiredWheelFile=['wheel-of-faith','.html'].join('');
 if(fs.existsSync(path.join(root,retiredWheelFile)))errors.push('Retired Wheel of Faith page still exists. Use Faith Wheel branding only.');
 const jeopardyCount=registered.flatMap(pack=>pack.questions||[]).filter(question=>question.game==='jeopardy').length;

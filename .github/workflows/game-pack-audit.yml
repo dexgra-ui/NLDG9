@@ -5,6 +5,8 @@ on:
     paths:
       - 'game-packs/**'
       - 'scripture-or-suspicion.html'
+      - 'faith-wheel.html'
+      - 'play.html'
       - 'scripts/game-pack-audit.mjs'
       - '.github/workflows/game-pack-audit.yml'
   workflow_dispatch:

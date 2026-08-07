@@ -1,0 +1,14 @@
+name: Walking with Jesus audit
+on:
+  push:
+    paths: ['walking-with-jesus*', 'content-library.js', 'studies.html', 'scripts/walking-with-jesus-audit.mjs']
+  pull_request:
+    paths: ['walking-with-jesus*', 'content-library.js', 'studies.html', 'scripts/walking-with-jesus-audit.mjs']
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 20}
+      - run: node scripts/walking-with-jesus-audit.mjs

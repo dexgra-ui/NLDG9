@@ -23,13 +23,13 @@ function initializeNavigation(){
 
   const startPages=new Set(['new-believers.html','new-believer-step.html','new-believer-complete.html','new-believer-mentor.html','new-believer-mentor-session.html','new-believer-toolkit.html','new-believer-toolkit-packet.html']);
   const resourcePages=new Set(['resource-center.html','resources.html','teaching-library.html']);
-  const studyPages=new Set(['studies.html','study-library.html','dashboard.html','community.html','ministry-tools.html','ministry-assistant.html','topics.html','scripture-index.html','current-events-series.html','james-series.html','technology-ai.html','sunday-school.html','sunday-school-lesson.html','women-of-faith.html','men-of-faith.html','marriage-family.html','marriage-family-study.html','difficult-questions.html','difficult-questions-study.html','leadership.html','leadership-study.html']);
+  const studyPages=new Set(['studies.html','study-library.html','dashboard.html','community.html','ministry-tools.html','ministry-assistant.html','topics.html','scripture-index.html','current-events-series.html','james-series.html','technology-ai.html','sunday-school.html','sunday-school-lesson.html','women-of-faith.html','men-of-faith.html','marriage-family.html','marriage-family-study.html','difficult-questions.html','difficult-questions-study.html','leadership.html','leadership-study.html','walking-with-jesus.html','walking-with-jesus-study.html']);
   const gamePages=new Set(['play.html','games.html','host-test-checklist.html','multi-team-game-v095.html','scripture-or-suspicion.html','who-am-i.html','finish-the-verse.html','bible-jeopardy.html','memory-match.html','lightning-round.html','faith-wheel.html']);
 
   let section='home';
   if(startPages.has(page))section='start';
   else if(resourcePages.has(page))section='resources';
-  else if(studyPages.has(page)||page.startsWith('study-')||page.startsWith('lesson-')||page.startsWith('women-of-faith-')||page.startsWith('men-of-faith-')||page.startsWith('marriage-family-')||page.startsWith('difficult-questions-')||page.startsWith('leadership-'))section='studies';
+  else if(studyPages.has(page)||page.startsWith('study-')||page.startsWith('lesson-')||page.startsWith('women-of-faith-')||page.startsWith('men-of-faith-')||page.startsWith('marriage-family-')||page.startsWith('difficult-questions-')||page.startsWith('leadership-')||page.startsWith('walking-with-jesus-'))section='studies';
   else if(gamePages.has(page)||page.includes('game'))section='games';
   else if(page.startsWith('devotional'))section='devotionals';
   else if(page.startsWith('article'))section='articles';

@@ -1,16 +1,18 @@
 # Accessibility Audit
 
-Generated: 2026-08-07T21:46:23.062Z
+Generated: 2026-08-08T08:45:41.158Z
 
-Result: **PASSED** with 0 failure(s) and 0 warning(s).
+Result: **FAILED** with 3 failure(s) and 1 warning(s).
 
 ## Failures
 
-No serious automated accessibility failures were found.
+- church-games: document-title (serious) — Documents must have <title> element to aid in navigation. html: Fix any of the following:   Document does not have a non-empty <title> element
+- church-games: html-has-lang (serious) — <html> element must have a lang attribute. html: Fix any of the following:   The <html> element does not have a lang attribute
+- church-games: keyboard Tab did not reach any focusable controls.
 
 ## Warnings for review
 
-No moderate accessibility warnings were found.
+- church-games: no visible H1 heading was found.
 
 ## Checks completed
 
@@ -51,7 +53,6 @@ No moderate accessibility warnings were found.
 - game-center: structure, headings, images, skip link, menu state, and navigation state checked.
 - game-center: visible focus detected on 6 of the first 6 keyboard stops.
 - church-games: structure, headings, images, skip link, menu state, and navigation state checked.
-- church-games: visible focus detected on 6 of the first 6 keyboard stops.
 - team-game: structure, headings, images, skip link, menu state, and navigation state checked.
 - team-game: visible focus detected on 6 of the first 6 keyboard stops.
 - home mobile menu: keyboard menu open, focus movement, Escape close, and focus return checked.
@@ -93,5 +94,5 @@ No moderate accessibility warnings were found.
 - my-journey: axe checked 4.13.0; 0 violation group(s).
 - ministry-tools: axe checked 4.13.0; 0 violation group(s).
 - game-center: axe checked 4.13.0; 0 violation group(s).
-- church-games: axe checked 4.13.0; 0 violation group(s).
+- church-games: axe checked 4.13.0; 2 violation group(s).
 - team-game: axe checked 4.13.0; 0 violation group(s).

@@ -160,19 +160,10 @@ function initializeNavigation(){
     footerLinks.innerHTML=`
       <a href="new-believers.html">Start Here</a>
       <a href="studies.html">Bible Studies</a>
-      <a href="men-of-faith.html">Men of Faith</a>
-      <a href="women-of-faith.html">Women of Faith</a>
-      <a href="marriage-family.html">Marriage & Family</a>
-      <a href="difficult-questions.html">Difficult Questions</a>
-      <a href="leadership.html">Leadership</a>
-      <a href="leadership-toolkit.html">Leadership Toolkit</a>
-      <a href="devotionals.html">Devotionals</a>
-      <a href="articles.html">Articles</a>
       <a href="resource-center.html">Resources</a>
-      <a href="podcast.html">Podcast</a>
       <a href="play.html">Games</a>
       <a href="about.html">Our Ministry</a>
-      <a href="mission.html">Our Mission</a>
+      <a href="contact.html" data-contact-page="true"${page==='contact.html'?' aria-current="page"':''}>Contact</a>
       <a href="site-map.html">Site Map</a>
       <a href="privacy.html"${page==='privacy.html'?' aria-current="page"':''}>Privacy Policy</a>
       <a href="terms.html"${page==='terms.html'?' aria-current="page"':''}>Terms of Use</a>

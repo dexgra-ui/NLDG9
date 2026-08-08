@@ -23,7 +23,7 @@ const ensure=()=>{
   let contact=links.querySelector('a[data-contact-page]');
   if(!contact){contact=document.createElement('a');contact.href=`${root}contact.html`;contact.dataset.contactPage='true';contact.textContent='Contact & Feedback';links.appendChild(contact)}
   if(isContact)contact.setAttribute('aria-current','page');
-  if(!links.querySelector('a[href="mailto:team@nolabelsdesignedbygod.org"]')){const email=document.createElement('a');email.href='mailto:team@nolabelsdesignedbygod.org';email.textContent='team@nolabelsdesignedbygod.org';email.setAttribute('aria-label','Email the No Labels, Designed by God team');links.appendChild(email)}
+  links.querySelectorAll('a[href="mailto:team@nolabelsdesignedbygod.org"]').forEach(link=>link.remove());
  });
  if(isContact){const nav=document.getElementById('primary-navigation');nav?.querySelectorAll('.active').forEach(link=>link.classList.remove('active'));nav?.querySelectorAll('[aria-current="page"]').forEach(link=>link.removeAttribute('aria-current'))}
 };

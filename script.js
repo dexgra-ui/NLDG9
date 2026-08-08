@@ -1,9 +1,9 @@
 const navigationScript=document.createElement('script');
-navigationScript.src='site-navigation.js?v=1.9.1';
+navigationScript.src='site-navigation.js?v=1.9.2';
 navigationScript.async=false;
 document.head.appendChild(navigationScript);
 const contactLinksScript=document.createElement('script');
-contactLinksScript.src='contact-links.js?v=1.0.0';
+contactLinksScript.src='contact-links.js?v=1.1.0';
 contactLinksScript.async=false;
 document.head.appendChild(contactLinksScript);
 const navigationScopeFix=document.createElement('style');

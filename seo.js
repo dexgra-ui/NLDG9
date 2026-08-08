@@ -32,5 +32,5 @@ function update({title,description,url,type='website',image=DEFAULT_IMAGE,imageA
  return canonical;
 }
 window.NLDG_SEO={siteUrl:SITE,defaultImage:DEFAULT_IMAGE,absolute,update};
-if(!window.NLDG_CONTACT_LINKS_LOADED&&!document.querySelector('script[data-contact-links]')){const script=document.createElement('script');script.src=`${/\/(?:articles|devotionals)\//i.test(location.pathname)?'../':''}contact-links.js?v=1.0.0`;script.dataset.contactLinks='true';document.head.appendChild(script)}
+if(!window.NLDG_CONTACT_LINKS_LOADED&&!document.querySelector('script[data-contact-links]')){const script=document.createElement('script');script.src=`${/\/(?:articles|devotionals)\//i.test(location.pathname)?'../':''}contact-links.js?v=1.1.0`;script.dataset.contactLinks='true';document.head.appendChild(script)}
 })();

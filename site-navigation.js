@@ -24,7 +24,7 @@ function initializeNavigation(){
   const startPages=new Set(['new-believers.html','new-believer-step.html','new-believer-complete.html','new-believer-mentor.html','new-believer-mentor-session.html','new-believer-toolkit.html','new-believer-toolkit-packet.html']);
   const resourcePages=new Set(['resource-center.html','resources.html','teaching-library.html']);
   const studyPages=new Set(['studies.html','study-library.html','dashboard.html','community.html','ministry-tools.html','ministry-assistant.html','topics.html','scripture-index.html','current-events-series.html','james-series.html','technology-ai.html','sunday-school.html','sunday-school-lesson.html','women-of-faith.html','men-of-faith.html','marriage-family.html','marriage-family-study.html','difficult-questions.html','difficult-questions-study.html','leadership.html','leadership-study.html','walking-with-jesus.html','walking-with-jesus-study.html']);
-  const gamePages=new Set(['play.html','games.html','host-test-checklist.html','multi-team-game-v095.html','scripture-or-suspicion.html','who-am-i.html','finish-the-verse.html','bible-jeopardy.html','memory-match.html','lightning-round.html','faith-wheel.html']);
+  const gamePages=new Set(['play.html','games.html','host-test-checklist.html','multi-team-game-v095.html','scripture-or-suspicion.html','who-am-i.html','finish-the-verse.html','bible-jeopardy.html','memory-match.html','lightning-round.html','faith-wheel.html','bible-tic-tac-toe.html']);
 
   let section='home';
   if(startPages.has(page))section='start';
@@ -109,7 +109,7 @@ function initializeNavigation(){
     ['Discipleship Toolkit','new-believer-toolkit.html',false]
   ]};
   if(section==='games')context={label:'Game Center navigation',links:[
-    ['Game Center','play.html',page==='play.html'||page==='multi-team-game-v095.html'||['scripture-or-suspicion.html','who-am-i.html','finish-the-verse.html','bible-jeopardy.html','memory-match.html','lightning-round.html','faith-wheel.html'].includes(page)],
+    ['Game Center','play.html',page==='play.html'||page==='multi-team-game-v095.html'||['scripture-or-suspicion.html','who-am-i.html','finish-the-verse.html','bible-jeopardy.html','memory-match.html','lightning-round.html','faith-wheel.html','bible-tic-tac-toe.html'].includes(page)],
     ['Church Presentation','games.html?presentation=1',page==='games.html'],
     ['Host Checklist','host-test-checklist.html',page==='host-test-checklist.html']
   ]};

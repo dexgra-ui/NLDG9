@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071735">
+<meta name="description" content="A child-friendly Bible question and tic-tac-toe game from No Labels, Designed by God.">
+<title>Bible Tic-Tac-Toe | No Labels, Designed by God</title>
+<style>
+:root{--navy:#071735;--blue:#2567f0;--blue-dark:#1744a5;--gold:#ffd34e;--text:#f7f9ff;--muted:#cbd5f3;--green:#35c779;--red:#ef5c5c;--line:rgba(255,255,255,.15);--panel:rgba(8,23,53,.95)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Arial,sans-serif;background:radial-gradient(circle at top,#1d4c9e 0,#081735 42%,#030713 100%);color:var(--text)}button,input,select{font:inherit}.hidden{display:none!important}.app{width:min(1180px,100%);margin:auto;padding:16px}.top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 16px;border:1px solid var(--line);border-radius:18px;background:rgba(5,16,44,.94)}.brand{display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none}.brand img{width:52px;height:52px;object-fit:contain}.brand strong,.brand small{display:block}.brand small{color:var(--muted)}.controls,.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.btn{min-height:46px;border:1px solid var(--line);border-radius:12px;padding:11px 16px;font-weight:900;background:#243b78;color:#fff;text-decoration:none;cursor:pointer}.btn:hover,.btn:focus-visible{filter:brightness(1.12)}.btn.primary{background:linear-gradient(#2d6cf4,#1744a5)}.btn.gold{background:linear-gradient(#fff0a4,var(--gold));color:#2d2400}.hero{text-align:center;padding:42px 12px 24px}.hero-icon{font-size:3rem}.hero h1{margin:6px 0;font-size:clamp(42px,7vw,76px);line-height:.98}.hero p{max-width:680px;margin:14px auto;color:var(--muted);font-size:1.15rem;line-height:1.55}.setup{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:20px;border:1px solid var(--line);border-radius:20px;background:rgba(10,25,64,.9)}label{display:grid;gap:7px;font-weight:900;color:var(--muted)}input,select{width:100%;min-height:48px;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#071735;color:#fff}.setup-actions{grid-column:1/-1}.how{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}.how div{padding:16px;border:1px solid var(--line);border-radius:16px;background:rgba(8,23,53,.75);text-align:center}.how strong{display:block;margin-bottom:5px;color:var(--gold)}.game-layout{display:grid;grid-template-columns:minmax(300px,540px) minmax(300px,1fr);gap:20px;padding-top:20px}.game-panel,.question-panel{border:1px solid var(--line);border-radius:24px;background:var(--panel);box-shadow:0 22px 60px rgba(0,0,0,.22)}.game-panel{padding:18px}.turn-banner{margin-bottom:14px;padding:14px;border-radius:15px;background:#12295e;text-align:center;font-size:1.15rem;font-weight:900}.turn-banner strong{color:var(--gold)}.players{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}.player{padding:10px;border:1px solid var(--line);border-radius:13px;background:#0b1d4d;text-align:center;font-weight:900}.player.active{outline:3px solid var(--gold)}.player span{display:block;margin-top:2px;font-size:1.7rem}.player.x span{color:#73a5ff}.player.o span{color:var(--gold)}.board{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;aspect-ratio:1}.square{display:grid;place-items:center;min-width:0;border:2px solid rgba(255,255,255,.18);border-radius:18px;background:linear-gradient(145deg,#163979,#0c2455);color:#fff;font-size:clamp(48px,9vw,92px);font-weight:900;cursor:pointer}.square:disabled{cursor:default;opacity:1}.square.available{border-color:var(--gold);box-shadow:0 0 0 2px rgba(255,211,78,.18),0 0 30px rgba(255,211,78,.12);animation:pulse 1.35s infinite}.square.available:hover,.square.available:focus-visible{background:#2454b7;transform:translateY(-2px)}.square.x{color:#73a5ff}.square.o{color:var(--gold)}.square.win{background:linear-gradient(#2bab68,#176a42);border-color:#8ef2bb}@keyframes pulse{50%{border-color:#fff0a4}}.question-panel{display:flex;min-height:500px;flex-direction:column;padding:22px}.question-top{display:flex;justify-content:space-between;align-items:center;gap:10px;color:var(--muted);font-weight:900}.question-number{color:var(--gold)}.question{flex:1;display:grid;place-items:center;min-height:150px;padding:22px 6px;text-align:center;font-size:clamp(26px,3.6vw,43px);line-height:1.12;font-weight:900}.answers{display:grid;grid-template-columns:1fr 1fr;gap:12px}.answer{min-height:76px;border:2px solid var(--line);border-radius:16px;padding:14px;background:linear-gradient(#2855bf,#133584);color:#fff;font-size:clamp(17px,2vw,23px);font-weight:900;cursor:pointer}.answer:hover,.answer:focus-visible{filter:brightness(1.15)}.answer:disabled{cursor:default;opacity:1}.answer.correct{background:linear-gradient(#43d588,#20965b)}.answer.wrong{background:linear-gradient(#f77272,#ba3030)}.feedback{display:grid;place-items:center;min-height:70px;padding:12px 6px;text-align:center;color:var(--gold);font-size:clamp(19px,2.4vw,28px);font-weight:900}.pick-prompt{text-align:center;color:var(--muted);font-size:1rem;font-weight:800}.complete{max-width:760px;margin:32px auto;padding:52px 22px;border:1px solid var(--line);border-radius:24px;background:var(--panel);text-align:center}.complete .result-mark{font-size:5rem}.complete h2{margin:8px 0;font-size:clamp(38px,6vw,66px)}.complete p{color:var(--muted);font-size:1.2rem}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:850px){.game-layout{grid-template-columns:1fr}.question-panel{min-height:440px;grid-row:1}.game-panel{grid-row:2;max-width:600px;width:100%;margin:auto}}@media(max-width:650px){.app{padding:10px}.setup,.how{grid-template-columns:1fr}.answers{grid-template-columns:1fr}.hero{padding-top:28px}.question-panel{padding:16px}.board{gap:7px}.square{border-radius:14px}.top{padding:10px 12px}.brand img{width:44px;height:44px}}
+@media(prefers-reduced-motion:reduce){.square.available{animation:none}}
+</style>
+</head>
+<body>
+<main class="app">
+<header class="top">
+  <div class="brand"><img src="no-labels-approved-logo.png" alt=""><span><strong>No Labels Games</strong><small>Children's Bible Game</small></span></div>
+  <div class="controls"><button id="fullscreen" class="btn" type="button">Fullscreen</button></div>
+</header>
+
+<section id="setupView">
+  <div class="hero"><div class="hero-icon" aria-hidden="true">❌ ⭕</div><h1>Bible Tic-Tac-Toe</h1><p>Answer a Bible question correctly, choose a square, and be the first to get three in a row!</p></div>
+  <div class="setup">
+    <label>Player or Team 1<input id="playerX" value="Team Faith" maxlength="24" autocomplete="off"></label>
+    <label>Player or Team 2<input id="playerO" value="Team Grace" maxlength="24" autocomplete="off"></label>
+    <label>Question Level<select id="level"><option value="little">Little Learners (Ages 4–6)</option><option value="kids" selected>Kids (Ages 7–9)</option><option value="preteens">Preteens (Ages 10–12)</option><option value="mixed">Mixed Ages</option></select></label>
+    <div class="setup-actions actions"><button id="start" class="btn gold" type="button">Start Game</button></div>
+  </div>
+  <div class="how" aria-label="How to play"><div><strong>1. Answer</strong>Choose an answer to a Bible question.</div><div><strong>2. Pick</strong>Answer correctly and choose an open square.</div><div><strong>3. Win</strong>Get three Xs or Os in a row.</div></div>
+</section>
+
+<section id="gameView" class="hidden" aria-label="Bible Tic-Tac-Toe game">
+  <div class="game-layout">
+    <div class="game-panel">
+      <div id="turnBanner" class="turn-banner" aria-live="polite"></div>
+      <div class="players"><div id="xCard" class="player x active"><strong id="xName"></strong><span>X</span></div><div id="oCard" class="player o"><strong id="oName"></strong><span>O</span></div></div>
+      <div id="board" class="board" role="grid" aria-label="Tic-tac-toe board"></div>
+    </div>
+    <div class="question-panel">
+      <div class="question-top"><button id="exit" class="btn" type="button">← Exit</button><span id="questionNumber" class="question-number"></span></div>
+      <div id="question" class="question"></div>
+      <div id="answers" class="answers"></div>
+      <div id="feedback" class="feedback" aria-live="assertive"></div>
+      <div id="pickPrompt" class="pick-prompt"></div>
+    </div>
+  </div>
+</section>
+
+<section id="completeView" class="complete hidden" aria-live="polite">
+  <div id="resultMark" class="result-mark" aria-hidden="true"></div><h2 id="resultTitle"></h2><p id="resultText"></p>
+  <div class="actions"><button id="rematch" class="btn gold" type="button">Play Again</button><button id="newPlayers" class="btn" type="button">Change Players</button></div>
+</section>
+</main>
+
+<script>
+const QUESTIONS={
+little:[
+  ["Who built a very big ark?","Noah",["Noah","Moses","David","Peter"]],
+  ["Who made the world?","God",["God","Noah","Adam","Abraham"]],
+  ["Who was swallowed by a great fish?","Jonah",["Jonah","Joseph","Joshua","John"]],
+  ["Who defeated the giant Goliath?","David",["David","Daniel","Moses","Paul"]],
+  ["What did Jesus calm?","A storm",["A storm","A lion","A fire","A mountain"]],
+  ["Who was placed in a basket as a baby?","Moses",["Moses","Jesus","Samuel","Isaac"]],
+  ["Where was baby Jesus laid?","A manger",["A manger","A boat","A palace","A tent"]],
+  ["Who is God's Son?","Jesus",["Jesus","Peter","Noah","David"]],
+  ["How many disciples did Jesus choose?","12",["12","2","7","40"]],
+  ["What should we do for one another?","Love",["Love","Hide","Argue","Boast"]],
+  ["Who was in the lions' den?","Daniel",["Daniel","David","Jonah","Joseph"]],
+  ["What did God put in the sky after the flood?","A rainbow",["A rainbow","A ladder","A crown","A boat"]]
+],
+kids:[
+  ["Who built the ark?","Noah",["Noah","Moses","David","Daniel"]],
+  ["Who led God's people out of Egypt?","Moses",["Moses","Joseph","Joshua","Aaron"]],
+  ["Who defeated Goliath?","David",["David","Samson","Saul","Solomon"]],
+  ["Who was swallowed by a great fish?","Jonah",["Jonah","John","Joel","Joseph"]],
+  ["Who was thrown into a lions' den?","Daniel",["Daniel","David","Elijah","Peter"]],
+  ["Who was the mother of Jesus?","Mary",["Mary","Martha","Ruth","Esther"]],
+  ["Where was Jesus born?","Bethlehem",["Bethlehem","Jerusalem","Nazareth","Egypt"]],
+  ["Who baptized Jesus?","John the Baptist",["John the Baptist","Peter","James","Andrew"]],
+  ["What did Jesus feed to more than 5,000 people?","Bread and fish",["Bread and fish","Fruit and rice","Soup and bread","Lamb and herbs"]],
+  ["Which disciple walked on water toward Jesus?","Peter",["Peter","John","Thomas","Matthew"]],
+  ["Who climbed a tree to see Jesus?","Zacchaeus",["Zacchaeus","Nicodemus","Lazarus","Barnabas"]],
+  ["What is the first book of the Bible?","Genesis",["Genesis","Exodus","Psalms","Matthew"]],
+  ["What is the last book of the Bible?","Revelation",["Revelation","Acts","Romans","Malachi"]],
+  ["Who asked God for wisdom?","Solomon",["Solomon","Samson","Samuel","Saul"]],
+  ["Who became queen and helped save her people?","Esther",["Esther","Ruth","Mary","Deborah"]],
+  ["What did Jesus turn water into?","Wine",["Wine","Milk","Oil","Honey"]],
+  ["How many days was Jesus in the tomb?","Three",["Three","One","Seven","Forty"]],
+  ["What did Jesus teach us to call God in prayer?","Our Father",["Our Father","Our King only","Our Teacher","Our Friend only"]]
+],
+preteens:[
+  ["Who interpreted Pharaoh's dreams?","Joseph",["Joseph","Moses","Daniel","Joshua"]],
+  ["Who succeeded Moses as Israel's leader?","Joshua",["Joshua","Aaron","Caleb","Samuel"]],
+  ["Who was Israel's first king?","Saul",["Saul","David","Solomon","Samuel"]],
+  ["Who challenged the prophets of Baal on Mount Carmel?","Elijah",["Elijah","Elisha","Isaiah","Ezekiel"]],
+  ["Who rebuilt Jerusalem's walls?","Nehemiah",["Nehemiah","Ezra","Jeremiah","Mordecai"]],
+  ["Which Gospel begins, ‘In the beginning was the Word’?","John",["John","Matthew","Mark","Luke"]],
+  ["Who was the first Christian martyr recorded in Acts?","Stephen",["Stephen","James","Philip","Barnabas"]],
+  ["Who met Jesus on the road to Damascus?","Saul",["Saul","Peter","Thomas","Timothy"]],
+  ["In which city were believers first called Christians?","Antioch",["Antioch","Rome","Jerusalem","Corinth"]],
+  ["Which book describes the armor of God?","Ephesians",["Ephesians","Romans","Hebrews","James"]],
+  ["Who wrote many of the New Testament letters?","Paul",["Paul","Peter","Luke","Abraham"]],
+  ["What is the fruit of the Spirit listed first in Galatians 5?","Love",["Love","Peace","Patience","Faithfulness"]],
+  ["Which disciple doubted Jesus' resurrection until he saw Him?","Thomas",["Thomas","Andrew","Philip","James"]],
+  ["Who replaced Judas among the Twelve?","Matthias",["Matthias","Barnabas","Silas","Timothy"]],
+  ["On which island was Paul shipwrecked?","Malta",["Malta","Crete","Cyprus","Patmos"]],
+  ["Who wrote the book of Acts?","Luke",["Luke","Paul","Peter","John"]],
+  ["Which judge led an army of only 300 men?","Gideon",["Gideon","Samson","Barak","Jephthah"]],
+  ["Who said, ‘Here am I. Send me’?","Isaiah",["Isaiah","Jeremiah","Ezekiel","Hosea"]]
+]};
+const $=id=>document.getElementById(id);
+const WIN_LINES=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+let board=Array(9).fill(''),current='X',players={X:'Team Faith',O:'Team Grace'},deck=[],questionIndex=0,phase='answer',winningLine=[];
+function shuffle(items){const copy=[...items];for(let i=copy.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]]}return copy}
+function selectedQuestions(){const level=$('level').value;if(level==='mixed')return [...QUESTIONS.little,...QUESTIONS.kids,...QUESTIONS.preteens];return QUESTIONS[level]}
+function cleanName(value,fallback){return value.trim().slice(0,24)||fallback}
+function startGame(){players={X:cleanName($('playerX').value,'Team Faith'),O:cleanName($('playerO').value,'Team Grace')};$('playerX').value=players.X;$('playerO').value=players.O;$('setupView').classList.add('hidden');$('completeView').classList.add('hidden');$('gameView').classList.remove('hidden');newRound()}
+function newRound(){board=Array(9).fill('');current='X';deck=shuffle(selectedQuestions());questionIndex=0;phase='answer';winningLine=[];renderPlayers();renderBoard();showQuestion()}
+function renderPlayers(){$('xName').textContent=players.X;$('oName').textContent=players.O;$('xCard').classList.toggle('active',current==='X');$('oCard').classList.toggle('active',current==='O');$('turnBanner').innerHTML=`<strong>${escapeText(players[current])}</strong> plays ${current}`}
+function escapeText(text){const span=document.createElement('span');span.textContent=text;return span.innerHTML}
+function renderBoard(){$('board').innerHTML='';board.forEach((mark,index)=>{const square=document.createElement('button');square.type='button';square.className=`square${mark?` ${mark.toLowerCase()}`:''}${winningLine.includes(index)?' win':''}${phase==='pick'&&!mark?' available':''}`;square.textContent=mark;square.setAttribute('role','gridcell');square.setAttribute('aria-label',mark?`Square ${index+1}: ${mark}`:`Square ${index+1}: empty`);square.disabled=phase!=='pick'||Boolean(mark);square.onclick=()=>pickSquare(index);$('board').appendChild(square)})}
+function showQuestion(){if(questionIndex>=deck.length){deck=shuffle(selectedQuestions());questionIndex=0}phase='answer';renderPlayers();renderBoard();const [question,,choices]=deck[questionIndex];$('questionNumber').textContent=`Question ${questionIndex+1}`;$('question').textContent=question;$('feedback').textContent='';$('pickPrompt').textContent='Choose the correct answer to earn your square.';$('answers').innerHTML='';shuffle(choices).forEach(choice=>{const button=document.createElement('button');button.type='button';button.className='answer';button.textContent=choice;button.onclick=()=>answerQuestion(choice,button);$('answers').appendChild(button)})}
+function answerQuestion(choice,button){if(phase!=='answer')return;const correct=deck[questionIndex][1];document.querySelectorAll('.answer').forEach(answer=>{answer.disabled=true;if(answer.textContent===correct)answer.classList.add('correct')});questionIndex++;if(choice===correct){phase='pick';button.classList.add('correct');$('feedback').textContent='Correct! Now pick an open square.';$('pickPrompt').textContent=`${players[current]}, place your ${current}.`;renderBoard()}else{button.classList.add('wrong');$('feedback').textContent=`Good try! The correct answer is ${correct}.`;$('pickPrompt').textContent='The turn passes to the other player.';setTimeout(()=>{current=current==='X'?'O':'X';showQuestion()},1800)}}
+function pickSquare(index){if(phase!=='pick'||board[index])return;board[index]=current;const line=WIN_LINES.find(cells=>cells.every(cell=>board[cell]===current));if(line){winningLine=line;renderBoard();finish(`${players[current]} wins!`,`${players[current]} answered correctly and got three ${current}s in a row.`,current);return}if(board.every(Boolean)){renderBoard();finish('It’s a tie!','The board is full. Great answers from both players!','XO');return}current=current==='X'?'O':'X';showQuestion()}
+function finish(title,text,mark){phase='done';setTimeout(()=>{$('gameView').classList.add('hidden');$('completeView').classList.remove('hidden');$('resultMark').textContent=mark;$('resultTitle').textContent=title;$('resultText').textContent=text},550)}
+$('start').onclick=startGame;$('rematch').onclick=()=>{$('completeView').classList.add('hidden');$('gameView').classList.remove('hidden');newRound()};$('newPlayers').onclick=()=>{$('completeView').classList.add('hidden');$('setupView').classList.remove('hidden')};$('exit').onclick=()=>{if(confirm('Exit this game?')){$('gameView').classList.add('hidden');$('setupView').classList.remove('hidden')}};$('fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen()}catch{alert('Fullscreen is blocked here. On iPad, use Share → Add to Home Screen.')}};
+</script>
+</body>
+</html>

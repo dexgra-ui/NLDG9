@@ -18,7 +18,7 @@
 <main class="app">
 <header class="top">
   <div class="brand"><img src="no-labels-approved-logo.png" alt=""><span><strong>No Labels Games</strong><small>Children's Bible Game</small></span></div>
-  <div class="controls"><button id="fullscreen" class="btn" type="button">Fullscreen</button></div>
+  <div class="controls"><a class="btn" href="play.html">← Game Center</a><button id="fullscreen" class="btn" type="button">Fullscreen</button></div>
 </header>
 
 <section id="setupView">
@@ -35,7 +35,7 @@
 <section id="gameView" class="hidden" aria-label="Bible Tic-Tac-Toe game">
   <div class="game-layout">
     <div class="game-panel">
-      <div class="game-actions"><button id="exit" class="btn" type="button">← Exit</button></div>
+      <div class="game-actions"><button id="exit" class="btn" type="button">← Game Setup</button></div>
       <div id="turnBanner" class="turn-banner" aria-live="polite"></div>
       <div class="players"><div id="xCard" class="player x active"><strong id="xName"></strong><span>X</span></div><div id="oCard" class="player o"><strong id="oName"></strong><span>O</span></div></div>
       <div class="board-stage">
@@ -130,7 +130,7 @@ function showQuestion(){if(questionIndex>=deck.length){deck=shuffle(selectedQues
 function answerQuestion(choice,button){if(phase!=='answer')return;const correct=deck[questionIndex][1];document.querySelectorAll('.answer').forEach(answer=>{answer.disabled=true;if(answer.textContent===correct)answer.classList.add('correct')});questionIndex++;if(choice===correct){button.classList.add('correct');board[pendingSquare]=current;$('feedback').textContent=`Correct! Square ${pendingSquare+1} belongs to ${players[current]}.`;const line=WIN_LINES.find(cells=>cells.every(cell=>board[cell]===current));if(line){winningLine=line;renderBoard();finish(`${players[current]} wins!`,`${players[current]} answered correctly and got three ${current}s in a row.`,current);return}if(board.every(Boolean)){renderBoard();finish('It’s a tie!','The board is full. Great answers from both players!','XO');return}renderBoard()}else{button.classList.add('wrong');$('feedback').textContent=`Good try! The answer is ${correct}. Square ${pendingSquare+1} stays open.`}$('pickPrompt').textContent='The turn passes to the other player.';setTimeout(()=>{current=current==='X'?'O':'X';showPickPrompt()},1800)}
 function pickSquare(index){if(phase!=='pick'||board[index])return;pendingSquare=index;showQuestion()}
 function finish(title,text,mark){phase='done';setTimeout(()=>{$('gameView').classList.add('hidden');$('completeView').classList.remove('hidden');$('resultMark').textContent=mark;$('resultTitle').textContent=title;$('resultText').textContent=text},550)}
-$('start').onclick=startGame;$('rematch').onclick=()=>{$('completeView').classList.add('hidden');$('gameView').classList.remove('hidden');newRound()};$('newPlayers').onclick=()=>{$('completeView').classList.add('hidden');$('setupView').classList.remove('hidden')};$('exit').onclick=()=>{if(confirm('Exit this game?')){$('gameView').classList.add('hidden');$('setupView').classList.remove('hidden')}};$('fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen()}catch{alert('Fullscreen is blocked here. On iPad, use Share → Add to Home Screen.')}};
+$('start').onclick=startGame;$('rematch').onclick=()=>{$('completeView').classList.add('hidden');$('gameView').classList.remove('hidden');newRound()};$('newPlayers').onclick=()=>{$('completeView').classList.add('hidden');$('setupView').classList.remove('hidden')};$('exit').onclick=()=>{if(confirm('Return to game setup?')){$('gameView').classList.add('hidden');$('setupView').classList.remove('hidden')}};$('fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen()}catch{alert('Fullscreen is blocked here. On iPad, use Share → Add to Home Screen.')}};
 </script>
 </body>
 </html>

@@ -1,12 +1,12 @@
 # Interactive Feature Audit
 
-Generated: 2026-08-05T19:03:26.190Z
+Generated: 2026-08-08T08:45:59.911Z
 
-Result: **PASSED** with 0 failure(s).
+Result: **FAILED** with 1 failure(s).
 
 ## Failures
 
-No interactive feature failures were found.
+- Church game supports eight teams, scoring, undo, reset, and presentation layout: locator.evaluate: Timeout 30000ms exceeded. Call log:   - waiting for locator('#tournamentView') 
 
 ## Checks completed
 
@@ -21,4 +21,3 @@ No interactive feature failures were found.
 - Scripture Explorer selection updates results
 - New Believer Step 10 completion, notes, persistence, and next steps
 - Mentor Session 1 checklist, completion, notes, and persistence
-- Church game supports eight teams, scoring, undo, reset, and presentation layout

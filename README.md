@@ -79,6 +79,8 @@ Before merging a release:
 6. Launch all six games and verify scoring, navigation, standings, presentation mode, and replay.
 7. Confirm there are no placeholder forms, broken links, missing metadata, or unfinished public messages.
 
+Audit reports and screenshots are retained as downloadable GitHub Actions artifacts instead of being committed back into the production branch.
+
 ## Deployment
 
 The site is deployed through GitHub Pages from `main`.

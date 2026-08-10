@@ -350,8 +350,12 @@ body:not(.playing) .scorebar {
 
 .presentation-note{position:fixed;left:50%;bottom:24px;z-index:9999;display:flex;gap:12px;align-items:center;transform:translate(-50%,30px);opacity:0;padding:14px 18px;border:1px solid rgba(255,255,255,.18);border-radius:14px;background:#06122d;color:#fff;box-shadow:0 16px 50px rgba(0,0,0,.45);transition:.35s ease}
 .presentation-note.show{transform:translate(-50%,0);opacity:1}.presentation-note span{opacity:.72}
+.presentation-note-inline{position:static;left:auto;bottom:auto;z-index:auto;width:100%;margin:18px 0;transform:none;opacity:1;box-shadow:none}
+.presentation-note-inline.show{transform:none}
+.presentation-note-close{margin-left:auto;border:1px solid rgba(255,255,255,.35);border-radius:10px;background:transparent;color:inherit;padding:7px 11px;font:inherit;font-weight:800;cursor:pointer}
+.presentation-note-close:focus-visible{outline:3px solid #ffd55f;outline-offset:2px}
 .presentation-ready .app{max-width:none}
-@media(max-width:700px){.presentation-note{width:calc(100% - 28px);align-items:flex-start;flex-direction:column}}
+@media(max-width:700px){.presentation-note{width:calc(100% - 28px);align-items:flex-start;flex-direction:column}.presentation-note-inline{width:100%}.presentation-note-close{margin-left:0}}
 .engine-status{display:inline-flex;margin:.45rem 0 1rem;padding:.5rem .75rem;border-radius:999px;background:rgba(54,211,153,.12);color:#8df0c3;font-size:.78rem;font-weight:800;letter-spacing:.04em}
 .menu-card{min-height:150px;touch-action:manipulation}
 .menu-card:focus-visible,.answer:focus-visible,.jcell:focus-visible{outline:4px solid #ffd55f;outline-offset:3px}
@@ -999,13 +1003,21 @@ function renderSetupPreview(){
   </div>`).join("");
 }
 function openTournament(){ $("teamCount").value=String(Math.max(1,state.teams.length)); renderTeamEditors(); updateStatus(); showView("tournamentView"); }
+let pendingPresentationGame=null;
 function beginTournament(){
+  document.querySelector('.presentation-note')?.remove();
   state.teams=currentSetupTeams();
   state.activeTeam=$("firstTeamMode").value==="random"?Math.floor(Math.random()*state.teams.length):0;
   state.tournament={active:true,round:1,total:Number($("tournamentRounds").value),group:$("tournamentGroup").value,teamCount:state.teams.length};
   state.group=state.tournament.group; state.scoreHistory=[]; resetScores(false); saveTeams(); saveTournament();
   $("tournamentBadge").classList.remove("hidden");
-  document.dispatchEvent(new CustomEvent("nldg:open-library",{detail:{group:state.group}}));
+  if(pendingPresentationGame){
+    const gameId=pendingPresentationGame;
+    pendingPresentationGame=null;
+    launchGame(gameId);
+  }else{
+    document.dispatchEvent(new CustomEvent("nldg:open-library",{detail:{group:state.group}}));
+  }
 }
 function showTournamentSummary(endActive=true){
   const ranking=rankedTeams();
@@ -1092,18 +1104,25 @@ function autoLaunchFromUrl(){
   const requestedGame=params.get("game");
   const presentation=params.get("presentation");
 
-  if(requestedGroup || requestedGame || presentation==="1"){
+  if(presentation==="1"){
     $("intro").classList.add("hidden");
-    openLibrary(requestedGroup || "family");
+    document.body.classList.add("presentation-ready");
+    const safeGroup=quizData[requestedGroup]?requestedGroup:"family";
+    $("tournamentGroup").value=safeGroup;
+    pendingPresentationGame=GAME_REGISTRY[requestedGame]?requestedGame:null;
+    openTournament();
+    const note=document.createElement("div");
+    note.className="presentation-note presentation-note-inline";
+    note.innerHTML="<strong>Church Presentation Mode</strong><span>Set up the teams first, then start the tournament and choose a game.</span><button type=\"button\" class=\"presentation-note-close\" aria-label=\"Dismiss presentation mode notice\">Dismiss</button>";
+    note.querySelector('.presentation-note-close').addEventListener('click',()=>note.remove());
+    document.querySelector('#tournamentView .tournament-setup-panel').appendChild(note);
+    requestAnimationFrame(()=>note.classList.add("show"));
+    return;
   }
 
-  if(presentation==="1"){
-    document.body.classList.add("presentation-ready");
-    const note=document.createElement("div");
-    note.className="presentation-note";
-    note.innerHTML="<strong>Church Presentation Mode</strong><span>Tap Fullscreen when you are ready to project.</span>";
-    document.body.appendChild(note);
-    requestAnimationFrame(()=>note.classList.add("show"));
+  if(requestedGroup || requestedGame){
+    $("intro").classList.add("hidden");
+    openLibrary(requestedGroup || "family");
   }
 
   if(requestedGame){

@@ -1,53 +1,41 @@
-# Version 1.0 Roadmap
+# Version 1 Release Record
 
-Current target: Version 0.9.3 quality and family-experience update
+## Current stable release
 
-## Completed foundation
+**Version 1.1.0 — Ministry Platform Maintenance Release**
 
-- Six expanded standalone Bible games
-- Preschool, Kids, Teens, Adults, and Family question banks
-- Shared 1-8 team setup
-- Standardized host scoring controls
-- Phone, iPad, laptop, team-mode, scoring, and mirrored church-display testing
-- Age-group routing from the Game Center
+Tagged August 8, 2026.
 
-## Version 1.0 release gates
+## Version 1.0 foundation
 
-### Content quality
+- Six expanded Bible games with Preschool, Kids, Teens, Adults, and Family question banks
+- Shared 1–8 team setup, scoring controls, rankings, tournament summaries, and presentation support
+- Searchable ministry content library and related-content recommendations
+- Personal library, saved progress, notes, reading plans, and My Journey tools
+- Responsive layouts, installable PWA support, offline caching, and automated quality audits
+- Leadership, marriage and family, men, women, difficult questions, and new-believer study journeys
 
-- Complete the Bible content audit for all six games.
-- Verify every displayed Scripture reference.
-- Standardize Finish the Verse translation wording.
-- Remove duplicate, ambiguous, or misleading questions.
-- Confirm difficulty progression across all five audiences.
+## Version 1.1 completed
 
-### Family experience
+- Completed all 21 self-paced Walking with Jesus lessons
+- Added automated Walking with Jesus completion checks
+- Published the Privacy Policy and Terms of Use
+- Improved legal footer navigation and installable-app metadata
+- Strengthened accessibility, interactive-study, repository-completion, and site-quality checks
+- Preserved phone, tablet, laptop, presentation, and offline support
 
-- Add optional celebration effects for correct answers and matches.
-- Add optional sound with a visible mute control.
-- Maintain large touch targets on phones and tablets.
-- Improve preschool presentation with simple wording and familiar visual cues.
+## Post-release ministry additions
 
-### Host readiness
+The production `main` branch also includes continuing ministry work completed after the Version 1.1.0 tag:
 
-- Complete the host test checklist during a real group session.
-- Confirm scoring, undo, skip, reset, and team selection in every game.
-- Confirm mirrored presentation readability from the back of the room.
-- Document any browser-specific limitations.
+- After the Benediction discipleship series
+- When Preferences Become Idols study series
+- Book-by-book studies through James, Philippians, and 1 John
+- Bible Tic-Tac-Toe with question-based square selection and Scripture reinforcement
+- About the founder, homepage and footer refinements, linked Scripture references, and podcast-preview correction
 
-### Release preparation
+## Future direction
 
-- Complete a final regression test on phone, iPad, laptop, and church display.
-- Mark every content bank as reviewed.
-- Create final Version 1.0 release notes.
-- Create a stable GitHub release checkpoint.
-- Update the public Game Center and footer to Version 1.0 only after all release gates pass.
+Future work should remain feedback-driven and ministry-focused. Potential larger features such as secure accounts, cross-device synchronization, online multiplayer, or cloud collaboration require a protected backend and should not be represented as available until that infrastructure exists.
 
-## Not required for Version 1.0
-
-- A true two-screen presenter system
-- Online multiplayer
-- User accounts or cloud score storage
-- Merchandise shop integration
-
-Those items belong to later phases so Version 1.0 can remain focused, stable, and useful in real ministry settings.
+New studies, devotionals, articles, games, and ministry resources can continue through the established publishing workflow and automated audit process.

@@ -11,7 +11,7 @@ const ROUTE_EXTENSIONS = new Set(['.html', '.js', '.mjs', '.css', '.json', '.web
 
 const errors = [];
 const warnings = [];
-const CURRENT_RELEASE_VERSION = [1, 1, 0];
+const CURRENT_RELEASE_VERSION = [1, 1, 1];
 const notes = [];
 
 const slash = value => value.split(path.sep).join('/');

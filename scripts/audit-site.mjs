@@ -11,6 +11,7 @@ const ROUTE_EXTENSIONS = new Set(['.html', '.js', '.mjs', '.css', '.json', '.web
 
 const errors = [];
 const warnings = [];
+const CURRENT_RELEASE_VERSION = [1, 1, 0];
 const notes = [];
 
 const slash = value => value.split(path.sep).join('/');
@@ -119,8 +120,16 @@ async function validateReferences(files, fileSet) {
         }
       }
       const visibleText = visibleHtmlText(content);
-      const versions = [...visibleText.matchAll(/\b(?:Version|v)\s*\d+(?:\.\d+){1,3}\b/gi)].map(match => match[0]);
-      for (const version of new Set(versions)) warnings.push(`Review visible version label \`${version}\` in \`${relative(file)}\`.`);
+      const versions = [...visibleText.matchAll(/\b(?:Version|v)\s*(\d+(?:\.\d+){1,3})\b/gi)];
+      for (const match of versions) {
+        const parts = match[1].split('.').map(Number);
+        const padded = [...parts, 0, 0, 0].slice(0, CURRENT_RELEASE_VERSION.length);
+        const isOlder = padded.some((part, index) =>
+          part < CURRENT_RELEASE_VERSION[index] &&
+          padded.slice(0, index).every((earlier, earlierIndex) => earlier === CURRENT_RELEASE_VERSION[earlierIndex])
+        );
+        if (isOlder) warnings.push(`Review outdated visible version label \`${match[0]}\` in \`${relative(file)}\`.`);
+      }
     }
   }
   notes.push(`Checked ${checked} unique internal file references across public HTML, JavaScript, styles, and data files.`);

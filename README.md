@@ -4,9 +4,9 @@ Production website and installable ministry platform for No Labels, Designed by 
 
 ## Current release
 
-**Version 1.1.0 — Ministry Platform Maintenance Release**
+**Version 1.1.1 — Ministry Platform Maintenance Release**
 
-This release strengthens the ministry platform with safer offline caching, cleaner quality automation, restored accessible games, expanded study collections, and consistent release information.
+This maintenance release captures the expanded study collections, Bible Tic-Tac-Toe improvements, linked Scripture references, podcast correction, accessibility fixes, repository cleanup, and stronger quality automation now serving the ministry platform.
 
 ## Ministry journeys
 

@@ -29,7 +29,7 @@ on:
       - '.github/workflows/interactive-study-audit.yml'
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   interactive-study:
@@ -72,22 +72,3 @@ jobs:
           name: interactive-study-audit
           path: interactive-study-audit-results
           if-no-files-found: error
-
-      - name: Publish Markdown report
-        if: always() && github.ref == 'refs/heads/main'
-        run: |
-          if [ ! -f interactive-study-audit-results/interactive-study-quality-review.md ]; then
-            echo "No Interactive Bible Study report was generated."
-            exit 0
-          fi
-          cp interactive-study-audit-results/interactive-study-quality-review.md INTERACTIVE-STUDY-QUALITY.md
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add INTERACTIVE-STUDY-QUALITY.md
-          if git diff --cached --quiet; then
-            echo "Interactive Bible Study report is unchanged."
-            exit 0
-          fi
-          git commit -m "Publish Interactive Bible Study quality report"
-          git pull --rebase origin main
-          git push

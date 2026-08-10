@@ -35,11 +35,11 @@ on:
       - '*.js'
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   repository-completion:
-    name: Version 1.0 platform review
+    name: Version 1.1 platform review
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -78,22 +78,3 @@ jobs:
           name: repository-completion-audit
           path: repository-completion-audit-results
           if-no-files-found: error
-
-      - name: Publish Markdown report
-        if: always() && github.ref == 'refs/heads/main'
-        run: |
-          if [ ! -f repository-completion-audit-results/repository-completion-review.md ]; then
-            echo "No repository completion report was generated."
-            exit 0
-          fi
-          cp repository-completion-audit-results/repository-completion-review.md REPOSITORY-COMPLETION-REVIEW.md
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add REPOSITORY-COMPLETION-REVIEW.md
-          if git diff --cached --quiet; then
-            echo "Repository completion report is unchanged."
-            exit 0
-          fi
-          git commit -m "Publish repository completion review"
-          git pull --rebase origin main
-          git push

@@ -50,12 +50,13 @@ async function staticChecks(){
     read('README.md'),read('index.html'),read('site-map.html'),read('site-map.js'),read('sw.js'),read('CONTENT-PUBLISHING.md'),read('templates/content-entry.template.js'),read('templates/content-page.template.html'),read('ministry-assistant.html'),read('ministry-assistant.css')
   ]);
 
-  record(readme.includes('Version 1.0.0'),'README identifies Version 1.0.0.','README does not identify Version 1.0.0.');
+  record(readme.includes('Version 1.1.0'),'README identifies Version 1.1.0.','README does not identify Version 1.1.0.');
   record(!index.includes('signup-form')&&!index.includes('Email signup will be connected'),'Homepage contains no placeholder signup form.','Homepage still contains a placeholder signup experience.');
   record(index.includes('substack.com/@nolabelsdesignedbygod')&&index.includes('facebook.com/NoLabelsDesignedbyGod'),'Homepage links to the live Substack and Facebook channels.','Homepage is missing one or both live ministry channels.');
   record(siteMap.includes('site-map-content-index')&&siteMap.includes('site-map.js'),'Site map contains its generated registry index.','Site map is not connected to the generated registry index.');
   record(siteMapScript.includes('window.NLDG_CONTENT')&&siteMapScript.includes('status!==\'draft\''),'Site-map generator reads published shared-library entries.','Site-map generator is not using the published shared library correctly.');
-  record(serviceWorker.includes("nldg-v10-0-0-")&&serviceWorker.includes("'site-map.js'")&&serviceWorker.includes("'ministry-assistant.css?v=8.0.0'")&&serviceWorker.includes("'ministry-assistant.js?v=8.0.0'"),'Version 1.0 offline shell includes the generated site map and corrected Interactive Bible Study assets.','Service worker version, generated site-map cache entry, or corrected Interactive Bible Study assets are missing.');
+  const hasSiteNavigation=/'site-navigation\.js(?:\?[^']*)?'/.test(serviceWorker);
+  record(serviceWorker.includes("const CACHE='nldg-v1-1-0'")&&serviceWorker.includes("'index.html'")&&serviceWorker.includes("'styles.css'")&&serviceWorker.includes("'script.js'")&&hasSiteNavigation,'Version 1.1 offline shell uses a stable release cache with essential application files.','Service worker release cache or essential application-shell files are missing.');
   record(publishing.includes('source of truth')&&publishing.includes('Required metadata'),'Publishing guide documents the one-registry workflow.','Publishing guide is incomplete.');
   record(entryTemplate.includes("status: 'draft'")&&entryTemplate.includes('publishedAt'),'Registry template includes safe draft status and publishing metadata.','Registry template is missing required publishing safeguards.');
   record(pageTemplate.includes('{{PAGE TITLE}}')&&pageTemplate.includes('id="main-content"'),'Content page template contains semantic structure and placeholders.','Content page template is incomplete.');

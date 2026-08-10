@@ -12,7 +12,7 @@ on:
       - '*.js'
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   accessibility:
@@ -57,22 +57,3 @@ jobs:
           name: accessibility-audit
           path: accessibility-audit-results
           if-no-files-found: error
-
-      - name: Publish Markdown report
-        if: always()
-        run: |
-          if [ ! -f accessibility-audit-results/accessibility-audit-report.md ]; then
-            echo "No accessibility report was generated."
-            exit 0
-          fi
-          cp accessibility-audit-results/accessibility-audit-report.md ACCESSIBILITY-AUDIT.md
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ACCESSIBILITY-AUDIT.md
-          if git diff --cached --quiet; then
-            echo "Accessibility report is unchanged."
-            exit 0
-          fi
-          git commit -m "Publish accessibility audit report"
-          git pull --rebase origin main
-          git push

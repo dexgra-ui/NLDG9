@@ -23,7 +23,7 @@ on:
       - 'marriage-family-study.html'
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   interactive:
@@ -66,22 +66,3 @@ jobs:
           name: interactive-audit
           path: interactive-audit-results
           if-no-files-found: error
-
-      - name: Publish Markdown report
-        if: always()
-        run: |
-          if [ ! -f interactive-audit-results/interactive-audit-report.md ]; then
-            echo "No interactive report was generated."
-            exit 0
-          fi
-          cp interactive-audit-results/interactive-audit-report.md INTERACTIVE-AUDIT.md
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add INTERACTIVE-AUDIT.md
-          if git diff --cached --quiet; then
-            echo "Interactive report is unchanged."
-            exit 0
-          fi
-          git commit -m "Publish interactive feature audit report"
-          git pull --rebase origin main
-          git push

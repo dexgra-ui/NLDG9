@@ -4,9 +4,9 @@ Production website and installable ministry platform for No Labels, Designed by 
 
 ## Current release
 
-**Version 1.0.0 — Ministry Platform Release**
+**Version 1.1.0 — Ministry Platform Maintenance Release**
 
-This release brings the ministry website, discipleship journeys, leadership resources, interactive games, search, personalization, printable tools, accessibility testing, and offline support together in one production repository.
+This release strengthens the ministry platform with safer offline caching, cleaner quality automation, restored accessible games, expanded study collections, and consistent release information.
 
 ## Ministry journeys
 
@@ -19,6 +19,9 @@ This release brings the ministry website, discipleship journeys, leadership reso
 - Leadership Toolkit and printable ministry packet
 - Faith & Truth in Today’s World current-events study series
 - Faith That Works study through James
+- After the Benediction discipleship series
+- When Preferences Become Idols study series
+- Book-by-book studies through James, Philippians, and 1 John
 
 ## Ministry platform
 
@@ -75,6 +78,8 @@ Before merging a release:
 5. Test portrait and landscape layouts on phone and tablet.
 6. Launch all six games and verify scoring, navigation, standings, presentation mode, and replay.
 7. Confirm there are no placeholder forms, broken links, missing metadata, or unfinished public messages.
+
+Audit reports and screenshots are retained as downloadable GitHub Actions artifacts instead of being committed back into the production branch.
 
 ## Deployment
 

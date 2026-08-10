@@ -24,7 +24,11 @@ for(const audience of ['preschool','kids','teens','adults','family'])pass(game.i
 pass(integration.includes('Laptop Required')&&integration.includes('TV / Projector')&&integration.includes('bible-survey-host.html'),'Game Center does not clearly identify the laptop and second-display requirement.');
 pass(contactLinks.includes('survey-game-integration.js?v=2.0.0'),'Sitewide loader does not load the updated game integration.');
 pass(sitemap.includes('https://nolabelsdesignedbygod.org/bible-survey-host.html'),'Sitemap is missing the laptop host page.');
-pass(serviceWorker.includes("'bible-survey-host.html'")&&serviceWorker.includes("'bible-survey-game.html'")&&serviceWorker.includes('survey-game-integration.js?v=2.0.0'),'Offline cache is missing Survey Showdown host assets.');
+const runtimeCaching=/event\.request\.method\s*!==\s*['"]GET['"]/.test(serviceWorker)
+ && /cache\.put\(event\.request/.test(serviceWorker)
+ && /caches\.match\(event\.request\)/.test(serviceWorker)
+ && /event\.request\.mode\s*===\s*['"]navigate['"]/.test(serviceWorker);
+pass(runtimeCaching,'Service worker is missing runtime caching or its offline navigation fallback.');
 
 const browser=await chromium.launch({headless:true});
 try{

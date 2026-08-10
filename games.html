@@ -377,7 +377,7 @@ body:not(.playing) .scorebar {
 @media(max-width:850px){.tournament-options{grid-template-columns:repeat(2,1fr)}.team-name-grid{grid-template-columns:1fr}.setup-heading{flex-direction:column}}
 @media(max-width:520px){.tournament-options{grid-template-columns:1fr}.dynamic-scoreboard{grid-template-columns:1fr 1fr}}
 
-/* Version 0.9 Sprint 2: shared tournament controls, rankings, and summary */
+/* Version 1.0 tournament controls, rankings, and summary */
 .scorebar-shell{display:grid;gap:10px}
 .tournament-hostbar{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:8px;border-radius:14px;background:rgba(4,10,26,.94);border:1px solid rgba(255,255,255,.12)}
 .tournament-hostbar .btn{padding:8px 11px;font-size:14px}
@@ -527,7 +527,7 @@ body:not(.playing) .scorebar {
       <section id="tournamentView" class="view hidden">
 <div class="game-panel tournament-setup-panel">
   <div class="setup-heading">
-    <div><div class="eyebrow">Version 0.9 • Sprint 2</div><h2 class="section-title">Church Tournament Setup</h2>
+    <div><div class="eyebrow">Version 1.0.0 • Ministry Release</div><h2 class="section-title">Church Tournament Setup</h2>
     <p>Create one to eight teams. This setup controls the scoreboard used by every game.</p></div>
     <div class="setup-badge">🏆 Multi-Team</div>
   </div>
@@ -1191,7 +1191,7 @@ try{
   autoLaunchFromUrl();
 }catch(error){
   console.error(error);
-  alert("The game data could not load. Please upload every Version 4 file and refresh.");
+  alert("The game data could not load. Please refresh the page and try again.");
 }
 
 </script>

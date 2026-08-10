@@ -47,7 +47,7 @@ const boot=async()=>{
  addStyle('print-center.css?v=1.0.0');
  addStyle('teaching-analytics.css?v=1.0.0');
  try{
-  await loadScript('leader-guide-data.js?v=1.1.0');
+  await loadScript('leader-guide-data.js?v=1.1.1');
   await loadScript('expanded-leader-guide.js?v=1.2.0');
   await loadScript('teaching-analytics.js?v=1.0.0');
   await loadScript('teaching-dashboard.js?v=1.1.0');

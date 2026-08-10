@@ -2,9 +2,9 @@
 
 ## Current stable release
 
-**Version 1.1.0 — Ministry Platform Maintenance Release**
+**Version 1.1.1 — Ministry Platform Maintenance Release**
 
-Tagged August 8, 2026.
+Prepared August 10, 2026.
 
 ## Version 1.0 foundation
 
@@ -15,7 +15,7 @@ Tagged August 8, 2026.
 - Responsive layouts, installable PWA support, offline caching, and automated quality audits
 - Leadership, marriage and family, men, women, difficult questions, and new-believer study journeys
 
-## Version 1.1 completed
+## Version 1.1.0 completed
 
 - Completed all 21 self-paced Walking with Jesus lessons
 - Added automated Walking with Jesus completion checks
@@ -24,15 +24,19 @@ Tagged August 8, 2026.
 - Strengthened accessibility, interactive-study, repository-completion, and site-quality checks
 - Preserved phone, tablet, laptop, presentation, and offline support
 
-## Post-release ministry additions
+## Version 1.1.1 maintenance release
 
-The production `main` branch also includes continuing ministry work completed after the Version 1.1.0 tag:
-
-- After the Benediction discipleship series
-- When Preferences Become Idols study series
-- Book-by-book studies through James, Philippians, and 1 John
-- Bible Tic-Tac-Toe with question-based square selection and Scripture reinforcement
-- About the founder, homepage and footer refinements, linked Scripture references, and podcast-preview correction
+- Added After the Benediction and When Preferences Become Idols study series
+- Organized book-by-book studies through James, Philippians, and 1 John
+- Added Bible Tic-Tac-Toe with question-based square selection, a larger question pool, an exit control, and Scripture reinforcement
+- Linked study Scripture references to Bible Gateway
+- Added the founder profile and teaching photo
+- Streamlined the homepage and shared footer
+- Clarified podcast preview availability
+- Improved game accessibility contrast and heading structure
+- Strengthened release-label, cache, site-quality, and repository-completion audits
+- Removed obsolete pre-1.0 build and sprint files
+- Updated the installable site's cache checkpoint to Version 1.1.1
 
 ## Future direction
 

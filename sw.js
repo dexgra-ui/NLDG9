@@ -1,8 +1,12 @@
-const CACHE='nldg-v1-1-1';
+const CACHE='nldg-v1-1-1-newsletter';
 const CORE=[
   './',
   'index.html',
   'styles.css',
+  'newsletter.css',
+  'newsletter.html',
+  'newsletter/who-god-says-you-are.html',
+  'newsletter.js',
   'platform.css?v=5.3.0',
   'script.js',
   'site-navigation.js?v=1.9.0',

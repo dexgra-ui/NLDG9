@@ -13,6 +13,7 @@ function initializeNavigation(){
     ['Bible Studies','studies.html','studies'],
     ['Devotionals','devotionals.html','devotionals'],
     ['Articles','articles.html','articles'],
+    ['Newsletter','newsletter.html','newsletter'],
     ['Resource Center','resource-center.html','resources'],
     ['Podcast','podcast.html','podcast'],
     ['News','news.html','news'],
@@ -33,6 +34,7 @@ function initializeNavigation(){
   else if(gamePages.has(page)||page.includes('game'))section='games';
   else if(page.startsWith('devotional'))section='devotionals';
   else if(page.startsWith('article'))section='articles';
+  else if(page.startsWith('newsletter')||location.pathname.includes('/newsletter/'))section='newsletter';
   else if(page.startsWith('podcast'))section='podcast';
   else if(page.startsWith('news'))section='news';
   else if(page.startsWith('search')||page==='site-map.html')section='search';
@@ -128,7 +130,7 @@ function initializeNavigation(){
   }
 
   const sectionRoots={
-    start:['Start Here','new-believers.html'],studies:['Bible Studies','studies.html'],devotionals:['Devotionals','devotionals.html'],articles:['Articles','articles.html'],resources:['Resource Center','resource-center.html'],podcast:['Podcast','podcast.html'],news:['News','news.html'],search:['Search','search.html'],about:['Our Ministry','about.html'],games:['Games','play.html']
+    start:['Start Here','new-believers.html'],studies:['Bible Studies','studies.html'],devotionals:['Devotionals','devotionals.html'],articles:['Articles','articles.html'],newsletter:['Newsletter','newsletter.html'],resources:['Resource Center','resource-center.html'],podcast:['Podcast','podcast.html'],news:['News','news.html'],search:['Search','search.html'],about:['Our Ministry','about.html'],games:['Games','play.html']
   };
   if(main&&page!=='index.html'){
     main.querySelector('.breadcrumbs')?.remove();
@@ -160,6 +162,7 @@ function initializeNavigation(){
     footerLinks.innerHTML=`
       <a href="new-believers.html">Start Here</a>
       <a href="studies.html">Bible Studies</a>
+      <a href="newsletter.html">Newsletter</a>
       <a href="resource-center.html">Resources</a>
       <a href="play.html">Games</a>
       <a href="about.html">Our Ministry</a>

@@ -21,6 +21,8 @@ const pages = [
   { name: 'new-believers', url: 'new-believers.html' },
   { name: 'devotionals', url: 'devotionals.html' },
   { name: 'weekly-devotional', url: 'devotionals/when-following-jesus-is-inconvenient.html' },
+  { name: 'newsletter-archive', url: 'newsletter.html' },
+  { name: 'newsletter-issue-01', url: 'newsletter/who-god-says-you-are.html' },
   { name: 'articles', url: 'articles.html' },
   { name: 'resource-center', url: 'resource-center.html' },
   { name: 'search', url: 'search.html' },

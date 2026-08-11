@@ -8,7 +8,8 @@ const exists=file=>fs.existsSync(path.join(root,file));
 const assert=(condition,message)=>{if(!condition)failures.push(message)};
 const articlePages=['family-nobody-talks-about','grace-accountability','faith-hard-seasons','truth-online','church-shows-up','jesus-loves-you'].map(slug=>`articles/${slug}.html`);
 const devotionalPages=['when-following-jesus-is-inconvenient','you-are-known','not-your-past','you-are-held','created-for-good-works','more-than-a-label','peace-is-a-practice','hope-that-holds','when-god-feels-silent','the-courage-to-lead','faithful-in-what-god-has-given-you','faith-for-the-next-decision','growing-into-the-leader-god-is-forming'].map(id=>`devotionals/${id}.html`);
-const pages=['index.html','articles.html','devotionals.html','contact.html','mission.html',...articlePages,...devotionalPages];
+const newsletterPages=['newsletter.html','newsletter/who-god-says-you-are.html'];
+const pages=['index.html','articles.html','devotionals.html','contact.html','mission.html',...articlePages,...devotionalPages,...newsletterPages];
 const canonicals=new Map();
 
 for(const file of pages){
@@ -30,7 +31,7 @@ assert(exists('sitemap.xml'),'sitemap.xml is missing');
 if(exists('robots.txt'))assert(read('robots.txt').includes('https://nolabelsdesignedbygod.org/sitemap.xml'),'robots.txt: sitemap address is missing');
 if(exists('sitemap.xml')){
  const sitemap=read('sitemap.xml');
- for(const file of ['contact.html','mission.html',...articlePages,...devotionalPages])assert(sitemap.includes(`https://nolabelsdesignedbygod.org/${file}`),`sitemap.xml: missing ${file}`);
+ for(const file of ['contact.html','mission.html',...articlePages,...devotionalPages,...newsletterPages])assert(sitemap.includes(`https://nolabelsdesignedbygod.org/${file}`),`sitemap.xml: missing ${file}`);
 }
 
 assert(exists('contact-links.js'),'contact-links.js is missing');

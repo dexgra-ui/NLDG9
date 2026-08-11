@@ -15,6 +15,7 @@
     if(type.includes('devotional')||type.includes('devotion'))return 'Devotionals';
     if(type.includes('article')||type.includes('reflection'))return 'Articles and Reflections';
     if(type.includes('podcast'))return 'Podcast';
+    if(type.includes('newsletter'))return 'Newsletter';
     if(type.includes('game'))return 'Games';
     return 'Guides, Tools, and Resources';
   };
@@ -36,7 +37,7 @@
       groups.get(group).push(item);
     });
 
-    const order=['Studies and Lessons','Devotionals','Articles and Reflections','Guides, Tools, and Resources','Podcast','Games'];
+    const order=['Studies and Lessons','Devotionals','Articles and Reflections','Newsletter','Guides, Tools, and Resources','Podcast','Games'];
     target.innerHTML=order
       .filter(group=>groups.has(group))
       .map(group=>{
@@ -44,7 +45,7 @@
           .sort((a,b)=>String(a.title).localeCompare(String(b.title)))
           .map(item=>`<a href="${escapeHtml(item.url)}">${escapeHtml(item.title)}</a>`)
           .join('');
-        return `<article><span aria-hidden="true">${group==='Studies and Lessons'?'📚':group==='Devotionals'?'🙏🏾':group==='Articles and Reflections'?'✍🏾':group==='Podcast'?'🎙️':group==='Games'?'🎮':'🧰'}</span><h2>${escapeHtml(group)}</h2>${links}</article>`;
+        return `<article><span aria-hidden="true">${group==='Studies and Lessons'?'📚':group==='Devotionals'?'🙏🏾':group==='Articles and Reflections'?'✍🏾':group==='Newsletter'?'📰':group==='Podcast'?'🎙️':group==='Games'?'🎮':'🧰'}</span><h2>${escapeHtml(group)}</h2>${links}</article>`;
       })
       .join('');
   }

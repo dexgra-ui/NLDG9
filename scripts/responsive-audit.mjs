@@ -25,6 +25,8 @@ const pages = [
   { name: 'new-believers', url: 'new-believers.html' },
   { name: 'devotionals', url: 'devotionals.html' },
   { name: 'weekly-devotional', url: 'devotionals/when-following-jesus-is-inconvenient.html' },
+  { name: 'newsletter-archive', url: 'newsletter.html' },
+  { name: 'newsletter-issue-01', url: 'newsletter/who-god-says-you-are.html' },
   { name: 'resource-center', url: 'resource-center.html' },
   { name: 'my-library', url: 'study-library.html' },
   { name: 'game-center', url: 'play.html' },
@@ -36,7 +38,8 @@ const printPages = [
   { name: 'marriage-family-study', url: 'marriage-family-study.html?study=1' },
   { name: 'difficult-questions-study', url: 'difficult-questions-study.html?study=1' },
   { name: 'new-believer-toolkit-packet', url: 'new-believer-toolkit-packet.html' },
-  { name: 'weekly-devotional', url: 'devotionals/when-following-jesus-is-inconvenient.html' }
+  { name: 'weekly-devotional', url: 'devotionals/when-following-jesus-is-inconvenient.html' },
+  { name: 'newsletter-issue-01', url: 'newsletter/who-god-says-you-are.html' }
 ];
 
 const failures = [];

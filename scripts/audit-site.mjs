@@ -137,7 +137,7 @@ async function validateReferences(files, fileSet) {
 
 async function validatePrimaryRoutes(fileSet) {
   const required = [
-    'index.html','new-believers.html','studies.html','devotionals.html','articles.html',
+    'index.html','new-believers.html','studies.html','devotionals.html','articles.html','newsletter.html',
     'resource-center.html','podcast.html','news.html','search.html','about.html','play.html',
     'site-map.html','study-library.html','dashboard.html','ministry-tools.html',
     'men-of-faith.html','women-of-faith.html','marriage-family.html','difficult-questions.html','leadership.html'

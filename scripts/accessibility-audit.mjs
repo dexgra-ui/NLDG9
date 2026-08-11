@@ -20,7 +20,7 @@ const pages = [
   { name: 'difficult-questions-study', url: 'difficult-questions-study.html?study=1' },
   { name: 'new-believers', url: 'new-believers.html' },
   { name: 'devotionals', url: 'devotionals.html' },
-  { name: 'when-god-feels-silent', url: 'devotional.html?id=when-god-feels-silent' },
+  { name: 'weekly-devotional', url: 'devotionals/when-following-jesus-is-inconvenient.html' },
   { name: 'articles', url: 'articles.html' },
   { name: 'resource-center', url: 'resource-center.html' },
   { name: 'search', url: 'search.html' },

@@ -6,6 +6,7 @@ const NUMBERED_BOOK_NAMES='Samuel|Kings|Chronicles|Corinthians|Thessalonians|Tim
 const REFERENCE=new RegExp(`\\b(?:${BOOKS})\\s+\\d{1,3}(?:(?::\\d{1,3}(?:[-–—]\\d{1,3})?)|(?:[-–—]\\d{1,3}))?(?:\\s*,\\s*\\d{1,3}(?!\\s+(?:${NUMBERED_BOOK_NAMES})\\b)(?::\\d{1,3}(?:[-–—]\\d{1,3})?)?)?`,'gi');
 const SKIP='a,script,style,textarea,input,select,option,button,code,pre,[contenteditable="true"],.no-scripture-links';
 const passageUrl=reference=>`https://www.biblegateway.com/passage/?search=${encodeURIComponent(reference.replace(/[–—]/g,'-'))}`;
+const findReferences=text=>[...String(text||'').matchAll(REFERENCE)].map(match=>match[0]);
 function linkTextNode(node){
  const text=node.nodeValue;
  REFERENCE.lastIndex=0;
@@ -53,5 +54,5 @@ const start=()=>{
  observer.observe(document.body,{childList:true,subtree:true});
 };
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
-window.NLDG_SCRIPTURE_LINKS={linkReferences,passageUrl};
+window.NLDG_SCRIPTURE_LINKS={linkReferences,passageUrl,findReferences};
 })();

@@ -11,7 +11,7 @@ scriptureLinksScript.src=new URL('scripture-links.js?v=1.0.0',document.currentSc
 scriptureLinksScript.async=false;
 document.head.appendChild(scriptureLinksScript);
 const navigationScopeFix=document.createElement('style');
-navigationScopeFix.textContent='@media(max-width:850px){.section-navigation{position:relative!important;top:auto!important;left:auto!important;right:auto!important}.breadcrumbs,.content-sequence{position:static;top:auto;left:auto;right:auto;padding:0;background:transparent;border:0;border-radius:0}.breadcrumbs{display:flex}.content-sequence{display:grid}.nav-open .breadcrumbs{display:flex}.nav-open .content-sequence{display:grid}}';
+navigationScopeFix.textContent='@media(max-width:850px){.section-navigation{position:relative!important;top:auto!important;left:auto!important;right:auto!important}.breadcrumbs,.content-sequence{position:static;top:auto;left:auto;right:auto;padding:0;background:transparent;border:0;border-radius:0}.breadcrumbs{display:flex}.content-sequence{display:grid}.nav-open .breadcrumbs{display:flex}.nav-open .content-sequence{display:grid}.lesson-layout>.series-lesson{order:1}.lesson-layout>.lesson-sidebar{order:2;position:static}}';
 document.head.appendChild(navigationScopeFix);
 document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
 (function ensureSocialLinks(){

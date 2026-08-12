@@ -15,6 +15,7 @@
     'ministry-tools.html':'Ministry Tools'
   };
   if(!labels[path])return;
+  if(['studies.html','study-library.html','dashboard.html','ministry-tools.html'].includes(path))return;
   const week=new URLSearchParams(location.search).get('week');
   if(path==='current-events-series.html'&&!week)return;
   const crumbs=[['index.html','Home']];

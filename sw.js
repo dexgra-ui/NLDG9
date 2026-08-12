@@ -9,7 +9,7 @@ const CORE=[
   'newsletter.js',
   'platform.css?v=5.3.1',
   'script.js',
-  'site-navigation.js?v=1.9.3',
+  'site-navigation.js?v=1.9.4',
   'no-labels-approved-logo.png',
   'manifest.webmanifest'
 ];

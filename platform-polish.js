@@ -15,10 +15,11 @@
     'ministry-tools.html':'Ministry Tools'
   };
   if(!labels[path])return;
+  const week=new URLSearchParams(location.search).get('week');
+  if(path==='current-events-series.html'&&!week)return;
   const crumbs=[['index.html','Home']];
   if(path==='current-events-series.html')crumbs.push(['studies.html','Bible Studies']);
   crumbs.push([null,labels[path]]);
-  const week=new URLSearchParams(location.search).get('week');
   if(path==='current-events-series.html'&&week){crumbs[crumbs.length-1]=['current-events-series.html',labels[path]];crumbs.push([null,`Week ${week}`]);}
   const nav=document.createElement('nav');
   nav.className='platform-breadcrumbs';

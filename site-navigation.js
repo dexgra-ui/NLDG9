@@ -24,7 +24,7 @@ function initializeNavigation(){
 
   const startPages=new Set(['new-believers.html','new-believer-step.html','new-believer-complete.html','new-believer-mentor.html','new-believer-mentor-session.html','new-believer-toolkit.html','new-believer-toolkit-packet.html']);
   const resourcePages=new Set(['resource-center.html','resources.html','teaching-library.html']);
-  const studyPages=new Set(['studies.html','study-library.html','dashboard.html','community.html','ministry-tools.html','ministry-assistant.html','topics.html','scripture-index.html','current-events-series.html','james-series.html','technology-ai.html','sunday-school.html','sunday-school-lesson.html','women-of-faith.html','men-of-faith.html','marriage-family.html','marriage-family-study.html','difficult-questions.html','difficult-questions-study.html','leadership.html','leadership-study.html','walking-with-jesus.html','walking-with-jesus-study.html']);
+  const studyPages=new Set(['studies.html','study-library.html','dashboard.html','community.html','ministry-tools.html','ministry-assistant.html','topics.html','scripture-index.html','book-by-book.html','current-events-series.html','james-series.html','after-benediction-series.html','preferences-idols-series.html','first-john-study.html','philippians-study.html','technology-ai.html','sunday-school.html','sunday-school-lesson.html','women-of-faith.html','men-of-faith.html','marriage-family.html','marriage-family-study.html','difficult-questions.html','difficult-questions-study.html','leadership.html','leadership-study.html','walking-with-jesus.html','walking-with-jesus-study.html']);
   const gamePages=new Set(['play.html','games.html','host-test-checklist.html','multi-team-game-v095.html','scripture-or-suspicion.html','who-am-i.html','finish-the-verse.html','bible-jeopardy.html','memory-match.html','lightning-round.html','faith-wheel.html','bible-tic-tac-toe.html']);
 
   let section='home';
@@ -93,7 +93,7 @@ function initializeNavigation(){
     ['Discipleship Toolkit','new-believer-toolkit.html',['new-believer-toolkit.html','new-believer-toolkit-packet.html'].includes(page)]
   ]};
   if(section==='studies')context={label:'Bible Studies navigation',links:[
-    ['Study Home','studies.html',['studies.html','current-events-series.html','james-series.html','technology-ai.html','sunday-school.html','sunday-school-lesson.html'].includes(page)||page.startsWith('study-')||page.startsWith('lesson-')],
+    ['Study Home','studies.html',['studies.html','book-by-book.html','current-events-series.html','james-series.html','after-benediction-series.html','preferences-idols-series.html','first-john-study.html','philippians-study.html','technology-ai.html','sunday-school.html','sunday-school-lesson.html'].includes(page)||page.startsWith('study-')||page.startsWith('lesson-')],
     ['Men of Faith','men-of-faith.html',isMenOfFaithPage],
     ['Women of Faith','women-of-faith.html',isWomenOfFaithPage],
     ['Marriage & Family','marriage-family.html',isMarriageFamilyPage],
@@ -133,11 +133,20 @@ function initializeNavigation(){
     start:['Start Here','new-believers.html'],studies:['Bible Studies','studies.html'],devotionals:['Devotionals','devotionals.html'],articles:['Articles','articles.html'],newsletter:['Newsletter','newsletter.html'],resources:['Resource Center','resource-center.html'],podcast:['Podcast','podcast.html'],news:['News','news.html'],search:['Search','search.html'],about:['Our Ministry','about.html'],games:['Games','play.html']
   };
   const studyLandingPages=new Set([
-    'studies.html','current-events-series.html','james-series.html','technology-ai.html',
+    'studies.html','book-by-book.html','current-events-series.html','james-series.html',
+    'after-benediction-series.html','preferences-idols-series.html','first-john-study.html',
+    'philippians-study.html','technology-ai.html',
     'sunday-school.html','women-of-faith.html','men-of-faith.html','marriage-family.html',
     'difficult-questions.html','leadership.html','walking-with-jesus.html'
   ]);
-  if(main&&studyLandingPages.has(page)){
+  const studyLandingDetailParams=new Map([
+    ['current-events-series.html','week'],['james-series.html','week'],
+    ['after-benediction-series.html','lesson'],['preferences-idols-series.html','lesson'],
+    ['first-john-study.html','lesson'],['philippians-study.html','lesson']
+  ]);
+  const detailParam=studyLandingDetailParams.get(page);
+  const isStudyLandingPage=studyLandingPages.has(page)&&(!detailParam||!new URLSearchParams(location.search).get(detailParam));
+  if(main&&isStudyLandingPage){
     main.querySelectorAll('.breadcrumbs,.platform-breadcrumbs').forEach(item=>item.remove());
   }else if(main&&page!=='index.html'){
     main.querySelector('.breadcrumbs')?.remove();
@@ -154,6 +163,12 @@ function initializeNavigation(){
     if(page==='difficult-questions-study.html')trail.push(['Difficult Questions','difficult-questions.html']);
     if(page==='leadership-study.html'||page==='leadership-toolkit.html'||page==='leadership-toolkit-packet.html')trail.push(['Leadership','leadership.html']);
     if(page==='leadership-toolkit-packet.html')trail.push(['Leadership Toolkit','leadership-toolkit.html']);
+    const seriesOverviewTitles={
+      'current-events-series.html':'Faith & Truth in Today’s World','james-series.html':'James',
+      'after-benediction-series.html':'After the Benediction','preferences-idols-series.html':'When Preferences Become Idols',
+      'first-john-study.html':'1 John','philippians-study.html':'Philippians'
+    };
+    if(detailParam&&location.search)trail.push([seriesOverviewTitles[page],page]);
     const crumbs=document.createElement('nav');
     crumbs.className='breadcrumbs';
     crumbs.setAttribute('aria-label','Breadcrumb');

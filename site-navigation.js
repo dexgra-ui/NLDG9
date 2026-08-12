@@ -151,7 +151,8 @@ function initializeNavigation(){
   ]);
   const detailParam=studyLandingDetailParams.get(page);
   const isNavigationLandingPage=navigationLandingPages.has(page)&&(!detailParam||!new URLSearchParams(location.search).get(detailParam));
-  if(main&&isNavigationLandingPage){
+  const isStudyExperiencePage=section==='studies';
+  if(main&&(isNavigationLandingPage||isStudyExperiencePage)){
     main.querySelectorAll('.breadcrumbs,.platform-breadcrumbs').forEach(item=>item.remove());
   }else if(main&&page!=='index.html'){
     main.querySelector('.breadcrumbs')?.remove();

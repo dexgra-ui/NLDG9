@@ -186,7 +186,7 @@ async function validateNavigationHierarchy(fileSet) {
     'new-believers.html','new-believer-mentor.html','new-believer-toolkit.html',
     'studies.html','book-by-book.html','current-events-series.html','james-series.html',
     'after-benediction-series.html','preferences-idols-series.html','first-john-study.html',
-    'philippians-study.html','technology-ai.html','sunday-school.html','women-of-faith.html',
+    'philippians-study.html','ruth-study.html','technology-ai.html','sunday-school.html','women-of-faith.html',
     'men-of-faith.html','marriage-family.html','difficult-questions.html','leadership.html',
     'walking-with-jesus.html','study-library.html','dashboard.html','ministry-tools.html',
     'topics.html','scripture-index.html','devotionals.html','articles.html','newsletter.html',
@@ -200,7 +200,7 @@ async function validateNavigationHierarchy(fileSet) {
   ];
   const studyDetailPages = [
     'current-events-series.html','james-series.html','after-benediction-series.html',
-    'preferences-idols-series.html','first-john-study.html','philippians-study.html',
+    'preferences-idols-series.html','first-john-study.html','philippians-study.html','ruth-study.html',
     'sunday-school-lesson.html','marriage-family-study.html','difficult-questions-study.html',
     'leadership-study.html','leadership-toolkit.html','leadership-toolkit-packet.html',
     'walking-with-jesus-study.html'

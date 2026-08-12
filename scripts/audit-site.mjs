@@ -180,6 +180,55 @@ async function validateQueryHistory(fileSet) {
   if (checks.every(([, pattern]) => pattern.test(content))) notes.push('Confirmed query-based study pages preserve full URLs in matching and saved history.');
 }
 
+
+async function validateNavigationHierarchy(fileSet) {
+  const landingPages = [
+    'new-believers.html','new-believer-mentor.html','new-believer-toolkit.html',
+    'studies.html','book-by-book.html','current-events-series.html','james-series.html',
+    'after-benediction-series.html','preferences-idols-series.html','first-john-study.html',
+    'philippians-study.html','technology-ai.html','sunday-school.html','women-of-faith.html',
+    'men-of-faith.html','marriage-family.html','difficult-questions.html','leadership.html',
+    'walking-with-jesus.html','study-library.html','dashboard.html','ministry-tools.html',
+    'topics.html','scripture-index.html','devotionals.html','articles.html','newsletter.html',
+    'resource-center.html','teaching-library.html','podcast.html','news.html','search.html',
+    'site-map.html','about.html','mission.html','contact.html','play.html','games.html',
+    'host-test-checklist.html'
+  ];
+  const detailPages = [
+    'new-believer-step.html','new-believer-mentor-session.html','new-believer-toolkit-packet.html',
+    'devotional.html','article.html','privacy.html','terms.html','ministry-assistant.html'
+  ];
+
+  for (const fileName of ['site-navigation.js','script.js']) {
+    const filePath = path.join(ROOT, fileName);
+    if (!fileSet.has(filePath)) {
+      errors.push(`Navigation hierarchy audit could not find \`${fileName}\`.`);
+      continue;
+    }
+    const source = await fs.readFile(filePath, 'utf8');
+    const match = source.match(/const navigationLandingPages=new Set\\(\\[([\\s\\S]*?)\\]\\);/);
+    if (!match) {
+      errors.push(`Navigation hierarchy audit could not find the landing-page registry in \`${fileName}\`.`);
+      continue;
+    }
+    for (const page of landingPages) {
+      if (!match[1].includes(`'${page}'`)) errors.push(`Landing page \`${page}\` is missing from \`${fileName}\` navigation rules.`);
+    }
+    for (const page of detailPages) {
+      if (match[1].includes(`'${page}'`)) errors.push(`Detail page \`${page}\` is incorrectly treated as a landing page in \`${fileName}\`.`);
+    }
+  }
+
+  const polishPath = path.join(ROOT, 'platform-polish.js');
+  if (fileSet.has(polishPath)) {
+    const source = await fs.readFile(polishPath, 'utf8');
+    for (const page of ['studies.html','study-library.html','dashboard.html','ministry-tools.html']) {
+      if (!source.includes(`'${page}'`)) errors.push(`Legacy platform navigation can still add a breadcrumb to \`${page}\`.`);
+    }
+  }
+  notes.push(`Verified ${landingPages.length} landing and archive pages omit redundant breadcrumbs while detail pages retain context.`);
+}
+
 async function validateSequence(fileSet, fileName, label) {
   const dataPath = path.join(ROOT, fileName);
   if (!fileSet.has(dataPath)) {
@@ -266,6 +315,7 @@ async function main() {
   await validateReferences(files, fileSet);
   await validateLegacyRoutes(fileSet);
   await validateQueryHistory(fileSet);
+  await validateNavigationHierarchy(fileSet);
   await validateStudySequences(fileSet);
   await validateLessonNavigationPlacement(files, fileSet);
 

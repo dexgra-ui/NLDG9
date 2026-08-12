@@ -132,12 +132,17 @@ function initializeNavigation(){
   const sectionRoots={
     start:['Start Here','new-believers.html'],studies:['Bible Studies','studies.html'],devotionals:['Devotionals','devotionals.html'],articles:['Articles','articles.html'],newsletter:['Newsletter','newsletter.html'],resources:['Resource Center','resource-center.html'],podcast:['Podcast','podcast.html'],news:['News','news.html'],search:['Search','search.html'],about:['Our Ministry','about.html'],games:['Games','play.html']
   };
-  const studyLandingPages=new Set([
+  const navigationLandingPages=new Set([
+    'new-believers.html','new-believer-mentor.html','new-believer-toolkit.html',
     'studies.html','book-by-book.html','current-events-series.html','james-series.html',
     'after-benediction-series.html','preferences-idols-series.html','first-john-study.html',
     'philippians-study.html','technology-ai.html',
     'sunday-school.html','women-of-faith.html','men-of-faith.html','marriage-family.html',
-    'difficult-questions.html','leadership.html','walking-with-jesus.html'
+    'difficult-questions.html','leadership.html','walking-with-jesus.html',
+    'study-library.html','dashboard.html','ministry-tools.html','topics.html','scripture-index.html',
+    'devotionals.html','articles.html','newsletter.html','resource-center.html','teaching-library.html',
+    'podcast.html','news.html','search.html','site-map.html',
+    'about.html','mission.html','contact.html','play.html','games.html','host-test-checklist.html'
   ]);
   const studyLandingDetailParams=new Map([
     ['current-events-series.html','week'],['james-series.html','week'],
@@ -145,8 +150,8 @@ function initializeNavigation(){
     ['first-john-study.html','lesson'],['philippians-study.html','lesson']
   ]);
   const detailParam=studyLandingDetailParams.get(page);
-  const isStudyLandingPage=studyLandingPages.has(page)&&(!detailParam||!new URLSearchParams(location.search).get(detailParam));
-  if(main&&isStudyLandingPage){
+  const isNavigationLandingPage=navigationLandingPages.has(page)&&(!detailParam||!new URLSearchParams(location.search).get(detailParam));
+  if(main&&isNavigationLandingPage){
     main.querySelectorAll('.breadcrumbs,.platform-breadcrumbs').forEach(item=>item.remove());
   }else if(main&&page!=='index.html'){
     main.querySelector('.breadcrumbs')?.remove();

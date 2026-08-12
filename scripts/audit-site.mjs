@@ -211,6 +211,45 @@ async function validateStudySequences(fileSet) {
   }
 }
 
+async function validateLessonNavigationPlacement(files, fileSet) {
+  const navigationClasses = [
+    'lesson-step-nav','mentor-session-nav','lesson-nav','reader-nav',
+    'series-navigation','series-lesson-nav','lesson-actions','content-sequence'
+  ];
+  const classPattern = new RegExp(`class=["'][^"']*(?:${navigationClasses.join('|')})[^"']*["']`, 'gi');
+  let checked = 0;
+
+  for (const file of files.filter(file => path.extname(file).toLowerCase() === '.html')) {
+    const content = await fs.readFile(file, 'utf8');
+    const mainStart = content.indexOf('<main');
+    const mainEnd = content.lastIndexOf('</main>');
+    const heading = mainStart >= 0 ? content.indexOf('<h1', mainStart) : -1;
+    for (const match of content.matchAll(classPattern)) {
+      checked += 1;
+      if (mainStart < 0 || mainEnd < 0 || heading < 0 || match.index < heading || match.index > mainEnd) {
+        errors.push(`Lesson navigation is not after the page heading inside main content: \`${relative(file)}\` (${match[0]}).`);
+      }
+    }
+  }
+
+  const unsafePosition = /position\s*:\s*(?:sticky|fixed|absolute)/i;
+  for (const file of files.filter(file => path.extname(file).toLowerCase() === '.css')) {
+    const content = await fs.readFile(file, 'utf8');
+    for (const block of content.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
+      if (navigationClasses.some(className => block[1].includes(`.${className}`)) && unsafePosition.test(block[2])) {
+        errors.push(`Lesson navigation uses overlay positioning in \`${relative(file)}\`: \`${block[1].trim()}\`.`);
+      }
+    }
+  }
+
+  const platformScript = path.join(ROOT, 'script.js');
+  if (fileSet.has(platformScript)) {
+    const content = await fs.readFile(platformScript, 'utf8');
+    if (!/main\.appendChild\(nav\)/.test(content)) errors.push('Dynamic previous/next content navigation is not appended after main page content.');
+  }
+  notes.push(`Verified ${checked} lesson and study navigation blocks remain after page headings and do not use overlay positioning.`);
+}
+
 function reportSection(title, items, emptyMessage) {
   const lines = [`## ${title}`, ''];
   if (!items.length) lines.push(emptyMessage);
@@ -228,6 +267,7 @@ async function main() {
   await validateLegacyRoutes(fileSet);
   await validateQueryHistory(fileSet);
   await validateStudySequences(fileSet);
+  await validateLessonNavigationPlacement(files, fileSet);
 
   const timestamp = new Date().toISOString();
   const report = [

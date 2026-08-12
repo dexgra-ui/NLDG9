@@ -198,6 +198,13 @@ async function validateNavigationHierarchy(fileSet) {
     'new-believer-step.html','new-believer-mentor-session.html','new-believer-toolkit-packet.html',
     'devotional.html','article.html','privacy.html','terms.html','ministry-assistant.html'
   ];
+  const studyDetailPages = [
+    'current-events-series.html','james-series.html','after-benediction-series.html',
+    'preferences-idols-series.html','first-john-study.html','philippians-study.html',
+    'sunday-school-lesson.html','marriage-family-study.html','difficult-questions-study.html',
+    'leadership-study.html','leadership-toolkit.html','leadership-toolkit-packet.html',
+    'walking-with-jesus-study.html'
+  ];
 
   for (const fileName of ['site-navigation.js','script.js']) {
     const filePath = path.join(ROOT, fileName);
@@ -219,14 +226,29 @@ async function validateNavigationHierarchy(fileSet) {
     }
   }
 
+  const integrationPath = path.join(ROOT, 'script.js');
+  if (fileSet.has(integrationPath)) {
+    const source = await fs.readFile(integrationPath, 'utf8');
+    const studyMatch = source.match(/const studyExperiencePages=new Set\(\[([\s\S]*?)\]\);/);
+    if (!studyMatch) errors.push('Navigation hierarchy audit could not find the study-experience registry in `script.js`.');
+    else {
+      for (const page of studyDetailPages) {
+        if (!studyMatch[1].includes(`'${page}'`)) errors.push(`Study detail page \`${page}\` can still receive generic navigation.`);
+      }
+    }
+    if (!/!isStudyExperiencePage&&!document\.querySelector\('\.content-sequence'\)/.test(source)) {
+      errors.push('Generic previous/next content navigation can still be added to study experiences.');
+    }
+  }
+
   const polishPath = path.join(ROOT, 'platform-polish.js');
   if (fileSet.has(polishPath)) {
     const source = await fs.readFile(polishPath, 'utf8');
-    for (const page of ['studies.html','study-library.html','dashboard.html','ministry-tools.html']) {
+    for (const page of ['studies.html','study-library.html','current-events-series.html','dashboard.html','ministry-tools.html']) {
       if (!source.includes(`'${page}'`)) errors.push(`Legacy platform navigation can still add a breadcrumb to \`${page}\`.`);
     }
   }
-  notes.push(`Verified ${landingPages.length} landing and archive pages omit redundant breadcrumbs while detail pages retain context.`);
+  notes.push(`Verified ${landingPages.length} landing and archive pages omit redundant breadcrumbs, and ${studyDetailPages.length} study detail routes use only their native navigation.`);
 }
 
 async function validateSequence(fileSet, fileName, label) {

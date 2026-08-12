@@ -1,5 +1,5 @@
 const navigationScript=document.createElement('script');
-navigationScript.src='site-navigation.js?v=1.9.5';
+navigationScript.src='site-navigation.js?v=1.9.6';
 navigationScript.async=false;
 document.head.appendChild(navigationScript);
 const contactLinksScript=document.createElement('script');
@@ -54,12 +54,17 @@ document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().g
     }
     const page=location.pathname.split('/').pop()||'index.html';
     const pageWithQuery=page+location.search;
-    const studyLandingPages=new Set([
+    const navigationLandingPages=new Set([
+      'new-believers.html','new-believer-mentor.html','new-believer-toolkit.html',
       'studies.html','book-by-book.html','current-events-series.html','james-series.html',
       'after-benediction-series.html','preferences-idols-series.html','first-john-study.html',
       'philippians-study.html','technology-ai.html',
       'sunday-school.html','women-of-faith.html','men-of-faith.html','marriage-family.html',
-      'difficult-questions.html','leadership.html','walking-with-jesus.html'
+      'difficult-questions.html','leadership.html','walking-with-jesus.html',
+      'study-library.html','dashboard.html','ministry-tools.html','topics.html','scripture-index.html',
+      'devotionals.html','articles.html','newsletter.html','resource-center.html','teaching-library.html',
+      'podcast.html','news.html','search.html','site-map.html',
+      'about.html','mission.html','contact.html','play.html','games.html','host-test-checklist.html'
     ]);
     const studyLandingDetailParams=new Map([
       ['current-events-series.html','week'],['james-series.html','week'],
@@ -67,8 +72,8 @@ document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().g
       ['first-john-study.html','lesson'],['philippians-study.html','lesson']
     ]);
     const detailParam=studyLandingDetailParams.get(page);
-    const isStudyLandingPage=studyLandingPages.has(page)&&(!detailParam||!new URLSearchParams(location.search).get(detailParam));
-    if(page!=='index.html'&&!isStudyLandingPage&&!document.querySelector('.breadcrumbs')){const main=document.querySelector('main');if(main){const current=(document.querySelector('h1')?.textContent||document.title.split('|')[0]).trim();const crumbs=document.createElement('nav');crumbs.className='breadcrumbs';crumbs.setAttribute('aria-label','Breadcrumb');crumbs.innerHTML=`<a href="index.html">Home</a><span>›</span><span aria-current="page">${escapeHtml(current)}</span>`;main.prepend(crumbs);}}
+    const isNavigationLandingPage=navigationLandingPages.has(page)&&(!detailParam||!new URLSearchParams(location.search).get(detailParam));
+    if(page!=='index.html'&&!isNavigationLandingPage&&!document.querySelector('.breadcrumbs')){const main=document.querySelector('main');if(main){const current=(document.querySelector('h1')?.textContent||document.title.split('|')[0]).trim();const crumbs=document.createElement('nav');crumbs.className='breadcrumbs';crumbs.setAttribute('aria-label','Breadcrumb');crumbs.innerHTML=`<a href="index.html">Home</a><span>›</span><span aria-current="page">${escapeHtml(current)}</span>`;main.prepend(crumbs);}}
     const current=window.NLDG_CONTENT.find(item=>item.url===page||item.url===pageWithQuery||item.id===document.body.dataset.studyPage);
     if(current){const ordered=window.NLDG_CONTENT,position=ordered.findIndex(item=>item.id===current.id),prev=position>0?ordered[position-1]:null,next=position<ordered.length-1?ordered[position+1]:null;const main=document.querySelector('main');if(main&&!document.querySelector('.content-sequence')){const nav=document.createElement('nav');nav.className='content-sequence';nav.setAttribute('aria-label','Previous and next content');nav.innerHTML=`${prev?`<a href="${escapeHtml(prev.url)}">← ${escapeHtml(prev.title)}</a>`:'<span></span>'}${next?`<a href="${escapeHtml(next.url)}">${escapeHtml(next.title)} →</a>`:'<span></span>'}`;main.appendChild(nav);}const related=window.NLDG_LIBRARY_API.related(current,3);if(related.length&&main&&!document.querySelector('.related-content')){const section=document.createElement('section');section.className='section related-content';section.innerHTML=`<div class="section-heading"><p class="kicker">Keep growing</p><h2>Related content</h2></div><div class="unified-content-grid">${related.map(card).join('')}</div>`;main.appendChild(section);}}
     window.dispatchEvent(new Event('nldg-library-ready'));

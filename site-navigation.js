@@ -132,7 +132,12 @@ function initializeNavigation(){
   const sectionRoots={
     start:['Start Here','new-believers.html'],studies:['Bible Studies','studies.html'],devotionals:['Devotionals','devotionals.html'],articles:['Articles','articles.html'],newsletter:['Newsletter','newsletter.html'],resources:['Resource Center','resource-center.html'],podcast:['Podcast','podcast.html'],news:['News','news.html'],search:['Search','search.html'],about:['Our Ministry','about.html'],games:['Games','play.html']
   };
-  if(main&&page!=='index.html'){
+  const studyLandingPages=new Set([
+    'studies.html','current-events-series.html','james-series.html','technology-ai.html',
+    'sunday-school.html','women-of-faith.html','men-of-faith.html','marriage-family.html',
+    'difficult-questions.html','leadership.html','walking-with-jesus.html'
+  ]);
+  if(main&&page!=='index.html'&&!studyLandingPages.has(page)){
     main.querySelector('.breadcrumbs')?.remove();
     const current=(document.querySelector('h1')?.textContent||document.title.split('|')[0]||'Current page').trim();
     const trail=[['Home','index.html']];

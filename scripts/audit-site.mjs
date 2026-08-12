@@ -306,6 +306,9 @@ async function validateLessonNavigationPlacement(files, fileSet) {
   const unsafePosition = /position\s*:\s*(?:sticky|fixed|absolute)/i;
   for (const file of files.filter(file => path.extname(file).toLowerCase() === '.css')) {
     const content = await fs.readFile(file, 'utf8');
+    if (/(?:^|})nav\{[^}]*position\s*:\s*(?:sticky|fixed|absolute)/i.test(content)) {
+      errors.push(`Unscoped nav overlay positioning can pull in-page navigation into the header in \`${relative(file)}\`.`);
+    }
     for (const block of content.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
       if (navigationClasses.some(className => block[1].includes(`.${className}`)) && unsafePosition.test(block[2])) {
         errors.push(`Lesson navigation uses overlay positioning in \`${relative(file)}\`: \`${block[1].trim()}\`.`);

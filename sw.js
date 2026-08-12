@@ -1,4 +1,4 @@
-const CACHE='nldg-v1-1-3';
+const CACHE='nldg-v1-1-4';
 const CORE=[
   './',
   'index.html',

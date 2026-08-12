@@ -1,4 +1,4 @@
-const CACHE='nldg-v1-1-1';
+const CACHE='nldg-v1-1-1-mobile-navigation-fix';
 const CORE=[
   './',
   'index.html',
@@ -7,7 +7,7 @@ const CORE=[
   'newsletter.html',
   'newsletter/who-god-says-you-are.html',
   'newsletter.js',
-  'platform.css?v=5.3.0',
+  'platform.css?v=5.3.1',
   'script.js',
   'site-navigation.js?v=1.9.0',
   'no-labels-approved-logo.png',

@@ -137,7 +137,9 @@ function initializeNavigation(){
     'sunday-school.html','women-of-faith.html','men-of-faith.html','marriage-family.html',
     'difficult-questions.html','leadership.html','walking-with-jesus.html'
   ]);
-  if(main&&page!=='index.html'&&!studyLandingPages.has(page)){
+  if(main&&studyLandingPages.has(page)){
+    main.querySelectorAll('.breadcrumbs,.platform-breadcrumbs').forEach(item=>item.remove());
+  }else if(main&&page!=='index.html'){
     main.querySelector('.breadcrumbs')?.remove();
     const current=(document.querySelector('h1')?.textContent||document.title.split('|')[0]||'Current page').trim();
     const trail=[['Home','index.html']];

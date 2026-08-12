@@ -1,5 +1,5 @@
 const navigationScript=document.createElement('script');
-navigationScript.src='site-navigation.js?v=1.9.6';
+navigationScript.src='site-navigation.js?v=1.9.7';
 navigationScript.async=false;
 document.head.appendChild(navigationScript);
 const contactLinksScript=document.createElement('script');
@@ -73,9 +73,18 @@ document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().g
     ]);
     const detailParam=studyLandingDetailParams.get(page);
     const isNavigationLandingPage=navigationLandingPages.has(page)&&(!detailParam||!new URLSearchParams(location.search).get(detailParam));
-    if(page!=='index.html'&&!isNavigationLandingPage&&!document.querySelector('.breadcrumbs')){const main=document.querySelector('main');if(main){const current=(document.querySelector('h1')?.textContent||document.title.split('|')[0]).trim();const crumbs=document.createElement('nav');crumbs.className='breadcrumbs';crumbs.setAttribute('aria-label','Breadcrumb');crumbs.innerHTML=`<a href="index.html">Home</a><span>›</span><span aria-current="page">${escapeHtml(current)}</span>`;main.prepend(crumbs);}}
+    const studyExperiencePages=new Set([
+      'studies.html','study-library.html','book-by-book.html','current-events-series.html','james-series.html',
+      'after-benediction-series.html','preferences-idols-series.html','first-john-study.html','philippians-study.html',
+      'technology-ai.html','sunday-school.html','sunday-school-lesson.html','women-of-faith.html','men-of-faith.html',
+      'marriage-family.html','marriage-family-study.html','difficult-questions.html','difficult-questions-study.html',
+      'leadership.html','leadership-study.html','leadership-toolkit.html','leadership-toolkit-packet.html',
+      'walking-with-jesus.html','walking-with-jesus-study.html','topics.html','scripture-index.html'
+    ]);
+    const isStudyExperiencePage=studyExperiencePages.has(page)||page.startsWith('study-')||page.startsWith('lesson-')||page.startsWith('women-of-faith-')||page.startsWith('men-of-faith-');
+    if(page!=='index.html'&&!isNavigationLandingPage&&!isStudyExperiencePage&&!document.querySelector('.breadcrumbs')){const main=document.querySelector('main');if(main){const current=(document.querySelector('h1')?.textContent||document.title.split('|')[0]).trim();const crumbs=document.createElement('nav');crumbs.className='breadcrumbs';crumbs.setAttribute('aria-label','Breadcrumb');crumbs.innerHTML=`<a href="index.html">Home</a><span>›</span><span aria-current="page">${escapeHtml(current)}</span>`;main.prepend(crumbs);}}
     const current=window.NLDG_CONTENT.find(item=>item.url===page||item.url===pageWithQuery||item.id===document.body.dataset.studyPage);
-    if(current){const ordered=window.NLDG_CONTENT,position=ordered.findIndex(item=>item.id===current.id),prev=position>0?ordered[position-1]:null,next=position<ordered.length-1?ordered[position+1]:null;const main=document.querySelector('main');if(main&&!document.querySelector('.content-sequence')){const nav=document.createElement('nav');nav.className='content-sequence';nav.setAttribute('aria-label','Previous and next content');nav.innerHTML=`${prev?`<a href="${escapeHtml(prev.url)}">← ${escapeHtml(prev.title)}</a>`:'<span></span>'}${next?`<a href="${escapeHtml(next.url)}">${escapeHtml(next.title)} →</a>`:'<span></span>'}`;main.appendChild(nav);}const related=window.NLDG_LIBRARY_API.related(current,3);if(related.length&&main&&!document.querySelector('.related-content')){const section=document.createElement('section');section.className='section related-content';section.innerHTML=`<div class="section-heading"><p class="kicker">Keep growing</p><h2>Related content</h2></div><div class="unified-content-grid">${related.map(card).join('')}</div>`;main.appendChild(section);}}
+    if(current){const ordered=window.NLDG_CONTENT,position=ordered.findIndex(item=>item.id===current.id),prev=position>0?ordered[position-1]:null,next=position<ordered.length-1?ordered[position+1]:null;const main=document.querySelector('main');if(main&&!isStudyExperiencePage&&!document.querySelector('.content-sequence')){const nav=document.createElement('nav');nav.className='content-sequence';nav.setAttribute('aria-label','Previous and next content');nav.innerHTML=`${prev?`<a href="${escapeHtml(prev.url)}">← ${escapeHtml(prev.title)}</a>`:'<span></span>'}${next?`<a href="${escapeHtml(next.url)}">${escapeHtml(next.title)} →</a>`:'<span></span>'}`;main.appendChild(nav);}const related=window.NLDG_LIBRARY_API.related(current,3);if(related.length&&main&&!document.querySelector('.related-content')){const section=document.createElement('section');section.className='section related-content';section.innerHTML=`<div class="section-heading"><p class="kicker">Keep growing</p><h2>Related content</h2></div><div class="unified-content-grid">${related.map(card).join('')}</div>`;main.appendChild(section);}}
     window.dispatchEvent(new Event('nldg-library-ready'));
   }).catch(()=>{});
 })();

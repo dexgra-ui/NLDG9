@@ -2,7 +2,8 @@
 if(window.NLDG_SCRIPTURE_LINKS_LOADED)return;
 window.NLDG_SCRIPTURE_LINKS_LOADED=true;
 const BOOKS='Genesis|Exodus|Leviticus|Numbers|Deuteronomy|Joshua|Judges|Ruth|1 Samuel|2 Samuel|1 Kings|2 Kings|1 Chronicles|2 Chronicles|Ezra|Nehemiah|Esther|Job|Psalms?|Proverbs|Ecclesiastes|Song of Songs|Song of Solomon|Isaiah|Jeremiah|Lamentations|Ezekiel|Daniel|Hosea|Joel|Amos|Obadiah|Jonah|Micah|Nahum|Habakkuk|Zephaniah|Haggai|Zechariah|Malachi|Matthew|Mark|Luke|John|Acts|Romans|1 Corinthians|2 Corinthians|Galatians|Ephesians|Philippians|Colossians|1 Thessalonians|2 Thessalonians|1 Timothy|2 Timothy|Titus|Philemon|Hebrews|James|1 Peter|2 Peter|1 John|2 John|3 John|Jude|Revelation';
-const REFERENCE=new RegExp(`\\b(?:${BOOKS})\\s+\\d{1,3}(?:(?::\\d{1,3}(?:[-–—]\\d{1,3})?)|(?:[-–—]\\d{1,3}))?(?:\\s*,\\s*\\d{1,3}(?::\\d{1,3}(?:[-–—]\\d{1,3})?)?)?`,'gi');
+const NUMBERED_BOOK_NAMES='Samuel|Kings|Chronicles|Corinthians|Thessalonians|Timothy|Peter|John';
+const REFERENCE=new RegExp(`\\b(?:${BOOKS})\\s+\\d{1,3}(?:(?::\\d{1,3}(?:[-–—]\\d{1,3})?)|(?:[-–—]\\d{1,3}))?(?:\\s*,\\s*\\d{1,3}(?!\\s+(?:${NUMBERED_BOOK_NAMES})\\b)(?::\\d{1,3}(?:[-–—]\\d{1,3})?)?)?`,'gi');
 const SKIP='a,script,style,textarea,input,select,option,button,code,pre,[contenteditable="true"],.no-scripture-links';
 const passageUrl=reference=>`https://www.biblegateway.com/passage/?search=${encodeURIComponent(reference.replace(/[–—]/g,'-'))}`;
 function linkTextNode(node){
@@ -37,7 +38,7 @@ function linkReferences(root=document.body){
  nodes.forEach(linkTextNode);
 }
 const style=document.createElement('style');
-style.textContent='.scripture-reference-link{color:#8fe9b6;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:750}.scripture-reference-link::after{content:" ↗";font-size:.72em}.scripture-reference-link:hover,.scripture-reference-link:focus-visible{color:#ffd55f}.scripture-reference-link:focus-visible{outline:3px solid #ffd55f;outline-offset:3px;border-radius:3px}';
+style.textContent='.scripture-reference-link{color:#8fe9b6;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:750}.scripture-reference-link::after{content:"\\00a0↗";font-size:.72em;white-space:nowrap}.scripture-reference-link:hover,.scripture-reference-link:focus-visible{color:#ffd55f}.scripture-reference-link:focus-visible{outline:3px solid #ffd55f;outline-offset:3px;border-radius:3px}';
 document.head.appendChild(style);
 const start=()=>{
  linkReferences(document.body);

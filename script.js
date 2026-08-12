@@ -11,7 +11,7 @@ scriptureLinksScript.src=new URL('scripture-links.js?v=1.0.0',document.currentSc
 scriptureLinksScript.async=false;
 document.head.appendChild(scriptureLinksScript);
 const navigationScopeFix=document.createElement('style');
-navigationScopeFix.textContent='@media(max-width:850px){.breadcrumbs,.content-sequence{position:static;top:auto;left:auto;right:auto;padding:0;background:transparent;border:0;border-radius:0}.breadcrumbs{display:flex}.content-sequence{display:grid}.nav-open .breadcrumbs{display:flex}.nav-open .content-sequence{display:grid}}';
+navigationScopeFix.textContent='@media(max-width:850px){.section-navigation{position:relative!important;top:auto!important;left:auto!important;right:auto!important}.breadcrumbs,.content-sequence{position:static;top:auto;left:auto;right:auto;padding:0;background:transparent;border:0;border-radius:0}.breadcrumbs{display:flex}.content-sequence{display:grid}.nav-open .breadcrumbs{display:flex}.nav-open .content-sequence{display:grid}}';
 document.head.appendChild(navigationScopeFix);
 document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
 (function ensureSocialLinks(){
@@ -34,7 +34,7 @@ document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().g
 })();
 
 (function platformIntegration(){
-  if(!document.querySelector('link[data-platform-styles]')){const link=document.createElement('link');link.rel='stylesheet';link.href='platform.css?v=5.3.0';link.dataset.platformStyles='true';document.head.appendChild(link);}
+  if(!document.querySelector('link[data-platform-styles]')){const link=document.createElement('link');link.rel='stylesheet';link.href='platform.css?v=5.3.1';link.dataset.platformStyles='true';document.head.appendChild(link);}
   const replaceBranding=root=>{const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let node;while(node=walker.nextNode()){if(node.parentElement?.closest('script,style'))continue;node.nodeValue=node.nodeValue.replaceAll('Brotherhood Bible Games','No Labels Games');}};
   replaceBranding(document.body);
   const loadScript=(src,test)=>new Promise((resolve,reject)=>{if(test()){resolve();return;}const existing=[...document.scripts].find(script=>script.src.includes(src.split('?')[0]));if(existing){if(test()){resolve();return;}existing.addEventListener('load',resolve,{once:true});existing.addEventListener('error',reject,{once:true});return;}const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=reject;document.head.appendChild(script);});
@@ -79,7 +79,7 @@ if(studyPageId){const loadScript=src=>new Promise((resolve,reject)=>{const exist
   const loadPersonalization=()=>{if(window.NLDG_PERSONAL)return;const existing=document.querySelector('script[data-personalization]');if(existing)return;const script=document.createElement('script');script.src='personalization.js?v=5.1.0';script.dataset.personalization='true';document.body.appendChild(script);};
   if(window.NLDG_DEVOTIONAL_LIBRARY_LOADED)loadPersonalization();else window.addEventListener('nldg-library-ready',loadPersonalization,{once:true});
   if(!document.querySelector('link[href^="dashboard.css"]')){const style=document.createElement('link');style.rel='stylesheet';style.href='dashboard.css?v=5.1.0';document.head.appendChild(style);}
-  if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js?v=6.5.0').catch(()=>{}));
+  if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js?v=6.5.1').catch(()=>{}));
   let installPrompt;
   window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();installPrompt=event;const header=document.querySelector('.site-header');if(!header||document.querySelector('.install-app-button'))return;const button=document.createElement('button');button.type='button';button.className='install-app-button';button.textContent='Install App';button.addEventListener('click',async()=>{if(!installPrompt)return;installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;button.remove();});header.appendChild(button);});
 })();

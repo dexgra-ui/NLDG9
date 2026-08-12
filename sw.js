@@ -1,4 +1,4 @@
-const CACHE='nldg-v1-1-1-study-landing-breadcrumb-fix';
+const CACHE='nldg-v1-1-1';
 const CORE=[
   './',
   'index.html',

@@ -206,7 +206,7 @@ async function validateNavigationHierarchy(fileSet) {
       continue;
     }
     const source = await fs.readFile(filePath, 'utf8');
-    const match = source.match(/const navigationLandingPages=new Set\\(\\[([\\s\\S]*?)\\]\\);/);
+    const match = source.match(/const navigationLandingPages=new Set\(\[([\s\S]*?)\]\);/);
     if (!match) {
       errors.push(`Navigation hierarchy audit could not find the landing-page registry in \`${fileName}\`.`);
       continue;

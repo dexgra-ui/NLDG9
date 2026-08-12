@@ -58,7 +58,7 @@ document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().g
       'new-believers.html','new-believer-mentor.html','new-believer-toolkit.html',
       'studies.html','book-by-book.html','current-events-series.html','james-series.html',
       'after-benediction-series.html','preferences-idols-series.html','first-john-study.html',
-      'philippians-study.html','technology-ai.html',
+      'philippians-study.html','ruth-study.html','technology-ai.html',
       'sunday-school.html','women-of-faith.html','men-of-faith.html','marriage-family.html',
       'difficult-questions.html','leadership.html','walking-with-jesus.html',
       'study-library.html','dashboard.html','ministry-tools.html','topics.html','scripture-index.html',
@@ -69,13 +69,13 @@ document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().g
     const studyLandingDetailParams=new Map([
       ['current-events-series.html','week'],['james-series.html','week'],
       ['after-benediction-series.html','lesson'],['preferences-idols-series.html','lesson'],
-      ['first-john-study.html','lesson'],['philippians-study.html','lesson']
+      ['first-john-study.html','lesson'],['philippians-study.html','lesson'],['ruth-study.html','lesson']
     ]);
     const detailParam=studyLandingDetailParams.get(page);
     const isNavigationLandingPage=navigationLandingPages.has(page)&&(!detailParam||!new URLSearchParams(location.search).get(detailParam));
     const studyExperiencePages=new Set([
       'studies.html','study-library.html','book-by-book.html','current-events-series.html','james-series.html',
-      'after-benediction-series.html','preferences-idols-series.html','first-john-study.html','philippians-study.html',
+      'after-benediction-series.html','preferences-idols-series.html','first-john-study.html','philippians-study.html','ruth-study.html',
       'technology-ai.html','sunday-school.html','sunday-school-lesson.html','women-of-faith.html','men-of-faith.html',
       'marriage-family.html','marriage-family-study.html','difficult-questions.html','difficult-questions-study.html',
       'leadership.html','leadership-study.html','leadership-toolkit.html','leadership-toolkit-packet.html',

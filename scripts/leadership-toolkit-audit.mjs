@@ -77,13 +77,15 @@ try{
     assert(await page.locator('#decision-guide [data-action="complete"]').getAttribute('aria-pressed')==='true','Completion control did not restore its pressed state');
   });
 
-  await test('Leadership navigation and breadcrumbs connect the Toolkit',async()=>{
+  await test('Leadership navigation and native links connect the Toolkit',async()=>{
     await page.goto(destination('leadership-toolkit.html'));await ready(page);
     assert(await page.locator('.section-navigation a[href="leadership-toolkit.html"][aria-current="page"]').count()===1,'Toolkit section navigation is not active');
-    assert(await page.locator('.breadcrumbs a[href="leadership.html"]').count()===1,'Toolkit breadcrumb does not include Leadership');
+    assert(await page.locator('.breadcrumbs').count()===0,'Toolkit should not restore the removed breadcrumb bar');
+    assert(await page.locator('main a[href="leadership.html"]').count()>0,'Toolkit does not include a native return link to Leadership');
     await page.goto(destination('leadership-toolkit-packet.html'));await ready(page);
-    assert(await page.locator('.breadcrumbs a[href="leadership.html"]').count()===1,'Packet breadcrumb does not include Leadership');
-    assert(await page.locator('.breadcrumbs a[href="leadership-toolkit.html"]').count()===1,'Packet breadcrumb does not include Leadership Toolkit');
+    assert(await page.locator('.section-navigation a[href="leadership-toolkit.html"][aria-current="page"]').count()===1,'Packet section navigation does not identify the Toolkit');
+    assert(await page.locator('.breadcrumbs').count()===0,'Packet should not restore the removed breadcrumb bar');
+    assert(await page.locator('main a[href="leadership-toolkit.html"]').count()>0,'Packet does not include a native return link to the Toolkit');
   });
 
   await test('Toolkit is discoverable from Leadership, resources, site map, and search',async()=>{

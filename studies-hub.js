@@ -14,6 +14,8 @@
   const empty=document.getElementById('study-empty');
   const search=document.getElementById('study-search');
   const filter=document.getElementById('study-filter');
+  const resultsSummary=document.getElementById('study-results-summary');
+  const toggleFullLibrary=document.getElementById('toggle-full-library');
   const collections=document.getElementById('collection-grid');
   const featured=document.getElementById('featured-study');
   const dashboard=document.getElementById('study-dashboard');
@@ -24,6 +26,8 @@
   const escapeHtml=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
   const readState=()=>{try{return JSON.parse(localStorage.getItem('nldg-study-state')||'{}');}catch(error){return {};}};
   const writeState=state=>{try{localStorage.setItem('nldg-study-state',JSON.stringify(state));}catch(error){}};
+  const initialLibraryLimit=12;
+  let libraryExpanded=false;
 
   const journeyCollections=[
     {id:'current-events',icon:'🌎',title:'Faith & Truth in Today’s World',eyebrow:'Featured collection',description:'A 42-week study connecting Scripture with culture, technology, justice, mental health, and Christian hope.',meta:'42 of 42 lessons available',status:'available',href:'current-events-series.html',action:'Open Complete Series',featured:true},
@@ -47,7 +51,7 @@
   };
 
   const categories=[...new Set(studies.map(study=>study.category).filter(Boolean))].sort();
-  if(filter)filter.innerHTML='<option value="all">All types</option>'+categories.map(category=>`<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`).join('');
+  if(filter)filter.innerHTML='<option value="all">All categories</option>'+categories.map(category=>`<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`).join('');
 
   if(collections&&!collections.dataset.static){
     collections.innerHTML=journeyCollections.map(item=>{
@@ -68,8 +72,21 @@
       const searchable=[study.title,study.description,(study.scripture||[]).join(' '),(study.topics||[]).join(' '),study.series,study.book,study.originalCategory,(study.audience||[]).join(' ')].filter(Boolean).join(' ').toLowerCase();
       return (type==='all'||study.category===type)&&(!term||searchable.includes(term));
     });
-    if(grid)grid.innerHTML=matches.map(card).join('');
+    const filtered=Boolean(term)||type!=='all';
+    const visible=filtered||libraryExpanded?matches:matches.slice(0,initialLibraryLimit);
+    if(grid)grid.innerHTML=visible.map(card).join('');
     if(empty)empty.hidden=matches.length!==0;
+    if(resultsSummary){
+      if(!matches.length)resultsSummary.textContent='No studies match your current search.';
+      else if(filtered)resultsSummary.textContent=`Showing ${matches.length} matching ${matches.length===1?'study':'studies'}.`;
+      else if(libraryExpanded)resultsSummary.textContent=`Showing all ${matches.length} published studies and lessons.`;
+      else resultsSummary.textContent=`Showing ${Math.min(initialLibraryLimit,matches.length)} of ${matches.length} published studies and lessons.`;
+    }
+    if(toggleFullLibrary){
+      toggleFullLibrary.hidden=filtered||matches.length<=initialLibraryLimit;
+      toggleFullLibrary.textContent=libraryExpanded?'Show Fewer Studies':'Show Full Library';
+      toggleFullLibrary.setAttribute('aria-expanded',String(libraryExpanded));
+    }
   };
 
   const renderDashboard=()=>{
@@ -89,6 +106,11 @@
   if(featured&&featuredStudy)featured.innerHTML=`<div><span class="content-type">Featured Study</span><h2>${escapeHtml(featuredStudy.title)}</h2><p>${escapeHtml(featuredStudy.description)}</p><div class="study-meta"><span>📖 ${escapeHtml((featuredStudy.scripture||[]).join(', '))}</span><span>${featuredStudy.series==='Walking with Jesus'?'Use at your own pace':`⏱ ${escapeHtml(featuredStudy.duration||45)} minutes`}</span><span>${escapeHtml(featuredStudy.difficulty||'All Levels')}</span></div><div class="actions"><a class="button primary study-open" data-study-id="${escapeHtml(featuredStudy.id)}" href="${escapeHtml(featuredStudy.url)}">Begin Study</a><a class="button secondary" href="#study-grid">Browse Library</a></div></div><div class="featured-study-symbol">📖</div>`;
   search?.addEventListener('input',renderGrid);
   filter?.addEventListener('change',renderGrid);
+  toggleFullLibrary?.addEventListener('click',()=>{
+    libraryExpanded=!libraryExpanded;
+    renderGrid();
+    if(!libraryExpanded)document.querySelector('.studies-section')?.scrollIntoView({behavior:'smooth',block:'start'});
+  });
   document.addEventListener('click',event=>{
     const journeyFilter=event.target.closest('[data-journey-filter]');
     if(journeyFilter&&filter){

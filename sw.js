@@ -1,4 +1,4 @@
-const CACHE='nldg-v1-1-4';
+const CACHE='nldg-v1-1-5';
 const CORE=[
   './',
   'index.html',
@@ -9,6 +9,7 @@ const CORE=[
   'newsletter.js',
   'platform.css?v=5.3.1',
   'script.js',
+  'site-intro.js?v=1.0.0',
   'site-navigation.js?v=1.9.7',
   'no-labels-approved-logo.png',
   'manifest.webmanifest'

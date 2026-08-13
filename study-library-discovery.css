@@ -1,0 +1,36 @@
+.library-results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 1.25rem;
+  padding: .9rem 1rem;
+  border: 1px solid rgba(128, 160, 215, .22);
+  border-radius: 14px;
+  background: rgba(7, 30, 61, .62);
+}
+
+.library-results-bar p {
+  margin: 0;
+  color: #c3cde0;
+}
+
+.library-results-bar .button {
+  flex: 0 0 auto;
+  min-height: 44px;
+}
+
+.library-results-bar .button[hidden] {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .library-results-bar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .library-results-bar .button {
+    width: 100%;
+  }
+}

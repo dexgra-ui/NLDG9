@@ -8,3 +8,14 @@
 .site-header nav .install-app-button{min-height:42px;padding:.65rem .85rem;border:1px solid rgba(78,137,255,.5);border-radius:10px;background:rgba(40,103,240,.18);color:#fff;font:inherit;font-size:.88rem;font-weight:800;white-space:nowrap;cursor:pointer}
 .site-header nav .install-app-button:hover,.site-header nav .install-app-button:focus-visible{border-color:#ffd34f;background:#14264c;outline:none;color:#ffd34f}
 @media(max-width:1600px){.site-header nav .install-app-button{width:100%;text-align:left}}
+
+/* Lesson detail pages keep their identity while bringing teaching content into view sooner. */
+.compact-lesson-header :is(.mof-study-hero,.wof-study-hero,.mf-study-hero,.dq-study-hero,.ld-study-hero,.wj-hero,.prep-hero,.book-hero){padding-top:clamp(30px,4vw,52px);padding-bottom:clamp(28px,4vw,48px)}
+.compact-lesson-header :is(.mof-study-hero,.wof-study-hero,.mf-study-hero,.dq-study-hero,.ld-study-hero,.wj-hero,.prep-hero,.book-hero) h1{max-width:980px;margin-top:8px;margin-bottom:12px;font-size:clamp(2.45rem,5vw,4.6rem);line-height:1;letter-spacing:-.045em}
+.compact-lesson-header :is(.mof-study-hero,.wof-study-hero,.mf-study-hero,.dq-study-hero,.ld-study-hero,.wj-hero,.prep-hero,.book-hero) .lead,
+.compact-lesson-header :is(.prep-lead,.book-lead){font-size:clamp(1rem,1.7vw,1.25rem);line-height:1.55}
+.compact-lesson-header :is(.mof-study-meta,.wof-study-meta,.mf-study-meta,.dq-study-meta,.ld-study-meta,.wj-meta,.prep-meta,.series-meta){gap:7px;margin-top:14px}
+.compact-lesson-header :is(.mof-study-meta,.wof-study-meta,.mf-study-meta,.dq-study-meta,.ld-study-meta,.wj-meta,.prep-meta,.series-meta) span{padding:6px 9px}
+.compact-lesson-header :is(.series-back){margin-bottom:14px}
+.compact-lesson-header :is(.prep-hero,.book-hero) blockquote{margin-top:18px;margin-bottom:16px;padding:15px 18px;font-size:clamp(1.05rem,1.8vw,1.3rem)}
+@media(max-width:700px){.compact-lesson-header :is(.mof-study-hero,.wof-study-hero,.mf-study-hero,.dq-study-hero,.ld-study-hero,.wj-hero,.prep-hero,.book-hero){padding:24px 16px 26px}.compact-lesson-header :is(.mof-study-hero,.wof-study-hero,.mf-study-hero,.dq-study-hero,.ld-study-hero,.wj-hero,.prep-hero,.book-hero) h1{font-size:clamp(2.25rem,11vw,3.45rem);line-height:1.02}.compact-lesson-header :is(.mof-study-meta,.wof-study-meta,.mf-study-meta,.dq-study-meta,.ld-study-meta,.wj-meta,.prep-meta,.series-meta) span{font-size:.76rem}.compact-lesson-header :is(.prep-hero,.book-hero) blockquote{margin-top:14px}}

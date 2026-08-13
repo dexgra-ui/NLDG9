@@ -44,7 +44,7 @@ document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().g
   window.NLDG_CONTENT_CARD=card;
   ensureLibrary().then(()=>{
     const header=document.querySelector('.site-header');
-    if(header&&!document.querySelector('.global-search-shell')){
+    if(header&&!document.body.classList.contains('studies-library-page')&&!document.querySelector('.global-search-shell')){
       const shell=document.createElement('div');shell.className='global-search-shell';shell.innerHTML='<label class="sr-only" for="global-site-search">Search all ministry content</label><input id="global-site-search" type="search" placeholder="Search studies, games, guides, prayer resources..."><div id="global-search-results" class="global-search-results" hidden></div>';
       header.insertBefore(shell,header.querySelector('.menu,nav'));
       const input=shell.querySelector('input'),results=shell.querySelector('#global-search-results');

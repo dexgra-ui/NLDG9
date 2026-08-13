@@ -19,7 +19,7 @@ for(const item of lessons){
  const exists=fs.existsSync(full);
  const html=exists?fs.readFileSync(full,'utf8'):'';
  const globalLoader=/script\.js(?:\?|["'])/.test(html);
- const contentRoot=/(lesson-wrap|study-content|wof-study-content|mof-study-content|mf-study-content|<article\b)/i.test(html);
+ const contentRoot=/(lesson-wrap|study-content|wof-study-content|mof-study-content|mf-study-content|prep-shell|<article\b)/i.test(html);
  const eligible=exists&&globalLoader&&contentRoot;
  if(!eligible)failures.push(`${item.id}: ${!exists?'page absent':!globalLoader?'global loader absent':'supported lesson content root absent'}`);
  rows.push(`| ${item.id} | ${item.title} | ${item.url} | ${exists?'Yes':'No'} | ${globalLoader?'Yes':'No'} | ${contentRoot?'Yes':'No'} | ${eligible?'Covered':'BLOCKED'} |`);

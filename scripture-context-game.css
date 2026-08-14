@@ -1,0 +1,101 @@
+.suspicion-practice {
+  border-color: rgba(255, 211, 90, 0.35);
+  background: linear-gradient(145deg, rgba(255, 211, 90, 0.055), rgba(120, 169, 255, 0.035));
+}
+
+.suspicion-round {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1.25rem;
+}
+
+.suspicion-round details {
+  overflow: hidden;
+  border: 1px solid var(--context-line);
+  border-radius: 14px;
+  background: rgba(7, 19, 41, 0.72);
+}
+
+.suspicion-round summary {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 1rem 1.1rem;
+  color: #f7f9ff;
+  font-weight: 800;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.suspicion-round summary span {
+  display: grid;
+  flex: 0 0 1.8rem;
+  height: 1.8rem;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 211, 90, 0.14);
+  color: var(--context-gold);
+  font-size: 0.8rem;
+}
+
+.suspicion-round details > div {
+  padding: 0 1.1rem 1rem 3.7rem;
+}
+
+.suspicion-round details > div strong {
+  color: var(--context-gold);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.suspicion-round details > div p {
+  margin: 0.35rem 0 0;
+}
+
+.suspicion-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding: 1.1rem;
+  border-radius: 14px;
+  background: rgba(120, 169, 255, 0.09);
+}
+
+.suspicion-cta p {
+  margin: 0.25rem 0 0;
+}
+
+.suspicion-cta .button {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 700px) {
+  .suspicion-round details > div {
+    padding-left: 1.1rem;
+  }
+
+  .suspicion-cta {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .suspicion-cta .button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media print {
+  .suspicion-practice,
+  .suspicion-round details,
+  .suspicion-cta {
+    background: #fff !important;
+  }
+
+  .suspicion-round details > div {
+    display: block;
+  }
+}

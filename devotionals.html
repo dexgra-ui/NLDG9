@@ -50,7 +50,7 @@
   <div class="devo-rhythm-grid"><div><strong>1. Read</strong><span>Begin with the Scripture reference.</span></div><div><strong>2. Reflect</strong><span>Notice what challenges or encourages you.</span></div><div><strong>3. Respond</strong><span>Choose one faithful action for today.</span></div><div><strong>4. Pray</strong><span>Speak honestly with God.</span></div></div>
 </section>
 </main>
-<footer class="ministry-footer"><div class="footer-invitation"><img src="no-labels-approved-logo.png" alt=""><div><strong>No Labels, Designed by God</strong><p>Short Scripture-centered reflections for real life.</p></div></div><div class="footer-links"></div><small>© <span data-year></span> No Labels, Designed by God.</small></footer>
+<footer class="ministry-footer"><div class="footer-invitation"><img src="no-labels-approved-logo.png" alt=""><div><strong>No Labels, Designed by God</strong><p>Short Scripture-centered reflections for real life.</p></div></div><div class="footer-links"></div><small>© <span data-year></span> No Labels Designed by God, LLC.</small></footer>
 <script>
 const search=document.getElementById('devoSearch'),theme=document.getElementById('devoTheme'),cards=[...document.querySelectorAll('.devo-card')],empty=document.getElementById('devoEmpty');
 function filterDevotionals(){const query=search.value.trim().toLowerCase(),selected=theme.value;let shown=0;cards.forEach(card=>{const matchesText=!query||card.dataset.search.includes(query),matchesTheme=selected==='all'||card.dataset.theme===selected,visible=matchesText&&matchesTheme;card.hidden=!visible;if(visible)shown++});empty.hidden=shown!==0}

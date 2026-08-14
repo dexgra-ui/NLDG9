@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#071735">
 <title>Team Game | No Labels, Designed by God</title>
 <style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#030713}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}iframe{display:block;width:100%;height:100%;border:0;background:#030713}.tie-overlay{position:fixed;z-index:50000;inset:0;display:grid;place-items:center;padding:20px;background:rgba(1,5,17,.86);backdrop-filter:blur(8px)}.tie-overlay.hidden{display:none}.tie-card{width:min(620px,94vw);padding:clamp(28px,6vw,52px);border:3px solid rgba(255,211,78,.58);border-radius:28px;background:radial-gradient(circle at top,#173f8c 0,#081735 48%,#030713 100%);color:#f7f9ff;text-align:center;box-shadow:0 28px 80px rgba(0,0,0,.55)}.tie-label{margin:0 0 .6rem;color:#ffd34e;font-size:.82rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase}.tie-card h2{margin:0;font-size:clamp(38px,8vw,68px);line-height:1}.tie-card p{margin:1rem auto;color:#cbd5f3;font-size:clamp(17px,3vw,21px);line-height:1.55}.tie-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:1.5rem}.tie-actions button,.tie-actions a{min-height:48px;padding:12px 18px;border:1px solid rgba(255,255,255,.18);border-radius:12px;background:#243b78;color:#fff;font:inherit;font-weight:900;text-decoration:none;cursor:pointer}.tie-actions .primary{border-color:#ffd34e;background:linear-gradient(#fff0a4,#ffd34e);color:#2d2400}@media(max-width:560px){.tie-actions{align-items:stretch;flex-direction:column}.tie-actions button,.tie-actions a{width:100%;box-sizing:border-box}}</style>
-<style>.hidden{display:none!important}</style>
+<style>.hidden{display:none!important}.tie-card{box-sizing:border-box}</style>
 </head>
 <body>
 <h1 class="sr-only">No Labels Bible Team Game</h1>
@@ -126,7 +126,22 @@ function acceptTie(){
   tiebreaker.active=false;
   showFinal('Game Ends in a Tie',`${tiebreaker.teamNames.join(' and ')} finish with ${tiebreaker.score} points each.`,'Final Result');
 }
+function resetTeamScores(){
+  const {outerDoc}=gameDocuments();
+  if(!outerDoc)return;
+  const standings=teamStandings();
+  const minus=outerDoc.getElementById('minusPoints');
+  const plus=outerDoc.getElementById('plusPoints');
+  standings.forEach(team=>{
+    team.card.click();
+    const control=team.score>=0?minus:plus;
+    const changes=Math.ceil(Math.abs(team.score)/100);
+    for(let step=0;step<changes;step++)control?.click();
+  });
+  standings[0]?.card.click();
+}
 function playAgain(){
+  resetTeamScores();
   tiebreaker={active:false,score:0,teamNames:[],teamIndexes:[],completionKey:''};
   tieOverlay.classList.add('hidden');
   gameDocuments().childDoc?.getElementById('again')?.click();

@@ -5,17 +5,40 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#071735">
 <title>Team Game | No Labels, Designed by God</title>
-<style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#030713}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}iframe{display:block;width:100%;height:100%;border:0;background:#030713}</style>
+<style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#030713}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}iframe{display:block;width:100%;height:100%;border:0;background:#030713}.tie-overlay{position:fixed;z-index:50000;inset:0;display:grid;place-items:center;padding:20px;background:rgba(1,5,17,.86);backdrop-filter:blur(8px)}.tie-overlay.hidden{display:none}.tie-card{width:min(620px,94vw);padding:clamp(28px,6vw,52px);border:3px solid rgba(255,211,78,.58);border-radius:28px;background:radial-gradient(circle at top,#173f8c 0,#081735 48%,#030713 100%);color:#f7f9ff;text-align:center;box-shadow:0 28px 80px rgba(0,0,0,.55)}.tie-label{margin:0 0 .6rem;color:#ffd34e;font-size:.82rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase}.tie-card h2{margin:0;font-size:clamp(38px,8vw,68px);line-height:1}.tie-card p{margin:1rem auto;color:#cbd5f3;font-size:clamp(17px,3vw,21px);line-height:1.55}.tie-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:1.5rem}.tie-actions button,.tie-actions a{min-height:48px;padding:12px 18px;border:1px solid rgba(255,255,255,.18);border-radius:12px;background:#243b78;color:#fff;font:inherit;font-weight:900;text-decoration:none;cursor:pointer}.tie-actions .primary{border-color:#ffd34e;background:linear-gradient(#fff0a4,#ffd34e);color:#2d2400}@media(max-width:560px){.tie-actions{align-items:stretch;flex-direction:column}.tie-actions button,.tie-actions a{width:100%;box-sizing:border-box}}</style>
+<style>.hidden{display:none!important}</style>
 </head>
 <body>
 <h1 class="sr-only">No Labels Bible Team Game</h1>
 <iframe id="wrapper" title="No Labels Bible game" allow="fullscreen" allowfullscreen></iframe>
+<section id="tieOverlay" class="tie-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="tieTitle" aria-describedby="tieMessage">
+  <div class="tie-card">
+    <p id="tieLabel" class="tie-label">Round Complete</p>
+    <h2 id="tieTitle">We Have a Tie!</h2>
+    <p id="tieMessage"></p>
+    <div id="tieChoices" class="tie-actions">
+      <button id="startTiebreaker" class="primary" type="button">Start Tiebreaker</button>
+      <button id="acceptTie" type="button">End in a Tie</button>
+    </div>
+    <div id="finalChoices" class="tie-actions hidden">
+      <button id="playAgain" class="primary" type="button">Play Again</button>
+      <a href="play.html">Game Center</a>
+    </div>
+  </div>
+</section>
 <script>
 const params=new URLSearchParams(location.search);
 const requestedGame=params.get('game');
 const groups=['preschool','kids','teens','adults','family'];
 const group=groups.includes(params.get('group'))?params.get('group'):'family';
 const wrapper=document.getElementById('wrapper');
+const tieOverlay=document.getElementById('tieOverlay');
+const tieLabel=document.getElementById('tieLabel');
+const tieTitle=document.getElementById('tieTitle');
+const tieMessage=document.getElementById('tieMessage');
+const tieChoices=document.getElementById('tieChoices');
+const finalChoices=document.getElementById('finalChoices');
+let tiebreaker={active:false,score:0,teamNames:[],teamIndexes:[],completionKey:''};
 if(requestedGame==='faith-wheel.html'){
   location.replace(`faith-wheel.html?group=${encodeURIComponent(group)}`);
 }else{
@@ -45,8 +68,105 @@ function cleanGame(){
     apply();
   }catch{}
 }
+function gameDocuments(){
+  try{
+    const outerDoc=wrapper.contentDocument;
+    return {outerDoc,childDoc:outerDoc?.getElementById('gameframe')?.contentDocument};
+  }catch{return {outerDoc:null,childDoc:null}}
+}
+function teamStandings(){
+  const {outerDoc}=gameDocuments();
+  return [...(outerDoc?.querySelectorAll('#scorebar .team')||[])].map((card,index)=>({
+    index,
+    name:card.querySelector('strong')?.textContent.trim()||`Team ${index+1}`,
+    score:Number(card.querySelector('span')?.textContent)||0,
+    active:card.classList.contains('active'),
+    card
+  }));
+}
+function showTiePrompt(leaders){
+  tiebreaker.score=leaders[0].score;
+  tiebreaker.teamNames=leaders.map(team=>team.name);
+  tiebreaker.teamIndexes=leaders.map(team=>team.index);
+  tieLabel.textContent='Round Complete';
+  tieTitle.textContent='We Have a Tie!';
+  tieMessage.textContent=`${tiebreaker.teamNames.join(' and ')} are tied at ${tiebreaker.score} points.`;
+  tieChoices.classList.remove('hidden');
+  finalChoices.classList.add('hidden');
+  tieOverlay.classList.remove('hidden');
+  document.getElementById('startTiebreaker').focus();
+}
+function showFinal(title,message,label='Game Complete'){
+  tieLabel.textContent=label;
+  tieTitle.textContent=title;
+  tieMessage.textContent=message;
+  tieChoices.classList.add('hidden');
+  finalChoices.classList.remove('hidden');
+  tieOverlay.classList.remove('hidden');
+  document.getElementById('playAgain').focus();
+}
+function startTiebreaker(){
+  const {outerDoc,childDoc}=gameDocuments();
+  if(!outerDoc||!childDoc)return;
+  tiebreaker.active=true;
+  tieOverlay.classList.add('hidden');
+  const firstTied=teamStandings().find(team=>tiebreaker.teamIndexes.includes(team.index));
+  if(firstTied&&!firstTied.active)firstTied.card.click();
+  childDoc.getElementById('again')?.click();
+  setTimeout(()=>{
+    const current=gameDocuments().childDoc;
+    const length=current?.getElementById('length');
+    if(length)length.value=[...length.options].map(option=>Number(option.value)).filter(Number.isFinite).sort((a,b)=>a-b)[0]||length.value;
+    current?.getElementById('start')?.click();
+    const status=gameDocuments().outerDoc?.getElementById('status');
+    if(status)status.textContent='Tiebreaker: first tied team to take the lead wins';
+  },120);
+}
+function acceptTie(){
+  tiebreaker.active=false;
+  showFinal('Game Ends in a Tie',`${tiebreaker.teamNames.join(' and ')} finish with ${tiebreaker.score} points each.`,'Final Result');
+}
+function playAgain(){
+  tiebreaker={active:false,score:0,teamNames:[],teamIndexes:[],completionKey:''};
+  tieOverlay.classList.add('hidden');
+  gameDocuments().childDoc?.getElementById('again')?.click();
+}
+function monitorGameEnd(){
+  const {outerDoc,childDoc}=gameDocuments();
+  if(!outerDoc||!childDoc)return;
+  const standings=teamStandings();
+  if(tiebreaker.active){
+    const leader=[...standings].sort((a,b)=>b.score-a.score)[0];
+    if(leader&&leader.score>tiebreaker.score){
+      tiebreaker.active=false;
+      const status=outerDoc.getElementById('status');
+      if(status)status.textContent=`${leader.name} wins the tiebreaker!`;
+      const finalScore=standings.filter(team=>tiebreaker.teamIndexes.includes(team.index)).map(team=>`${team.name}: ${team.score}`).join(' • ');
+      showFinal(`${leader.name} Wins!`,`${finalScore}. The tiebreaker is complete.`,'Tiebreaker Complete');
+      return;
+    }
+    const activeTeam=standings.find(team=>team.active);
+    if(activeTeam&&!tiebreaker.teamIndexes.includes(activeTeam.index)){
+      const eligible=standings.filter(team=>tiebreaker.teamIndexes.includes(team.index));
+      const nextTied=eligible.find(team=>team.index>activeTeam.index)||eligible[0];
+      nextTied?.card.click();
+    }
+    return;
+  }
+  const complete=childDoc.getElementById('completeView');
+  if(!complete||complete.classList.contains('hidden')){tiebreaker.completionKey='';return}
+  const key=standings.map(team=>`${team.name}:${team.score}`).join('|');
+  if(!key||key===tiebreaker.completionKey)return;
+  tiebreaker.completionKey=key;
+  const high=Math.max(...standings.map(team=>team.score));
+  const leaders=standings.filter(team=>team.score===high);
+  if(leaders.length>1)showTiePrompt(leaders);
+}
+document.getElementById('startTiebreaker').onclick=startTiebreaker;
+document.getElementById('acceptTie').onclick=acceptTie;
+document.getElementById('playAgain').onclick=playAgain;
 wrapper.addEventListener('load',()=>{cleanGame();setTimeout(cleanGame,200)});
-setInterval(cleanGame,600);
+setInterval(()=>{cleanGame();monitorGameEnd()},300);
 </script>
 </body>
 </html>

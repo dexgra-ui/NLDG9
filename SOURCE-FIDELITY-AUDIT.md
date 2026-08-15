@@ -44,20 +44,22 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Lamentations | PASS after series-guide restoration and label correction |
 | Ezekiel | PASS after series-guide restoration and label correction |
 | Daniel | PASS after full series-guide restoration and label correction |
+| Hosea | PASS after series-guide restoration and label correction |
 
-## Daniel — detailed result
+## Hosea — detailed result
 Audited: 2026-08-15
 
-- Sources checked: `Daniel — Series Guide` and all 8 lesson documents.
-- All eight lessons preserve the source title, Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
-- The Main Scripture fields are preserved exactly as `Daniel 1:1–21; Jeremiah 29:4–7; Romans 12:1–2`, `Daniel 2:1–49; Psalm 2:1–12; James 1:5`, `Daniel 3:1–30; Exodus 20:1–6; Acts 5:27–32`, `Daniel 4:1–37; Proverbs 16:18; Luke 18:9–14`, `Daniel 5:1–31; Isaiah 47:7–11; Galatians 6:7–8`, `Daniel 6:1–28; Psalm 55:16–18; 1 Timothy 2:1–4`, `Daniel 7:1–28; Psalm 110:1–7; Mark 14:61–64`, and `Daniel 8:1–12:13; Matthew 24:15–31; Revelation 12:7–12`.
-- The lesson sources do not contain a separate Supporting Scriptures heading; all cross-book references are part of Main Scripture, so the empty `supporting` arrays are source-faithful.
-- The second line of each lesson is the generic `Daniel, Lesson X`, so there is no meaningful source subtitle to restore on lesson pages.
-- No end-of-file `forEach` overwrite is present in `daniel-study-data.js`.
-- The existing website lesson data is source-faithful, but the Series Guide was incomplete and partly mislabeled: the source subtitle was absent, the overview theme did not use the exact source Key Truth, the `background` reused the `Two Literary Worlds` Teaching Movement under the `Study foundation` label, and the source Main Scripture, Central Question, Opening, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer were not rendered as the full Series Guide.
-- The source `Study Foundation` heading leads directly into `Main Scripture` and has no standalone prose beneath it, so `daniel-study-guide.js` suppresses the incorrect background block rather than inventing or relabeling content.
-- `daniel-study-guide.js` restores the exact source subtitle, Key Truth, Purpose label, Main Scripture, Central Question, Opening, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer, and changes lesson presentation from the generic `Lesson purpose` label to the source heading `Purpose`.
+- Sources checked: `Hosea — Series Guide` and all 8 lesson documents.
+- All eight lessons preserve the source lesson title, Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- The Main Scripture fields are preserved exactly as `Hosea 1`, `Hosea 2`, `Hosea 3`, `Hosea 4`, `Hosea 5; 7–8`, `Hosea 6`, `Hosea 11`, and `Hosea 14`.
+- The lesson sources do not contain a separate Supporting Scriptures heading, so the empty `supporting` arrays are source-faithful.
+- The second line of each lesson is a generic `Hosea ... • Book-by-Book Bible Study` line, so it is not treated as a meaningful lesson subtitle.
+- No end-of-file `forEach` overwrite is present in `hosea-study-data.js`.
+- Repeated generic Teaching Movement bodies in several lessons are present in the authoritative Drive documents themselves. The website preserves those source bodies rather than replacing them. Lesson-specific exceptions such as `Gomer Is More Than a Symbol`, `Violent Language Requires Care`, `Do Not Blame Women Alone`, and `Politics Cannot Save the Soul` are also preserved.
+- The Series Guide and Lesson 4 source use different titles for the same lesson: the guide map says `Lack of Knowledge and Failed Leadership — Hosea 4`, while the lesson document is titled `Hosea 4 — My People Are Destroyed for Lack of Knowledge`. Both are preserved: the exact source Series Guide map is restored, while the lesson page keeps the lesson document title.
+- The existing website data already preserved the source Study Foundation, Series Purpose, and Interpretive Commitments wording, but the source subtitle and labels were incomplete and the Series Guide's exact Lesson Map, Recommended Rhythm, Facilitator Safeguards, How to Read Together, and Closing Prayer were not rendered.
+- `hosea-study-guide.js` restores the exact source subtitle, `Interpretive Commitments` and `Series Purpose` labels, exact source Lesson Map, Recommended Rhythm, Facilitator Safeguards, How to Read Together, and Closing Prayer, and changes lesson presentation from the generic `Lesson purpose` label to the source heading `Purpose`.
 
 ## Next audit
 
-Hosea.
+Joel.

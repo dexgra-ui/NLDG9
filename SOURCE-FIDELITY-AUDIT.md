@@ -54,6 +54,50 @@ The Genesis series landing page previously omitted four sections that are presen
 
 Those sections are now restored to the Genesis website experience. The existing Interpretive Commitments text was already present as the series theme and is now explicitly labeled.
 
+## Exodus — PASS after series-guide restoration
+
+Audited: 2026-08-15
+
+Authoritative sources:
+- `Exodus — Series Guide`
+- `Exodus 1 — Oppression, Courage, and the God Who Hears`
+- `Exodus 2 — The Burning Bush and God’s Call`
+- `Exodus 3 — Pharaoh, the Plagues, and Hardened Power`
+- `Exodus 4 — Passover, Liberation, and the Sea`
+- `Exodus 5 — Wilderness Provision and Tested Trust`
+- `Exodus 6 — Covenant Law and Neighbor Love`
+- `Exodus 7 — The Golden Calf, Intercession, and Renewal`
+- `Exodus 8 — The Tabernacle and God’s Dwelling Presence`
+
+### Lesson-by-lesson result
+
+All eight Exodus lesson documents match the website study data for:
+- lesson title
+- main Scripture
+- central question
+- key truth
+- purpose
+- opening
+- Scripture context
+- all six teaching movements and their full text
+- all eight discussion questions
+- personal examination
+- weekly practice
+- leader guidance
+- closing prayer
+
+The Exodus lesson source documents do **not** contain a separate `Supporting Scriptures` section. Therefore the existing empty `supporting` arrays are source-faithful; no supporting-reference list was removed from these eight lesson documents.
+
+### Gap found and restored
+
+The Exodus series landing page previously omitted four sections that are present in the authoritative `Exodus — Series Guide`:
+- Recommended Rhythm
+- Facilitator Safeguards
+- How to Read Together
+- Series Closing Prayer
+
+Those sections are now restored to the Exodus website experience. The existing Interpretive Commitments text was already present as the series theme and is now explicitly labeled.
+
 ### Next audit
 
-Exodus.
+Leviticus.

@@ -53,21 +53,21 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Micah | PASS after authoritative-set, lesson-data, and series-guide restoration |
 | Nahum | PASS after full lesson-data, series-guide, Scripture-field, and source-label restoration |
 | Habakkuk | PASS after full lesson-data, series-guide, and source-label restoration |
+| Zephaniah | PASS after full lesson-data, series-guide, and source-label restoration |
 
-## Habakkuk — detailed result
+## Zephaniah — detailed result
 Audited: 2026-08-15
 
-- Authoritative source scope: the direct contents of Drive folder `Habakkuk — Book-by-Book Study` (folder ID `1DS2hicxX9l2BJsWmTPX975AbjSpJV3a6`): `Habakkuk — Series Guide` plus 4 numbered lesson documents.
-- The four authoritative lessons are `How Long Must I Call for Help?`, `Waiting for the Vision`, `Woe to the Proud and Violent`, and `Yet I Will Rejoice`.
-- Main Passages are preserved exactly as `Habakkuk 1:1–11`, `Habakkuk 1:12–2:5`, `Habakkuk 2:6–20`, and `Habakkuk 3:1–19`.
-- Every lesson has an explicit `Supporting Scriptures` section, and all four references for each lesson were already present and remain preserved.
-- The former website retained the lesson titles, Main Passages, Supporting Scriptures, Central Questions, Key Truths, Purposes, Opening Discussions, eight Discussion Questions, and Closing Prayers, but shortened multiple Scripture Contexts, Teaching Movement bodies, Personal Examinations, Weekly Practices, and Leader Guidance sections. These were classified **SHORTENED** and restored verbatim from Drive.
-- No end-of-file generic `forEach` overwrite was present in `habakkuk-study-data.js`; the lossiness was embedded directly in shortened lesson fields rather than applied afterward.
-- `habakkuk-study-data.js` now preserves every lesson title, Main Passage, Supporting Scriptures, Central Question, Key Truth, Lesson Purpose, Opening Discussion, Scripture Context, all six full Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
-- The former overview preserved the source subtitle, Central Theme, and a shortened Historical Setting, but compressed the Series Overview and Series Goals and omitted the exact Historical Setting, Lesson Map, Leader Preparation, Recommended Rhythm, Key Scriptures, and Closing Prayer as source-labeled sections.
-- `habakkuk-study-guide.js` restores both exact Series Overview paragraphs, Central Theme, all six Series Goals, Historical Setting, exact Lesson Map, Leader Preparation, Recommended Rhythm, Key Scriptures, and Closing Prayer.
-- Lesson presentation now preserves the source headings `Lesson Purpose`, `Opening Discussion`, `Main Passage`, `Supporting Scriptures`, and `Scripture Context`.
+- Authoritative source scope: the direct contents of Drive folder `Zephaniah` (folder ID `1L-z3kXh933o1UXAyJMID2s9uAQz3xUsb`): `Zephaniah — Series Guide` plus 4 numbered lesson documents.
+- The four authoritative lessons are `The Day of the Lord Draws Near`, `Seek the Lord, Seek Righteousness, Seek Humility`, `Woe to the Oppressive City`, and `The Lord Rejoices Over You`.
+- Main Scriptures are preserved exactly as `Zephaniah 1:1–18`, `Zephaniah 2:1–15`, `Zephaniah 3:1–8`, and `Zephaniah 3:9–20`.
+- Every lesson has an explicit `Supporting Scriptures` section, and all three references for each lesson were already present and remain preserved.
+- The former website shortened several source fields directly in the data: Lesson 1 omitted `before or amid reforms` from Scripture Context and shortened the `Wealth cannot rescue` teaching body; Lesson 2 replaced the named nations with `surrounding nations` and shortened the final Teaching Movement; Lessons 3 and 4 slightly shortened their Scripture Contexts. These were classified **SHORTENED** and restored verbatim from Drive.
+- The former `zephaniah-study-data.js` ended with a generic `forEach`. Its Purpose, Opening, Discussion Questions, Weekly Practice, and Closing Prayer happened to reproduce the repeated source text exactly, but its Personal Examination and Leader Guidance did not. The overwrite was therefore classified **GENERIC REPLACEMENT** and removed; the repeated source wording is now stored explicitly and exactly.
+- `zephaniah-study-data.js` now preserves every lesson title, Main Scripture, Supporting Scriptures, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- The former overview blended or compressed the Series Guide and did not load a source guide file. `zephaniah-study-guide.js` now restores the exact subtitle `Judgment, Humility, Justice, and Rejoicing Love`, Series Purpose, Historical and Literary Setting, Central Aim, exact Lesson Map, Recommended Rhythm, Leader Commitments, Pastoral Safeguards, Christ-Centered Reading, Desired Fruit, and Interpretive Emphasis.
+- Lesson presentation now preserves the source headings `Purpose`, `Opening`, `Main Scripture`, `Supporting Scriptures`, and `Scripture Context`.
 
 ## Next audit
 
-Zephaniah.
+Haggai.

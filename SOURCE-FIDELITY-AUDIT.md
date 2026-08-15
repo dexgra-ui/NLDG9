@@ -57,21 +57,21 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Haggai | PASS after full lesson-data, series-guide, and source-label restoration |
 | Zechariah | PASS after full lesson-data, series-guide, and source-label restoration |
 | Malachi | PASS after supporting-Scripture, full lesson-data, series-guide, and source-label restoration |
+| Matthew | PASS after Scripture-field, full lesson-data, series-guide, and source-label restoration |
 
-## Malachi — detailed result
+## Matthew — detailed result
 Audited: 2026-08-15
 
-- Authoritative source scope: the direct contents of Drive folder `Malachi` (folder ID `1IWDRv7X6a04cVMy3sBy7UQrhrMGV2oih`): `Malachi — Series Guide` plus 5 numbered lesson documents.
-- The five authoritative lessons are `I Have Loved You`, `Honor God in Worship`, `Faithfulness in Covenant Relationships`, `The Lord You Seek Will Come`, and `Remember and Prepare the Way`.
-- Main Scriptures are preserved exactly as `Malachi 1:1–5`, `Malachi 1:6–2:9`, `Malachi 2:10–16`, `Malachi 2:17–3:12`, and `Malachi 3:13–4:6`.
-- Every lesson has an explicit `Supporting Scriptures` section with three references. The former website set `supporting: []` for every lesson, so all fifteen supporting references were classified **MISSING SCRIPTURE** and restored.
-- The former generated lesson data preserved the lesson titles, Main Scriptures, Central Questions, Key Truths, Opening text, Discussion Questions, Personal Examination, and Weekly Practice, but shortened the source Purpose by dropping its opening `To` and replaced every lesson-specific Scripture Context with a generic summary. These were classified **SHORTENED** and **GENERIC REPLACEMENT** and restored exactly.
-- Every source Teaching Movement heading was present, but the website generated one reusable body sentence for all movements instead of the lesson-specific source bodies. Those bodies were classified **GENERIC REPLACEMENT** and restored verbatim from Drive.
-- The former Leader Guidance and Closing Prayer were generalized or altered from the source. The exact repeated source guidance and prayer are now restored without added language.
-- `malachi-study-data.js` now preserves every lesson title, Main Scripture, Supporting Scriptures, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
-- The former overview blended and compressed the Series Guide and did not load a source guide file. `malachi-study-guide.js` now restores the exact subtitle `Covenant Love, Faithful Worship, Justice, and Renewal`, Series Purpose, Historical and Literary Setting, Central Aim, exact Lesson Map, Recommended Rhythm, Leader Commitments, Pastoral Safeguards, Christ-Centered Reading, and Desired Fruit.
-- Lesson presentation now preserves the source headings `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Main Scripture`, `Supporting Scriptures`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`.
+- Authoritative source scope: the direct contents of Drive folder `Matthew` (folder ID `15z26qxFM1GrVzG_vhfCX8hXgDEiWM_od`): `Matthew — Series Guide` plus 8 numbered lesson documents.
+- The eight authoritative lessons are `The King and His Kingdom Draw Near`, `The Life of the Kingdom`, `Authority, Compassion, and Mission`, `Kingdom Parables and Growing Opposition`, `Jesus, the Cross, and a Restoring Community`, `The Servant King Confronts Religious Power`, `Watchful and Faithful Until He Comes`, and `The Cross, Resurrection, and Great Commission`.
+- Each authoritative lesson uses one `Main Scripture` field containing three references. The former website kept only the leading Matthew range and omitted the two additional references in every lesson. Sixteen references were therefore classified **MISSING SCRIPTURE** and restored inside the Main Scripture field rather than being relabeled as Supporting Scriptures.
+- The authoritative lesson documents contain no separate `Supporting Scriptures` heading. `supporting: []` remains source-faithful.
+- The former generated data preserved lesson titles, Central Questions, and Key Truths, but replaced every source Purpose, Opening, Scripture Context, Teaching Movement body, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer with shorter or generalized text. These were classified **SHORTENED** or **GENERIC REPLACEMENT** and restored exactly from Drive.
+- `matthew-study-data.js` now preserves every lesson title, complete Main Scripture field, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- Each lesson source includes a `Study Foundation` heading with no standalone prose beneath it before `Main Scripture`; the page now preserves that heading without inventing foundation text. Lesson presentation also preserves the source labels `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Main Scripture`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`.
+- The former website did not load a Series Guide. `matthew-study-guide.js` now restores the exact source subtitle, Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, six Teaching Movements including Pastoral Safeguards, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- The Series Guide itself contains no Lesson Map, Recommended Rhythm, or separate Supporting Scriptures section, so none was invented.
 
 ## Next audit
 
-Matthew.
+Mark.

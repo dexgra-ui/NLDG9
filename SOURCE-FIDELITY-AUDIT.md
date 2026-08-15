@@ -280,6 +280,56 @@ The authoritative `Joshua — Series Guide` is itself a full study foundation ra
 
 Those sections are now restored through `joshua-study-guide.js`. The shared book-study renderer was extended so full source-level series guides can be displayed without shortening or converting them into generic guide text.
 
+## Judges — PASS after full series-guide restoration
+
+Audited: 2026-08-15
+
+Authoritative sources:
+- `Judges — Series Guide`
+- `Judges 1 — The Cost of Incomplete Faithfulness`
+- `Judges 2 — Deliverance Through Unexpected People`
+- `Judges 3 — Deborah, Barak, and Jael`
+- `Judges 4 — Gideon’s Calling and Compromise`
+- `Judges 5 — Abimelech and the Hunger for Power`
+- `Judges 6 — Jephthah’s Vow and Tragic Leadership`
+- `Judges 7 — Samson’s Strength and Weakness`
+- `Judges 8 — When Everyone Does What Is Right in Their Own Eyes`
+
+### Lesson-by-lesson result
+
+All eight Judges lesson documents match the website study data for:
+- lesson title
+- the complete Main Scripture field, including every cross-book reference listed there
+- central question
+- key truth
+- purpose
+- opening
+- Scripture context
+- all six teaching movements and their full text
+- all eight discussion questions
+- personal examination
+- weekly practice
+- leader guidance
+- closing prayer
+
+Like Joshua, each Judges lesson’s `Main Scripture` field contains multiple references, such as Judges 1:1–3:6 together with Deuteronomy 7:1–11 and Psalm 78:1–11. Those complete reference strings are preserved in the website data. The source documents do **not** contain a separate `Supporting Scriptures` heading, so empty `supporting` arrays do not represent lost Scripture references.
+
+### Gap found and restored
+
+The authoritative `Judges — Series Guide` is a full study foundation. The landing page previously preserved the series title, key truth, purpose, and Scripture-context language, but omitted substantial source material, including:
+- Series Main Scripture: Judges 1–21; Deuteronomy 6:10–19; Matthew 20:25–28
+- Central Question
+- Opening
+- the full Scripture Context in its source-guide position
+- all six series-level teaching movements, including Pastoral Safeguards
+- all eight series-level discussion questions
+- Personal Examination
+- Weekly Practice
+- Leader Guidance
+- Closing Prayer
+
+Those sections are now restored through `judges-study-guide.js`, using the full-series-guide support already built into the shared book-study renderer.
+
 ### Next audit
 
-Judges.
+Ruth.

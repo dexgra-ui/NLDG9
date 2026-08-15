@@ -63,20 +63,21 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | John | PASS after Scripture-field, full lesson-data, series-guide, and source-label restoration |
 | Acts | PASS after authoritative first publication and source-label preservation |
 | Romans | PASS after authoritative first publication and source-label preservation |
+| 1 Corinthians | PASS after authoritative first publication and source-label preservation |
 
-## Romans — detailed result
+## 1 Corinthians — detailed result
 Audited: 2026-08-15
 
-- Authoritative source scope: the direct contents of Drive folder `Romans` (folder ID `1R-MzT5p3Qc33G4fjKB5LYGsroqNkxIvj`): `Romans — Series Guide` plus 8 numbered lesson documents.
-- The eight authoritative lessons are `The Gospel and the Human Condition`, `No One Can Boast`, `Justified by Faith`, `United With Christ`, `Life in the Spirit`, `Mercy for Israel and the Nations`, `A Living Sacrifice`, and `Welcome One Another`.
-- Romans was present in Drive but had no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** rather than a lossy prior publication.
+- Authoritative source scope: the direct contents of Drive folder `1 Corinthians` (folder ID `1g9uCHgvVDdJZXDZGmYBgaNcNEftDAPJf`): `1 Corinthians — Series Guide` plus 8 numbered lesson documents.
+- The eight authoritative lessons are `Christ, Not Celebrity Leaders`, `Holiness, Bodies, and Belonging`, `Marriage, Singleness, and Faithful Calling`, `Freedom Shaped by Love`, `Worship, Communion, and Mutual Honor`, `Gifts of One Spirit`, `The More Excellent Way of Love`, and `Resurrection Changes Everything`.
+- Per the project inventory, the remaining New Testament books beginning with 1 Corinthians were present in Drive but not yet published on the website. 1 Corinthians is therefore classified as **MISSING** before this authoritative first publication rather than as a lossy prior publication.
 - Every authoritative lesson uses one `Main Scripture` field containing three references. All references are preserved inside that field. The lesson documents contain no separate `Supporting Scriptures` heading, so `supporting: []` is source-faithful.
-- `romans-study-data.js` now preserves every lesson title, complete Main Scripture field, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. Shared constants are used only where the Drive source itself repeats exact wording.
+- `first-corinthians-study-data.js` now preserves every lesson title, complete Main Scripture field, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. Shared constants are used only where the Drive source itself repeats exact wording.
 - Each lesson source includes a `Study Foundation` heading with no standalone prose beneath it before `Main Scripture`; the page preserves that heading without inventing foundation text. Lesson presentation preserves the source labels `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Main Scripture`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`.
-- `romans-study-guide.js` restores the exact Series Guide subtitle, Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, six Teaching Movements including `Israel and the Nations` and `Disputed Questions and Welcome`, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. The Series Guide itself contains no Lesson Map, Recommended Rhythm, or separate Supporting Scriptures section, so none was invented.
-- `romans-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links Romans directly after Acts.
-- With Romans added, the Book-by-Book library total is now 48 books and 339 complete lessons, and the main Bible Studies collection card uses the same totals.
+- `first-corinthians-study-guide.js` restores the exact Series Guide subtitle, Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, six Teaching Movements including `Bodies Matter`, `Freedom Serves Love`, `One Body, Many Gifts`, and `Pastoral Safeguards`, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. The Series Guide itself contains no Lesson Map, Recommended Rhythm, or separate Supporting Scriptures section, so none was invented.
+- `first-corinthians-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links 1 Corinthians directly after Romans.
+- With 1 Corinthians added, the Book-by-Book library total is now 49 books and 347 complete lessons.
 
 ## Next audit
 
-1 Corinthians.
+2 Corinthians.

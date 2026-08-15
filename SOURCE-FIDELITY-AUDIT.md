@@ -119,6 +119,15 @@ Audited: 2026-08-15
 - The website already contained the exact Series Purpose, Historical Setting, Central Aim, and eight lesson entries, but several Series Guide-only sections were not rendered. Restored Recommended Rhythm, Leader Commitments, Pastoral Safeguards, Christ-Centered Reading, and Desired Fruit through `nehemiah-study-guide.js`.
 - Corrected presentation labels so lesson material uses the source heading `Purpose` and the source heading `Supporting Scriptures`. Historical Setting and Central Aim are now displayed under their source headings instead of being forced into generic overview labels.
 
+### Esther — PASS after series-guide restoration
+Audited: 2026-08-15
+- Sources checked: `Esther — Series Guide` and all 9 lesson documents.
+- All nine lessons preserve the exact Main Passage, every Supporting Scripture reference, Central Question, Key Truth, Lesson Purpose, Opening Discussion text, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- Supporting Scriptures are source-faithful throughout. Examples include `Proverbs 16:18; Proverbs 31:1–9; Mark 10:42–45; James 3:13–18` in Lesson 1, `Nehemiah 1:1–11; Proverbs 24:10–12; Micah 6:8; Luke 9:23–25` in Lesson 4, and `Deuteronomy 6:10–12; Psalm 145:1–7; Luke 22:14–20; Revelation 21:1–5` in Lesson 9.
+- The website data already preserved the Series Overview, Central Theme, seven Series Goals, Historical and Literary Setting, and all nine lesson entries, but the source structure had been flattened and several guide-only sections were absent from the page.
+- Restored the source Series Overview paragraphs, Series Goals as individual items, Historical and Literary Setting, Leader Preparation, Recommended Rhythm, Key Scriptures, and Closing Prayer through `esther-study-guide.js`.
+- Configured the source labels `Central Theme`, `Lesson Purpose`, and `Supporting Scriptures` while preserving the complete lesson Scripture references.
+
 ## Next audit
 
-Esther.
+Job.

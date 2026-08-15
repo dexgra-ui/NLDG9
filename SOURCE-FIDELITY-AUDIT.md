@@ -47,20 +47,21 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Hosea | PASS after series-guide restoration and label correction |
 | Joel | PASS after supporting-Scripture and series-guide restoration |
 | Amos | PASS after series-guide restoration and source-label correction |
+| Obadiah | PASS after series-guide restoration and source-label correction |
 
-## Amos — detailed result
+## Obadiah — detailed result
 Audited: 2026-08-15
 
-- Sources checked: `Amos — Series Guide` and all 7 lesson documents.
-- All seven lessons preserve the source lesson title, Main Passage, Supporting Scriptures, Central Question, Key Truth, Lesson Purpose, Opening Discussion, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
-- Main Passages are preserved exactly as `Amos 1–2`, `Amos 3`, `Amos 4`, `Amos 5`, `Amos 6`, `Amos 7`, and `Amos 8–9`.
-- Every lesson contains an explicit `Supporting Scriptures` section, and all four references for each lesson are preserved in the website data.
-- No end-of-file `forEach` overwrite is present in `amos-study-data.js`.
-- The existing Series Guide presentation was incomplete: the source's second Series Overview paragraph, exact Central Theme, seven Series Goals, exact Lesson Map, Leader Preparation, Key Scriptures, and Closing Prayer were not all rendered, and the website's existing purpose/theme/background wording was partly shortened or generalized.
-- `amos-study-guide.js` restores the exact subtitle, both Series Overview paragraphs, exact Central Theme, all seven Series Goals, exact Lesson Map, Leader Preparation, Key Scriptures, and Closing Prayer.
-- The shared renderer now supports source-specific `Opening Discussion`, `Main Passage`, and `Scripture Context` labels plus multi-paragraph Series Overview content. Amos uses these options while existing studies keep their prior defaults.
-- Lesson presentation now preserves the source headings `Lesson Purpose`, `Opening Discussion`, `Main Passage`, `Supporting Scriptures`, and `Scripture Context` instead of generic renderer labels.
+- Sources checked: `Obadiah — Series Guide` and all 3 lesson documents.
+- All three lessons preserve the source lesson title, Main Scripture, Supporting Scriptures, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- Main Scripture is preserved exactly as `Obadiah 1–9`, `Obadiah 10–14`, and `Obadiah 15–21`.
+- Every lesson contains an explicit `Supporting Scriptures` section, preserved exactly as `Proverbs 16:18–19; Jeremiah 49:7–16; James 4:6–10`, `Genesis 4:8–10; Luke 10:25–37; James 4:17`, and `Psalm 22:27–28; Matthew 25:31–46; Revelation 11:15`.
+- The second line of each lesson is the generic `Book-by-Book Bible Study`, so it is not treated as a meaningful lesson subtitle.
+- No end-of-file `forEach` overwrite is present in `obadiah-study-data.js`.
+- The existing website overview was partly generalized and merged source sections together: the source subtitle, exact Series Purpose, Historical and Literary Setting, Central Aim, exact Lesson Map, Recommended Rhythm, Leader Commitments, Pastoral Safeguards, Christ-Centered Reading, Desired Fruit, and Interpretive Emphasis were not all rendered under their source headings.
+- `obadiah-study-guide.js` restores the exact subtitle and Series Purpose, suppresses the incorrectly merged `Study foundation` presentation, and renders every remaining Series Guide section under its source heading.
+- Lesson presentation now preserves the source headings `Purpose`, `Opening`, `Main Scripture`, `Supporting Scriptures`, and `Scripture Context`.
 
 ## Next audit
 
-Obadiah.
+Jonah.

@@ -142,6 +142,50 @@ The Leviticus series landing page previously omitted four sections that are pres
 
 Those sections are now restored to the Leviticus website experience. The existing Interpretive Commitments text was already present as the series theme and is now explicitly labeled.
 
+## Numbers — PASS after series-guide restoration
+
+Audited: 2026-08-15
+
+Authoritative sources:
+- `Numbers — Series Guide`
+- `Numbers 1 — Ordered for the Journey`
+- `Numbers 2 — Complaints, Burdens, and Shared Leadership`
+- `Numbers 3 — Fear at the Border and a Generation’s Turning Point`
+- `Numbers 4 — Rebellion, Authority, and God’s Holiness`
+- `Numbers 5 — Moses’ Failure and Leadership Accountability`
+- `Numbers 6 — The Bronze Serpent and Healing Faith`
+- `Numbers 7 — Balaam, Blessing, and the Danger of Compromise`
+- `Numbers 8 — A New Generation Prepared to Enter`
+
+### Lesson-by-lesson result
+
+All eight Numbers lesson documents match the website study data for:
+- lesson title
+- main Scripture
+- central question
+- key truth
+- purpose
+- opening
+- Scripture context
+- all six teaching movements and their full text
+- all eight discussion questions
+- personal examination
+- weekly practice
+- leader guidance
+- closing prayer
+
+The Numbers lesson source documents do **not** contain a separate `Supporting Scriptures` section. Therefore the existing empty `supporting` arrays are source-faithful; no supporting-reference list was removed from these eight lesson documents.
+
+### Gap found and restored
+
+The Numbers series landing page previously omitted four sections that are present in the authoritative `Numbers — Series Guide`:
+- Recommended Rhythm
+- Facilitator Safeguards
+- How to Read Together
+- Series Closing Prayer
+
+Those sections are now restored to the Numbers website experience. The existing Interpretive Commitments text was already present as the series theme and is now explicitly labeled.
+
 ### Next audit
 
-Numbers.
+Deuteronomy.

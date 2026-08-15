@@ -427,6 +427,56 @@ The authoritative `1 Samuel — Series Guide` is a full study foundation. The we
 
 Those sections are now restored through `first-samuel-study-guide.js`, using the full-series-guide support in the shared book-study renderer.
 
+## 2 Samuel — PASS after full series-guide restoration
+
+Audited: 2026-08-15
+
+Authoritative sources:
+- `2 Samuel — Series Guide`
+- `2 Samuel 1 — Lament, Unity, and David’s Rise`
+- `2 Samuel 2 — The Ark and God’s Covenant With David`
+- `2 Samuel 3 — Victory, Kindness, and Responsible Power`
+- `2 Samuel 4 — David, Bathsheba, and the Abuse of Power`
+- `2 Samuel 5 — Tamar, Amnon, and Absalom`
+- `2 Samuel 6 — Absalom’s Rebellion and David’s Grief`
+- `2 Samuel 7 — Returning, Reconciling, and Governing Again`
+- `2 Samuel 8 — Justice, Worship, and the Cost of Leadership`
+
+### Lesson-by-lesson result
+
+All eight 2 Samuel lesson documents match the website study data for:
+- lesson title
+- the complete Main Scripture field, including every cross-book reference listed there
+- central question
+- key truth
+- purpose
+- opening
+- Scripture context
+- all six teaching movements and their full text
+- all eight discussion questions
+- personal examination
+- weekly practice
+- leader guidance
+- closing prayer
+
+Each lesson preserves its complete Main Scripture string, including cross-book references, such as `2 Samuel 1:1–5:25; Psalm 133; Romans 12:15` in Lesson 1, `2 Samuel 11:1–12:31; Psalm 51; Ezekiel 34:1–10` in Lesson 4, and `2 Samuel 21:1–24:25; Psalm 18:1–6; 1 Chronicles 21:1–30` in Lesson 8. The lesson documents do **not** contain a separate `Supporting Scriptures` heading, so empty `supporting` arrays do not represent lost references.
+
+### Gap found and restored
+
+The authoritative `2 Samuel — Series Guide` is a full study foundation. The website previously preserved the series title, Key Truth, Purpose, and Scripture-context language, but omitted substantial guide material, including:
+- Series Main Scripture: 2 Samuel 1–24; Psalm 51; Matthew 20:25–28
+- Central Question
+- Opening
+- the full Scripture Context in its source-guide position
+- all six series-level teaching movements, including Pastoral Safeguards
+- all eight series-level discussion questions
+- Personal Examination
+- Weekly Practice
+- Leader Guidance
+- Closing Prayer
+
+Those sections are now restored through `second-samuel-study-guide.js`, using the full-series-guide support in the shared book-study renderer.
+
 ### Next audit
 
-2 Samuel.
+1 Kings.

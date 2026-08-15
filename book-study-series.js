@@ -3,6 +3,12 @@
  const key=`nldg-book-${s.slug}`,esc=v=>String(v??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
  const read=()=>{try{return JSON.parse(localStorage.getItem(key)||'{"completed":[]}')}catch{return{completed:[]}}},save=v=>{try{localStorage.setItem(key,JSON.stringify(v))}catch{}};
  const done=new Set(read().completed||[]),n=Number(new URLSearchParams(location.search).get('lesson')||0),lesson=s.lessons.find(x=>x.number===n),href=x=>`${s.slug}.html?lesson=${x}`;
+ const renderGuideBlocks=blocks=>(blocks||[]).map(block=>{
+  const paragraphs=(block.paragraphs||[]).map(p=>`<p>${esc(p)}</p>`).join('');
+  const text=block.text?`<p>${esc(block.text)}</p>`:'';
+  const items=(block.items||[]).length?`<ul>${block.items.map(item=>`<li>${esc(item)}</li>`).join('')}</ul>`:'';
+  return `<article class="lesson-panel"><p class="kicker">Series guide</p><h2>${esc(block.title)}</h2>${paragraphs}${text}${items}</article>`;
+ }).join('');
  function landing(){
   document.title=`${s.title} | No Labels, Designed by God`;
   const themeLabel=s.themeLabel?`<p class="kicker series-theme-label">${esc(s.themeLabel)}</p>`:'';
@@ -19,12 +25,7 @@
   if(s.seriesPractice)sourceGuideParts.push(`<section class="challenge-panel"><p class="kicker">Weekly practice</p><h2>Live the Word</h2><p>${esc(s.seriesPractice)}</p></section>`);
   if(s.seriesLeaderGuidance)sourceGuideParts.push(`<aside class="leader-note"><strong>Leader guidance:</strong> ${esc(s.seriesLeaderGuidance)}</aside>`);
   const sourceGuide=sourceGuideParts.length?`<section class="book-lesson series-source-guide" aria-label="Full series guide">${sourceGuideParts.join('')}</section>`:'';
-  const customGuideBlocks=(s.seriesGuideBlocks||[]).map(block=>{
-   const paragraphs=(block.paragraphs||[]).map(p=>`<p>${esc(p)}</p>`).join('');
-   const text=block.text?`<p>${esc(block.text)}</p>`:'';
-   const items=(block.items||[]).length?`<ul>${block.items.map(item=>`<li>${esc(item)}</li>`).join('')}</ul>`:'';
-   return `<article class="lesson-panel"><p class="kicker">Series guide</p><h2>${esc(block.title)}</h2>${paragraphs}${text}${items}</article>`;
-  }).join('');
+  const customGuideBlocks=renderGuideBlocks(s.seriesGuideBlocks);
   const customGuide=customGuideBlocks?`<section class="series-guide source-fidelity-guide" aria-label="Source series guide">${customGuideBlocks}</section>`:'';
   const guideSections=[
    {title:'Recommended Rhythm',text:s.recommendedRhythm},
@@ -32,13 +33,15 @@
    {title:'How to Read Together',text:s.howToReadTogether}
   ].filter(item=>item.text);
   const guide=guideSections.length?`<section class="series-guide" aria-label="Series guide">${guideSections.map(item=>`<article class="lesson-panel"><p class="kicker">Series guide</p><h2>${esc(item.title)}</h2><p>${esc(item.text)}</p></article>`).join('')}</section>`:'';
+  const postLessonMapGuideBlocks=renderGuideBlocks(s.postLessonMapGuideBlocks);
+  const postLessonMapGuide=postLessonMapGuideBlocks?`<section class="series-guide source-fidelity-guide" aria-label="Additional source series guide">${postLessonMapGuideBlocks}</section>`:'';
   const seriesPrayer=s.seriesPrayer?`<section class="prayer-panel series-prayer"><p class="kicker">Series closing prayer</p><p>${esc(s.seriesPrayer)}</p></section>`:'';
   const backgroundBlock=s.background?`<p class="kicker">Study foundation</p><p>${esc(s.background)}</p>`:'';
-  view.innerHTML=`<section class="book-overview"><p class="kicker">Series purpose</p><h2>${esc(s.purpose)}</h2>${backgroundBlock}<a class="button primary" href="${href(next.number)}">${done.size?'Continue':'Begin Lesson 1'} →</a></section>${sourceGuide}${customGuide}<div class="section-heading series-lesson-map"><p class="kicker">Lesson map</p><h2>Choose a lesson</h2></div><section class="book-grid">${s.lessons.map(x=>`<article class="book-card ${done.has(x.number)?'is-complete':''}"><span>Lesson ${x.number}${done.has(x.number)?' · Completed':''}</span><h2>${esc(x.title)}</h2><p>${esc(x.question)}</p><small>📖 ${esc(x.scripture)}</small><a href="${href(x.number)}">Open Lesson →</a></article>`).join('')}</section>${guide}${seriesPrayer}`;
+  view.innerHTML=`<section class="book-overview"><p class="kicker">Series purpose</p><h2>${esc(s.purpose)}</h2>${backgroundBlock}<a class="button primary" href="${href(next.number)}">${done.size?'Continue':'Begin Lesson 1'} →</a></section>${sourceGuide}${customGuide}<div class="section-heading series-lesson-map"><p class="kicker">Lesson map</p><h2>Choose a lesson</h2></div><section class="book-grid">${s.lessons.map(x=>`<article class="book-card ${done.has(x.number)?'is-complete':''}"><span>Lesson ${x.number}${done.has(x.number)?' · Completed':''}</span><h2>${esc(x.title)}</h2><p>${esc(x.question)}</p><small>📖 ${esc(x.scripture)}</small><a href="${href(x.number)}">Open Lesson →</a></article>`).join('')}</section>${guide}${postLessonMapGuide}${seriesPrayer}`;
  }
  function render(x){
   document.title=`${x.title} | ${s.title}`;
-  const i=s.lessons.indexOf(x),prev=s.lessons[i-1],next=s.lessons[i+1],supporting=x.supporting?.length?`<p>Supporting Scripture: ${x.supporting.map(esc).join(' · ')}</p>`:'';
+  const i=s.lessons.indexOf(x),prev=s.lessons[i-1],next=s.lessons[i+1],supportingLabel=esc(s.supportingScriptureLabel||'Supporting Scripture'),supporting=x.supporting?.length?`<p>${supportingLabel}: ${x.supporting.map(esc).join(' · ')}</p>`:'';
   const sourceSubtitle=s.lessonSubtitleMode&&x.subtitle?`<p class="book-lead">${esc(x.subtitle)}</p>`:'';
   const purposeLabel=esc(s.lessonPurposeLabel||'Lesson purpose');
   const openingPanel=s.lessonSubtitleMode?`<section class="lesson-panel"><h2>Opening</h2><p>${esc(x.opening)}</p></section>`:`<section class="lesson-panel"><p class="kicker">${purposeLabel}</p><p>${esc(x.goal)}</p><h2>Opening</h2><p>${esc(x.opening)}</p></section>`;

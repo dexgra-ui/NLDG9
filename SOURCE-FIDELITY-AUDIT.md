@@ -111,6 +111,14 @@ Audited: 2026-08-15
 - The authoritative Series Guide is a full study foundation. Restored its Main Scripture, Central Question, Opening, Scripture Context, six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer through `ezra-study-guide.js`. The existing Key Truth and Purpose were already source-faithful and are now labeled correctly.
 - Corrected two presentation-label issues: the generic Scripture Context text is no longer displayed under the unrelated `Study foundation` heading, and Ezra lessons now display the source heading `Purpose` instead of `Lesson purpose`.
 
+### Nehemiah — PASS after series-guide restoration and label correction
+Audited: 2026-08-15
+- Sources checked: `Nehemiah — Series Guide` and all 8 lesson documents.
+- All eight lessons preserve Main Scripture, every explicit Supporting Scripture reference, Central Question, Key Truth, exact Purpose wording, Opening, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- Supporting Scriptures are source-faithful throughout. Examples include `2 Chronicles 7:14; Daniel 9:3–19; James 2:14–17` in Lesson 1, `Leviticus 25:35–43; Isaiah 58:6–12; James 5:1–6` in Lesson 5, and `Psalm 78; Matthew 23:23–28; Hebrews 12:1–13` in Lesson 8.
+- The website already contained the exact Series Purpose, Historical Setting, Central Aim, and eight lesson entries, but several Series Guide-only sections were not rendered. Restored Recommended Rhythm, Leader Commitments, Pastoral Safeguards, Christ-Centered Reading, and Desired Fruit through `nehemiah-study-guide.js`.
+- Corrected presentation labels so lesson material uses the source heading `Purpose` and the source heading `Supporting Scriptures`. Historical Setting and Central Aim are now displayed under their source headings instead of being forced into generic overview labels.
+
 ## Next audit
 
-Nehemiah.
+Esther.

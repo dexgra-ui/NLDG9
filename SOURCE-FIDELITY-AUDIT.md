@@ -137,6 +137,15 @@ Audited: 2026-08-15
 - Restored the `Interpretive Commitments` label, Recommended Rhythm, Facilitator Safeguards, How to Read Together, and Closing Prayer through `job-study-guide.js`.
 - Corrected the lesson presentation label from the generic `Lesson purpose` to the source heading `Purpose`.
 
+### Psalms — PASS after series-guide restoration and label correction
+Audited: 2026-08-15
+- Sources checked: `Psalms — Series Guide` and all 8 lesson documents.
+- All eight lessons preserve the exact Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- The lesson sources do not contain a separate Supporting Scriptures section; the empty `supporting` arrays are source-faithful. Complete multi-psalm Main Scripture fields such as `Psalms 1–2; 19`, `Psalms 13; 22; 42–43; 88`, and `Psalms 10; 73; 109; 137` are preserved.
+- The website data already preserved the Study Foundation, Series Purpose, Interpretive Commitments, and all eight lesson entries, but the Interpretive Commitments label and several Series Guide-only sections were not displayed.
+- Restored the `Interpretive Commitments` label, Recommended Rhythm, Facilitator Safeguards, How to Read Together, and Closing Prayer through `psalms-study-guide.js`.
+- Corrected the lesson presentation label from the generic `Lesson purpose` to the source heading `Purpose`.
+
 ## Next audit
 
-Psalms.
+Proverbs.

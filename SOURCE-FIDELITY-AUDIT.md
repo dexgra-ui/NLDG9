@@ -54,20 +54,21 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Nahum | PASS after full lesson-data, series-guide, Scripture-field, and source-label restoration |
 | Habakkuk | PASS after full lesson-data, series-guide, and source-label restoration |
 | Zephaniah | PASS after full lesson-data, series-guide, and source-label restoration |
+| Haggai | PASS after full lesson-data, series-guide, and source-label restoration |
 
-## Zephaniah — detailed result
+## Haggai — detailed result
 Audited: 2026-08-15
 
-- Authoritative source scope: the direct contents of Drive folder `Zephaniah` (folder ID `1L-z3kXh933o1UXAyJMID2s9uAQz3xUsb`): `Zephaniah — Series Guide` plus 4 numbered lesson documents.
-- The four authoritative lessons are `The Day of the Lord Draws Near`, `Seek the Lord, Seek Righteousness, Seek Humility`, `Woe to the Oppressive City`, and `The Lord Rejoices Over You`.
-- Main Scriptures are preserved exactly as `Zephaniah 1:1–18`, `Zephaniah 2:1–15`, `Zephaniah 3:1–8`, and `Zephaniah 3:9–20`.
+- Authoritative source scope: the direct contents of Drive folder `Haggai` (folder ID `1jIYRZruTtUdikvSc3eKFpQ2hAII4Ov8v`): `Haggai — Series Guide` plus 4 numbered lesson documents.
+- The four authoritative lessons are `Consider Your Ways`, `I Am With You`, `From This Day On I Will Bless You`, and `The Kingdom That Cannot Be Shaken`.
+- Main Scriptures are preserved exactly as `Haggai 1:1–15`, `Haggai 2:1–9`, `Haggai 2:10–19`, and `Haggai 2:20–23`.
 - Every lesson has an explicit `Supporting Scriptures` section, and all three references for each lesson were already present and remain preserved.
-- The former website shortened several source fields directly in the data: Lesson 1 omitted `before or amid reforms` from Scripture Context and shortened the `Wealth cannot rescue` teaching body; Lesson 2 replaced the named nations with `surrounding nations` and shortened the final Teaching Movement; Lessons 3 and 4 slightly shortened their Scripture Contexts. These were classified **SHORTENED** and restored verbatim from Drive.
-- The former `zephaniah-study-data.js` ended with a generic `forEach`. Its Purpose, Opening, Discussion Questions, Weekly Practice, and Closing Prayer happened to reproduce the repeated source text exactly, but its Personal Examination and Leader Guidance did not. The overwrite was therefore classified **GENERIC REPLACEMENT** and removed; the repeated source wording is now stored explicitly and exactly.
-- `zephaniah-study-data.js` now preserves every lesson title, Main Scripture, Supporting Scriptures, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
-- The former overview blended or compressed the Series Guide and did not load a source guide file. `zephaniah-study-guide.js` now restores the exact subtitle `Judgment, Humility, Justice, and Rejoicing Love`, Series Purpose, Historical and Literary Setting, Central Aim, exact Lesson Map, Recommended Rhythm, Leader Commitments, Pastoral Safeguards, Christ-Centered Reading, Desired Fruit, and Interpretive Emphasis.
+- The former website shortened Scripture Context and Teaching Movement wording throughout the four lessons. For example, Lesson 1 reduced the detailed priority and obedience movements to summaries, Lesson 2 shortened the comparison, covenant, Spirit, and future-glory material, Lesson 3 compressed the ritual-holiness explanation, and Lesson 4 shortened the political-fragility, signet, election, and Christ-fulfillment movements. These were classified **SHORTENED** and restored verbatim from Drive.
+- The former `haggai-study-data.js` ended with a generic `forEach`. Its repeated Purpose and Opening matched the source, but multiple Discussion Questions were shortened and the Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer were shortened or replaced. This was classified **GENERIC REPLACEMENT**. The overwrite has been removed; the exact repeated source wording is now represented by shared constants and assigned directly to each lesson.
+- `haggai-study-data.js` now preserves every lesson title, Main Scripture, Supporting Scriptures, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- The former overview blended and compressed the Series Guide and did not load a source guide file. `haggai-study-guide.js` now restores the exact subtitle `Reordered Priorities, God’s Presence, and Unshakable Hope`, Series Purpose, Historical and Literary Setting, Central Aim, exact Lesson Map, Recommended Rhythm, Leader Commitments, Pastoral Safeguards, Christ-Centered Reading, and Desired Fruit. The authoritative Series Guide contains no Closing Prayer section, so none was added.
 - Lesson presentation now preserves the source headings `Purpose`, `Opening`, `Main Scripture`, `Supporting Scriptures`, and `Scripture Context`.
 
 ## Next audit
 
-Haggai.
+Zechariah.

@@ -37,6 +37,7 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Job | PASS after series-guide restoration and label correction |
 | Psalms | PASS after series-guide restoration and label correction |
 | Proverbs | PASS after full series-guide restoration and label correction |
+| Ecclesiastes | PASS after full series-guide restoration and label correction |
 
 ## Proverbs — detailed result
 Audited: 2026-08-15
@@ -49,6 +50,17 @@ Audited: 2026-08-15
 - The website also reused the generic Scripture Context paragraph as its overview description/background even though the source does not provide that paragraph as a Study Foundation body. `proverbs-study-guide.js` now restores the source subtitle and removes that misassigned overview text.
 - Restored the source Key Truth label and full Series Guide through `proverbs-study-guide.js`, and corrected lesson presentation from the generic `Lesson purpose` label to the source heading `Purpose`.
 
+## Ecclesiastes — detailed result
+Audited: 2026-08-15
+
+- Sources checked: `Ecclesiastes — Series Guide` and all 6 lesson documents.
+- All six lessons preserve the exact Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- Complete Main Scripture fields, including cross-book references, are preserved. Examples include `Ecclesiastes 1:1–2:26; Luke 12:13–21`, `Ecclesiastes 3:1–22; Psalm 31:14–15; Romans 8:18–25`, and `Ecclesiastes 11:1–12:14; Matthew 6:33–34; 1 Corinthians 15:58`.
+- The lesson sources do not contain a separate Supporting Scriptures heading; all cross-book references are part of the Main Scripture field, so the empty `supporting` arrays are source-faithful.
+- The existing website data preserved all lesson-specific content, but the Series Guide had been flattened: its Main Scripture, Central Question, Opening, Scripture Context, six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer were not rendered.
+- The website also reused the source Scripture Context paragraph as the overview description/background even though the source provides a distinct subtitle and no standalone Study Foundation body. `ecclesiastes-study-guide.js` restores the exact subtitle and removes that misassigned overview text.
+- Restored the source Key Truth, Purpose label, full Series Guide, and Closing Prayer through `ecclesiastes-study-guide.js`. The shared renderer now honors `seriesPurposeLabel`, so series guides that explicitly use `Purpose` no longer display the generic `Series purpose` label. Lesson pages also use the source heading `Purpose`.
+
 ## Next audit
 
-Ecclesiastes.
+Song of Solomon.

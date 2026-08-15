@@ -98,6 +98,50 @@ The Exodus series landing page previously omitted four sections that are present
 
 Those sections are now restored to the Exodus website experience. The existing Interpretive Commitments text was already present as the series theme and is now explicitly labeled.
 
+## Leviticus — PASS after series-guide restoration
+
+Audited: 2026-08-15
+
+Authoritative sources:
+- `Leviticus — Series Guide`
+- `Leviticus 1 — Drawing Near Through Sacrifice`
+- `Leviticus 2 — Priests, Holy Service, and Accountability`
+- `Leviticus 3 — Clean, Unclean, and Human Dignity`
+- `Leviticus 4 — The Day of Atonement`
+- `Leviticus 5 — Holiness in Body, Sexuality, and Relationships`
+- `Leviticus 6 — Love Your Neighbor and Protect the Vulnerable`
+- `Leviticus 7 — Sabbath, Jubilee, Land, and Economic Justice`
+- `Leviticus 8 — Covenant Faithfulness, Blessing, and Hope`
+
+### Lesson-by-lesson result
+
+All eight Leviticus lesson documents match the website study data for:
+- lesson title
+- main Scripture
+- central question
+- key truth
+- purpose
+- opening
+- Scripture context
+- all six teaching movements and their full text
+- all eight discussion questions
+- personal examination
+- weekly practice
+- leader guidance
+- closing prayer
+
+The Leviticus lesson source documents do **not** contain a separate `Supporting Scriptures` section. Therefore the existing empty `supporting` arrays are source-faithful; no supporting-reference list was removed from these eight lesson documents.
+
+### Gap found and restored
+
+The Leviticus series landing page previously omitted four sections that are present in the authoritative `Leviticus — Series Guide`:
+- Recommended Rhythm
+- Facilitator Safeguards
+- How to Read Together
+- Series Closing Prayer
+
+Those sections are now restored to the Leviticus website experience. The existing Interpretive Commitments text was already present as the series theme and is now explicitly labeled.
+
 ### Next audit
 
-Leviticus.
+Numbers.

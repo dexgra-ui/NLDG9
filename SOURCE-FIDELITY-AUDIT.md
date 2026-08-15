@@ -43,19 +43,21 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Jeremiah | PASS after series-guide restoration and label correction |
 | Lamentations | PASS after series-guide restoration and label correction |
 | Ezekiel | PASS after series-guide restoration and label correction |
+| Daniel | PASS after full series-guide restoration and label correction |
 
-## Ezekiel — detailed result
+## Daniel — detailed result
 Audited: 2026-08-15
 
-- Sources checked: `Ezekiel — Series Guide` and all 8 lesson documents.
-- All eight lessons preserve the source Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
-- The Main Scripture fields are preserved exactly as `Ezekiel 1–3`, `Ezekiel 3; 18; 33`, `Ezekiel 4–12; 24`, `Ezekiel 34`, `Ezekiel 36`, `Ezekiel 37`, `Ezekiel 38–39`, and `Ezekiel 40–48`.
-- The lesson sources do not contain a separate Supporting Scriptures heading, so the empty `supporting` arrays are source-faithful.
-- Many lesson Teaching Movement bodies intentionally use repeated generic wording in the authoritative Drive source. The website generates that same source wording through `commonBody`; it is not a website-side replacement and must not be silently rewritten during this fidelity audit. Lesson-specific exceptions such as `The Death of Ezekiel’s Wife` and `Do Not Decode Headlines` are also preserved exactly.
-- The website constructs shared lesson fields from constants and each lesson Scripture range, but those generated values match the authoritative source for Purpose, Opening, Scripture Context, Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
-- The existing website data preserved the Study Foundation, Series Purpose, Interpretive Commitments, lesson map, and lesson-specific material, but the page did not render the Series Guide's exact subtitle, `Recommended Rhythm`, `Facilitator Safeguards`, `How to Read Together`, or `Closing Prayer`, and the Interpretive Commitments wording lacked its source label.
-- `ezekiel-study-guide.js` restores the exact source subtitle and labels, preserves the Study Foundation and Series Purpose, restores the omitted guide sections and Closing Prayer, and changes lesson presentation from the generic `Lesson purpose` label to the source heading `Purpose`.
+- Sources checked: `Daniel — Series Guide` and all 8 lesson documents.
+- All eight lessons preserve the source title, Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- The Main Scripture fields are preserved exactly as `Daniel 1:1–21; Jeremiah 29:4–7; Romans 12:1–2`, `Daniel 2:1–49; Psalm 2:1–12; James 1:5`, `Daniel 3:1–30; Exodus 20:1–6; Acts 5:27–32`, `Daniel 4:1–37; Proverbs 16:18; Luke 18:9–14`, `Daniel 5:1–31; Isaiah 47:7–11; Galatians 6:7–8`, `Daniel 6:1–28; Psalm 55:16–18; 1 Timothy 2:1–4`, `Daniel 7:1–28; Psalm 110:1–7; Mark 14:61–64`, and `Daniel 8:1–12:13; Matthew 24:15–31; Revelation 12:7–12`.
+- The lesson sources do not contain a separate Supporting Scriptures heading; all cross-book references are part of Main Scripture, so the empty `supporting` arrays are source-faithful.
+- The second line of each lesson is the generic `Daniel, Lesson X`, so there is no meaningful source subtitle to restore on lesson pages.
+- No end-of-file `forEach` overwrite is present in `daniel-study-data.js`.
+- The existing website lesson data is source-faithful, but the Series Guide was incomplete and partly mislabeled: the source subtitle was absent, the overview theme did not use the exact source Key Truth, the `background` reused the `Two Literary Worlds` Teaching Movement under the `Study foundation` label, and the source Main Scripture, Central Question, Opening, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer were not rendered as the full Series Guide.
+- The source `Study Foundation` heading leads directly into `Main Scripture` and has no standalone prose beneath it, so `daniel-study-guide.js` suppresses the incorrect background block rather than inventing or relabeling content.
+- `daniel-study-guide.js` restores the exact source subtitle, Key Truth, Purpose label, Main Scripture, Central Question, Opening, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer, and changes lesson presentation from the generic `Lesson purpose` label to the source heading `Purpose`.
 
 ## Next audit
 
-Daniel.
+Hosea.

@@ -52,19 +52,22 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Jonah | PASS after series-guide restoration and source-label correction |
 | Micah | PASS after authoritative-set, lesson-data, and series-guide restoration |
 | Nahum | PASS after full lesson-data, series-guide, Scripture-field, and source-label restoration |
+| Habakkuk | PASS after full lesson-data, series-guide, and source-label restoration |
 
-## Nahum — detailed result
+## Habakkuk — detailed result
 Audited: 2026-08-15
 
-- Authoritative source scope: the direct contents of Drive folder `Nahum` (folder ID `15BlwBB0o_QxncKPLRd5nQAsOSgd-FYsr`): `Nahum — Series Guide` plus 4 numbered lesson documents.
-- The four authoritative lessons are `The Lord Is Good and Just`, `The Fall of Violent Power`, `Woe to the City of Blood`, and `Justice Without Revenge`.
-- Every lesson uses a single `Main Scripture` field that includes the Nahum passage plus its cross-book references. The source does not contain a separate `Supporting Scriptures` heading. The former website split those references into a separate supporting field; this was **MISLABELED** and no longer matched the source organization. Main Scripture is now preserved exactly as `Nahum 1:1–8; Exodus 34:6–7; Psalm 46:1–3`, `Nahum 1:9–2:13; Isaiah 10:5–19; Psalm 20:7`, `Nahum 3:1–7; Habakkuk 2:6–17; Luke 4:18–19`, and `Nahum 3:8–19; Romans 12:17–21; Revelation 19:1–6`, with `supporting: []` because the source has no separate supporting section.
-- The former website retained the lesson titles, Central Questions, Key Truths, and Purposes, but shortened every Teaching Movement body. Those sections were classified **SHORTENED** and have been restored verbatim from Drive.
-- The former `nahum-study-data.js` ended with a `forEach` that replaced the source Opening, Scripture Context, Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer with shorter reusable text. This was classified **GENERIC REPLACEMENT**. The overwrite has been removed; the repeated text now used in the data is the exact repeated wording found in all four authoritative lesson documents.
-- `nahum-study-data.js` now preserves every lesson title, exact Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six full Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
-- The former overview preserved the source subtitle, Key Truth, and Purpose but mislabeled the `Historical Setting` teaching paragraph as `Study foundation` and omitted most of the full Series Guide. `nahum-study-guide.js` now restores the exact Main Scripture, Central Question, Opening, Scripture Context, all six Series Guide Teaching Movements (`Historical Setting`, `Theological Center`, `Pastoral Posture`, `Lesson Map`, `Leader Safeguards`, `Desired Formation`), eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
-- The shared renderer now supports opt-in source-specific labels for both full Series Guides and individual lessons while leaving existing studies on their previous defaults. Nahum uses these options to preserve `Study Foundation`, `Main Scripture`, `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`, and suppresses non-source helper titles for examination and weekly practice.
+- Authoritative source scope: the direct contents of Drive folder `Habakkuk — Book-by-Book Study` (folder ID `1DS2hicxX9l2BJsWmTPX975AbjSpJV3a6`): `Habakkuk — Series Guide` plus 4 numbered lesson documents.
+- The four authoritative lessons are `How Long Must I Call for Help?`, `Waiting for the Vision`, `Woe to the Proud and Violent`, and `Yet I Will Rejoice`.
+- Main Passages are preserved exactly as `Habakkuk 1:1–11`, `Habakkuk 1:12–2:5`, `Habakkuk 2:6–20`, and `Habakkuk 3:1–19`.
+- Every lesson has an explicit `Supporting Scriptures` section, and all four references for each lesson were already present and remain preserved.
+- The former website retained the lesson titles, Main Passages, Supporting Scriptures, Central Questions, Key Truths, Purposes, Opening Discussions, eight Discussion Questions, and Closing Prayers, but shortened multiple Scripture Contexts, Teaching Movement bodies, Personal Examinations, Weekly Practices, and Leader Guidance sections. These were classified **SHORTENED** and restored verbatim from Drive.
+- No end-of-file generic `forEach` overwrite was present in `habakkuk-study-data.js`; the lossiness was embedded directly in shortened lesson fields rather than applied afterward.
+- `habakkuk-study-data.js` now preserves every lesson title, Main Passage, Supporting Scriptures, Central Question, Key Truth, Lesson Purpose, Opening Discussion, Scripture Context, all six full Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- The former overview preserved the source subtitle, Central Theme, and a shortened Historical Setting, but compressed the Series Overview and Series Goals and omitted the exact Historical Setting, Lesson Map, Leader Preparation, Recommended Rhythm, Key Scriptures, and Closing Prayer as source-labeled sections.
+- `habakkuk-study-guide.js` restores both exact Series Overview paragraphs, Central Theme, all six Series Goals, Historical Setting, exact Lesson Map, Leader Preparation, Recommended Rhythm, Key Scriptures, and Closing Prayer.
+- Lesson presentation now preserves the source headings `Lesson Purpose`, `Opening Discussion`, `Main Passage`, `Supporting Scriptures`, and `Scripture Context`.
 
 ## Next audit
 
-Habakkuk.
+Zephaniah.

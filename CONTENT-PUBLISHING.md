@@ -13,6 +13,19 @@ The shared content registry is the source of truth for ministry discovery. A pub
 
 New content should not require manual edits to homepage sections, search, topic browsing, Scripture browsing, related-content blocks, or the complete-content site-map index.
 
+## Source fidelity for imported studies
+
+When a Bible study is published from a Google Drive source document, the Drive document is the authoritative content source. Website formatting may change, but the content must remain complete.
+
+- Preserve every visible Scripture reference from the source, including main passages, supporting Scriptures, references inside teaching text, questions, notes, and series guides.
+- Do not summarize, shorten, paraphrase, or "clean up" source teaching text during import unless an editorial change has been explicitly approved.
+- Preserve lesson-specific Purpose, Opening, Scripture Context, Teaching Movements, Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, cautions, and Closing Prayer.
+- Do not replace lesson-specific material with reusable generic text merely to fit the shared renderer.
+- Preserve series-guide content as well as lesson content, including interpretive commitments, recommended rhythm, facilitator safeguards, reading guidance, closing prayer, and other source sections.
+- Use an empty `supporting` array only when the source lesson genuinely contains no separate supporting-Scripture list.
+- If the renderer does not yet support a source section, extend the renderer or add an optional structured field rather than dropping the section.
+- Before publication, compare the website data against the authoritative source section by section and record the result in `SOURCE-FIDELITY-AUDIT.md`.
+
 ## Required metadata
 
 Every published entry needs:
@@ -60,5 +73,6 @@ The service worker installs the application shell and major ministry hubs. Other
 - Search finds the new entry by title, Scripture, and topic.
 - The generated site-map index includes the new entry.
 - Related content is relevant.
+- Imported studies have been checked against their authoritative source for complete text and Scripture references.
 - Print output is checked when applicable.
 - Automated audits pass before merge.

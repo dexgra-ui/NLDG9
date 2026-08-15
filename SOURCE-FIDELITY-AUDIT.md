@@ -477,6 +477,101 @@ The authoritative `2 Samuel — Series Guide` is a full study foundation. The we
 
 Those sections are now restored through `second-samuel-study-guide.js`, using the full-series-guide support in the shared book-study renderer.
 
+## 1 Kings — PASS after full series-guide restoration
+
+Audited: 2026-08-15
+
+Authoritative sources:
+- `1 Kings — Series Guide`
+- `1 Kings 1 — Solomon Asks for Wisdom`
+- `1 Kings 2 — The Temple and the God Who Hears`
+- `1 Kings 3 — Splendor, Wealth, and a Divided Heart`
+- `1 Kings 4 — The Kingdom Divides`
+- `1 Kings 5 — Decline, Reform, and Prophetic Truth`
+- `1 Kings 6 — Elijah, the Widow, and Mount Carmel`
+- `1 Kings 7 — Elijah Under the Broom Tree`
+- `1 Kings 8 — Ahab, Naboth, and Accountable Power`
+
+### Lesson-by-lesson result
+
+All eight 1 Kings lesson documents match the website study data for:
+- lesson title
+- the complete Main Scripture field, including every cross-book reference listed there
+- central question
+- key truth
+- purpose
+- opening
+- Scripture context
+- all six teaching movements and their full text
+- all eight discussion questions
+- personal examination
+- weekly practice
+- leader guidance
+- closing prayer
+
+Each lesson preserves the full Main Scripture string, including cross-book references, such as `1 Kings 1:1–4:34; 2 Chronicles 1:7–12; James 1:5` in Lesson 1 and `1 Kings 20:1–22:53; Isaiah 5:7–8; James 5:1–6` in Lesson 8. The lesson documents do **not** contain a separate `Supporting Scriptures` heading, so empty `supporting` arrays do not represent lost references.
+
+### Gap found and restored
+
+The authoritative `1 Kings — Series Guide` is a full study foundation. The website previously preserved the series title, Key Truth, Purpose, and Scripture-context language, but omitted substantial guide material, including:
+- Series Main Scripture: 1 Kings 1–22; Deuteronomy 17:14–20; Matthew 6:24
+- Central Question
+- Opening
+- the full Scripture Context in its source-guide position
+- all six series-level teaching movements, including Pastoral Safeguards
+- all eight series-level discussion questions
+- Personal Examination
+- Weekly Practice
+- Leader Guidance
+- Closing Prayer
+
+Those sections are now restored through `first-kings-study-guide.js`, using the full-series-guide support in the shared book-study renderer.
+
+## 2 Kings — PASS after series-guide restoration
+
+Audited: 2026-08-15
+
+Authoritative sources:
+- `2 Kings — Series Guide`
+- `2 Kings 1 — Elijah’s Departure and Elisha’s Calling`
+- `2 Kings 2 — Mercy, Provision, and Resurrection Hope`
+- `2 Kings 3 — Naaman, Healing, and Gehazi’s Greed`
+- `2 Kings 4 — God Opens Eyes During Siege and Fear`
+- `2 Kings 5 — Hazael, Jehu, and Violent Reform`
+- `2 Kings 6 — Joash, Decline, and the Cost of Compromise`
+- `2 Kings 7 — Israel Falls and Hezekiah Trusts God`
+- `2 Kings 8 — Josiah, Jerusalem’s Fall, and Hope in Exile`
+
+### Lesson-by-lesson result
+
+All eight 2 Kings lesson documents match the website study data for:
+- lesson title
+- Main Scripture
+- central question
+- key truth
+- purpose
+- opening
+- Scripture context
+- all six teaching movements and their full text
+- all eight discussion questions
+- personal examination
+- weekly practice
+- leader guidance
+- closing prayer
+
+The 2 Kings lesson documents use one Main Scripture range per lesson and do **not** contain a separate `Supporting Scriptures` section. Therefore the existing empty `supporting` arrays are source-faithful; no supporting-reference list was removed.
+
+### Gap found and restored
+
+The authoritative `2 Kings — Series Guide` uses the shorter series-guide structure. The website already preserved the Study Foundation, Series Purpose, Interpretive Commitments text, and the eight-entry Lesson Map through the existing study metadata and lesson cards, but it did not display several source sections. The restored material includes:
+- an explicit `Interpretive Commitments` label
+- Recommended Rhythm
+- Facilitator Safeguards
+- How to Use Scripture References
+- Closing Prayer
+
+Those sections are now restored through `second-kings-study-guide.js` without changing the lesson text.
+
 ### Next audit
 
-1 Kings.
+1 Chronicles.

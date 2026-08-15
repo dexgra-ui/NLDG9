@@ -60,21 +60,22 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Matthew | PASS after Scripture-field, full lesson-data, series-guide, and source-label restoration |
 | Mark | PASS after Scripture-field, full lesson-data, series-guide, and source-label restoration |
 | Luke | PASS after Scripture-field, full lesson-data, series-guide, and source-label restoration |
+| John | PASS after Scripture-field, full lesson-data, series-guide, and source-label restoration |
 
-## Luke — detailed result
+## John — detailed result
 Audited: 2026-08-15
 
-- Authoritative source scope: the direct contents of Drive folder `Luke` (folder ID `1MvinZ0xwA6nDehlwSLMZpEAtp5cd367-`): `Luke — Series Guide` plus 8 numbered lesson documents.
-- The eight authoritative lessons are `Good News for the Humble`, `Jesus Announces the Kingdom`, `Learning the Way of Discipleship`, `Loving God, Neighbor, and Enemy`, `Money, Mercy, and Watchful Faithfulness`, `The King Who Seeks the Lost`, `Faithful Witness in Jerusalem`, and `The Cross, the Table, and the Risen Lord`.
-- Each authoritative lesson uses one `Main Scripture` field containing three references. The former website kept only the leading Luke range and omitted the two additional references in every lesson. Sixteen references were therefore classified **MISSING SCRIPTURE** and restored inside the Main Scripture field rather than being relabeled as Supporting Scriptures.
+- Authoritative source scope: the direct contents of Drive folder `John` (folder ID `1ml0Bs72CSpxdLuCwm2PEEL1znh14PUSj`): `John — Series Guide` plus 8 numbered lesson documents.
+- The eight authoritative lessons are `The Word Became Flesh`, `New Birth and Living Water`, `The Son Gives Life and Bread`, `Light, Truth, and the Good Shepherd`, `Resurrection and Costly Belief`, `Servant Love and the Promised Spirit`, `Jesus’ Prayer, Trial, and Cross`, and `The Risen Lord Restores and Sends`.
+- Each authoritative lesson uses one `Main Scripture` field containing three references. The former website kept only the leading John range and omitted the two additional references in every lesson. Sixteen references were therefore classified **MISSING SCRIPTURE** and restored inside the Main Scripture field rather than being relabeled as Supporting Scriptures.
 - The authoritative lesson documents contain no separate `Supporting Scriptures` heading. `supporting: []` remains source-faithful.
-- The former generated data preserved lesson titles, Central Questions, Key Truths, and Teaching Movement headings, but replaced every source Purpose, Opening, Scripture Context, Teaching Movement body, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer with shorter or generalized text. Several Discussion Questions were shortened as well. These were classified **SHORTENED** or **GENERIC REPLACEMENT** and restored exactly from Drive.
-- The corrected `luke-study-data.js` uses shared constants only where the Drive source itself repeats exact wording; its `forEach` assigns those exact source sections and does not replace lesson-specific material with generic substitutes.
-- `luke-study-data.js` now preserves every lesson title, complete Main Scripture field, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- The former generated data preserved lesson titles, Central Questions, Key Truths, and Teaching Movement headings, but replaced every source Purpose, Opening, Scripture Context, Teaching Movement body, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer with shorter or generalized text. Several Discussion Questions were shortened or rewritten as well. These were classified **SHORTENED** or **GENERIC REPLACEMENT** and restored exactly from Drive.
+- The corrected `john-study-data.js` uses shared constants only where the Drive source itself repeats exact wording; its `forEach` assigns those exact source sections and does not replace lesson-specific material with generic substitutes.
+- `john-study-data.js` now preserves every lesson title, complete Main Scripture field, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
 - Each lesson source includes a `Study Foundation` heading with no standalone prose beneath it before `Main Scripture`; the page now preserves that heading without inventing foundation text. Lesson presentation also preserves the source labels `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Main Scripture`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`.
-- The former website did not load a Series Guide. `luke-study-guide.js` now restores the exact source subtitle, Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, six Teaching Movements including `Pastoral Safeguards`, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- The former website did not load a Series Guide. `john-study-guide.js` now restores the exact source subtitle, Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, six Teaching Movements including `The Language of ‘the Jews’` and `Pastoral Safeguards`, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
 - The Series Guide itself contains no Lesson Map, Recommended Rhythm, or separate Supporting Scriptures section, so none was invented.
 
 ## Next audit
 
-John.
+Acts.

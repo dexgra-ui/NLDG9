@@ -39,6 +39,7 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Proverbs | PASS after full series-guide restoration and label correction |
 | Ecclesiastes | PASS after full series-guide restoration and label correction |
 | Song of Songs | PASS after full series-guide restoration and label correction |
+| Isaiah | PASS after series-guide restoration and label correction |
 
 ## Proverbs — detailed result
 Audited: 2026-08-15
@@ -73,6 +74,18 @@ Audited: 2026-08-15
 - The website data already preserved the lesson-specific material, but the full Series Guide was not loaded by the page. Restored its Main Scripture, Central Question, Opening, Scripture Context, six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer through `song-of-songs-study-guide.js`.
 - The website had also reused the source Scripture Context paragraph as its overview description/background. The guide overlay restores the exact source subtitle, removes that misassigned overview text, and uses the source heading `Purpose` for both the series and lessons.
 
+## Isaiah — detailed result
+Audited: 2026-08-15
+
+- Sources checked: `Isaiah — Series Guide` and all 8 lesson documents.
+- All eight lessons preserve the exact Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- The lesson Main Scripture fields are preserved exactly as `Isaiah 1–6`, `Isaiah 7–12`, `Isaiah 13–35`, `Isaiah 40–48`, `Isaiah 49–55`, `Isaiah 56–61`, `Isaiah 62–64`, and `Isaiah 65–66`.
+- The lesson sources do not contain a separate Supporting Scriptures heading, so the empty `supporting` arrays are source-faithful.
+- No generic end-of-file overwrite is present in `isaiah-study-data.js`; the lesson-specific teaching, pastoral cautions, questions, practices, and prayers remain intact.
+- The existing data preserved the source Study Foundation, Series Purpose, and Interpretive Commitments wording, but the Series Guide was incomplete on the page. Its exact subtitle, `Recommended Rhythm`, `Facilitator Safeguards`, `How to Read Together`, and `Closing Prayer` were not rendered, and `Interpretive Commitments` lacked its source label.
+- `isaiah-study-guide.js` restores the exact source subtitle and labels, preserves the Study Foundation paragraph and Series Purpose, restores the three omitted guide sections and Closing Prayer, and changes lesson presentation from the generic `Lesson purpose` label to the source heading `Purpose`.
+- The source Lesson Map is represented by the website lesson map with the same eight lesson titles and Scripture ranges.
+
 ## Next audit
 
-Isaiah.
+Jeremiah.

@@ -330,6 +330,53 @@ The authoritative `Judges — Series Guide` is a full study foundation. The land
 
 Those sections are now restored through `judges-study-guide.js`, using the full-series-guide support already built into the shared book-study renderer.
 
+## Ruth — PASS after series-guide restoration and wording correction
+
+Audited: 2026-08-15
+
+Authoritative sources:
+- `Ruth — Series Guide`
+- `Ruth 1 — Faithfulness in Famine and Loss`
+- `Ruth 2 — Refuge Under God’s Wings`
+- `Ruth 3 — Courage, Integrity, and Wise Risk`
+- `Ruth 4 — Redemption at the Gate`
+- `Ruth 5 — From Emptiness to God’s Larger Story`
+
+### Lesson-by-lesson result
+
+All five Ruth lessons preserve:
+- lesson title
+- Main Passage
+- every Supporting Scripture reference
+- Central Question
+- Key Truth
+- full Lesson Purpose wording
+- Opening Discussion
+- Scripture Context
+- all six Teaching Movements and their full text
+- all eight Discussion Questions
+- Personal Examination
+- Weekly Practice
+- Leader Guidance
+- Closing Prayer
+
+Ruth is the first audited book in this sequence with an explicit `SUPPORTING SCRIPTURES` section in every lesson. Those references were already present in the website data and remain preserved. Examples include Psalm 13, Psalm 34:18, Lamentations 3:19–26, and Luke 9:57–62 in Lesson 1, and Leviticus 19:9–10, Deuteronomy 24:17–22, Psalm 91:1–4, and James 2:1–9 in Lesson 2.
+
+A minor wording normalization was also corrected: the website data had dropped the opening word `To` from each Lesson Purpose. `ruth-study-guide.js` now restores the exact source wording before the lesson renders.
+
+### Gap found and restored
+
+The authoritative `Ruth — Series Guide` contains material that was only summarized or omitted on the website. The restored source material includes:
+- the full two-paragraph Series Overview
+- the exact Central Theme
+- all six Series Goals
+- Leader Preparation
+- Recommended Rhythm
+- Key Scriptures: Ruth 1:16–17; 2:12; 3:10–11; 4:14–17; Matthew 1:5–6
+- Closing Prayer
+
+The existing lesson-map interface already represents the five source lesson-map entries with the same titles and passages, so it was retained rather than duplicated. `ruth-study-guide.js` now supplies the omitted source sections and exact wording. The shared renderer was also extended with flexible source-guide blocks so future series guides with different structures can be preserved without forcing them into unrelated headings.
+
 ### Next audit
 
-Ruth.
+1 Samuel.

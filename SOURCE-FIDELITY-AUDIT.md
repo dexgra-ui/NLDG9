@@ -38,6 +38,7 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Psalms | PASS after series-guide restoration and label correction |
 | Proverbs | PASS after full series-guide restoration and label correction |
 | Ecclesiastes | PASS after full series-guide restoration and label correction |
+| Song of Songs | PASS after full series-guide restoration and label correction |
 
 ## Proverbs — detailed result
 Audited: 2026-08-15
@@ -61,6 +62,17 @@ Audited: 2026-08-15
 - The website also reused the source Scripture Context paragraph as the overview description/background even though the source provides a distinct subtitle and no standalone Study Foundation body. `ecclesiastes-study-guide.js` restores the exact subtitle and removes that misassigned overview text.
 - Restored the source Key Truth, Purpose label, full Series Guide, and Closing Prayer through `ecclesiastes-study-guide.js`. The shared renderer now honors `seriesPurposeLabel`, so series guides that explicitly use `Purpose` no longer display the generic `Series purpose` label. Lesson pages also use the source heading `Purpose`.
 
+## Song of Songs — detailed result
+Audited: 2026-08-15
+
+- Sources checked: `Song of Songs — Series Guide` and all 5 lesson documents.
+- All five lessons preserve the exact Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- Complete Main Scripture fields, including cross-book references, are preserved. Examples include `Song of Songs 1:1–2:7; Genesis 1:26–31`, `Song of Songs 3:6–5:1; Genesis 2:18–25; Ephesians 5:21`, and `Song of Songs 7:1–8:14; 1 Corinthians 13:4–8; Romans 8:38–39`.
+- The lesson sources do not contain a separate Supporting Scriptures heading; all cross-book references belong to the Main Scripture field, so the empty `supporting` arrays are source-faithful.
+- No generic `forEach` overwrite is present in `song-of-songs-study-data.js`; lesson-specific pastoral and safeguarding content remains intact.
+- The website data already preserved the lesson-specific material, but the full Series Guide was not loaded by the page. Restored its Main Scripture, Central Question, Opening, Scripture Context, six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer through `song-of-songs-study-guide.js`.
+- The website had also reused the source Scripture Context paragraph as its overview description/background. The guide overlay restores the exact source subtitle, removes that misassigned overview text, and uses the source heading `Purpose` for both the series and lessons.
+
 ## Next audit
 
-Song of Solomon.
+Isaiah.

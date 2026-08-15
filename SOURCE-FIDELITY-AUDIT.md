@@ -55,20 +55,23 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Habakkuk | PASS after full lesson-data, series-guide, and source-label restoration |
 | Zephaniah | PASS after full lesson-data, series-guide, and source-label restoration |
 | Haggai | PASS after full lesson-data, series-guide, and source-label restoration |
+| Zechariah | PASS after full lesson-data, series-guide, and source-label restoration |
 
-## Haggai — detailed result
+## Zechariah — detailed result
 Audited: 2026-08-15
 
-- Authoritative source scope: the direct contents of Drive folder `Haggai` (folder ID `1jIYRZruTtUdikvSc3eKFpQ2hAII4Ov8v`): `Haggai — Series Guide` plus 4 numbered lesson documents.
-- The four authoritative lessons are `Consider Your Ways`, `I Am With You`, `From This Day On I Will Bless You`, and `The Kingdom That Cannot Be Shaken`.
-- Main Scriptures are preserved exactly as `Haggai 1:1–15`, `Haggai 2:1–9`, `Haggai 2:10–19`, and `Haggai 2:20–23`.
-- Every lesson has an explicit `Supporting Scriptures` section, and all three references for each lesson were already present and remain preserved.
-- The former website shortened Scripture Context and Teaching Movement wording throughout the four lessons. For example, Lesson 1 reduced the detailed priority and obedience movements to summaries, Lesson 2 shortened the comparison, covenant, Spirit, and future-glory material, Lesson 3 compressed the ritual-holiness explanation, and Lesson 4 shortened the political-fragility, signet, election, and Christ-fulfillment movements. These were classified **SHORTENED** and restored verbatim from Drive.
-- The former `haggai-study-data.js` ended with a generic `forEach`. Its repeated Purpose and Opening matched the source, but multiple Discussion Questions were shortened and the Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer were shortened or replaced. This was classified **GENERIC REPLACEMENT**. The overwrite has been removed; the exact repeated source wording is now represented by shared constants and assigned directly to each lesson.
-- `haggai-study-data.js` now preserves every lesson title, Main Scripture, Supporting Scriptures, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
-- The former overview blended and compressed the Series Guide and did not load a source guide file. `haggai-study-guide.js` now restores the exact subtitle `Reordered Priorities, God’s Presence, and Unshakable Hope`, Series Purpose, Historical and Literary Setting, Central Aim, exact Lesson Map, Recommended Rhythm, Leader Commitments, Pastoral Safeguards, Christ-Centered Reading, and Desired Fruit. The authoritative Series Guide contains no Closing Prayer section, so none was added.
-- Lesson presentation now preserves the source headings `Purpose`, `Opening`, `Main Scripture`, `Supporting Scriptures`, and `Scripture Context`.
+- Authoritative source scope: the direct contents of Drive folder `Zechariah` (folder ID `1iS_8aTAxxKNohLTJWX4lbqd8pJQl65hb`): `Zechariah — Series Guide` plus 8 numbered lesson documents.
+- The eight authoritative lessons are `Return to Me and I Will Return to You`, `Night Visions and God’s Restoring Presence`, `Joshua Cleansed and the Coming Branch`, `Not by Might, but by My Spirit`, `True Fasting, Justice, and the Nations`, `The Humble King and the Pierced One`, `The Shepherd, the Flock, and Rejected Leadership`, and `The Day of the Lord and Living Waters`.
+- Main Scriptures are preserved exactly as `Zechariah 1`, `Zechariah 1–6`, `Zechariah 3`, `Zechariah 4`, `Zechariah 7–8`, `Zechariah 9; 12`, `Zechariah 10–13`, and `Zechariah 14`.
+- The authoritative lesson documents contain no separate `Supporting Scriptures` section. `supporting: []` is therefore source-faithful and no cross-reference section is invented.
+- The former website used a generated summary set that shortened or changed source material throughout. Lesson 5’s Central Question and Key Truth, Lessons 6–8’s Central Questions and Key Truths, multiple movement headings, and many movement bodies did not match the authoritative documents. These were classified **SHORTENED** or **GENERIC REPLACEMENT** and restored to the Drive wording.
+- The former generated lesson map also replaced every source Purpose, Opening, Scripture Context, Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer with shorter reusable text. The new data still uses shared helpers where the Drive source itself repeats exact wording, but each helper now reproduces the authoritative text without loss.
+- Source-specific Teaching Movement bodies are preserved where the Drive documents depart from the repeated pattern, including `Not by Might`, `Old and Young in Safe Streets`, `The One They Pierced`, and `A Severe Apocalyptic Battle`.
+- `zechariah-study-data.js` now preserves every lesson title, exact Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- Each lesson source includes a `Study Foundation` heading with no standalone prose beneath it before `Main Scripture`; the page now preserves that heading without inventing foundation text. Lesson presentation also preserves the source labels `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Main Scripture`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`.
+- The former website did not load a Series Guide. `zechariah-study-guide.js` now restores the exact subtitle `Return, Cleansing, Spirit-Empowered Work, the Humble King, and Final Hope`, Study Foundation, Series Purpose, Interpretive Commitments, exact Lesson Map, Recommended Rhythm, Facilitator Safeguards, How to Read Together, and Closing Prayer.
+- The Series Guide’s Lesson 1 map title is `Return to Me — Zechariah 1`, while the authoritative Lesson 1 document title is `Return to Me and I Will Return to You`. Both source forms are preserved in their respective locations rather than silently reconciled.
 
 ## Next audit
 
-Zechariah.
+Malachi.

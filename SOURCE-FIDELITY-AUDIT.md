@@ -41,19 +41,20 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Song of Songs | PASS after full series-guide restoration and label correction |
 | Isaiah | PASS after series-guide restoration and label correction |
 | Jeremiah | PASS after series-guide restoration and label correction |
+| Lamentations | PASS after series-guide restoration and label correction |
 
-## Jeremiah — detailed result
+## Lamentations — detailed result
 Audited: 2026-08-15
 
-- Sources checked: `Jeremiah — Series Guide` and all 8 lesson documents.
+- Sources checked: `Lamentations — Series Guide` and all 8 lesson documents.
 - All eight lessons preserve the source Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
-- The Main Scripture fields are preserved exactly as `Jeremiah 1`, `Jeremiah 2–6`, `Jeremiah 7–10`, `Jeremiah 14; 23; 27–28`, `Jeremiah 18–20; 26`, `Jeremiah 29`, `Jeremiah 30–33`, and `Jeremiah 36–45; 52`.
+- The Main Scripture fields are preserved exactly as `Lamentations 1`, `Lamentations 2`, `Lamentations 3:1–39`, `Lamentations 4`, `Lamentations 5`, `Lamentations 1–5`, `Lamentations 3:19–66`, and `Lamentations 5:19–22`.
 - The lesson sources do not contain a separate Supporting Scriptures heading, so the empty `supporting` arrays are source-faithful.
 - Several lesson Teaching Movement bodies intentionally use repeated generic wording in the authoritative Drive source. The website preserves that wording exactly; it is not a website-side generic replacement and must not be silently rewritten during this fidelity audit.
-- No end-of-file `forEach` overwrite is present in `jeremiah-study-data.js`.
+- The website constructs shared lesson fields from constants and each lesson Scripture range, but those generated values match the authoritative source exactly for Purpose, Opening, Scripture Context, Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
 - The existing website data preserved the Study Foundation, Series Purpose, Interpretive Commitments, lesson map, and lesson-specific material, but the page did not render the Series Guide's exact subtitle, `Recommended Rhythm`, `Facilitator Safeguards`, `How to Read Together`, or `Closing Prayer`, and the Interpretive Commitments wording lacked its source label.
-- `jeremiah-study-guide.js` restores the exact source subtitle and labels, preserves the Study Foundation and Series Purpose, restores the omitted guide sections and Closing Prayer, and changes lesson presentation from the generic `Lesson purpose` label to the source heading `Purpose`.
+- `lamentations-study-guide.js` restores the exact source subtitle and labels, preserves the Study Foundation and Series Purpose, restores the omitted guide sections and Closing Prayer, and changes lesson presentation from the generic `Lesson purpose` label to the source heading `Purpose`.
 
 ## Next audit
 
-Lamentations.
+Ezekiel.

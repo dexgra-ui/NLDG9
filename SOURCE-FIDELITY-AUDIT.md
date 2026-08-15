@@ -56,22 +56,22 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Zephaniah | PASS after full lesson-data, series-guide, and source-label restoration |
 | Haggai | PASS after full lesson-data, series-guide, and source-label restoration |
 | Zechariah | PASS after full lesson-data, series-guide, and source-label restoration |
+| Malachi | PASS after supporting-Scripture, full lesson-data, series-guide, and source-label restoration |
 
-## Zechariah — detailed result
+## Malachi — detailed result
 Audited: 2026-08-15
 
-- Authoritative source scope: the direct contents of Drive folder `Zechariah` (folder ID `1iS_8aTAxxKNohLTJWX4lbqd8pJQl65hb`): `Zechariah — Series Guide` plus 8 numbered lesson documents.
-- The eight authoritative lessons are `Return to Me and I Will Return to You`, `Night Visions and God’s Restoring Presence`, `Joshua Cleansed and the Coming Branch`, `Not by Might, but by My Spirit`, `True Fasting, Justice, and the Nations`, `The Humble King and the Pierced One`, `The Shepherd, the Flock, and Rejected Leadership`, and `The Day of the Lord and Living Waters`.
-- Main Scriptures are preserved exactly as `Zechariah 1`, `Zechariah 1–6`, `Zechariah 3`, `Zechariah 4`, `Zechariah 7–8`, `Zechariah 9; 12`, `Zechariah 10–13`, and `Zechariah 14`.
-- The authoritative lesson documents contain no separate `Supporting Scriptures` section. `supporting: []` is therefore source-faithful and no cross-reference section is invented.
-- The former website used a generated summary set that shortened or changed source material throughout. Lesson 5’s Central Question and Key Truth, Lessons 6–8’s Central Questions and Key Truths, multiple movement headings, and many movement bodies did not match the authoritative documents. These were classified **SHORTENED** or **GENERIC REPLACEMENT** and restored to the Drive wording.
-- The former generated lesson map also replaced every source Purpose, Opening, Scripture Context, Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer with shorter reusable text. The new data still uses shared helpers where the Drive source itself repeats exact wording, but each helper now reproduces the authoritative text without loss.
-- Source-specific Teaching Movement bodies are preserved where the Drive documents depart from the repeated pattern, including `Not by Might`, `Old and Young in Safe Streets`, `The One They Pierced`, and `A Severe Apocalyptic Battle`.
-- `zechariah-study-data.js` now preserves every lesson title, exact Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
-- Each lesson source includes a `Study Foundation` heading with no standalone prose beneath it before `Main Scripture`; the page now preserves that heading without inventing foundation text. Lesson presentation also preserves the source labels `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Main Scripture`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`.
-- The former website did not load a Series Guide. `zechariah-study-guide.js` now restores the exact subtitle `Return, Cleansing, Spirit-Empowered Work, the Humble King, and Final Hope`, Study Foundation, Series Purpose, Interpretive Commitments, exact Lesson Map, Recommended Rhythm, Facilitator Safeguards, How to Read Together, and Closing Prayer.
-- The Series Guide’s Lesson 1 map title is `Return to Me — Zechariah 1`, while the authoritative Lesson 1 document title is `Return to Me and I Will Return to You`. Both source forms are preserved in their respective locations rather than silently reconciled.
+- Authoritative source scope: the direct contents of Drive folder `Malachi` (folder ID `1IWDRv7X6a04cVMy3sBy7UQrhrMGV2oih`): `Malachi — Series Guide` plus 5 numbered lesson documents.
+- The five authoritative lessons are `I Have Loved You`, `Honor God in Worship`, `Faithfulness in Covenant Relationships`, `The Lord You Seek Will Come`, and `Remember and Prepare the Way`.
+- Main Scriptures are preserved exactly as `Malachi 1:1–5`, `Malachi 1:6–2:9`, `Malachi 2:10–16`, `Malachi 2:17–3:12`, and `Malachi 3:13–4:6`.
+- Every lesson has an explicit `Supporting Scriptures` section with three references. The former website set `supporting: []` for every lesson, so all fifteen supporting references were classified **MISSING SCRIPTURE** and restored.
+- The former generated lesson data preserved the lesson titles, Main Scriptures, Central Questions, Key Truths, Opening text, Discussion Questions, Personal Examination, and Weekly Practice, but shortened the source Purpose by dropping its opening `To` and replaced every lesson-specific Scripture Context with a generic summary. These were classified **SHORTENED** and **GENERIC REPLACEMENT** and restored exactly.
+- Every source Teaching Movement heading was present, but the website generated one reusable body sentence for all movements instead of the lesson-specific source bodies. Those bodies were classified **GENERIC REPLACEMENT** and restored verbatim from Drive.
+- The former Leader Guidance and Closing Prayer were generalized or altered from the source. The exact repeated source guidance and prayer are now restored without added language.
+- `malachi-study-data.js` now preserves every lesson title, Main Scripture, Supporting Scriptures, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- The former overview blended and compressed the Series Guide and did not load a source guide file. `malachi-study-guide.js` now restores the exact subtitle `Covenant Love, Faithful Worship, Justice, and Renewal`, Series Purpose, Historical and Literary Setting, Central Aim, exact Lesson Map, Recommended Rhythm, Leader Commitments, Pastoral Safeguards, Christ-Centered Reading, and Desired Fruit.
+- Lesson presentation now preserves the source headings `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Main Scripture`, `Supporting Scriptures`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`.
 
 ## Next audit
 
-Malachi.
+Matthew.

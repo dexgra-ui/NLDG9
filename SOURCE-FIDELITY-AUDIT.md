@@ -45,21 +45,22 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Ezekiel | PASS after series-guide restoration and label correction |
 | Daniel | PASS after full series-guide restoration and label correction |
 | Hosea | PASS after series-guide restoration and label correction |
+| Joel | PASS after supporting-Scripture and series-guide restoration |
 
-## Hosea — detailed result
+## Joel — detailed result
 Audited: 2026-08-15
 
-- Sources checked: `Hosea — Series Guide` and all 8 lesson documents.
-- All eight lessons preserve the source lesson title, Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
-- The Main Scripture fields are preserved exactly as `Hosea 1`, `Hosea 2`, `Hosea 3`, `Hosea 4`, `Hosea 5; 7–8`, `Hosea 6`, `Hosea 11`, and `Hosea 14`.
-- The lesson sources do not contain a separate Supporting Scriptures heading, so the empty `supporting` arrays are source-faithful.
-- The second line of each lesson is a generic `Hosea ... • Book-by-Book Bible Study` line, so it is not treated as a meaningful lesson subtitle.
-- No end-of-file `forEach` overwrite is present in `hosea-study-data.js`.
-- Repeated generic Teaching Movement bodies in several lessons are present in the authoritative Drive documents themselves. The website preserves those source bodies rather than replacing them. Lesson-specific exceptions such as `Gomer Is More Than a Symbol`, `Violent Language Requires Care`, `Do Not Blame Women Alone`, and `Politics Cannot Save the Soul` are also preserved.
-- The Series Guide and Lesson 4 source use different titles for the same lesson: the guide map says `Lack of Knowledge and Failed Leadership — Hosea 4`, while the lesson document is titled `Hosea 4 — My People Are Destroyed for Lack of Knowledge`. Both are preserved: the exact source Series Guide map is restored, while the lesson page keeps the lesson document title.
-- The existing website data already preserved the source Study Foundation, Series Purpose, and Interpretive Commitments wording, but the source subtitle and labels were incomplete and the Series Guide's exact Lesson Map, Recommended Rhythm, Facilitator Safeguards, How to Read Together, and Closing Prayer were not rendered.
-- `hosea-study-guide.js` restores the exact source subtitle, `Interpretive Commitments` and `Series Purpose` labels, exact source Lesson Map, Recommended Rhythm, Facilitator Safeguards, How to Read Together, and Closing Prayer, and changes lesson presentation from the generic `Lesson purpose` label to the source heading `Purpose`.
+- Sources checked: `Joel — Series Guide` and all 4 lesson documents.
+- All four lesson documents contain explicit `Supporting Scriptures` sections. The website had empty `supporting` arrays, so these references were classified **MISSING SCRIPTURE** and restored.
+- Restored Supporting Scriptures exactly as `Psalm 42; Lamentations 3:19–33; Romans 8:18–25`, `Exodus 34:5–7; Isaiah 58:1–12; Luke 15:11–24`, `Acts 2:14–21; Numbers 11:24–30; Galatians 3:26–29`, and `Isaiah 2:1–4; Matthew 25:31–46; Revelation 21:1–5`.
+- The Main Scripture fields are preserved exactly as `Joel 1:1–20`, `Joel 2:1–27`, `Joel 2:28–32`, and `Joel 3:1–21`.
+- Apart from the missing Supporting Scriptures, the existing lesson data preserved the source lesson titles, Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- The second line of each lesson is the generic `Book-by-Book Bible Study`, so it is not treated as a meaningful lesson subtitle.
+- No end-of-file `forEach` overwrite is present in `joel-study-data.js`.
+- The existing series overview was materially incomplete: `description`, `theme`, and `background` incorrectly contained `Joel — Series Guide`, while the source Historical and Literary Setting, Central Aim, exact Lesson Map, Recommended Rhythm, Leader Commitments, Pastoral Safeguards, Christ-Centered Reading, Desired Fruit, and Interpretive Emphasis were not rendered.
+- The source guide does not contain a `Study Foundation` heading, so the incorrect background block is suppressed rather than relabeled.
+- `joel-study-guide.js` restores the exact source subtitle and `Series Purpose` label, renders every omitted Series Guide section under its source heading, sets the lesson label to `Purpose`, and sets the supporting-Scripture label to the source heading `Supporting Scriptures`.
 
 ## Next audit
 
-Joel.
+Amos.

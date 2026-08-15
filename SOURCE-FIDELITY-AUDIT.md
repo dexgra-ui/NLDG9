@@ -186,6 +186,50 @@ The Numbers series landing page previously omitted four sections that are presen
 
 Those sections are now restored to the Numbers website experience. The existing Interpretive Commitments text was already present as the series theme and is now explicitly labeled.
 
+## Deuteronomy — PASS after series-guide restoration
+
+Audited: 2026-08-15
+
+Authoritative sources:
+- `Deuteronomy — Series Guide`
+- `Deuteronomy 1 — Remembering the Wilderness Honestly`
+- `Deuteronomy 2 — Love the Lord with All Your Heart`
+- `Deuteronomy 3 — Grace, Covenant, and a Distinct People`
+- `Deuteronomy 4 — Worship, Sabbath, and Neighbor Justice`
+- `Deuteronomy 5 — Leadership, Courts, Kings, and Prophets`
+- `Deuteronomy 6 — Protecting Families, Workers, Immigrants, and the Poor`
+- `Deuteronomy 7 — Blessing, Warning, Repentance, and Life`
+- `Deuteronomy 8 — Moses’ Final Witness and Faithful Succession`
+
+### Lesson-by-lesson result
+
+All eight Deuteronomy lesson documents match the website study data for:
+- lesson title
+- main Scripture
+- central question
+- key truth
+- purpose
+- opening
+- Scripture context
+- all six teaching movements and their full text
+- all eight discussion questions
+- personal examination
+- weekly practice
+- leader guidance
+- closing prayer
+
+The Deuteronomy lesson source documents do **not** contain a separate `Supporting Scriptures` section. Therefore the existing empty `supporting` arrays are source-faithful; no supporting-reference list was removed from these eight lesson documents.
+
+### Gap found and restored
+
+The Deuteronomy series landing page previously omitted four sections that are present in the authoritative `Deuteronomy — Series Guide`:
+- Recommended Rhythm
+- Facilitator Safeguards
+- How to Read Together
+- Series Closing Prayer
+
+Those sections are now restored to the Deuteronomy website experience. The existing Interpretive Commitments text was already present as the series theme and is now explicitly labeled.
+
 ### Next audit
 
-Deuteronomy.
+Joshua.

@@ -46,21 +46,21 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Daniel | PASS after full series-guide restoration and label correction |
 | Hosea | PASS after series-guide restoration and label correction |
 | Joel | PASS after supporting-Scripture and series-guide restoration |
+| Amos | PASS after series-guide restoration and source-label correction |
 
-## Joel — detailed result
+## Amos — detailed result
 Audited: 2026-08-15
 
-- Sources checked: `Joel — Series Guide` and all 4 lesson documents.
-- All four lesson documents contain explicit `Supporting Scriptures` sections. The website had empty `supporting` arrays, so these references were classified **MISSING SCRIPTURE** and restored.
-- Restored Supporting Scriptures exactly as `Psalm 42; Lamentations 3:19–33; Romans 8:18–25`, `Exodus 34:5–7; Isaiah 58:1–12; Luke 15:11–24`, `Acts 2:14–21; Numbers 11:24–30; Galatians 3:26–29`, and `Isaiah 2:1–4; Matthew 25:31–46; Revelation 21:1–5`.
-- The Main Scripture fields are preserved exactly as `Joel 1:1–20`, `Joel 2:1–27`, `Joel 2:28–32`, and `Joel 3:1–21`.
-- Apart from the missing Supporting Scriptures, the existing lesson data preserved the source lesson titles, Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
-- The second line of each lesson is the generic `Book-by-Book Bible Study`, so it is not treated as a meaningful lesson subtitle.
-- No end-of-file `forEach` overwrite is present in `joel-study-data.js`.
-- The existing series overview was materially incomplete: `description`, `theme`, and `background` incorrectly contained `Joel — Series Guide`, while the source Historical and Literary Setting, Central Aim, exact Lesson Map, Recommended Rhythm, Leader Commitments, Pastoral Safeguards, Christ-Centered Reading, Desired Fruit, and Interpretive Emphasis were not rendered.
-- The source guide does not contain a `Study Foundation` heading, so the incorrect background block is suppressed rather than relabeled.
-- `joel-study-guide.js` restores the exact source subtitle and `Series Purpose` label, renders every omitted Series Guide section under its source heading, sets the lesson label to `Purpose`, and sets the supporting-Scripture label to the source heading `Supporting Scriptures`.
+- Sources checked: `Amos — Series Guide` and all 7 lesson documents.
+- All seven lessons preserve the source lesson title, Main Passage, Supporting Scriptures, Central Question, Key Truth, Lesson Purpose, Opening Discussion, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- Main Passages are preserved exactly as `Amos 1–2`, `Amos 3`, `Amos 4`, `Amos 5`, `Amos 6`, `Amos 7`, and `Amos 8–9`.
+- Every lesson contains an explicit `Supporting Scriptures` section, and all four references for each lesson are preserved in the website data.
+- No end-of-file `forEach` overwrite is present in `amos-study-data.js`.
+- The existing Series Guide presentation was incomplete: the source's second Series Overview paragraph, exact Central Theme, seven Series Goals, exact Lesson Map, Leader Preparation, Key Scriptures, and Closing Prayer were not all rendered, and the website's existing purpose/theme/background wording was partly shortened or generalized.
+- `amos-study-guide.js` restores the exact subtitle, both Series Overview paragraphs, exact Central Theme, all seven Series Goals, exact Lesson Map, Leader Preparation, Key Scriptures, and Closing Prayer.
+- The shared renderer now supports source-specific `Opening Discussion`, `Main Passage`, and `Scripture Context` labels plus multi-paragraph Series Overview content. Amos uses these options while existing studies keep their prior defaults.
+- Lesson presentation now preserves the source headings `Lesson Purpose`, `Opening Discussion`, `Main Passage`, `Supporting Scriptures`, and `Scripture Context` instead of generic renderer labels.
 
 ## Next audit
 
-Amos.
+Obadiah.

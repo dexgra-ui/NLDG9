@@ -230,6 +230,56 @@ The Deuteronomy series landing page previously omitted four sections that are pr
 
 Those sections are now restored to the Deuteronomy website experience. The existing Interpretive Commitments text was already present as the series theme and is now explicitly labeled.
 
+## Joshua — PASS after full series-guide restoration
+
+Audited: 2026-08-15
+
+Authoritative sources:
+- `Joshua — Series Guide`
+- `Joshua 1 — Be Strong and Courageous`
+- `Joshua 2 — Rahab’s Courageous Faith`
+- `Joshua 3 — Crossing and Remembering`
+- `Joshua 4 — Jericho, Achan, and Holy Accountability`
+- `Joshua 5 — Covenant, Deception, and Faithful Discernment`
+- `Joshua 6 — The Lord Fights for Israel`
+- `Joshua 7 — Inheritance, Refuge, and Shared Responsibility`
+- `Joshua 8 — Choose This Day Whom You Will Serve`
+
+### Lesson-by-lesson result
+
+All eight Joshua lesson documents match the website study data for:
+- lesson title
+- the complete Main Scripture field, including every cross-book reference listed there
+- central question
+- key truth
+- purpose
+- opening
+- Scripture context
+- all six teaching movements and their full text
+- all eight discussion questions
+- personal examination
+- weekly practice
+- leader guidance
+- closing prayer
+
+Joshua differs from the earlier audited books because each lesson’s `Main Scripture` field often contains multiple references, for example Joshua 1:1–18 together with Deuteronomy 31:1–8 and Psalm 1:1–3. Those complete reference strings are present in the website data. The source documents do **not** contain a separate `Supporting Scriptures` heading, so empty `supporting` arrays do not represent lost Scripture references.
+
+### Gap found and restored
+
+The authoritative `Joshua — Series Guide` is itself a full study foundation rather than the shorter rhythm/safeguards format used by Genesis through Deuteronomy. The landing page previously preserved the series title, key truth, purpose, and Scripture-context language, but omitted substantial source material, including:
+- Series Main Scripture: Joshua 1–24; Deuteronomy 7:1–11; Hebrews 4:1–11
+- Central Question
+- Opening
+- the full Scripture Context in its source-guide position
+- all six series-level teaching movements
+- all eight series-level discussion questions
+- Personal Examination
+- Weekly Practice
+- Leader Guidance
+- Closing Prayer
+
+Those sections are now restored through `joshua-study-guide.js`. The shared book-study renderer was extended so full source-level series guides can be displayed without shortening or converting them into generic guide text.
+
 ### Next audit
 
-Joshua.
+Judges.

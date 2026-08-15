@@ -128,6 +128,15 @@ Audited: 2026-08-15
 - Restored the source Series Overview paragraphs, Series Goals as individual items, Historical and Literary Setting, Leader Preparation, Recommended Rhythm, Key Scriptures, and Closing Prayer through `esther-study-guide.js`.
 - Configured the source labels `Central Theme`, `Lesson Purpose`, and `Supporting Scriptures` while preserving the complete lesson Scripture references.
 
+### Job — PASS after series-guide restoration and label correction
+Audited: 2026-08-15
+- Sources checked: `Job — Series Guide` and all 8 lesson documents.
+- All eight lessons preserve the exact Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- The lesson sources do not contain a separate Supporting Scriptures section; the empty `supporting` arrays are source-faithful.
+- The website data already preserved the Study Foundation, Series Purpose, Interpretive Commitments, and all eight lesson entries, but the Interpretive Commitments label and several Series Guide-only sections were not displayed.
+- Restored the `Interpretive Commitments` label, Recommended Rhythm, Facilitator Safeguards, How to Read Together, and Closing Prayer through `job-study-guide.js`.
+- Corrected the lesson presentation label from the generic `Lesson purpose` to the source heading `Purpose`.
+
 ## Next audit
 
-Job.
+Psalms.

@@ -61,21 +61,21 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Mark | PASS after Scripture-field, full lesson-data, series-guide, and source-label restoration |
 | Luke | PASS after Scripture-field, full lesson-data, series-guide, and source-label restoration |
 | John | PASS after Scripture-field, full lesson-data, series-guide, and source-label restoration |
+| Acts | PASS after authoritative first publication and source-label preservation |
 
-## John — detailed result
+## Acts — detailed result
 Audited: 2026-08-15
 
-- Authoritative source scope: the direct contents of Drive folder `John` (folder ID `1ml0Bs72CSpxdLuCwm2PEEL1znh14PUSj`): `John — Series Guide` plus 8 numbered lesson documents.
-- The eight authoritative lessons are `The Word Became Flesh`, `New Birth and Living Water`, `The Son Gives Life and Bread`, `Light, Truth, and the Good Shepherd`, `Resurrection and Costly Belief`, `Servant Love and the Promised Spirit`, `Jesus’ Prayer, Trial, and Cross`, and `The Risen Lord Restores and Sends`.
-- Each authoritative lesson uses one `Main Scripture` field containing three references. The former website kept only the leading John range and omitted the two additional references in every lesson. Sixteen references were therefore classified **MISSING SCRIPTURE** and restored inside the Main Scripture field rather than being relabeled as Supporting Scriptures.
-- The authoritative lesson documents contain no separate `Supporting Scriptures` heading. `supporting: []` remains source-faithful.
-- The former generated data preserved lesson titles, Central Questions, Key Truths, and Teaching Movement headings, but replaced every source Purpose, Opening, Scripture Context, Teaching Movement body, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer with shorter or generalized text. Several Discussion Questions were shortened or rewritten as well. These were classified **SHORTENED** or **GENERIC REPLACEMENT** and restored exactly from Drive.
-- The corrected `john-study-data.js` uses shared constants only where the Drive source itself repeats exact wording; its `forEach` assigns those exact source sections and does not replace lesson-specific material with generic substitutes.
-- `john-study-data.js` now preserves every lesson title, complete Main Scripture field, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
-- Each lesson source includes a `Study Foundation` heading with no standalone prose beneath it before `Main Scripture`; the page now preserves that heading without inventing foundation text. Lesson presentation also preserves the source labels `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Main Scripture`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`.
-- The former website did not load a Series Guide. `john-study-guide.js` now restores the exact source subtitle, Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, six Teaching Movements including `The Language of ‘the Jews’` and `Pastoral Safeguards`, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
-- The Series Guide itself contains no Lesson Map, Recommended Rhythm, or separate Supporting Scriptures section, so none was invented.
+- Authoritative source scope: the direct contents of Drive folder `Acts` (folder ID `1A46b4H9mr0tOk1IIGRE5M94eFy7Ri3SW`): `Acts — Series Guide` plus 8 numbered lesson documents.
+- The eight authoritative lessons are `The Spirit Creates a Witnessing Community`, `Courageous Witness Under Pressure`, `Servants, Stephen, and Expanding Mission`, `Saul, Peter, and the Welcome of Gentiles`, `Antioch and the Mission Begins`, `Grace Without Unnecessary Barriers`, `The Gospel in the Public Square`, and `Witness From Jerusalem to Rome`.
+- Acts was present in Drive but had no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** rather than a lossy prior publication.
+- Every authoritative lesson uses one `Main Scripture` field containing three references. All references are preserved inside that field. The lesson documents contain no separate `Supporting Scriptures` heading, so `supporting: []` is source-faithful.
+- `acts-study-data.js` now preserves every lesson title, complete Main Scripture field, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. Shared constants are used only where the Drive source itself repeats exact wording.
+- Each lesson source includes a `Study Foundation` heading with no standalone prose beneath it before `Main Scripture`; the page preserves that heading without inventing foundation text. Lesson presentation preserves the source labels `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Main Scripture`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`.
+- `acts-study-guide.js` restores the exact Series Guide subtitle, Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, six Teaching Movements including `Pastoral Safeguards`, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. The Series Guide itself contains no Lesson Map, Recommended Rhythm, or separate Supporting Scriptures section, so none was invented.
+- `acts-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links Acts directly after John.
+- While updating the catalog, the stale Micah card was corrected from 7 lessons to the authoritative 6 lessons. With Acts added, the Book-by-Book library total is now 47 books and 331 complete lessons, and the main Bible Studies collection card uses the same totals.
 
 ## Next audit
 
-Acts.
+Romans.

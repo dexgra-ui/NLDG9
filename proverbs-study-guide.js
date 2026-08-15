@@ -2,8 +2,8 @@
   const s=window.NLDG_BOOK_STUDY;
   if(!s)return;
   Object.assign(s,{
-    description:'Proverbs gives practical wisdom for life under God. Its sayings form character through reverence, teachability, truthful speech, faithful work, just relationships, self-control, and careful discernment. Read as covenant wisdom, its principles guide ordinary and complicated choices without becoming mechanical promises.',
-    background:'Proverbs gives practical wisdom for life under God. Its sayings form character through reverence, teachability, truthful speech, faithful work, just relationships, self-control, and careful discernment. Read as covenant wisdom, its principles guide ordinary and complicated choices without becoming mechanical promises.',
+    description:'An eight-lesson study of reverence, character, relationships, justice, and daily wisdom',
+    background:'',
     themeLabel:'Key Truth',
     theme:'Wisdom begins with reverence for God and forms humble character expressed through truthful speech, faithful work, just relationships, self-control, and teachability.',
     seriesPurposeLabel:'Purpose',

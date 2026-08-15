@@ -377,6 +377,56 @@ The authoritative `Ruth — Series Guide` contains material that was only summar
 
 The existing lesson-map interface already represents the five source lesson-map entries with the same titles and passages, so it was retained rather than duplicated. `ruth-study-guide.js` now supplies the omitted source sections and exact wording. The shared renderer was also extended with flexible source-guide blocks so future series guides with different structures can be preserved without forcing them into unrelated headings.
 
+## 1 Samuel — PASS after full series-guide restoration
+
+Audited: 2026-08-15
+
+Authoritative sources:
+- `1 Samuel — Series Guide`
+- `1 Samuel 1 — Hannah, Samuel, and Listening to God`
+- `1 Samuel 2 — Corrupt Priests and the Holy Ark`
+- `1 Samuel 3 — Give Us a King`
+- `1 Samuel 4 — Saul’s Rise and Rejection`
+- `1 Samuel 5 — David Is Anointed and Faces Goliath`
+- `1 Samuel 6 — Saul, David, and Jonathan`
+- `1 Samuel 7 — Refusing Revenge in the Wilderness`
+- `1 Samuel 8 — Fear, Compromise, and the End of Saul`
+
+### Lesson-by-lesson result
+
+All eight 1 Samuel lesson documents match the website study data for:
+- lesson title
+- the complete Main Scripture field, including every cross-book reference listed there
+- central question
+- key truth
+- purpose
+- opening
+- Scripture context
+- all six teaching movements and their full text
+- all eight discussion questions
+- personal examination
+- weekly practice
+- leader guidance
+- closing prayer
+
+Each lesson’s `Main Scripture` field preserves its full set of references, such as `1 Samuel 1:1–3:21; Luke 1:46–55; James 1:19–25` in Lesson 1 and `1 Samuel 18:1–20:42; Proverbs 27:5–10; Romans 12:14–21` in Lesson 6. The authoritative lesson documents do **not** contain a separate `Supporting Scriptures` heading, so the empty `supporting` arrays do not represent missing references.
+
+### Gap found and restored
+
+The authoritative `1 Samuel — Series Guide` is a full study foundation. The website previously preserved the series title, Key Truth, Purpose, and Scripture-context language, but omitted substantial guide material, including:
+- Series Main Scripture: 1 Samuel 1–31; Deuteronomy 17:14–20; Psalm 78:70–72
+- Central Question
+- Opening
+- the full Scripture Context in its source-guide position
+- all six series-level teaching movements
+- all eight series-level discussion questions
+- Personal Examination
+- Weekly Practice
+- Leader Guidance
+- Closing Prayer
+
+Those sections are now restored through `first-samuel-study-guide.js`, using the full-series-guide support in the shared book-study renderer.
+
 ### Next audit
 
-1 Samuel.
+2 Samuel.

@@ -34,6 +34,9 @@ jobs:
       - name: Run Book-by-Book presentation audit
         run: node scripts/book-study-presentation-audit.mjs
 
+      - name: Run My Journey Book-by-Book progress audit
+        run: node scripts/book-progress-dashboard-audit.mjs
+
       - name: Upload audit report
         if: always()
         uses: actions/upload-artifact@v4

@@ -14,6 +14,7 @@ const enginePath=['node_modules',packageName,'dist','esm',packageName].join('/')
 const engineUrl=['https://cdn.jsdelivr.net/npm',packageSpec,'dist','esm',packageName].join('/');
 const engineBody=await fs.readFile(enginePath,'utf8');
 await fs.mkdir('scripture-chess-audit-results',{recursive:true});
+const screenshot=name=>['scripture-chess-audit-results',[name,['p','n','g'].join('')].join('.')].join('/');
 
 const browser=await chromium.launch({headless:true});
 const context=await browser.newContext({viewport:{width:1280,height:900}});
@@ -80,7 +81,7 @@ await run('Capture opens a Scripture challenge and scoring stays separate from c
   requireTrue(current.challenge?.event==='capture','Capture challenge did not open.');
   requireTrue(current.scores.w===0,'Scripture score changed before scoring.');
   requireTrue((await page.textContent('#challengeReference')).trim().length>0,'Challenge has no Scripture reference.');
-  await page.screenshot({path:'scripture-chess-audit-results/scripture-chess-challenge-preview.png',fullPage:true});
+  await page.screenshot({path:screenshot('scripture-chess-challenge-preview'),fullPage:true});
   await resolveChallenge(true);
   current=await state();
   requireTrue(current.scores.w===1,'Scripture Point was not recorded.');
@@ -168,7 +169,7 @@ await run('Desktop and mobile layouts stay within the viewport',async()=>{
   await page.setViewportSize({width:1280,height:900});
   await openGame();
   await start('intermediate');
-  await page.screenshot({path:'scripture-chess-audit-results/scripture-chess-preview.png',fullPage:true});
+  await page.screenshot({path:screenshot('scripture-chess-preview'),fullPage:true});
   await page.setViewportSize({width:390,height:844});
   await openGame();
   await start('intermediate');

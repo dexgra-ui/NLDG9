@@ -65,20 +65,21 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Romans | PASS after authoritative first publication and source-label preservation |
 | 1 Corinthians | PASS after authoritative first publication and source-label preservation |
 | 2 Corinthians | PASS after authoritative first publication and source-label preservation |
+| Galatians | PASS after authoritative first publication and source-label preservation |
 
-## 2 Corinthians — detailed result
+## Galatians — detailed result
 Audited: 2026-08-15
 
-- Authoritative source scope: the direct contents of Drive folder `2 Corinthians` (folder ID `1SmrUWYEgf9BbNBDTb7yOYIU_wFCtHpSi`): `2 Corinthians — Series Guide` plus 6 numbered lesson documents.
-- The six authoritative lessons are `Comforted to Comfort Others`, `Treasure in Jars of Clay`, `The Ministry of Reconciliation`, `Holiness, Grief, and Restored Trust`, `The Grace of Generosity`, and `Power Made Perfect in Weakness`.
-- 2 Corinthians was present in Drive but had no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication rather than a lossy prior publication.
-- Every authoritative lesson uses one `Main Scripture` field containing three references. All references are preserved inside that field. The lesson documents contain no separate `Supporting Scriptures` heading, so `supporting: []` is source-faithful.
-- `second-corinthians-study-data.js` now preserves every lesson title, complete Main Scripture field, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. Shared constants are used only where the Drive source itself repeats exact wording.
-- Each lesson source includes a `Study Foundation` heading with no standalone prose beneath it before `Main Scripture`; the page preserves that heading without inventing foundation text. Lesson presentation preserves the source labels `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Main Scripture`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`.
-- `second-corinthians-study-guide.js` restores the exact Series Guide subtitle, Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements including `Weakness and Power`, `Integrity and Accountability`, `Reconciliation and Boundaries`, and `Generosity Without Pressure`, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. The Series Guide itself contains no Lesson Map, Recommended Rhythm, or separate Supporting Scriptures section, so none was invented.
-- `second-corinthians-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links 2 Corinthians directly after 1 Corinthians.
-- With 2 Corinthians added, the Book-by-Book library total is now 50 books and 353 complete lessons.
+- Authoritative source scope: the direct contents of Drive folder `Galatians — Book-by-Book Study` (folder ID `1XQ26FRBIexXnM0YKRs0nLx_2a6WkLMUp`): `Galatians — Series Guide` plus 8 numbered lesson documents.
+- The eight authoritative lessons are `No Other Gospel`, `The Gospel Received and Recognized`, `Justified by Faith in Christ`, `Promise, Law, and One Family`, `Heirs, Not Slaves`, `Called to Freedom Through Love`, `Walk by the Spirit`, and `Restore, Bear, Sow, and Boast in the Cross`.
+- Galatians was present in Drive but had no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication rather than a lossy prior publication.
+- Every authoritative lesson preserves its `MAIN PASSAGE` and complete `SUPPORTING SCRIPTURES` field. The supporting references remain grouped exactly as the source field rather than being silently reduced or replaced.
+- `galatians-study-data.js` preserves every lesson title, Main Passage, Supporting Scriptures, Central Question, Key Truth, Lesson Purpose, Opening Discussion, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- Lesson presentation preserves the source labels `CENTRAL QUESTION`, `KEY TRUTH`, `LESSON PURPOSE`, `OPENING DISCUSSION`, `MAIN PASSAGE`, `SUPPORTING SCRIPTURES`, `SCRIPTURE CONTEXT`, `DISCUSSION QUESTIONS`, `PERSONAL EXAMINATION`, `WEEKLY PRACTICE`, `LEADER GUIDANCE`, and `CLOSING PRAYER`; each teaching heading retains its source `TEACHING MOVEMENT` wording.
+- `galatians-study-guide.js` preserves the exact Series Guide subtitle, both `SERIES OVERVIEW` paragraphs, `CENTRAL THEME`, all seven `SERIES GOALS`, the complete eight-entry `LESSON MAP`, both `LEADER PREPARATION` paragraphs, `RECOMMENDED RHYTHM`, all `KEY SCRIPTURES`, and the `CLOSING PRAYER`. No series-level question, generic lesson framework, or other missing source section was invented.
+- `galatians-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links Galatians directly after 2 Corinthians.
+- With Galatians added, the Book-by-Book library total is now 51 books and 361 complete lessons.
 
 ## Next audit
 
-Galatians.
+Ephesians.

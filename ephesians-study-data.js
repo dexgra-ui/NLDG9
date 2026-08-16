@@ -1,0 +1,311 @@
+const epLessons=[
+{
+ number:1,
+ title:"Every Spiritual Blessing in Christ",
+ scripture:"Ephesians 1:1–14",
+ supporting:["Deuteronomy 7:6–9; John 15:16; Romans 8:28–39; 1 Peter 1:3–9"],
+ question:"How does God’s saving purpose reshape identity, worship, and hope?",
+ truth:"Before believers perform anything, God blesses them in Christ through choosing, adoption, redemption, forgiveness, revelation, inheritance, and the Spirit’s seal.",
+ goal:"To read Paul’s opening praise as worship and ground Christian identity in God’s gracious action rather than achievement.",
+ opening:"Which labels or accomplishments most tempt people to define their worth?",
+ context:"Paul begins with one long outpouring of praise. The repeated phrase “in Christ” locates every blessing in union with Jesus, and Father, Son, and Spirit act together in salvation.",
+ teaching:[
+  {heading:"TEACHING MOVEMENT 1 — BLESSING BEGINS WITH GOD",body:"The passage centers God’s initiative. Christian identity begins with received grace, not self-construction."},
+  {heading:"TEACHING MOVEMENT 2 — CHOSENNESS IS IN CHRIST AND FOR HOLINESS",body:"Election is not a badge of superiority. God chooses a people in Christ to become holy and loving before Him."},
+  {heading:"TEACHING MOVEMENT 3 — ADOPTION CREATES BELONGING",body:"Through Jesus, believers are welcomed as sons and daughters according to God’s loving purpose."},
+  {heading:"TEACHING MOVEMENT 4 — REDEMPTION COSTS CHRIST’S BLOOD",body:"Forgiveness is lavish grace, not divine indifference to sin. Christ bears the cost of liberation."},
+  {heading:"TEACHING MOVEMENT 5 — GOD’S PURPOSE IS COSMIC",body:"The mystery of His will is to unite all things in Christ. Salvation is personal but never merely private."},
+  {heading:"TEACHING MOVEMENT 6 — THE SPIRIT SEALS OUR HOPE",body:"The promised Spirit marks belonging and guarantees the inheritance until final redemption. Assurance rests in God’s faithfulness."}
+ ],
+ questions:[
+  "Which actions belong to God?",
+  "What does “in Christ” contribute?",
+  "Why is election not superiority?",
+  "What does adoption reveal?",
+  "How are redemption and forgiveness connected?",
+  "What is God’s plan for all things?",
+  "What does the Spirit’s seal assure?",
+  "Which false identity must yield to grace?"
+ ],
+ examination:"Which part of God’s gracious action is hardest for you to receive as personally true?",
+ challenge:"Turn the passage into daily praise: thank Father, Son, and Spirit for specific saving actions.",
+ caution:"Avoid treating election as abstract debate detached from Christ, holiness, love, and worship.",
+ prayer:"Blessed God, teach us to live from the identity and hope You freely give in Christ. Amen."
+},
+{
+ number:2,
+ title:"Eyes of the Heart Enlightened",
+ scripture:"Ephesians 1:15–23",
+ supporting:["Psalm 8; Colossians 1:15–20; Philippians 3:7–14; Hebrews 2:5–9"],
+ question:"What do believers need to see in order to live with hope, courage, and wisdom?",
+ truth:"Spiritual growth requires God-given sight to know our hope, His inheritance among His people, and His resurrection power under Christ’s supreme rule.",
+ goal:"To learn Paul’s pattern of thanksgiving and prayer and to understand Christ’s exaltation and headship over the church.",
+ opening:"What is the difference between possessing information and truly seeing its meaning?",
+ context:"After praising God’s saving plan, Paul thanks God for the church’s faith and love. He prays not for novelty but for deeper knowledge of God and clearer perception of realities already given in Christ.",
+ teaching:[
+  {heading:"TEACHING MOVEMENT 1 — FAITH AND LOVE BECOME THANKSGIVING",body:"Paul notices grace in others and responds with gratitude before instruction or correction."},
+  {heading:"TEACHING MOVEMENT 2 — KNOWING GOD REQUIRES REVELATION",body:"The Spirit gives wisdom to grasp truth. This does not bypass Scripture or careful thought; it enables receptive understanding."},
+  {heading:"TEACHING MOVEMENT 3 — THE HEART HAS EYES",body:"Biblical knowing engages the inner person, shaping desire, imagination, confidence, and action."},
+  {heading:"TEACHING MOVEMENT 4 — HOPE IS ROOTED IN GOD’S CALL",body:"Christian hope is not optimism about circumstances but confidence in God’s promised future."},
+  {heading:"TEACHING MOVEMENT 5 — RESURRECTION POWER IS ALREADY AT WORK",body:"The power that raised Jesus sustains believers. It often appears as endurance, holiness, reconciliation, and faithful witness."},
+  {heading:"TEACHING MOVEMENT 6 — CHRIST RULES FOR THE CHURCH",body:"Jesus is exalted above every power and given as head to His body. No rival authority is ultimate."}
+ ],
+ questions:[
+  "What does Paul celebrate?",
+  "Why pray for wisdom and revelation?",
+  "What are the eyes of the heart?",
+  "How does calling create hope?",
+  "What is God’s inheritance among His people?",
+  "How can resurrection power appear quietly?",
+  "What does Christ’s headship mean?",
+  "What do you need God to help you see?"
+ ],
+ examination:"Are your prayers dominated by changed circumstances or by deeper knowledge of God within them?",
+ challenge:"Pray Ephesians 1:17–23 by name for three people this week.",
+ caution:"Do not promise dramatic outcomes as proof of resurrection power. Honor quiet transformation and endurance.",
+ prayer:"God of glory, enlighten our hearts to know Your hope and the power of Christ’s resurrection. Amen."
+},
+{
+ number:3,
+ title:"Saved by Grace for Good Works",
+ scripture:"Ephesians 2:1–10",
+ supporting:["Ezekiel 36:24–28; Luke 15:11–24; Romans 3:21–28; Titus 3:3–8"],
+ question:"Why can salvation be received only as grace, and what kind of life does grace create?",
+ truth:"God makes spiritually dead people alive with Christ by grace through faith, creating them anew for good works He prepared.",
+ goal:"To confront both despair and pride by tracing the movement from death to life, gift to purpose.",
+ opening:"Why do people prefer either earning salvation or assuming they are beyond rescue?",
+ context:"Paul describes humanity under sin, the world, and spiritual rebellion. The decisive turn is not human improvement but “But God,” whose mercy and love make the dead alive with Christ.",
+ teaching:[
+  {heading:"TEACHING MOVEMENT 1 — SIN IS MORE THAN IMPERFECTION",body:"Spiritual death describes captivity and inability, not merely bad habits needing refinement."},
+  {heading:"TEACHING MOVEMENT 2 — NO GROUP STANDS ABOVE ANOTHER",body:"Paul includes “all of us.” The gospel removes superiority because everyone depends on mercy."},
+  {heading:"TEACHING MOVEMENT 3 — BUT GOD CHANGES THE STORY",body:"Rich mercy and great love initiate resurrection with Christ. Grace reaches people who cannot boast of deserving it."},
+  {heading:"TEACHING MOVEMENT 4 — UNION WITH CHRIST GIVES NEW POSITION",body:"Believers are made alive, raised, and seated with Christ. Identity is anchored in His victory."},
+  {heading:"TEACHING MOVEMENT 5 — SALVATION IS GIFT THROUGH FAITH",body:"Grace is the source; faith receives. Works cannot purchase salvation or establish spiritual rank."},
+  {heading:"TEACHING MOVEMENT 6 — GRACE CREATES PURPOSEFUL WORK",body:"Good works are result, not price. God’s workmanship is remade to walk in a prepared life of love and obedience."}
+ ],
+ questions:[
+  "How does Paul describe life apart from Christ?",
+  "Why include everyone under sin?",
+  "What does “But God” announce?",
+  "What does union with Christ give?",
+  "How do grace and faith relate?",
+  "Why is boasting excluded?",
+  "What place remains for good works?",
+  "Where do you need freedom from despair or pride?"
+ ],
+ examination:"Are you trying to repay grace, prove worth, or excuse inactivity?",
+ challenge:"Complete one good work as a grateful response to grace, without using it to seek recognition.",
+ caution:"Avoid language that dehumanizes nonbelievers. Spiritual death describes need for God, not permission for contempt.",
+ prayer:"Merciful God, thank You for making us alive with Christ. Let Your gift produce beautiful works of love. Amen."
+},
+{
+ number:4,
+ title:"Christ Is Our Peace",
+ scripture:"Ephesians 2:11–22",
+ supporting:["Isaiah 57:14–21; John 17:20–23; Acts 10:34–48; Galatians 3:26–29"],
+ question:"How does the cross create a reconciled people across entrenched hostility?",
+ truth:"Christ does not merely bring peace; He is our peace, breaking hostility and creating one new humanity with shared access to the Father.",
+ goal:"To understand Gentile exclusion, the cross’s reconciling work, and the church’s calling to embody belonging.",
+ opening:"What is required for people to move from coexistence to genuine reconciliation?",
+ context:"Gentiles were socially and covenantally alienated. Paul does not erase the historical difference; he announces that those far away are brought near and that the dividing wall of hostility has been abolished in Christ.",
+ teaching:[
+  {heading:"TEACHING MOVEMENT 1 — REMEMBERING EXCLUSION SHOULD PRODUCE HUMILITY",body:"Paul asks Gentile believers to remember their former distance, not to shame them but to deepen gratitude and solidarity."},
+  {heading:"TEACHING MOVEMENT 2 — CHRIST HIMSELF IS PEACE",body:"Peace is not polite avoidance or denial of wrong. It rests in Jesus and His self-giving cross."},
+  {heading:"TEACHING MOVEMENT 3 — HOSTILITY IS PUT TO DEATH",body:"The cross reconciles people to God and to one another. Reconciliation is central to the gospel’s social reality."},
+  {heading:"TEACHING MOVEMENT 4 — ONE NEW HUMANITY DOES NOT REQUIRE SAMENESS",body:"Christ creates shared belonging without pretending history, culture, or difference never existed."},
+  {heading:"TEACHING MOVEMENT 5 — ALL HAVE ACCESS BY ONE SPIRIT",body:"No ethnic or religious group owns privileged access to the Father. Access is through Christ in the Spirit."},
+  {heading:"TEACHING MOVEMENT 6 — THE CHURCH BECOMES GOD’S DWELLING",body:"Former strangers become citizens, family, and living stones joined together. Reconciliation must become visible community."}
+ ],
+ questions:[
+  "What were Gentiles asked to remember?",
+  "Why is Christ called our peace?",
+  "What hostility does the cross address?",
+  "Does unity erase difference?",
+  "What does shared access confront?",
+  "Which images describe belonging?",
+  "Where can churches preserve dividing walls?",
+  "What practice would make reconciliation visible?"
+ ],
+ examination:"Whose belonging are you tempted to treat as secondary? Where have you settled for surface peace?",
+ challenge:"Share a meal, listen to a story, or repair a relationship across a real line of difference without demanding sameness.",
+ caution:"Do not rush people harmed by racism, abuse, or injustice toward cheap reconciliation. Truth, repentance, repair, and safety matter.",
+ prayer:"Jesus our peace, destroy hostility and build us into a truthful, reconciled dwelling for God. Amen."
+},
+{
+ number:5,
+ title:"The Mystery, the Church, and the Love of Christ",
+ scripture:"Ephesians 3:1–21",
+ supporting:["Isaiah 49:5–6; Romans 11:33–36; Colossians 1:24–29; Revelation 7:9–12"],
+ question:"How does God use the church to display His wisdom, and what sustains that calling?",
+ truth:"God reveals the inclusion of the nations in Christ and strengthens the church through the Spirit to know Christ’s immeasurable love.",
+ goal:"To connect Paul’s stewardship and suffering with the church’s diverse witness, then pray for rooted, Spirit-empowered love.",
+ opening:"What would make a church’s life together reveal wisdom that the surrounding world cannot explain?",
+ context:"Paul interrupts his prayer to explain the mystery entrusted to him: Gentiles are equal heirs, members, and sharers in Christ. He then resumes prayer for inward strength and a community filled with God’s fullness.",
+ teaching:[
+  {heading:"TEACHING MOVEMENT 1 — PAUL’S SUFFERING SERVES A STEWARDSHIP",body:"His imprisonment results from gospel ministry. He does not glorify pain but refuses to interpret faithful suffering as defeat."},
+  {heading:"TEACHING MOVEMENT 2 — THE MYSTERY IS EQUAL INCLUSION",body:"Gentiles are not guests with reduced status. They are co-heirs, co-members, and co-participants through the gospel."},
+  {heading:"TEACHING MOVEMENT 3 — MINISTRY IS GRACE, NOT STATUS",body:"Paul calls his ministry a gift and himself least. Calling should produce humility rather than celebrity."},
+  {heading:"TEACHING MOVEMENT 4 — THE CHURCH DISPLAYS GOD’S WISDOM",body:"A reconciled, multiethnic people makes God’s wisdom visible even to spiritual powers."},
+  {heading:"TEACHING MOVEMENT 5 — THE SPIRIT STRENGTHENS THE INNER PERSON",body:"Paul asks that Christ dwell deeply in hearts through faith. Sustainable ministry requires rootedness in love."},
+  {heading:"TEACHING MOVEMENT 6 — CHRIST’S LOVE EXCEEDS MEASUREMENT",body:"The church comprehends this love together. Paul ends with confidence that God works beyond what we ask or imagine."}
+ ],
+ questions:[
+  "How does Paul understand imprisonment?",
+  "What equal status does the mystery give?",
+  "Why should calling produce humility?",
+  "How does the church display wisdom?",
+  "What does inward strengthening accomplish?",
+  "Why comprehend love together?",
+  "How does Paul’s doxology encourage prayer?",
+  "What would make your church’s unity more visible?"
+ ],
+ examination:"Do you see ministry as possession, achievement, or entrusted grace? Are you rooted deeply enough in Christ’s love to serve without proving yourself?",
+ challenge:"Pray Ephesians 3:14–21 daily and strengthen one person’s sense of equal belonging.",
+ caution:"Never use Paul’s suffering to romanticize abuse or burnout. Faithfulness includes appropriate limits and care.",
+ prayer:"Father, strengthen us through Your Spirit and root us together in the immeasurable love of Christ. Amen."
+},
+{
+ number:6,
+ title:"Unity and Maturity in the Body",
+ scripture:"Ephesians 4:1–16",
+ supporting:["Psalm 133; John 13:34–35; Romans 12:3–8; 1 Corinthians 12:4–27"],
+ question:"How does the church preserve Spirit-given unity while growing into Christlike maturity?",
+ truth:"One body shares one hope and one Lord, while Christ gives diverse grace so every member contributes to a mature, loving church.",
+ goal:"To join humility and patience with doctrinal unity, diverse gifts, equipped ministry, and truth spoken in love.",
+ opening:"What is the difference between unity and uniformity?",
+ context:"Paul turns from God’s work to the worthy walk. Unity already created by the Spirit must be maintained through character. Christ’s gifts equip the whole body rather than concentrating ministry in a few visible leaders.",
+ teaching:[
+  {heading:"TEACHING MOVEMENT 1 — THE WORTHY WALK BEGINS WITH CHARACTER",body:"Humility, gentleness, patience, and bearing with one another are not optional manners; they protect shared life."},
+  {heading:"TEACHING MOVEMENT 2 — UNITY IS GIVEN AND MAINTAINED",body:"Believers do not manufacture one body, but they must make every effort to preserve the Spirit’s bond of peace."},
+  {heading:"TEACHING MOVEMENT 3 — CORE CONFESSION CENTERS THE CHURCH",body:"One body, Spirit, hope, Lord, faith, baptism, and Father provide a center deeper than preference."},
+  {heading:"TEACHING MOVEMENT 4 — GRACE IS DIVERSE",body:"Christ gives grace according to His measure. Difference in function is not difference in worth."},
+  {heading:"TEACHING MOVEMENT 5 — LEADERS EQUIP THE SAINTS",body:"Apostles, prophets, evangelists, pastors, and teachers prepare God’s people for ministry rather than perform all ministry for them."},
+  {heading:"TEACHING MOVEMENT 6 — TRUTH AND LOVE PRODUCE MATURITY",body:"The church resists instability by speaking truth in love. Every part contributes as the body grows and builds itself up."}
+ ],
+ questions:[
+  "Which character qualities preserve unity?",
+  "What unity is already given?",
+  "What centers the church?",
+  "How do unity and diversity coexist?",
+  "What is leaders’ equipping role?",
+  "What marks immaturity?",
+  "Why must truth and love remain together?",
+  "What contribution is Christ asking you to make?"
+ ],
+ examination:"Do you confuse personal preference with the church’s essential center? Are you consuming ministry or contributing to it?",
+ challenge:"Use one gift to strengthen another person, and practice one difficult conversation with both truth and love.",
+ caution:"Do not use unity to silence concerns about harm or falsehood. Biblical peace includes truth and accountable repair.",
+ prayer:"One Lord, make us humble, patient, equipped, and mature as every member serves in love. Amen."
+},
+{
+ number:7,
+ title:"Put Off the Old, Put On the New",
+ scripture:"Ephesians 4:17–5:20",
+ supporting:["Psalm 4; Romans 12:1–2; Colossians 3:1–17; James 3:1–12"],
+ question:"How does new identity in Christ become transformed habits, speech, sexuality, love, and wisdom?",
+ truth:"The new life replaces corrupt patterns with renewed practices that imitate God, walk in love, expose darkness, and live wisely in the Spirit.",
+ goal:"To move beyond vague calls to improvement by identifying Paul’s specific put-off and put-on patterns.",
+ opening:"Why is stopping a harmful behavior usually insufficient without a faithful replacement?",
+ context:"Paul contrasts the old humanity with life learned in Christ. The commands address a community, showing that personal holiness protects relationships and strengthens public witness.",
+ teaching:[
+  {heading:"TEACHING MOVEMENT 1 — RENEWAL BEGINS IN THE MIND",body:"Believers put off the old self and put on the new through renewed thinking shaped by truth in Jesus."},
+  {heading:"TEACHING MOVEMENT 2 — TRUTH REPLACES FALSEHOOD",body:"Stop lying and speak truth because members belong to one another. Deception injures the whole body."},
+  {heading:"TEACHING MOVEMENT 3 — ANGER MUST NOT BECOME DESTRUCTION",body:"Anger can signal wrong, but unresolved or weaponized anger gives evil room. Address conflict without sinning."},
+  {heading:"TEACHING MOVEMENT 4 — WORK AND SPEECH BECOME GIFTS",body:"The thief works to share; corrupt talk becomes speech that builds. Grace does not merely restrain harm but creates benefit."},
+  {heading:"TEACHING MOVEMENT 5 — IMITATE GOD BY WALKING IN LOVE AND LIGHT",body:"Christ’s self-giving love governs sexuality, greed, humor, and exposure of darkness. Light seeks truth and healing, not humiliation."},
+  {heading:"TEACHING MOVEMENT 6 — LIVE WISELY AND BE FILLED WITH THE SPIRIT",body:"Believers redeem time, understand God’s will, reject intoxication’s control, worship together, and give thanks."}
+ ],
+ questions:[
+  "What does putting off and on involve?",
+  "Why does lying harm the body?",
+  "How should anger be handled?",
+  "What replacements follow stealing and corrupt speech?",
+  "How does Christ define love?",
+  "What is the purpose of exposing darkness?",
+  "What characterizes Spirit-filled community?",
+  "Which paired change is yours?"
+ ],
+ examination:"Which harmful pattern are you merely suppressing rather than replacing with a Christlike practice?",
+ challenge:"Choose one pair: falsehood/truth, stealing/generosity, destructive speech/encouragement, bitterness/forgiveness, foolishness/wisdom.",
+ caution:"Exposure of darkness must not become gossip or public humiliation. Address abuse and crime through safe, accountable channels.",
+ prayer:"Holy Spirit, renew our minds and teach us to walk in truth, love, light, and wisdom. Amen."
+},
+{
+ number:8,
+ title:"Christlike Relationships Under One Lord",
+ scripture:"Ephesians 5:21–6:9",
+ supporting:["Genesis 1:26–28; Mark 10:42–45; Galatians 3:26–29; Colossians 3:18–4:1"],
+ question:"How does reverence for Christ transform power and responsibility in marriage, family, and work?",
+ truth:"Every household relationship stands under Christ, beginning with mutual submission and requiring self-giving love, nurture without provocation, integrity, justice, and freedom from threats.",
+ goal:"To read the household instructions within Roman culture and apply them without excusing coercion, abuse, inequality of worth, or exploitation.",
+ opening:"What happens when authority is understood as responsibility before Christ rather than control over others?",
+ context:"Roman household codes centered the male householder. Paul begins with submission to one another and addresses each member as morally accountable. Husbands receive the longest command: love with Christ’s self-giving care. Masters are reminded that they too have a Master.",
+ teaching:[
+  {heading:"TEACHING MOVEMENT 1 — MUTUAL SUBMISSION SETS THE FRAME",body:"Reverence for Christ leads believers to yield self-interest and seek one another’s good. No Christian is accountable only to themselves."},
+  {heading:"TEACHING MOVEMENT 2 — MARRIAGE POINTS TO CHRIST’S COVENANT LOVE",body:"The passage’s deepest mystery concerns Christ and the church. Marriage should display faithful, nourishing, self-giving care."},
+  {heading:"TEACHING MOVEMENT 3 — SUBMISSION NEVER AUTHORIZES ABUSE",body:"Nothing here permits violence, coercive control, marital rape, threats, or danger. Seeking safety and help is consistent with truth and dignity."},
+  {heading:"TEACHING MOVEMENT 4 — PARENTS MUST NURTURE WITHOUT PROVOKING",body:"Children are addressed as responsible persons, while fathers are forbidden to exasperate and commanded to nurture in the Lord."},
+  {heading:"TEACHING MOVEMENT 5 — WORK IS DONE BEFORE CHRIST",body:"Enslaved people in Rome had constrained freedom. Paul speaks into that reality without making slavery God’s ideal. Modern work calls for integrity without idolizing employers."},
+  {heading:"TEACHING MOVEMENT 6 — POWER IS ACCOUNTABLE TO THE IMPARTIAL MASTER",body:"Masters must stop threatening. Employers and leaders answer to Christ for justice, dignity, safety, and fair treatment."}
+ ],
+ questions:[
+  "Why begin with verse 21?",
+  "How does Christ define marital love?",
+  "Which abusive interpretations must be rejected?",
+  "What limits parental authority?",
+  "How does serving Christ affect work?",
+  "Why must slavery not be treated as God’s ideal?",
+  "What warning confronts those with power?",
+  "What relationship needs more Christlike responsibility?"
+ ],
+ examination:"If you hold power, do others experience safety and dignity? If you are being harmed, which trusted support can help you move toward safety?",
+ challenge:"Practice one act of self-giving care, fair leadership, non-provocative parenting, or healthy boundary-setting.",
+ caution:"State clearly that abuse is sin. Do not pressure disclosure or unsafe reconciliation. When danger is present, involve appropriate professional, pastoral, or emergency help.",
+ prayer:"Lord Jesus, govern our homes and work. Protect the vulnerable, humble the powerful, and teach us self-giving love. Amen."
+},
+{
+ number:9,
+ title:"Stand Firm in the Armor of God",
+ scripture:"Ephesians 6:10–24",
+ supporting:["Isaiah 11:1–5; Isaiah 59:15–20; Matthew 4:1–11; 2 Corinthians 10:3–5"],
+ question:"How do believers stand firm against spiritual evil without fear, superstition, or hostility toward people?",
+ truth:"God supplies His own armor so believers stand together through truth, righteousness, gospel peace, faith, salvation, Scripture, and persistent prayer.",
+ goal:"To understand spiritual warfare as God-dependent resistance and connect every piece of armor to the gospel and communal prayer.",
+ opening:"When people think about spiritual warfare, what unhelpful extremes of denial or fear can appear?",
+ context:"Paul closes with images drawn from a soldier and Isaiah’s portrait of God’s armor. The enemy is spiritual, not flesh and blood. The repeated command is to stand, not to treat human opponents as targets.",
+ teaching:[
+  {heading:"TEACHING MOVEMENT 1 — STRENGTH COMES FROM THE LORD",body:"Believers are strengthened in God’s mighty power. Spiritual resistance is neither self-confidence nor fascination with darkness."},
+  {heading:"TEACHING MOVEMENT 2 — THE STRUGGLE IS NOT AGAINST PEOPLE",body:"Human beings may participate in harm, but they must not be dehumanized as the ultimate enemy. Truth and justice can oppose evil without hatred."},
+  {heading:"TEACHING MOVEMENT 3 — THE ARMOR IS GOD’S CHARACTER AND GOSPEL",body:"Truth, righteousness, peace, faith, salvation, and God’s word are not magical objects. They describe life secured and formed by God."},
+  {heading:"TEACHING MOVEMENT 4 — THE GOAL IS TO STAND",body:"Paul repeats stand and withstand. Faithful resistance may look like refusing lies, maintaining integrity, pursuing peace, and enduring pressure."},
+  {heading:"TEACHING MOVEMENT 5 — SCRIPTURE IS A SPIRIT-GIVEN WEAPON",body:"The word exposes deception and guides obedience. It must be understood in context rather than used as isolated slogans."},
+  {heading:"TEACHING MOVEMENT 6 — PRAYER SURROUNDS THE WHOLE BATTLE",body:"Prayer is continual, alert, broad, and outward-looking. Paul requests boldness for gospel witness even while chained."}
+ ],
+ questions:[
+  "Where does strength originate?",
+  "Why is flesh and blood not the enemy?",
+  "How can we oppose wrongdoing without dehumanizing?",
+  "What does each piece of armor represent?",
+  "Why is standing emphasized?",
+  "How should Scripture be used?",
+  "What characterizes Paul’s prayer command?",
+  "Where must you stand firm now?"
+ ],
+ examination:"Are fear, anger, or fascination with evil distracting you from the ordinary armor God provides?",
+ challenge:"Pray through each piece of armor daily and choose one situation in which to stand through truth, peace, integrity, or faith.",
+ caution:"Avoid attributing mental illness, disagreement, or every hardship directly to demonic activity. Encourage appropriate medical and professional care alongside prayer.",
+ prayer:"Mighty Lord, clothe us in Your armor. Make us truthful, righteous, peaceful, faithful, hopeful, Scripture-shaped, and prayerful. Amen."
+}
+];
+
+window.NLDG_BOOK_STUDY={
+ slug:"ephesians-study",
+ book:"Ephesians",
+ title:"Ephesians: Identity, Unity, Maturity, and Life in Christ",
+ description:"A nine-lesson study of identity, unity, maturity, and life in Christ",
+ theme:"God’s grace creates one new people in Christ and empowers them to live with unity, holiness, love, wisdom, and resilient faith.",
+ audience:"Personal and group study",
+ purpose:"",
+ background:"",
+ lessons:epLessons
+};

@@ -31,6 +31,9 @@ jobs:
       - name: Run Scripture link audit
         run: node scripts/scripture-link-audit.mjs
 
+      - name: Run Book-by-Book presentation audit
+        run: node scripts/book-study-presentation-audit.mjs
+
       - name: Upload audit report
         if: always()
         uses: actions/upload-artifact@v4

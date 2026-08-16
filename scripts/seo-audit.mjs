@@ -9,7 +9,7 @@ const assert=(condition,message)=>{if(!condition)failures.push(message)};
 const articlePages=['family-nobody-talks-about','grace-accountability','faith-hard-seasons','truth-online','church-shows-up','jesus-loves-you'].map(slug=>`articles/${slug}.html`);
 const devotionalPages=['when-following-jesus-is-inconvenient','you-are-known','not-your-past','you-are-held','created-for-good-works','more-than-a-label','peace-is-a-practice','hope-that-holds','when-god-feels-silent','the-courage-to-lead','faithful-in-what-god-has-given-you','faith-for-the-next-decision','growing-into-the-leader-god-is-forming'].map(id=>`devotionals/${id}.html`);
 const newsletterPages=['newsletter.html','newsletter/who-god-says-you-are.html'];
-const pages=['index.html','articles.html','devotionals.html','contact.html','mission.html',...articlePages,...devotionalPages,...newsletterPages];
+const pages=['index.html','articles.html','devotionals.html','contact.html','mission.html','book-by-book.html',...articlePages,...devotionalPages,...newsletterPages];
 const canonicals=new Map();
 
 for(const file of pages){
@@ -31,13 +31,18 @@ assert(exists('sitemap.xml'),'sitemap.xml is missing');
 if(exists('robots.txt'))assert(read('robots.txt').includes('https://nolabelsdesignedbygod.org/sitemap.xml'),'robots.txt: sitemap address is missing');
 if(exists('sitemap.xml')){
  const sitemap=read('sitemap.xml');
- for(const file of ['contact.html','mission.html',...articlePages,...devotionalPages,...newsletterPages])assert(sitemap.includes(`https://nolabelsdesignedbygod.org/${file}`),`sitemap.xml: missing ${file}`);
+ for(const file of ['contact.html','mission.html','book-by-book.html',...articlePages,...devotionalPages,...newsletterPages])assert(sitemap.includes(`https://nolabelsdesignedbygod.org/${file}`),`sitemap.xml: missing ${file}`);
 }
 
 const expectedBookOrder=['Genesis','Exodus','Leviticus','Numbers','Deuteronomy','Joshua','Judges','Ruth','1 Samuel','2 Samuel','1 Kings','2 Kings','1 Chronicles','2 Chronicles','Ezra','Nehemiah','Esther','Job','Psalms','Proverbs','Ecclesiastes','Song of Songs','Isaiah','Jeremiah','Lamentations','Ezekiel','Daniel','Hosea','Joel','Amos','Obadiah','Jonah','Micah','Nahum','Habakkuk','Zephaniah','Haggai','Zechariah','Malachi','Matthew','Mark','Luke','John','Acts','Romans','1 Corinthians','2 Corinthians','Galatians','Ephesians','Philippians','Colossians','1 Thessalonians','2 Thessalonians','1 Timothy','2 Timothy','Titus','Philemon','Hebrews','James','1 Peter','2 Peter','1 John','2 John','3 John','Jude','Revelation'];
 assert(exists('book-by-book.html'),'book-by-book.html is missing');
 if(exists('book-by-book.html')){
  const library=read('book-by-book.html');
+ const libraryCanonical='https://nolabelsdesignedbygod.org/book-by-book.html';
+ const canonical=library.match(/<link rel="canonical" href="([^"]+)"/i)?.[1];
+ const ogUrl=library.match(/<meta property="og:url" content="([^"]+)"/i)?.[1];
+ assert(canonical===libraryCanonical,`book-by-book.html: canonical URL should be ${libraryCanonical}`);
+ assert(ogUrl===libraryCanonical,`book-by-book.html: og:url should be ${libraryCanonical}`);
  const cards=[...library.matchAll(/<article class="book-card">([\s\S]*?)<\/article>/g)].map(match=>match[1]);
  const titles=cards.map(card=>card.match(/<h2>([^<]+)<\/h2>/)?.[1]||'');
  const hrefs=cards.map(card=>card.match(/<a href="([^"]+)"/)?.[1]||'');

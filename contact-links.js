@@ -1,7 +1,7 @@
 (()=>{
 if(window.NLDG_CONTACT_LINKS_LOADED)return;
 window.NLDG_CONTACT_LINKS_LOADED=true;
-const nested=/\/(?:articles|devotionals)\//i.test(location.pathname);
+const nested=/\/(?:articles|devotionals|newsletter)\//i.test(location.pathname);
 const isContact=/(^|\/)contact\.html$/i.test(location.pathname);
 const root=nested?'../':'';
 const surveyIntegration=document.createElement('script');

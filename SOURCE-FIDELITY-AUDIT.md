@@ -70,20 +70,21 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Philippians | PASS after full lesson-data, series-guide, and source-label restoration |
 | Colossians | PASS after authoritative first publication and source-label preservation |
 | 1 Thessalonians | PASS after authoritative first publication and source-label preservation |
+| 2 Thessalonians | PASS after authoritative first publication and source-label preservation |
 
-## 1 Thessalonians — detailed result
+## 2 Thessalonians — detailed result
 Audited: 2026-08-16
 
-- Authoritative source scope: the direct contents of Drive folder `1 Thessalonians` (folder ID `1AjvPvT_e1e6pAIRCt9wZC3jl5nnd4wRj`): `1 Thessalonians — Series Guide` plus 6 numbered lesson documents.
-- The six authoritative lessons are `A Faith That Became a Witness`, `Gentle, Courageous, and Accountable Ministry`, `Strengthened Through Faithful Relationships`, `A Life That Pleases God`, `Grieve With Hope`, and `Stay Awake and Encourage One Another`.
-- 1 Thessalonians was present in Drive but had no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication rather than a lossy prior publication.
+- Authoritative source scope: the direct contents of Drive folder `2 Thessalonians` (folder ID `1Cpz0bu1gwbjfM4YdlLAAUYVZhKAcbfEr`): `2 Thessalonians — Series Guide` plus 5 numbered lesson documents.
+- The five authoritative lessons are `Steadfast Faith Under Pressure`, `Do Not Be Quickly Shaken`, `Stand Firm in Grace and Truth`, `Pray, Work, and Refuse Idleness`, and `Correct as Family, Not as Enemies`.
+- 2 Thessalonians was present in Drive but had no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication rather than a lossy prior publication.
 - Every authoritative lesson preserves its `Main Scripture` and complete `Supporting Scriptures` field. The supporting references remain grouped exactly as the source field rather than being silently reduced or replaced.
-- `first-thessalonians-study-data.js` preserves every lesson title, Main Scripture, Supporting Scriptures, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six lesson-specific Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. Shared constants are used only for wording that repeats exactly across all six Drive lessons.
+- `second-thessalonians-study-data.js` preserves every lesson title, Main Scripture, Supporting Scriptures, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six lesson-specific Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. Shared constants are used only for wording that repeats exactly across all five Drive lessons.
 - Lesson presentation preserves the source labels `Main Scripture`, `Supporting Scriptures`, `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`; each numbered teaching heading retains the exact source wording.
-- `first-thessalonians-study-guide.js` preserves the exact Series Guide subtitle and sections `Series Purpose`, `Historical and Literary Setting`, `Central Aim`, `Lesson Map`, `Recommended Rhythm`, `Leader Commitments`, `Pastoral Safeguards`, `Christ-Centered Reading`, and `Desired Fruit`. The source contains no series-level closing prayer, so none was invented.
-- `first-thessalonians-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links 1 Thessalonians directly after Colossians.
-- With 1 Thessalonians added, the Book-by-Book library total is now 54 books and 382 complete lessons.
+- `second-thessalonians-study-guide.js` preserves the exact Series Guide subtitle and sections `Series Purpose`, `Historical Setting`, `Central Aim`, `Lesson Map`, `Recommended Rhythm`, `Leader Commitments`, `Pastoral Safeguards`, `Christ-Centered Reading`, and `Desired Fruit`. The source contains no series-level closing prayer, so none was invented.
+- `second-thessalonians-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links 2 Thessalonians directly after 1 Thessalonians.
+- With 2 Thessalonians added, the Book-by-Book library total is now 55 books and 387 complete lessons.
 
 ## Next audit
 
-2 Thessalonians.
+1 Timothy.

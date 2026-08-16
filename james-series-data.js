@@ -1,12 +1,238 @@
-window.NLDG_JAMES_SERIES={id:'faith-that-works-james',title:'Faith That Works',displayTitle:'Faith That Works: A Study Through James',description:'A 10-week journey through the book of James focused on authentic faith that shapes daily living, speech, relationships, and prayer.',source:'Google Drive: James',lessons:[
-{week:1,title:'Faith in the Fire',scripture:'James 1:1–4',goal:'See trials as spiritual formation.',summary:'James teaches that trials can produce perseverance and maturity when faith remains anchored in God.',sections:['Trials are not proof that God has abandoned us.','Testing exposes where our trust is placed.','Perseverance grows when we keep following Christ through pressure.'],questions:['How do you normally respond when life becomes difficult?','What might God be forming in you through your present trial?','What would perseverance look like this week?'],prayer:'Lord, help us trust You in every trial and allow perseverance to complete its work in us.'},
-{week:2,title:'Asking for Wisdom',scripture:'James 1:5–11',goal:'Depend on God for direction.',summary:'God gives wisdom generously to those who ask in faith and humble themselves before Him.',sections:['Wisdom begins with admitting that we need God.','Faith asks God for direction without treating Him as a last resort.','Our identity and security must rest in Christ rather than status or possessions.'],questions:['Where do you need God’s wisdom right now?','What makes it difficult to ask for help?','How can humility make us more teachable?'],prayer:'Father, give us wisdom and teach us to trust Your direction.'},
-{week:3,title:'Winning the Battle Within',scripture:'James 1:12–18',goal:'Understand temptation and spiritual resilience.',summary:'James distinguishes trials from temptation and shows how unchecked desire can grow into sin.',sections:['God does not tempt us to sin.','Temptation often begins with disordered desire.','Every good and perfect gift comes from God.'],questions:['What patterns make you most vulnerable to temptation?','How can truth interrupt temptation before it grows?','Which good gifts from God help strengthen your faith?'],prayer:'God, strengthen us to resist temptation and remain faithful under pressure.'},
-{week:4,title:'Doers of the Word',scripture:'James 1:19–27',goal:'Move from hearing to obedience.',summary:'Authentic faith listens carefully, controls anger, obeys Scripture, and cares for people in need.',sections:['Be quick to listen and slow to speak.','The Word is meant to be obeyed, not merely admired.','True religion joins compassion with personal holiness.'],questions:['Where do you need to listen more carefully?','What truth have you heard but not acted upon?','Who can you serve this week?'],prayer:'Lord, make us doers of Your Word and not hearers only.'},
-{week:5,title:'The Sin of Favoritism',scripture:'James 2:1–13',goal:'Cultivate honor and equality.',summary:'James confronts partiality and calls the church to treat every person with dignity under the royal law of love.',sections:['Favoritism contradicts faith in Jesus.','God sees value where society often sees status.','Mercy should shape the way believers judge and treat others.'],questions:['Where can favoritism quietly enter church life?','How does the gospel challenge social ranking?','What would mercy look like in a strained relationship?'],prayer:'Jesus, teach us to love our neighbors without partiality.'},
-{week:6,title:'Faith That Moves',scripture:'James 2:14–26',goal:'Connect belief with action.',summary:'Living faith produces visible obedience. Works do not replace faith, but genuine faith never remains inactive.',sections:['Words alone cannot meet real needs.','Faith is demonstrated through obedient action.','Abraham and Rahab show faith that trusted God enough to move.'],questions:['What action currently demonstrates your faith?','Where have good intentions replaced obedience?','How can your group serve someone practically?'],prayer:'God, let our faith become visible through love, courage, and obedience.'},
-{week:7,title:'Words Matter',scripture:'James 3:1–12',goal:'Recognize the spiritual impact of speech.',summary:'The tongue is small but powerful. Our words can direct, destroy, bless, or reveal spiritual inconsistency.',sections:['Teachers carry greater responsibility for their words.','Small words can create large consequences.','Blessing God while harming people reveals a divided heart.'],questions:['What do your words reveal about your heart?','Where are you most tempted to speak carelessly?','How can your speech become more life-giving?'],prayer:'Holy Spirit, govern our words and make our speech consistent with the heart of Christ.'},
-{week:8,title:'Wisdom From Above',scripture:'James 3:13–18',goal:'Distinguish godly wisdom from worldly wisdom.',summary:'Heavenly wisdom is pure, peace-loving, considerate, merciful, impartial, and sincere.',sections:['Wisdom is shown through humble conduct.','Envy and selfish ambition create disorder.','Peacemakers sow seeds that produce righteousness.'],questions:['Where do envy or selfish ambition create tension?','Which quality of heavenly wisdom do you most need?','How can you become a peacemaker this week?'],prayer:'Father, replace pride with wisdom from above and make us people of peace.'},
-{week:9,title:'Surrendered Living',scripture:'James 4:1–17',goal:'Embrace humility and dependence.',summary:'James traces conflict to selfish desires and calls believers to submit to God, resist evil, humble themselves, and surrender their plans.',sections:['Unchecked desires fuel conflict.','Friendship with the world competes with devotion to God.','Humility submits both our character and our plans to the Lord.'],questions:['What desire may be driving tension in your life?','Where do you need to resist pride?','How can you practice saying, “If the Lord wills”?'],prayer:'Lord, we submit our desires, relationships, and plans to You.'},
-{week:10,title:'Prayer & Perseverance',scripture:'James 5:1–20',goal:'Build a culture of prayer and restoration.',summary:'James closes by calling believers to justice, patience, truthful speech, persistent prayer, confession, healing, and restoration.',sections:['Faith remains patient while waiting for the Lord.','Prayer belongs in suffering, joy, sickness, and restoration.','The church should help wandering people return to truth.'],questions:['Where do you need patient endurance?','How can your group become more honest and prayerful?','Who may need gentle restoration?'],prayer:'God, make us patient, prayerful, honest, and committed to restoring one another in love.'}
-]};
+window.NLDG_JAMES_SERIES={
+ id:'faith-that-works-james',
+ title:'Faith That Works',
+ subtitle:'Leader Guide (10-Week Small Group Series)',
+ purpose:'Help participants grow in authentic faith that shapes daily living, speech, relationships, and prayer.',
+ recommendedSessionLength:'60–75 minutes',
+ suggestedFlow:[
+  'Welcome & Connection — 10 min',
+  'Scripture Reading — 5 min',
+  'Teaching Summary — 10–15 min',
+  'Discussion — 25–30 min',
+  'Application & Prayer — 10 min'
+ ],
+ leaderChecklist:[
+  'Read passage twice',
+  'Pray for participants by name',
+  'Identify 1 key takeaway',
+  'Prepare a personal example',
+  'Plan how to keep discussion on time'
+ ],
+ source:'Google Drive: James / Faith That Works Leader Guide',
+ lessons:[
+  {
+   week:1,
+   title:'Faith in the Fire',
+   scripture:'James 1:1–4',
+   goal:'Help participants see trials as spiritual formation',
+   teachingNotes:[
+    'Joy is not denial of pain but trust in purpose',
+    'Perseverance builds maturity',
+    'God’s goal is completeness, not comfort'
+   ],
+   discussionLabel:'Discussion Questions',
+   discussion:[
+    'What trial has strengthened you spiritually?',
+    'What makes it hard to see purpose in pain?',
+    'How can our group support one another in trials?'
+   ],
+   leaderTips:[
+    'Validate struggles before emphasizing growth',
+    'Keep tone hopeful, not dismissive of pain'
+   ],
+   prayerFocus:'Trusting God in difficult seasons'
+  },
+  {
+   week:2,
+   title:'Asking for Wisdom',
+   scripture:'James 1:5–11',
+   goal:'Encourage dependence on God for direction',
+   teachingNotes:[
+    'Wisdom = skill for godly living',
+    'Doubt reflects divided loyalty',
+    'Identity is rooted in Christ, not status'
+   ],
+   discussionLabel:'Discussion',
+   discussion:[
+    'Where do you need wisdom right now?',
+    'How do you normally make decisions?',
+    'What helps you trust God’s direction?'
+   ],
+   leaderTips:[
+    'Encourage practical examples',
+    'Emphasize God’s generosity'
+   ],
+   prayerFocus:'Clarity and trust'
+  },
+  {
+   week:3,
+   title:'Winning the Battle Within',
+   scripture:'James 1:12–18',
+   goal:'Understand temptation and spiritual resilience',
+   teachingNotes:[
+    'Temptation begins internally',
+    'Sin grows when desire is nurtured',
+    'God’s nature is consistently good'
+   ],
+   discussionLabel:'Discussion',
+   discussion:[
+    'What patterns lead people into temptation?',
+    'How can we interrupt the cycle early?',
+    'How does remembering God’s goodness help?'
+   ],
+   leaderTips:[
+    'Keep discussion shame-free',
+    'Focus on hope and growth'
+   ],
+   prayerFocus:'Strength against temptation'
+  },
+  {
+   week:4,
+   title:'Doers of the Word',
+   scripture:'James 1:19–27',
+   goal:'Move from hearing to obedience',
+   teachingNotes:[
+    'Listening posture shapes spiritual growth',
+    'The mirror illustrates self-awareness',
+    'True religion combines purity and compassion'
+   ],
+   discussionLabel:'Discussion',
+   discussion:[
+    'Why is listening difficult today?',
+    'What does obedience look like practically?',
+    'How can faith impact our community?'
+   ],
+   leaderTips:[
+    'Encourage real-life examples',
+    'Avoid overly abstract discussion'
+   ],
+   prayerFocus:'Obedient hearts'
+  },
+  {
+   week:5,
+   title:'The Sin of Favoritism',
+   scripture:'James 2:1–13',
+   goal:'Cultivate a culture of honor and equality',
+   teachingNotes:[
+    'Favoritism contradicts the gospel',
+    'Mercy reflects God’s character',
+    'The royal law: love your neighbor'
+   ],
+   discussionLabel:'Discussion',
+   discussion:[
+    'Where do we see favoritism today?',
+    'How does mercy transform relationships?',
+    'How can our group be more welcoming?'
+   ],
+   leaderTips:[
+    'Keep tone reflective, not accusatory'
+   ],
+   prayerFocus:'Hearts of compassion'
+  },
+  {
+   week:6,
+   title:'Faith That Moves',
+   scripture:'James 2:14–26',
+   goal:'Connect belief with action',
+   teachingNotes:[
+    'Works reveal faith’s authenticity',
+    'Examples: Abraham (trust) and Rahab (courage)',
+    'Faith is active, not passive'
+   ],
+   discussionLabel:'Discussion',
+   discussion:[
+    'What does living faith look like daily?',
+    'Why do people separate faith and action?',
+    'What step of obedience is God prompting?'
+   ],
+   leaderTips:[
+    'Emphasize grace, not performance'
+   ],
+   prayerFocus:'Courage to act'
+  },
+  {
+   week:7,
+   title:'Words Matter',
+   scripture:'James 3:1–12',
+   goal:'Highlight spiritual impact of speech',
+   teachingNotes:[
+    'Speech reveals inner condition',
+    'Small words create large outcomes',
+    'Consistency reflects maturity'
+   ],
+   discussionLabel:'Discussion',
+   discussion:[
+    'How have words shaped your life?',
+    'What situations challenge your speech?',
+    'How can we speak life intentionally?'
+   ],
+   leaderTips:[
+    'Keep discussion personal but safe'
+   ],
+   prayerFocus:'Speech that honors God'
+  },
+  {
+   week:8,
+   title:'Wisdom From Above',
+   scripture:'James 3:13–18',
+   goal:'Distinguish godly wisdom from worldly',
+   teachingNotes:[
+    'Earthly wisdom = envy and ambition',
+    'Heavenly wisdom = peace and humility',
+    'Wisdom is proven by fruit'
+   ],
+   discussionLabel:'Discussion',
+   discussion:[
+    'What marks godly wisdom?',
+    'Where do you see selfish ambition today?',
+    'How can we pursue peace?'
+   ],
+   leaderTips:[
+    'Encourage self-reflection'
+   ],
+   prayerFocus:'Humble hearts'
+  },
+  {
+   week:9,
+   title:'Surrendered Living',
+   scripture:'James 4:1–17',
+   goal:'Embrace humility and dependence',
+   teachingNotes:[
+    'Conflict often begins with desires',
+    'Submission leads to restoration',
+    'Planning should include God'
+   ],
+   discussionLabel:'Discussion',
+   discussion:[
+    'What fuels conflict most often?',
+    'What does surrender look like practically?',
+    'How can we invite God into daily plans?'
+   ],
+   leaderTips:[
+    'Emphasize grace over guilt'
+   ],
+   prayerFocus:'Daily surrender'
+  },
+  {
+   week:10,
+   title:'Prayer & Perseverance',
+   scripture:'James 5:1–20',
+   goal:'Build a culture of prayer and restoration',
+   teachingNotes:[
+    'Patience reflects trust',
+    'Prayer is powerful and effective',
+    'Restoring others reflects maturity'
+   ],
+   discussionLabel:'Discussion',
+   discussion:[
+    'Why is patience difficult?',
+    'How has prayer impacted your journey?',
+    'What does restoring someone look like?'
+   ],
+   leaderTips:[
+    'End with extended prayer time'
+   ],
+   prayerFocus:'Healing, endurance, restoration'
+  }
+ ]
+};

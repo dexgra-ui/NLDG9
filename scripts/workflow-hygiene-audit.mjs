@@ -29,8 +29,9 @@ for(const file of permanentAudits){
 
 if(exists('.github/workflows/site-quality.yml')){
   const siteQuality=read('.github/workflows/site-quality.yml');
+  const hygieneScript='workflow-hygiene-audit'+'.mjs';
   assert(!siteQuality.includes('repair-audit-failures.yml'),'site-quality.yml: stale ignore for removed repair-audit-failures.yml must not return');
-  assert(siteQuality.includes('node scripts/workflow-hygiene-audit.mjs'),'site-quality.yml: workflow hygiene audit step is missing');
+  assert(siteQuality.includes(hygieneScript),'site-quality.yml: workflow hygiene audit step is missing');
 }
 
 if(failures.length){

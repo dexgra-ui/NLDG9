@@ -41,6 +41,9 @@ jobs:
       - name: Run Book-by-Book global search audit
         run: node scripts/global-book-search-audit.mjs
 
+      - name: Run Book-by-Book study explorer audit
+        run: node scripts/study-explorer-book-audit.mjs
+
       - name: Run workflow hygiene audit
         run: node scripts/workflow-hygiene-audit.mjs
 

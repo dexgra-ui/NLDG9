@@ -3,8 +3,6 @@ name: Site Quality Audit
 on:
   push:
     branches: [main]
-    paths-ignore:
-      - '.github/workflows/repair-audit-failures.yml'
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -36,6 +34,9 @@ jobs:
 
       - name: Run My Journey Book-by-Book progress audit
         run: node scripts/book-progress-dashboard-audit.mjs
+
+      - name: Run workflow hygiene audit
+        run: node scripts/workflow-hygiene-audit.mjs
 
       - name: Upload audit report
         if: always()

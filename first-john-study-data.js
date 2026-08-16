@@ -1,9 +1,243 @@
-window.NLDG_BOOK_STUDY={slug:'first-john-study',book:'1 John',title:'1 John: Walking in Light, Truth, and Love',description:'A seven-lesson journey through the incarnation, confession, obedience, love, discernment, assurance, prayer, and freedom from idols.',theme:'Authentic Christian faith holds together the true Jesus, an obedient walk with God, and practical love for God’s children.',audience:'Adults, groups, classes, and new believers',purpose:'Recognize authentic faith without basing assurance on perfection, emotion, or empty claims.',background:'John writes pastorally to churches troubled by division and false teaching about Jesus. His strong contrasts expose direction and allegiance while repeatedly returning believers to Christ’s completed work and the assurance of eternal life.',lessons:[
-{number:1,title:'The Word of Life',scripture:'1 John 1:1–4',supporting:['John 1:1–18','Luke 24:36–43','2 Peter 1:16–18'],question:'Why does Christian fellowship begin with the real Jesus revealed by the apostles?',truth:'Christian faith rests on Jesus Christ truly coming in the flesh, being witnessed, and being proclaimed as eternal life.',goal:'Ground belief and fellowship in the incarnate Christ rather than speculation or private spirituality.',opening:'Why does it matter that Christianity is connected to historical witnesses rather than only inspiring ideas?',context:'John immediately emphasizes what was heard, seen, observed, and touched because false teachers were separating spirituality from Jesus’ real humanity.',teaching:[{heading:'Jesus is eternal and historical',body:'The Word of life was from the beginning and entered human experience. Jesus is neither merely human nor a distant spiritual principle.'},{heading:'The message is witness',body:'The apostles proclaimed the One they encountered, and Scripture preserves that authoritative testimony for later believers.'},{heading:'The incarnation honors the body',body:'Because the Son truly came in flesh, bodies, suffering, resurrection, service, and material care matter spiritually.'},{heading:'Proclamation invites fellowship',body:'John announces Christ so hearers may share life with the Father, Son, apostles, and one another.'},{heading:'Fellowship has truthful boundaries',body:'Truth about Jesus gives fellowship its shape. The boundary protects the identity of the One into whose life people are invited.'},{heading:'Joy grows through shared life',body:'John’s joy is completed as others enter this fellowship. Christian joy is relational and missional.'}],questions:['Why emphasize hearing, seeing, and touching?','How are Jesus’ deity and humanity present?','What does the incarnation teach about care?','How is fellowship more than friendship?','Why must fellowship remain tied to truth?','How are proclamation and joy connected?'],examination:'Is my understanding of Jesus formed by Scripture and apostolic witness or by culture, preference, and assumption?',challenge:'Read John 1:1–18 beside 1 John 1:1–4 and record what each teaches about Jesus.',caution:'Eyewitness testimony offers a foundation for faith; it should not become contempt for sincere questions.',prayer:'Eternal Son, root our faith in Your truth and draw us into fellowship with the Father and one another. Amen.'},
-{number:2,title:'Walking in the Light',scripture:'1 John 1:5–2:2',supporting:['Psalm 32:1–5','John 3:19–21','Hebrews 4:14–16'],question:'How can sinful people live honestly with a God who is completely light?',truth:'Walking in light means honest fellowship, confession, cleansing, and trust in Jesus our Advocate.',goal:'Distinguish Christian growth from denial, concealment, shame, and careless presumption.',opening:'Why are people often more afraid of exposure than of remaining unhealed?',context:'John answers three false claims: claiming fellowship while walking in darkness, claiming to have no sin, and claiming not to have sinned.',teaching:[{heading:'God defines the light',body:'God contains no moral darkness or deception. We bring our habits into His truth rather than adjusting holiness to fit them.'},{heading:'Walking describes direction',body:'John does not claim believers never stumble. Walking describes the settled direction and protected practice of life.'},{heading:'Light creates honest fellowship',body:'Concealment isolates. Truthful relationship becomes possible when people stop maintaining an image of sinlessness.'},{heading:'Confession agrees with God',body:'Confession names sin without excuses, receives forgiveness, turns toward change, and repairs harm where possible.'},{heading:'Denial deceives the self',body:'Claiming to have no sin blocks truth. Maturity includes growing willingness to come into the light.'},{heading:'Jesus is Advocate and sacrifice',body:'John calls believers away from sin while grounding failed believers in Christ’s sufficient work.'}],questions:['What does “God is light” mean?','How is walking in darkness different from stumbling?','Why does concealment damage fellowship?','What makes confession genuine?','How does denial deceive?','What does Christ’s advocacy mean after failure?'],examination:'When I fail, do I hide, rationalize, blame, despair, or come honestly to God through Christ?',challenge:'Pray through 1 John 1:9: name the wrong, receive forgiveness, identify repair, and choose a new response.',caution:'Confession does not require unsafe public disclosure. Encourage pastoral, professional, legal, or safety help where appropriate.',prayer:'God of light, free us from denial and shame. Give us courage to confess and walk honestly. Amen.'},
-{number:3,title:'Knowing That We Know Him',scripture:'1 John 2:3–17',supporting:['John 14:15–24','Matthew 22:34–40','Romans 12:1–2'],question:'What evidence accompanies a genuine claim to know God?',truth:'Knowing God becomes visible through growing obedience, practical love, and freedom from disordered desire.',goal:'Understand John’s tests as evidence of grace rather than methods for earning salvation.',opening:'Why is claiming relationship with God easier than letting that relationship reshape our choices?',context:'John connects assurance with obedience and love, addresses different stages of maturity, and warns against the rebellious value system he calls the world.',teaching:[{heading:'Obedience is evidence, not payment',body:'Keeping Christ’s commands does not purchase relationship. It shows that His truth is taking root.'},{heading:'Jesus is the pattern',body:'Walking as Jesus walked means reflecting His love, truth, holiness, humility, and obedience.'},{heading:'Love is old and new',body:'The command is rooted in God’s will and made new in Jesus’ self-giving example. Love is not optional advanced Christianity.'},{heading:'Hatred distorts sight',body:'Persistent contempt darkens judgment. Correct ideas defended with dehumanization do not display the light.'},{heading:'Growth has stages',body:'John speaks assurance to children, fathers, and young people. Every stage remains dependent on God’s Word.'},{heading:'Do not love rebellion',body:'John does not condemn creation or people. He warns against cravings, status, pride, and life organized without God.'}],questions:['How is obedience evidence rather than payment?','What does walking as Jesus walked mean?','Why is love central to assurance?','How can hatred blind?','What do maturity stages teach?','Where do desire and pride pressure believers?'],examination:'Do my strongest desires move me toward love and obedience or toward appetite, appearance, control, and pride?',challenge:'Choose one command of Jesus and plan one act of obedience and one act of love.',caution:'Do not turn obedience into anxious scorekeeping. John describes direction and fruit, not flawless performance.',prayer:'Father, let knowing You reshape how we live and make Your love visible through obedience. Amen.'},
-{number:4,title:'Remaining in the Truth',scripture:'1 John 2:18–29',supporting:['Matthew 24:23–27','John 15:1–11','Jude 3–4'],question:'How can believers discern deception and remain faithful to the truth about Jesus?',truth:'Believers resist deception by remaining in the apostolic message about the Father and the Son.',goal:'Practice Christ-centered discernment without fear, sensationalism, or careless labeling.',opening:'What makes false teaching attractive even when it contradicts Scripture?',context:'People had left the churches and denied that Jesus is the Christ. John calls the denial antichrist and directs believers back to the message received from the beginning.',teaching:[{heading:'Deception can arise nearby',body:'Proximity to Christian language does not guarantee faithfulness to the apostolic message.'},{heading:'The central question is Jesus',body:'Teaching that diminishes His identity, incarnation, saving work, or relationship with the Father strikes the center of faith.'},{heading:'Antichrist is not a careless insult',body:'John applies the term to denial of Christ, not every political opponent, disliked leader, or secondary disagreement.'},{heading:'Believers have the Spirit',body:'Ordinary believers are not helpless before elite claims. The Spirit enables them to receive and remain in truth.'},{heading:'Remain in the original gospel',body:'Teaching must be tested against the apostolic message. Remaining includes studying, obeying, worshiping, and refusing substitutes.'},{heading:'Abiding produces confidence',body:'Those who remain in Christ can meet His appearing with confidence rather than shame or prophetic sensationalism.'}],questions:['Why can deception develop nearby?','What is the central doctrinal issue?','How is antichrist commonly misused?','What does the Spirit provide?','How should new revelation be tested?','What practices help us remain?'],examination:'Am I drawn to teaching because it is faithful or because it feels secret, dramatic, flattering, angry, or useful?',challenge:'Evaluate one spiritual message by what it teaches about Jesus’ identity, cross, resurrection, and authority.',caution:'Keep discussion anchored in John’s purpose rather than speculation about naming contemporary individuals.',prayer:'Spirit of truth, keep us centered on Jesus and give us humble discernment. Amen.'},
-{number:5,title:'Children of God Who Love',scripture:'1 John 3:1–24',supporting:['John 13:34–35','Romans 8:12–17','James 2:14–17'],question:'What family resemblance should become visible in God’s children?',truth:'God’s children increasingly practice righteousness and tangible love because His life is at work within them.',goal:'Understand John’s strong language about sin and connect assurance with active love.',opening:'Which family traits can people recognize without being told where someone belongs?',context:'John marvels at the Father’s love, looks toward Christ’s appearing, contrasts practices, and makes love concrete through meeting real needs.',teaching:[{heading:'Identity begins with the Father’s love',body:'Believers are called children by grace, not achievement. Their identity may be misunderstood because Christ was misunderstood.'},{heading:'Hope produces purification',body:'Future likeness to Christ shapes present life. Hope creates desire to become like the One we will see.'},{heading:'John addresses practice, not perfection',body:'The letter already acknowledges believers’ sin. Here John confronts settled allegiance that protects rebellion as a way of life.'},{heading:'Jesus destroys the devil’s work',body:'Sin is not harmless self-expression. Christ frees people from destructive patterns and forms righteousness.'},{heading:'Love becomes material care',body:'Jesus lays down His life, so believers cannot close their hearts to real need. Love costs appropriate time, resources, and courage.'},{heading:'God is greater than our hearts',body:'Conscience may bring conviction or distorted fear. Assurance rests in God’s knowledge, commands, promise, and Spirit.'}],questions:['What does being God’s child mean?','How does hope shape holiness?','Why cannot this mean sinless perfection?','How are struggle and protected practice different?','How does Jesus define love?','How can conscience help or trouble us?'],examination:'Does my love affect time, attention, money, courage, forgiveness, and response to need?',challenge:'Identify one need within reach and respond with an appropriate act that costs something.',caution:'Sensitive believers may hear rejection. Connect examination to the Father’s love, Christ’s advocacy, and observable direction.',prayer:'Father, make Your family resemblance visible through righteousness and love in action. Amen.'},
-{number:6,title:'Testing the Spirits and Perfected Love',scripture:'1 John 4:1–21',supporting:['Deuteronomy 13:1–4','1 Corinthians 12:1–3','John 15:9–17'],question:'How do truth about Jesus and self-giving love protect believers from deception and fear?',truth:'The Spirit of God leads people to confess the true Christ and display the love that comes from God.',goal:'Practice doctrinal and moral discernment while receiving God’s love as the answer to fear.',opening:'Why are spiritual claims sometimes accepted without careful testing?',context:'John commands testing because false prophets deny Jesus came in the flesh. He then returns to love, because correct words without God-shaped love do not reflect God.',teaching:[{heading:'Spiritual language must be tested',body:'Sincerity, charisma, popularity, and emotional impact do not establish truth.'},{heading:'The incarnate Jesus is central',body:'The Spirit confesses Jesus Christ come in the flesh, honoring His deity, humanity, authority, and saving mission.'},{heading:'God is greater than deception',body:'Confidence that God is greater should produce careful faithfulness, not arrogance or carelessness.'},{heading:'The cross defines love',body:'Love begins with God sending His Son. Christian love is responsive, truthful, sacrificial, and shaped by the cross.'},{heading:'God becomes visible through love',body:'The unseen God’s love reaches maturity as believers love one another. Community conduct can clarify or contradict proclamation.'},{heading:'Love drives out terror',body:'John speaks about fear of judgment. Assurance grows because God first loved us and Christ completed His saving work.'}],questions:['Why test spiritual claims?','What does confession of Christ include?','How can confidence become arrogance?','How does the cross define love?','How can believers make God visible?','What fear is cast out?'],examination:'Do I evaluate spiritual voices by truth and fruit or by confidence, popularity, emotion, and agreement with me?',challenge:'Test one message by what it teaches about Jesus and what kind of love and character it produces.',caution:'Do not use “perfect love casts out fear” to shame anxiety or discourage appropriate care.',prayer:'Spirit of God, give us discernment and make the Father’s love visible through us. Amen.'},
-{number:7,title:'Faith That Overcomes',scripture:'1 John 5:1–21',supporting:['John 20:30–31','Romans 8:31–39','James 5:13–20'],question:'What confidence belongs to those who believe in the Son of God?',truth:'Faith in Jesus brings eternal life, obedient love, confident prayer, responsibility toward others, and freedom from idols.',goal:'Conclude the letter with assurance grounded in God’s testimony about His Son.',opening:'How is assurance rooted in Christ different from confidence rooted in performance?',context:'John gathers the letter’s themes: faith, new birth, love, obedience, victory, testimony, eternal life, prayer, concern for others, and the final warning about idols.',teaching:[{heading:'New birth joins faith and love',body:'Believing in Jesus is connected to birth from God. Love for the Father necessarily reaches His children.'},{heading:'Obedience is not crushing',body:'God’s commands are not a hostile burden because new birth gives new allegiance and the Spirit’s help.'},{heading:'Faith overcomes the world',body:'Victory is not guaranteed wealth or control. Faith refuses the world’s demand to abandon Christ and shares His ultimate victory.'},{heading:'Life is in the Son',body:'Eternal life is not a vague possession. Whoever has the Son has life, so assurance rests in God’s witness rather than changing emotion.'},{heading:'Confident prayer seeks God’s will',body:'God hears His children. Confidence means approaching as heard children, not controlling outcomes.'},{heading:'Love responds to another’s sin',body:'Prayer, truth, responsibility, and appropriate intervention express concern without speculation.'},{heading:'Keep yourselves from idols',body:'Anything replacing the true God revealed in Jesus becomes an idol, including control, security, nation, tribe, comfort, and self.'}],questions:['How do faith, birth, love, and obedience connect?','How are God’s commands not burdensome?','What does overcoming mean?','Where is eternal life located?','How is confidence different from control?','Why does John end with idols?'],examination:'Is my assurance resting in the Son, or am I trying to produce enough emotion, knowledge, activity, or moral success?',challenge:'Write an assurance statement from 1 John 5:11–13, then name one command, one person to love, one prayer, and one idol to reject.',caution:'Avoid dogmatic speculation about sin leading to death. Keep the group with John’s clear purposes.',prayer:'Father, thank You for eternal life in Your Son. Strengthen faith, obedient love, prayer, and freedom from idols. Amen.'}
-]};
+window.NLDG_BOOK_STUDY={
+ slug:"first-john-study",
+ book:"1 John",
+ title:"1 JOHN — WALKING IN LIGHT, TRUTH, AND LOVE",
+ description:"Book-by-Book Bible Study Series",
+ themeLabel:"SERIES PURPOSE",
+ theme:"First John helps believers recognize authentic Christian faith without basing assurance on perfection, emotion, or empty claims. John repeatedly joins three inseparable realities: right belief about Jesus, obedient fellowship with God, and practical love for God’s children.",
+ audience:"Adults, small groups, Sunday school, ministry teams, new believers, and personal study.",
+ lessons:[
+  {
+   number:1,
+   title:"The Word of Life",
+   scripture:"1 John 1:1–4",
+   supporting:["John 1:1–18; Luke 24:36–43; 2 Peter 1:16–18"],
+   question:"Why does authentic Christian fellowship begin with the real Jesus revealed by the apostles?",
+   truth:"Christian faith rests on Jesus Christ truly coming in the flesh, being witnessed, and being proclaimed as the eternal life.",
+   goal:"To ground belief and fellowship in the incarnate Christ rather than speculation, private spirituality, or religious imagination.",
+   opening:"Why does it matter that the Christian message is connected to historical witnesses rather than only inspiring ideas?",
+   context:"John begins without a customary greeting. He immediately emphasizes what was heard, seen, observed, and touched. False teachers were separating spirituality from the real humanity of Jesus. John answers with eyewitness proclamation.",
+   teaching:[
+    {heading:"TEACHING MOVEMENT 1 — JESUS IS ETERNAL AND HISTORICAL",body:"“The Word of life” was from the beginning and also entered human experience. Christianity proclaims neither a merely human teacher nor a distant spiritual principle, but the eternal Son who became flesh."},
+    {heading:"TEACHING MOVEMENT 2 — THE APOSTOLIC MESSAGE IS WITNESS",body:"John’s repeated sensory language emphasizes testimony. The apostles did not invent a private philosophy. They proclaimed the One they encountered, while Scripture preserves the authoritative witness for later believers."},
+    {heading:"TEACHING MOVEMENT 3 — THE INCARNATION HONORS THE BODY",body:"Because the Son truly came in flesh, physical life matters. Bodies, suffering, service, food, touch, resurrection, and material care cannot be dismissed as spiritually unimportant."},
+    {heading:"TEACHING MOVEMENT 4 — PROCLAMATION INVITES FELLOWSHIP",body:"John announces Christ so hearers may share fellowship with the apostles, the Father, and the Son. Biblical fellowship is participation in shared truth and life, not mere social closeness."},
+    {heading:"TEACHING MOVEMENT 5 — FELLOWSHIP HAS BOUNDARIES AND OPEN DOORS",body:"Truth about Jesus gives Christian fellowship its shape. The boundary is not elitism; it protects the identity of the One into whose life people are being invited."},
+    {heading:"TEACHING MOVEMENT 6 — JOY GROWS THROUGH SHARED LIFE",body:"John’s joy is completed as others enter and remain in this fellowship. Christian joy is relational and missional, not a private possession."}
+   ],
+   questions:[
+    "Why does John emphasize hearing, seeing, and touching?",
+    "How are Jesus’ deity and humanity both present in the passage?",
+    "What does the incarnation teach about physical life and care?",
+    "How is Christian fellowship more than friendship?",
+    "Why must fellowship remain connected to truth?",
+    "How can boundaries protect an open invitation?",
+    "What is the relationship between proclamation and joy?",
+    "Where are you tempted to create a Jesus who fits your preferences?"
+   ],
+   examination:"Is my understanding of Jesus being formed by Scripture and apostolic witness or mainly by culture, preference, and private assumption?",
+   challenge:"Read John 1:1–18 alongside 1 John 1:1–4. Write what each passage teaches about who Jesus is and why His coming matters.",
+   caution:"Do not turn eyewitness language into contempt for thoughtful questions. John offers testimony as a foundation for faith and invites people into fellowship.",
+   prayer:"Eternal Son of God, thank You for truly coming among us. Root our faith in Your truth and draw us into honest fellowship with the Father and one another. Amen."
+  },
+  {
+   number:2,
+   title:"Walking in the Light",
+   scripture:"1 John 1:5–2:2",
+   supporting:["Psalm 32:1–5; John 3:19–21; Hebrews 4:14–16"],
+   question:"How can sinful people live honestly in fellowship with a God who is completely light?",
+   truth:"Walking in the light means bringing our lives honestly before God, confessing sin, and trusting the cleansing and advocacy of Jesus.",
+   goal:"To distinguish honest Christian growth from denial, concealment, shame, and careless presumption.",
+   opening:"Why are people often more afraid of being exposed than of remaining unhealed?",
+   context:"John presents three false claims marked by “if we say.” Some claim fellowship while walking in darkness, claim to have no sin, or claim not to have sinned. John responds with honest confession and Christ’s sufficient work.",
+   teaching:[
+    {heading:"TEACHING MOVEMENT 1 — GOD DEFINES THE LIGHT",body:"“God is light” means His character contains no moral darkness or deception. We do not adjust holiness to fit our habits; we bring our habits into His revealing truth."},
+    {heading:"TEACHING MOVEMENT 2 — WALKING DESCRIBES DIRECTION",body:"John does not say believers never stumble. Walking describes the settled direction and practice of life. A person cannot protect darkness as a lifestyle while claiming unhindered fellowship with God."},
+    {heading:"TEACHING MOVEMENT 3 — LIGHT CREATES HONEST FELLOWSHIP",body:"Concealment isolates. Walking in light makes truthful relationship possible because people no longer need to maintain a false image of sinlessness."},
+    {heading:"TEACHING MOVEMENT 4 — CONFESSION AGREES WITH GOD",body:"Confession is more than vague regret. It names sin truthfully, receives forgiveness, and turns toward changed practice. God’s faithfulness and justice rest on Christ’s saving work."},
+    {heading:"TEACHING MOVEMENT 5 — DENIAL DECEIVES THE SELF",body:"Claiming to have no sin does not protect dignity; it blocks truth. Spiritual maturity is not the absence of confession but growing willingness to come into the light."},
+    {heading:"TEACHING MOVEMENT 6 — JESUS IS ADVOCATE AND ATONING SACRIFICE",body:"John writes so believers will not sin, yet when they do, Jesus represents them before the Father. Assurance rests in His righteous work, not our ability to maintain a flawless record."}
+   ],
+   questions:[
+    "What does “God is light” reveal about His character?",
+    "How is walking in darkness different from stumbling into sin?",
+    "Why does concealment damage fellowship?",
+    "What makes confession specific and life-giving?",
+    "How can denial become self-deception?",
+    "What does Jesus’ advocacy mean for a believer who has failed?",
+    "How do grace and the call not to sin remain together?",
+    "What area of life is hardest to bring into the light?"
+   ],
+   examination:"When I fail, do I hide, rationalize, blame, despair, or come honestly to God through Christ?",
+   challenge:"Pray through 1 John 1:9 daily. Name sin without excuses, thank Christ for forgiveness, identify any repair needed, and choose a concrete new response.",
+   caution:"Confession does not require public disclosure of every detail. Encourage appropriate pastoral, professional, legal, or safety help when harm, abuse, addiction, or danger is involved.",
+   prayer:"God of light, free us from denial and shame. Give us courage to confess, receive Christ’s cleansing, repair harm, and walk honestly with You and one another. Amen."
+  },
+  {
+   number:3,
+   title:"Knowing That We Know Him",
+   scripture:"1 John 2:3–17",
+   supporting:["John 14:15–24; Matthew 22:34–40; Romans 12:1–2"],
+   question:"What evidence accompanies a genuine claim to know God?",
+   truth:"Knowing God becomes visible through growing obedience, practical love, and freedom from the world’s disordered desires.",
+   goal:"To understand John’s tests as evidence of grace rather than methods for earning salvation.",
+   opening:"Why is it easier to claim a relationship with God than to let that relationship reshape our choices?",
+   context:"John addresses assurance through obedience and love. He then speaks to believers at different stages of maturity before warning against loving “the world,” meaning the rebellious system of desires opposed to God.",
+   teaching:[
+    {heading:"TEACHING MOVEMENT 1 — OBEDIENCE GIVES EVIDENCE, NOT PAYMENT",body:"Keeping Christ’s commands does not purchase relationship with God. It demonstrates that His truth is taking root. Claims and patterns should increasingly agree."},
+    {heading:"TEACHING MOVEMENT 2 — JESUS IS THE PATTERN FOR OUR WALK",body:"Whoever claims to abide in Christ should walk as He walked. This does not mean recreating every historical detail of Jesus’ life; it means reflecting His love, truth, holiness, humility, and obedience."},
+    {heading:"TEACHING MOVEMENT 3 — LOVE IS BOTH OLD AND NEW",body:"The command to love is rooted in God’s long-revealed will and made new in Jesus’ self-giving example. Love is not optional advanced Christianity."},
+    {heading:"TEACHING MOVEMENT 4 — HATRED DISTORTS SPIRITUAL SIGHT",body:"Persistent contempt and dehumanization darken judgment. A person may defend correct ideas while hatred prevents them from seeing where they are going."},
+    {heading:"TEACHING MOVEMENT 5 — ASSURANCE SPEAKS TO DIFFERENT STAGES",body:"John addresses children, fathers, and young people with reminders of forgiveness, relationship, knowledge, strength, and victory. Christian growth has stages, and every stage remains dependent on God’s Word."},
+    {heading:"TEACHING MOVEMENT 6 — DO NOT LOVE THE WORLD’S REBELLION",body:"John is not condemning creation or people. He warns against cravings, status, pride, and a system organized without God. These desires pass away; obedience to God participates in what lasts."}
+   ],
+   questions:[
+    "How is obedience evidence rather than payment?",
+    "What does it mean to walk as Jesus walked?",
+    "Why is love central to assurance?",
+    "How can hatred blind a person?",
+    "What do John’s words to different maturity stages communicate?",
+    "What does “the world” mean in this passage?",
+    "Where do desire, comparison, or pride pressure believers most strongly?",
+    "Which command is God presently teaching you to practice?"
+   ],
+   examination:"Do my strongest desires move me toward love and obedience or toward appetite, appearance, control, and pride?",
+   challenge:"Choose one command of Jesus that you understand but inconsistently practice. Plan one specific act of obedience and one act of love.",
+   caution:"Avoid turning obedience into anxious scorekeeping. John describes the direction and fruit of life with Christ, not salvation earned through flawless performance.",
+   prayer:"Father, let knowing You reshape how we live. Teach us the walk of Jesus, free us from hatred and pride, and make Your love visible through our obedience. Amen."
+  },
+  {
+   number:4,
+   title:"Remaining in the Truth",
+   scripture:"1 John 2:18–29",
+   supporting:["Matthew 24:23–27; John 15:1–11; Jude 3–4"],
+   question:"How can believers discern deception and remain faithful to the truth about Jesus?",
+   truth:"Believers resist deception by remaining in the apostolic message about the Father and the Son.",
+   goal:"To practice Christ-centered discernment without fear, sensationalism, or careless labeling.",
+   opening:"What makes false teaching attractive even when it contradicts Scripture?",
+   context:"People have left the churches and denied that Jesus is the Christ. John calls such denial “antichrist.” He also speaks of many antichrists, distinguishing the present spirit of opposition from later questions about a final figure.",
+   teaching:[
+    {heading:"TEACHING MOVEMENT 1 — DECEPTION OFTEN ARISES CLOSE TO THE COMMUNITY",body:"The opponents had participated outwardly before departing. Proximity to Christian language does not guarantee faithfulness to the apostolic message."},
+    {heading:"TEACHING MOVEMENT 2 — THE CENTRAL QUESTION IS JESUS",body:"John’s doctrinal test centers on confessing the Son. Teaching that diminishes His identity, incarnation, saving work, or relationship with the Father strikes at the center of Christian faith."},
+    {heading:"TEACHING MOVEMENT 3 — “ANTICHRIST” SHOULD NOT BECOME A CARELESS INSULT",body:"John applies the term to denial of Christ, not every political opponent, disliked leader, mistaken interpretation, or secondary disagreement. Responsible discernment uses biblical categories carefully."},
+    {heading:"TEACHING MOVEMENT 4 — BELIEVERS HAVE THE SPIRIT’S ANOINTING",body:"John reassures ordinary believers that they are not helpless before elite claims. The Holy Spirit enables them to receive and remain in apostolic truth."},
+    {heading:"TEACHING MOVEMENT 5 — REMAIN IN WHAT YOU HEARD FROM THE BEGINNING",body:"Novelty is not automatically false, but teaching must be tested against the original gospel. Remaining is active: remembering, studying, obeying, worshiping, and refusing substitutes for Christ."},
+    {heading:"TEACHING MOVEMENT 6 — ABIDING PRODUCES CONFIDENCE",body:"Those who remain in Christ can meet His appearing with confidence rather than shame. Assurance is relational perseverance, not secret information about prophetic schedules."}
+   ],
+   questions:[
+    "Why can false teaching develop near Christian communities?",
+    "What does John identify as the central doctrinal issue?",
+    "How is “antichrist” commonly misused?",
+    "What does the Spirit’s anointing provide?",
+    "How can believers test something described as new revelation?",
+    "What practices help us remain in the apostolic gospel?",
+    "How are truth and abiding connected?",
+    "Which voices most influence your understanding of Jesus?"
+   ],
+   examination:"Am I drawn toward teaching because it is faithful to Christ or because it feels secret, dramatic, flattering, angry, or culturally useful?",
+   challenge:"Evaluate one sermon, video, article, or post about Jesus. Ask what it says about His identity, incarnation, cross, resurrection, authority, and call to obedience.",
+   caution:"Do not turn this lesson into speculation about naming contemporary individuals. Keep the class anchored in John’s purpose: remaining in the true Son.",
+   prayer:"Spirit of truth, keep us centered on Jesus. Give us humble discernment, protect us from deception, and help us remain in the gospel we received. Amen."
+  },
+  {
+   number:5,
+   title:"Children of God Who Love",
+   scripture:"1 John 3:1–24",
+   supporting:["John 13:34–35; Romans 8:12–17; James 2:14–17"],
+   question:"What family resemblance should become visible in the children of God?",
+   truth:"God’s children increasingly practice righteousness and tangible love because His life is at work within them.",
+   goal:"To understand John’s strong language about sin and connect Christian assurance with active love.",
+   opening:"Which family traits can people recognize without being told where someone belongs?",
+   context:"John marvels at the Father’s love, looks toward Christ’s appearing, contrasts the practice of sin with the practice of righteousness, and makes love concrete through the example of Cain and the command to meet real needs.",
+   teaching:[
+    {heading:"TEACHING MOVEMENT 1 — IDENTITY BEGINS WITH THE FATHER’S LOVE",body:"Believers are called children of God because of grace, not achievement. The world may not recognize this identity because it did not recognize Christ."},
+    {heading:"TEACHING MOVEMENT 2 — HOPE PRODUCES PURIFICATION",body:"Seeing Christ in the future shapes life in the present. Hope is not escape from moral responsibility; it creates desire to become like the One we will see."},
+    {heading:"TEACHING MOVEMENT 3 — JOHN ADDRESSES PRACTICE, NOT SINLESS PERFECTION",body:"The letter has already said believers who deny sin deceive themselves and need Christ our Advocate. Here John confronts settled allegiance to sin. New birth cannot be reconciled with making rebellion a protected identity and practice."},
+    {heading:"TEACHING MOVEMENT 4 — JESUS CAME TO DESTROY THE DEVIL’S WORK",body:"Sin is not harmless self-expression. Christ’s mission includes freeing people from destructive patterns and forming righteousness and love."},
+    {heading:"TEACHING MOVEMENT 5 — LOVE MOVES FROM WORDS TO MATERIAL CARE",body:"Jesus lays down His life. Therefore believers cannot close their hearts when a brother or sister has real need. Love becomes visible through presence, generosity, advocacy, sacrifice, and action."},
+    {heading:"TEACHING MOVEMENT 6 — ASSURANCE RESTS IN GOD’S GREATNESS",body:"Our hearts may condemn us, sometimes through true conviction and sometimes through distorted fear. God is greater than our hearts. We bring ourselves honestly before Him, obey His commands, and rely on His knowledge and Spirit."}
+   ],
+   questions:[
+    "What does it mean to be called a child of God?",
+    "How does future hope shape present holiness?",
+    "Why cannot 1 John 3 mean believers never commit a sin?",
+    "What is the difference between struggle and protected practice?",
+    "How does Jesus define love?",
+    "What needs can Christians wrongly ignore while speaking lovingly?",
+    "How can conscience both help and trouble us?",
+    "Where should God’s family resemblance become clearer in you?"
+   ],
+   examination:"Is my love mainly expressed through words, or does it affect my time, attention, money, courage, forgiveness, and response to need?",
+   challenge:"Identify one concrete need within your reach. Respond with an action that costs something appropriate: time, attention, resources, advocacy, or inconvenience.",
+   caution:"Participants with scrupulosity or severe spiritual anxiety may hear John’s contrasts as proof they are rejected. Repeatedly connect examination to the Father’s love, Christ’s advocacy, honest confession, and observable direction rather than flawless performance.",
+   prayer:"Father, thank You for making us Your children. Purify our hope, break destructive patterns, and teach us to love in truth and action. Amen."
+  },
+  {
+   number:6,
+   title:"Testing the Spirits and Perfected Love",
+   scripture:"1 John 4:1–21",
+   supporting:["Deuteronomy 13:1–4; 1 Corinthians 12:1–3; John 15:9–17"],
+   question:"How do truth about Jesus and self-giving love protect believers from deception and fear?",
+   truth:"The Spirit of God leads people to confess the true Christ and display the love that comes from God.",
+   goal:"To practice doctrinal and moral discernment while receiving God’s love as the answer to fear.",
+   opening:"Why are spiritual claims sometimes accepted without the same careful testing we would apply elsewhere?",
+   context:"John commands believers not to believe every spirit. False prophets deny Jesus Christ has come in the flesh. John then returns to love, because correct words without God-shaped love do not reflect the God who is love.",
+   teaching:[
+    {heading:"TEACHING MOVEMENT 1 — SPIRITUAL LANGUAGE MUST BE TESTED",body:"Sincerity, charisma, supernatural claims, popularity, and emotional impact do not establish truth. God commands discernment because false spiritual influence is real."},
+    {heading:"TEACHING MOVEMENT 2 — THE INCARNATE JESUS IS THE DOCTRINAL CENTER",body:"The Spirit of God confesses Jesus Christ come in the flesh. Teaching must honor His true deity, humanity, identity, authority, and saving mission."},
+    {heading:"TEACHING MOVEMENT 3 — GOD’S PRESENCE IS GREATER THAN DECEPTION",body:"“He who is in you is greater” is assurance, not a promise that believers can never be misled. Confidence in God should produce careful faithfulness rather than arrogance."},
+    {heading:"TEACHING MOVEMENT 4 — GOD’S LOVE DEFINES CHRISTIAN LOVE",body:"Love begins not with our feelings toward God but with God sending His Son as the atoning sacrifice. Christian love is responsive, truthful, sacrificial, and shaped by the cross."},
+    {heading:"TEACHING MOVEMENT 5 — THE INVISIBLE GOD BECOMES VISIBLE THROUGH LOVE",body:"No one has seen God, yet His love reaches maturity as believers love one another. Community conduct can either clarify or contradict the message it proclaims."},
+    {heading:"TEACHING MOVEMENT 6 — PERFECTED LOVE DRIVES OUT PUNISHMENT-BASED FEAR",body:"John speaks about fear of judgment. Assurance grows because God first loved us and Christ completed His saving work. Reverence and wise caution remain, but terror of rejection no longer rules."}
+   ],
+   questions:[
+    "Why must spiritual claims be tested?",
+    "What does confession of the incarnate Christ include?",
+    "How can confidence become careless arrogance?",
+    "How does the cross define love?",
+    "In what sense can believers make the invisible God visible?",
+    "What fear is cast out by perfected love?",
+    "How is reverence different from terror?",
+    "What teaching or spiritual influence do you need to test carefully?"
+   ],
+   examination:"Do I evaluate spiritual voices by truth and fruit or mainly by confidence, popularity, emotional power, and agreement with me?",
+   challenge:"Use a two-part discernment test on one spiritual message: What does it teach about Jesus, and what kind of love and character does it produce?",
+   caution:"“Perfect love casts out fear” should not be used to shame anxiety or discourage appropriate caution, counseling, or medical care. John’s focus is assurance before God’s judgment.",
+   prayer:"Spirit of God, give us discernment centered on the true Jesus. Root us in the Father’s love, free us from terror, and make that love visible through us. Amen."
+  },
+  {
+   number:7,
+   title:"Faith That Overcomes",
+   scripture:"1 John 5:1–21",
+   supporting:["John 20:30–31; Romans 8:31–39; James 5:13–20"],
+   question:"What confidence belongs to those who believe in the Son of God?",
+   truth:"Faith in Jesus brings eternal life, obedient love, confidence in prayer, responsibility toward others, and freedom from idols.",
+   goal:"To conclude the letter with assurance grounded in God’s testimony about His Son.",
+   opening:"What is the difference between assurance rooted in Christ and confidence rooted in our own spiritual performance?",
+   context:"John gathers the letter’s themes: faith, new birth, love, obedience, victory, testimony, eternal life, prayer, concern for believers in sin, protection from evil, and the final warning about idols.",
+   teaching:[
+    {heading:"TEACHING MOVEMENT 1 — NEW BIRTH JOINS FAITH AND LOVE",body:"Believing Jesus is the Christ is connected to being born of God. Love for the Father necessarily reaches His children; faith cannot become an excuse for loveless isolation."},
+    {heading:"TEACHING MOVEMENT 2 — OBEDIENCE IS NOT CRUSHING",body:"God’s commands are not burdensome because new birth gives a new allegiance and the Spirit’s help. Obedience can still be costly, but it is no longer slavery imposed by a hostile master."},
+    {heading:"TEACHING MOVEMENT 3 — FAITH OVERCOMES THE WORLD",body:"Victory is not guaranteed wealth, status, health, or political control. Faith refuses the world’s demand that believers abandon Christ, and it shares in Jesus’ ultimate victory."},
+    {heading:"TEACHING MOVEMENT 4 — GOD’S TESTIMONY CENTERS ETERNAL LIFE IN THE SON",body:"John offers assurance to those who believe in the Son. Eternal life is not a vague spiritual possession; “whoever has the Son has life.” Confidence rests in God’s witness, not shifting emotion."},
+    {heading:"TEACHING MOVEMENT 5 — CONFIDENT PRAYER SEEKS GOD’S WILL",body:"God hears requests made according to His will. Confidence does not mean controlling outcomes. It means approaching the Father as heard children who trust His wisdom."},
+    {heading:"TEACHING MOVEMENT 6 — LOVE RESPONDS WHEN ANOTHER BELIEVER SINS",body:"John calls believers to pray for one another. The difficult distinction involving sin leading to death should produce humility, not speculation. Serious sin requires prayer, truth, responsibility, and appropriate intervention."},
+    {heading:"TEACHING MOVEMENT 7 — KEEP YOURSELVES FROM IDOLS",body:"The final command summarizes the letter. Anything that replaces the true God revealed in Jesus becomes an idol, including distorted versions of Jesus, control, security, success, nation, tribe, comfort, or self."}
+   ],
+   questions:[
+    "How do faith, new birth, love, and obedience connect?",
+    "In what sense are God’s commands not burdensome?",
+    "What does overcoming the world mean?",
+    "Where does John locate eternal life?",
+    "How is prayerful confidence different from demanding an outcome?",
+    "What responsibility do believers have when another person is caught in sin?",
+    "Why does John end with a warning about idols?",
+    "What gives you the strongest assurance after studying this letter?"
+   ],
+   examination:"Is my assurance resting in the Son of God, or am I continually trying to produce enough emotion, knowledge, activity, or moral success to feel accepted?",
+   challenge:"Write a final assurance statement using 1 John 5:11–13. Then identify one command to practice, one person to love actively, one prayer to continue, and one idol to reject.",
+   caution:"Avoid dogmatic speculation about “sin leading to death.” Keep the group with John’s clear purposes: prayerful concern, serious treatment of sin, confidence in Christ, and protection from idols.",
+   prayer:"Father, thank You for giving eternal life in Your Son. Strengthen our faith, teach us obedient love, align our prayers with Your will, and keep our hearts from every idol. Amen."
+  }
+ ]
+};

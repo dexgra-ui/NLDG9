@@ -30,8 +30,10 @@ async function openGame(){
 }
 async function state(){return page.evaluate(()=>window.ScriptureChessTest.state());}
 async function start(level='intermediate'){return page.evaluate(value=>window.ScriptureChessTest.start(value),level);}
+async function startSolo(level='intermediate',difficulty='medium'){return page.evaluate(([a,b])=>window.ScriptureChessTest.startSolo(a,b),[level,difficulty]);}
 async function setPosition(fen){const ok=await page.evaluate(value=>window.ScriptureChessTest.setPosition(value),fen);requireTrue(ok,`Could not load test FEN: ${fen}`);}
 async function move(from,to,promotion){return page.evaluate(([a,b,p])=>window.ScriptureChessTest.move(a,b,p),[from,to,promotion||null]);}
+async function forceComputerMove(from,to,promotion){return page.evaluate(([a,b,p])=>window.ScriptureChessTest.forceComputerMove(a,b,p),[from,to,promotion||null]);}
 async function resolveChallenge(award=false){
   await page.click('#revealAnswerBtn');
   await page.waitForSelector('#answerPanel:not(.hidden)');
@@ -58,9 +60,24 @@ await run('Public page loads the pinned chess engine and production metadata',as
   requireTrue(info.prototype===false,'Prototype badge is visible on the public page.');
 });
 
+await run('Setup offers solo and two-player modes with three computer difficulties',async()=>{
+  const setup=await page.evaluate(()=>({
+    mode:document.querySelector('#modeSelect')?.value,
+    modes:[...document.querySelectorAll('#modeSelect option')].map(option=>option.value),
+    difficulties:[...document.querySelectorAll('#aiDifficultySelect option')].map(option=>option.value),
+    blackHidden:document.querySelector('#blackNameField')?.classList.contains('hidden'),
+    aiHidden:document.querySelector('#aiDifficultyField')?.classList.contains('hidden')
+  }));
+  requireTrue(setup.mode==='single','Solo mode is not the default setup choice.');
+  requireTrue(setup.modes.join(',')==='single,two-player','Expected solo and two-player choices.');
+  requireTrue(setup.difficulties.join(',')==='easy,medium,hard','Expected Easy, Medium, and Hard computer choices.');
+  requireTrue(setup.blackHidden===true&&setup.aiHidden===false,'Solo setup fields are not shown correctly.');
+});
+
 await run('Initial position, legal move, illegal move, and undo follow real chess rules',async()=>{
   await start('intermediate');
   let current=await state();
+  requireTrue(current.mode==='two-player','Legacy two-player test mode was not preserved.');
   requireTrue(current.pieceCount===32,`Expected 32 pieces, found ${current.pieceCount}.`);
   const before=current.fen;
   requireTrue(await move('e2','e5')===false,'Illegal e2-e5 move was accepted.');
@@ -74,7 +91,62 @@ await run('Initial position, legal move, illegal move, and undo follow real ches
   requireTrue(current.pieceCount===32,'Undo did not restore the starting board.');
 });
 
+await run('Solo mode automatically makes a legal computer reply and keeps Scripture scoring human-only',async()=>{
+  await startSolo('intermediate','easy');
+  let current=await state();
+  requireTrue(current.mode==='single'&&current.aiDifficulty==='easy','Solo Easy mode did not start correctly.');
+  requireTrue(await move('e2','e4')===true,'Human opening move failed.');
+  await page.waitForFunction(()=>{
+    const current=window.ScriptureChessTest.state();
+    return current.moves.length===2&&!current.aiThinking&&!current.challenge;
+  },null,{timeout:5000});
+  current=await state();
+  requireTrue(current.turn==='w','Computer reply did not return the turn to White.');
+  requireTrue(current.moves.length===2,'Computer did not add exactly one reply.');
+  requireTrue(current.scores.b===0,'Computer earned a Scripture Point.');
+  requireTrue(await page.locator('#computerRoleMeta').isVisible(),'Computer role is not visible in the score card.');
+});
+
+await run('Solo mode prevents the human from moving Black pieces',async()=>{
+  await startSolo('intermediate','medium');
+  await setPosition('rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1');
+  const before=(await state()).fen;
+  requireTrue(await move('e7','e5')===false,'Human was allowed to move a Black computer piece.');
+  requireTrue((await state()).fen===before,'Blocked computer move changed the board.');
+});
+
+await run('Computer check opens a Stand Firm challenge for the human player',async()=>{
+  await startSolo('intermediate','medium');
+  await setPosition('r7/k7/8/8/8/8/8/7K b - - 0 1');
+  requireTrue(await forceComputerMove('a8','h8')===true,'Forced legal computer checking move failed.');
+  let current=await state();
+  requireTrue(current.isCheck===true,'Computer move did not put White in check.');
+  requireTrue(current.challenge?.event==='defense','Stand Firm defense challenge did not open.');
+  requireTrue(current.challenge?.color==='w','Stand Firm challenge was not assigned to the human player.');
+  requireTrue((await page.textContent('#eventBadge')).trim()==='Stand Firm','Stand Firm event label is missing.');
+  await resolveChallenge(true);
+  current=await state();
+  requireTrue(current.scores.w===1,'Human did not receive the Stand Firm Scripture Point.');
+  requireTrue(current.scores.b===0,'Computer received a Scripture Point during Stand Firm.');
+  requireTrue(current.turn==='w','Human turn was not restored after Stand Firm.');
+});
+
+await run('Solo undo removes both the computer reply and the preceding human move',async()=>{
+  await startSolo('intermediate','easy');
+  requireTrue(await move('e2','e4')===true,'Human opening move failed.');
+  await page.waitForFunction(()=>{
+    const current=window.ScriptureChessTest.state();
+    return current.moves.length===2&&!current.aiThinking&&!current.challenge;
+  },null,{timeout:5000});
+  await page.evaluate(()=>window.ScriptureChessTest.undo());
+  const current=await state();
+  requireTrue(current.moves.length===0,'Solo undo did not remove the full human/computer turn pair.');
+  requireTrue(current.pieceCount===32,'Solo undo did not restore all starting pieces.');
+  requireTrue(current.turn==='w','Solo undo did not return control to the human player.');
+});
+
 await run('Capture opens a Scripture challenge and scoring stays separate from chess',async()=>{
+  await start('intermediate');
   await setPosition('7k/8/8/3p4/4P3/8/8/K7 w - - 0 1');
   requireTrue(await move('e4','d5')===true,'Capture failed.');
   let current=await state();
@@ -168,11 +240,11 @@ await run('Chess board works with keyboard activation',async()=>{
 await run('Desktop and mobile layouts stay within the viewport',async()=>{
   await page.setViewportSize({width:1280,height:900});
   await openGame();
-  await start('intermediate');
+  await startSolo('intermediate','medium');
   await page.screenshot({path:screenshot('scripture-chess-preview'),fullPage:true});
   await page.setViewportSize({width:390,height:844});
   await openGame();
-  await start('intermediate');
+  await startSolo('intermediate','medium');
   const dimensions=await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,innerWidth:window.innerWidth,boardWidth:document.querySelector('#chessboard').getBoundingClientRect().width}));
   requireTrue(dimensions.scrollWidth<=dimensions.innerWidth+2,`Horizontal overflow: ${dimensions.scrollWidth}px > ${dimensions.innerWidth}px.`);
   requireTrue(dimensions.boardWidth<=dimensions.innerWidth,'Chess board exceeds mobile viewport.');

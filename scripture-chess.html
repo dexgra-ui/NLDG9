@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#06142f">
-<meta name="description" content="Play real two-player chess while captures, checks, castling, promotions, and checkmate open Scripture challenges that build biblical understanding.">
+<meta name="description" content="Play Scripture Chess solo against the computer or with two players while significant chess moves open Scripture challenges that build biblical understanding.">
 <link rel="canonical" href="https://nolabelsdesignedbygod.org/scripture-chess.html">
 <meta property="og:title" content="Scripture Chess | No Labels, Designed by God">
-<meta property="og:description" content="Think ahead. Know the Word. Play real chess while significant moves open Scripture challenges and separate Scripture Point scoring.">
+<meta property="og:description" content="Think ahead. Know the Word. Play solo against the computer or with two players while significant moves open Scripture challenges and separate Scripture Point scoring.">
 <meta property="og:url" content="https://nolabelsdesignedbygod.org/scripture-chess.html">
 <meta property="og:type" content="website">
 <title>Scripture Chess | No Labels, Designed by God</title>
-<link rel="stylesheet" href="scripture-chess.css?v=1.0.0">
+<link rel="stylesheet" href="scripture-chess.css?v=1.1.0">
 </head>
 <body>
 <main class="app">
@@ -31,16 +31,29 @@
     <div class="hero-mark" aria-hidden="true">♔ 📖 ♚</div>
     <h1>Scripture Chess</h1>
     <p class="tagline">Think ahead. Know the Word.</p>
-    <p>Play real chess while significant moves open Scripture challenges. Chess results and Scripture Points stay separate, so the board tests strategy while the questions build biblical understanding.</p>
+    <p>Play real chess solo against the computer or with another player or team. Significant moves open Scripture challenges. Chess results and Scripture Points stay separate, so the board tests strategy while the questions build biblical understanding.</p>
   </div>
 
   <div class="setup-card">
     <div class="setup-grid">
-      <label>White Player or Team
-        <input id="whiteNameInput" value="Team Faith" maxlength="28" autocomplete="off">
+      <label>Game Mode
+        <select id="modeSelect">
+          <option value="single" selected>Solo · Play the Computer</option>
+          <option value="two-player">Two Players or Teams</option>
+        </select>
       </label>
-      <label>Black Player or Team
+      <label id="whiteNameField"><span id="whiteNameLabel">Your Name</span>
+        <input id="whiteNameInput" value="Player" maxlength="28" autocomplete="off">
+      </label>
+      <label id="blackNameField" class="hidden">Black Player or Team
         <input id="blackNameInput" value="Team Grace" maxlength="28" autocomplete="off">
+      </label>
+      <label id="aiDifficultyField">Computer Difficulty
+        <select id="aiDifficultySelect">
+          <option value="easy">Easy · Relaxed</option>
+          <option value="medium" selected>Medium · Tactical</option>
+          <option value="hard">Hard · Thinks Ahead</option>
+        </select>
       </label>
       <label>Scripture Level
         <select id="levelSelect">
@@ -50,6 +63,7 @@
         </select>
       </label>
       <div class="setup-actions actions">
+        <p id="modeHelp" class="mode-help">You play White. The computer plays Black and never earns Scripture Points. If it puts you in check, you receive a Stand Firm Scripture challenge.</p>
         <button id="startGameBtn" class="btn gold" type="button">Start Scripture Chess</button>
       </div>
     </div>
@@ -78,13 +92,13 @@
     <section class="board-card" aria-label="Chess board and scores">
       <div class="score-row">
         <div id="whiteCard" class="player-card active">
-          <strong id="whiteName" class="player-name">Team Faith</strong>
+          <strong id="whiteName" class="player-name">Player</strong>
           <div class="player-meta"><span>White ♔</span><span>Scripture <span id="whiteScore" class="scripture-score">0</span></span></div>
         </div>
         <div class="versus">VS</div>
         <div id="blackCard" class="player-card black">
-          <strong id="blackName" class="player-name">Team Grace</strong>
-          <div class="player-meta"><span>Black ♚</span><span>Scripture <span id="blackScore" class="scripture-score">0</span></span></div>
+          <strong id="blackName" class="player-name">Scripture Chess Computer</strong>
+          <div class="player-meta"><span>Black ♚</span><span id="blackScriptureMeta">Scripture <span id="blackScore" class="scripture-score">0</span></span><span id="computerRoleMeta" class="hidden">Chess opponent</span></div>
         </div>
       </div>
 
@@ -98,7 +112,7 @@
       <div class="side-heading"><h2>Scripture Challenge</h2><span id="eventBadge" class="event-badge">Ready</span></div>
 
       <div id="instructionPanel" class="instruction">
-        <div><strong>Make a legal chess move.</strong><span>Captures, checks, castling, promotions, and checkmate will open a Scripture challenge.</span></div>
+        <div><strong id="instructionTitle">Make a legal chess move.</strong><span id="instructionText">Captures, checks, castling, promotions, and checkmate will open a Scripture challenge.</span></div>
       </div>
 
       <div id="challengePanel" class="challenge hidden" aria-live="polite">
@@ -129,11 +143,11 @@
   <div class="mark" aria-hidden="true">♔ 📖 ♚</div>
   <h2 id="completeTitle">Game Complete</h2>
   <p id="completeText"></p>
-  <div class="final-scores">
+  <div id="finalScores" class="final-scores">
     <div class="final-score"><strong id="finalWhiteName"></strong><span id="finalWhiteScore">0</span><small> Scripture Points</small></div>
-    <div class="final-score"><strong id="finalBlackName"></strong><span id="finalBlackScore">0</span><small> Scripture Points</small></div>
+    <div id="finalBlackCard" class="final-score"><strong id="finalBlackName"></strong><span id="finalBlackScore">0</span><small> Scripture Points</small></div>
   </div>
-  <div class="actions" style="justify-content:center"><button id="rematchBtn" class="btn gold" type="button">Rematch</button><button id="changePlayersBtn" class="btn" type="button">Change Players</button></div>
+  <div class="actions" style="justify-content:center"><button id="rematchBtn" class="btn gold" type="button">Rematch</button><button id="changePlayersBtn" class="btn" type="button">Change Setup</button></div>
 </section>
 
 <div id="promotionDialog" class="promotion-dialog hidden" role="dialog" aria-modal="true" aria-labelledby="promotionTitle">
@@ -152,7 +166,7 @@
 <p class="license-note">Chess rules use <strong>chess.js v1.4.0</strong> under the BSD-2-Clause license.</p>
 </main>
 
-<script src="scripture-chess-questions.js?v=1.0.0"></script>
-<script type="module" src="scripture-chess.js?v=1.0.0"></script>
+<script src="scripture-chess-questions.js?v=1.1.0"></script>
+<script type="module" src="scripture-chess.js?v=1.1.0"></script>
 </body>
 </html>

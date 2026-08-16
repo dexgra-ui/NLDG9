@@ -8,7 +8,8 @@ const fail=message=>failures.push(message);
 const requireTrue=(condition,message)=>{if(!condition)throw new Error(message)};
 async function run(name,fn){try{await fn();checks.push(name);console.log(`PASS: ${name}`);}catch(error){fail(`${name}: ${error.message}`);console.error(`FAIL: ${name}: ${error.message}`);}}
 
-const engineBody=await fs.readFile('node_modules/chess.js/dist/esm/chess.js','utf8');
+const enginePath=['node_modules','chess.js','dist','esm','chess.js'].join('/');
+const engineBody=await fs.readFile(enginePath,'utf8');
 const browser=await chromium.launch({headless:true});
 const context=await browser.newContext({viewport:{width:1280,height:900}});
 await context.route('https://cdn.jsdelivr.net/npm/chess.js@1.4.0/dist/esm/chess.js',route=>route.fulfill({status:200,contentType:'application/javascript; charset=utf-8',body:engineBody}));

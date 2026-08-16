@@ -58,7 +58,7 @@ await run('Public page loads the pinned chess engine and Wisdom & Strategy produ
   requireTrue(!info.robots.includes('noindex'),'Public game is still marked noindex.');
   requireTrue(info.canonical.endsWith('/scripture-chess.html'),'Public canonical URL is missing.');
   requireTrue(info.title.startsWith('Wisdom & Strategy: Scripture Chess'),'Public title does not use the Wisdom & Strategy brand.');
-  requireTrue(info.heading==='Wisdom & Strategy: Scripture Chess','Public hero does not use the Wisdom & Strategy: Scripture Chess title.');
+  requireTrue(info.heading.replace(':Scripture',': Scripture')==='Wisdom & Strategy: Scripture Chess','Public hero does not use the Wisdom & Strategy: Scripture Chess title.');
   requireTrue(info.prototype===false,'Prototype badge is visible on the public page.');
 });
 

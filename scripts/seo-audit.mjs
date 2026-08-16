@@ -34,6 +34,29 @@ if(exists('sitemap.xml')){
  for(const file of ['contact.html','mission.html',...articlePages,...devotionalPages,...newsletterPages])assert(sitemap.includes(`https://nolabelsdesignedbygod.org/${file}`),`sitemap.xml: missing ${file}`);
 }
 
+const expectedBookOrder=['Genesis','Exodus','Leviticus','Numbers','Deuteronomy','Joshua','Judges','Ruth','1 Samuel','2 Samuel','1 Kings','2 Kings','1 Chronicles','2 Chronicles','Ezra','Nehemiah','Esther','Job','Psalms','Proverbs','Ecclesiastes','Song of Songs','Isaiah','Jeremiah','Lamentations','Ezekiel','Daniel','Hosea','Joel','Amos','Obadiah','Jonah','Micah','Nahum','Habakkuk','Zephaniah','Haggai','Zechariah','Malachi','Matthew','Mark','Luke','John','Acts','Romans','1 Corinthians','2 Corinthians','Galatians','Ephesians','Philippians','Colossians','1 Thessalonians','2 Thessalonians','1 Timothy','2 Timothy','Titus','Philemon','Hebrews','James','1 Peter','2 Peter','1 John','2 John','3 John','Jude','Revelation'];
+assert(exists('book-by-book.html'),'book-by-book.html is missing');
+if(exists('book-by-book.html')){
+ const library=read('book-by-book.html');
+ const cards=[...library.matchAll(/<article class="book-card">([\s\S]*?)<\/article>/g)].map(match=>match[1]);
+ const titles=cards.map(card=>card.match(/<h2>([^<]+)<\/h2>/)?.[1]||'');
+ const hrefs=cards.map(card=>card.match(/<a href="([^"]+)"/)?.[1]||'');
+ const lessonTotal=cards.reduce((sum,card)=>sum+Number(card.match(/·\s*(\d+)\s+lessons/)?.[1]||0),0);
+ assert(cards.length===66,`book-by-book.html: expected 66 book cards, found ${cards.length}`);
+ assert(JSON.stringify(titles)===JSON.stringify(expectedBookOrder),'book-by-book.html: canonical book order does not match the 66-book Protestant canon');
+ assert(new Set(hrefs).size===66,'book-by-book.html: book study links must be unique');
+ assert(lessonTotal===447,`book-by-book.html: expected 447 lessons, found ${lessonTotal}`);
+ if(exists('sitemap.xml')){
+  const sitemap=read('sitemap.xml');
+  for(const href of hrefs){
+   assert(Boolean(href),`book-by-book.html: a book card is missing its href`);
+   if(!href)continue;
+   assert(exists(href),`book-by-book.html: linked book page is missing: ${href}`);
+   assert(sitemap.includes(`https://nolabelsdesignedbygod.org/${href}`),`sitemap.xml: missing Book-by-Book page ${href}`);
+  }
+ }
+}
+
 assert(exists('contact-links.js'),'contact-links.js is missing');
 assert(exists('contact-library.js'),'contact-library.js is missing');
 if(exists('contact.html')){
@@ -60,4 +83,4 @@ if(failures.length){
  failures.forEach(item=>console.error(`- ${item}`));
  process.exit(1);
 }
-console.log(`SEO and social preview audit PASSED for ${pages.length} pages.`);
+console.log(`SEO and social preview audit PASSED for ${pages.length} core pages plus all 66 Book-by-Book routes.`);

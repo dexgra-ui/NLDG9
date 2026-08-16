@@ -73,21 +73,21 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | 2 Thessalonians | PASS after authoritative first publication and source-label preservation |
 | 1 Timothy | PASS after authoritative first publication and source-label preservation |
 | 2 Timothy | PASS after authoritative first publication and source-label preservation |
+| Titus | PASS after authoritative first publication and source-label preservation |
 
-## 2 Timothy — detailed result
+## Titus — detailed result
 Audited: 2026-08-16
 
-- Authoritative source scope: the direct contents of Drive folder `2 Timothy — Book-by-Book Study` (folder ID `10H0GzwF8I-Oix75pyZkN7BsigWd7gTUB`): `2 Timothy — Series Guide` plus 6 numbered lesson documents.
-- A separate sibling Drive folder named `2 Timothy` contains a different six-lesson draft/set. It was not used; the explicitly named `2 Timothy — Book-by-Book Study` folder is the authoritative source set for this audit and publication.
-- The six authoritative lessons are `Fan into Flame the Gift of God`, `Be Strengthened by Grace`, `An Approved Worker and Gentle Servant`, `Scripture for Difficult Times`, `Preach the Word and Finish the Race`, and `The Lord Stood with Me`.
-- 2 Timothy had no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication rather than a lossy or wrong-source publication.
-- Every authoritative lesson preserves its `MAIN PASSAGE` and complete `SUPPORTING SCRIPTURES` field. Supporting references remain grouped exactly as the source field rather than being silently reduced or reformatted into a different source set.
-- `second-timothy-study-data.js` preserves every lesson title, Main Passage, Supporting Scriptures, Central Question, Key Truth, Lesson Purpose, Opening Discussion, Scripture Context, all six lesson-specific Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. No generic lesson body text replaces source-specific material.
+- Authoritative source scope: the direct contents of Drive folder `Titus — Book-by-Book Study` (folder ID `1Bq7ChieHxautWQm149i5P68jwoSRTP92`): `Titus — Series Guide` plus 5 numbered lesson documents.
+- The five authoritative lessons are `Appoint Trustworthy Leaders`, `Silence Deceptive and Exploitative Teaching`, `Make Sound Doctrine Beautiful`, `Grace Trains Us for Good Works`, and `Avoid Empty Controversy and Meet Urgent Needs`.
+- Titus had no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication rather than a shortened or generic prior publication.
+- Every authoritative lesson preserves its `MAIN PASSAGE` and complete `SUPPORTING SCRIPTURES` field. Supporting references remain grouped exactly as the source field rather than being silently reduced or reformatted.
+- `titus-study-data.js` preserves every lesson title, Main Passage, Supporting Scriptures, Central Question, Key Truth, Lesson Purpose, Opening Discussion, Scripture Context, all six lesson-specific Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
 - Lesson presentation preserves the exact source labels `MAIN PASSAGE`, `SUPPORTING SCRIPTURES`, `CENTRAL QUESTION`, `KEY TRUTH`, `LESSON PURPOSE`, `OPENING DISCUSSION`, `SCRIPTURE CONTEXT`, `DISCUSSION QUESTIONS`, `PERSONAL EXAMINATION`, `WEEKLY PRACTICE`, `LEADER GUIDANCE`, and `CLOSING PRAYER`; each `TEACHING MOVEMENT` heading retains its exact source wording.
-- `second-timothy-study-guide.js` preserves the exact Series Guide subtitle and sections `SERIES OVERVIEW`, `CENTRAL THEME`, `SERIES GOALS`, `LESSON MAP`, `LEADER PREPARATION`, `RECOMMENDED RHYTHM`, `KEY SCRIPTURES`, and `CLOSING PRAYER`.
-- `second-timothy-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links 2 Timothy directly after 1 Timothy.
-- With 2 Timothy added, the Book-by-Book library total is now 57 books and 400 complete lessons.
+- `titus-study-guide.js` preserves the exact Series Guide subtitle and sections `SERIES OVERVIEW`, `CENTRAL THEME`, `SERIES GOALS`, `LESSON MAP`, `LEADER PREPARATION`, `KEY SCRIPTURES`, and `CLOSING PRAYER`. The source contains no `RECOMMENDED RHYTHM` section, so none was invented.
+- `titus-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links Titus directly after 2 Timothy.
+- With Titus added, the Book-by-Book library total is now 58 books and 405 complete lessons.
 
 ## Next audit
 
-Titus.
+Philemon.

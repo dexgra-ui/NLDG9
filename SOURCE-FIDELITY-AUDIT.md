@@ -79,20 +79,22 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | James | PASS after full Leader Guide wording, structure, and source-label restoration |
 | 1 Peter | PASS after authoritative first publication and source-label preservation |
 | 2 Peter | PASS after authoritative first publication and source-label preservation |
+| 1 John | PASS after full lesson-data, series-guide, Supporting Scriptures, and source-label restoration |
 
-## 2 Peter — detailed result
+## 1 John — detailed result
 Audited: 2026-08-16
 
-- Authoritative source scope: the direct contents of Drive folder `2 Peter` (folder ID `1p0D9y8hmbT8WcrBYrvHzbsHoKxRS4RuK`) contain `2 Peter — Series Guide` plus five numbered lesson documents.
-- The five authoritative lessons are `Everything Needed for a Godly Life`, `Eyewitnesses and the Prophetic Word`, `Recognizing Destructive Teachers`, `The Lord Is Patient`, and `Grow in Grace and Knowledge`.
-- 2 Peter had no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication rather than a shortened, generic, mislabeled, or wrong-source publication.
-- Every authoritative lesson preserves its `Main Scripture` and complete `Supporting Scriptures` field. Supporting references remain grouped exactly as the source field, including semicolon punctuation, rather than being silently reduced or reformatted.
-- `second-peter-study-data.js` preserves every lesson title, Main Scripture, Supporting Scriptures, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six lesson-specific Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. Shared constants are used only where the Drive wording repeats exactly across all five lessons.
-- Lesson presentation preserves the exact source labels `Main Scripture`, `Supporting Scriptures`, `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`; each Teaching Movement heading retains its exact source wording.
-- `second-peter-study-guide.js` preserves the exact Series Guide subtitle `Growth, Truth, Discernment, and Faithful Hope` and sections `Series Purpose`, `Historical and Literary Setting`, `Central Aim`, `Lesson Map`, `Recommended Rhythm`, `Leader Commitments`, `Pastoral Safeguards`, `Christ-Centered Reading`, and `Desired Fruit`. The source contains no series-level closing prayer, so none was invented.
-- `second-peter-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links 2 Peter directly after 1 Peter and before 1 John.
-- With 2 Peter added, the Book-by-Book library total is now 62 books and 429 complete lessons.
+- Authoritative source scope: the direct contents of Drive folder `1 John — Book-by-Book Study` (folder ID `1WSvu_eb9vtg-1jiVnTa-oiPEFPoUFx3P`) contain `00 — 1 John Series Guide` plus seven numbered week documents.
+- The seven authoritative lessons are `The Word of Life`, `Walking in the Light`, `Knowing That We Know Him`, `Remaining in the Truth`, `Children of God Who Love`, `Testing the Spirits and Perfected Love`, and `Faith That Overcomes`.
+- Before restoration, `first-john-study-data.js` retained the seven lesson titles and main passage ranges but **SHORTENED** the authoritative Key Truths, Lesson Purposes, Opening Discussions, Scripture Contexts, Teaching Movements, Discussion Questions, Weekly Practices, Leader Guidance, and Closing Prayers. Most weeks exposed only six rewritten discussion questions instead of all eight source questions, so source material was also **MISSING**.
+- The former Supporting Scriptures were split into separate array entries, causing the shared renderer to replace the source semicolon-delimited field with presentation separators. The restored data keeps each complete `SUPPORTING SCRIPTURES` field as one source string, preserving the source punctuation and all references.
+- The former landing content summarized the book background and purpose and omitted the authoritative `BOOK BACKGROUND`, `HOW TO READ 1 JOHN`, full `SERIES MAP`, `SERIES OUTCOME`, and `LEADER COMMITMENT`. Those omissions were **MISSING** relative to the Series Guide.
+- The former lesson presentation used generic renderer labels such as `Lesson purpose`, `Opening`, and `Read the Word` instead of the source labels `LESSON PURPOSE`, `OPENING DISCUSSION`, and `MAIN PASSAGE`; those differences were **MISLABELED**.
+- `first-john-study-data.js` now preserves every authoritative Main Passage, complete Supporting Scriptures field, Central Question, Key Truth, Lesson Purpose, Opening Discussion, Scripture Context, every full lesson-specific Teaching Movement, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. Lesson 7 preserves all seven Teaching Movements.
+- `first-john-study-guide.js` now preserves the exact series title `1 JOHN — WALKING IN LIGHT, TRUTH, AND LOVE`, `SERIES PURPOSE`, every `BOOK BACKGROUND` line, `HOW TO READ 1 JOHN`, the complete seven-lesson `SERIES MAP`, `SERIES OUTCOME`, and `LEADER COMMITMENT`.
+- Lesson presentation now uses the source labels `MAIN PASSAGE`, `SUPPORTING SCRIPTURES`, `CENTRAL QUESTION`, `KEY TRUTH`, `LESSON PURPOSE`, `OPENING DISCUSSION`, `SCRIPTURE CONTEXT`, `DISCUSSION QUESTIONS`, `PERSONAL EXAMINATION`, `WEEKLY PRACTICE`, `LEADER GUIDANCE`, and `CLOSING PRAYER`. Each individual `TEACHING MOVEMENT` heading retains its complete source wording.
+- `first-john-study.html` now loads the source-fidelity guide before the shared renderer. The existing seven-lesson Book-by-Book placement remains correct, so library totals stay 62 books and 429 complete lessons.
 
 ## Next audit
 
-1 John.
+2 John.

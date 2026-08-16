@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06142f">
+<meta name="description" content="Play real two-player chess while captures, checks, castling, promotions, and checkmate open Scripture challenges that build biblical understanding.">
+<link rel="canonical" href="https://nolabelsdesignedbygod.org/scripture-chess.html">
+<meta property="og:title" content="Scripture Chess | No Labels, Designed by God">
+<meta property="og:description" content="Think ahead. Know the Word. Play real chess while significant moves open Scripture challenges and separate Scripture Point scoring.">
+<meta property="og:url" content="https://nolabelsdesignedbygod.org/scripture-chess.html">
+<meta property="og:type" content="website">
+<title>Scripture Chess | No Labels, Designed by God</title>
+<link rel="stylesheet" href="scripture-chess.css?v=1.0.0">
+</head>
+<body>
+<main class="app">
+<header class="topbar">
+  <div class="brand">
+    <img src="no-labels-approved-logo.png" alt="">
+    <div><strong>No Labels Games</strong><small>Think ahead. Know the Word.</small></div>
+  </div>
+  <div class="top-actions">
+    <button id="fullscreenBtn" class="btn" type="button">Fullscreen</button>
+    <a class="btn" href="play.html">Exit to Game Center</a>
+  </div>
+</header>
+
+<section id="setupView">
+  <div class="hero">
+    <div class="hero-mark" aria-hidden="true">♔ 📖 ♚</div>
+    <h1>Scripture Chess</h1>
+    <p class="tagline">Think ahead. Know the Word.</p>
+    <p>Play real chess while significant moves open Scripture challenges. Chess results and Scripture Points stay separate, so the board tests strategy while the questions build biblical understanding.</p>
+  </div>
+
+  <div class="setup-card">
+    <div class="setup-grid">
+      <label>White Player or Team
+        <input id="whiteNameInput" value="Team Faith" maxlength="28" autocomplete="off">
+      </label>
+      <label>Black Player or Team
+        <input id="blackNameInput" value="Team Grace" maxlength="28" autocomplete="off">
+      </label>
+      <label>Scripture Level
+        <select id="levelSelect">
+          <option value="beginner">Beginner · Multiple Choice</option>
+          <option value="intermediate" selected>Intermediate · Context</option>
+          <option value="advanced">Advanced · Interpretation</option>
+        </select>
+      </label>
+      <div class="setup-actions actions">
+        <button id="startGameBtn" class="btn gold" type="button">Start Scripture Chess</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="rules" aria-label="How Scripture Chess works">
+    <div class="rule"><strong>Capture</strong>Answer a Scripture question.</div>
+    <div class="rule"><strong>Check</strong>Face a context challenge.</div>
+    <div class="rule"><strong>Castle</strong>Explore meaning and wisdom.</div>
+    <div class="rule"><strong>Promote</strong>Take a bonus challenge.</div>
+    <div class="rule"><strong>Checkmate</strong>Finish with the Big Question.</div>
+  </div>
+  <p class="prototype-note"><strong>Game rule:</strong> Bible answers never change whether a chess move is legal. The legal chess move happens first; the Scripture challenge follows and can earn a separate Scripture Point.</p>
+</section>
+
+<section id="gameView" class="game-shell hidden" aria-label="Scripture Chess game">
+  <div class="game-toolbar">
+    <div class="top-actions">
+      <button id="newGameBtn" class="btn" type="button">New Game</button>
+      <button id="undoBtn" class="btn" type="button">Undo Move</button>
+    </div>
+    <div id="gameStatus" class="status-pill" aria-live="polite">White to move</div>
+  </div>
+
+  <div class="game-layout">
+    <section class="board-card" aria-label="Chess board and scores">
+      <div class="score-row">
+        <div id="whiteCard" class="player-card active">
+          <strong id="whiteName" class="player-name">Team Faith</strong>
+          <div class="player-meta"><span>White ♔</span><span>Scripture <span id="whiteScore" class="scripture-score">0</span></span></div>
+        </div>
+        <div class="versus">VS</div>
+        <div id="blackCard" class="player-card black">
+          <strong id="blackName" class="player-name">Team Grace</strong>
+          <div class="player-meta"><span>Black ♚</span><span>Scripture <span id="blackScore" class="scripture-score">0</span></span></div>
+        </div>
+      </div>
+
+      <div class="board-wrap">
+        <div id="chessboard" class="chessboard" role="grid" aria-label="Chess board"></div>
+        <div id="boardLock" class="board-lock hidden" aria-hidden="true">Complete the Scripture challenge to continue.</div>
+      </div>
+    </section>
+
+    <aside class="side-card" aria-label="Scripture challenge and move information">
+      <div class="side-heading"><h2>Scripture Challenge</h2><span id="eventBadge" class="event-badge">Ready</span></div>
+
+      <div id="instructionPanel" class="instruction">
+        <div><strong>Make a legal chess move.</strong><span>Captures, checks, castling, promotions, and checkmate will open a Scripture challenge.</span></div>
+      </div>
+
+      <div id="challengePanel" class="challenge hidden" aria-live="polite">
+        <div id="challengeReference" class="challenge-reference"></div>
+        <div id="challengeQuestion" class="challenge-question"></div>
+        <div id="choiceList" class="choice-list"></div>
+        <div id="answerPanel" class="answer-panel hidden"></div>
+        <div id="challengeFeedback" class="feedback" aria-live="assertive"></div>
+        <div class="challenge-actions">
+          <button id="revealAnswerBtn" class="btn primary hidden" type="button">Reveal Suggested Answer</button>
+          <div id="leaderScoreButtons" class="leader-score hidden">
+            <button id="awardPointBtn" class="btn gold" type="button">Award Scripture Point</button>
+            <button id="noPointBtn" class="btn" type="button">No Point</button>
+          </div>
+          <button id="continueBtn" class="btn gold hidden" type="button">Continue Game</button>
+        </div>
+      </div>
+
+      <div class="move-log">
+        <h3>Moves</h3>
+        <div id="moveList" class="move-list" aria-live="polite"><span class="move-chip">Game ready</span></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="completeView" class="complete-card hidden" aria-live="polite">
+  <div class="mark" aria-hidden="true">♔ 📖 ♚</div>
+  <h2 id="completeTitle">Game Complete</h2>
+  <p id="completeText"></p>
+  <div class="final-scores">
+    <div class="final-score"><strong id="finalWhiteName"></strong><span id="finalWhiteScore">0</span><small> Scripture Points</small></div>
+    <div class="final-score"><strong id="finalBlackName"></strong><span id="finalBlackScore">0</span><small> Scripture Points</small></div>
+  </div>
+  <div class="actions" style="justify-content:center"><button id="rematchBtn" class="btn gold" type="button">Rematch</button><button id="changePlayersBtn" class="btn" type="button">Change Players</button></div>
+</section>
+
+<div id="promotionDialog" class="promotion-dialog hidden" role="dialog" aria-modal="true" aria-labelledby="promotionTitle">
+  <div class="promotion-card">
+    <h2 id="promotionTitle">Promote your pawn</h2>
+    <p>Choose the piece your pawn becomes.</p>
+    <div class="promotion-options">
+      <button class="promotion-piece" type="button" data-promotion="q" aria-label="Promote to queen">♕</button>
+      <button class="promotion-piece" type="button" data-promotion="r" aria-label="Promote to rook">♖</button>
+      <button class="promotion-piece" type="button" data-promotion="b" aria-label="Promote to bishop">♗</button>
+      <button class="promotion-piece" type="button" data-promotion="n" aria-label="Promote to knight">♘</button>
+    </div>
+  </div>
+</div>
+
+<p class="license-note">Chess rules use <strong>chess.js v1.4.0</strong> under the BSD-2-Clause license.</p>
+</main>
+
+<script src="scripture-chess-questions.js?v=1.0.0"></script>
+<script type="module" src="scripture-chess.js?v=1.0.0"></script>
+</body>
+</html>

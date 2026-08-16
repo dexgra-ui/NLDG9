@@ -1,0 +1,80 @@
+name: Scripture Chess Audit
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/scripture-chess-prototype-audit.yml'
+      - 'scripture-chess.html'
+      - 'scripture-chess-prototype.html'
+      - 'scripture-chess.css'
+      - 'scripture-chess.js'
+      - 'scripture-chess-questions.js'
+      - 'SCRIPTURE-CHESS-THIRD-PARTY-NOTICE.md'
+      - 'scripts/scripture-chess-audit.mjs'
+      - 'scripts/scripture-chess-browser-audit.mjs'
+      - 'play.html'
+      - 'sitemap.xml'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/scripture-chess-prototype-audit.yml'
+      - 'scripture-chess.html'
+      - 'scripture-chess-prototype.html'
+      - 'scripture-chess.css'
+      - 'scripture-chess.js'
+      - 'scripture-chess-questions.js'
+      - 'SCRIPTURE-CHESS-THIRD-PARTY-NOTICE.md'
+      - 'scripts/scripture-chess-audit.mjs'
+      - 'scripts/scripture-chess-browser-audit.mjs'
+      - 'play.html'
+      - 'sitemap.xml'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Chess rules, Scripture events, scoring, keyboard, mobile, and public integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install deterministic test dependencies
+        run: |
+          npm install --no-save playwright chess.js@1.4.0
+          npx playwright install --with-deps chromium
+
+      - name: Run static Scripture Chess audit
+        run: node scripts/scripture-chess-audit.mjs
+
+      - name: Start local site
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/scripture-chess-http.log 2>&1 &
+          echo $! > /tmp/scripture-chess-http.pid
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4173/scripture-chess.html > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/scripture-chess-http.log
+          exit 1
+
+      - name: Run browser behavior audit
+        run: node scripts/scripture-chess-browser-audit.mjs
+
+      - name: Upload Scripture Chess test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scripture-chess-audit
+          path: scripture-chess-audit-results
+          if-no-files-found: error

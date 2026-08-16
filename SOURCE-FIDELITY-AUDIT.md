@@ -81,20 +81,21 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | 2 Peter | PASS after authoritative first publication and source-label preservation |
 | 1 John | PASS after full lesson-data, series-guide, Supporting Scriptures, and source-label restoration |
 | 2 John | PASS after authoritative first publication and source-label preservation |
+| 3 John | PASS after authoritative first publication and source-label preservation |
 
-## 2 John — detailed result
+## 3 John — detailed result
 Audited: 2026-08-16
 
-- Authoritative source scope: the direct contents of Drive folder `2 John` (folder ID `1mFGzkrkUXWY9KfvSCvhalxti7pgP8Kph`) contain `2 John — Series Guide` plus three numbered lesson documents.
-- The three authoritative lessons are `Walking in Truth and Love`, `Guard the Teaching of Christ`, and `Love Requires Wise Boundaries`.
-- Before publication, repository searches for `2 John` and `second-john` found no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication.
+- Authoritative source scope: the direct contents of Drive folder `3 John` (folder ID `1-kh9PqOXbiv_JV-ruh1YHZQOGkTD4wUJ`) contain `3 John — Series Guide` plus three numbered lesson documents.
+- The three authoritative lessons are `Faithful Hospitality and Partnership`, `When Leadership Loves to Be First`, and `Imitate What Is Good`.
+- Before publication, repository searches for `3 John` and `third-john` found no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication.
 - Every authoritative lesson preserves its `Main Scripture` and complete `Supporting Scriptures` field. Supporting references remain grouped exactly as the source field, including semicolon punctuation, rather than being silently reduced or reformatted.
-- `second-john-study-data.js` preserves every lesson title, Main Scripture, Supporting Scriptures, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six lesson-specific Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. Shared constants are used only where the Drive wording repeats exactly across all three lessons.
+- `third-john-study-data.js` preserves every lesson title, Main Scripture, Supporting Scriptures, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six lesson-specific Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. Shared constants are used only where the Drive wording repeats exactly across all three lessons.
 - Lesson presentation preserves the exact source labels `Main Scripture`, `Supporting Scriptures`, `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`; each Teaching Movement heading retains its exact source wording.
-- `second-john-study-guide.js` preserves the exact Series Guide subtitle `Truth, Love, Discernment, and Wise Boundaries` and sections `Series Purpose`, `Historical and Literary Setting`, `Central Aim`, `Lesson Map`, `Recommended Rhythm`, `Leader Commitments`, `Pastoral Safeguards`, `Christ-Centered Reading`, `Desired Fruit`, and `Interpretive Emphasis`. The source contains no series-level closing prayer, so none was invented.
-- `second-john-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links 2 John directly after 1 John.
-- With 2 John added, the Book-by-Book library total is now 63 books and 432 complete lessons.
+- `third-john-study-guide.js` preserves the exact Series Guide subtitle `Hospitality, Healthy Leadership, and Trustworthy Partnership` and sections `Series Purpose`, `Historical and Literary Setting`, `Central Aim`, `Lesson Map`, `Recommended Rhythm`, `Leader Commitments`, `Pastoral Safeguards`, `Christ-Centered Reading`, and `Desired Fruit`. The source contains no series-level closing prayer, so none was invented.
+- `third-john-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links 3 John directly after 2 John.
+- With 3 John added, the Book-by-Book library total is now 64 books and 435 complete lessons.
 
 ## Next audit
 
-3 John.
+Jude.

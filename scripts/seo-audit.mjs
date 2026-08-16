@@ -46,14 +46,20 @@ if(exists('book-by-book.html')){
  assert(JSON.stringify(titles)===JSON.stringify(expectedBookOrder),'book-by-book.html: canonical book order does not match the 66-book Protestant canon');
  assert(new Set(hrefs).size===66,'book-by-book.html: book study links must be unique');
  assert(lessonTotal===447,`book-by-book.html: expected 447 lessons, found ${lessonTotal}`);
- if(exists('sitemap.xml')){
-  const sitemap=read('sitemap.xml');
-  for(const href of hrefs){
-   assert(Boolean(href),`book-by-book.html: a book card is missing its href`);
-   if(!href)continue;
-   assert(exists(href),`book-by-book.html: linked book page is missing: ${href}`);
-   assert(sitemap.includes(`https://nolabelsdesignedbygod.org/${href}`),`sitemap.xml: missing Book-by-Book page ${href}`);
-  }
+ const sitemap=exists('sitemap.xml')?read('sitemap.xml'):'';
+ for(const href of hrefs){
+  assert(Boolean(href),`book-by-book.html: a book card is missing its href`);
+  if(!href)continue;
+  assert(exists(href),`book-by-book.html: linked book page is missing: ${href}`);
+  if(sitemap)assert(sitemap.includes(`https://nolabelsdesignedbygod.org/${href}`),`sitemap.xml: missing Book-by-Book page ${href}`);
+  if(!exists(href))continue;
+  const html=read(href);
+  const expectedCanonical=`https://nolabelsdesignedbygod.org/${href}`;
+  for(const marker of ['<title>','name="description"','rel="canonical"','property="og:title"','property="og:description"','property="og:url"','property="og:type"'])assert(html.includes(marker),`${href}: missing ${marker}`);
+  const canonical=html.match(/<link rel="canonical" href="([^"]+)"/i)?.[1];
+  const ogUrl=html.match(/<meta property="og:url" content="([^"]+)"/i)?.[1];
+  assert(canonical===expectedCanonical,`${href}: canonical URL should be ${expectedCanonical}`);
+  assert(ogUrl===expectedCanonical,`${href}: og:url should be ${expectedCanonical}`);
  }
 }
 

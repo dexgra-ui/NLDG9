@@ -78,20 +78,21 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Hebrews | PASS after authoritative first publication and source-label preservation |
 | James | PASS after full Leader Guide wording, structure, and source-label restoration |
 | 1 Peter | PASS after authoritative first publication and source-label preservation |
+| 2 Peter | PASS after authoritative first publication and source-label preservation |
 
-## 1 Peter — detailed result
+## 2 Peter — detailed result
 Audited: 2026-08-16
 
-- Authoritative source scope: the direct contents of Drive folder `1 Peter` (folder ID `1Q67WdHdi3qcpVOqNa25jCYQYvA6yxxY3`): `1 Peter — Series Guide` plus 8 numbered lesson documents.
-- The eight authoritative lessons are `Born Into a Living Hope`, `Be Holy in All You Do`, `Living Stones and Honorable Witness`, `Freedom, Honor, and Difficult Household Texts`, `Suffering for Doing Good`, `Love, Hospitality, and Gifts Under Pressure`, `Shepherd Without Domination`, and `Stand Firm Together`.
-- 1 Peter had no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication rather than a shortened, generic, mislabeled, or wrong-source publication.
+- Authoritative source scope: the direct contents of Drive folder `2 Peter` (folder ID `1p0D9y8hmbT8WcrBYrvHzbsHoKxRS4RuK`) contain `2 Peter — Series Guide` plus five numbered lesson documents.
+- The five authoritative lessons are `Everything Needed for a Godly Life`, `Eyewitnesses and the Prophetic Word`, `Recognizing Destructive Teachers`, `The Lord Is Patient`, and `Grow in Grace and Knowledge`.
+- 2 Peter had no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication rather than a shortened, generic, mislabeled, or wrong-source publication.
 - Every authoritative lesson preserves its `Main Scripture` and complete `Supporting Scriptures` field. Supporting references remain grouped exactly as the source field, including semicolon punctuation, rather than being silently reduced or reformatted.
-- `first-peter-study-data.js` preserves every lesson title, Main Scripture, Supporting Scriptures, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six lesson-specific Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. Shared constants are used only where the Drive wording repeats exactly across all eight lessons.
+- `second-peter-study-data.js` preserves every lesson title, Main Scripture, Supporting Scriptures, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six lesson-specific Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. Shared constants are used only where the Drive wording repeats exactly across all five lessons.
 - Lesson presentation preserves the exact source labels `Main Scripture`, `Supporting Scriptures`, `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`; each Teaching Movement heading retains its exact source wording.
-- `first-peter-study-guide.js` preserves the exact Series Guide subtitle `Hope, Holiness, Witness, Suffering, and Humble Community` and sections `Series Purpose`, `Historical and Literary Setting`, `Central Aim`, `Lesson Map`, `Recommended Rhythm`, `Leader Commitments`, `Pastoral Safeguards`, `Christ-Centered Reading`, and `Desired Fruit`. The source contains no series-level closing prayer, so none was invented.
-- `first-peter-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links 1 Peter directly after James and before 1 John.
-- With 1 Peter added, the Book-by-Book library total is now 61 books and 424 complete lessons.
+- `second-peter-study-guide.js` preserves the exact Series Guide subtitle `Growth, Truth, Discernment, and Faithful Hope` and sections `Series Purpose`, `Historical and Literary Setting`, `Central Aim`, `Lesson Map`, `Recommended Rhythm`, `Leader Commitments`, `Pastoral Safeguards`, `Christ-Centered Reading`, and `Desired Fruit`. The source contains no series-level closing prayer, so none was invented.
+- `second-peter-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links 2 Peter directly after 1 Peter and before 1 John.
+- With 2 Peter added, the Book-by-Book library total is now 62 books and 429 complete lessons.
 
 ## Next audit
 
-2 Peter.
+1 John.

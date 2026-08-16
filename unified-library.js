@@ -14,6 +14,9 @@
   const studyState=()=>read(STUDY_STATE,{});
   const favoriteSet=()=>new Set([...read(FAVORITES,[]),...read(LEGACY_FAVORITES,[]),...Object.entries(studyState()).filter(([,state])=>state?.favorite).map(([id])=>id)]);
   const seriesState=()=>SERIES_STATE?read(SERIES_STATE,{completed:[]}):{completed:[]};
+  let bookCatalog=[];
+  let bookCatalogPromise=null;
+
   const savedStudies=()=>read(SAVED,[]).map(item=>({
     id:`saved-${item.id}`,
     sourceId:item.id,
@@ -41,7 +44,59 @@
     status:item.status,
     duration:45
   })) : [];
-  const allItems=()=>[...catalog,...lessonItems(),...savedStudies()];
+
+  function loadBookCatalog(){
+    if(bookCatalogPromise)return bookCatalogPromise;
+    bookCatalogPromise=fetch('book-by-book.html')
+      .then(response=>{
+        if(!response.ok)throw new Error(`Book-by-Book library request failed with ${response.status}`);
+        return response.text();
+      })
+      .then(html=>{
+        const doc=new DOMParser().parseFromString(html,'text/html');
+        bookCatalog=[...doc.querySelectorAll('.book-card')].map(card=>{
+          const title=card.querySelector('h2')?.textContent?.trim()||'';
+          const description=card.querySelector('p')?.textContent?.trim()||'';
+          const label=card.querySelector('span')?.textContent||'';
+          const lessons=Number(label.match(/·\s*(\d+)\s+lessons?/i)?.[1]||0);
+          const url=card.querySelector('a[href]')?.getAttribute('href')?.trim()||'';
+          const scripture=(card.querySelector('small')?.textContent||'').replace(/^\s*📖\s*/,'').trim();
+          if(!title||!lessons||!/^[a-z0-9-]+\.html$/i.test(url))return null;
+          const slug=url.replace(/\.html$/i,'');
+          const existing=catalog.find(item=>item.url===url);
+          return {
+            ...(existing||{}),
+            id:existing?.id||`book-study-${slug}`,
+            type:'Study',
+            title,
+            description:description||existing?.description||`Study ${title} book by book.`,
+            url,
+            scripture:scripture?[scripture]:(existing?.scripture||[]),
+            topics:[...new Set([...(existing?.topics||[]),'Book-by-Book Bible Study',title])],
+            series:'Book-by-Book Bible Study',
+            audience:existing?.audience||['Personal and group study'],
+            book:title,
+            status:'published',
+            bookStudy:true,
+            lessons,
+            progressKey:url==='james-series.html'?'nldg-series-james':`nldg-book-${slug}`
+          };
+        }).filter(Boolean);
+        if(bookCatalog.length!==66)throw new Error(`Expected 66 Book-by-Book studies, found ${bookCatalog.length}`);
+        return bookCatalog;
+      })
+      .catch(error=>{
+        bookCatalogPromise=null;
+        console.warn('Book-by-Book studies could not be added to My Library.',error);
+        return [];
+      });
+    return bookCatalogPromise;
+  }
+
+  const allItems=()=>{
+    const bookUrls=new Set(bookCatalog.map(item=>item.url));
+    return [...bookCatalog,...catalog.filter(item=>!bookUrls.has(item.url)),...lessonItems(),...savedStudies()];
+  };
   let query='';
   let filter='all';
   let visible=18;
@@ -55,7 +110,21 @@
     if(item.type==='Game')return 'games';
     return 'resources';
   }
+  function bookProgress(item){
+    const stored=read(item.progressKey,{completed:[]});
+    const values=Array.isArray(stored.completed)?stored.completed:[];
+    const completed=new Set(values.map(Number).filter(value=>Number.isInteger(value)&&value>=1&&value<=item.lessons));
+    let next=1;
+    while(next<=item.lessons&&completed.has(next))next+=1;
+    return {count:completed.size,complete:completed.size>=item.lessons,next:Math.min(next,item.lessons)};
+  }
+  function bookOpenUrl(item,progress){
+    if(!item.bookStudy||!progress||progress.complete)return item.url;
+    const parameter=item.url==='james-series.html'?'week':'lesson';
+    return `${item.url}?${parameter}=${progress.next}`;
+  }
   function isComplete(item){
+    if(item.bookStudy)return bookProgress(item).complete;
     if(item.week)return new Set(seriesState().completed||[]).has(item.week);
     if(item.local)return item.progress==='complete';
     return Boolean(studyState()[item.id]?.completed);
@@ -91,7 +160,15 @@
     if(!item.local){const state=studyState();state[key]={...(state[key]||{}),favorite:next,url:item.url,title:item.title,updated:Date.now()};write(STUDY_STATE,state);}
     render();
   }
-  function card(item){const favs=favoriteSet();const key=item.local?item.sourceId:item.id;const complete=isComplete(item);return `<article class="library-card ${complete?'is-complete':''}"><div class="library-card-top"><span class="library-type">${icon(item)} ${esc(item.type)}</span><button class="library-favorite" data-favorite="${esc(item.id)}" aria-label="${favs.has(key)?'Remove from favorites':'Add to favorites'}" aria-pressed="${favs.has(key)?'true':'false'}">${favs.has(key)?'★':'☆'}</button></div><h3>${esc(item.title)}</h3><p>${esc(item.description||'Open this resource to continue your discipleship journey.')}</p><div class="library-tags">${tags(item).map(tag=>`<span>${esc(tag)}</span>`).join('')}</div><div class="library-card-meta">${item.series?`${esc(item.series)} · `:''}${item.duration?`${item.duration} min`:item.local?'Saved on this device':esc(item.audience?.[0]||'Ministry resource')}</div><div class="library-card-actions"><a href="${esc(item.url)}" data-open="${esc(item.id)}">${item.local?'Continue':'Open'}</a>${complete?'<span class="complete-label">✓ Complete</span>':''}</div></article>`;}
+  function card(item){
+    const favs=favoriteSet();
+    const key=item.local?item.sourceId:item.id;
+    const progress=item.bookStudy?bookProgress(item):null;
+    const complete=progress?progress.complete:isComplete(item);
+    const openUrl=bookOpenUrl(item,progress);
+    const meta=progress?`${progress.count} of ${item.lessons} lessons completed`:item.series?`${esc(item.series)} · ${item.duration?`${item.duration} min`:esc(item.audience?.[0]||'Ministry resource')}`:item.duration?`${item.duration} min`:item.local?'Saved on this device':esc(item.audience?.[0]||'Ministry resource');
+    return `<article class="library-card ${complete?'is-complete':''}"><div class="library-card-top"><span class="library-type">${icon(item)} ${esc(item.type)}</span><button class="library-favorite" data-favorite="${esc(item.id)}" aria-label="${favs.has(key)?'Remove from favorites':'Add to favorites'}" aria-pressed="${favs.has(key)?'true':'false'}">${favs.has(key)?'★':'☆'}</button></div><h3>${esc(item.title)}</h3><p>${esc(item.description||'Open this resource to continue your discipleship journey.')}</p><div class="library-tags">${tags(item).map(tag=>`<span>${esc(tag)}</span>`).join('')}</div><div class="library-card-meta">${meta}</div><div class="library-card-actions"><a href="${esc(openUrl)}" data-open="${esc(item.id)}">${item.local?'Continue':progress?.count&&!complete?'Continue':'Open'}</a>${complete?'<span class="complete-label">✓ Complete</span>':''}</div></article>`;
+  }
   function resolve(id){return allItems().find(item=>item.id===id);}
   function renderFeatured(){const state=seriesState();const completed=new Set(state.completed||[]);const available=lessonItems().filter(item=>item.status==='complete');const next=available.find(item=>!completed.has(item.week))||available[0];const recent=read(HISTORY,[])[0];const favorites=allItems().filter(item=>{const favs=favoriteSet();return favs.has(item.id)||(item.local&&favs.has(item.sourceId));})[0];const picks=[next&&{...next,label:completed.size?'Continue Journey':'Begin Journey'},recent&&{id:recent.id,title:recent.title,type:recent.type,url:recent.url,description:'Return to your most recently opened resource.',label:'Recently Viewed'},favorites&&{...favorites,label:'Favorite'}].filter(Boolean).slice(0,3);$('#featuredGrid').innerHTML=picks.length?picks.map(item=>`<article class="library-feature-card"><span class="library-type">${esc(item.label||item.type)}</span><h3>${esc(item.title)}</h3><p>${esc(item.description||'Pick up where you left off.')}</p><a href="${esc(item.url)}" data-open="${esc(item.id)}">Open →</a></article>`).join(''):'<article class="library-feature-card"><span class="library-type">Start here</span><h3>Faith & Truth in Today’s World</h3><p>Begin the 42-week discipleship journey.</p><a href="current-events-series.html">Start Journey →</a></article>';}
   function render(){
@@ -117,4 +194,5 @@
   $('#loadMore').addEventListener('click',()=>{visible+=18;render();});
   window.addEventListener('storage',render);
   render();
+  loadBookCatalog().then(()=>render());
 })();

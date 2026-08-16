@@ -9,9 +9,9 @@ function init(){
   const reveal=document.getElementById('revealAnswerBtn');
   const award=document.getElementById('awardPointBtn');
   const noPoint=document.getElementById('noPointBtn');
-  const mode=document.getElementById('modeSelect');
   const level=document.getElementById('levelSelect');
-  if(!panel||!actions||!choiceList||!reference||!question||!answerPanel||!reveal||!award||!noPoint||!mode||!level)return;
+  const computerRole=document.getElementById('computerRoleMeta');
+  if(!panel||!actions||!choiceList||!reference||!question||!answerPanel||!reveal||!award||!noPoint||!level||!computerRole)return;
 
   const button=document.createElement('button');
   button.id='giveChoicesBtn';
@@ -29,6 +29,8 @@ function init(){
     return (window.SCRIPTURE_CHESS_QUESTIONS||[]).find(item=>item.reference===ref&&item.prompt===prompt)||null;
   }
 
+  function isSoloGame(){return !computerRole.classList.contains('hidden');}
+
   function resetIfClosed(){
     if(panel.classList.contains('hidden')){
       activeKey='';
@@ -45,7 +47,7 @@ function init(){
     if(key&&key!==activeKey){activeKey=key;assistanceUsed=false;}
     const assist=key?(window.SCRIPTURE_CHESS_ASSIST_CHOICES||{})[key]:null;
     const alreadyRevealed=!answerPanel.classList.contains('hidden');
-    const eligible=mode.value==='single'&&level.value!=='beginner'&&assist&&Array.isArray(assist.choices)&&assist.choices.length===4&&!alreadyRevealed&&!assistanceUsed;
+    const eligible=isSoloGame()&&level.value!=='beginner'&&assist&&Array.isArray(assist.choices)&&assist.choices.length===4&&!alreadyRevealed&&!assistanceUsed;
     button.classList.toggle('hidden',!eligible);
   }
 
@@ -80,12 +82,12 @@ function init(){
   }
 
   button.addEventListener('click',renderChoices);
-  mode.addEventListener('change',sync);
   level.addEventListener('change',sync);
   new MutationObserver(sync).observe(panel,{attributes:true,attributeFilter:['class']});
   new MutationObserver(sync).observe(reference,{childList:true,characterData:true,subtree:true});
   new MutationObserver(sync).observe(question,{childList:true,characterData:true,subtree:true});
   new MutationObserver(sync).observe(answerPanel,{attributes:true,attributeFilter:['class']});
+  new MutationObserver(sync).observe(computerRole,{attributes:true,attributeFilter:['class']});
   sync();
 }
 

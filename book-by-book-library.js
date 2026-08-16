@@ -1,7 +1,7 @@
 (()=>{
 if(window.NLDG_BOOK_BY_BOOK_LIBRARY_LOADED)return;
 window.NLDG_BOOK_BY_BOOK_LIBRARY_LOADED=true;
-const nested=/\/(?:articles|devotionals)\//i.test(location.pathname);
+const nested=/\/(?:articles|devotionals|newsletter)\//i.test(location.pathname);
 const root=nested?'../':'';
 let loading=null;
 const uniquePush=(list,item)=>{if(Array.isArray(list)&&!list.some(entry=>entry?.url===item.url))list.push(item)};

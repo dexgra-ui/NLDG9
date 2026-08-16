@@ -7,6 +7,8 @@
   const card=item=>(window.NLDG_CONTENT_CARD||defaultCard)(item);
   const empty=message=>`<article class="dashboard-empty"><p>${message}</p></article>`;
   const badges=['First Study Completed','Seven-Day Reading Streak','Scripture Explorer','Prayer Warrior','Faithful Learner','Family Leader'];
+  const escapeHtml=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
+  let bookLibraryPromise=null;
 
   function profilePhoto(profile){
     const image=document.getElementById('profile-photo-preview');
@@ -14,6 +16,90 @@
     if(profile.photo){image.src=profile.photo;image.hidden=false;placeholder.hidden=true;}
     else{image.hidden=true;placeholder.hidden=false;}
   }
+
+  function ensureBookProgressSection(){
+    const current=document.getElementById('book-progress-grid');
+    if(current)return current.closest('section');
+    const growth=document.getElementById('growth-tracker')?.closest('section');
+    if(!growth)return null;
+    const section=document.createElement('section');
+    section.className='book-progress-section';
+    section.innerHTML='<div class="section-heading"><p class="kicker">Book-by-Book Progress</p><h2>Your journey through all 66 books</h2><p>Completion from each Book-by-Book study stays on this device and now appears here in one place.</p></div><div id="book-progress-summary" class="dashboard-stats" aria-label="Book-by-Book Bible study progress"></div><div id="book-progress-grid" class="unified-content-grid"></div>';
+    growth.insertAdjacentElement('afterend',section);
+    return section;
+  }
+
+  function loadBookLibrary(){
+    if(bookLibraryPromise)return bookLibraryPromise;
+    bookLibraryPromise=fetch('book-by-book.html')
+      .then(response=>{
+        if(!response.ok)throw new Error(`Book library request failed with ${response.status}`);
+        return response.text();
+      })
+      .then(html=>{
+        const doc=new DOMParser().parseFromString(html,'text/html');
+        const books=[...doc.querySelectorAll('.book-card')].map(card=>{
+          const title=card.querySelector('h2')?.textContent?.trim()||'';
+          const label=card.querySelector('span')?.textContent||'';
+          const lessons=Number(label.match(/·\s*(\d+)\s+lessons?/i)?.[1]||0);
+          const url=card.querySelector('a[href]')?.getAttribute('href')?.trim()||'';
+          if(!title||!lessons||!/^[a-z0-9-]+\.html$/i.test(url))return null;
+          const slug=url.replace(/\.html$/i,'');
+          return {title,lessons,url,key:url==='james-series.html'?'nldg-series-james':`nldg-book-${slug}`};
+        }).filter(Boolean);
+        if(!books.length)throw new Error('Book library contained no study cards.');
+        return books;
+      })
+      .catch(error=>{bookLibraryPromise=null;throw error;});
+    return bookLibraryPromise;
+  }
+
+  function bookProgress(book){
+    let completed=[];
+    try{
+      const saved=JSON.parse(localStorage.getItem(book.key)||'{"completed":[]}');
+      completed=Array.isArray(saved.completed)?saved.completed:[];
+    }catch(e){completed=[];}
+    const valid=new Set(completed.map(Number).filter(value=>Number.isInteger(value)&&value>=1&&value<=book.lessons));
+    let next=1;
+    while(next<=book.lessons&&valid.has(next))next+=1;
+    const count=valid.size;
+    const complete=count>=book.lessons;
+    const parameter=book.url==='james-series.html'?'week':'lesson';
+    return {...book,completed:count,complete,nextUrl:complete?book.url:`${book.url}?${parameter}=${Math.min(next,book.lessons)}`};
+  }
+
+  async function renderBookProgress(){
+    const section=ensureBookProgressSection();
+    if(!section)return;
+    const summary=section.querySelector('#book-progress-summary');
+    const grid=section.querySelector('#book-progress-grid');
+    if(!summary||!grid)return;
+    if(!summary.childElementCount)summary.innerHTML='<article><span>Book Library</span><strong>Loading…</strong></article>';
+    if(!grid.childElementCount)grid.innerHTML=empty('Loading your Book-by-Book progress…');
+    try{
+      const books=await loadBookLibrary();
+      const progress=books.map(bookProgress);
+      const started=progress.filter(item=>item.completed>0);
+      const finished=progress.filter(item=>item.complete);
+      const totalLessons=progress.reduce((sum,item)=>sum+item.lessons,0);
+      const completedLessons=progress.reduce((sum,item)=>sum+item.completed,0);
+      const percent=totalLessons?Math.round((completedLessons/totalLessons)*100):0;
+      summary.innerHTML=`<article><span>Books Started</span><strong>${started.length} of ${books.length}</strong></article><article><span>Books Completed</span><strong>${finished.length}</strong></article><article><span>Lessons Completed</span><strong>${completedLessons} of ${totalLessons}</strong></article><article><span>Overall Progress</span><strong>${percent}%</strong></article>`;
+      if(!started.length){
+        grid.innerHTML=empty('Your Book-by-Book progress will appear here after you complete a lesson. <a href="book-by-book.html">Choose a book to begin →</a>');
+        return;
+      }
+      grid.innerHTML=started.map(item=>{
+        const itemPercent=Math.round((item.completed/item.lessons)*100);
+        return `<article class="unified-content-card active-plan-card"><span class="content-type">${item.complete?'Completed':'In progress'}</span><h3>${escapeHtml(item.title)}</h3><p>${item.completed} of ${item.lessons} lessons completed</p><progress max="${item.lessons}" value="${item.completed}" aria-label="${escapeHtml(item.title)} progress"></progress><small>${itemPercent}% complete</small><a href="${escapeHtml(item.nextUrl)}">${item.complete?'Review book':'Continue study'} →</a></article>`;
+      }).join('');
+    }catch(error){
+      summary.innerHTML='<article><span>Book Library</span><strong>Unavailable</strong></article>';
+      grid.innerHTML=empty('Book-by-Book progress could not be loaded right now. <a href="book-by-book.html">Open the Book-by-Book library →</a>');
+    }
+  }
+
   function render(){
     const profile=api.profile();
     const favorites=api.favorites();
@@ -34,6 +120,7 @@
     document.getElementById('stat-notes').textContent=notes.length;
     document.getElementById('stat-prayers').textContent=prayers.filter(item=>!item.answered).length;
     renderGrowth();
+    renderBookProgress();
     const recent=history.slice(0,4).map(item=>byId(item.id)).filter(Boolean);
     document.getElementById('continue-grid').innerHTML=recent.length?recent.map(card).join(''):empty('Open a study or resource and it will appear here.');
     document.getElementById('favorites-grid').innerHTML=favorites.map(byId).filter(Boolean).map(card).join('')||empty('Save studies, articles, devotionals, podcasts, games, and resources.');

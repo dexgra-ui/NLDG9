@@ -17,6 +17,8 @@ assert(cards.length===66,`Canonical Book-by-Book search source should contain 66
 assert(new Set(routes).size===66,'Canonical Book-by-Book search routes must be unique.');
 assert(lessonTotal===447,`Canonical Book-by-Book search source should contain 447 lessons, found ${lessonTotal}.`);
 assert(contactLinks.includes('book-by-book-library.js?v=1.0.0'),'Sitewide integration must load the Book-by-Book search catalog.');
+assert(contactLinks.includes('articles|devotionals|newsletter'),'Sitewide integrations must resolve root paths correctly from every nested content folder.');
+assert(loader.includes('articles|devotionals|newsletter'),'Book search catalog must resolve root paths correctly from every nested content folder.');
 assert(loader.includes("fetch(`${root}book-by-book.html`)"),'Book search catalog must derive entries from the canonical Book-by-Book page.');
 assert(loader.includes("querySelectorAll('.book-card')"),'Book search catalog must discover canonical book cards.');
 assert(loader.includes('books.length!==66'),'Book search catalog must reject incomplete discovery.');

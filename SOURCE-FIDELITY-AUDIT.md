@@ -75,20 +75,21 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | 2 Timothy | PASS after authoritative first publication and source-label preservation |
 | Titus | PASS after authoritative first publication and source-label preservation |
 | Philemon | PASS after authoritative first publication and source-label preservation |
+| Hebrews | PASS after authoritative first publication and source-label preservation |
 
-## Philemon — detailed result
+## Hebrews — detailed result
 Audited: 2026-08-16
 
-- Authoritative source scope: the direct contents of Drive folder `Philemon` (folder ID `1sxdN5fNJX8E2ykDBlgv3QW06VfvukY0-`): `Philemon — Series Guide` plus 3 numbered lesson documents. Each lesson identifies itself as `Book-by-Book Bible Study`, and no alternate Philemon source folder appeared in the Drive search used for this audit.
-- The three authoritative lessons are `Faith That Refreshes Others`, `No Longer as a Slave, but as a Beloved Brother`, and `Costly Reconciliation and Gospel Partnership`.
-- Philemon had no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication rather than a shortened, generic, or wrong-source publication.
-- Every authoritative lesson preserves its `Main Scripture` and complete `Supporting Scriptures` field. Supporting references remain grouped exactly as the source field rather than being silently reduced or reformatted.
-- `philemon-study-data.js` preserves every lesson title, Main Scripture, Supporting Scriptures, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six lesson-specific Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. Shared constants are used only where the Drive wording repeats exactly across all three lessons.
-- Lesson presentation preserves the exact source labels `Main Scripture`, `Supporting Scriptures`, `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Scripture Context`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`; each numbered Teaching Movement heading retains its exact source wording.
-- `philemon-study-guide.js` preserves the Series Guide subtitle `Dignity, Reconciliation, and Gospel-Shaped Relationships` and the exact sections `Series Purpose`, `Historical and Literary Setting`, `Central Aim`, `Lesson Map`, `Recommended Rhythm`, `Leader Commitments`, `Pastoral Safeguards`, `Christ-Centered Reading`, and `Desired Fruit`. No Series Guide section was invented.
-- `philemon-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links Philemon directly after Titus.
-- With Philemon added, the Book-by-Book library total is now 59 books and 408 complete lessons.
+- Authoritative source scope: the direct contents of Drive folder `Hebrews` (folder ID `1CVCULhPcwx52xeE7XU8aLj1t703fx8_U`): `Hebrews — Series Guide` plus 8 numbered lesson documents.
+- The eight authoritative lessons are `God Has Spoken Through His Son`, `Today, Hear His Voice`, `Maturity, Warning, and Hope`, `A Better Priest and Covenant`, `The Once-for-All Sacrifice`, `Draw Near and Endure`, `Faith That Perseveres`, and `Run With Endurance`.
+- Hebrews had no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication rather than a shortened, generic, or wrong-source publication.
+- Every authoritative lesson preserves its complete `Main Scripture` field exactly, including all semicolon-delimited cross-references. The source lessons contain no separate `Supporting Scriptures` field, so none was invented.
+- `hebrews-study-data.js` preserves every lesson title, Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six lesson-specific Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. Shared constants are used only where the Drive wording repeats exactly across all eight lessons.
+- Lesson presentation preserves the exact source labels `Study Foundation`, `Main Scripture`, `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`; each Teaching Movement heading retains its exact source wording.
+- `hebrews-study-guide.js` preserves the Series Guide subtitle `An eight-lesson study of Christ’s supremacy, covenant hope, perseverance, worship, and community`, the complete `Study Foundation` content (`Main Scripture`, `Central Question`, `Key Truth`, and `Purpose`), and the exact sections `Opening`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`. No Series Guide section was invented.
+- `hebrews-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links Hebrews directly after Philemon and before James.
+- With Hebrews added, the Book-by-Book library total is now 60 books and 416 complete lessons.
 
 ## Next audit
 
-Hebrews.
+James.

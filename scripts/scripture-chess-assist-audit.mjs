@@ -33,7 +33,8 @@ for(const id of Object.keys(assist)){
   assert(questions.some(item=>item.id===id),`Choice-help entry ${id} does not match a Scripture Chess question.`);
 }
 assert(assistApp.includes("button.textContent='Give Me Choices'"),'Choice helper must expose a Give Me Choices button.');
-assert(assistApp.includes("mode.value==='single'&&level.value!=='beginner'"),'Choice helper must stay limited to solo Intermediate/Advanced play.');
+assert(assistApp.includes("function isSoloGame(){return !computerRole.classList.contains('hidden');}"),'Choice helper must derive solo mode from the active game state.');
+assert(assistApp.includes("isSoloGame()&&level.value!=='beginner'"),'Choice helper must stay limited to solo Intermediate/Advanced play.');
 assert(assistApp.includes("data-assist-correct"),'Choice helper must mark the correct assisted option for deterministic scoring.');
 assert(assistApp.includes('reveal.click()')&&assistApp.includes('award.click()')&&assistApp.includes('noPoint.click()'),'Choice helper must reuse the existing reveal and Scripture scoring flow.');
 

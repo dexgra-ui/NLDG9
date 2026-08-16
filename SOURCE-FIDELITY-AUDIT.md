@@ -67,20 +67,21 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | 2 Corinthians | PASS after authoritative first publication and source-label preservation |
 | Galatians | PASS after authoritative first publication and source-label preservation |
 | Ephesians | PASS after authoritative first publication and source-label preservation |
+| Philippians | PASS after full lesson-data, series-guide, and source-label restoration |
 
-## Ephesians — detailed result
-Audited: 2026-08-15
+## Philippians — detailed result
+Audited: 2026-08-16
 
-- Authoritative source scope: the direct contents of Drive folder `Ephesians — Book-by-Book Study` (folder ID `1xE6jzacsJHVs03eqJGbDkcmGtRzVxxbi`): `Ephesians — Series Guide` plus 9 numbered lesson documents.
-- The nine authoritative lessons are `Every Spiritual Blessing in Christ`, `Eyes of the Heart Enlightened`, `Saved by Grace for Good Works`, `Christ Is Our Peace`, `The Mystery, the Church, and the Love of Christ`, `Unity and Maturity in the Body`, `Put Off the Old, Put On the New`, `Christlike Relationships Under One Lord`, and `Stand Firm in the Armor of God`.
-- Ephesians was present in Drive but had no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication rather than a lossy prior publication.
-- Every authoritative lesson preserves its `MAIN PASSAGE` and complete `SUPPORTING SCRIPTURES` field. The supporting references remain grouped exactly as the source field rather than being silently reduced or replaced.
-- `ephesians-study-data.js` preserves every lesson title, Main Passage, Supporting Scriptures, Central Question, Key Truth, Lesson Purpose, Opening Discussion, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
-- Lesson presentation preserves the source labels `CENTRAL QUESTION`, `KEY TRUTH`, `LESSON PURPOSE`, `OPENING DISCUSSION`, `MAIN PASSAGE`, `SUPPORTING SCRIPTURES`, `SCRIPTURE CONTEXT`, `DISCUSSION QUESTIONS`, `PERSONAL EXAMINATION`, `WEEKLY PRACTICE`, `LEADER GUIDANCE`, and `CLOSING PRAYER`; each teaching heading retains its source `TEACHING MOVEMENT` wording.
-- `ephesians-study-guide.js` preserves the exact Series Guide subtitle, `SERIES OVERVIEW`, `CENTRAL THEME`, all seven `SERIES GOALS`, the complete nine-entry `LESSON MAP`, both `LEADER PREPARATION` paragraphs, `RECOMMENDED RHYTHM`, all `KEY SCRIPTURES`, and the `CLOSING PRAYER`. No series-level question, generic lesson framework, or other missing source section was invented.
-- `ephesians-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links Ephesians directly after Galatians.
-- With Ephesians added, the Book-by-Book library total is now 52 books and 370 complete lessons.
+- Authoritative source scope: the direct contents of Drive folder `Philippians — Book-by-Book Study` (folder ID `1dVrQ0T2TJErSv4Ibw3BPaBUVlRqvt3Od`): `00 — Philippians Series Guide` plus 6 numbered lesson documents.
+- The six authoritative lessons are `Partners in the Gospel`, `Christ Magnified in Every Circumstance`, `The Mind of Christ`, `Knowing Christ Above Everything`, `Pressing Forward Together`, and `The Secret of Contentment`.
+- Philippians already existed on the website with the correct six-lesson structure and the correct Main Passage and Supporting Scripture references, but the lesson content was materially **SHORTENED**. Openings, Scripture Contexts, Teaching Movements, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayers were condensed, and each source set of eight Discussion Questions had been reduced to six.
+- Teaching headings had also been shortened from their source `TEACHING MOVEMENT n — ...` wording, and lesson fields were displayed under generic renderer labels rather than the exact source labels, creating **MISLABELED** presentation even where the underlying idea survived.
+- The authoritative Series Guide was entirely **MISSING** from the website: there was no `philippians-study-guide.js`, so `SERIES PURPOSE`, `BOOK BACKGROUND`, `HOW TO USE THE SERIES`, the complete descriptive `SERIES MAP`, `SERIES OUTCOME`, and `LEADER COMMITMENT` were not published.
+- `philippians-study-data.js` now preserves every lesson title, Main Passage, complete Supporting Scriptures field, Central Question, Key Truth, Lesson Purpose, Opening Discussion, Scripture Context, all six full Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer using the authoritative wording.
+- Lesson presentation now preserves the source labels `CENTRAL QUESTION`, `KEY TRUTH`, `LESSON PURPOSE`, `OPENING DISCUSSION`, `MAIN PASSAGE`, `SUPPORTING SCRIPTURES`, `SCRIPTURE CONTEXT`, `DISCUSSION QUESTIONS`, `PERSONAL EXAMINATION`, `WEEKLY PRACTICE`, `LEADER GUIDANCE`, and `CLOSING PRAYER`; each teaching heading retains its full source `TEACHING MOVEMENT` wording.
+- New `philippians-study-guide.js` preserves the exact `SERIES PURPOSE`, all `BOOK BACKGROUND` lines, `HOW TO USE THE SERIES`, the complete six-lesson descriptive `SERIES MAP`, `SERIES OUTCOME`, and `LEADER COMMITMENT`. No extra source section was invented.
+- `philippians-study.html` now loads the authoritative guide before the shared book-study renderer. Because Philippians was already counted in the library, totals remain 52 books and 370 complete lessons.
 
 ## Next audit
 
-Philippians.
+Colossians.

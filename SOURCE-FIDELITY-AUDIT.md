@@ -69,20 +69,21 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Ephesians | PASS after authoritative first publication and source-label preservation |
 | Philippians | PASS after full lesson-data, series-guide, and source-label restoration |
 | Colossians | PASS after authoritative first publication and source-label preservation |
+| 1 Thessalonians | PASS after authoritative first publication and source-label preservation |
 
-## Colossians — detailed result
+## 1 Thessalonians — detailed result
 Audited: 2026-08-16
 
-- Authoritative source scope: the direct contents of Drive folder `Colossians — Book-by-Book Study` (folder ID `1Qba0UUiOH2ttZOLIRviwfCzTuZxx8RQ1`): `Colossians — Series Guide` plus 6 numbered lesson documents.
-- The six authoritative lessons are `The Gospel Bears Fruit`, `The Supremacy and Sufficiency of Christ`, `Christ in You, the Hope of Glory`, `Rooted in Christ, Not Captive`, `The New Life Above`, and `Christ in the Household and Workplace`.
-- Colossians was present in Drive but had no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication rather than a lossy prior publication.
-- Every authoritative lesson preserves its `MAIN PASSAGE` and complete `SUPPORTING SCRIPTURES` field. The supporting references remain grouped exactly as the source field rather than being silently reduced or replaced.
-- `colossians-study-data.js` preserves every lesson title, Main Passage, Supporting Scriptures, Central Question, Key Truth, Lesson Purpose, Opening Discussion, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
-- Lesson presentation preserves the source labels `CENTRAL QUESTION`, `KEY TRUTH`, `LESSON PURPOSE`, `OPENING DISCUSSION`, `MAIN PASSAGE`, `SUPPORTING SCRIPTURES`, `SCRIPTURE CONTEXT`, `DISCUSSION QUESTIONS`, `PERSONAL EXAMINATION`, `WEEKLY PRACTICE`, `LEADER GUIDANCE`, and `CLOSING PRAYER`; each teaching heading retains its source `TEACHING MOVEMENT` wording.
-- `colossians-study-guide.js` preserves the exact Series Guide subtitle, both `SERIES OVERVIEW` paragraphs, `CENTRAL THEME`, all six `SERIES GOALS`, the complete six-entry `LESSON MAP`, both `LEADER PREPARATION` paragraphs, `RECOMMENDED RHYTHM`, all `KEY SCRIPTURES`, and the `CLOSING PRAYER`. No missing source section was invented.
-- `colossians-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links Colossians directly after Philippians.
-- With Colossians added, the Book-by-Book library total is now 53 books and 376 complete lessons.
+- Authoritative source scope: the direct contents of Drive folder `1 Thessalonians` (folder ID `1AjvPvT_e1e6pAIRCt9wZC3jl5nnd4wRj`): `1 Thessalonians — Series Guide` plus 6 numbered lesson documents.
+- The six authoritative lessons are `A Faith That Became a Witness`, `Gentle, Courageous, and Accountable Ministry`, `Strengthened Through Faithful Relationships`, `A Life That Pleases God`, `Grieve With Hope`, and `Stay Awake and Encourage One Another`.
+- 1 Thessalonians was present in Drive but had no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication rather than a lossy prior publication.
+- Every authoritative lesson preserves its `Main Scripture` and complete `Supporting Scriptures` field. The supporting references remain grouped exactly as the source field rather than being silently reduced or replaced.
+- `first-thessalonians-study-data.js` preserves every lesson title, Main Scripture, Supporting Scriptures, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six lesson-specific Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. Shared constants are used only for wording that repeats exactly across all six Drive lessons.
+- Lesson presentation preserves the source labels `Main Scripture`, `Supporting Scriptures`, `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`; each numbered teaching heading retains the exact source wording.
+- `first-thessalonians-study-guide.js` preserves the exact Series Guide subtitle and sections `Series Purpose`, `Historical and Literary Setting`, `Central Aim`, `Lesson Map`, `Recommended Rhythm`, `Leader Commitments`, `Pastoral Safeguards`, `Christ-Centered Reading`, and `Desired Fruit`. The source contains no series-level closing prayer, so none was invented.
+- `first-thessalonians-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links 1 Thessalonians directly after Colossians.
+- With 1 Thessalonians added, the Book-by-Book library total is now 54 books and 382 complete lessons.
 
 ## Next audit
 
-1 Thessalonians.
+2 Thessalonians.

@@ -3,7 +3,7 @@ let ChessCtor;
 try{
   ({Chess:ChessCtor}=await import(CHESS_ENGINE_URL));
 }catch(error){
-  console.error('Scripture Chess could not load the chess rules engine.',error);
+  console.error('Wisdom & Strategy: Scripture Chess could not load the chess rules engine.',error);
   const status=document.getElementById('gameStatus');
   if(status)status.textContent='Chess engine unavailable. Please reload when connected.';
   throw error;
@@ -17,7 +17,7 @@ const pieces={w:{p:'♙',n:'♘',b:'♗',r:'♖',q:'♕',k:'♔'},b:{p:'♟',n:'
 const pieceValues={p:100,n:320,b:330,r:500,q:900,k:20000};
 const eventLabels={capture:'Capture',check:'Check',castle:'Castling',promotion:'Promotion',checkmate:'Checkmate',defense:'Stand Firm'};
 const eventKinds={capture:'fact',check:'context',castle:'meaning',promotion:'bonus',checkmate:'big',defense:'context'};
-const COMPUTER_NAME='Scripture Chess Computer';
+const COMPUTER_NAME='Wisdom & Strategy Computer';
 
 const setupView=$('#setupView');
 const gameView=$('#gameView');

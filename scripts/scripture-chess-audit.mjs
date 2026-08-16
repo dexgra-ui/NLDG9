@@ -23,18 +23,22 @@ assert(prototype.includes('name="robots" content="noindex,nofollow,noarchive"'),
 assert(prototype.includes('Test Prototype')&&prototype.includes('intentionally unlinked'),'Private prototype must still identify its test state.');
 assert(!play.includes('scripture-chess-prototype.html')&&!sitemap.includes('scripture-chess-prototype.html'),'Private prototype must remain outside public navigation and the sitemap.');
 
-assert(!publicPage.includes('noindex'),'Public Scripture Chess page must be indexable.');
+assert(!publicPage.includes('noindex'),'Public Wisdom & Strategy: Scripture Chess page must be indexable.');
 assert(publicPage.includes('rel="canonical" href="https://nolabelsdesignedbygod.org/scripture-chess.html"'),'Public page needs the production canonical URL.');
-assert(publicPage.includes('property="og:title"')&&publicPage.includes('property="og:description"')&&publicPage.includes('property="og:url"'),'Public page needs Open Graph metadata.');
+assert(publicPage.includes('property="og:title" content="Wisdom & Strategy: Scripture Chess | No Labels, Designed by God"'),'Public Open Graph title must use the Wisdom & Strategy brand.');
+assert(publicPage.includes('<title>Wisdom & Strategy: Scripture Chess | No Labels, Designed by God</title>'),'Public document title must use the Wisdom & Strategy brand.');
+assert(publicPage.includes('<h1>Wisdom &amp; Strategy:<br>Scripture Chess</h1>'),'Public hero must present Wisdom & Strategy: Scripture Chess.');
+assert(publicPage.includes('property="og:description"')&&publicPage.includes('property="og:url"'),'Public page needs Open Graph description and URL metadata.');
 assert(publicPage.includes('Exit to Game Center')&&publicPage.includes('href="play.html"'),'Public game must return players to the Game Center.');
 assert(publicPage.includes('Chess results and Scripture Points stay separate')||publicPage.includes('Chess and Scripture scoring stay separate'),'Public game must explain separate chess and Scripture scoring.');
-assert(play.includes('href="scripture-chess.html"')&&play.includes('<h3>Scripture Chess</h3>'),'Game Center must visibly link Scripture Chess.');
+assert(play.includes('href="scripture-chess.html"')&&play.includes('<h3>Wisdom &amp; Strategy: Scripture Chess</h3>'),'Game Center must visibly link Wisdom & Strategy: Scripture Chess.');
 assert(sitemap.includes('https://nolabelsdesignedbygod.org/scripture-chess.html'),'Public Scripture Chess route must be in the sitemap.');
 
-assert(publicPage.includes('scripture-chess.css?v=1.1.0')&&publicPage.includes('scripture-chess-questions.js?v=1.1.0')&&publicPage.includes('scripture-chess.js?v=1.1.0'),'Public page must load the current production assets.');
+assert(publicPage.includes('scripture-chess.css?v=1.1.0')&&publicPage.includes('scripture-chess-questions.js?v=1.1.0')&&publicPage.includes('scripture-chess.js?v=1.1.1'),'Public page must load the current production assets.');
 assert(publicPage.includes('id="modeSelect"')&&publicPage.includes('Solo · Play the Computer')&&publicPage.includes('Two Players or Teams'),'Setup must offer both single-player and two-player modes.');
 assert(publicPage.includes('id="aiDifficultySelect"')&&publicPage.includes('Easy · Relaxed')&&publicPage.includes('Medium · Tactical')&&publicPage.includes('Hard · Thinks Ahead'),'Single-player setup must expose three computer difficulty levels.');
 assert(publicPage.includes('Stand Firm Scripture challenge'),'Setup must explain the computer-check learning mechanic.');
+assert(app.includes("const COMPUTER_NAME='Wisdom & Strategy Computer'"),'Single-player opponent must align with the Wisdom & Strategy brand.');
 assert(app.includes("https://cdn.jsdelivr.net/npm/chess.js@1.4.0/dist/esm/chess.js"),'Chess rules engine must stay pinned to version 1.4.0.');
 assert(license.includes('BSD-2-Clause')&&license.includes('Copyright (c) 2025, Jeff Hlywa'),'Third-party chess engine notice must preserve BSD-2-Clause attribution.');
 assert(publicPage.includes('id="chessboard"')&&publicPage.includes('role="grid"'),'Public page must expose a labeled chess board.');
@@ -73,7 +77,7 @@ for(const question of questions){
 
 fs.mkdirSync('scripture-chess-audit-results',{recursive:true});
 const report=[
-  '# Scripture Chess Static Audit','',
+  '# Wisdom & Strategy: Scripture Chess Static Audit','',
   `Generated: ${new Date().toISOString()}`,'',
   `Result: **${failures.length?'FAILED':'PASSED'}** with ${failures.length} failure(s).`,'',
   `Questions checked: **${questions.length}**`,'',

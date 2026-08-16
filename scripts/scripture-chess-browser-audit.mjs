@@ -43,20 +43,22 @@ async function resolveChallenge(award=false){
 
 await openGame();
 
-await run('Public page loads the pinned chess engine and production metadata',async()=>{
+await run('Public page loads the pinned chess engine and Wisdom & Strategy production metadata',async()=>{
   const info=await page.evaluate(()=>({
     version:window.ScriptureChessTest.engineVersion,
     url:window.ScriptureChessTest.engineUrl,
     robots:document.querySelector('meta[name="robots"]')?.content||'',
     canonical:document.querySelector('link[rel="canonical"]')?.href||'',
     title:document.title,
+    heading:document.querySelector('#setupView h1')?.textContent.replace(/\s+/g,' ').trim()||'',
     prototype:Boolean(document.querySelector('.prototype-badge'))
   }));
   requireTrue(info.version==='1.4.0','Unexpected chess engine version.');
   requireTrue(info.url.includes('@1.4.0'),'Chess engine URL is not version-pinned.');
   requireTrue(!info.robots.includes('noindex'),'Public game is still marked noindex.');
   requireTrue(info.canonical.endsWith('/scripture-chess.html'),'Public canonical URL is missing.');
-  requireTrue(info.title.startsWith('Scripture Chess'),'Public title is incorrect.');
+  requireTrue(info.title.startsWith('Wisdom & Strategy: Scripture Chess'),'Public title does not use the Wisdom & Strategy brand.');
+  requireTrue(info.heading.replace(':Scripture',': Scripture')==='Wisdom & Strategy: Scripture Chess','Public hero does not use the Wisdom & Strategy: Scripture Chess title.');
   requireTrue(info.prototype===false,'Prototype badge is visible on the public page.');
 });
 
@@ -258,7 +260,7 @@ await context.close();
 await browser.close();
 
 const report=[
-  '# Scripture Chess Browser Audit','',
+  '# Wisdom & Strategy: Scripture Chess Browser Audit','',
   `Generated: ${new Date().toISOString()}`,'',
   `Result: **${failures.length?'FAILED':'PASSED'}** with ${failures.length} failure(s).`,'',
   '## Checks completed','',...(checks.length?checks.map(item=>`- ${item}`):['- None']),'',

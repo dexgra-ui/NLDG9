@@ -1,4 +1,4 @@
-name: Scripture Chess Prototype Audit
+name: Scripture Chess Audit
 
 on:
   workflow_dispatch:
@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/scripture-chess-prototype-audit.yml'
+      - 'scripture-chess.html'
       - 'scripture-chess-prototype.html'
       - 'scripture-chess.css'
       - 'scripture-chess.js'
@@ -13,14 +14,13 @@ on:
       - 'SCRIPTURE-CHESS-THIRD-PARTY-NOTICE.md'
       - 'scripts/scripture-chess-audit.mjs'
       - 'scripts/scripture-chess-browser-audit.mjs'
-      - 'games.html'
       - 'play.html'
       - 'sitemap.xml'
-      - 'content-library.js'
   push:
-    branches: [prototype-scripture-chess]
+    branches: [main]
     paths:
       - '.github/workflows/scripture-chess-prototype-audit.yml'
+      - 'scripture-chess.html'
       - 'scripture-chess-prototype.html'
       - 'scripture-chess.css'
       - 'scripture-chess.js'
@@ -28,17 +28,15 @@ on:
       - 'SCRIPTURE-CHESS-THIRD-PARTY-NOTICE.md'
       - 'scripts/scripture-chess-audit.mjs'
       - 'scripts/scripture-chess-browser-audit.mjs'
-      - 'games.html'
       - 'play.html'
       - 'sitemap.xml'
-      - 'content-library.js'
 
 permissions:
   contents: read
 
 jobs:
-  prototype:
-    name: Chess rules, Scripture events, scoring, keyboard, and mobile
+  audit:
+    name: Chess rules, Scripture events, scoring, keyboard, mobile, and public integration
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -54,7 +52,7 @@ jobs:
           npm install --no-save playwright chess.js@1.4.0
           npx playwright install --with-deps chromium
 
-      - name: Run static prototype audit
+      - name: Run static Scripture Chess audit
         run: node scripts/scripture-chess-audit.mjs
 
       - name: Start local site
@@ -62,7 +60,7 @@ jobs:
           python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/scripture-chess-http.log 2>&1 &
           echo $! > /tmp/scripture-chess-http.pid
           for attempt in {1..30}; do
-            if curl --fail --silent http://127.0.0.1:4173/scripture-chess-prototype.html > /dev/null; then
+            if curl --fail --silent http://127.0.0.1:4173/scripture-chess.html > /dev/null; then
               exit 0
             fi
             sleep 1
@@ -73,10 +71,10 @@ jobs:
       - name: Run browser behavior audit
         run: node scripts/scripture-chess-browser-audit.mjs
 
-      - name: Upload prototype test reports
+      - name: Upload Scripture Chess test reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: scripture-chess-prototype-audit
+          name: scripture-chess-audit
           path: scripture-chess-audit-results
           if-no-files-found: error

@@ -1,14 +1,14 @@
 const secondPeterPurpose="To understand the passage in context, receive its correction and encouragement, and practice a response shaped by Jesus.";
 const secondPeterOpening="Pray and read the passage aloud. Notice commands, promises, contrasts, repeated words, descriptions of God, and the relationship between belief and conduct.";
 const secondPeterQuestions=[
- "1. What detail stands out and why?",
- "2. What does this passage reveal about God or Jesus?",
- "3. What problem is the original audience facing?",
- "4. Which assumption does the text correct?",
- "5. How do grace and obedience relate here?",
- "6. What misuse of this passage should we avoid?",
- "7. How does this truth shape community life?",
- "8. What action should follow this week?"
+ "What detail stands out and why?",
+ "What does this passage reveal about God or Jesus?",
+ "What problem is the original audience facing?",
+ "Which assumption does the text correct?",
+ "How do grace and obedience relate here?",
+ "What misuse of this passage should we avoid?",
+ "How does this truth shape community life?",
+ "What action should follow this week?"
 ];
 const secondPeterExamination="Ask where delay, fear, pride, desire, comparison, or misplaced confidence is shaping your response. Receive conviction without hiding and grace without minimizing change.";
 const secondPeterPractice="Choose one concrete step: reorder a neglected priority, encourage a discouraged worker, study a difficult text patiently, verify a teacher’s claim, repair a harmful pattern, or act on a clear obedience you have postponed.";

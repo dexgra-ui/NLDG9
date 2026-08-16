@@ -38,6 +38,9 @@ jobs:
       - name: Run Book-by-Book unified library audit
         run: node scripts/unified-library-book-audit.mjs
 
+      - name: Run Book-by-Book search integration audit
+        run: node scripts/book-search-integration-audit.mjs
+
       - name: Run workflow hygiene audit
         run: node scripts/workflow-hygiene-audit.mjs
 

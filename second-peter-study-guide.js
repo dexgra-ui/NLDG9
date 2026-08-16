@@ -52,6 +52,7 @@
   scriptureContextLabel:"Scripture Context",
   keyTruthLabel:"Key Truth",
   lessonQuestionLabel:"Central Question",
+  lessonTeachingLabel:"Teaching Movements",
   discussionQuestionsLabel:"Discussion Questions",
   personalExaminationLabel:"Personal Examination",
   personalExaminationTitle:"",

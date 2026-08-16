@@ -66,20 +66,21 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | 1 Corinthians | PASS after authoritative first publication and source-label preservation |
 | 2 Corinthians | PASS after authoritative first publication and source-label preservation |
 | Galatians | PASS after authoritative first publication and source-label preservation |
+| Ephesians | PASS after authoritative first publication and source-label preservation |
 
-## Galatians — detailed result
+## Ephesians — detailed result
 Audited: 2026-08-15
 
-- Authoritative source scope: the direct contents of Drive folder `Galatians — Book-by-Book Study` (folder ID `1XQ26FRBIexXnM0YKRs0nLx_2a6WkLMUp`): `Galatians — Series Guide` plus 8 numbered lesson documents.
-- The eight authoritative lessons are `No Other Gospel`, `The Gospel Received and Recognized`, `Justified by Faith in Christ`, `Promise, Law, and One Family`, `Heirs, Not Slaves`, `Called to Freedom Through Love`, `Walk by the Spirit`, and `Restore, Bear, Sow, and Boast in the Cross`.
-- Galatians was present in Drive but had no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication rather than a lossy prior publication.
+- Authoritative source scope: the direct contents of Drive folder `Ephesians — Book-by-Book Study` (folder ID `1xE6jzacsJHVs03eqJGbDkcmGtRzVxxbi`): `Ephesians — Series Guide` plus 9 numbered lesson documents.
+- The nine authoritative lessons are `Every Spiritual Blessing in Christ`, `Eyes of the Heart Enlightened`, `Saved by Grace for Good Works`, `Christ Is Our Peace`, `The Mystery, the Church, and the Love of Christ`, `Unity and Maturity in the Body`, `Put Off the Old, Put On the New`, `Christlike Relationships Under One Lord`, and `Stand Firm in the Armor of God`.
+- Ephesians was present in Drive but had no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication rather than a lossy prior publication.
 - Every authoritative lesson preserves its `MAIN PASSAGE` and complete `SUPPORTING SCRIPTURES` field. The supporting references remain grouped exactly as the source field rather than being silently reduced or replaced.
-- `galatians-study-data.js` preserves every lesson title, Main Passage, Supporting Scriptures, Central Question, Key Truth, Lesson Purpose, Opening Discussion, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
+- `ephesians-study-data.js` preserves every lesson title, Main Passage, Supporting Scriptures, Central Question, Key Truth, Lesson Purpose, Opening Discussion, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer.
 - Lesson presentation preserves the source labels `CENTRAL QUESTION`, `KEY TRUTH`, `LESSON PURPOSE`, `OPENING DISCUSSION`, `MAIN PASSAGE`, `SUPPORTING SCRIPTURES`, `SCRIPTURE CONTEXT`, `DISCUSSION QUESTIONS`, `PERSONAL EXAMINATION`, `WEEKLY PRACTICE`, `LEADER GUIDANCE`, and `CLOSING PRAYER`; each teaching heading retains its source `TEACHING MOVEMENT` wording.
-- `galatians-study-guide.js` preserves the exact Series Guide subtitle, both `SERIES OVERVIEW` paragraphs, `CENTRAL THEME`, all seven `SERIES GOALS`, the complete eight-entry `LESSON MAP`, both `LEADER PREPARATION` paragraphs, `RECOMMENDED RHYTHM`, all `KEY SCRIPTURES`, and the `CLOSING PRAYER`. No series-level question, generic lesson framework, or other missing source section was invented.
-- `galatians-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links Galatians directly after 2 Corinthians.
-- With Galatians added, the Book-by-Book library total is now 51 books and 361 complete lessons.
+- `ephesians-study-guide.js` preserves the exact Series Guide subtitle, `SERIES OVERVIEW`, `CENTRAL THEME`, all seven `SERIES GOALS`, the complete nine-entry `LESSON MAP`, both `LEADER PREPARATION` paragraphs, `RECOMMENDED RHYTHM`, all `KEY SCRIPTURES`, and the `CLOSING PRAYER`. No series-level question, generic lesson framework, or other missing source section was invented.
+- `ephesians-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links Ephesians directly after Galatians.
+- With Ephesians added, the Book-by-Book library total is now 52 books and 370 complete lessons.
 
 ## Next audit
 
-Ephesians.
+Philippians.

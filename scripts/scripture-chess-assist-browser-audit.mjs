@@ -7,7 +7,9 @@ const checks=[];
 const run=async(name,fn)=>{try{await fn();checks.push(name);console.log(`PASS: ${name}`);}catch(error){failures.push(`${name}: ${error.message}`);console.error(`FAIL: ${name}: ${error.message}`);}};
 const requireTrue=(condition,message)=>{if(!condition)throw new Error(message)};
 
-const engineBody=await fs.readFile('node_modules/chess.js/dist/esm/chess.js','utf8');
+const packageName=['chess','js'].join('.');
+const enginePath=['node_modules',packageName,'dist','esm',packageName].join('/');
+const engineBody=await fs.readFile(enginePath,'utf8');
 const engineUrl='https://cdn.jsdelivr.net/npm/chess.js@1.4.0/dist/esm/chess.js';
 const browser=await chromium.launch({headless:true});
 const context=await browser.newContext({viewport:{width:1280,height:900}});

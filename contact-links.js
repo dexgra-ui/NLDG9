@@ -1,7 +1,7 @@
 (()=>{
 if(window.NLDG_CONTACT_LINKS_LOADED)return;
 window.NLDG_CONTACT_LINKS_LOADED=true;
-const nested=/\/(?:articles|devotionals)\//i.test(location.pathname);
+const nested=/\/(?:articles|devotionals|newsletter)\//i.test(location.pathname);
 const isContact=/(^|\/)contact\.html$/i.test(location.pathname);
 const root=nested?'../':'';
 const surveyIntegration=document.createElement('script');
@@ -12,6 +12,10 @@ const missionLibrary=document.createElement('script');
 missionLibrary.src=`${root}mission-library.js?v=1.0.0`;
 missionLibrary.async=false;
 document.head.appendChild(missionLibrary);
+const bookLibrary=document.createElement('script');
+bookLibrary.src=`${root}book-by-book-library.js?v=1.0.0`;
+bookLibrary.async=false;
+document.head.appendChild(bookLibrary);
 const leaderMode=document.createElement('script');
 leaderMode.src=`${root}universal-leader-mode.js?v=1.0.0`;
 leaderMode.async=false;

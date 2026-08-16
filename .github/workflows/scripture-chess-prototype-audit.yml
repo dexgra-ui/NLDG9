@@ -11,9 +11,13 @@ on:
       - 'scripture-chess.css'
       - 'scripture-chess.js'
       - 'scripture-chess-questions.js'
+      - 'scripture-chess-assist-choices.js'
+      - 'scripture-chess-assist.js'
       - 'SCRIPTURE-CHESS-THIRD-PARTY-NOTICE.md'
       - 'scripts/scripture-chess-audit.mjs'
       - 'scripts/scripture-chess-browser-audit.mjs'
+      - 'scripts/scripture-chess-assist-audit.mjs'
+      - 'scripts/scripture-chess-assist-browser-audit.mjs'
       - 'play.html'
       - 'sitemap.xml'
   push:
@@ -25,9 +29,13 @@ on:
       - 'scripture-chess.css'
       - 'scripture-chess.js'
       - 'scripture-chess-questions.js'
+      - 'scripture-chess-assist-choices.js'
+      - 'scripture-chess-assist.js'
       - 'SCRIPTURE-CHESS-THIRD-PARTY-NOTICE.md'
       - 'scripts/scripture-chess-audit.mjs'
       - 'scripts/scripture-chess-browser-audit.mjs'
+      - 'scripts/scripture-chess-assist-audit.mjs'
+      - 'scripts/scripture-chess-assist-browser-audit.mjs'
       - 'play.html'
       - 'sitemap.xml'
 
@@ -55,6 +63,9 @@ jobs:
       - name: Run static Scripture Chess audit
         run: node scripts/scripture-chess-audit.mjs
 
+      - name: Run optional choice-help static audit
+        run: node scripts/scripture-chess-assist-audit.mjs
+
       - name: Start local site
         run: |
           python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/scripture-chess-http.log 2>&1 &
@@ -70,6 +81,9 @@ jobs:
 
       - name: Run browser behavior audit
         run: node scripts/scripture-chess-browser-audit.mjs
+
+      - name: Run optional choice-help browser audit
+        run: node scripts/scripture-chess-assist-browser-audit.mjs
 
       - name: Upload Scripture Chess test reports
         if: always()

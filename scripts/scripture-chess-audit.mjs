@@ -53,9 +53,16 @@ for(const question of questions){
  }
 }
 
-if(failures.length){
- console.error(`Scripture Chess static audit FAILED with ${failures.length} problem(s):`);
- failures.forEach(item=>console.error(`- ${item}`));
- process.exit(1);
-}
-console.log(`Scripture Chess static audit PASSED: ${questions.length} questions, 3 levels, 5 chess-event challenge types, prototype remains unlinked.`);
+fs.mkdirSync('scripture-chess-audit-results',{recursive:true});
+const report=[
+ '# Scripture Chess Static Audit','',
+ `Generated: ${new Date().toISOString()}`,'',
+ `Result: **${failures.length?'FAILED':'PASSED'}** with ${failures.length} failure(s).`,'',
+ `Questions checked: **${questions.length}**`,'',
+ 'Levels: Beginner, Intermediate, Advanced','',
+ 'Challenge types: Capture, Check, Castling, Promotion, Checkmate','',
+ '## Failures','',...(failures.length?failures.map(item=>`- ${item}`):['- No failures.']),'',
+].join('\n');
+fs.writeFileSync('scripture-chess-audit-results/static-report.md',report,'utf8');
+console.log(report);
+if(failures.length)process.exit(1);

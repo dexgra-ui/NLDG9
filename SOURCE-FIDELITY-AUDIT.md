@@ -64,20 +64,21 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | Acts | PASS after authoritative first publication and source-label preservation |
 | Romans | PASS after authoritative first publication and source-label preservation |
 | 1 Corinthians | PASS after authoritative first publication and source-label preservation |
+| 2 Corinthians | PASS after authoritative first publication and source-label preservation |
 
-## 1 Corinthians — detailed result
+## 2 Corinthians — detailed result
 Audited: 2026-08-15
 
-- Authoritative source scope: the direct contents of Drive folder `1 Corinthians` (folder ID `1g9uCHgvVDdJZXDZGmYBgaNcNEftDAPJf`): `1 Corinthians — Series Guide` plus 8 numbered lesson documents.
-- The eight authoritative lessons are `Christ, Not Celebrity Leaders`, `Holiness, Bodies, and Belonging`, `Marriage, Singleness, and Faithful Calling`, `Freedom Shaped by Love`, `Worship, Communion, and Mutual Honor`, `Gifts of One Spirit`, `The More Excellent Way of Love`, and `Resurrection Changes Everything`.
-- Per the project inventory, the remaining New Testament books beginning with 1 Corinthians were present in Drive but not yet published on the website. 1 Corinthians is therefore classified as **MISSING** before this authoritative first publication rather than as a lossy prior publication.
+- Authoritative source scope: the direct contents of Drive folder `2 Corinthians` (folder ID `1SmrUWYEgf9BbNBDTb7yOYIU_wFCtHpSi`): `2 Corinthians — Series Guide` plus 6 numbered lesson documents.
+- The six authoritative lessons are `Comforted to Comfort Others`, `Treasure in Jars of Clay`, `The Ministry of Reconciliation`, `Holiness, Grief, and Restored Trust`, `The Grace of Generosity`, and `Power Made Perfect in Weakness`.
+- 2 Corinthians was present in Drive but had no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication rather than a lossy prior publication.
 - Every authoritative lesson uses one `Main Scripture` field containing three references. All references are preserved inside that field. The lesson documents contain no separate `Supporting Scriptures` heading, so `supporting: []` is source-faithful.
-- `first-corinthians-study-data.js` now preserves every lesson title, complete Main Scripture field, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. Shared constants are used only where the Drive source itself repeats exact wording.
+- `second-corinthians-study-data.js` now preserves every lesson title, complete Main Scripture field, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. Shared constants are used only where the Drive source itself repeats exact wording.
 - Each lesson source includes a `Study Foundation` heading with no standalone prose beneath it before `Main Scripture`; the page preserves that heading without inventing foundation text. Lesson presentation preserves the source labels `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Main Scripture`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`.
-- `first-corinthians-study-guide.js` restores the exact Series Guide subtitle, Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, six Teaching Movements including `Bodies Matter`, `Freedom Serves Love`, `One Body, Many Gifts`, and `Pastoral Safeguards`, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. The Series Guide itself contains no Lesson Map, Recommended Rhythm, or separate Supporting Scriptures section, so none was invented.
-- `first-corinthians-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links 1 Corinthians directly after Romans.
-- With 1 Corinthians added, the Book-by-Book library total is now 49 books and 347 complete lessons.
+- `second-corinthians-study-guide.js` restores the exact Series Guide subtitle, Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six Teaching Movements including `Weakness and Power`, `Integrity and Accountability`, `Reconciliation and Boundaries`, and `Generosity Without Pressure`, eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. The Series Guide itself contains no Lesson Map, Recommended Rhythm, or separate Supporting Scriptures section, so none was invented.
+- `second-corinthians-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links 2 Corinthians directly after 1 Corinthians.
+- With 2 Corinthians added, the Book-by-Book library total is now 50 books and 353 complete lessons.
 
 ## Next audit
 
-2 Corinthians.
+Galatians.

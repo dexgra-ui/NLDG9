@@ -82,7 +82,10 @@ function init(){
   button.addEventListener('click',renderChoices);
   mode.addEventListener('change',sync);
   level.addEventListener('change',sync);
-  new MutationObserver(sync).observe(panel,{attributes:true,subtree:true,childList:true,characterData:true});
+  new MutationObserver(sync).observe(panel,{attributes:true,attributeFilter:['class']});
+  new MutationObserver(sync).observe(reference,{childList:true,characterData:true,subtree:true});
+  new MutationObserver(sync).observe(question,{childList:true,characterData:true,subtree:true});
+  new MutationObserver(sync).observe(answerPanel,{attributes:true,attributeFilter:['class']});
   sync();
 }
 

@@ -11,11 +11,13 @@ on:
       - 'scripture-chess.css'
       - 'scripture-chess.js'
       - 'scripture-chess-questions.js'
+      - 'scripture-chess-question-variety.js'
       - 'scripture-chess-assist-choices.js'
       - 'scripture-chess-assist.js'
       - 'SCRIPTURE-CHESS-THIRD-PARTY-NOTICE.md'
       - 'scripts/scripture-chess-audit.mjs'
       - 'scripts/scripture-chess-browser-audit.mjs'
+      - 'scripts/scripture-chess-question-variety-audit.mjs'
       - 'scripts/scripture-chess-assist-audit.mjs'
       - 'scripts/scripture-chess-assist-browser-audit.mjs'
       - 'play.html'
@@ -29,11 +31,13 @@ on:
       - 'scripture-chess.css'
       - 'scripture-chess.js'
       - 'scripture-chess-questions.js'
+      - 'scripture-chess-question-variety.js'
       - 'scripture-chess-assist-choices.js'
       - 'scripture-chess-assist.js'
       - 'SCRIPTURE-CHESS-THIRD-PARTY-NOTICE.md'
       - 'scripts/scripture-chess-audit.mjs'
       - 'scripts/scripture-chess-browser-audit.mjs'
+      - 'scripts/scripture-chess-question-variety-audit.mjs'
       - 'scripts/scripture-chess-assist-audit.mjs'
       - 'scripts/scripture-chess-assist-browser-audit.mjs'
       - 'play.html'
@@ -62,6 +66,9 @@ jobs:
 
       - name: Run static Scripture Chess audit
         run: node scripts/scripture-chess-audit.mjs
+
+      - name: Run question variety audit
+        run: node scripts/scripture-chess-question-variety-audit.mjs
 
       - name: Run optional choice-help static audit
         run: node scripts/scripture-chess-assist-audit.mjs

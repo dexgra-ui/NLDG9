@@ -83,20 +83,21 @@ This ledger was re-compacted on 2026-08-15. Git history retains the earlier deta
 | 2 John | PASS after authoritative first publication and source-label preservation |
 | 3 John | PASS after authoritative first publication and source-label preservation |
 | Jude | PASS after authoritative first publication and source-label preservation |
+| Revelation | PASS after authoritative first publication and source-label preservation |
 
-## Jude — detailed result
+## Revelation — detailed result
 Audited: 2026-08-16
 
-- Authoritative source scope: the direct contents of Drive folder `Jude` (folder ID `1YoA3yce3j_omOWCT6mrFdaDmxDs0ozLM`) contain `Jude — Series Guide` plus four numbered lesson documents.
-- The four authoritative lessons are `Contend for the Faith`, `Recognize Corrupt Influence`, `Remember the Apostolic Warning`, and `Keep Yourselves in God’s Love`.
-- Before publication, repository search for `Jude` found no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication.
-- Every authoritative lesson preserves its `Main Scripture` and complete `Supporting Scriptures` field. Supporting references remain grouped exactly as the source field, including semicolon punctuation, rather than being silently reduced or reformatted.
-- `jude-study-data.js` preserves every lesson title, Main Scripture, Supporting Scriptures, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six lesson-specific Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. Shared constants are used only where the Drive wording repeats exactly across all four lessons.
-- Lesson presentation preserves the exact source labels `Main Scripture`, `Supporting Scriptures`, `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`; each Teaching Movement heading retains its exact source wording.
-- `jude-study-guide.js` preserves the exact Series Guide subtitle `Truth, Discernment, Mercy, and Perseverance` and sections `Series Purpose`, `Historical and Literary Setting`, `Central Aim`, `Lesson Map`, `Recommended Rhythm`, `Leader Commitments`, `Pastoral Safeguards`, `Christ-Centered Reading`, and `Desired Fruit`. The source contains no series-level closing prayer, so none was invented.
-- `jude-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links Jude directly after 3 John.
-- With Jude added, the Book-by-Book library total is now 65 books and 439 complete lessons.
+- Authoritative source scope: the direct contents of Drive folder `Revelation` (folder ID `1NeaVQk-h1Jvoe5UwM4xhz3s96b66AFuy`) contain `Revelation — Series Guide` plus eight numbered lesson documents.
+- The eight authoritative lessons are `The Risen Christ Among His Churches`, `Wake Up and Worship the One on the Throne`, `The Lamb Opens the Seals`, `Trumpets, Witness, and the Kingdom of God`, `The Dragon, the Beasts, and the Faithful Lamb`, `Bowls, Babylon, and the Collapse of Empire`, `The Rider, Final Judgment, and the Defeat of Evil`, and `New Creation and the River of Life`.
+- Before publication, repository searches for `Revelation` and `revelation-study` found no corresponding website study page, data file, guide file, or Book-by-Book card. The book-level website content was therefore **MISSING** before this authoritative first publication.
+- The authoritative Revelation lesson documents use `Study Foundation` with `Main Scripture`, `Central Question`, `Key Truth`, and `Purpose`; they do not contain a `Supporting Scriptures` field. The website preserves the source fields that exist and does not invent a Supporting Scriptures section.
+- `revelation-study-data.js` preserves every lesson title, Main Scripture, Central Question, Key Truth, Purpose, Opening, Scripture Context, all six lesson-specific Teaching Movements, all eight Discussion Questions, Personal Examination, Weekly Practice, Leader Guidance, and Closing Prayer. Shared constants are used only where the Drive wording repeats exactly across the eight lessons.
+- Lesson presentation preserves the exact source labels `Study Foundation`, `Main Scripture`, `Central Question`, `Key Truth`, `Purpose`, `Opening`, `Scripture Context`, `Teaching Movements`, `Discussion Questions`, `Personal Examination`, `Weekly Practice`, `Leader Guidance`, and `Closing Prayer`; each Teaching Movement heading retains its exact source wording.
+- `revelation-study-guide.js` preserves the exact Series Guide subtitle `Faithful Witness, the Lamb’s Victory, and New Creation` and sections `Study Foundation`, `Series Purpose`, `Interpretive Commitments`, `Lesson Map`, `Recommended Rhythm`, `Facilitator Safeguards`, `How to Use Scripture References`, and `Closing Prayer`.
+- `revelation-study.html` publishes the series through the shared book-study renderer, and `book-by-book.html` now links Revelation directly after Jude.
+- With Revelation added, the Book-by-Book library is complete at 66 biblical books and 447 complete lessons.
 
-## Next audit
+## Audit status
 
-Revelation.
+Complete — all 66 biblical books have been audited against their authoritative Drive sources.

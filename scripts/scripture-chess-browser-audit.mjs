@@ -11,6 +11,7 @@ async function run(name,fn){try{await fn();checks.push(name);console.log(`PASS: 
 const packageName=['chess','js'].join('.');
 const enginePath=['node_modules',packageName,'dist','esm',packageName].join('/');
 const engineBody=await fs.readFile(enginePath,'utf8');
+await fs.mkdir('scripture-chess-audit-results',{recursive:true});
 const browser=await chromium.launch({headless:true});
 const context=await browser.newContext({viewport:{width:1280,height:900}});
 await context.route('https://cdn.jsdelivr.net/npm/chess.js@1.4.0/dist/esm/chess.js',route=>route.fulfill({status:200,contentType:'application/javascript; charset=utf-8',body:engineBody}));
@@ -35,6 +36,9 @@ async function resolveLeaderChallenge(award=false){
 }
 
 await openPrototype();
+await testStart('intermediate');
+await page.setViewportSize({width:1440,height:1000});
+await page.screenshot({path:'scripture-chess-audit-results/scripture-chess-preview.png',fullPage:true});
 
 await run('Prototype is isolated and test hook loads with pinned chess engine',async()=>{
  const info=await page.evaluate(()=>({version:window.ScriptureChessTest.engineVersion,url:window.ScriptureChessTest.engineUrl,robots:document.querySelector('meta[name="robots"]')?.content,badge:document.querySelector('.prototype-badge')?.textContent.trim()}));
@@ -68,6 +72,7 @@ await run('Capture opens a Scripture challenge and leader scoring is separate fr
  requireTrue(current.challenge?.event==='capture','Capture did not open a capture challenge.');
  requireTrue(current.scores.w===0,'Scripture score changed before the answer was scored.');
  requireTrue((await page.textContent('#challengeReference')).trim().length>0,'Challenge has no Scripture reference.');
+ await page.screenshot({path:'scripture-chess-audit-results/scripture-chess-challenge-preview.png',fullPage:true});
  await resolveLeaderChallenge(true);
  current=await state();
  requireTrue(current.scores.w===1,'Awarded Scripture Point was not recorded for White.');
@@ -177,7 +182,6 @@ const report=[
  '## Checks completed','',...(checks.length?checks.map(item=>`- ${item}`):['- None']),'',
  '## Failures','',...(failures.length?failures.map(item=>`- ${item}`):['- No failures.']),'',
 ].join('\n');
-await fs.mkdir('scripture-chess-audit-results',{recursive:true});
 await fs.writeFile('scripture-chess-audit-results/browser-report.md',report,'utf8');
 console.log(report);
 if(failures.length)process.exit(1);

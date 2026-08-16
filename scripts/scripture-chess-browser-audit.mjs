@@ -25,7 +25,7 @@ page.on('console',message=>{if(message.type()==='error')consoleErrors.push(messa
 page.on('pageerror',error=>consoleErrors.push(error.message));
 
 async function openGame(){
-  await page.goto(`${BASE}/scripture-chess.html?test=1`,{waitUntil:'domcontentloaded'});
+  await page.goto(`${BASE}/scripture-chess.html?test=1`,{waitUntil:'commit'});
   await page.waitForFunction(()=>Boolean(window.ScriptureChessTest),null,{timeout:15000});
 }
 async function state(){return page.evaluate(()=>window.ScriptureChessTest.state());}

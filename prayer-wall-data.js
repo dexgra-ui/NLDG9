@@ -6,16 +6,15 @@
   has completed the prayer moderation workflow documented in docs/prayer-moderation-guide.md.
 */
 window.NLDG_PRAYER_WALL = [
-  // Example shape for future approved requests:
-  // {
-  //   id:'prayer-2026-08-20-example',
-  //   title:'Wisdom for a family decision',
-  //   displayName:'Anonymous',
-  //   category:'Guidance',
-  //   request:'Please pray for wisdom and peace as our family makes an important decision.',
-  //   publishedAt:'2026-08-20',
-  //   status:'Active',
-  //   answeredUpdate:'',
-  //   answeredAt:''
-  // }
+  {
+    id:'prayer-2026-08-20-good-health',
+    title:'Good health',
+    displayName:'Dexter A.',
+    category:'Health',
+    request:'Please pray for continued strength and good health as I walk through ongoing treatment.',
+    publishedAt:'2026-08-20',
+    status:'Active',
+    answeredUpdate:'',
+    answeredAt:''
+  }
 ];

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#06122d">
+<meta name="description" content="Share a prayer request privately or, with permission and review, with the No Labels, Designed by God prayer community.">
+<title>Prayer Center | No Labels, Designed by God</title>
+<link rel="canonical" href="https://nolabelsdesignedbygod.org/prayer.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="No Labels, Designed by God">
+<meta property="og:title" content="Prayer Center">
+<meta property="og:description" content="A quiet place to ask for prayer, pray for others, and share answered-prayer updates with thoughtful safeguards.">
+<meta property="og:url" content="https://nolabelsdesignedbygod.org/prayer.html">
+<meta property="og:image" content="https://nolabelsdesignedbygod.org/no-labels-approved-logo.png">
+<meta property="og:image:alt" content="No Labels, Designed by God ministry logo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Prayer Center">
+<meta name="twitter:description" content="A quiet place to ask for prayer and pray for others.">
+<meta name="twitter:image" content="https://nolabelsdesignedbygod.org/no-labels-approved-logo.png">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="prayer.css?v=1.0.0">
+</head>
+<body class="prayer-page">
+<header class="site-header">
+  <a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God</strong><small>Prayer Center</small></span></a>
+  <button class="menu" aria-expanded="false">Menu</button>
+  <nav></nav>
+</header>
+<main>
+<section class="prayer-hero">
+  <div class="prayer-hero-copy">
+    <p class="kicker">Prayer Center</p>
+    <h1>You do not have to carry it alone.</h1>
+    <p class="lead">Share a request privately with the ministry or, with your permission and after review, invite others to pray with you.</p>
+    <div class="prayer-actions">
+      <a class="button primary" href="#submit-prayer">Submit a Prayer Request</a>
+      <a class="button secondary" href="#prayer-wall">Pray for Someone</a>
+    </div>
+  </div>
+  <aside class="prayer-focus" aria-label="Ministry prayer focus">
+    <span>Ministry prayer focus</span>
+    <strong>Pray for wisdom, faithfulness, and people who need to be reminded that God sees them.</strong>
+    <p>Public prayer requests are never posted automatically. Every request selected for public sharing is reviewed first.</p>
+  </aside>
+</section>
+
+<section class="prayer-safety" aria-labelledby="prayer-safety-title">
+  <div>
+    <p class="kicker">Before you share</p>
+    <h2 id="prayer-safety-title">Prayer care with dignity and privacy.</h2>
+  </div>
+  <div class="prayer-safety-grid">
+    <article><strong>Private means private from the wall.</strong><p>Private requests are sent to the ministry prayer-care inbox and are not intentionally published.</p></article>
+    <article><strong>Public means reviewed first.</strong><p>Choosing public gives permission for an approved, privacy-conscious version of your request to appear on the Prayer Wall.</p></article>
+    <article><strong>Protect identifying details.</strong><p>Do not include addresses, phone numbers, financial information, medical records, full names of other people, or other sensitive details.</p></article>
+    <article><strong>This is not an emergency service.</strong><p>If you or someone else may be in immediate danger, contact local emergency services or a qualified local professional now.</p></article>
+  </div>
+</section>
+
+<section id="submit-prayer" class="section prayer-submit-section" aria-labelledby="submit-prayer-title">
+  <div class="section-heading">
+    <p class="kicker">Submit a request</p>
+    <h2 id="submit-prayer-title">Tell us how we can pray.</h2>
+    <p>Your request opens in your email app addressed to the ministry team. Nothing is posted directly to the Prayer Wall from this form.</p>
+  </div>
+  <form id="prayerRequestForm" class="prayer-form" novalidate>
+    <fieldset>
+      <legend>1. How should this request be handled?</legend>
+      <div class="prayer-choice-grid">
+        <label class="prayer-choice"><input type="radio" name="visibility" value="Private" checked><span><strong>Private</strong><small>Prayer-care inbox only. Not published on the Prayer Wall.</small></span></label>
+        <label class="prayer-choice"><input type="radio" name="visibility" value="Public"><span><strong>Public after review</strong><small>May appear on the Prayer Wall only after moderation and your permission.</small></span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. How should your name appear?</legend>
+      <div class="prayer-choice-grid">
+        <label class="prayer-choice"><input type="radio" name="identity" value="Anonymous" checked><span><strong>Anonymous</strong><small>The public wall will not show your name.</small></span></label>
+        <label class="prayer-choice"><input type="radio" name="identity" value="First name"><span><strong>First name</strong><small>Use only the first name you provide below.</small></span></label>
+      </div>
+      <label class="prayer-field">First name <span>(optional unless you choose First name)</span><input id="prayerName" name="name" type="text" autocomplete="given-name" maxlength="40"></label>
+    </fieldset>
+
+    <div class="prayer-form-grid">
+      <label class="prayer-field">Category
+        <select id="prayerCategory" name="category" required>
+          <option value="">Choose a category</option>
+          <option>Family</option>
+          <option>Health</option>
+          <option>Grief</option>
+          <option>Faith</option>
+          <option>Work & Finances</option>
+          <option>Relationships</option>
+          <option>Guidance</option>
+          <option>Praise / Answered Prayer</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label class="prayer-field">Request title <span>(brief and non-identifying)</span><input id="prayerTitle" name="title" type="text" maxlength="80" required placeholder="Example: Wisdom for a family decision"></label>
+    </div>
+
+    <label class="prayer-field">Prayer request
+      <textarea id="prayerRequest" name="request" rows="8" maxlength="1500" required placeholder="Share only what is needed for prayer. Please leave out private identifying details about other people."></textarea>
+      <small><span id="prayerCount">0</span>/1500 characters</small>
+    </label>
+
+    <div id="publicConsentWrap" class="prayer-consent" hidden>
+      <label><input id="publicConsent" type="checkbox"> <span>I give No Labels, Designed by God permission to publish a reviewed version of this request on the public Prayer Wall. I understand the ministry may shorten, redact, decline, or later remove it for privacy, safety, or moderation reasons.</span></label>
+    </div>
+
+    <div class="prayer-consent">
+      <label><input id="ageConsent" type="checkbox" required> <span>I am at least 13 years old, or I am submitting this with a parent or guardian.</span></label>
+      <label><input id="guidelineConsent" type="checkbox" required> <span>I understand this ministry is not emergency, medical, legal, financial, or mental-health care, and I have read the <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Use</a>.</span></label>
+    </div>
+
+    <div class="prayer-moderation-note">
+      <strong>Public-sharing safeguard</strong>
+      <p>Public requests may be withheld or edited to protect minors, third parties, medical privacy, precise locations, allegations, graphic details, or other sensitive information. Requests that solicit money, direct contact, or services are not published.</p>
+    </div>
+
+    <div class="prayer-submit-actions">
+      <button class="button primary" type="submit">Open Prayer Request Email</button>
+      <p id="prayerFormMessage" class="prayer-form-message" role="status" aria-live="polite"></p>
+    </div>
+  </form>
+</section>
+
+<section id="prayer-wall" class="section prayer-wall-section" aria-labelledby="prayer-wall-title">
+  <div class="prayer-wall-heading">
+    <div>
+      <p class="kicker">Prayer Wall</p>
+      <h2 id="prayer-wall-title">Pray with someone today.</h2>
+      <p>Only reviewed requests with permission to be shared appear here. There are no public comments.</p>
+    </div>
+    <label class="prayer-wall-filter">Category
+      <select id="prayerWallFilter"><option value="all">All categories</option></select>
+    </label>
+  </div>
+  <div id="prayerWallGrid" class="prayer-wall-grid"></div>
+  <div id="prayerWallEmpty" class="prayer-wall-empty" hidden>
+    <strong>No public requests are available in this view yet.</strong>
+    <p>Private requests remain private from the wall, and public requests appear only after review.</p>
+  </div>
+</section>
+
+<section class="section prayer-answered" aria-labelledby="answered-prayer-title">
+  <div>
+    <p class="kicker">Answered prayer</p>
+    <h2 id="answered-prayer-title">Make room to give thanks, too.</h2>
+    <p>If you previously submitted a request and want to share an update or mark it answered, email the ministry team using the same email account you used for the request when possible.</p>
+  </div>
+  <a class="button secondary" href="mailto:team@nolabelsdesignedbygod.org?subject=Prayer%20Request%20Update%20or%20Answered%20Prayer&body=Original%20request%20title%3A%0AUpdate%3A%0AMay%20this%20update%20be%20shared%20publicly%3F%20Yes%20or%20No%3A%0A">Send an Update</a>
+</section>
+</main>
+<footer class="ministry-footer">
+  <div class="footer-invitation"><img src="no-labels-approved-logo.png" alt=""><div><strong>No Labels, Designed by God</strong><p>Prayer care that protects dignity, privacy, and hope.</p></div></div>
+  <div class="footer-links"></div>
+  <small>© <span data-year></span> No Labels Designed by God, LLC.</small>
+</footer>
+<script src="prayer-wall-data.js?v=1.0.0"></script>
+<script src="prayer.js?v=1.0.0"></script>
+<script src="script.js"></script>
+</body>
+</html>

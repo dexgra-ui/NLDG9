@@ -12,6 +12,7 @@ function initializeNavigation(){
     ['Start Here','new-believers.html','start'],
     ['Bible Studies','studies.html','studies'],
     ['Devotionals','devotionals.html','devotionals'],
+    ['Prayer','prayer.html','prayer'],
     ['Articles','articles.html','articles'],
     ['Newsletter','newsletter.html','newsletter'],
     ['Resource Center','resource-center.html','resources'],
@@ -33,6 +34,7 @@ function initializeNavigation(){
   else if(studyPages.has(page)||page.startsWith('study-')||page.startsWith('lesson-')||page.startsWith('women-of-faith-')||page.startsWith('men-of-faith-')||page.startsWith('marriage-family-')||page.startsWith('difficult-questions-')||page.startsWith('leadership-')||page.startsWith('walking-with-jesus-'))section='studies';
   else if(gamePages.has(page)||page.includes('game'))section='games';
   else if(page.startsWith('devotional'))section='devotionals';
+  else if(page==='prayer.html'||page.startsWith('prayer-'))section='prayer';
   else if(page.startsWith('article'))section='articles';
   else if(page.startsWith('newsletter')||location.pathname.includes('/newsletter/'))section='newsletter';
   else if(page.startsWith('podcast'))section='podcast';
@@ -130,7 +132,7 @@ function initializeNavigation(){
   }
 
   const sectionRoots={
-    start:['Start Here','new-believers.html'],studies:['Bible Studies','studies.html'],devotionals:['Devotionals','devotionals.html'],articles:['Articles','articles.html'],newsletter:['Newsletter','newsletter.html'],resources:['Resource Center','resource-center.html'],podcast:['Podcast','podcast.html'],news:['News','news.html'],search:['Search','search.html'],about:['Our Ministry','about.html'],games:['Games','play.html']
+    start:['Start Here','new-believers.html'],studies:['Bible Studies','studies.html'],devotionals:['Devotionals','devotionals.html'],prayer:['Prayer','prayer.html'],articles:['Articles','articles.html'],newsletter:['Newsletter','newsletter.html'],resources:['Resource Center','resource-center.html'],podcast:['Podcast','podcast.html'],news:['News','news.html'],search:['Search','search.html'],about:['Our Ministry','about.html'],games:['Games','play.html']
   };
   const navigationLandingPages=new Set([
     'new-believers.html','new-believer-mentor.html','new-believer-toolkit.html',
@@ -140,7 +142,7 @@ function initializeNavigation(){
     'sunday-school.html','women-of-faith.html','men-of-faith.html','marriage-family.html',
     'difficult-questions.html','leadership.html','walking-with-jesus.html',
     'study-library.html','dashboard.html','ministry-tools.html','topics.html','scripture-index.html',
-    'devotionals.html','articles.html','newsletter.html','resource-center.html','teaching-library.html',
+    'devotionals.html','prayer.html','articles.html','newsletter.html','resource-center.html','teaching-library.html',
     'podcast.html','news.html','search.html','site-map.html',
     'about.html','mission.html','contact.html','play.html','games.html','host-test-checklist.html'
   ]);
@@ -190,6 +192,7 @@ function initializeNavigation(){
     footerLinks.innerHTML=`
       <a href="new-believers.html">Start Here</a>
       <a href="studies.html">Bible Studies</a>
+      <a href="prayer.html"${page==='prayer.html'?' aria-current="page"':''}>Prayer</a>
       <a href="newsletter.html">Newsletter</a>
       <a href="resource-center.html">Resources</a>
       <a href="play.html">Games</a>

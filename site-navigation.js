@@ -61,6 +61,21 @@ function initializeNavigation(){
     }
   }
 
+  if(main&&document.body.classList.contains('gwj-study-page')){
+    const removeChildDataEntryTools=()=>{
+      main.querySelectorAll('.discipleship-tools').forEach(tool=>tool.remove());
+      main.querySelectorAll('form, input, textarea, select, [contenteditable="true"], input[type="file"]').forEach(control=>{
+        const form=control.closest('form');
+        if(form)form.remove();else control.remove();
+      });
+    };
+    removeChildDataEntryTools();
+    const childStudyObserver=new MutationObserver(removeChildDataEntryTools);
+    childStudyObserver.observe(main,{childList:true,subtree:true});
+    queueMicrotask(removeChildDataEntryTools);
+    setTimeout(removeChildDataEntryTools,0);
+  }
+
   const menu=header.querySelector('.menu');
   const setOpen=(open,returnFocus=false)=>{
     document.body.classList.toggle('nav-open',open);

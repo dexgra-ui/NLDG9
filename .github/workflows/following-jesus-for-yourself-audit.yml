@@ -4,9 +4,15 @@ on:
   workflow_dispatch:
   pull_request:
     paths:
-      - 'following-jesus-for-yourself.html'
-      - 'following-jesus-for-yourself-known-by-god.html'
+      - 'following-jesus-for-yourself*.html'
+      - 'following-jesus-for-yourself-library.js'
       - 'following-jesus-for-yourself.css'
+      - 'following-jesus-for-yourself-base.css'
+      - 'sitemap-following-jesus-for-yourself.xml'
+      - 'robots.txt'
+      - 'study-data.js'
+      - 'study-library.html'
+      - 'search.html'
       - 'styles.css'
       - 'script.js'
       - 'site-navigation.js'
@@ -15,9 +21,15 @@ on:
   push:
     branches: [main]
     paths:
-      - 'following-jesus-for-yourself.html'
-      - 'following-jesus-for-yourself-known-by-god.html'
+      - 'following-jesus-for-yourself*.html'
+      - 'following-jesus-for-yourself-library.js'
       - 'following-jesus-for-yourself.css'
+      - 'following-jesus-for-yourself-base.css'
+      - 'sitemap-following-jesus-for-yourself.xml'
+      - 'robots.txt'
+      - 'study-data.js'
+      - 'study-library.html'
+      - 'search.html'
       - 'styles.css'
       - 'script.js'
       - 'site-navigation.js'

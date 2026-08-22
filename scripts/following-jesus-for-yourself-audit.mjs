@@ -9,10 +9,19 @@ const axePath=['axe-core','axe','min','js'];
 const axeSource=await fs.readFile(require.resolve(`${axePath[0]}/${axePath.slice(1).join('.')}`),'utf8');
 const BASE_URL=process.env.AUDIT_BASE_URL||'http://127.0.0.1:4173';
 const OUTPUT=path.resolve('following-jesus-for-yourself-audit-results');
-const pages=[
-  {name:'collection',url:'following-jesus-for-yourself.html'},
-  {name:'lesson-1',url:'following-jesus-for-yourself-known-by-god.html'}
+const lessons=[
+  {name:'lesson-1',url:'following-jesus-for-yourself-known-by-god.html'},
+  {name:'lesson-2',url:'following-jesus-for-yourself-following-jesus.html'},
+  {name:'lesson-3',url:'following-jesus-for-yourself-read-scripture.html'},
+  {name:'lesson-4',url:'following-jesus-for-yourself-prayer.html'},
+  {name:'lesson-5',url:'following-jesus-for-yourself-questions-doubt-trust.html'},
+  {name:'lesson-6',url:'following-jesus-for-yourself-friends-pressure-belonging.html'},
+  {name:'lesson-7',url:'following-jesus-for-yourself-online-life-integrity.html'},
+  {name:'lesson-8',url:'following-jesus-for-yourself-wise-choices-boundaries.html'},
+  {name:'lesson-9',url:'following-jesus-for-yourself-when-you-mess-up.html'},
+  {name:'lesson-10',url:'following-jesus-for-yourself-purpose-gifts.html'}
 ];
+const pages=[{name:'collection',url:'following-jesus-for-yourself.html'},...lessons];
 const viewports=[
   {name:'phone-375',width:375,height:812},
   {name:'tablet-768',width:768,height:1024},
@@ -54,16 +63,20 @@ async function inspect(page,pageInfo,viewport){
 }
 
 async function contentChecks(page){
-  await page.goto(`${BASE_URL}/following-jesus-for-yourself-known-by-god.html`,{waitUntil:'networkidle'});
-  const lesson=(await page.locator('main').innerText()).toLowerCase();
   const required=['Big Question','Big Truth','Open Your Bible','Think It Through','Talk About It','Preteen Track','Teen Deeper Dive','Try It This Week','Memory Verse','Prayer','Leader / Parent Note'];
-  for(const phrase of required){
-    record(lesson.includes(phrase.toLowerCase()),`Lesson 1 includes ${phrase}.`,`Lesson 1 is missing ${phrase}.`);
+  for(const lessonInfo of lessons){
+    await page.goto(`${BASE_URL}/${lessonInfo.url}`,{waitUntil:'networkidle'});
+    const lesson=(await page.locator('main').innerText()).toLowerCase();
+    for(const phrase of required){
+      record(lesson.includes(phrase.toLowerCase()),`${lessonInfo.name} includes ${phrase}.`,`${lessonInfo.name} is missing ${phrase}.`);
+    }
+    const hasPassBoundary=lesson.includes('pass on')||lesson.includes('you may pass')||lesson.includes('or pass')||lesson.includes('do not have to')||lesson.includes('no forced disclosure')||lesson.includes('does not require private disclosure');
+    record(hasPassBoundary,`${lessonInfo.name} permits non-disclosure or passing on personal questions.`,`${lessonInfo.name} is missing a non-disclosure/pass boundary.`);
+    record(lesson.includes('safeguarding procedures'),`${lessonInfo.name} includes safeguarding guidance.`,`${lessonInfo.name} is missing safeguarding guidance.`);
+    record(lesson.includes('do not promise secrecy'),`${lessonInfo.name} states the secrecy boundary.`,`${lessonInfo.name} is missing the secrecy boundary.`);
+    const hasDataBoundary=lesson.includes('personal information')||lesson.includes('does not ask young people to submit')||lesson.includes('does not collect');
+    record(hasDataBoundary,`${lessonInfo.name} states a youth-data boundary.`,`${lessonInfo.name} is missing a youth-data boundary.`);
   }
-  record(lesson.includes('pass on a question')||lesson.includes('pass on any question'),'Lesson 1 permits young people to pass on personal questions.','Lesson 1 is missing a pass-on-personal-questions boundary.');
-  record(lesson.includes('safeguarding procedures'),'Lesson 1 includes safeguarding guidance.','Lesson 1 is missing safeguarding guidance.');
-  record(lesson.includes('do not promise secrecy'),'Lesson 1 states the secrecy boundary.','Lesson 1 is missing the secrecy boundary.');
-  record(lesson.includes('personal information'),'Lesson 1 states a youth-data boundary.','Lesson 1 is missing a youth-data boundary.');
 
   await page.goto(`${BASE_URL}/following-jesus-for-yourself.html`,{waitUntil:'networkidle'});
   const cards=await page.locator('.fyj-study-card').count();
@@ -72,9 +85,9 @@ async function contentChecks(page){
   const links=await page.locator('.fyj-study-card a[href^="following-jesus-for-yourself-"]').count();
   const collection=(await page.locator('main').innerText()).toLowerCase();
   record(cards===10,'Collection shows the ten-lesson journey.',`Collection expected 10 lesson cards, found ${cards}.`);
-  record(available===1,'Only the reference lesson is marked available.',`Expected 1 available lesson, found ${available}.`);
-  record(planned===9,'Nine lessons remain planned for website rollout.',`Expected 9 planned lessons, found ${planned}.`);
-  record(links===1,'Only the reference lesson links to a lesson page.',`Expected 1 lesson link, found ${links}.`);
+  record(available===10,'All ten youth lessons are marked available.',`Expected 10 available lessons, found ${available}.`);
+  record(planned===0,'No youth lessons remain marked planned.',`Expected 0 planned lessons, found ${planned}.`);
+  record(links===10,'All ten collection cards link to lesson pages.',`Expected 10 lesson links, found ${links}.`);
   record(collection.includes('preteen track')&&collection.includes('teen deeper dive'),'Collection explains both age lanes.','Collection is missing one or both age lanes.');
   record(collection.includes('non-denominational')&&collection.includes('jesus-centered'),'Collection states the Jesus-centered, non-denominational posture.','Collection is missing the ministry posture statement.');
   record(collection.includes('forced disclosure')&&collection.includes('safeguarding procedures'),'Collection states youth safety boundaries.','Collection is missing youth safety boundaries.');
@@ -97,7 +110,9 @@ async function run(){
         }
         await page.waitForLoadState('networkidle').catch(()=>{});
         await inspect(page,pageInfo,viewport);
-        await page.screenshot({path:path.join(OUTPUT,'screenshots',`${pageInfo.name}-${viewport.name}.png`),fullPage:true});
+        if(pageInfo.name==='collection'||viewport.width===375){
+          await page.screenshot({path:path.join(OUTPUT,'screenshots',`${pageInfo.name}-${viewport.name}.png`),fullPage:true});
+        }
         await context.close();
       }
     }
@@ -113,7 +128,7 @@ async function run(){
     `Generated: ${new Date().toISOString()}`,'',
     `Result: **${failures.length?'FAILED':'PASSED'}** with ${failures.length} failure(s).`,'',
     '## Failures','',
-    ...(failures.length?failures.map(item=>`- ${item}`):['No reference implementation failures were found.']),'',
+    ...(failures.length?failures.map(item=>`- ${item}`):['No Following Jesus for Yourself failures were found.']),'',
     '## Checks completed','',
     ...checks.map(item=>`- ${item}`),''
   ].join('\n');

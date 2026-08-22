@@ -3,3 +3,4 @@ Allow: /
 
 Sitemap: https://nolabelsdesignedbygod.org/sitemap.xml
 Sitemap: https://nolabelsdesignedbygod.org/sitemap-growing-with-jesus.xml
+Sitemap: https://nolabelsdesignedbygod.org/sitemap-following-jesus-for-yourself.xml

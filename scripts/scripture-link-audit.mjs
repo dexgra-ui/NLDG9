@@ -64,7 +64,8 @@ for(const file of files){
   }
 }
 
-if(!source.includes('content:"\\\\00a0↗"')||!source.includes('white-space:nowrap'))failures.push('External-link arrow is not protected from wrapping alone.');
+if(source.includes('scripture-reference-link::after')||source.includes('↗'))failures.push('Scripture links should not display a visible external-link arrow.');
+if(!source.includes('opens in a new tab'))failures.push('Scripture links must keep the screen-reader new-tab announcement.');
 
 if(failures.length){
   console.error(`Scripture link audit FAILED with ${failures.length} problem(s):`);

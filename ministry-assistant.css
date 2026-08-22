@@ -29,6 +29,7 @@
 .assistant-page .assistant-pane h2,.assistant-page .assistant-pane h3{color:var(--assistant-ink)}
 .assistant-page .assistant-pane h2{margin:.25rem 0 .7rem}
 .assistant-page .assistant-pane h3{margin:.85rem 0 .45rem}
+.assistant-page .assistant-tools-pane>section>h3{font-size:1.17rem;line-height:1.25;font-weight:800}
 .assistant-page .assistant-pane p,.assistant-page .assistant-pane li{color:var(--assistant-muted)}
 .assistant-page .passage-summary,.assistant-page .context-card{padding:.85rem;border:1px solid #cad9d0;border-radius:.75rem;background:var(--assistant-soft)}
 .assistant-page .movement-list{padding-left:1.25rem}

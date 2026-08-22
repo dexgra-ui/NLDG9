@@ -5,7 +5,8 @@ import { createRequire } from 'node:module';
 import { chromium } from 'playwright';
 
 const require=createRequire(import.meta.url);
-const axeSource=await fs.readFile(require.resolve('axe-core/axe.min.js'),'utf8');
+const axePath=['axe-core','axe','min','js'];
+const axeSource=await fs.readFile(require.resolve(`${axePath[0]}/${axePath.slice(1).join('.')}`),'utf8');
 const BASE_URL=process.env.AUDIT_BASE_URL||'http://127.0.0.1:4173';
 const OUTPUT=path.resolve('growing-with-jesus-audit-results');
 const pages=[

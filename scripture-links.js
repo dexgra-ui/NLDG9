@@ -42,7 +42,7 @@ function linkReferences(root=document.body){
  nodes.forEach(linkTextNode);
 }
 const style=document.createElement('style');
-style.textContent='.scripture-reference-link{color:#8fe9b6;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:750}.scripture-reference-link::after{content:"\\00a0↗";font-size:.72em;white-space:nowrap}.scripture-reference-link:hover,.scripture-reference-link:focus-visible{color:#ffd55f}.scripture-reference-link:focus-visible{outline:3px solid #ffd55f;outline-offset:3px;border-radius:3px}';
+style.textContent='.scripture-reference-link{color:#8fe9b6;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:750}.scripture-reference-link:hover,.scripture-reference-link:focus-visible{color:#ffd55f}.scripture-reference-link:focus-visible{outline:3px solid #ffd55f;outline-offset:3px;border-radius:3px}';
 document.head.appendChild(style);
 const start=()=>{
  linkReferences(document.body);

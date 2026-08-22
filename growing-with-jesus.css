@@ -1,8 +1,11 @@
-.gwj-page{--gwj-ink:#18201d;--gwj-muted:#59645f;--gwj-paper:#fffdf7;--gwj-card:#ffffff;--gwj-line:#d9ded7;--gwj-green:#2d5d4a;--gwj-green-soft:#edf6f1;--gwj-gold:#b77810;--gwj-gold-soft:#fff5d8;--gwj-blue:#315f8c;--gwj-blue-soft:#edf4fb;--gwj-coral:#a64b3c;--gwj-shadow:0 12px 32px rgba(10,29,24,.08);background:#f7f6f0;color:var(--gwj-ink)}
+.gwj-page{--gwj-ink:#18201d;--gwj-muted:#59645f;--gwj-paper:#fffdf7;--gwj-card:#ffffff;--gwj-line:#d9ded7;--gwj-green:#2d5d4a;--gwj-green-soft:#edf6f1;--gwj-gold:#8a5900;--gwj-gold-soft:#fff5d8;--gwj-blue:#315f8c;--gwj-blue-soft:#edf4fb;--gwj-coral:#a64b3c;--gwj-shadow:0 12px 32px rgba(10,29,24,.08);background:#f7f6f0;color:var(--gwj-ink)}
 .gwj-page main{color:var(--gwj-ink)}
 .gwj-page .section p,.gwj-page .section li{color:var(--gwj-muted)}
 .gwj-page .section h2,.gwj-page .section h3{color:var(--gwj-ink)}
 .gwj-page .kicker{color:var(--gwj-gold)}
+.gwj-page .ministry-footer{background:#06122d;color:#dce5f6}
+.gwj-page .ministry-footer p,.gwj-page .ministry-footer small{color:#c8d4e6}
+.gwj-page .ministry-footer a{color:#eef3ff}
 .gwj-hero,.gwj-study-hero{max-width:1500px;margin:0 auto;padding:clamp(3rem,7vw,6rem) clamp(1.25rem,6vw,5.4rem)}
 .gwj-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:clamp(1.5rem,4vw,4rem);align-items:center}
 .gwj-hero h1,.gwj-study-hero h1{margin:.35rem 0 1rem;color:#10241d;font-size:clamp(3rem,7vw,6rem);line-height:.94;letter-spacing:-.055em}

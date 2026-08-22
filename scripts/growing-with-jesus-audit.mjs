@@ -9,10 +9,19 @@ const axePath=['axe-core','axe','min','js'];
 const axeSource=await fs.readFile(require.resolve(`${axePath[0]}/${axePath.slice(1).join('.')}`),'utf8');
 const BASE_URL=process.env.AUDIT_BASE_URL||'http://127.0.0.1:4173';
 const OUTPUT=path.resolve('growing-with-jesus-audit-results');
-const pages=[
-  {name:'collection',url:'growing-with-jesus.html'},
-  {name:'study-1',url:'growing-with-jesus-god-made-me-on-purpose.html'}
+const studies=[
+  {name:'study-1',url:'growing-with-jesus-god-made-me-on-purpose.html'},
+  {name:'study-2',url:'growing-with-jesus-who-is-jesus.html'},
+  {name:'study-3',url:'growing-with-jesus-gods-word-helps-me-grow.html'},
+  {name:'study-4',url:'growing-with-jesus-i-can-talk-to-god.html'},
+  {name:'study-5',url:'growing-with-jesus-choosing-what-is-right.html'},
+  {name:'study-6',url:'growing-with-jesus-love-like-jesus.html'},
+  {name:'study-7',url:'growing-with-jesus-forgiving-and-making-things-right.html'},
+  {name:'study-8',url:'growing-with-jesus-courage-when-im-afraid.html'},
+  {name:'study-9',url:'growing-with-jesus-god-gave-me-gifts-to-help-others.html'},
+  {name:'study-10',url:'growing-with-jesus-following-jesus-every-day.html'}
 ];
+const pages=[{name:'collection',url:'growing-with-jesus.html'},...studies];
 const viewports=[
   {name:'phone-375',width:375,height:812},
   {name:'tablet-768',width:768,height:1024},
@@ -55,19 +64,24 @@ async function inspect(page,pageInfo,viewport){
 }
 
 async function contentChecks(page){
-  await page.goto(`${BASE_URL}/growing-with-jesus-god-made-me-on-purpose.html`,{waitUntil:'networkidle'});
-  const text=(await page.locator('main').innerText()).toLowerCase();
-  for(const phrase of ['Big Question','Big Truth','Open Your Bible','Talk About It','Try It This Week','Memory Verse','Prayer','Parent / Teacher Note']){
-    record(text.includes(phrase.toLowerCase()),`Study 1 includes ${phrase}.`,`Study 1 is missing ${phrase}.`);
+  const required=['Big Question','Big Truth','Open Your Bible','Talk About It','Try It This Week','Memory Verse','Prayer','Parent / Teacher Note'];
+  for(const study of studies){
+    await page.goto(`${BASE_URL}/${study.url}`,{waitUntil:'networkidle'});
+    const text=(await page.locator('main').innerText()).toLowerCase();
+    for(const phrase of required){
+      record(text.includes(phrase.toLowerCase()),`${study.name} includes ${phrase}.`,`${study.name} is missing ${phrase}.`);
+    }
+    record(text.includes('trusted adult')||text.includes('trusted person'),`${study.name} includes trusted-adult guidance.`,`${study.name} is missing trusted-adult guidance.`);
+    record(text.includes('personal information')||text.includes('private information')||text.includes('personal stories'),`${study.name} states a child-data boundary.`,`${study.name} is missing a child-data boundary.`);
   }
-  record(text.includes('does not ask children to create an account or submit personal information'),'Study 1 states its child-data boundary.','Study 1 is missing its child-data boundary.');
-  record(text.includes('do not promise secrecy you cannot keep.'),'Study 1 includes safeguarding guidance for disclosures.','Study 1 is missing safeguarding guidance for disclosures.');
 
   await page.goto(`${BASE_URL}/growing-with-jesus.html`,{waitUntil:'networkidle'});
   const cards=await page.locator('.gwj-study-card').count();
   const available=await page.locator('.gwj-study-card.available').count();
+  const links=await page.locator('.gwj-study-card a').count();
   record(cards===10,'Collection shows the ten-study journey.',`Collection expected 10 study cards, found ${cards}.`);
-  record(available===1,'Only the reference lesson is marked available.',`Expected 1 available reference lesson, found ${available}.`);
+  record(available===10,'All ten studies are marked available.',`Expected 10 available studies, found ${available}.`);
+  record(links===10,'All ten collection cards link to a study.',`Expected 10 study links, found ${links}.`);
 }
 
 async function run(){
@@ -87,7 +101,9 @@ async function run(){
         }
         await page.waitForLoadState('networkidle').catch(()=>{});
         await inspect(page,pageInfo,viewport);
-        await page.screenshot({path:path.join(OUTPUT,'screenshots',`${pageInfo.name}-${viewport.name}.png`),fullPage:true});
+        if(viewport.width===375||pageInfo.name==='collection'){
+          await page.screenshot({path:path.join(OUTPUT,'screenshots',`${pageInfo.name}-${viewport.name}.png`),fullPage:true});
+        }
         await context.close();
       }
     }

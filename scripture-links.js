@@ -6,7 +6,7 @@ const NUMBERED_BOOK_NAMES='Samuel|Kings|Chronicles|Corinthians|Thessalonians|Tim
 const RANGE_TAIL='(?:(?::\\d{1,3}(?:[-–—](?:\\d{1,3}(?::\\d{1,3})?))?)|(?:[-–—]\\d{1,3}(?::\\d{1,3})?))?';
 const CORE=`\\d{1,3}${RANGE_TAIL}`;
 const CONTINUATION=`\\d{1,3}(?!\\s+(?:${NUMBERED_BOOK_NAMES})\\b)${RANGE_TAIL}`;
-const REFERENCE=new RegExp(`\\b(?:${BOOKS})\\s+${CORE}(?:\\s*,\\s*${CORE})*(?:\\s*;\\s*${CONTINUATION}(?:\\s*,\\s*${CORE})*)*`,'gi');
+const REFERENCE=new RegExp(`\\b(?:${BOOKS})\\s+${CORE}(?:\\s*,\\s*${CONTINUATION})*(?:\\s*;\\s*${CONTINUATION}(?:\\s*,\\s*${CONTINUATION})*)*`,'gi');
 const SKIP='a,script,style,textarea,input,select,option,button,code,pre,[contenteditable="true"],.no-scripture-links';
 const passageUrl=reference=>`https://www.biblegateway.com/passage/?search=${encodeURIComponent(reference.replace(/[–—]/g,'-'))}`;
 const findReferences=text=>[...String(text||'').matchAll(REFERENCE)].map(match=>match[0]);

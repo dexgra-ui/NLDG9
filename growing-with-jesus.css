@@ -7,6 +7,7 @@
 .gwj-page .breadcrumbs{color:#46524d}
 .gwj-page .breadcrumbs a{color:#24523f}
 .gwj-page .breadcrumbs [aria-current="page"]{color:#3c4943}
+.gwj-page .scripture-reference-link{color:#1f513c;text-decoration:underline;text-underline-offset:.12em}
 .gwj-page .ministry-footer{background:#06122d;color:#dce5f6}
 .gwj-page .ministry-footer p,.gwj-page .ministry-footer small{color:#c8d4e6}
 .gwj-page .ministry-footer a{color:#eef3ff}

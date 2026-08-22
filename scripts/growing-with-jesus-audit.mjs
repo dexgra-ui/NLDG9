@@ -32,21 +32,31 @@ const checks=[];
 const record=(condition,success,failure)=>condition?checks.push(success):failures.push(failure);
 
 async function inspect(page,pageInfo,viewport){
-  const state=await page.evaluate(()=>({
-    overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-document.documentElement.clientWidth,
-    h1Count:document.querySelectorAll('h1').length,
-    title:document.title.trim(),
-    missingAlt:[...document.images].filter(image=>!image.hasAttribute('alt')).length,
-    formCount:document.querySelectorAll('main form,main input,main textarea,main select').length,
-    passwordCount:document.querySelectorAll('main input[type="password"]').length,
-    publicInteractionCount:document.querySelectorAll('main [contenteditable="true"],main input[type="file"]').length
-  }));
+  const state=await page.evaluate(()=>{
+    const isVisible=node=>{
+      const style=getComputedStyle(node);
+      const rect=node.getBoundingClientRect();
+      return style.display!=='none'&&style.visibility!=='hidden'&&rect.width>0&&rect.height>0;
+    };
+    return {
+      overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-document.documentElement.clientWidth,
+      h1Count:document.querySelectorAll('h1').length,
+      title:document.title.trim(),
+      missingAlt:[...document.images].filter(image=>!image.hasAttribute('alt')).length,
+      formCount:document.querySelectorAll('main form,main input,main textarea,main select').length,
+      passwordCount:document.querySelectorAll('main input[type="password"]').length,
+      publicInteractionCount:document.querySelectorAll('main [contenteditable="true"],main input[type="file"]').length,
+      genericExtrasVisible:[...document.querySelectorAll('main .content-sequence,main .related-content')].filter(isVisible).length,
+      genericProgressVisible:[...document.querySelectorAll('main button')].filter(button=>isVisible(button)&&/^(save|mark complete)$/i.test(button.textContent.trim())).length
+    };
+  });
   const prefix=`${pageInfo.name} ${viewport.name}`;
   record(state.overflow<=2,`${prefix}: no horizontal overflow.`,`${prefix}: horizontal overflow is ${state.overflow}px.`);
   record(state.h1Count===1,`${prefix}: one H1 heading.`,`${prefix}: expected one H1, found ${state.h1Count}.`);
   record(Boolean(state.title),`${prefix}: document title present.`,`${prefix}: document title missing.`);
   record(state.missingAlt===0,`${prefix}: images include alt attributes.`,`${prefix}: ${state.missingAlt} image(s) missing alt attributes.`);
   record(state.formCount===0&&state.passwordCount===0&&state.publicInteractionCount===0,`${prefix}: no child data-entry or upload controls in main content.`,`${prefix}: found child data-entry, password, or upload controls in main content.`);
+  record(state.genericExtrasVisible===0&&state.genericProgressVisible===0,`${prefix}: no generic study navigation, related-content, or progress controls are visible.`,`${prefix}: found ${state.genericExtrasVisible} generic study extra(s) and ${state.genericProgressVisible} generic progress control(s) visible.`);
 
   if([375,1440].includes(viewport.width)){
     await page.addScriptTag({content:axeSource});

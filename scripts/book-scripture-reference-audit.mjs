@@ -8,7 +8,7 @@ const NUMBERED_BOOK_NAMES='Samuel|Kings|Chronicles|Corinthians|Thessalonians|Tim
 const RANGE_TAIL='(?:(?::\\d{1,3}(?:[-–—](?:\\d{1,3}(?::\\d{1,3})?))?)|(?:[-–—]\\d{1,3}(?::\\d{1,3})?))?';
 const CORE=`\\d{1,3}${RANGE_TAIL}`;
 const CONTINUATION=`\\d{1,3}(?!\\s+(?:${NUMBERED_BOOK_NAMES})\\b)${RANGE_TAIL}`;
-const REFERENCE=new RegExp(`\\b(?:${BOOKS})\\s+${CORE}(?:\\s*,\\s*${CORE})*(?:\\s*;\\s*${CONTINUATION}(?:\\s*,\\s*${CORE})*)*`,'gi');
+const REFERENCE=new RegExp(`\\b(?:${BOOKS})\\s+${CORE}(?:\\s*,\\s*${CONTINUATION})*(?:\\s*;\\s*${CONTINUATION}(?:\\s*,\\s*${CONTINUATION})*)*`,'gi');
 const BOOK_START=new RegExp(`^(?:${BOOKS})\\s+`,'i');
 
 const catalog=await fs.readFile(path.join(ROOT,'book-by-book.html'),'utf8');

@@ -44,9 +44,10 @@ function inspectReference({file,book,lessonNumber,field,value}){
   }
 }
 
+const dataSuffix=['-data','js'].join('.');
 for(const card of cards){
   const james=card.url==='james-series.html';
-  const file=james?'james-series-data.js':card.url.replace(/\.html$/i,'-data.js');
+  const file=james?'james-series-data.js':card.url.replace(/\.html$/i,dataSuffix);
   const fullPath=path.join(ROOT,file);
   try{
     await fs.access(fullPath);

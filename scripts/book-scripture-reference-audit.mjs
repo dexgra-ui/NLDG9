@@ -12,13 +12,13 @@ const REFERENCE=new RegExp(`\\b(?:${BOOKS})\\s+${CORE}(?:\\s*,\\s*${CORE})*(?:\\
 const BOOK_START=new RegExp(`^(?:${BOOKS})\\s+`,'i');
 
 const catalog=await fs.readFile(path.join(ROOT,'book-by-book.html'),'utf8');
-const expectedFiles=[...new Set([...catalog.matchAll(/href="([a-z0-9-]+-study)\.html"/gi)].map(match=>`${match[1]}-data.js`))];
+const cards=[...catalog.matchAll(/<article class="book-card">[\s\S]*?<h2>([^<]+)<\/h2>[\s\S]*?<a href="([^"]+)"/gi)].map(match=>({book:match[1].trim(),url:match[2].trim()}));
 const findings=[];
 let books=0;
 let lessons=0;
 
-if(expectedFiles.length!==66){
-  findings.push({file:'book-by-book.html',book:'Catalog',lessonNumber:'—',field:'catalog',value:String(expectedFiles.length),reason:`Expected 66 Book-by-Book study files from the catalog, found ${expectedFiles.length}.`});
+if(cards.length!==66){
+  findings.push({file:'book-by-book.html',book:'Catalog',lessonNumber:'—',field:'catalog',value:String(cards.length),reason:`Expected 66 Book-by-Book catalog cards, found ${cards.length}.`});
 }
 
 function normalizedRemainder(value){
@@ -44,12 +44,14 @@ function inspectReference({file,book,lessonNumber,field,value}){
   }
 }
 
-for(const file of expectedFiles){
+for(const card of cards){
+  const james=card.url==='james-series.html';
+  const file=james?'james-series-data.js':card.url.replace(/\.html$/i,'-data.js');
   const fullPath=path.join(ROOT,file);
   try{
     await fs.access(fullPath);
   }catch{
-    findings.push({file,book:'Unknown',lessonNumber:'—',field:'file',value:'',reason:'Catalog study is missing its expected *-study-data.js file.'});
+    findings.push({file,book:card.book,lessonNumber:'—',field:'file',value:'',reason:'Catalog study is missing its expected data file.'});
     continue;
   }
   const code=await fs.readFile(fullPath,'utf8');
@@ -57,20 +59,21 @@ for(const file of expectedFiles){
   try{
     vm.runInNewContext(code,sandbox,{filename:file,timeout:2000});
   }catch(error){
-    findings.push({file,book:'Unknown',lessonNumber:'—',field:'load',value:error.message,reason:'Study data could not be evaluated by the audit.'});
+    findings.push({file,book:card.book,lessonNumber:'—',field:'load',value:error.message,reason:'Study data could not be evaluated by the audit.'});
     continue;
   }
-  const study=sandbox.window.NLDG_BOOK_STUDY;
-  if(!study||!Array.isArray(study.lessons)){
-    findings.push({file,book:'Unknown',lessonNumber:'—',field:'load',value:'',reason:'Study data did not expose window.NLDG_BOOK_STUDY with a lessons array.'});
+  const source=james?sandbox.window.NLDG_JAMES_SERIES:sandbox.window.NLDG_BOOK_STUDY;
+  if(!source||!Array.isArray(source.lessons)){
+    findings.push({file,book:card.book,lessonNumber:'—',field:'load',value:'',reason:'Study data did not expose the expected lesson collection.'});
     continue;
   }
   books++;
-  for(const lesson of study.lessons){
+  for(const lesson of source.lessons){
     lessons++;
-    inspectReference({file,book:study.book||study.title,lessonNumber:lesson.number,field:'scripture',value:lesson.scripture});
+    const lessonNumber=lesson.number??lesson.week;
+    inspectReference({file,book:card.book,lessonNumber,field:'scripture',value:lesson.scripture});
     for(const [index,supporting] of (lesson.supporting||[]).entries()){
-      inspectReference({file,book:study.book||study.title,lessonNumber:lesson.number,field:`supporting[${index}]`,value:supporting});
+      inspectReference({file,book:card.book,lessonNumber,field:`supporting[${index}]`,value:supporting});
     }
   }
 }

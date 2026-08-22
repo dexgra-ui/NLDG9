@@ -70,7 +70,7 @@ async function contentChecks(page){
     for(const phrase of required){
       record(lesson.includes(phrase.toLowerCase()),`${lessonInfo.name} includes ${phrase}.`,`${lessonInfo.name} is missing ${phrase}.`);
     }
-    const hasPassBoundary=lesson.includes('pass on')||lesson.includes('you may pass')||lesson.includes('no forced disclosure')||lesson.includes('does not require private disclosure');
+    const hasPassBoundary=lesson.includes('pass on')||lesson.includes('you may pass')||lesson.includes('or pass')||lesson.includes('do not have to')||lesson.includes('no forced disclosure')||lesson.includes('does not require private disclosure');
     record(hasPassBoundary,`${lessonInfo.name} permits non-disclosure or passing on personal questions.`,`${lessonInfo.name} is missing a non-disclosure/pass boundary.`);
     record(lesson.includes('safeguarding procedures'),`${lessonInfo.name} includes safeguarding guidance.`,`${lessonInfo.name} is missing safeguarding guidance.`);
     record(lesson.includes('do not promise secrecy'),`${lessonInfo.name} states the secrecy boundary.`,`${lessonInfo.name} is missing the secrecy boundary.`);

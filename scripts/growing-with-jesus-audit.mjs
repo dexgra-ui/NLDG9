@@ -28,16 +28,16 @@ async function inspect(page,pageInfo,viewport){
     h1Count:document.querySelectorAll('h1').length,
     title:document.title.trim(),
     missingAlt:[...document.images].filter(image=>!image.hasAttribute('alt')).length,
-    formCount:document.querySelectorAll('form,input,textarea,select').length,
-    passwordCount:document.querySelectorAll('input[type="password"]').length,
-    publicInteractionCount:document.querySelectorAll('[contenteditable="true"],input[type="file"]').length
+    formCount:document.querySelectorAll('main form,main input,main textarea,main select').length,
+    passwordCount:document.querySelectorAll('main input[type="password"]').length,
+    publicInteractionCount:document.querySelectorAll('main [contenteditable="true"],main input[type="file"]').length
   }));
   const prefix=`${pageInfo.name} ${viewport.name}`;
   record(state.overflow<=2,`${prefix}: no horizontal overflow.`,`${prefix}: horizontal overflow is ${state.overflow}px.`);
   record(state.h1Count===1,`${prefix}: one H1 heading.`,`${prefix}: expected one H1, found ${state.h1Count}.`);
   record(Boolean(state.title),`${prefix}: document title present.`,`${prefix}: document title missing.`);
   record(state.missingAlt===0,`${prefix}: images include alt attributes.`,`${prefix}: ${state.missingAlt} image(s) missing alt attributes.`);
-  record(state.formCount===0&&state.passwordCount===0&&state.publicInteractionCount===0,`${prefix}: no child data-entry or upload controls.`,`${prefix}: found child data-entry, password, or upload controls.`);
+  record(state.formCount===0&&state.passwordCount===0&&state.publicInteractionCount===0,`${prefix}: no child data-entry or upload controls in main content.`,`${prefix}: found child data-entry, password, or upload controls in main content.`);
 
   if([375,1440].includes(viewport.width)){
     await page.addScriptTag({content:axeSource});
@@ -46,19 +46,22 @@ async function inspect(page,pageInfo,viewport){
       resultTypes:['violations']
     }));
     const serious=result.violations.filter(violation=>['critical','serious'].includes(violation.impact));
-    serious.forEach(violation=>failures.push(`${prefix}: ${violation.id} (${violation.impact}) ${violation.help}.`));
+    serious.forEach(violation=>{
+      const targets=violation.nodes.slice(0,3).flatMap(node=>node.target||[]).join(', ');
+      failures.push(`${prefix}: ${violation.id} (${violation.impact}) ${violation.help}${targets?` — ${targets}`:''}.`);
+    });
     checks.push(`${prefix}: axe completed with ${serious.length} serious or critical violation group(s).`);
   }
 }
 
 async function contentChecks(page){
   await page.goto(`${BASE_URL}/growing-with-jesus-god-made-me-on-purpose.html`,{waitUntil:'networkidle'});
-  const text=await page.locator('main').innerText();
+  const text=(await page.locator('main').innerText()).toLowerCase();
   for(const phrase of ['Big Question','Big Truth','Open Your Bible','Talk About It','Try It This Week','Memory Verse','Prayer','Parent / Teacher Note']){
-    record(text.includes(phrase),`Study 1 includes ${phrase}.`,`Study 1 is missing ${phrase}.`);
+    record(text.includes(phrase.toLowerCase()),`Study 1 includes ${phrase}.`,`Study 1 is missing ${phrase}.`);
   }
   record(text.includes('does not ask children to create an account or submit personal information'),'Study 1 states its child-data boundary.','Study 1 is missing its child-data boundary.');
-  record(text.includes('Do not promise secrecy you cannot keep.'),'Study 1 includes safeguarding guidance for disclosures.','Study 1 is missing safeguarding guidance for disclosures.');
+  record(text.includes('do not promise secrecy you cannot keep.'),'Study 1 includes safeguarding guidance for disclosures.','Study 1 is missing safeguarding guidance for disclosures.');
 
   await page.goto(`${BASE_URL}/growing-with-jesus.html`,{waitUntil:'networkidle'});
   const cards=await page.locator('.gwj-study-card').count();

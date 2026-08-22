@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://nolabelsdesignedbygod.org/sitemap.xml
+Sitemap: https://nolabelsdesignedbygod.org/sitemap-growing-with-jesus.xml

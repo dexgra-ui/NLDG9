@@ -78,7 +78,7 @@ async function contentChecks(page){
   await page.goto(`${BASE_URL}/growing-with-jesus.html`,{waitUntil:'networkidle'});
   const cards=await page.locator('.gwj-study-card').count();
   const available=await page.locator('.gwj-study-card.available').count();
-  const links=await page.locator('.gwj-study-card a').count();
+  const links=await page.locator('.gwj-study-card a[href^="growing-with-jesus-"]').count();
   record(cards===10,'Collection shows the ten-study journey.',`Collection expected 10 study cards, found ${cards}.`);
   record(available===10,'All ten studies are marked available.',`Expected 10 available studies, found ${available}.`);
   record(links===10,'All ten collection cards link to a study.',`Expected 10 study links, found ${links}.`);

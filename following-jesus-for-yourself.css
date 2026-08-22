@@ -1,0 +1,5 @@
+@import url('following-jesus-for-yourself-base.css');
+
+/* Accessibility contrast overrides for the youth reference build. */
+.fyj-study-card.planned small{color:#586273}
+.fyj-block .scripture-reference-link{color:#0b5555;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}

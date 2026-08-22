@@ -1,0 +1,26 @@
+name: Book-by-Book Scripture Reference Audit
+
+on:
+  pull_request:
+    paths:
+      - '*-study-data.js'
+      - 'scripture-links.js'
+      - 'scripts/book-scripture-reference-audit.mjs'
+      - '.github/workflows/book-scripture-reference-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scripture-references:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit Book-by-Book references
+        run: node scripts/book-scripture-reference-audit.mjs

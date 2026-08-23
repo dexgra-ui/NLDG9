@@ -4,6 +4,7 @@ window.NLDG_CONTACT_LINKS_LOADED=true;
 const nested=/\/(?:articles|devotionals|newsletter)\//i.test(location.pathname);
 const isContact=/(^|\/)contact\.html$/i.test(location.pathname);
 const root=nested?'../':'';
+const shopUrl='https://no-labels-designed-by-god-shop.fourthwall.com/';
 const surveyIntegration=document.createElement('script');
 surveyIntegration.src=`${root}survey-game-integration.js?v=2.0.0`;
 surveyIntegration.async=false;
@@ -21,11 +22,27 @@ leaderMode.src=`${root}universal-leader-mode.js?v=1.0.0`;
 leaderMode.async=false;
 document.head.appendChild(leaderMode);
 const ensure=()=>{
+ const primaryNav=document.getElementById('primary-navigation');
+ if(primaryNav&&!primaryNav.querySelector('a[data-shop-link]')){
+  const shop=document.createElement('a');
+  shop.href=shopUrl;
+  shop.dataset.shopLink='true';
+  shop.textContent='Shop';
+  const games=primaryNav.querySelector('.play-link');
+  primaryNav.insertBefore(shop,games||null);
+ }
  document.querySelectorAll('.ministry-footer').forEach(footer=>{
   let links=footer.querySelector('.footer-links');
   if(!links){links=document.createElement('div');links.className='footer-links';const small=footer.querySelector('small');footer.insertBefore(links,small||null)}
   let contact=links.querySelector('a[data-contact-page]');
   if(!contact){contact=document.createElement('a');contact.href=`${root}contact.html`;contact.dataset.contactPage='true';contact.textContent='Contact & Feedback';links.appendChild(contact)}
+  if(!links.querySelector('a[data-shop-link]')){
+   const shop=document.createElement('a');
+   shop.href=shopUrl;
+   shop.dataset.shopLink='true';
+   shop.textContent='Shop';
+   links.insertBefore(shop,contact);
+  }
   if(isContact)contact.setAttribute('aria-current','page');
   links.querySelectorAll('a[href="mailto:team@nolabelsdesignedbygod.org"]').forEach(link=>link.remove());
  });

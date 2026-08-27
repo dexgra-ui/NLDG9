@@ -27,7 +27,7 @@
   const participant=document.createElement('div');
   participant.className='v2-participant-guide';
   participant.innerHTML=`
-    <div class="curriculum-v2-badge">Curriculum v${escapeHtml(lesson.version)} · Reference Lesson</div>
+    <div class="curriculum-v2-badge">Curriculum v${escapeHtml(lesson.version)} · ${escapeHtml(lesson.curriculumStatus||'Curriculum Lesson')}</div>
     <section class="v2-snapshot">
       <div class="v2-card"><p class="kicker">Lesson snapshot</p><h2>${escapeHtml(lesson.bigIdea)}</h2><p><strong>Opening question:</strong> ${escapeHtml(lesson.openingQuestion)}</p></div>
       <div class="v2-card"><ul class="v2-meta-list"><li><strong>Primary text</strong><span>${escapeHtml(lesson.scripture.join(' • '))}</span></li><li><strong>Memory verse</strong><span>${escapeHtml(lesson.memoryVerse)}</span></li><li><strong>Teaching time</strong><span>45, 60, or 90 minutes</span></li></ul></div>
@@ -46,7 +46,7 @@
     <section class="v2-leader-intro"><div><div class="curriculum-v2-badge">Expanded Leader Guide</div><h2>Teach Week ${week} with confidence</h2><p>${escapeHtml(guide.purpose)}</p></div><button type="button" id="leader-print-v2">Print Guide</button></section>
     <div class="v2-leader-grid">
       <section class="v2-leader-card"><h3>Before You Teach</h3>${list(guide.preparation)}</section>
-      <section class="v2-leader-card"><h3>Prayer Focus</h3><p>${escapeHtml(guide.prayerFocus)}</p><div class="v2-callout"><strong>Leader reminder</strong><p>The goal is not to win an argument about technology. The goal is to help people follow Jesus faithfully.</p></div></section>
+      <section class="v2-leader-card"><h3>Prayer Focus</h3><p>${escapeHtml(guide.prayerFocus)}</p><div class="v2-callout"><strong>Leader reminder</strong><p>${escapeHtml(guide.leaderReminder||'The goal is not to win an argument. The goal is to help people follow Jesus faithfully.')}</p></div></section>
       <section class="v2-leader-card wide"><h3>Biblical and Historical Background</h3>${guide.background.map(item=>`<div class="v2-question"><strong>${escapeHtml(item.heading)}</strong><p>${escapeHtml(item.content)}</p></div>`).join('')}</section>
       <section class="v2-leader-card"><h3>Theological Themes</h3>${list(guide.theology)}</section>
       <section class="v2-leader-card"><h3>Biblical Worldview</h3><p><strong>Foundation:</strong> ${escapeHtml(guide.worldview.foundation)}</p><p><strong>Affirm:</strong> ${escapeHtml(guide.worldview.affirm)}</p><p><strong>Caution:</strong> ${escapeHtml(guide.worldview.caution)}</p><p><strong>Faithful response:</strong> ${escapeHtml(guide.worldview.response)}</p></section>

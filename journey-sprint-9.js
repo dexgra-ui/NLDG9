@@ -1,5 +1,4 @@
 (function(){
-  const SERIES_KEY='nldg-series-current-events';
   const MEMORY_KEY='nldg-journey-memory-v1';
   const PRAYER_KEY='nldg-prayers-v1';
   const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -8,6 +7,7 @@
   const mount=document.getElementById('sprint9-dashboard');
   if(!mount||!series)return;
 
+  const SERIES_KEY=`nldg-series-${series.id}`;
   const state=read(SERIES_KEY,{completed:[]});
   const available=series.lessons.filter(x=>x.status==='complete');
   const complete=new Set((state.completed||[]).filter(w=>available.some(x=>x.week===w)));

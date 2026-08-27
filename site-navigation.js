@@ -223,6 +223,14 @@ function initializeNavigation(){
       <a href="https://www.facebook.com/NoLabelsDesignedbyGod" target="_blank" rel="noopener noreferrer" aria-label="Follow No Labels, Designed by God on Facebook">Facebook ↗</a>
       <a href="https://substack.com/@nolabelsdesignedbygod" target="_blank" rel="noopener noreferrer" aria-label="Read No Labels, Designed by God on Substack">Substack ↗</a>`;
   }
+
+  const trademarkDisplayName='No Labels, Designed by God™';
+  const brandName=header.querySelector('.brand strong');
+  if(brandName)brandName.textContent=trademarkDisplayName;
+  document.querySelectorAll('.footer-invitation strong,.site-intro-title').forEach(el=>{el.textContent=trademarkDisplayName;});
+  document.querySelectorAll('.ministry-footer > small').forEach(el=>{
+    el.textContent=`© ${new Date().getFullYear()} No Labels Designed by God LLC. All rights reserved. No Labels Designed by God™ is a claimed trademark.`;
+  });
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initializeNavigation,{once:true});else initializeNavigation();
 })();

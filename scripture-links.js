@@ -46,8 +46,10 @@ style.textContent='.scripture-reference-link{color:#8fe9b6;text-decoration:under
 document.head.appendChild(style);
 const loadDepthEnhancement=()=>{
  let src='';
+ const studyId=String(document.body?.dataset.studyPage||'');
  if(document.body?.classList.contains('fyj-study-page'))src='following-jesus-depth.js?v=1.0.0';
- else if(String(document.body?.dataset.studyPage||'').startsWith('men-'))src='men-of-faith-depth.js?v=1.0.0';
+ else if(studyId.startsWith('men-'))src='men-of-faith-depth.js?v=1.0.0';
+ else if(studyId.startsWith('women-'))src='women-of-faith-depth.js?v=1.0.0';
  if(!src||[...document.scripts].some(script=>script.src.includes(src.split('?')[0])))return;
  const script=document.createElement('script');
  script.src=new URL(src,document.currentScript?.src||location.href).href;

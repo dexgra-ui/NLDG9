@@ -67,7 +67,7 @@ const ensure=()=>{
    ['Terms of Use','terms.html'],
    ['Privacy','privacy.html'],
    ['Disclaimer','disclaimer.html'],
-   ['Copyright & Trademark','copyright.html']
+   ['Copyright &amp; Trademark','copyright.html']
   ].map(([label,href])=>`<a href="${root}${href}"${pageName===href?' aria-current="page"':''}>${label}</a>`).join('');
   if(legal.innerHTML!==legalHtml)legal.innerHTML=legalHtml;
  });

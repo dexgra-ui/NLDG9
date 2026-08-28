@@ -26,7 +26,7 @@ document.head.appendChild(leaderMode);
 if(!document.querySelector('style[data-legal-footer-styles]')){
  const style=document.createElement('style');
  style.dataset.legalFooterStyles='true';
- style.textContent='.footer-legal-links{display:flex;gap:16px;flex-wrap:wrap;grid-column:1/-1;font-size:.88rem}.footer-legal-links a{text-decoration:none}.footer-legal-links a:hover,.footer-legal-links a:focus-visible{text-decoration:underline}.site-header nav a[data-language-link]{color:#ffd34f}';
+ style.textContent='.footer-legal-links{display:flex;gap:16px;flex-wrap:wrap;grid-column:1/-1;font-size:.88rem}.footer-legal-links a{text-decoration:none}.footer-legal-links a:hover,.footer-legal-links a:focus-visible{text-decoration:underline}';
  document.head.appendChild(style);
 }
 const ensure=()=>{
@@ -39,16 +39,6 @@ const ensure=()=>{
   const games=primaryNav.querySelector('.play-link');
   primaryNav.insertBefore(shop,games||null);
  }
- if(primaryNav&&!primaryNav.querySelector('a[data-language-link]')){
-  const language=document.createElement('a');
-  language.href=`${root}es/index.html`;
-  language.dataset.languageLink='true';
-  language.lang='es';
-  language.textContent='Español';
-  language.setAttribute('aria-label','Ver recursos en español');
-  const games=primaryNav.querySelector('.play-link');
-  primaryNav.insertBefore(language,games||null);
- }
  document.querySelectorAll('.ministry-footer').forEach(footer=>{
   let links=footer.querySelector('.footer-links');
   if(!links){links=document.createElement('div');links.className='footer-links';const small=footer.querySelector('small');footer.insertBefore(links,small||null)}
@@ -60,14 +50,6 @@ const ensure=()=>{
    shop.dataset.shopLink='true';
    shop.textContent='Shop';
    links.insertBefore(shop,contact);
-  }
-  if(!links.querySelector('a[data-language-link]')){
-   const language=document.createElement('a');
-   language.href=`${root}es/index.html`;
-   language.dataset.languageLink='true';
-   language.lang='es';
-   language.textContent='Español';
-   links.insertBefore(language,contact);
   }
   if(isContact)contact.setAttribute('aria-current','page');
   links.querySelectorAll('a[href$="privacy.html"],a[href$="terms.html"],a[href$="disclaimer.html"],a[href$="copyright.html"]').forEach(link=>link.remove());

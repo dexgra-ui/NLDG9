@@ -1,14 +1,30 @@
 (()=>{
 if(window.NLDG_SCRIPTURE_LINKS_LOADED)return;
 window.NLDG_SCRIPTURE_LINKS_LOADED=true;
-const BOOKS='Genesis|Exodus|Leviticus|Numbers|Deuteronomy|Joshua|Judges|Ruth|1 Samuel|2 Samuel|1 Kings|2 Kings|1 Chronicles|2 Chronicles|Ezra|Nehemiah|Esther|Job|Psalms?|Proverbs|Ecclesiastes|Song of Songs|Song of Solomon|Isaiah|Jeremiah|Lamentations|Ezekiel|Daniel|Hosea|Joel|Amos|Obadiah|Jonah|Micah|Nahum|Habakkuk|Zephaniah|Haggai|Zechariah|Malachi|Matthew|Mark|Luke|John|Acts|Romans|1 Corinthians|2 Corinthians|Galatians|Ephesians|Philippians|Colossians|1 Thessalonians|2 Thessalonians|1 Timothy|2 Timothy|Titus|Philemon|Hebrews|James|1 Peter|2 Peter|1 John|2 John|3 John|Jude|Revelation';
-const NUMBERED_BOOK_NAMES='Samuel|Kings|Chronicles|Corinthians|Thessalonians|Timothy|Peter|John';
+const ENGLISH_BOOKS='Genesis|Exodus|Leviticus|Numbers|Deuteronomy|Joshua|Judges|Ruth|1 Samuel|2 Samuel|1 Kings|2 Kings|1 Chronicles|2 Chronicles|Ezra|Nehemiah|Esther|Job|Psalms?|Proverbs|Ecclesiastes|Song of Songs|Song of Solomon|Isaiah|Jeremiah|Lamentations|Ezekiel|Daniel|Hosea|Joel|Amos|Obadiah|Jonah|Micah|Nahum|Habakkuk|Zephaniah|Haggai|Zechariah|Malachi|Matthew|Mark|Luke|John|Acts|Romans|1 Corinthians|2 Corinthians|Galatians|Ephesians|Philippians|Colossians|1 Thessalonians|2 Thessalonians|1 Timothy|2 Timothy|Titus|Philemon|Hebrews|James|1 Peter|2 Peter|1 John|2 John|3 John|Jude|Revelation';
+const SPANISH_BOOKS='Génesis|Éxodo|Levítico|Números|Deuteronomio|Josué|Jueces|Rut|1 Samuel|2 Samuel|1 Reyes|2 Reyes|1 Crónicas|2 Crónicas|Esdras|Nehemías|Ester|Job|Salmos?|Proverbios|Eclesiastés|Cantar de los Cantares|Isaías|Jeremías|Lamentaciones|Ezequiel|Daniel|Oseas|Joel|Amós|Abdías|Jonás|Miqueas|Nahúm|Habacuc|Sofonías|Hageo|Zacarías|Malaquías|Mateo|Marcos|Lucas|Juan|Hechos|Romanos|1 Corintios|2 Corintios|Gálatas|Efesios|Filipenses|Colosenses|1 Tesalonicenses|2 Tesalonicenses|1 Timoteo|2 Timoteo|Tito|Filemón|Hebreos|Santiago|1 Pedro|2 Pedro|1 Juan|2 Juan|3 Juan|Judas|Apocalipsis';
+const BOOKS=`${ENGLISH_BOOKS}|${SPANISH_BOOKS}`;
+const NUMBERED_BOOK_NAMES='Samuel|Kings|Chronicles|Corinthians|Thessalonians|Timothy|Peter|John|Reyes|Crónicas|Corintios|Tesalonicenses|Timoteo|Pedro|Juan';
 const RANGE_TAIL='(?:(?::\\d{1,3}(?:[-–—](?:\\d{1,3}(?::\\d{1,3})?))?)|(?:[-–—]\\d{1,3}(?::\\d{1,3})?))?';
 const CORE=`\\d{1,3}${RANGE_TAIL}`;
 const CONTINUATION=`\\d{1,3}(?!\\s+(?:${NUMBERED_BOOK_NAMES})\\b)${RANGE_TAIL}`;
-const REFERENCE=new RegExp(`\\b(?:${BOOKS})\\s+${CORE}(?:\\s*,\\s*${CONTINUATION})*(?:\\s*;\\s*${CONTINUATION}(?:\\s*,\\s*${CONTINUATION})*)*`,'gi');
+const REFERENCE=new RegExp(`(?<![\\p{L}\\p{N}_])(?:${BOOKS})\\s+${CORE}(?:\\s*,\\s*${CONTINUATION})*(?:\\s*;\\s*${CONTINUATION}(?:\\s*,\\s*${CONTINUATION})*)*`,'giu');
 const SKIP='a,script,style,textarea,input,select,option,button,code,pre,[contenteditable="true"],.no-scripture-links';
-const passageUrl=reference=>`https://www.biblegateway.com/passage/?search=${encodeURIComponent(reference.replace(/[–—]/g,'-'))}`;
+const SPANISH_TO_ENGLISH={
+ 'Génesis':'Genesis','Éxodo':'Exodus','Levítico':'Leviticus','Números':'Numbers','Deuteronomio':'Deuteronomy','Josué':'Joshua','Jueces':'Judges','Rut':'Ruth','1 Reyes':'1 Kings','2 Reyes':'2 Kings','1 Crónicas':'1 Chronicles','2 Crónicas':'2 Chronicles','Esdras':'Ezra','Nehemías':'Nehemiah','Ester':'Esther','Salmo':'Psalm','Salmos':'Psalms','Proverbios':'Proverbs','Eclesiastés':'Ecclesiastes','Cantar de los Cantares':'Song of Songs','Isaías':'Isaiah','Jeremías':'Jeremiah','Lamentaciones':'Lamentations','Ezequiel':'Ezekiel','Oseas':'Hosea','Amós':'Amos','Abdías':'Obadiah','Jonás':'Jonah','Miqueas':'Micah','Nahúm':'Nahum','Habacuc':'Habakkuk','Sofonías':'Zephaniah','Hageo':'Haggai','Zacarías':'Zechariah','Malaquías':'Malachi','Mateo':'Matthew','Marcos':'Mark','Lucas':'Luke','Juan':'John','Hechos':'Acts','Romanos':'Romans','1 Corintios':'1 Corinthians','2 Corintios':'2 Corinthians','Gálatas':'Galatians','Efesios':'Ephesians','Filipenses':'Philippians','Colosenses':'Colossians','1 Tesalonicenses':'1 Thessalonians','2 Tesalonicenses':'2 Thessalonians','1 Timoteo':'1 Timothy','2 Timoteo':'2 Timothy','Tito':'Titus','Filemón':'Philemon','Hebreos':'Hebrews','Santiago':'James','1 Pedro':'1 Peter','2 Pedro':'2 Peter','1 Juan':'1 John','2 Juan':'2 John','3 Juan':'3 John','Judas':'Jude','Apocalipsis':'Revelation'
+};
+const aliasEntries=Object.entries(SPANISH_TO_ENGLISH).sort((a,b)=>b[0].length-a[0].length);
+const normalizeReference=reference=>{
+ let normalized=String(reference||'').replace(/[–—]/g,'-');
+ for(const [spanish,english] of aliasEntries){
+  if(normalized.toLocaleLowerCase('es').startsWith(spanish.toLocaleLowerCase('es')+' ')){
+   normalized=english+normalized.slice(spanish.length);
+   break;
+  }
+ }
+ return normalized;
+};
+const passageUrl=reference=>`https://www.biblegateway.com/passage/?search=${encodeURIComponent(normalizeReference(reference))}`;
 const findReferences=text=>[...String(text||'').matchAll(REFERENCE)].map(match=>match[0]);
 function linkTextNode(node){
  const text=node.nodeValue;
@@ -26,7 +42,8 @@ function linkTextNode(node){
   link.target='_blank';
   link.rel='noopener noreferrer';
   link.textContent=reference;
-  link.setAttribute('aria-label',`Read ${reference} on Bible Gateway (opens in a new tab)`);
+  const spanish=document.documentElement.lang==='es';
+  link.setAttribute('aria-label',spanish?`Leer ${reference} en Bible Gateway (abre en una pestaña nueva)`:`Read ${reference} on Bible Gateway (opens in a new tab)`);
   fragment.append(link);
   last=match.index+reference.length;
  }
@@ -70,5 +87,5 @@ const start=()=>{
  observer.observe(document.body,{childList:true,subtree:true});
 };
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
-window.NLDG_SCRIPTURE_LINKS={linkReferences,passageUrl,findReferences};
+window.NLDG_SCRIPTURE_LINKS={linkReferences,passageUrl,findReferences,normalizeReference};
 })();

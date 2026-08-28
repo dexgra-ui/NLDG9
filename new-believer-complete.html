@@ -6,8 +6,11 @@
 <meta name="theme-color" content="#06122d">
 <meta name="description" content="Celebrate completing the New Believers Path and build a practical plan for continued discipleship.">
 <title>Your Next Steps | New Believers Path</title>
+<link rel="canonical" href="https://nolabelsdesignedbygod.org/new-believer-complete.html">
+<link rel="alternate" hreflang="en" href="https://nolabelsdesignedbygod.org/new-believer-complete.html">
+<link rel="alternate" hreflang="es" href="https://nolabelsdesignedbygod.org/new-believer-complete.html?lang=es">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="new-believers.css?v=20260727-next-steps">
+<link rel="stylesheet" href="new-believers.css?v=20260828-spanish">
 </head>
 <body>
 <header class="site-header"><a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God</strong><small>A family ministry built to last.</small></span></a><button class="menu" aria-expanded="false">Menu</button><nav><a href="index.html">Home</a><a class="active" href="new-believers.html">Start Here</a><a href="studies.html">Bible Studies</a><a href="devotionals.html">Devotionals</a><a href="resource-center.html">Resource Center</a><a href="about.html">Our Ministry</a><a class="play-link" href="play.html">🎮 Games</a></nav></header>
@@ -44,14 +47,9 @@
 </main>
 <footer class="ministry-footer"><div class="footer-invitation"><img src="no-labels-approved-logo.png" alt=""><div><strong>No Labels, Designed by God</strong><p>Wherever you are in your walk with Christ, you are welcome here.</p></div></div><div class="footer-links"><a href="new-believers.html">New Believers Path</a><a href="studies.html">Bible Studies</a><a href="devotionals.html">Devotionals</a><a href="resource-center.html">Resources</a><a href="about.html">Our Ministry</a></div><small>© <span data-year></span> No Labels Designed by God, LLC.</small></footer>
 <script src="new-believers-data.js?v=20260726-scripture-review"></script>
-<script>
-const completed=JSON.parse(localStorage.getItem('nldg-new-believers-progress')||'[]').filter(step=>step>=1&&step<=10),state=document.getElementById('completionState'),steps=window.NEW_BELIEVER_STEPS||[];
-const count=[...new Set(completed)].length,missing=steps.filter(item=>!completed.includes(item.step));
-if(count===10){state.innerHTML=`<span class="completion-badge">10 of 10 steps completed</span><h2>Path complete</h2><p>Take time to thank God, review what you learned, and share your next-steps plan with a mature Christian or church leader.</p><strong>Your progress remains saved on this device.</strong>`}else{state.innerHTML=`<span class="completion-badge">${count} of 10 steps completed</span><h2>Keep going</h2><p>You can begin planning your next season now, but ${missing.length===1?'one step remains':'some steps remain'} in the path.</p><div class="completion-missing">${missing.map(item=>`<a href="new-believer-step.html?step=${item.step}">Step ${item.step}: ${item.title}</a>`).join('')}</div>`}
-const fields=['Rhythm','Church','Mentor','Sacraments','Service','Growth'];fields.forEach(name=>{document.getElementById(`plan${name}`).value=localStorage.getItem(`nldg-new-believers-plan-${name.toLowerCase()}`)||''});
-document.getElementById('savePlan').onclick=()=>{fields.forEach(name=>localStorage.setItem(`nldg-new-believers-plan-${name.toLowerCase()}`,document.getElementById(`plan${name}`).value));const status=document.getElementById('planStatus');status.textContent='Your next-steps plan is saved on this device.';setTimeout(()=>status.textContent='',3000)};
-document.getElementById('printPlan').onclick=()=>window.print();
-</script>
+<script src="new-believers-data-es.js?v=1.0.0"></script>
+<script src="new-believer-complete.js?v=1.0.0"></script>
+<script src="scripture-links.js?v=1.1.0"></script>
 <script src="script.js"></script>
 </body>
 </html>

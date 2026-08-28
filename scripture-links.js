@@ -59,7 +59,7 @@ function linkReferences(root=document.body){
  nodes.forEach(linkTextNode);
 }
 const style=document.createElement('style');
-style.textContent='.scripture-reference-link{color:#8fe9b6;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:750}.scripture-reference-link:hover,.scripture-reference-link:focus-visible{color:#ffd55f}.scripture-reference-link:focus-visible{outline:3px solid #ffd55f;outline-offset:3px;border-radius:3px}.wof-language-switch{display:flex;gap:.6rem;flex-wrap:wrap;margin:.8rem 0 1rem}';
+style.textContent='.scripture-reference-link{color:#8fe9b6;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:750}.scripture-reference-link:hover,.scripture-reference-link:focus-visible{color:#ffd55f}.scripture-reference-link:focus-visible{outline:3px solid #ffd55f;outline-offset:3px;border-radius:3px}.wof-language-switch,.mof-language-switch{display:flex;gap:.6rem;flex-wrap:wrap;margin:.8rem 0 1rem}';
 document.head.appendChild(style);
 const WOMEN_STUDY_ES={
  'women-known-by-god':1,
@@ -72,6 +72,18 @@ const WOMEN_STUDY_ES={
  'women-calling-gifts':8,
  'women-prayer-discernment':9,
  'women-helping-another-grow':10
+};
+const MEN_STUDY_ES={
+ 'men-identity-before-performance':1,
+ 'men-free-indeed':2,
+ 'men-integrity':3,
+ 'men-honest-strength':4,
+ 'men-servant-leadership':5,
+ 'men-relationships':6,
+ 'men-brotherhood':7,
+ 'men-temptation-integrity':8,
+ 'men-stewardship':9,
+ 'men-help-another-grow':10
 };
 function addWomenSpanishLink(){
  if(document.documentElement.lang==='es')return;
@@ -100,6 +112,33 @@ function addWomenSpanishLink(){
   lead?.insertAdjacentElement('afterend',switcher);
  }
 }
+function addMenSpanishLink(){
+ if(document.documentElement.lang==='es')return;
+ const id=String(document.body?.dataset.studyPage||'');
+ const number=MEN_STUDY_ES[id];
+ if(number){
+  const hero=document.querySelector('.mof-study-hero');
+  if(!hero||hero.querySelector('[data-mof-spanish-link]'))return;
+  const switcher=document.createElement('div');
+  switcher.className='mof-language-switch';
+  switcher.dataset.mofSpanishLink='true';
+  switcher.innerHTML=`<a class="button primary" href="${location.pathname.split('/').pop()}" aria-current="page">English</a><a class="button secondary" href="hombres-de-fe.html?study=${number}">Español</a>`;
+  const meta=hero.querySelector('.mof-study-meta');
+  (meta||hero.lastElementChild)?.insertAdjacentElement('afterend',switcher);
+  return;
+ }
+ const page=location.pathname.split('/').pop()||'';
+ if(page==='men-of-faith.html'){
+  const hero=document.querySelector('.mof-hero>div:first-child');
+  if(!hero||hero.querySelector('[data-mof-spanish-link]'))return;
+  const switcher=document.createElement('div');
+  switcher.className='mof-language-switch';
+  switcher.dataset.mofSpanishLink='true';
+  switcher.innerHTML='<a class="button primary" href="men-of-faith.html" aria-current="page">English</a><a class="button secondary" href="hombres-de-fe.html">Español</a>';
+  const lead=hero.querySelector('.lead');
+  lead?.insertAdjacentElement('afterend',switcher);
+ }
+}
 const loadDepthEnhancement=()=>{
  let src='';
  const studyId=String(document.body?.dataset.studyPage||'');
@@ -116,6 +155,7 @@ const start=()=>{
  linkReferences(document.body);
  loadDepthEnhancement();
  addWomenSpanishLink();
+ addMenSpanishLink();
  let queued=false;
  const pending=new Set();
  const observer=new MutationObserver(records=>{

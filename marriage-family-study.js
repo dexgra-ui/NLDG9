@@ -19,7 +19,7 @@ const prayerHtml=study.prayer.map(paragraph=>`<p>${escapeHtml(paragraph)}</p>`).
 const previous=study.previous?window.NLDG_MARRIAGE_FAMILY_API.bySlug(study.previous):null;
 const next=study.next?window.NLDG_MARRIAGE_FAMILY_API.bySlug(study.next):null;
 root.innerHTML=`
-<section class="mf-study-hero page-hero"><p class="study-label">Marriage &amp; Family • Study ${study.number} of 10</p><h1>${escapeHtml(study.title)}</h1><p class="lead">${escapeHtml(study.lead)}</p><div class="mf-study-meta"><span>📖 ${escapeHtml(study.primary)}</span><span>Supporting: ${escapeHtml(study.supporting)}</span><span>45–60 minutes</span><span>${escapeHtml(study.theme)}</span></div></section>
+<section class="mf-study-hero page-hero"><p class="study-label">Marriage &amp; Family • Study ${study.number} of 10</p><h1>${escapeHtml(study.title)}</h1><p class="lead">${escapeHtml(study.lead)}</p><div class="mf-study-meta"><span>📖 ${escapeHtml(study.primary)}</span><span>Supporting: ${escapeHtml(study.supporting)}</span><span>45–60 minutes</span><span>${escapeHtml(study.theme)}</span></div><div class="actions"><a class="button primary" href="marriage-family-study.html?study=${study.number}" aria-current="page">English</a><a class="button secondary" href="matrimonio-familia.html?study=${study.number}">Español</a></div></section>
 <div class="mf-study-layout"><article class="mf-study-content">
 <section class="mf-block mf-highlight"><h2>Central biblical truth</h2><p><strong>${escapeHtml(study.central)}</strong></p></section>
 <section class="mf-block"><h2>Study introduction</h2>${study.intro.map(paragraph=>`<p>${escapeHtml(paragraph)}</p>`).join('')}</section>

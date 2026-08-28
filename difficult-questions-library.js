@@ -1,6 +1,6 @@
 (()=>{
 if(window.NLDG_DIFFICULT_QUESTIONS_LIBRARY_LOADED||!window.NLDG_LIBRARY)return;
-const base={category:'Difficult Questions',series:'Difficult Questions',difficulty:'All Levels',duration:60,status:'published',publishedAt:'2026-07-29',updatedAt:'2026-07-29'};
+const base={category:'Difficult Questions',series:'Difficult Questions',difficulty:'All Levels',duration:60,status:'published',publishedAt:'2026-07-29',updatedAt:'2026-08-28'};
 const items=[
 {id:'difficult-questions',type:'Study Collection',title:'Difficult Questions',description:'Honest questions. Faithful Scripture. Hope in Christ through suffering, Scripture, science, denominations, salvation, silence, judgment, other religions, doubt, and discipleship.',url:'difficult-questions.html',scripture:['John 6:68','1 Peter 3:15-16'],book:'Various',topics:['questions','doubt','apologetics','faith','truth','hope'],audience:['Believers','Seekers','Skeptics','New Christians','Small Groups'],featured:true,...base},
 {id:'dq-suffering',type:'Study',title:'Why Does God Allow Suffering?',description:'Explore lament, human freedom, brokenness, compassion, faithful action, and resurrection hope.',url:'difficult-questions-study.html?study=1',scripture:['Psalm 13','John 11:17-44','Romans 8:18-39'],book:'Various',topics:['suffering','evil','lament','grief','hope'],audience:['Believers','Seekers','Small Groups','Mentors'],...base},
@@ -18,5 +18,22 @@ const existing=new Set(window.NLDG_LIBRARY.map(item=>item.id));
 window.NLDG_LIBRARY.push(...items.filter(item=>!existing.has(item.id)));
 window.NLDG_STUDIES=window.NLDG_LIBRARY.filter(item=>item.type==='Study'&&item.status==='published');
 window.NLDG_CONTENT=window.NLDG_LIBRARY.filter(item=>item.status==='published');
+function addSpanishLink(){
+ if(document.documentElement.lang==='es')return;
+ const page=location.pathname.split('/').pop()||'';
+ if(page==='difficult-questions.html'){
+  const hero=document.querySelector('.dq-hero>div:first-child');
+  if(!hero||hero.querySelector('[data-dq-spanish-link]'))return;
+  const el=document.createElement('div');el.className='actions dq-language-switch';el.dataset.dqSpanishLink='true';el.innerHTML='<a class="button primary" href="difficult-questions.html" aria-current="page">English</a><a class="button secondary" href="preguntas-dificiles.html">Español</a>';
+  hero.querySelector('.lead')?.insertAdjacentElement('afterend',el);return;
+ }
+ if(page==='difficult-questions-study.html'){
+  const n=Number(new URLSearchParams(location.search).get('study')||1);if(n<1||n>10)return;
+  const hero=document.querySelector('.dq-study-hero');if(!hero||hero.querySelector('[data-dq-spanish-link]'))return;
+  const el=document.createElement('div');el.className='actions dq-language-switch';el.dataset.dqSpanishLink='true';el.innerHTML=`<a class="button primary" href="difficult-questions-study.html?study=${n}" aria-current="page">English</a><a class="button secondary" href="preguntas-dificiles.html?study=${n}">Español</a>`;
+  hero.querySelector('.dq-study-meta')?.insertAdjacentElement('afterend',el);
+ }
+}
+addSpanishLink();
 window.NLDG_DIFFICULT_QUESTIONS_LIBRARY_LOADED=true;
 })();

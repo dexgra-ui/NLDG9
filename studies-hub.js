@@ -37,10 +37,21 @@
     {id:'marriage-family',icon:'💍',title:'Marriage & Family',eyebrow:'Christ-centered homes',description:'Rooted in Christ. Growing in love. Blessing others through marriage, communication, parenting, family discipleship, belonging, boundaries, stewardship, and service.',meta:'10 of 10 studies available',status:'available',href:'marriage-family.html',action:'Open Complete Journey'},
     {id:'difficult-questions',icon:'❓',title:'Difficult Questions',eyebrow:'Faith under examination',description:'Honest questions. Faithful Scripture. Hope in Christ through suffering, Scripture, science, denominations, salvation, silence, judgment, other religions, doubt, and discipleship.',meta:'10 of 10 studies available',status:'available',href:'difficult-questions.html',action:'Open Complete Journey'},
     {id:'leadership',icon:'🧭',title:'Leadership',eyebrow:'Serve and equip',description:'Called by God. Formed in character. Leading through service, wisdom, healthy teams, accountability, endurance, and multiplication.',meta:'10 of 10 studies available',status:'available',href:'leadership.html',action:'Open Complete Journey'},
+    {id:'faith-hurting',icon:'🕊️',title:'Faith When Your Heart Is Hurting',eyebrow:'Grief & Christian hope',description:'An eight-week biblical journey through grief, lament, God’s presence, different grief responses, compassionate care, overlooked losses, and resurrection hope.',meta:'8 of 8 lessons available',status:'available',href:'faith-when-your-heart-is-hurting.html',action:'Open Complete Journey'},
     {id:'sunday-school',icon:'📖',title:'Sunday School',eyebrow:'Classes & small groups',description:'Prepared Bible lessons for teaching, group discussion, personal study, and weekly discipleship.',meta:`${sundaySchool.length} published ${sundaySchool.length===1?'lesson':'lessons'}`,status:sundaySchool.length?'available':'planned',filter:'Sunday School',action:sundaySchool.length?'Browse Lessons':'Coming Soon'},
     {id:'christian-living',icon:'❤️',title:'Christian Living',eyebrow:'Everyday discipleship',description:'Practical studies about prayer, forgiveness, rest, stewardship, serving, endurance, and living faithfully.',meta:'Published studies available',status:'available',filter:'Christian Living',action:'Browse the Collection'},
     {id:'technology-ai',icon:'💻',title:'Technology & AI',eyebrow:'Digital discipleship',description:'Follow Christ wisely through artificial intelligence, social media, online identity, misinformation, privacy, and digital habits.',meta:'7 lessons available in Current Events',status:'available',href:'current-events-series.html?week=15',action:'Start the Collection'}
   ];
+
+  const journeyCard=item=>{
+    const classes=['journey-collection-card',item.featured?'is-featured':'',item.status==='planned'?'is-planned':''].filter(Boolean).join(' ');
+    const action=item.status==='planned'
+      ?`<span class="collection-action is-disabled" aria-disabled="true">${escapeHtml(item.action)}</span>`
+      :item.href
+        ?`<a class="collection-action" href="${escapeHtml(item.href)}">${escapeHtml(item.action)} <span aria-hidden="true">→</span></a>`
+        :`<button class="collection-action" type="button" data-journey-filter="${escapeHtml(item.filter||'all')}">${escapeHtml(item.action)} <span aria-hidden="true">→</span></button>`;
+    return `<article class="${classes}"><div class="collection-card-top"><span class="collection-icon" aria-hidden="true">${item.icon}</span><span class="collection-status ${item.status==='planned'?'planned':'ready'}">${item.status==='planned'?'In Development':'Available'}</span></div><p class="collection-eyebrow">${escapeHtml(item.eyebrow)}</p><h3>${escapeHtml(item.title)}</h3><p class="collection-description">${escapeHtml(item.description)}</p><div class="collection-card-footer"><small>${escapeHtml(item.meta)}</small>${action}</div></article>`;
+  };
 
   const card=study=>{
     const state=readState()[study.id]||{};
@@ -54,15 +65,16 @@
   if(filter)filter.innerHTML='<option value="all">All categories</option>'+categories.map(category=>`<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`).join('');
 
   if(collections&&!collections.dataset.static){
-    collections.innerHTML=journeyCollections.map(item=>{
-      const classes=['journey-collection-card',item.featured?'is-featured':'',item.status==='planned'?'is-planned':''].filter(Boolean).join(' ');
-      const action=item.status==='planned'
-        ?`<span class="collection-action is-disabled" aria-disabled="true">${escapeHtml(item.action)}</span>`
-        :item.href
-          ?`<a class="collection-action" href="${escapeHtml(item.href)}">${escapeHtml(item.action)} <span aria-hidden="true">→</span></a>`
-          :`<button class="collection-action" type="button" data-journey-filter="${escapeHtml(item.filter||'all')}">${escapeHtml(item.action)} <span aria-hidden="true">→</span></button>`;
-      return `<article class="${classes}"><div class="collection-card-top"><span class="collection-icon" aria-hidden="true">${item.icon}</span><span class="collection-status ${item.status==='planned'?'planned':'ready'}">${item.status==='planned'?'In Development':'Available'}</span></div><p class="collection-eyebrow">${escapeHtml(item.eyebrow)}</p><h3>${escapeHtml(item.title)}</h3><p class="collection-description">${escapeHtml(item.description)}</p><div class="collection-card-footer"><small>${escapeHtml(item.meta)}</small>${action}</div></article>`;
-    }).join('');
+    collections.innerHTML=journeyCollections.map(journeyCard).join('');
+  }else if(collections&&collections.dataset.static&&!collections.querySelector('a[href="faith-when-your-heart-is-hurting.html"]')){
+    const grief=journeyCollections.find(item=>item.id==='faith-hurting');
+    if(grief){
+      const holder=document.createElement('div');
+      holder.innerHTML=journeyCard(grief);
+      const griefCard=holder.firstElementChild;
+      const leadership=collections.querySelector('a[href="leadership.html"]')?.closest('.journey-collection-card');
+      if(leadership)leadership.insertAdjacentElement('afterend',griefCard);else collections.appendChild(griefCard);
+    }
   }
 
   const renderGrid=()=>{

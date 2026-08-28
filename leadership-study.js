@@ -19,7 +19,7 @@ const prayerHtml=study.prayer.map(paragraph=>`<p>${escapeHtml(paragraph)}</p>`).
 const previous=study.previous?window.NLDG_LEADERSHIP_API.bySlug(study.previous):null;
 const next=study.next?window.NLDG_LEADERSHIP_API.bySlug(study.next):null;
 root.innerHTML=`
-<section class="ld-study-hero page-hero"><p class="study-label">Leadership • Study ${study.number} of 10</p><h1>${escapeHtml(study.title)}</h1><p class="lead">${escapeHtml(study.lead)}</p><div class="ld-study-meta"><span>📖 ${escapeHtml(study.primary)}</span><span>Supporting: ${escapeHtml(study.supporting)}</span><span>45–60 minutes</span><span>${escapeHtml(study.theme)}</span></div></section>
+<section class="ld-study-hero page-hero"><p class="study-label">Leadership • Study ${study.number} of 10</p><h1>${escapeHtml(study.title)}</h1><p class="lead">${escapeHtml(study.lead)}</p><div class="ld-study-meta"><span>📖 ${escapeHtml(study.primary)}</span><span>Supporting: ${escapeHtml(study.supporting)}</span><span>45–60 minutes</span><span>${escapeHtml(study.theme)}</span></div><div class="actions"><a class="button primary" href="leadership-study.html?study=${study.number}" aria-current="page">English</a><a class="button secondary" href="liderazgo.html?study=${study.number}">Español</a></div></section>
 <div class="ld-study-layout"><article class="ld-study-content">
 <section class="ld-block ld-highlight"><h2>Central biblical truth</h2><p><strong>${escapeHtml(study.central)}</strong></p></section>
 <section class="ld-block"><h2>Study introduction</h2>${study.intro.map(paragraph=>`<p>${escapeHtml(paragraph)}</p>`).join('')}</section>

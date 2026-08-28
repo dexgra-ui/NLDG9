@@ -1,0 +1,54 @@
+(()=>{
+const studies=window.MUJERES_DE_FE_STUDIES||[];
+const params=new URLSearchParams(location.search);
+let number=Number(params.get('study'));
+if(!Number.isInteger(number)||number<1||number>10)number=0;
+const progressKey='nldg-mujeres-de-fe-progress';
+const completed=JSON.parse(localStorage.getItem(progressKey)||'[]');
+const root=document.getElementById('mujeresDeFeRoot');
+const esc=s=>String(s??'');
+function languageSwitch(englishHref){return `<div class="actions wof-language-switch"><a class="button secondary" href="${englishHref}">English</a><a class="button primary" href="${number?`mujeres-de-fe.html?study=${number}`:'mujeres-de-fe.html'}" aria-current="page">Español</a></div>`}
+function studyHref(n){return `mujeres-de-fe.html?study=${n}`}
+function renderLanding(){
+ document.documentElement.lang='es';
+ document.title='Mujeres de Fe | No Labels, Designed by God';
+ const count=completed.filter(n=>n>=1&&n<=10).length;
+ root.innerHTML=`
+ <section class="wof-hero">
+  <div><p class="kicker">Mujeres de Fe</p><h1>Conocidas por Dios. <span>Creciendo en gracia.</span> Caminando juntas.</h1><p class="lead">Un camino completo de discipulado centrado en la Escritura para mujeres que desean conocer más profundamente a Jesús, comprender su identidad en Él, sanar en temporadas difíciles, construir comunidad saludable y caminar fielmente en su llamado.</p>${languageSwitch('women-of-faith.html')}<div class="actions"><a class="button primary" href="${studyHref(1)}">Comenzar el Camino</a><a class="button secondary" href="#camino">Ver los Diez Estudios</a></div></div>
+  <div class="wof-hero-card"><span>Camino completo de diez estudios</span><strong>Todos los estudios están disponibles en español.</strong><p>Avanza desde ser conocida por Dios hacia sanidad, comunidad saludable, servicio fiel, discernimiento espiritual y ayudar a otra mujer a crecer en Cristo.</p><div class="wof-scripture"><p>“Te alabo porque soy una creación admirable.”</p><strong>Salmo 139:14</strong></div></div>
+ </section>
+ <section class="section wof-foundation"><div class="wof-foundation-copy"><p class="kicker">El fundamento</p><h2>Cada rol puede formar parte de tu historia, pero ninguno te define por completo.</h2><p>Las mujeres suelen ser descritas por sus relaciones, responsabilidades, logros, apariencia, dolor o pasado. Algunas descripciones pueden tener significado. Otras pueden convertirse en etiquetas que esconden a la persona creada por Dios.</p><p>Este camino no presenta una personalidad, estructura familiar, rol ministerial o temporada de vida como el estándar para toda mujer. Invita a abrir la Escritura, encontrarse con Jesús, hacer preguntas honestas, crecer en amor santo y caminar juntas con sabiduría y gracia.</p></div><div class="wof-label-cloud" aria-label="Roles y etiquetas que una mujer puede llevar"><span>Esposa</span><span>Soltera</span><span>Madre</span><span>Hija</span><span>Hermana</span><span>Líder</span><span>Cuidadora</span><span>Profesional</span><span>Divorciada</span><span>Viuda</span><span>Fuerte</span><span>Herida</span><span>Conocida y amada por Dios</span></div></section>
+ <section class="section"><div class="section-heading"><p class="kicker">Cómo enseña este camino</p><h2>Verdad, gracia y comunidad saludable.</h2><p>Cada estudio comienza con la Escritura y deja espacio para reflexión honesta sin comparación, presión ni respuestas superficiales.</p></div><div class="wof-principles"><article><strong>La Escritura primero</strong><p>La experiencia y las expectativas culturales se examinan a la luz del texto bíblico.</p></article><article><strong>Identidad en Cristo</strong><p>El valor no depende del matrimonio, maternidad, carrera, apariencia, aprobación o logros.</p></article><article><strong>Fe honesta</strong><p>Preguntas, dolor, debilidad, lamento y crecimiento incompleto no necesitan esconderse.</p></article><article><strong>Comunidad saludable</strong><p>El discipulado debe animar, proteger, guiar y cuidar sin controlar ni avergonzar.</p></article><article><strong>Gracia transformadora</strong><p>La gracia nos consuela y nos forma a la semejanza de Cristo mediante amor santo.</p></article></div></section>
+ <div class="path-progress" aria-live="polite"><div class="path-progress-top"><strong>Tu progreso: ${count} de 10 estudios</strong><span>El progreso y las notas en español se guardan por separado en este dispositivo.</span></div><div class="path-progress-track"><i style="width:${count*10}%"></i></div></div>
+ <section id="camino" class="section"><div class="section-heading"><p class="kicker">Camino completo de diez estudios</p><h2>De identidad y dignidad hacia una vida que fortalece a otras.</h2><p>Puedes seguirlos en orden o regresar al tema donde necesites crecer.</p></div><div class="wof-journey-grid">${studies.map(s=>`<article class="wof-study-card available ${completed.includes(s.number)?'complete':''}"><span class="wof-study-number">${s.number}</span><div><h3>${s.title}</h3><p>${s.truth}</p><small>${s.main}</small><a href="${studyHref(s.number)}">${completed.includes(s.number)?'Revisar Estudio ✓':'Abrir Estudio →'}</a></div></article>`).join('')}</div></section>
+ <section class="section wof-care"><div><p class="kicker">Seguridad y cuidado</p><h2>La conversación honesta necesita límites sabios.</h2><p>Este camino anima la apertura, pero una líder o mentora no debe intentar manejar cada situación sola. Perdonar no exige silencio, confianza inmediata ni permanecer en una situación insegura.</p></div><div><ul><li>Peligro inmediato o abuso requiere acción apropiada para proteger la seguridad.</li><li>Trauma o angustia emocional severa puede requerir cuidado profesional.</li><li>Asuntos médicos, legales, de adicción o violencia doméstica requieren apoyo capacitado.</li><li>Las líderes deben explicar honestamente la confidencialidad y sus límites.</li><li>Ninguna mujer debe ser presionada a revelar experiencias privadas.</li></ul></div></section>`;
+}
+function renderStudy(item){
+ document.documentElement.lang='es';
+ document.title=`${item.title} | Mujeres de Fe`;
+ const noteKey=`nldg-mujeres-de-fe-notes-${item.number}`;
+ const isDone=completed.includes(item.number);
+ root.innerHTML=`
+ <section class="wof-study-hero page-hero"><p class="study-label">Mujeres de Fe • Estudio ${item.number} de 10</p><h1>${item.title}</h1><p class="lead">${item.truth}</p><div class="wof-study-meta"><span>📖 ${item.main}</span><span>Apoyo: ${item.supporting}</span><span>${item.minutes}</span><span>${item.theme}</span></div>${languageSwitch(item.english)}</section>
+ <div class="wof-study-layout"><article class="wof-study-content">
+ <section class="wof-block wof-highlight"><h2>Verdad bíblica central</h2><p><strong>${item.truth}</strong></p></section>
+ <section class="wof-block"><h2>Enfoque de la Escritura</h2><p>Lee <strong>${item.main}</strong>. Luego considera los pasajes de apoyo: <strong>${item.supporting}</strong>. Lee primero lo que el texto dice antes de comenzar con tu propia experiencia.</p></section>
+ <section class="wof-block wof-context"><h2>Contexto en lenguaje sencillo</h2>${item.context.map(p=>`<p>${p}</p>`).join('')}</section>
+ ${item.movements.map(m=>`<section class="wof-block"><h2>${m[0]}</h2><p>${m[1]}</p></section>`).join('')}
+ <section class="wof-block wof-jesus-connection"><h2>Conexión con Jesús</h2><p>${item.jesus}</p><h3>No confundas estas cosas</h3><ul>${item.distinctions.map(d=>`<li>${d}</li>`).join('')}</ul></section>
+ ${item.rhythm?`<section class="wof-block"><h2>Un ritmo sencillo de mentoría</h2><ol>${item.rhythm.map(r=>`<li>${r}</li>`).join('')}</ol></section>`:''}
+ <section class="wof-block"><h2>Preguntas para conversar</h2><ol>${item.questions.map(q=>`<li>${q}</li>`).join('')}</ol></section>
+ <section class="wof-block"><h2>Vívelo esta semana</h2><p>${item.live}</p></section>
+ <section class="wof-block wof-prayer"><h2>Oración</h2><p>${item.prayer}</p></section>
+ <section class="wof-block"><h2>Nota para líderes y mentoras</h2><p>${item.leader}</p></section>
+ <section class="wof-block"><h2>Mi respuesta</h2><p>Escribe una oración, pregunta, verdad bíblica o próximo paso. Tus notas permanecen en este dispositivo.</p><textarea id="mujeresNotes" class="lesson-notes" rows="7" placeholder="¿Qué está mostrando Dios por medio de Su Palabra?"></textarea><div class="actions"><button id="saveMujeresNotes" class="button secondary" type="button">Guardar Notas</button><button id="completeMujeresStudy" class="button primary" type="button">${isDone?'Estudio completado ✓':`Marcar Estudio ${item.number} como Completado`}</button></div><p id="mujeresStatus" class="lesson-status"></p></section>
+ <div class="lesson-actions wof-actions"><a class="button secondary" href="${item.number>1?studyHref(item.number-1):'mujeres-de-fe.html'}">← ${item.number>1?'Estudio anterior':'Mujeres de Fe'}</a><button class="button secondary" type="button" onclick="window.print()">Imprimir Estudio</button><a class="button primary" href="${item.number<10?studyHref(item.number+1):'mujeres-de-fe.html'}">${item.number<10?'Próximo Estudio →':'Volver al Camino →'}</a></div>
+ </article><aside class="wof-study-side"><div class="wof-side-card"><strong>Propósito del estudio</strong><p>${item.truth}</p></div><div class="wof-side-card"><strong>Enfoque Escritura primero</strong><p>Lee el pasaje en contexto. Distingue lo que la Escritura dice claramente de interpretación, tradición y aplicación.</p></div><div class="wof-side-card"><strong>Límites saludables</strong><p>No presiones revelaciones privadas. Asuntos de abuso, peligro, trauma, salud, adicción o asuntos legales pueden requerir apoyo calificado.</p></div></aside></div>`;
+ const textarea=document.getElementById('mujeresNotes');textarea.value=localStorage.getItem(noteKey)||'';
+ document.getElementById('saveMujeresNotes').onclick=()=>{localStorage.setItem(noteKey,textarea.value);const s=document.getElementById('mujeresStatus');s.textContent='Notas guardadas en este dispositivo.';setTimeout(()=>s.textContent='',2200)};
+ document.getElementById('completeMujeresStudy').onclick=()=>{let saved=JSON.parse(localStorage.getItem(progressKey)||'[]');if(!saved.includes(item.number))saved.push(item.number);saved.sort((a,b)=>a-b);localStorage.setItem(progressKey,JSON.stringify(saved));document.getElementById('completeMujeresStudy').textContent='Estudio completado ✓';document.getElementById('mujeresStatus').textContent=item.number===10?'Completaste los diez estudios de Mujeres de Fe. Sigue creciendo en Cristo y fortaleciendo a otras.':'Tu progreso en español está guardado.';};
+}
+if(number){const item=studies.find(s=>s.number===number);item?renderStudy(item):renderLanding();}else renderLanding();
+setTimeout(()=>document.querySelectorAll('#mujeresDeFeRoot').forEach(node=>window.NLDG_SCRIPTURE_LINKS?.linkReferences?.(node)),0);
+})();

@@ -59,8 +59,47 @@ function linkReferences(root=document.body){
  nodes.forEach(linkTextNode);
 }
 const style=document.createElement('style');
-style.textContent='.scripture-reference-link{color:#8fe9b6;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:750}.scripture-reference-link:hover,.scripture-reference-link:focus-visible{color:#ffd55f}.scripture-reference-link:focus-visible{outline:3px solid #ffd55f;outline-offset:3px;border-radius:3px}';
+style.textContent='.scripture-reference-link{color:#8fe9b6;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:750}.scripture-reference-link:hover,.scripture-reference-link:focus-visible{color:#ffd55f}.scripture-reference-link:focus-visible{outline:3px solid #ffd55f;outline-offset:3px;border-radius:3px}.wof-language-switch{display:flex;gap:.6rem;flex-wrap:wrap;margin:.8rem 0 1rem}';
 document.head.appendChild(style);
+const WOMEN_STUDY_ES={
+ 'women-known-by-god':1,
+ 'women-jesus-saw':2,
+ 'women-identity-beyond-roles':3,
+ 'women-faith-hard-seasons':4,
+ 'women-strength-surrender':5,
+ 'women-healing-hurt-rejection':6,
+ 'women-healthy-community':7,
+ 'women-calling-gifts':8,
+ 'women-prayer-discernment':9,
+ 'women-helping-another-grow':10
+};
+function addWomenSpanishLink(){
+ if(document.documentElement.lang==='es')return;
+ const id=String(document.body?.dataset.studyPage||'');
+ const number=WOMEN_STUDY_ES[id];
+ if(number){
+  const hero=document.querySelector('.wof-study-hero');
+  if(!hero||hero.querySelector('[data-wof-spanish-link]'))return;
+  const switcher=document.createElement('div');
+  switcher.className='wof-language-switch';
+  switcher.dataset.wofSpanishLink='true';
+  switcher.innerHTML=`<a class="button primary" href="${location.pathname.split('/').pop()}" aria-current="page">English</a><a class="button secondary" href="mujeres-de-fe.html?study=${number}">Español</a>`;
+  const meta=hero.querySelector('.wof-study-meta');
+  (meta||hero.lastElementChild)?.insertAdjacentElement('afterend',switcher);
+  return;
+ }
+ const page=location.pathname.split('/').pop()||'';
+ if(page==='women-of-faith.html'){
+  const hero=document.querySelector('.wof-hero>div:first-child');
+  if(!hero||hero.querySelector('[data-wof-spanish-link]'))return;
+  const switcher=document.createElement('div');
+  switcher.className='wof-language-switch';
+  switcher.dataset.wofSpanishLink='true';
+  switcher.innerHTML='<a class="button primary" href="women-of-faith.html" aria-current="page">English</a><a class="button secondary" href="mujeres-de-fe.html">Español</a>';
+  const lead=hero.querySelector('.lead');
+  lead?.insertAdjacentElement('afterend',switcher);
+ }
+}
 const loadDepthEnhancement=()=>{
  let src='';
  const studyId=String(document.body?.dataset.studyPage||'');
@@ -76,6 +115,7 @@ const loadDepthEnhancement=()=>{
 const start=()=>{
  linkReferences(document.body);
  loadDepthEnhancement();
+ addWomenSpanishLink();
  let queued=false;
  const pending=new Set();
  const observer=new MutationObserver(records=>{

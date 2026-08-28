@@ -1,0 +1,26 @@
+(()=>{
+const base={category:'Christian Living',series:'Faith When Your Heart Is Hurting',difficulty:'All Levels',duration:70,status:'published',publishedAt:'2026-08-28',updatedAt:'2026-08-28'};
+const items=[
+{id:'faith-when-your-heart-is-hurting',type:'Study Collection',title:'Faith When Your Heart Is Hurting',description:'An eight-week biblical journey through grief, lament, God’s presence, different grief responses, compassionate care, overlooked losses, and resurrection hope.',url:'faith-when-your-heart-is-hurting.html',scripture:['John 11:17-44','Psalm 13','1 Thessalonians 4:13-18'],book:'Various',topics:['grief','loss','lament','hope','pastoral care','compassion','resurrection'],audience:['Adults','Small Groups','Care Groups','Churches','Mentors'],featured:false,...base},
+{id:'faith-hurting-1',type:'Study',title:'Grief Is Not a Lack of Faith',description:'See in Jesus’ tears that deep sorrow and strong faith can exist together.',url:'faith-when-your-heart-is-hurting.html?week=1',scripture:['John 11:17-44','Psalm 34:18','Hebrews 4:14-16'],book:'John',topics:['grief','Jesus','tears','faith','hope'],audience:['Adults','Small Groups','Care Groups','Churches'],...base},
+{id:'faith-hurting-2',type:'Study',title:'Giving Yourself Permission to Mourn',description:'Learn the biblical language of lament and make honest room for mourning without shame.',url:'faith-when-your-heart-is-hurting.html?week=2',scripture:['Ecclesiastes 3:1-4','Psalm 42','Matthew 5:4'],book:'Various',topics:['mourning','lament','grief','honesty','prayer'],audience:['Adults','Small Groups','Care Groups','Churches'],...base},
+{id:'faith-hurting-3',type:'Study',title:'Where Is God in Our Pain?',description:'Bring questions and the experience of God’s apparent silence into honest prayer and trust.',url:'faith-when-your-heart-is-hurting.html?week=3',scripture:['Psalm 13','Psalm 34:18','Mark 15:33-39'],book:'Psalms',topics:['God’s silence','pain','lament','trust','questions'],audience:['Adults','Small Groups','Care Groups','Mentors'],...base},
+{id:'faith-hurting-4',type:'Study',title:'Grief Has No Simple Timeline',description:'Reject artificial grief deadlines and prepare wisely for anniversaries, triggers, and returning waves of sorrow.',url:'faith-when-your-heart-is-hurting.html?week=4',scripture:['Genesis 50:1-14','Romans 12:15','Psalm 56:8'],book:'Genesis',topics:['grief timeline','anniversaries','memory','healing','community'],audience:['Adults','Small Groups','Care Groups','Churches'],...base},
+{id:'faith-hurting-5',type:'Study',title:'When Grief Looks Different in Different People',description:'Practice compassion for different grief responses while recognizing when someone needs additional help.',url:'faith-when-your-heart-is-hurting.html?week=5',scripture:['Romans 12:15','Job 2:11-13','Proverbs 18:13'],book:'Various',topics:['grief responses','compassion','family','listening','care'],audience:['Adults','Families','Small Groups','Care Groups'],...base},
+{id:'faith-hurting-6',type:'Study',title:'What Not to Say to Someone Who Is Grieving',description:'Replace religious clichés and rushed explanations with listening, humility, practical help, and faithful presence.',url:'faith-when-your-heart-is-hurting.html?week=6',scripture:['Job 16:1-5','Proverbs 18:13','James 1:19'],book:'Job',topics:['comfort','grief care','listening','presence','pastoral care'],audience:['Adults','Churches','Mentors','Care Groups'],...base},
+{id:'faith-hurting-7',type:'Study',title:'Grieving More Than Death',description:'Recognize grief connected to changed relationships, health, independence, identity, work, dreams, and other overlooked losses.',url:'faith-when-your-heart-is-hurting.html?week=7',scripture:['Ruth 1:1-18','Luke 24:13-24','Psalm 34:18'],book:'Ruth',topics:['disenfranchised grief','ambiguous loss','Ruth','identity','presence'],audience:['Adults','Families','Small Groups','Care Groups'],...base},
+{id:'faith-hurting-8',type:'Study',title:'Remembering Without Being Trapped in the Past',description:'Carry love and memory forward through resurrection hope without treating series completion as the end of grief.',url:'faith-when-your-heart-is-hurting.html?week=8',scripture:['1 Thessalonians 4:13-18','Revelation 21:1-5','John 11:25-26'],book:'Various',topics:['remembrance','resurrection','hope','memory','grief'],audience:['Adults','Small Groups','Care Groups','Churches'],...base}
+];
+window.NLDG_FAITH_HURTING_LIBRARY=items;
+const merge=()=>{
+ if(!Array.isArray(window.NLDG_LIBRARY))return false;
+ const existing=new Set(window.NLDG_LIBRARY.map(item=>item.id));
+ window.NLDG_LIBRARY.push(...items.filter(item=>!existing.has(item.id)));
+ window.NLDG_STUDIES=window.NLDG_LIBRARY.filter(item=>item.type==='Study'&&item.status==='published');
+ window.NLDG_CONTENT=window.NLDG_LIBRARY.filter(item=>item.status==='published');
+ window.NLDG_FAITH_HURTING_LIBRARY_LOADED=true;
+ window.dispatchEvent(new Event('nldg-faith-hurting-library-ready'));
+ return true;
+};
+if(!merge()){let tries=0;const timer=setInterval(()=>{tries+=1;if(merge()||tries>=100)clearInterval(timer);},20)}
+})();

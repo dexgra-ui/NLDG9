@@ -6,8 +6,11 @@
 <meta name="theme-color" content="#06122d">
 <meta name="description" content="A complete ten-step Bible-based path for exploring faith and beginning life with Jesus.">
 <title>New Believers Path | No Labels, Designed by God</title>
+<link rel="canonical" href="https://nolabelsdesignedbygod.org/new-believers.html">
+<link rel="alternate" hreflang="en" href="https://nolabelsdesignedbygod.org/new-believers.html">
+<link rel="alternate" hreflang="es" href="https://nolabelsdesignedbygod.org/new-believers.html?lang=es">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="new-believers.css?v=20260726-scripture-review">
+<link rel="stylesheet" href="new-believers.css?v=20260828-spanish">
 </head>
 <body>
 <header class="site-header"><a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God</strong><small>A family ministry built to last.</small></span></a><button class="menu" aria-expanded="false">Menu</button><nav><a href="index.html">Home</a><a class="active" href="new-believers.html">Start Here</a><a href="studies.html">Bible Studies</a><a href="devotionals.html">Devotionals</a><a href="articles.html">Articles</a><a href="resource-center.html">Resource Center</a><a href="about.html">Our Ministry</a><a class="play-link" href="play.html">🎮 Games</a></nav></header>
@@ -38,11 +41,9 @@
 </main>
 <footer class="ministry-footer"><div class="footer-invitation"><img src="no-labels-approved-logo.png" alt=""><div><strong>No Labels, Designed by God</strong><p>We believe every person is created in the image of God. Wherever you are in your walk with Christ, you are welcome here.</p></div></div><div class="footer-links"><a href="new-believers.html">Start Here</a><a href="studies.html">Study</a><a href="devotionals.html">Devotionals</a><a href="resource-center.html">Grow</a><a href="about.html">Our Ministry</a></div><small>© <span data-year></span> No Labels Designed by God, LLC.</small></footer>
 <script src="new-believers-data.js?v=20260726-scripture-review"></script>
-<script>
-const completed=JSON.parse(localStorage.getItem('nldg-new-believers-progress')||'[]'),steps=window.NEW_BELIEVER_STEPS||[],grid=document.getElementById('pathGrid');
-grid.innerHTML=steps.map(item=>`<a class="path-step ${completed.includes(item.step)?'complete':''}" data-step="${item.step}" href="new-believer-step.html?step=${item.step}"><span class="path-step-number">${item.step}</span><div><h3>${item.title}</h3><p>${item.goal}</p><div class="path-step-meta"><span>${item.keyScriptures.split(' • ')[0]}</span><span>${item.keyScriptures.split(' • ')[1]||''}</span><span>${item.minutes}</span></div></div><span class="path-step-status">${completed.includes(item.step)?'Completed ✓':item.step===1?'Begin →':'Open Step →'}</span></a>`).join('');
-const count=completed.filter(step=>step>=1&&step<=10).length;document.getElementById('progressLabel').textContent=`Your progress: ${count} of 10 steps`;document.getElementById('progressBar').style.width=`${count*10}%`;
-</script>
+<script src="new-believers-data-es.js?v=1.0.0"></script>
+<script src="new-believers-path.js?v=1.0.0"></script>
+<script src="scripture-links.js?v=1.1.0"></script>
 <script src="script.js"></script>
 </body>
 </html>

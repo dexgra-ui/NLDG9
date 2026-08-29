@@ -75,4 +75,5 @@ renderGroup('saul-house',['saul','jonathan-saul','ishvi-saul','malchishua','abin
 renderLine('davidic-kings-line',['david','solomon','rehoboam','abijah-judah','asa','jehoshaphat','jehoram-judah','ahaziah-judah','joash-judah','amaziah-judah','azariah-uzziah','jotham-judah','ahaz-judah','hezekiah','manasseh-judah','amon-judah','josiah'],'Davidic royal line through Josiah');
 renderLine('aaronic-line',['aaron','eleazar-aaron','phinehas','abishua-priest','bukki-priest','uzzi-priest','zerahiah-priest','meraioth-priest','amariah-priest-1','ahitub-priest-1','zadok-ahitub','ahimaaz-zadok'],'Aaronic priestly succession highlighted in Chronicles');
 renderLine('postexile-priest-line',['jeshua-jozadak','joiakim-high-priest','eliashib-high-priest','joiada-high-priest','jonathan-high-priest','jaddua-high-priest'],'Post-exile high-priest succession in Nehemiah 12');
+renderGroup('wisdom-voices',['job','eliphaz-job','bildad','zophar','elihu-job','agur','lemuel'],'Named voices in Job and Proverbs');
 })();

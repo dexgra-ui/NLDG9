@@ -35,7 +35,7 @@ myra:[36.259167,29.985278], cnidus:[36.685833,27.375000], fairhavens:[34.929694,
 function route(layer,points,color,label){L.polyline(points.map(x=>p[x]||x),{color,weight:4,opacity:.82}).addTo(layer).bindPopup('<strong>'+label+'</strong><br>Stop order follows Acts; line between stops is schematic.');}
 route(j1,['antioch','salamis','paphos','perga','pisidian','iconium','lystra','derbe','lystra','iconium','pisidian','perga','attalia','antioch'],'#183b70','First missionary journey — Acts 13–14');
 route(j2,['antioch','derbe','lystra',[39.0,32.0],'troas','philippi','thess','berea','athens','corinth','ephesus','caesarea','antioch'],'#9b6b12','Second missionary journey — Acts 15:36–18:22');
-route(j3,['antioch',[39.0,32.0],'ephesus','troas','philippi','thess','berea','corinth','troas','miletus','cos','rhodes','patara','tyre','caesarea','jerusalem'],'#6f5b8c','Third missionary journey — Acts 18:23–21:17');
+route(j3,['antioch',[39.0,32.0],'ephesus','philippi','thess','berea','corinth','philippi','troas','miletus','cos','rhodes','patara','tyre','caesarea','jerusalem'],'#6f5b8c','Third missionary journey — Acts 18:23–21:17');
 route(rome,['caesarea','sidon','myra','cnidus','fairhavens',[34.5,22.5],[35.2,18.5],'malta','syracuse','rhegium','puteoli','rome'],'#667486','Voyage to Rome — Acts 27–28');
 const style={radius:6,color:'#06122d',weight:2,fillColor:'#06122d',fillOpacity:.95};
 const proposed={radius:6,color:'#7a5610',weight:2,fillColor:'#c79b45',fillOpacity:.95};

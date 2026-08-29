@@ -1,0 +1,131 @@
+(()=>{
+const db=window.NLDG_BIBLICAL_GENEALOGY;if(!db)return;
+const C=(type,target,ref='',note='')=>({type,target,ref,note});
+const rec=(id,name,line,kind='Person',gender='male',parents=[],spouses=[],ref='',note='',certainty='explicit',aliases=[],connections=[])=>({id,name,line,kind,gender,parents,spouses,ref,note,certainty,aliases,connections});
+const merge=(id,p)=>{const r=db.records.find(x=>x.id===id);if(!r)return;if(p.ref&&!String(r.ref||'').includes(p.ref))r.ref=[r.ref,p.ref].filter(Boolean).join('; ');if(p.note)r.note=[r.note,p.note].filter(Boolean).join(' ');if(p.name)r.name=p.name;if(p.parents)r.parents=p.parents;if(p.aliases)r.aliases=[...new Set([...(r.aliases||[]),...p.aliases])];if(p.connections)r.connections=[...(r.connections||[]),...p.connections];if(p.certainty)r.certainty=p.certainty;};
+const put=r=>db.records.some(x=>x.id===r.id)?merge(r.id,r):db.records.push(r);
+const refs=(ids,ref)=>ids.forEach(id=>merge(id,{ref}));
+
+// Chapter 21 and temple site.
+merge('gad-prophet',{ref:'1 Chronicles 21:9–19; 29:29',aliases:['Gad the seer']});
+merge('araunah',{ref:'1 Chronicles 21:15–28',name:'Araunah / Ornan',aliases:['Araunah','Ornan'],note:'Chronicles uses Ornan the Jebusite for the threshing-floor owner called Araunah in 2 Samuel 24. The same temple-site narrative supports the cross-book name variant.',certainty:'textual variant'});
+merge('solomon',{ref:'1 Chronicles 22:5–19; 23:1; 28–29'});merge('moses',{ref:'1 Chronicles 22:13; 23:14'});
+
+// Chapter 23: Levite divisions and descendants.
+refs(['gershon-levi','kohath','merari','amram','izhar','hebron-kohath','uzziel-kohath','aaron','moses','gershom-moses','eliezer-moses','mahli-merari','mushi'],'1 Chronicles 23');
+put(rec('laadan-gershon','Laadan','Levi / Gershonites','Person / ancestor name','male',['gershon-levi'],[],'1 Chronicles 23:7–9; 26:21','Gershonite ancestor listed alongside Shimei; often associated with Libni traditions but Chronicles preserves Laadan as the name here.','unresolved identification',['Laadan']));
+put(rec('jehiel-laadan','Jehiel','Levi / Gershonites','Clan leader','male',['laadan-gershon'],[],'1 Chronicles 23:8; 26:21–22; 29:8','Chief son of Laadan; associated with temple treasures. Distinct from other Jeheels.','explicit',['Jehiel son of Laadan','Jehieli family']));
+put(rec('zetham-laadan','Zetham','Levi / Gershonites','Clan leader','male',['laadan-gershon'],[],'1 Chronicles 23:8; 26:22','Son of Laadan; with his brother Joel over temple treasures.'));
+put(rec('joel-laadan','Joel','Levi / Gershonites','Clan leader','male',['laadan-gershon'],[],'1 Chronicles 23:8; 26:22','Son of Laadan; with his brother Zetham over temple treasures.'));
+put(rec('shelomith-laadan','Shelomith','Levi / Gershonites','Clan leader','male',['shimei-gershon'],[],'1 Chronicles 23:9','Named under Shimei in the Gershonite organization; verse 9’s relation to Laadan is structurally difficult, so the line is kept cautious.','unresolved identification',['Shelomith (Gershonite)']));
+put(rec('haziel','Haziel','Levi / Gershonites','Clan leader','male',['shimei-gershon'],[],'1 Chronicles 23:9','Gershonite family head listed with Shelomith and Haran.'));
+put(rec('haran-gershon','Haran','Levi / Gershonites','Clan leader','male',['shimei-gershon'],[],'1 Chronicles 23:9','Gershonite family head; distinct from Haran son of Terah and other Harans.','explicit',['Haran (Gershonite)']));
+for(const [id,n] of [['jahath-shimei','Jahath'],['zina','Zina / Zizah'],['jeush-shimei','Jeush'],['beriah-shimei','Beriah']])put(rec(id,n,'Levi / Gershonites','Clan leader','male',['shimei-gershon'],[],'1 Chronicles 23:10–11',`Son of Shimei in the Gershonite organization${n.includes('/')?'; the name form varies within the textual tradition':''}.`,n.includes('/')?'textual variant':'explicit',n.includes('/')?n.split(' / '):[]));
+put(rec('shebuel-gershom','Shebuel / Shubael','Moses descendants','Levite leader','male',['gershom-moses'],[],'1 Chronicles 23:16; 24:20; 26:24','Chief descendant/son of Gershom son of Moses; Chronicles uses Shebuel/Shubael forms.','textual variant',['Shebuel','Shubael']));
+put(rec('rehabiah','Rehabiah','Moses descendants','Levite leader','male',['eliezer-moses'],[],'1 Chronicles 23:17; 24:21; 26:25','Chief and only named son of Eliezer son of Moses; father/ancestor of many descendants.'));
+put(rec('shelomith-izhar','Shelomith / Shelomoth','Levi / Izharites','Levite leader','male',['izhar'],[],'1 Chronicles 23:18; 24:22','Chief descendant of Izhar; name appears as Shelomith/Shelomoth.','textual variant',['Shelomith','Shelomoth']));
+for(const [id,n] of [['jeriah-hebron','Jeriah'],['amariah-hebron','Amariah'],['jahaziel-hebron','Jahaziel'],['jekameam','Jekameam']])put(rec(id,n,'Levi / Hebronites','Levite leader','male',['hebron-kohath'],[],'1 Chronicles 23:19; 24:23',`Named son/descendant of Hebron in order of leadership.`));
+put(rec('micah-uzziel','Micah','Levi / Uzzielites','Levite leader','male',['uzziel-kohath'],[],'1 Chronicles 23:20; 24:24–25','First named son/descendant of Uzziel; father of Shamir. Distinct from other Micahs.','explicit',['Micah son of Uzziel']));
+put(rec('jesiah-uzziel','Jesiah / Isshiah','Levi / Uzzielites','Levite leader','male',['uzziel-kohath'],[],'1 Chronicles 23:20; 24:25','Second named descendant/brother in Uzziel’s line; the name appears Jesiah/Isshiah.','textual variant',['Jesiah','Isshiah']));
+put(rec('eleazar-mahli','Eleazar','Levi / Merarites','Person','male',['mahli-merari'],[],'1 Chronicles 23:21–22; 24:28','Son of Mahli who died without sons but had daughters. Distinct from Eleazar son of Aaron.','explicit',['Eleazar son of Mahli']));
+put(rec('kish-mahli','Kish','Levi / Merarites','Person','male',['mahli-merari'],[],'1 Chronicles 23:21–22; 24:29','Son of Mahli. His sons married the daughters of their cousin Eleazar. Distinct from Saul’s father Kish.','explicit',['Kish son of Mahli']));
+put(rec('jerahmeel-kish','Jerahmeel','Levi / Merarites','Levite leader','male',['kish-mahli'],[],'1 Chronicles 24:29','Son/descendant of Kish son of Mahli.'));
+for(const [id,n] of [['mahli-mushi','Mahli'],['eder-mushi','Eder'],['jeremoth-mushi','Jeremoth']])put(rec(id,n,'Levi / Merarites','Levite leader','male',['mushi'],[],'1 Chronicles 23:23; 24:30',`Son of Mushi in the Merarite organization.`));
+put(rec('jaaziah-merari','Jaaziah','Levi / Merarites','Person / ancestor name','male',['merari'],[],'1 Chronicles 24:26–27','Named in a difficult Merarite genealogy; father/ancestor of Beno, Shoham, Zaccur, and Ibri.','unresolved identification',['Jaaziah']));
+for(const [id,n] of [['beno-jaaziah','Beno'],['shoham','Shoham'],['zaccur-jaaziah','Zaccur'],['ibri','Ibri']])put(rec(id,n,'Levi / Merarites','Levite leader','male',['jaaziah-merari'],[],'1 Chronicles 24:26–27',`Son/descendant of Jaaziah in the Merarite genealogy.`));
+put(rec('shamir-micah','Shamir','Levi / Uzzielites','Levite leader','male',['micah-uzziel'],[],'1 Chronicles 24:24','Son of Micah in Uzziel’s line.'));
+put(rec('zechariah-isshiah','Zechariah','Levi / Uzzielites','Levite leader','male',['jesiah-uzziel'],[],'1 Chronicles 24:25','Son of Isshiah/Jesiah in Uzziel’s line. Distinct from other Zechariahs.','explicit',['Zechariah son of Isshiah']));
+put(rec('jeshaiah-rehabiah','Jeshaiah / Isshiah','Moses descendants','Levite leader','male',['rehabiah'],[],'1 Chronicles 24:21; 26:25','Chief descendant of Rehabiah. Name appears Jeshaiah/Isshiah in translation traditions.','textual variant',['Jeshaiah','Isshiah']));
+
+// Chapter 24: twenty-four priestly divisions.
+refs(['nadab-aaron','abihu','eleazar-aaron','ithamar','zadok-ahitub'],'1 Chronicles 24:1–6');
+merge('ahimelech-abiathar-text',{ref:'1 Chronicles 24:3,6',note:'Chronicles explicitly places Ahimelech in the Ithamar-side administrative division while calling him son of Abiathar in verse 6, preserving the priestly textual tradition rather than resolving it away.'});
+put(rec('nethaneel-scribe24','Nethaneel','Priestly divisions','Person','male',[],[],'1 Chronicles 24:6','Levite father of Shemaiah the scribe who recorded the priestly lots.'));
+put(rec('shemaiah-scribe24','Shemaiah','Priestly divisions','Scribe / Levite','male',['nethaneel-scribe24'],[],'1 Chronicles 24:6','Levite scribe who recorded the priestly divisions before David, the leaders, Zadok, and Ahimelech.'));
+const courses=[['jehoiarib-course','Jehoiarib'],['jedaiah-course','Jedaiah'],['harim-course','Harim'],['seorim','Seorim'],['malchijah-course','Malchijah'],['mijamin','Mijamin'],['hakkoz','Hakkoz'],['abijah-course','Abijah'],['jeshua-course','Jeshua'],['shecaniah-course','Shecaniah'],['eliashib-course','Eliashib'],['jakim-course','Jakim'],['huppah','Huppah'],['jeshebeab','Jeshebeab'],['bilgah','Bilgah'],['immer-course','Immer'],['hezir','Hezir'],['aphses','Aphses'],['pethahiah-course','Pethahiah'],['jehezekel','Jehezekel'],['jachin-course','Jachin'],['gamul','Gamul'],['delaiah-course','Delaiah'],['maaziah','Maaziah']];courses.forEach(([id,n],i)=>put(rec(id,n,'Priestly divisions','Priestly division head','male',[],[],'1 Chronicles 24:7–18',`Name attached to priestly lot/division ${i+1} in David’s organization. The record represents the named priestly family head and is not automatically merged with later returnee priests of the same name.`)));
+
+// Chapter 25: musical families.
+refs(['asaph-singer','heman-singer','jeduthun'],'1 Chronicles 25:1–6');
+for(const [id,n] of [['zaccur-asaph','Zaccur'],['joseph-asaph','Joseph'],['nethaniah-asaph','Nethaniah'],['asarelah','Asarelah / Jesharelah']])put(rec(id,n,'Levitical singers / Asaph','Singer / prophet','male',['asaph-singer'],[],'1 Chronicles 25:2,9–14',`Son of Asaph serving in prophetic music${n.includes('/')?'; alternate form appears in the lot list':''}.`,n.includes('/')?'textual variant':'explicit',n.includes('/')?n.split(' / '):[]));
+for(const [id,n] of [['gedaliah-jeduthun','Gedaliah'],['zeri','Zeri / Izri'],['jeshaiah-jeduthun','Jeshaiah'],['hashabiah-jeduthun','Hashabiah'],['mattithiah-jeduthun','Mattithiah']])put(rec(id,n,'Levitical singers / Jeduthun','Singer / prophet','male',['jeduthun'],[],'1 Chronicles 25:3,9–21',`Son of Jeduthun serving in temple music${n.includes('/')?'; Zeri/Izri are parallel forms in the chapter':''}.`,n.includes('/')?'textual variant':'explicit',n.includes('/')?n.split(' / '):[]));
+const hemanSons=[['bukkiah','Bukkiah'],['mattaniah-heman','Mattaniah'],['uzziel-heman','Uzziel'],['shebuel-heman','Shebuel'],['jerimoth-heman','Jerimoth'],['hananiah-heman','Hananiah'],['hanani-heman','Hanani'],['eliathah','Eliathah'],['giddalti','Giddalti'],['romamtiezer','Romamti-Ezer'],['joshbekashah','Joshbekashah'],['mallothi','Mallothi'],['hothir','Hothir'],['mahazioth','Mahazioth']];hemanSons.forEach(([id,n])=>put(rec(id,n,'Levitical singers / Heman','Singer / prophet','male',['heman-singer'],[],'1 Chronicles 25:4–31',`Named son of Heman the king’s seer, assigned by lot to temple music.`)));
+// Heman also had three unnamed daughters; no named-person records are created for them.
+
+// Chapter 26: gatekeepers and treasurers.
+merge('meshelemiah',{ref:'1 Chronicles 26:1–3',parents:['kore']});
+for(const [id,n] of [['jediael-meshelemiah','Jediael'],['zebadiah-meshelemiah','Zebadiah'],['jathniel','Jathniel'],['elam-meshelemiah','Elam'],['jehohanan-meshelemiah','Jehohanan'],['elioenai-meshelemiah','Elioenai']])put(rec(id,n,'Temple gatekeepers / Meshelemiah','Gatekeeper','male',['meshelemiah'],[],'1 Chronicles 26:2–3',`Son of Meshelemiah and gatekeeper; Zechariah is represented in the existing Meshelemiah record line.`));
+put(rec('obededom-gatekeeper','Obed-edom','Temple gatekeepers','Gatekeeper / clan head','male',[],[],'1 Chronicles 26:4–8','Obed-edom whose eight sons and grandsons served as gatekeepers. He may be the ark-host Obed-edom or the Obed-edom son of Jeduthun, but Chronicles does not explicitly state the identity.','unresolved identification',['Obed-edom gatekeeper clan']));
+for(const [id,n] of [['shemaiah-obededom','Shemaiah'],['jehozabad-obededom','Jehozabad'],['joah-obededom','Joah'],['sacar-obededom','Sacar'],['nethaneel-obededom','Nethaneel'],['ammiel-obededom','Ammiel'],['issachar-obededom','Issachar'],['peulthai','Peulthai']])put(rec(id,n,'Temple gatekeepers / Obed-edom','Gatekeeper','male',['obededom-gatekeeper'],[],'1 Chronicles 26:4–5',`Son of Obed-edom the gatekeeper; God is said to have blessed this household.`));
+for(const [id,n] of [['othni','Othni'],['rephael','Rephael'],['obed-shemaiah','Obed'],['elzabad-shemaiah','Elzabad'],['elihu-shemaiah','Elihu'],['semachiah','Semachiah']])put(rec(id,n,'Temple gatekeepers / Obed-edom','Gatekeeper','male',['shemaiah-obededom'],[],'1 Chronicles 26:6–7',`Son of Shemaiah son of Obed-edom; described among strong family leaders.`));
+for(const [id,n] of [['simri-hosah','Simri'],['hilkiah-hosah','Hilkiah'],['tebaliah','Tebaliah'],['zechariah-hosah','Zechariah']])put(rec(id,n,'Temple gatekeepers / Hosah','Gatekeeper','male',['hosah'],[],'1 Chronicles 26:10–11',`Son of Hosah the Merarite gatekeeper${n==='Simri'?'; made chief although not firstborn':''}.`));
+put(rec('shuppim-gate','Shuppim','Temple gatekeepers','Gatekeeper','male',[],[],'1 Chronicles 26:16','Gatekeeper assigned with Hosah to the west; relationship to Benjaminite Shuppim is not stated.','unresolved identification',['Shuppim the gatekeeper']));
+put(rec('ahijah-treasurer','Ahijah','Temple treasurers','Levite treasurer','male',[],[],'1 Chronicles 26:20','Levite over the treasuries of the house of God and dedicated gifts. Distinct from other Ahijahs.','explicit',['Ahijah the treasurer']));
+merge('shebuel-gershom',{ref:'1 Chronicles 26:24',note:'Chronicles calls Shebuel son/descendant of Gershom son of Moses ruler over the treasuries.'});
+let ep='rehabiah';for(const [id,n] of [['jeshaiah-eliezerline','Jeshaiah'],['joram-eliezerline','Joram'],['zichri-eliezerline','Zichri'],['shelomith-eliezerline','Shelomith']]){put(rec(id,n,'Moses descendants / treasurers','Levite leader','male',[ep],[],'1 Chronicles 26:25–28',`${n} in the Eliezer-Rehabiah descendant line; Shelomith and relatives oversaw dedicated treasures.`));ep=id;}
+merge('samuel',{ref:'1 Chronicles 26:28'});merge('saul',{ref:'1 Chronicles 26:28'});merge('abner',{ref:'1 Chronicles 26:28'});merge('joab',{ref:'1 Chronicles 26:28'});merge('chenaniah',{ref:'1 Chronicles 26:29'});
+put(rec('hashabiah-hebronite','Hashabiah','Levitical officers','Levite official','male',[],[],'1 Chronicles 26:30','Hebronite leader over western Israelite religious and royal business. Distinct from other Hashabiahs.','explicit',['Hashabiah the Hebronite']));
+merge('jeriah-hebron',{ref:'1 Chronicles 26:31',name:'Jeriah / Jerijah',aliases:['Jeriah','Jerijah'],note:'Chronicles uses Jeriah/Jerijah for the chief Hebronite in the Levite organization.',certainty:'textual variant'});
+
+// Chapter 27: military courses, tribal chiefs, and royal estate officers.
+put(rec('zabdiel-jashobeam','Zabdiel','David military organization','Person','male',[],[],'1 Chronicles 27:2','Father of Jashobeam, commander of the first monthly division.'));
+merge('josheb-basshebeth',{ref:'1 Chronicles 27:2–3',parents:['zabdiel-jashobeam'],note:'Chronicles 27 calls Jashobeam son of Zabdiel and a Perezite commander, adding family information to the mighty-man variant record.'});
+merge('dodo-eleazar',{ref:'1 Chronicles 27:4',name:'Dodo / Dodai',aliases:['Dodo','Dodai'],certainty:'textual variant'});
+put(rec('mikloth-second-course','Mikloth','David military organization','Military officer','male',[],[],'1 Chronicles 27:4','Officer/ruler associated with Dodai’s second monthly course; not automatically merged with Mikloth of Saul’s Gibeonite genealogy.','unresolved identification',['Mikloth second course']));
+put(rec('ammizabad','Ammizabad','David military organization','Military officer','male',['benaiah-jehoiada'],[],'1 Chronicles 27:6','Son of Benaiah son of Jehoiada; officer associated with his father’s third monthly division.'));
+put(rec('zebadiah-asahel','Zebadiah','David military organization','Military officer','male',['asahel'],[],'1 Chronicles 27:7','Son of Asahel who served after his father in the fourth monthly division.'));
+put(rec('shamhuth','Shamhuth','David military organization','Military commander','male',[],[],'1 Chronicles 27:8','Izrahite commander of the fifth monthly division; may correspond to Shammoth/Shammah in mighty-men lists, but identity is not forced.','unresolved identification',['Shamhuth the Izrahite']));
+merge('ira-tekoite',{ref:'1 Chronicles 27:9'});merge('helez',{ref:'1 Chronicles 27:10'});merge('mebunnai',{ref:'1 Chronicles 27:11'});merge('abiezer-anathoth',{ref:'1 Chronicles 27:12'});merge('maharai',{ref:'1 Chronicles 27:13'});merge('benaiah-pirathonite',{ref:'1 Chronicles 27:14'});
+put(rec('heldai','Heldai','David military organization','Military commander','male',[],[],'1 Chronicles 27:15','Netophathite of Othniel’s line, commander of the twelfth monthly division. Possibly parallel to Heled in other lists, but not forced.','unresolved identification',['Heldai the Netophathite'],[C('descendant of','othniel','1 Chronicles 27:15')]));
+// Tribal rulers.
+put(rec('zichri-eliezer','Zichri','Tribal leadership','Person','male',[],[],'1 Chronicles 27:16','Father of Eliezer, ruler over Reuben.'));
+put(rec('eliezer-reuben-ruler','Eliezer','Tribal leadership','Tribal ruler','male',['zichri-eliezer'],[],'1 Chronicles 27:16','Son of Zichri and ruler of the Reubenites. Distinct from Eliezer son of Moses.','explicit',['Eliezer ruler of Reuben']));
+put(rec('maacah-shephatiah','Maacah','Tribal leadership','Person','unknown',[],[],'1 Chronicles 27:16','Parent of Shephatiah, ruler over Simeon; gender/identity not specified.'));
+put(rec('shephatiah-simeon-ruler','Shephatiah','Tribal leadership','Tribal ruler','male',['maacah-shephatiah'],[],'1 Chronicles 27:16','Son of Maacah and ruler over Simeon.'));
+put(rec('kemuel-hashabiah','Kemuel','Tribal leadership','Person','male',[],[],'1 Chronicles 27:17','Father of Hashabiah, ruler over Levites. Distinct from earlier Kemuels.'));
+put(rec('hashabiah-levite-ruler','Hashabiah','Tribal leadership','Tribal ruler','male',['kemuel-hashabiah'],[],'1 Chronicles 27:17','Son of Kemuel and ruler over the Levites.'));
+merge('zadok-ahitub',{ref:'1 Chronicles 27:17'});
+put(rec('elihu-david-brother','Elihu','David family','Tribal ruler','male',['jesse'],[],'1 Chronicles 27:18','Named as one of David’s brothers and ruler over Judah. This name is not in 1 Chronicles 2’s seven-son list, creating a naming/genealogical issue; he may represent Eliab or another name form, but identity is not forced.','unresolved identification',['Elihu brother of David']));
+put(rec('michael-omri','Michael','Tribal leadership','Person','male',[],[],'1 Chronicles 27:18','Father of Omri, ruler over Issachar.'));
+put(rec('omri-issachar','Omri','Tribal leadership','Tribal ruler','male',['michael-omri'],[],'1 Chronicles 27:18','Son of Michael and ruler over Issachar. Distinct from King Omri.','explicit',['Omri ruler of Issachar']));
+put(rec('obadiah-ishmaiah','Obadiah','Tribal leadership','Person','male',[],[],'1 Chronicles 27:19','Father of Ishmaiah, ruler over Zebulun.'));
+put(rec('ishmaiah-zebulun','Ishmaiah','Tribal leadership','Tribal ruler','male',['obadiah-ishmaiah'],[],'1 Chronicles 27:19','Son of Obadiah and ruler over Zebulun.','explicit',['Ishmaiah ruler of Zebulun']));
+put(rec('azriel-jerimoth','Azriel','Tribal leadership','Person','male',[],[],'1 Chronicles 27:19','Father of Jerimoth, ruler over Naphtali.'));
+put(rec('jerimoth-naphtali','Jerimoth','Tribal leadership','Tribal ruler','male',['azriel-jerimoth'],[],'1 Chronicles 27:19','Son of Azriel and ruler over Naphtali.'));
+put(rec('azaziah-hoshea','Azaziah','Tribal leadership','Person','male',[],[],'1 Chronicles 27:20','Father of Hoshea, ruler over Ephraim.'));
+put(rec('hoshea-ephraim','Hoshea','Tribal leadership','Tribal ruler','male',['azaziah-hoshea'],[],'1 Chronicles 27:20','Son of Azaziah and ruler over Ephraim. Distinct from Hoshea king of Israel and Hoshea/Joshua.','explicit',['Hoshea ruler of Ephraim']));
+put(rec('pedaiah-joel-manasseh','Pedaiah','Tribal leadership','Person','male',[],[],'1 Chronicles 27:20','Father of Joel, ruler over western Manasseh.'));
+put(rec('joel-manasseh-ruler','Joel','Tribal leadership','Tribal ruler','male',['pedaiah-joel-manasseh'],[],'1 Chronicles 27:20','Son of Pedaiah and ruler over half-tribe Manasseh.'));
+put(rec('zechariah-iddo-gilead','Zechariah','Tribal leadership','Person','male',[],[],'1 Chronicles 27:21','Father of Iddo, ruler over eastern Manasseh/Gilead.'));
+put(rec('iddo-manasseh-ruler','Iddo','Tribal leadership','Tribal ruler','male',['zechariah-iddo-gilead'],[],'1 Chronicles 27:21','Son of Zechariah and ruler over the half-tribe of Manasseh in Gilead.'));
+put(rec('jaasiel-abner','Jaasiel','Tribal leadership','Tribal ruler','male',['abner'],[],'1 Chronicles 27:21','Son/descendant of Abner and ruler over Benjamin. Chronicles explicitly connects him to Abner.'));
+put(rec('jeroham-azareel','Jeroham','Tribal leadership','Person','male',[],[],'1 Chronicles 27:22','Father of Azareel, ruler over Dan.'));
+put(rec('azareel-dan','Azareel','Tribal leadership','Tribal ruler','male',['jeroham-azareel'],[],'1 Chronicles 27:22','Son of Jeroham and ruler over Dan.'));
+// Royal estate officials and counselors.
+put(rec('adiel-azmaveth','Adiel','David royal estates','Person','male',[],[],'1 Chronicles 27:25','Father of Azmaveth, royal treasurer.'));
+put(rec('azmaveth-treasurer','Azmaveth','David royal estates','Official','male',['adiel-azmaveth'],[],'1 Chronicles 27:25','Son of Adiel and officer over royal treasures. Distinct from Azmaveth the mighty man.','explicit',['Azmaveth royal treasurer']));
+put(rec('uzziah-jehonathan','Uzziah','David royal estates','Person','male',[],[],'1 Chronicles 27:25','Father of Jehonathan, officer over rural storehouses. Distinct from King Uzziah.'));
+put(rec('jehonathan-storehouses','Jehonathan','David royal estates','Official','male',['uzziah-jehonathan'],[],'1 Chronicles 27:25','Son of Uzziah and officer over storehouses.'));
+put(rec('chelub-ezri','Chelub','David royal estates','Person','male',[],[],'1 Chronicles 27:26','Father of Ezri. Distinct from Chelub brother of Shuah.'));
+put(rec('ezri','Ezri','David royal estates','Official','male',['chelub-ezri'],[],'1 Chronicles 27:26','Son of Chelub and officer over agricultural workers.'));
+put(rec('shimei-ramathite','Shimei','David royal estates','Official','male',[],[],'1 Chronicles 27:27','Ramathite officer over vineyards. Distinct from other Shimeis.','explicit',['Shimei the Ramathite']));
+put(rec('zabdi-shiphmite','Zabdi','David royal estates','Official','male',[],[],'1 Chronicles 27:27','Shiphmite officer over wine stores. Distinct from the Achan genealogy Zabdi/Zimri tradition.','explicit',['Zabdi the Shiphmite']));
+put(rec('baalhanan-gederite','Baal-hanan','David royal estates','Official','male',[],[],'1 Chronicles 27:28','Gederite officer over olive and sycamore trees. Distinct from Baal-hanan king of Edom.','explicit',['Baal-hanan the Gederite']));
+put(rec('joash-oil','Joash','David royal estates','Official','male',[],[],'1 Chronicles 27:28','Officer over oil stores; distinct from kings and other Joashes.','explicit',['Joash over oil stores']));
+put(rec('shitrai','Shitrai','David royal estates','Official','male',[],[],'1 Chronicles 27:29','Sharonite officer over cattle in Sharon.'));
+put(rec('adlai-shaphat','Adlai','David royal estates','Person','male',[],[],'1 Chronicles 27:29','Father of Shaphat.'));
+put(rec('shaphat-adlai','Shaphat','David royal estates','Official','male',['adlai-shaphat'],[],'1 Chronicles 27:29','Son of Adlai and officer over cattle in the valleys.'));
+put(rec('obil','Obil','David royal estates','Official','male',[],[],'1 Chronicles 27:30','Ishmaelite officer over camels.'));
+put(rec('jehdeiah','Jehdeiah','David royal estates','Official','male',[],[],'1 Chronicles 27:30','Meronothite officer over donkeys.'));
+put(rec('jaziz','Jaziz','David royal estates','Official','male',[],[],'1 Chronicles 27:31','Hagrite officer over flocks.'));
+put(rec('jonathan-david-uncle','Jonathan','David family / counselors','Counselor / scribe','male',[],[],'1 Chronicles 27:32','Called David’s uncle/relative, a wise counselor and scribe. His exact parentage is not supplied; distinct from the many other Jonathans.','unresolved identification',['Jonathan David’s uncle']));
+put(rec('hachmoni','Hachmoni','David family / counselors','Person','male',[],[],'1 Chronicles 27:32','Father of Jehiel, attendant with the king’s sons.'));
+put(rec('jehiel-hachmoni','Jehiel','David family / counselors','Tutor / attendant','male',['hachmoni'],[],'1 Chronicles 27:32','Son of Hachmoni assigned with the king’s sons.'));
+merge('ahithophel',{ref:'1 Chronicles 27:33'});merge('hushai',{ref:'1 Chronicles 27:33'});merge('abiathar',{ref:'1 Chronicles 27:34'});merge('joab',{ref:'1 Chronicles 27:34'});
+put(rec('benaiah-jehoiada-counsel-father','Benaiah','David counselors','Person','male',[],[],'1 Chronicles 27:34','Father of a Jehoiada who follows Ahithophel in counsel. The wording reverses the better-known Benaiah son of Jehoiada relationship, so this is kept as a separate textual/person record.','unresolved identification',['Benaiah father of counselor Jehoiada']));
+put(rec('jehoiada-benaiah-counsel','Jehoiada','David counselors','Counselor','male',['benaiah-jehoiada-counsel-father'],[],'1 Chronicles 27:34','Counselor after Ahithophel, called son of Benaiah. Distinct from Jehoiada father of Benaiah the warrior unless the text’s relationship is shown to be a reversal or variant.','unresolved identification',['Jehoiada son of Benaiah']));
+
+// Chapters 28–29 add no new named family members, but confirm David, Solomon, Zadok, Samuel, Nathan, Gad, and the Gershonite treasurer Jehiel.
+refs(['david','solomon','zadok-ahitub','samuel','nathan-prophet','gad-prophet','jehiel-laadan'],'1 Chronicles 28–29');
+
+db.scope='Genesis–1 Chronicles';db.phase=6;db.completedBooks=[...new Set([...(db.completedBooks||[]),'1 Chronicles'])];
+})();

@@ -24,13 +24,13 @@ function initializeNavigation(){
   ];
 
   const startPages=new Set(['new-believers.html','new-believer-step.html','new-believer-complete.html','new-believer-mentor.html','new-believer-mentor-session.html','new-believer-toolkit.html','new-believer-toolkit-packet.html']);
-  const resourcePages=new Set(['resource-center.html','resources.html','teaching-library.html']);
+  const resourcePages=new Set(['resource-center.html','resources.html','teaching-library.html','biblical-maps.html']);
   const studyPages=new Set(['studies.html','study-library.html','dashboard.html','community.html','ministry-tools.html','ministry-assistant.html','topics.html','scripture-index.html','book-by-book.html','current-events-series.html','james-series.html','after-benediction-series.html','preferences-idols-series.html','first-john-study.html','philippians-study.html','ruth-study.html','technology-ai.html','sunday-school.html','sunday-school-lesson.html','women-of-faith.html','men-of-faith.html','marriage-family.html','marriage-family-study.html','difficult-questions.html','difficult-questions-study.html','leadership.html','leadership-study.html','walking-with-jesus.html','walking-with-jesus-study.html','growing-with-jesus.html','following-jesus-for-yourself.html']);
   const gamePages=new Set(['play.html','games.html','host-test-checklist.html','multi-team-game-v095.html','scripture-or-suspicion.html','who-am-i.html','finish-the-verse.html','bible-jeopardy.html','memory-match.html','lightning-round.html','faith-wheel.html','bible-tic-tac-toe.html']);
 
   let section='home';
   if(startPages.has(page))section='start';
-  else if(resourcePages.has(page))section='resources';
+  else if(resourcePages.has(page)||page.startsWith('biblical-map-'))section='resources';
   else if(studyPages.has(page)||page.startsWith('study-')||page.startsWith('lesson-')||page.startsWith('women-of-faith-')||page.startsWith('men-of-faith-')||page.startsWith('marriage-family-')||page.startsWith('difficult-questions-')||page.startsWith('leadership-')||page.startsWith('walking-with-jesus-')||page.startsWith('growing-with-jesus-')||page.startsWith('following-jesus-for-yourself-'))section='studies';
   else if(gamePages.has(page)||page.includes('game'))section='games';
   else if(page.startsWith('devotional'))section='devotionals';
@@ -127,6 +127,7 @@ function initializeNavigation(){
   ]};
   if(section==='resources')context={label:'Resource Center navigation',links:[
     ['Resource Center','resource-center.html',['resource-center.html','resources.html'].includes(page)],
+    ['Biblical Maps','biblical-maps.html',page==='biblical-maps.html'||page.startsWith('biblical-map-')],
     ['Teaching Library','teaching-library.html',page==='teaching-library.html'],
     ['Mentor Guide','new-believer-mentor.html',false],
     ['Discipleship Toolkit','new-believer-toolkit.html',false]
@@ -161,7 +162,7 @@ function initializeNavigation(){
     'sunday-school.html','women-of-faith.html','men-of-faith.html','marriage-family.html',
     'difficult-questions.html','leadership.html','walking-with-jesus.html','growing-with-jesus.html','following-jesus-for-yourself.html',
     'study-library.html','dashboard.html','ministry-tools.html','topics.html','scripture-index.html',
-    'devotionals.html','prayer.html','articles.html','newsletter.html','resource-center.html','teaching-library.html',
+    'devotionals.html','prayer.html','articles.html','newsletter.html','resource-center.html','teaching-library.html','biblical-maps.html',
     'podcast.html','news.html','search.html','site-map.html',
     'about.html','mission.html','contact.html','play.html','games.html','host-test-checklist.html'
   ]);
@@ -181,6 +182,7 @@ function initializeNavigation(){
     const trail=[['Home','index.html']];
     const root=sectionRoots[section];
     if(root&&page!==root[1])trail.push(root);
+    if(page.startsWith('biblical-map-'))trail.push(['Biblical Maps','biblical-maps.html']);
     if(page==='new-believer-mentor-session.html')trail.push(['Mentor Guide','new-believer-mentor.html']);
     if(page==='new-believer-toolkit-packet.html')trail.push(['Discipleship Toolkit','new-believer-toolkit.html']);
     if(page==='sunday-school-lesson.html')trail.push(['Sunday School','sunday-school.html']);

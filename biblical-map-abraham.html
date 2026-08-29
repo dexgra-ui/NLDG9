@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#06122d">
+<meta name="description" content="Explore Abraham's journey from Ur and Haran into Canaan, Egypt, Hebron, and Beersheba with locations and route uncertainty clearly labeled.">
+<title>Abraham's Journey Map | No Labels, Designed by God</title>
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+.map-hero{background:linear-gradient(135deg,#06122d,#0d234b);color:#fff;border-radius:28px;padding:clamp(2rem,5vw,4rem);margin:1.25rem auto 2rem}.map-hero .kicker{color:#e2bd69}.map-hero .lead{color:#dce4f1;max-width:880px}.map-shell{background:#fff;border:1px solid #e3e8f1;border-radius:22px;padding:1rem;box-shadow:0 10px 28px rgba(6,18,45,.07)}#abraham-map{height:min(68vh,650px);min-height:430px;border-radius:16px}.accuracy-note{border-left:5px solid #c79b45;background:#fff9ec;padding:1rem 1.2rem;border-radius:12px}.legend-grid,.place-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem}.legend-grid div,.place-grid article{padding:1rem;border:1px solid #e3e8f1;border-radius:14px;background:#f6f8fc}.place-grid h3{margin:.1rem 0 .4rem}.dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:.45rem}.dot.secure{background:#183b70}.dot.proposed{background:#c79b45}.line-sample{display:inline-block;width:38px;border-top:4px dashed #8b6115;margin-right:.55rem;vertical-align:middle}.source-note{font-size:.92rem;color:#5f6673}.leaflet-popup-content strong{color:#06122d}
+</style>
+</head>
+<body>
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God™</strong><small>Biblical Maps &amp; Geography</small></span></a><button class="menu" aria-expanded="false">Menu</button><nav></nav></header>
+<main>
+<section class="map-hero"><p class="kicker">Biblical Maps • Genesis 11–22</p><h1>Abraham’s Journey</h1><p class="lead">Trace the biblical movement from Ur to Haran and then into Canaan. The places are mapped according to leading modern identifications; the connecting lines are intentionally approximate because Genesis does not preserve Abraham’s exact roads.</p><div class="actions"><a class="button primary" href="https://www.canva.com/d/f6uKGSyvPweTBK-" target="_blank" rel="noopener noreferrer">Open Branded Canva Map ↗</a><a class="button secondary" href="biblical-maps.html">Back to Biblical Maps</a></div></section>
+<section class="section"><div class="map-shell"><div id="abraham-map" aria-label="Interactive map of Abraham's journey"></div></div></section>
+<section class="section"><div class="accuracy-note"><strong>How to read this map:</strong> The sequence follows Genesis 11–22, but the dashed line is a teaching aid, not a claim that Abraham traveled those exact modern paths. Ur itself has competing proposals, although Tell el-Muqayyar in southern Mesopotamia is the leading identification in the OpenBible geographic dataset. Egypt is shown only as a broad destination because Genesis does not identify Abraham’s Egyptian stopping place.</div></section>
+<section class="section"><div class="section-heading"><p class="kicker">Map key</p><h2>Certainty is part of the lesson.</h2></div><div class="legend-grid"><div><span class="dot secure"></span><strong>Strong / leading location</strong><p>Modern site has substantial geographic or archaeological support.</p></div><div><span class="dot proposed"></span><strong>Proposed / generalized location</strong><p>The biblical place or exact point remains less certain.</p></div><div><span class="line-sample"></span><strong>Approximate journey</strong><p>Shows biblical sequence, not a verified ancient road.</p></div></div></section>
+<section class="section"><div class="section-heading"><p class="kicker">Places to know</p><h2>Follow the call geographically.</h2></div><div class="place-grid"><article><h3>Ur of the Chaldeans</h3><p>Genesis begins Abram’s family movement from Ur. Tell el-Muqayyar is the leading proposal, but other identifications have been suggested.</p><small>Genesis 11:28–31; 15:7</small></article><article><h3>Haran</h3><p>The family settled at Haran before Abram obeyed God’s call to go to the land God would show him.</p><small>Genesis 11:31–12:5</small></article><article><h3>Shechem</h3><p>Abram’s first named stopping place in Canaan, near the oak of Moreh, where God reaffirmed the promise of the land.</p><small>Genesis 12:6–7</small></article><article><h3>Bethel / Ai region</h3><p>Abram pitched his tent east of Bethel and built an altar. The city identification is strong; the exact campsite is not known.</p><small>Genesis 12:8; 13:3–4</small></article><article><h3>Egypt</h3><p>Famine drove Abram into Egypt temporarily. Scripture names the country but not a precise city or settlement.</p><small>Genesis 12:10–20</small></article><article><h3>Hebron</h3><p>Abram settled by the oaks of Mamre near Hebron, and the region became central to the patriarchal story.</p><small>Genesis 13:18; 18:1; 23:2</small></article><article><h3>Beersheba</h3><p>Abraham’s covenant with Abimelech and later residence connect the patriarchal story with the southern Negev.</p><small>Genesis 21:22–34</small></article></div></section>
+<section class="section"><div class="section-heading"><p class="kicker">Reference approach</p><h2>Locations cross-checked before publication.</h2></div><p class="source-note">Coordinates and confidence notes are cross-checked with OpenBible.info Bible Geocoding: Tell el-Muqayyar for the leading Ur proposal, Harran for Haran, Tell Balatah for Shechem, Beitin for Bethel, Tel Rumeida for Hebron, and Tel Beer Sheva for Beersheba. The map intentionally does not convert those confidence levels into claims Scripture itself does not make.</p></section>
+</main>
+<footer class="ministry-footer"><div class="footer-links"><a href="biblical-maps.html">Biblical Maps</a><a href="studies.html">Bible Studies</a><a href="biblical-people-genealogy.html">Biblical People</a><a href="resource-center.html">Resource Center</a></div><small>© <span data-year></span> No Labels Designed by God LLC. All rights reserved. No Labels Designed by God™ is a claimed trademark.</small></footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const map=L.map('abraham-map',{scrollWheelZoom:false});
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+const strong={radius:7,color:'#06122d',weight:2,fillColor:'#183b70',fillOpacity:.9};
+const proposed={radius:7,color:'#7a5610',weight:2,fillColor:'#c79b45',fillOpacity:.9};
+const pts={ur:[30.962222,46.104444],haran:[36.864444,39.032778],shechem:[32.213611,35.281944],bethel:[31.922778,35.241389],hebron:[31.525087,35.102220],beersheba:[31.244722,34.840833],egypt:[30.45,31.15]};
+function mark(key,label,note,type='strong'){return L.circleMarker(pts[key],type==='strong'?strong:proposed).addTo(map).bindPopup('<strong>'+label+'</strong><br>'+note);}
+mark('ur','Ur — Tell el-Muqayyar','Leading identification; Abraham’s Ur remains debated.','proposed');
+mark('haran','Haran — Harran','Very strong modern identification.');
+mark('shechem','Shechem — Tell Balatah','Very strong identification.');
+mark('bethel','Bethel — Beitin','Leading identification; alternatives remain.','proposed');
+mark('hebron','Hebron — Tel Rumeida','Very strong identification.');
+mark('beersheba','Beersheba — Tel Beer Sheva','Leading identification.');
+mark('egypt','Egypt — general destination','Genesis 12 names Egypt but no precise stopping place.','proposed');
+const route=L.polyline([pts.ur,pts.haran,pts.shechem,pts.bethel,[31.3,34.9],pts.egypt,[31.3,34.9],pts.bethel,pts.hebron,pts.beersheba],{color:'#9b6b12',weight:4,dashArray:'9 9',opacity:.8}).addTo(map).bindPopup('Approximate biblical sequence — not a reconstructed road.');
+map.fitBounds(route.getBounds().pad(.12));
+</script><script src="script.js"></script>
+</body></html>

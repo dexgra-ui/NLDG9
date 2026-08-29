@@ -3,7 +3,8 @@ const db=window.NLDG_BIBLICAL_GENEALOGY;
 if(!db)return;
 
 const asArray=value=>Array.isArray(value)?value:(value==null||value===''?[]:[value]);
-const records=asArray(db.records).filter(r=>r&&typeof r==='object'&&r.id&&r.name).map(r=>({
+const rawRecords=asArray(db.records);
+const records=rawRecords.filter(r=>r&&typeof r==='object'&&r.id&&r.name).map(r=>({
   ...r,
   parents:asArray(r.parents),
   spouses:asArray(r.spouses),
@@ -14,7 +15,7 @@ const byId=new Map(records.map(r=>[r.id,r]));
 const children=new Map();
 records.forEach(r=>r.parents.forEach(p=>{if(!children.has(p))children.set(p,[]);children.get(p).push(r.id)}));
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const name=id=>byId.get(id)?.name||id;
+const name=id=>byId.get(id)?.name||id||'';
 const pick=(...ids)=>ids.find(id=>byId.has(id))||ids[0];
 const unique=a=>[...new Set(a.filter(v=>v!=null&&v!==''))];
 const isCollective=r=>/group|clan|nation/i.test(r.kind||'');
@@ -74,56 +75,120 @@ function card(r){
  const family=familyText(r);
  return `<article class="bp-card" id="person-${esc(r.id)}"><div class="bp-card-top"><span class="bp-line">${esc(r.line)}</span><span class="bp-certainty ${cls}">${esc(badge)}</span></div><h3>${esc(r.name)}</h3>${r.aliases.length?`<p class="bp-alias">Also/variant: ${r.aliases.map(esc).join(', ')}</p>`:''}<p class="bp-kind">${esc(r.kind)}${r.gender&&r.gender!=='unknown'?` · ${esc(r.gender)}`:''}</p>${family?`<p class="bp-family">${esc(family)}</p>`:''}<p class="bp-ref">${esc(r.ref)}</p>${r.note?`<p class="bp-note">${esc(r.note)}</p>`:''}</article>`;
 }
-function haystack(r){
- const connectionHay=r.connections.flatMap(c=>[c?.type,name(c?.target),c?.ref,c?.note]);
- return [r.name,r.line,r.kind,r.ref,r.note,r.certainty,...r.aliases,...r.parents.map(name),...r.spouses.map(name),...connectionHay].filter(Boolean).join(' ').toLowerCase();
+function makeSearchText(r){
+ const connectionHay=[];
+ r.connections.forEach(c=>{
+  if(!c)return;
+  connectionHay.push(c.type||'',name(c.target),c.ref||'',c.note||'');
+ });
+ return [r.name,r.line,r.kind,r.ref,r.note,r.certainty,...r.aliases,...r.parents.map(name),...r.spouses.map(name),...connectionHay]
+  .filter(Boolean)
+  .join(' ')
+  .toLocaleLowerCase('en-US');
 }
+
+// Build the expensive searchable text once. Safari is noticeably happier when
+// each keystroke only compares strings instead of rebuilding relationship text.
+const indexedRecords=records.map(record=>({record,searchText:makeSearchText(record)}));
+let lastQuery='';
+let renderTimer=0;
+let composing=false;
+
 function render({focusResults=false}={}){
  try{
-  const q=search.value.trim().toLowerCase();
+  const rawQuery=search.value.trim();
+  const q=rawQuery.toLocaleLowerCase('en-US');
   const line=lineFilter?.value||'all';
   const kind=kindFilter?.value||'all';
-  const matched=records.filter(r=>{
-   const matchesText=!q||haystack(r).includes(q);
-   return matchesText&&(line==='all'||r.line===line)&&(kind==='all'||r.kind===kind);
-  });
-  const cap=q||line!=='all'||kind!=='all'?150:80;
+  const matched=[];
+
+  for(let i=0;i<indexedRecords.length;i+=1){
+   const item=indexedRecords[i];
+   const r=item.record;
+   if(q&&!item.searchText.includes(q))continue;
+   if(line!=='all'&&r.line!==line)continue;
+   if(kind!=='all'&&r.kind!==kind)continue;
+   matched.push(r);
+  }
+
+  // Keep the DOM small on every platform. The search still scans the full
+  // Genesis–Revelation index, but only the most useful first matches render.
+  const filtered=q||line!=='all'||kind!=='all';
+  const cap=filtered?60:30;
   const visible=matched.slice(0,cap);
   grid.innerHTML=visible.map(card).join('');
+
   if(!matched.length){
-   summary.textContent=`No matches found${q?` for “${search.value.trim()}”`:''}. Try an alternate spelling, relative, book, or Scripture reference.`;
+   summary.textContent=`No matches found${q?` for “${rawQuery}”`:''}. Try an alternate spelling, relative, book, or Scripture reference.`;
   }else if(matched.length>visible.length){
    summary.textContent=`Showing the first ${visible.length} of ${matched.length} matching records. Narrow the search to see a specific person.`;
-  }else if(!q&&line==='all'&&kind==='all'){
-   summary.textContent=`Showing the first ${visible.length} of ${records.length} records. Start typing a name to search the complete Genesis–Revelation database.`;
+  }else if(!filtered){
+   summary.textContent=`Showing the first ${visible.length} of ${records.length} records. Type a name or use Search to query the complete Genesis–Revelation database.`;
   }else{
    summary.textContent=`Showing ${matched.length} matching record${matched.length===1?'':'s'} of ${records.length} total.`;
   }
-  if(focusResults)summary.scrollIntoView({behavior:'smooth',block:'nearest'});
+
+  lastQuery=q;
+  if(focusResults&&typeof summary.scrollIntoView==='function'){
+   summary.scrollIntoView({behavior:'auto',block:'nearest'});
+  }
  }catch(error){
   console.error('Biblical people search failed:',error);
   summary.textContent='The database search hit an error. Please refresh the page and try again.';
  }
 }
 
-let timer;
-const scheduleRender=()=>{
- clearTimeout(timer);
- timer=setTimeout(()=>render(),60);
-};
-search.addEventListener('input',scheduleRender);
-search.addEventListener('search',scheduleRender);
-search.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();render({focusResults:true});}});
-lineFilter?.addEventListener('change',()=>render());
-kindFilter?.addEventListener('change',()=>render());
-searchButton.addEventListener('click',()=>render({focusResults:true}));
+function scheduleRender(delay=180){
+ if(composing)return;
+ if(renderTimer)window.clearTimeout(renderTimer);
+ renderTimer=window.setTimeout(()=>{
+  renderTimer=0;
+  render();
+ },delay);
+}
+function runSearch(){
+ if(renderTimer){window.clearTimeout(renderTimer);renderTimer=0;}
+ render({focusResults:true});
+}
+
+// input handles modern browsers; change, keyup and compositionend provide
+// dependable fallbacks for Safari/iOS keyboards and text composition.
+search.addEventListener('input',()=>scheduleRender());
+search.addEventListener('search',()=>scheduleRender(0));
+search.addEventListener('change',()=>scheduleRender(0));
+search.addEventListener('compositionstart',()=>{composing=true;});
+search.addEventListener('compositionend',()=>{composing=false;scheduleRender(0);});
+search.addEventListener('keyup',event=>{
+ if(event.key==='Enter')return;
+ const current=search.value.trim().toLocaleLowerCase('en-US');
+ if(current!==lastQuery)scheduleRender(120);
+});
+search.addEventListener('keydown',event=>{
+ if(event.key==='Enter'){
+  event.preventDefault();
+  runSearch();
+ }
+});
+lineFilter?.addEventListener('change',runSearch);
+kindFilter?.addEventListener('change',runSearch);
+searchButton.addEventListener('click',runSearch);
 clearButton.addEventListener('click',()=>{
+ if(renderTimer){window.clearTimeout(renderTimer);renderTimer=0;}
  search.value='';
  if(lineFilter)lineFilter.value='all';
  if(kindFilter)kindFilter.value='all';
  render();
  search.focus();
 });
+
+// Support shareable searches such as ?q=Abraham without making them required.
+try{
+ const params=new URLSearchParams(window.location.search);
+ const initialQuery=params.get('q');
+ if(initialQuery)search.value=initialQuery;
+}catch(error){
+ console.warn('Could not read biblical people search query string.',error);
+}
 render();
 
 function renderLine(id,ids,title){

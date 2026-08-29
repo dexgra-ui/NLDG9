@@ -6,7 +6,7 @@ Production website and installable ministry platform for No Labels, Designed by 
 
 **Version 1.1.1 — Ministry Platform Maintenance Release**
 
-This maintenance release captures the expanded study collections, Bible Tic-Tac-Toe improvements, linked Scripture references, podcast correction, accessibility fixes, repository cleanup, and stronger quality automation now serving the ministry platform.
+This maintenance release captures the expanded study collections, complete Book-by-Book Bible Study library, Biblical Maps & Geography reference system, Complete Biblical People & Genealogy Reference, Bible Tic-Tac-Toe improvements, linked Scripture references, podcast correction, accessibility fixes, repository cleanup, and stronger quality automation now serving the ministry platform.
 
 ## Ministry journeys
 
@@ -21,7 +21,16 @@ This maintenance release captures the expanded study collections, Bible Tic-Tac-
 - Faith That Works study through James
 - After the Benediction discipleship series
 - When Preferences Become Idols study series
-- Book-by-book studies through James, Philippians, and 1 John
+- Walking with Jesus chronological Gospel journey
+- Book-by-Book Bible Studies across all 66 books with 447 complete lessons
+
+## Biblical reference resources
+
+- Biblical Maps & Geography hub with 11 interactive, accuracy-conscious teaching maps
+- Automatic geography links inside the 66-book study library
+- Complete Biblical People & Genealogy Reference spanning Genesis through Revelation
+- Genealogy of Jesus reference comparing Matthew 1 and Luke 3
+- Explicit labels for debated locations, reconstructed routes, approximate borders, textual variants, probable identities, and other areas of uncertainty
 
 ## Ministry platform
 
@@ -30,10 +39,10 @@ This maintenance release captures the expanded study collections, Bible Tic-Tac-
 - Related-content recommendations
 - Saved favorites, progress, notes, and continue-reading state on the visitor’s device
 - My Journey dashboard and personal library
-- Resource Center, teaching tools, devotionals, articles, podcast, and ministry news centers
+- Resource Center, teaching tools, biblical reference resources, devotionals, articles, podcast, and ministry news centers
 - Installable progressive web app with offline caching
 - Responsive layouts for phone, tablet, laptop, and desktop
-- Automated site, accessibility, Leadership, and Toolkit quality audits
+- Automated site, accessibility, SEO/social, responsive, repository-completion, Leadership, and Toolkit quality audits
 
 ## No Labels Games
 
@@ -73,11 +82,12 @@ Before merging a release:
 
 1. Run the Site Quality Audit.
 2. Run the Accessibility Audit.
-3. Run any journey-specific audit affected by the change.
-4. Open the homepage, search, Resource Center, site map, and changed ministry pages.
-5. Test portrait and landscape layouts on phone and tablet.
-6. Launch all six games and verify scoring, navigation, standings, presentation mode, and replay.
-7. Confirm there are no placeholder forms, broken links, missing metadata, or unfinished public messages.
+3. Run the SEO/social and Repository Completion audits.
+4. Run any journey-specific audit affected by the change.
+5. Open the homepage, search, Resource Center, site map, and changed ministry pages.
+6. Test portrait and landscape layouts on phone and tablet.
+7. Launch all six games and verify scoring, navigation, standings, presentation mode, and replay.
+8. Confirm there are no placeholder forms, broken links, missing metadata, or unfinished public messages.
 
 Audit reports and screenshots are retained as downloadable GitHub Actions artifacts instead of being committed back into the production branch.
 

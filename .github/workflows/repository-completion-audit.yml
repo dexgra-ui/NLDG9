@@ -61,7 +61,7 @@ jobs:
       - name: Install audit tools
         run: |
           npm install --no-save playwright axe-core
-          npx playwright install --with-deps chromium webkit
+          npx playwright install --with-deps chromium firefox webkit
 
       - name: Start local site
         run: |

@@ -28,6 +28,7 @@ const pages=[
   ['articles','articles.html'],
   ['resource-center','resource-center.html'],
   ['search','search.html'],
+  ['biblical-people','biblical-people-genealogy.html'],
   ['site-map','site-map.html'],
   ['dashboard','dashboard.html'],
   ['ministry-tools','ministry-tools.html'],
@@ -54,7 +55,7 @@ async function staticChecks(){
   record(!index.includes('signup-form')&&!index.includes('Email signup will be connected'),'Homepage contains no placeholder signup form.','Homepage still contains a placeholder signup experience.');
   record(index.includes('substack.com/@nolabelsdesignedbygod')&&index.includes('facebook.com/NoLabelsDesignedbyGod'),'Homepage links to the live Substack and Facebook channels.','Homepage is missing one or both live ministry channels.');
   record(siteMap.includes('site-map-content-index')&&siteMap.includes('site-map.js'),'Site map contains its generated registry index.','Site map is not connected to the generated registry index.');
-  record(siteMapScript.includes('window.NLDG_CONTENT')&&siteMapScript.includes('status!==\'draft\''),'Site-map generator reads published shared-library entries.','Site-map generator is not using the published shared library correctly.');
+  record(siteMapScript.includes('window.NLDG_CONTENT')&&siteMapScript.includes("status!=='draft'"),'Site-map generator reads published shared-library entries.','Site-map generator is not using the published shared library correctly.');
   const hasReleaseCache=/const CACHE='nldg-v\d+-\d+-\d+'/.test(serviceWorker);
   const hasSiteNavigation=/'site-navigation\.js(?:\?[^']*)?'/.test(serviceWorker);
   record(hasReleaseCache&&serviceWorker.includes("'index.html'")&&serviceWorker.includes("'styles.css'")&&serviceWorker.includes("'script.js'")&&hasSiteNavigation,'Offline shell uses a versioned release cache with essential application files.','Service worker release cache or essential application-shell files are missing.');
@@ -132,6 +133,20 @@ async function browserChecks(){
       const found=await page.locator('#search-results').innerText().catch(()=> '');
       record(found.includes('Leadership Toolkit'),'Global search finds the Leadership Toolkit.','Global search did not find the Leadership Toolkit.');
     }else failures.push('Search page is missing #site-search.');
+
+    await page.goto(`${BASE_URL}/biblical-people-genealogy.html`,{waitUntil:'domcontentloaded',timeout:30000});
+    await page.waitForLoadState('networkidle').catch(()=>{});
+    await page.waitForTimeout(300);
+    const biblicalSearch=page.locator('#biblical-people-search');
+    if(await biblicalSearch.count()){
+      const initialSummary=await page.locator('#biblical-people-summary').innerText().catch(()=> '');
+      await biblicalSearch.fill('Abraham');
+      await page.waitForTimeout(250);
+      const resultSummary=await page.locator('#biblical-people-summary').innerText().catch(()=> '');
+      const resultText=await page.locator('#biblical-people-grid').innerText().catch(()=> '');
+      const searchButtonCount=await page.locator('#biblical-people-search-button').count();
+      record(initialSummary!==resultSummary&&/Abraham/i.test(resultText)&&searchButtonCount===1,'Biblical people search filters the database for Abraham and exposes an explicit Search button.','Biblical people search did not filter correctly for Abraham.');
+    }else failures.push('Biblical people database is missing #biblical-people-search.');
 
     await context.close();
   }finally{

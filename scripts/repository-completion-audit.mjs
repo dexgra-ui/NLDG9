@@ -2,7 +2,7 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 import { createRequire } from 'node:module';
-import { chromium } from 'playwright';
+import { chromium, webkit } from 'playwright';
 
 const require=createRequire(import.meta.url);
 const axeModulePath=['axe-core','axe','min','js'];
@@ -102,6 +102,58 @@ async function auditPage(page,name,url,width){
   checks.push(`${name} passed structure and ${width}px layout checks.`);
 }
 
+async function testBiblicalSearch(browserType,label){
+  const browser=await browserType.launch({headless:true});
+  try{
+    const context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:1});
+    const page=await context.newPage();
+    const pageErrors=[];
+    page.on('pageerror',error=>pageErrors.push(error.message));
+
+    await page.goto(`${BASE_URL}/biblical-people-genealogy.html`,{waitUntil:'domcontentloaded',timeout:30000});
+    await page.waitForLoadState('networkidle').catch(()=>{});
+    await page.waitForTimeout(300);
+
+    const input=page.locator('#biblical-people-search');
+    const summary=page.locator('#biblical-people-summary');
+    const results=page.locator('#biblical-people-grid');
+    const searchButton=page.locator('#biblical-people-search-button');
+    const clearButton=page.locator('#biblical-people-clear-button');
+
+    if(!(await input.count())){
+      failures.push(`${label}: biblical people database is missing the search input.`);
+      await context.close();
+      return;
+    }
+
+    const initialSummary=await summary.innerText().catch(()=> '');
+    await input.fill('Abraham');
+    await page.waitForTimeout(450);
+    const liveSummary=await summary.innerText().catch(()=> '');
+    const liveText=await results.innerText().catch(()=> '');
+    const liveWorked=initialSummary!==liveSummary&&/Abraham/i.test(liveText);
+
+    await input.fill('Phoebe');
+    if(await searchButton.count())await searchButton.click();
+    await page.waitForTimeout(150);
+    const buttonText=await results.innerText().catch(()=> '');
+    const buttonWorked=/Phoebe/i.test(buttonText);
+
+    if(await clearButton.count())await clearButton.click();
+    await page.waitForTimeout(100);
+    const cleared=await input.inputValue().catch(()=> 'not-cleared');
+
+    record(
+      liveWorked&&buttonWorked&&cleared===''&&pageErrors.length===0,
+      `${label}: biblical people search works with live typing, explicit Search, and Clear at mobile width.`,
+      `${label}: biblical people search failed cross-browser checks${pageErrors.length?` (page errors: ${pageErrors.join(' | ')})`:''}.`
+    );
+    await context.close();
+  }finally{
+    await browser.close();
+  }
+}
+
 async function browserChecks(){
   const browser=await chromium.launch({headless:true});
   try{
@@ -134,24 +186,13 @@ async function browserChecks(){
       record(found.includes('Leadership Toolkit'),'Global search finds the Leadership Toolkit.','Global search did not find the Leadership Toolkit.');
     }else failures.push('Search page is missing #site-search.');
 
-    await page.goto(`${BASE_URL}/biblical-people-genealogy.html`,{waitUntil:'domcontentloaded',timeout:30000});
-    await page.waitForLoadState('networkidle').catch(()=>{});
-    await page.waitForTimeout(300);
-    const biblicalSearch=page.locator('#biblical-people-search');
-    if(await biblicalSearch.count()){
-      const initialSummary=await page.locator('#biblical-people-summary').innerText().catch(()=> '');
-      await biblicalSearch.fill('Abraham');
-      await page.waitForTimeout(250);
-      const resultSummary=await page.locator('#biblical-people-summary').innerText().catch(()=> '');
-      const resultText=await page.locator('#biblical-people-grid').innerText().catch(()=> '');
-      const searchButtonCount=await page.locator('#biblical-people-search-button').count();
-      record(initialSummary!==resultSummary&&/Abraham/i.test(resultText)&&searchButtonCount===1,'Biblical people search filters the database for Abraham and exposes an explicit Search button.','Biblical people search did not filter correctly for Abraham.');
-    }else failures.push('Biblical people database is missing #biblical-people-search.');
-
     await context.close();
   }finally{
     await browser.close();
   }
+
+  await testBiblicalSearch(chromium,'Chromium mobile');
+  await testBiblicalSearch(webkit,'WebKit/Safari mobile');
 }
 
 function section(title,items,empty){

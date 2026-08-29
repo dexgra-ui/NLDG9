@@ -3,7 +3,7 @@ const db=window.NLDG_BIBLICAL_GENEALOGY;if(!db)return;
 const byId=new Map(db.records.map(r=>[r.id,r]));
 const children=new Map();
 db.records.forEach(r=>(r.parents||[]).forEach(p=>{if(!children.has(p))children.set(p,[]);children.get(p).push(r.id)}));
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]));
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const name=id=>byId.get(id)?.name||id;
 const unique=a=>[...new Set(a)];
 const isCollective=r=>/group|clan|nation/i.test(r.kind||'');

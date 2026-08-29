@@ -27,8 +27,8 @@ put(R('zeresh','Zeresh','Haman family','Person','female',[],['haman'],'Esther 5:
 put(R('hathach','Hathach','Esther / Persia','Royal eunuch / messenger','male',[],[],'Esther 4:5–10','Royal chamberlain appointed to Esther who carries messages between Esther and Mordecai.'));
 merge('esther-chamberlain-harbona',{ref:'Esther 7:9',note:'Harbona, one of the king’s chamberlains, tells Ahasuerus about Haman’s gallows prepared for Mordecai.'});
 
-const sons=['Parshandatha','Dalphon','Aspatha','Poratha','Adalia','Parmashta','Arisai','Aridai','Vajezatha'];
-for(const n of sons)put(R(`haman-son-${n.toLowerCase()}`,n,'Haman family','Person','male',['haman','zeresh'],[],'Esther 9:7–10','One of the ten named sons of Haman killed in Susa. Esther 9 explicitly calls the group Haman’s ten sons; Zeresh is Haman’s named wife, but the text does not separately state each son’s mother, so maternal connection is probable rather than individually worded.','probable',[`${n} son of Haman`]));
+const sons=['Parshandatha','Dalphon','Aspatha','Poratha','Adalia','Aridatha','Parmashta','Arisai','Aridai','Vajezatha'];
+for(const n of sons)put(R(`haman-son-${n.toLowerCase()}`,n,'Haman family','Person','male',['haman'],[],'Esther 9:7–10','One of the ten named sons of Haman killed in Susa. Esther explicitly identifies Haman as their father. Zeresh is Haman’s named wife, but Scripture does not individually identify her as the mother of these sons, so no maternal parent is assigned.','explicit',[`${n} son of Haman`]));
 
 db.scope='Genesis–Esther';db.phase=7;db.completedBooks=[...new Set([...(db.completedBooks||[]),'Esther'])];db.completedPhases=[...new Set([...(db.completedPhases||[]),7])];
 })();

@@ -96,7 +96,15 @@ async function auditPage(page,name,url,width){
     }));
     result.violations
       .filter(violation=>['critical','serious'].includes(violation.impact))
-      .forEach(violation=>failures.push(`${name}: ${violation.id} (${violation.impact}) ${violation.help}.`));
+      .forEach(violation=>{
+        const targets=violation.nodes.slice(0,8).map(node=>{
+          const target=Array.isArray(node.target)?node.target.join(' > '):String(node.target||'unknown target');
+          const summary=String(node.failureSummary||'').replace(/\s+/g,' ').trim();
+          const data=node.any?.concat(node.all||[],node.none||[]).map(check=>check.data).filter(Boolean).map(data=>JSON.stringify(data)).join(' ')||'';
+          return `${target}${summary?` — ${summary}`:''}${data?` — ${data}`:''}`;
+        }).join(' | ');
+        failures.push(`${name}: ${violation.id} (${violation.impact}) ${violation.help}. Targets: ${targets}`);
+      });
   }
 
   checks.push(`${name} passed structure and ${width}px layout checks.`);

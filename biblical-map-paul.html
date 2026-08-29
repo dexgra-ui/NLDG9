@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#06122d">
+<meta name="description" content="Explore Paul’s first, second, and third missionary journeys and his voyage to Rome with separate interactive layers based on Acts 13–28.">
+<title>Paul’s Missionary World | No Labels, Designed by God</title>
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+.map-hero{background:linear-gradient(135deg,#06122d,#0d234b);color:#fff;border-radius:28px;padding:clamp(2rem,5vw,4rem);margin:1.25rem auto 2rem}.map-hero .kicker{color:#e2bd69}.map-hero .lead{color:#dce4f1;max-width:950px}.map-shell{background:#fff;border:1px solid #e3e8f1;border-radius:22px;padding:1rem;box-shadow:0 10px 28px rgba(6,18,45,.07)}#paul-map{height:min(74vh,760px);min-height:490px;border-radius:16px}.accuracy-note{border-left:5px solid #c79b45;background:#fff9ec;padding:1rem 1.2rem;border-radius:12px}.caution-note{border-left:5px solid #7f8ca3;background:#f4f6fa;padding:1rem 1.2rem;border-radius:12px}.legend-grid,.place-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem}.legend-grid div,.place-grid article{padding:1rem;border:1px solid #e3e8f1;border-radius:14px;background:#f6f8fc}.place-grid h3{margin:.1rem 0 .4rem}.line{display:inline-block;width:38px;border-top:4px solid #183b70;margin-right:.55rem;vertical-align:middle}.line.j2{border-color:#9b6b12}.line.j3{border-color:#6f5b8c}.line.rome{border-color:#667486}.dash{border-top-style:dashed}.dot{display:inline-block;width:12px;height:12px;border-radius:50%;background:#06122d;margin-right:.45rem}.source-note{font-size:.92rem;color:#5f6673}
+</style>
+</head>
+<body>
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God™</strong><small>Biblical Maps &amp; Geography</small></span></a><button class="menu" aria-expanded="false">Menu</button><nav></nav></header>
+<main>
+<section class="map-hero"><p class="kicker">Biblical Maps • Acts 13–28</p><h1>Paul’s Missionary World</h1><p class="lead">Follow Paul’s first, second, and third missionary journeys and his later voyage to Rome as four separate layers. The stops follow the sequence preserved in Acts; connecting lines are teaching reconstructions and do not claim the exact Roman roads or sailing tracks used between every named place.</p><div class="actions"><a class="button primary" href="https://www.canva.com/d/Zq7eWt6AcA4gOu9" target="_blank" rel="noopener noreferrer">Open Branded Canva Map ↗</a><a class="button secondary" href="biblical-maps.html">Back to Biblical Maps</a></div></section>
+<section class="section"><div class="map-shell"><div id="paul-map" aria-label="Interactive map of Paul's missionary journeys and voyage to Rome"></div></div></section>
+<section class="section"><div class="accuracy-note"><strong>Accuracy note:</strong> Acts gives many named stops but rarely identifies the exact road segment, harbor approach, or offshore track between them. Each layer therefore connects biblical locations in narrative order. Land and sea lines are schematic, and regional passages such as “Phrygia and Galatia” are not reduced to a single invented city.</div></section>
+<section class="section"><div class="caution-note"><strong>Four layers, not one continuous mission route.</strong> The first two missionary journeys begin and return to Syrian Antioch. The third begins from Antioch but ends with Paul reaching Jerusalem. The later journey to Rome is different in character: Paul travels as a prisoner after appealing to Caesar, beginning from Caesarea and eventually reaching Rome after shipwreck on Malta.</div></section>
+<section class="section"><div class="section-heading"><p class="kicker">Map key</p><h2>Turn journeys on and off.</h2></div><div class="legend-grid"><div><span class="line"></span><strong>Journey 1</strong><p>Cyprus and southern Galatia: Acts 13–14.</p></div><div><span class="line j2"></span><strong>Journey 2</strong><p>Asia Minor, Macedonia, and Greece: Acts 15:36–18:22.</p></div><div><span class="line j3"></span><strong>Journey 3</strong><p>Asia Minor, Ephesus, Macedonia, Greece, and the return to Jerusalem: Acts 18:23–21:17.</p></div><div><span class="line rome"></span><strong>Voyage to Rome</strong><p>Caesarea, Crete, Malta, Italy, and Rome: Acts 27–28.</p></div><div><span class="dot"></span><strong>Biblical city / island</strong><p>Marker for a named place with a strong or leading modern identification.</p></div><div><span class="line dash"></span><strong>Schematic segment</strong><p>Direction and sequence are known more confidently than the exact road or sailing line.</p></div></div></section>
+<section class="section"><div class="section-heading"><p class="kicker">Journey overview</p><h2>Read Acts with the geography visible.</h2></div><div class="place-grid"><article><h3>Journey 1 • Acts 13–14</h3><p>Antioch in Syria → Cyprus (Salamis, Paphos) → Perga → Pisidian Antioch → Iconium → Lystra → Derbe → return through the same Galatian cities → Perga/Attalia → Antioch.</p></article><article><h3>Journey 2 • Acts 15:36–18:22</h3><p>Antioch → Syria/Cilicia → Derbe and Lystra → Phrygia/Galatia → Troas → Philippi → Thessalonica → Berea → Athens → Corinth → Ephesus → Caesarea → Antioch.</p></article><article><h3>Journey 3 • Acts 18:23–21:17</h3><p>Antioch → Galatia/Phrygia → Ephesus → Macedonia → Greece → return through Macedonia → Troas → Miletus → island/coastal stops → Tyre → Caesarea → Jerusalem.</p></article><article><h3>Voyage to Rome • Acts 27–28</h3><p>Caesarea → Sidon → Myra → Cnidus → Crete/Fair Havens → shipwreck on Malta → Syracuse → Rhegium → Puteoli → Rome.</p></article><article><h3>Antioch of Syria</h3><p>The sending church and major base for Paul’s missionary work. OpenBible identifies Antioch on the Orontes with very high confidence.</p><small>Acts 13:1–3; 14:26–28</small></article><article><h3>Ephesus</h3><p>A major center of the third journey where Paul ministered for an extended period and from which the gospel spread through the province of Asia.</p><small>Acts 19</small></article><article><h3>Corinth</h3><p>Paul remained in Corinth for an extended period during the second journey and later revisited Greece.</p><small>Acts 18:1–18; 20:2–3</small></article><article><h3>Malta</h3><p>Acts explicitly names Malta as the island where the shipwreck survivors learned they had landed.</p><small>Acts 28:1</small></article></div></section>
+<section class="section"><div class="section-heading"><p class="kicker">Reference approach</p><h2>Acts supplies the itinerary; maps supply orientation.</h2></div><p class="source-note">Route sequence is cross-checked with Bible Mapper’s Paul journey maps, including its “Paul’s Voyage to Rome.” OpenBible.info identifies many major stops with very high confidence, including Antioch on the Orontes, Paphos, Perga, Pisidian Antioch, Iconium, Lystra, Philippi, Thessalonica, Berea, Athens, Corinth, Ephesus, Troas, Miletus, Caesarea Maritima, Myra, Cnidus, Fair Havens, Malta, Syracuse, Puteoli, and Rome. Derbe is displayed at Kerti Hüyük, OpenBible’s leading proposal at about 90% confidence.</p></section>
+</main>
+<footer class="ministry-footer"><div class="footer-links"><a href="biblical-maps.html">Biblical Maps</a><a href="studies.html">Bible Studies</a><a href="biblical-people-genealogy.html">Biblical People</a><a href="resource-center.html">Resource Center</a></div><small>© <span data-year></span> No Labels Designed by God LLC. All rights reserved. No Labels Designed by God™ is a claimed trademark.</small></footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const map=L.map('paul-map',{scrollWheelZoom:false});
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+const j1=L.layerGroup().addTo(map), j2=L.layerGroup(), j3=L.layerGroup(), rome=L.layerGroup(), sites=L.layerGroup().addTo(map);
+const p={
+antioch:[36.226691,36.171743], salamis:[35.17,33.91], paphos:[34.755667,32.404167], perga:[36.960353,30.853686], attalia:[36.884,30.704], pisidian:[38.306111,31.189167], iconium:[37.8715,32.4846], lystra:[37.601700,32.338400], derbe:[37.348569,33.361453],
+troas:[39.751944,26.158611], philippi:[41.012072,24.284576], thess:[40.637771,22.945767], berea:[40.5244,22.2024], athens:[37.971851,23.726738], corinth:[37.905785,22.878741], ephesus:[37.939125,27.340700],
+miletus:[37.531111,27.275556], cos:[36.89,27.29], rhodes:[36.451,28.227], patara:[36.261,29.315], tyre:[33.270833,35.196111], caesarea:[32.500000,34.891667], jerusalem:[31.776667,35.234167], sidon:[33.5606,35.3758],
+myra:[36.259167,29.985278], cnidus:[36.685833,27.375000], fairhavens:[34.929694,24.800306], malta:[35.933464,14.411732], syracuse:[37.063889,15.293056], rhegium:[38.11,15.65], puteoli:[40.826111,14.120556], rome:[41.892200,12.485200]
+};
+function route(layer,points,color,label){L.polyline(points.map(x=>p[x]||x),{color,weight:4,opacity:.82}).addTo(layer).bindPopup('<strong>'+label+'</strong><br>Stop order follows Acts; line between stops is schematic.');}
+route(j1,['antioch','salamis','paphos','perga','pisidian','iconium','lystra','derbe','lystra','iconium','pisidian','perga','attalia','antioch'],'#183b70','First missionary journey — Acts 13–14');
+route(j2,['antioch','derbe','lystra',[39.0,32.0],'troas','philippi','thess','berea','athens','corinth','ephesus','caesarea','antioch'],'#9b6b12','Second missionary journey — Acts 15:36–18:22');
+route(j3,['antioch',[39.0,32.0],'ephesus','troas','philippi','thess','berea','corinth','troas','miletus','cos','rhodes','patara','tyre','caesarea','jerusalem'],'#6f5b8c','Third missionary journey — Acts 18:23–21:17');
+route(rome,['caesarea','sidon','myra','cnidus','fairhavens',[34.5,22.5],[35.2,18.5],'malta','syracuse','rhegium','puteoli','rome'],'#667486','Voyage to Rome — Acts 27–28');
+const style={radius:6,color:'#06122d',weight:2,fillColor:'#06122d',fillOpacity:.95};
+const proposed={radius:6,color:'#7a5610',weight:2,fillColor:'#c79b45',fillOpacity:.95};
+function mark(name,key,note,kind='strong'){L.circleMarker(p[key],kind==='proposed'?proposed:style).addTo(sites).bindPopup('<strong>'+name+'</strong><br>'+note);}
+mark('Antioch of Syria','antioch','Very high-confidence identification; principal sending church.');
+mark('Paphos','paphos','Very high-confidence identification at New Paphos.');
+mark('Perga','perga','Very high-confidence identification.');
+mark('Pisidian Antioch','pisidian','Very high-confidence identification.');
+mark('Iconium','iconium','Very high-confidence identification at modern Konya.');
+mark('Lystra','lystra','Very high-confidence identification at Tel Lystra.');
+mark('Derbe — Kerti Hüyük','derbe','Leading identification at about 90% confidence; alternatives exist.','proposed');
+mark('Troas','troas','Very high-confidence identification at Alexandria Troas.');
+mark('Philippi','philippi','Very high-confidence identification.');
+mark('Thessalonica','thess','Very high-confidence identification at Thessaloniki.');
+mark('Berea','berea','Very high-confidence identification at modern Veria.');
+mark('Athens','athens','Very high-confidence identification.');
+mark('Corinth','corinth','Very high-confidence identification.');
+mark('Ephesus','ephesus','Very high-confidence identification.');
+mark('Miletus','miletus','Very high-confidence identification.');
+mark('Tyre','tyre','Very high-confidence identification.');
+mark('Caesarea Maritima','caesarea','Very high-confidence identification.');
+mark('Jerusalem','jerusalem','Very high-confidence identification; end of the third journey narrative.');
+mark('Myra','myra','Very high-confidence identification.');
+mark('Cnidus','cnidus','Very high-confidence identification.');
+mark('Fair Havens','fairhavens','Very high-confidence identification at Kaloi Limenes.');
+mark('Malta','malta','Very high-confidence island identification.');
+mark('Syracuse','syracuse','Very high-confidence identification.');
+mark('Puteoli','puteoli','Very high-confidence identification at Pozzuoli.');
+mark('Rome','rome','Very high-confidence identification.');
+L.control.layers(null,{'Journey 1 • Acts 13–14':j1,'Journey 2 • Acts 15–18':j2,'Journey 3 • Acts 18–21':j3,'Voyage to Rome • Acts 27–28':rome,'Named sites':sites},{collapsed:false}).addTo(map);
+map.fitBounds([[30.8,11.5],[42.8,37.2]]);
+</script><script src="script.js"></script>
+</body></html>

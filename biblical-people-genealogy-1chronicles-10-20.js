@@ -1,0 +1,99 @@
+(()=>{
+const db=window.NLDG_BIBLICAL_GENEALOGY;if(!db)return;
+const C=(type,target,ref='',note='')=>({type,target,ref,note});
+const rec=(id,name,line,kind='Person',gender='male',parents=[],spouses=[],ref='',note='',certainty='explicit',aliases=[],connections=[])=>({id,name,line,kind,gender,parents,spouses,ref,note,certainty,aliases,connections});
+const merge=(id,p)=>{const r=db.records.find(x=>x.id===id);if(!r)return;if(p.ref&&!String(r.ref||'').includes(p.ref))r.ref=[r.ref,p.ref].filter(Boolean).join('; ');if(p.note)r.note=[r.note,p.note].filter(Boolean).join(' ');if(p.name)r.name=p.name;if(p.parents)r.parents=p.parents;if(p.aliases)r.aliases=[...new Set([...(r.aliases||[]),...p.aliases])];if(p.connections)r.connections=[...(r.connections||[]),...p.connections];if(p.certainty)r.certainty=p.certainty;};
+const put=r=>db.records.some(x=>x.id===r.id)?merge(r.id,r):db.records.push(r);
+const refs=(ids,ref)=>ids.forEach(id=>merge(id,{ref}));
+
+// Chapters 10–11: Saul’s death and David’s warriors.
+refs(['saul','jonathan-saul','abinadab-saul','malchishua','david','jesse'],'1 Chronicles 10:1–14');
+refs(['joab','zeruiah','abishai','benaiah-jehoiada','asahel','uriah'],'1 Chronicles 11');
+merge('josheb-basshebeth',{ref:'1 Chronicles 11:11',name:'Josheb-Basshebeth / Jashobeam',aliases:['Josheb-Basshebeth','Jashobeam the Hachmonite','Adino the Eznite'],note:'Chronicles’ parallel names the chief Jashobeam the Hachmonite and credits three hundred slain, while 2 Samuel preserves Josheb-Basshebeth/Adino and a different number. The parallel is retained as a textual/name variant.',certainty:'textual variant'});
+merge('eleazar-dodo',{ref:'1 Chronicles 11:12–14'});
+merge('shammah-harodite',{ref:'1 Chronicles 11:27',name:'Shammah / Shammoth',aliases:['Shammah the Harodite','Shammoth the Harorite'],certainty:'textual variant'});
+merge('helez',{ref:'1 Chronicles 11:27; 27:10',name:'Helez the Paltite / Pelonite',aliases:['Helez the Paltite','Helez the Pelonite'],certainty:'textual variant'});
+merge('ira-tekoite',{ref:'1 Chronicles 11:28; 27:9'});merge('abiezer-anathoth',{ref:'1 Chronicles 11:28; 27:12',aliases:['Abiezer the Antothite','Abiezer the Anathothite']});
+merge('mebunnai',{ref:'1 Chronicles 11:29; 20:4; 27:11',name:'Mebunnai / Sibbecai',aliases:['Mebunnai','Sibbecai','Sibbechai'],certainty:'textual variant'});
+merge('zalmon-ahohite',{ref:'1 Chronicles 11:29',name:'Zalmon / Ilai',aliases:['Zalmon','Ilai'],certainty:'textual variant'});
+merge('maharai',{ref:'1 Chronicles 11:30; 27:13'});merge('heleb',{ref:'1 Chronicles 11:30',name:'Heleb / Heled',aliases:['Heleb','Heled'],certainty:'textual variant'});merge('ittai-ribai',{ref:'1 Chronicles 11:31',name:'Ittai / Ithai',aliases:['Ittai','Ithai'],certainty:'textual variant'});merge('benaiah-pirathonite',{ref:'1 Chronicles 11:31; 27:14'});
+merge('hiddai',{ref:'1 Chronicles 11:32',name:'Hiddai / Hurai',aliases:['Hiddai','Hurai'],certainty:'textual variant'});merge('abi-albon',{ref:'1 Chronicles 11:32',name:'Abi-albon / Abiel',aliases:['Abi-albon','Abiel'],certainty:'textual variant'});merge('azmaveth-barhumite',{ref:'1 Chronicles 11:33',aliases:['Azmaveth the Baharumite']});merge('eliahba',{ref:'1 Chronicles 11:33'});
+put(rec('hashem-gizonite','Hashem','David mighty men','Person','male',[],[],'1 Chronicles 11:34','Gizonite named as father/ancestor in a difficult parallel to 2 Samuel 23’s Jashen wording.','textual variant',['Hashem the Gizonite']));
+put(rec('shage','Shage','David mighty men','Person','male',[],[],'1 Chronicles 11:34','Hararite father of Jonathan in Chronicles’ mighty-men list; parallel Samuel wording differs.'));
+merge('jonathan-jashen-text',{ref:'1 Chronicles 11:34',parents:['shage'],name:'Jonathan',aliases:['Jonathan son of Shage'],note:'Chronicles explicitly calls this mighty man Jonathan son of Shage the Hararite, while 2 Samuel’s parallel is textually difficult around Jashen/Shammah.',certainty:'textual variant'});
+merge('sharar',{ref:'1 Chronicles 11:35',name:'Sharar / Sacar',aliases:['Sharar','Sacar'],certainty:'textual variant'});merge('ahiam',{ref:'1 Chronicles 11:35'});
+put(rec('ur-eliphal','Ur','David mighty men','Person','male',[],[],'1 Chronicles 11:35','Father of Eliphal.'));
+put(rec('eliphal','Eliphal','David mighty men','Warrior','male',['ur-eliphal'],[],'1 Chronicles 11:35','Son of Ur in Chronicles’ list. The parallel position in 2 Samuel 23 has Eliphelet son of Ahasbai, so identity is not forced.','textual variant',['Eliphal son of Ur']));
+put(rec('hepher-mecherathite','Hepher','David mighty men','Warrior','male',[],[],'1 Chronicles 11:36','Mecherathite mighty man; distinct from genealogical Hephers.','explicit',['Hepher the Mecherathite']));
+put(rec('ahijah-pelonite','Ahijah','David mighty men','Warrior','male',[],[],'1 Chronicles 11:36','Pelonite mighty man; distinct from prophets, priests, and officials named Ahijah.','explicit',['Ahijah the Pelonite']));
+put(rec('ezbai','Ezbai','David mighty men','Person','male',[],[],'1 Chronicles 11:37','Father of Naarai.'));
+merge('paarai',{ref:'1 Chronicles 11:37',name:'Paarai / Naarai',parents:['ezbai'],aliases:['Paarai','Naarai son of Ezbai'],note:'Chronicles’ parallel lists Naarai son of Ezbai where Samuel has Paarai the Arbite.',certainty:'textual variant'});
+put(rec('joel-brother-nathan','Joel','David mighty men','Warrior','male',[],[],'1 Chronicles 11:38','Named as brother of a Nathan in David’s mighty-men list; which Nathan is not specified.','unresolved identification',['Joel brother of Nathan']));
+put(rec('haggeri','Haggeri','David mighty men','Person','male',[],[],'1 Chronicles 11:38','Father of Mibhar.'));
+put(rec('mibhar','Mibhar','David mighty men','Warrior','male',['haggeri'],[],'1 Chronicles 11:38','Son of Haggeri and mighty man of David.'));
+merge('zelek',{ref:'1 Chronicles 11:39'});merge('naharai',{ref:'1 Chronicles 11:39'});merge('ira-ithrite',{ref:'1 Chronicles 11:40'});merge('gareb',{ref:'1 Chronicles 11:40'});
+put(rec('ahlai-zabad','Ahlai','David mighty men','Person','unknown',[],[],'1 Chronicles 11:41','Parent of Zabad. Distinct from Ahlai in Sheshan’s line unless explicitly linked.','unresolved identification',['Ahlai parent of Zabad']));
+put(rec('zabad-ahlai','Zabad','David mighty men','Warrior','male',['ahlai-zabad'],[],'1 Chronicles 11:41','Son of Ahlai and mighty man.'));
+put(rec('shiza','Shiza','David mighty men','Person','male',[],[],'1 Chronicles 11:42','Reubenite father of Adina.'));
+put(rec('adina','Adina','David mighty men','Military commander','male',['shiza'],[],'1 Chronicles 11:42','Reubenite son of Shiza, chief with thirty men.'));
+put(rec('hanan-maacah','Hanan','David mighty men','Warrior','male',[],[],'1 Chronicles 11:43','Son of a parent named Maacah; the parent’s gender and identity are not given. Distinct from other Hanans.','explicit',['Hanan son of Maacah']));
+put(rec('joshaphat-mithnite','Joshaphat','David mighty men','Warrior','male',[],[],'1 Chronicles 11:43','Mithnite mighty man.','explicit',['Joshaphat the Mithnite']));
+put(rec('uzzia-ashterathite','Uzzia','David mighty men','Warrior','male',[],[],'1 Chronicles 11:44','Ashterathite mighty man.'));
+put(rec('hothan','Hothan','David mighty men','Person','male',[],[],'1 Chronicles 11:44','Aroerite father of Shama and Jehiel.'));
+put(rec('shama-hothan','Shama','David mighty men','Warrior','male',['hothan'],[],'1 Chronicles 11:44','Aroerite son of Hothan and brother of Jehiel.'));
+put(rec('jehiel-hothan','Jehiel','David mighty men','Warrior','male',['hothan'],[],'1 Chronicles 11:44','Aroerite son of Hothan and brother of Shama.'));
+put(rec('shimri-jediael','Shimri','David mighty men','Person','male',[],[],'1 Chronicles 11:45','Father of Jediael.'));
+put(rec('jediael-shimri','Jediael','David mighty men','Warrior','male',['shimri-jediael'],[],'1 Chronicles 11:45','Tizite son of Shimri and brother of Joha.','explicit',[],[C('brother','joha-tizite','1 Chronicles 11:45')]));
+put(rec('joha-tizite','Joha','David mighty men','Warrior','male',[],[],'1 Chronicles 11:45','Tizite brother of Jediael.','explicit',[],[C('brother','jediael-shimri','1 Chronicles 11:45')]));
+put(rec('eliel-mahavite','Eliel','David mighty men','Warrior','male',[],[],'1 Chronicles 11:46','Mahavite mighty man.'));
+put(rec('elnaam','Elnaam','David mighty men','Person','male',[],[],'1 Chronicles 11:46','Father of Jeribai and Joshaviah.'));
+put(rec('jeribai','Jeribai','David mighty men','Warrior','male',['elnaam'],[],'1 Chronicles 11:46','Son of Elnaam and mighty man.'));
+put(rec('joshaviah','Joshaviah','David mighty men','Warrior','male',['elnaam'],[],'1 Chronicles 11:46','Son of Elnaam and mighty man.'));
+put(rec('ithmah','Ithmah','David mighty men','Warrior','male',[],[],'1 Chronicles 11:46','Moabite mighty man.','explicit',['Ithmah the Moabite']));
+for(const [id,n] of [['eliel-mesobaite','Eliel'],['obed-mesobaite','Obed'],['jasiel','Jasiel']])put(rec(id,n,'David mighty men','Warrior','male',[],[],'1 Chronicles 11:47',`${n} the Mesobaite in David’s mighty-men list.`));
+
+// Chapter 12: named supporters joining David.
+put(rec('shemaah-gibeathite','Shemaah','David supporters / Benjamin','Person','male',[],[],'1 Chronicles 12:3','Gibeathite father of Ahiezer and Joash.'));
+for(const [id,n] of [['ahiezer-shemaah','Ahiezer'],['joash-shemaah','Joash']])put(rec(id,n,'David supporters / Benjamin','Warrior','male',['shemaah-gibeathite'],[],'1 Chronicles 12:3',`Son of Shemaah the Gibeathite and Benjaminite supporter of David.`));
+put(rec('azmaveth-jeziel','Azmaveth','David supporters / Benjamin','Person','male',[],[],'1 Chronicles 12:3','Father of Jeziel and Pelet; distinct from David’s mighty man Azmaveth unless explicitly linked.','unresolved identification',['Azmaveth father of Jeziel']));
+for(const [id,n] of [['jeziel','Jeziel'],['pelet-azmaveth','Pelet']])put(rec(id,n,'David supporters / Benjamin','Warrior','male',['azmaveth-jeziel'],[],'1 Chronicles 12:3',`Son of Azmaveth and supporter of David.`));
+for(const [id,n] of [['berachah-benjamin','Berachah'],['jehu-antothite','Jehu'],['ismaiah-gibeonite','Ismaiah'],['jeremiah-ziklag-1','Jeremiah'],['jahaziel-ziklag','Jahaziel'],['johanan-ziklag','Johanan'],['josabad-gederathite','Josabad'],['eluzai','Eluzai'],['jerimoth-ziklag','Jerimoth'],['bealiah','Bealiah'],['shemariah-ziklag','Shemariah'],['shephatiah-haruphite','Shephatiah'],['elkanah-korhite','Elkanah'],['jesiah-korhite','Jesiah'],['azareel-korhite','Azareel'],['joezer','Joezer'],['jashobeam-korhite','Jashobeam']])put(rec(id,n,'David supporters / Ziklag','Warrior','male',[],[],'1 Chronicles 12:3–6',`Named warrior who joined David at Ziklag; repeated biblical names remain distinguished by this context.`));
+put(rec('jeroham-gedor','Jeroham','David supporters / Ziklag','Person','male',[],[],'1 Chronicles 12:7','Man of Gedor and father of Joelah and Zebadiah.'));
+for(const [id,n] of [['joelah','Joelah'],['zebadiah-jeroham-gedor','Zebadiah']])put(rec(id,n,'David supporters / Ziklag','Warrior','male',['jeroham-gedor'],[],'1 Chronicles 12:7',`Son of Jeroham of Gedor and supporter of David.`));
+const gadites=[['ezer-gad-warrior','Ezer'],['obadiah-gad-warrior','Obadiah'],['eliab-gad-warrior','Eliab'],['mishmannah','Mishmannah'],['jeremiah-gad-1','Jeremiah'],['attai-gad','Attai'],['eliel-gad','Eliel'],['johanan-gad','Johanan'],['elzabad-gad','Elzabad'],['jeremiah-gad-2','Jeremiah'],['machbanai','Machbanai']];gadites.forEach(([id,n])=>put(rec(id,n,'David supporters / Gad','Military captain','male',[],[],'1 Chronicles 12:9–13',`Gadite military captain who joined David; Chronicles lists two different Jeremiahs in this group.`)));
+put(rec('amasai-captain','Amasai','David supporters','Military captain','male',[],[],'1 Chronicles 12:18','Chief of the captains who speaks under the Spirit pledging loyalty to David. Identity with Amasa or another Amasai is not forced.','unresolved identification',['Amasai chief of captains']));
+for(const [id,n] of [['adnah-manasseh','Adnah'],['jozabad-manasseh-1','Jozabad'],['jediael-manasseh','Jediael'],['michael-manasseh','Michael'],['jozabad-manasseh-2','Jozabad'],['elihu-manasseh','Elihu'],['zilthai-manasseh','Zilthai']])put(rec(id,n,'David supporters / Manasseh','Military captain','male',[],[],'1 Chronicles 12:20',`Manassite captain who joined David at Ziklag; the list contains two Jozabads, retained separately.`));
+put(rec('jehoiada-aaronite','Jehoiada','David supporters / Aaronites','Leader','male',[],[],'1 Chronicles 12:27','Leader of the Aaronites who came to David with 3,700 men. Distinct from later priest Jehoiada unless explicitly connected.','unresolved identification',['Jehoiada leader of Aaronites']));
+put(rec('zadok-young-warrior','Zadok','David supporters / Aaronites','Leader','male',[],[],'1 Chronicles 12:28','Young mighty warrior from a priestly fathers’ house who joined David. May be Zadok the priest, but the verse does not explicitly identify him.','unresolved identification',['Zadok young warrior']));
+
+// Chapters 13–16: ark transport and worship organization.
+refs(['abinadab-ark','uzzah','ahio-abinadab','obed-edom-gittite'],'1 Chronicles 13:7–14');
+merge('michal',{ref:'1 Chronicles 15:29'});merge('zadok-ahitub',{ref:'1 Chronicles 15:11; 16:39'});merge('abiathar',{ref:'1 Chronicles 15:11'});
+put(rec('uriel-levite-chief','Uriel','Ark ministry','Levite leader','male',[],[],'1 Chronicles 15:5,11','Chief of Kohathites in David’s ark preparations; identity with Uriel in Korahite genealogy is not explicitly stated.','unresolved identification',['Uriel chief of Kohathites']));
+put(rec('asaiah-merari-chief','Asaiah','Ark ministry','Levite leader','male',[],[],'1 Chronicles 15:6,11','Chief of Merarites in the ark procession; distinct from other Asaiahs unless explicitly linked.','unresolved identification',['Asaiah chief of Merarites']));
+put(rec('joel-gershon-chief','Joel','Ark ministry','Levite leader','male',[],[],'1 Chronicles 15:7,11','Chief of Gershonites in the ark procession.','unresolved identification',['Joel chief of Gershonites']));
+put(rec('shemaiah-elzaphan-chief','Shemaiah','Ark ministry','Levite leader','male',[],[],'1 Chronicles 15:8,11','Chief of descendants of Elizaphan in the ark procession.'));
+put(rec('eliel-hebron-chief','Eliel','Ark ministry','Levite leader','male',[],[],'1 Chronicles 15:9,11','Chief of Hebronites in the ark procession.'));
+put(rec('amminadab-uzziel-chief','Amminadab','Ark ministry','Levite leader','male',[],[],'1 Chronicles 15:10–11','Chief of Uzzielites in the ark procession.'));
+merge('heman-singer',{ref:'1 Chronicles 15:17,19; 16:41–42'});merge('asaph-singer',{ref:'1 Chronicles 15:17,19; 16:5,7,37'});merge('ethan-singer',{ref:'1 Chronicles 15:17,19',note:'Chronicles 15 calls Ethan son of Kushaiah; 1 Chronicles 6 uses Kishi, preserving the name variant.'});merge('kishi',{ref:'1 Chronicles 15:17',aliases:['Kishi','Kushaiah'],certainty:'textual variant'});
+for(const [id,n] of [['zechariah-ark-musician','Zechariah'],['ben-musician','Ben'],['jaaziel','Jaaziel / Aziel'],['shemiramoth','Shemiramoth'],['jehiel-musician','Jehiel'],['unni','Unni'],['eliab-musician','Eliab'],['benaiah-musician','Benaiah'],['maaseiah-musician','Maaseiah'],['mattithiah-musician','Mattithiah'],['elipheleh','Elipheleh'],['mikneiah','Mikneiah'],['jeiel-musician','Jeiel'],['azaziah-musician','Azaziah']])put(rec(id,n,'Ark ministry / musicians','Levite musician','male',[],[],'1 Chronicles 15:18–21; 16:5',`Named Levite musician in David’s ark ministry; identical names in other families are not merged without explicit evidence.`,n.includes('/')?'textual variant':'explicit',n.includes('/')?n.split(' / '):[]));
+put(rec('chenaniah','Chenaniah','Ark ministry','Levite music leader','male',[],[],'1 Chronicles 15:22,27; 26:29','Chief Levite skilled in song/music; later associated with external officers and judges.'));
+for(const [id,n] of [['berechiah-doorkeeper','Berechiah'],['elkanah-doorkeeper','Elkanah'],['shebaniah-priest','Shebaniah'],['jehoshaphat-priest','Jehoshaphat'],['nethaneel-priest','Nethaneel'],['amasai-priest','Amasai'],['zechariah-priest-trumpet','Zechariah'],['benaiah-priest-trumpet','Benaiah'],['eliezer-priest-trumpet','Eliezer'],['jehiah','Jehiah']])put(rec(id,n,'Ark ministry','Priest / gatekeeper','male',[],[],'1 Chronicles 15:23–24',`Named priest, Levite, or gatekeeper assigned to the ark procession; repeated names remain context-specific.`));
+put(rec('jahaziel-priest','Jahaziel','Ark ministry','Priest','male',[],[],'1 Chronicles 16:6','Priest who sounded a trumpet before the ark. Distinct from other Jahaziels.'));
+put(rec('obededom-jeduthun','Obed-edom','Ark ministry / gatekeepers','Gatekeeper','male',['jeduthun'],[],'1 Chronicles 16:38','Obed-edom called son of Jeduthun and assigned as a gatekeeper. Whether he is identical with Obed-edom the Gittite/ark host is not explicitly stated, so the record remains separate.','unresolved identification',['Obed-edom son of Jeduthun']));
+put(rec('hosah','Hosah','Temple gatekeepers','Gatekeeper','male',[],[],'1 Chronicles 16:38; 26:10–11','Merarite gatekeeper; father of four named sons in chapter 26.'));
+
+// Chapters 17–20 parallel Samuel and preserve name variants.
+merge('nathan-prophet',{ref:'1 Chronicles 17'});merge('hadadezer',{ref:'1 Chronicles 18:3–10; 19:16–19',name:'Hadadezer / Hadarezer',aliases:['Hadadezer','Hadarezer'],certainty:'textual variant'});
+merge('toi-hamath',{ref:'1 Chronicles 18:9–10',name:'Toi / Tou',aliases:['Toi','Tou'],certainty:'textual variant'});merge('joram-toi',{ref:'1 Chronicles 18:10',name:'Joram / Hadoram',aliases:['Joram son of Toi','Hadoram son of Tou'],note:'Samuel and Chronicles preserve different forms for the envoy son of the Hamathite king.',certainty:'textual variant'});
+merge('jehoshaphat-ahilud',{ref:'1 Chronicles 18:15'});merge('ahimelech-abiathar-text',{ref:'1 Chronicles 18:16',name:'Ahimelech / Abimelech son of Abiathar',aliases:['Ahimelech son of Abiathar','Abimelech son of Abiathar'],note:'Chronicles’ parallel uses Abimelech in the KJV tradition where Samuel has Ahimelech, adding to the priestly textual difficulty.',certainty:'textual variant'});
+put(rec('shavsha','Shavsha','David administration','Official','male',[],[],'1 Chronicles 18:16','Scribe in David’s administration. Parallel Samuel texts use Seraiah/Sheva, so identity is not forced.','textual variant',['Shavsha']));
+merge('nahash-hanun',{ref:'1 Chronicles 19:1–2',note:'Chronicles directly says Nahash died and his son Hanun reigned, reinforcing this father-son royal line.'});merge('hanun',{ref:'1 Chronicles 19:2–6'});merge('shobach',{ref:'1 Chronicles 19:16–18',name:'Shobach / Shophach',aliases:['Shobach','Shophach'],certainty:'textual variant'});
+merge('saph',{ref:'1 Chronicles 20:4',name:'Saph / Sippai',aliases:['Saph','Sippai'],certainty:'textual variant'});
+put(rec('jair-elhanan','Jair','Philistine-warrior account','Person','male',[],[],'1 Chronicles 20:5','Father of Elhanan in Chronicles’ Goliath-related parallel. Second Samuel has Jaare-oregim; the difference is retained.','textual variant',['Jair father of Elhanan']));
+put(rec('lahmi','Lahmi','Philistine giants','Warrior','male',[],[],'1 Chronicles 20:5','Brother of Goliath the Gittite, killed by Elhanan son of Jair. This wording differs materially from 2 Samuel 21:19 and is preserved rather than harmonized.','textual variant',['Lahmi brother of Goliath'],[C('brother','goliath','1 Chronicles 20:5')]));
+merge('elhanan-jaare',{ref:'1 Chronicles 20:5',name:'Elhanan',aliases:['Elhanan son of Jaare-oregim','Elhanan son of Jair'],connections:[C('killed','lahmi','1 Chronicles 20:5','Chronicles says Elhanan son of Jair killed Lahmi, brother of Goliath; Samuel’s parallel has a different wording.')],certainty:'textual variant'});
+merge('jonathan-shimeah',{ref:'1 Chronicles 20:7'});
+
+db.scope='Genesis–1 Chronicles 20';db.phase=6;
+})();

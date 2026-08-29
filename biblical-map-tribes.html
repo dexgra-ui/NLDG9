@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#06122d">
+<meta name="description" content="Explore the tribal allotments of Israel in Joshua with approximate territory overlays, key cities, and clear notes about the difference between allotted land and actual occupation.">
+<title>Conquest & the Twelve Tribes | No Labels, Designed by God</title>
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+.map-hero{background:linear-gradient(135deg,#06122d,#0d234b);color:#fff;border-radius:28px;padding:clamp(2rem,5vw,4rem);margin:1.25rem auto 2rem}.map-hero .kicker{color:#e2bd69}.map-hero .lead{color:#dce4f1;max-width:900px}.map-shell{background:#fff;border:1px solid #e3e8f1;border-radius:22px;padding:1rem;box-shadow:0 10px 28px rgba(6,18,45,.07)}#tribes-map{height:min(72vh,720px);min-height:470px;border-radius:16px}.accuracy-note{border-left:5px solid #c79b45;background:#fff9ec;padding:1rem 1.2rem;border-radius:12px}.caution-note{border-left:5px solid #7f8ca3;background:#f4f6fa;padding:1rem 1.2rem;border-radius:12px}.legend-grid,.place-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem}.legend-grid div,.place-grid article{padding:1rem;border:1px solid #e3e8f1;border-radius:14px;background:#f6f8fc}.place-grid h3{margin:.1rem 0 .4rem}.swatch{display:inline-block;width:35px;height:18px;border:2px solid #183b70;background:rgba(24,59,112,.14);vertical-align:middle;margin-right:.5rem}.swatch.dashed{border-style:dashed;border-color:#9b6b12;background:rgba(199,155,69,.12)}.dot{display:inline-block;width:12px;height:12px;border-radius:50%;background:#06122d;margin-right:.45rem}.source-note{font-size:.92rem;color:#5f6673}.tribe-label{font:700 11px/1.1 system-ui,sans-serif;color:#06122d;text-align:center;text-shadow:0 1px 2px #fff,0 0 4px #fff}
+</style>
+</head>
+<body>
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-icon brand-logo"><img src="no-labels-approved-logo.png" alt=""></span><span><strong>No Labels, Designed by God™</strong><small>Biblical Maps &amp; Geography</small></span></a><button class="menu" aria-expanded="false">Menu</button><nav></nav></header>
+<main>
+<section class="map-hero"><p class="kicker">Biblical Maps • Joshua 13–21</p><h1>Conquest & the Twelve Tribes</h1><p class="lead">See the tribal inheritances described in Joshua while keeping two important ideas separate: the land allotted to each tribe and the land each tribe actually occupied at a given moment were not always the same.</p><div class="actions"><a class="button primary" href="https://www.canva.com/d/zeUjInGXIOEOSb1" target="_blank" rel="noopener noreferrer">Open Branded Canva Map ↗</a><a class="button secondary" href="biblical-maps.html">Back to Biblical Maps</a></div></section>
+<section class="section"><div class="map-shell"><div id="tribes-map" aria-label="Interactive map of the tribal allotments in Joshua"></div></div></section>
+<section class="section"><div class="accuracy-note"><strong>Accuracy note:</strong> Joshua gives detailed boundary descriptions, but several ancient boundary markers are uncertain, and ancient territorial lines were not surveyed like modern state borders. These overlays are therefore teaching approximations built around the biblical descriptions and established geographic anchors, not claims of meter-by-meter precision.</div></section>
+<section class="section"><div class="caution-note"><strong>Allotment is not the same as occupation.</strong> Joshua and Judges both show that Canaanite and Philistine populations remained in portions of the allotted land. Dan later established a northern center at Laish/Tel Dan. Levi received cities among the tribes rather than one contiguous territorial inheritance, while Joseph’s inheritance was represented through Ephraim and Manasseh; Manasseh itself had land on both sides of the Jordan.</div></section>
+<section class="section"><div class="section-heading"><p class="kicker">Map key</p><h2>How to read the territory overlays.</h2></div><div class="legend-grid"><div><span class="swatch"></span><strong>Approximate allotment</strong><p>Broad teaching polygon based on Joshua 13–19 and major geographic anchors.</p></div><div><span class="swatch dashed"></span><strong>Special / later development</strong><p>Used where later occupation or relocation needs to be distinguished from the original allotment.</p></div><div><span class="dot"></span><strong>Key biblical location</strong><p>Modern identification is comparatively strong and useful for orienting the map.</p></div></div></section>
+<section class="section"><div class="section-heading"><p class="kicker">Key places</p><h2>Anchors for reading Joshua and Judges.</h2></div><div class="place-grid"><article><h3>Shiloh</h3><p>The tabernacle and central sanctuary were established here, and the remaining western allotments were distributed from this setting.</p><small>Joshua 18:1–10; 19:51</small></article><article><h3>Shechem</h3><p>A central hill-country site tied to covenant renewal and later designated as a city of refuge.</p><small>Joshua 20:7; 24:1–28</small></article><article><h3>Hebron</h3><p>Major Judahite hill-country city associated with Caleb and later with David’s first capital.</p><small>Joshua 14:13–15; 20:7</small></article><article><h3>Jericho</h3><p>The first major fortified city encountered after Israel crossed the Jordan into Canaan.</p><small>Joshua 5–6</small></article><article><h3>Jerusalem</h3><p>A border-area city in the Judah/Benjamin descriptions that remained contested during the settlement period.</p><small>Joshua 15:8,63; 18:28; Judges 1:21</small></article><article><h3>Dan / Laish</h3><p>The tribe of Dan struggled in its original western allotment and later seized Laish in the far north, renaming it Dan.</p><small>Joshua 19:40–48; Judges 18</small></article></div></section>
+<section class="section"><div class="section-heading"><p class="kicker">Reference approach</p><h2>Scripture first, geography cross-checked.</h2></div><p class="source-note">Primary boundary texts are Numbers 32 and Joshua 13–20. Geographic presentation is cross-checked with Bible Mapper’s “Tribal Allotments of the Promised Land” and its discussion of land still unconquered by the end of Saul’s reign. Key site coordinates are cross-checked with OpenBible.info Bible Geocoding, including Shiloh at Khirbet Seilun, Shechem at Tell Balatah, Hebron at Tel Rumeida, Jerusalem, Beersheba at Tel Beer Sheva, and Dan at Tel Dan.</p></section>
+</main>
+<footer class="ministry-footer"><div class="footer-links"><a href="biblical-maps.html">Biblical Maps</a><a href="studies.html">Bible Studies</a><a href="biblical-people-genealogy.html">Biblical People</a><a href="resource-center.html">Resource Center</a></div><small>© <span data-year></span> No Labels Designed by God LLC. All rights reserved. No Labels Designed by God™ is a claimed trademark.</small></footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const map=L.map('tribes-map',{scrollWheelZoom:false});
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+const tribes=L.layerGroup().addTo(map), sites=L.layerGroup().addTo(map), later=L.layerGroup().addTo(map);
+const styles=[
+ {name:'Judah',c:'#8e5b3a',p:[[31.10,34.80],[31.18,35.05],[31.45,35.22],[31.78,35.27],[31.88,35.08],[31.72,34.82],[31.35,34.68]]},
+ {name:'Simeon',c:'#b77b44',p:[[30.95,34.72],[31.02,35.00],[31.30,35.02],[31.38,34.78],[31.18,34.60]]},
+ {name:'Benjamin',c:'#a7863d',p:[[31.74,34.98],[31.78,35.28],[31.96,35.30],[31.98,35.02]]},
+ {name:'Dan',c:'#6d7f8e',p:[[31.78,34.72],[31.82,35.00],[32.03,35.03],[32.04,34.78]]},
+ {name:'Ephraim',c:'#4f7f6a',p:[[31.95,35.00],[32.03,35.43],[32.28,35.45],[32.30,35.04]]},
+ {name:'Manasseh W',c:'#466b79',p:[[32.24,34.95],[32.28,35.46],[32.58,35.54],[32.60,35.00]]},
+ {name:'Issachar',c:'#9a6f87',p:[[32.44,35.20],[32.52,35.56],[32.76,35.55],[32.74,35.18]]},
+ {name:'Zebulun',c:'#7d6694',p:[[32.68,35.05],[32.70,35.42],[32.91,35.45],[32.91,35.12]]},
+ {name:'Asher',c:'#5f8794',p:[[32.63,34.98],[32.69,35.20],[33.18,35.28],[33.22,35.03]]},
+ {name:'Naphtali',c:'#597a52',p:[[32.74,35.35],[32.78,35.70],[33.18,35.74],[33.19,35.37]]},
+ {name:'Reuben',c:'#9a6a50',p:[[30.95,35.45],[31.00,35.85],[31.62,35.88],[31.66,35.50]]},
+ {name:'Gad',c:'#767c4b',p:[[31.58,35.48],[31.64,35.92],[32.35,35.96],[32.35,35.55]]},
+ {name:'Manasseh E',c:'#4d7480',p:[[32.32,35.56],[32.36,36.02],[33.05,36.02],[33.08,35.62]]}
+];
+styles.forEach(t=>{
+ const poly=L.polygon(t.p,{color:t.c,weight:2,fillColor:t.c,fillOpacity:.18}).addTo(tribes).bindPopup('<strong>'+t.name+'</strong><br>Approximate teaching overlay based on Joshua 13–19; not a surveyed ancient border.');
+ const b=poly.getBounds().getCenter();
+ L.marker(b,{interactive:false,icon:L.divIcon({className:'tribe-label',html:t.name,iconSize:[80,18],iconAnchor:[40,9]})}).addTo(tribes);
+});
+const danNorth=L.polygon([[33.16,35.55],[33.16,35.73],[33.34,35.73],[33.34,35.55]],{color:'#9b6b12',weight:2,dashArray:'6 6',fillColor:'#c79b45',fillOpacity:.15}).addTo(later).bindPopup('<strong>Dan at Laish — later northern center</strong><br>Judges 18 describes Danite migration from the original western allotment.');
+L.marker([33.249,35.652]).addTo(later).bindPopup('<strong>Dan / Laish — Tel Dan</strong><br>Very high-confidence modern identification.');
+const markers=[
+ ['Shiloh',[32.055703,35.289536],'Khirbet Seilun — very high-confidence identification.'],
+ ['Shechem',[32.213611,35.281944],'Tell Balatah — very high-confidence identification.'],
+ ['Hebron',[31.525087,35.102220],'Tel Rumeida — very high-confidence identification.'],
+ ['Jerusalem',[31.776667,35.234167],'Very high-confidence identification.'],
+ ['Jericho',[31.871,35.444],'Tell es-Sultan / Jericho area; key entry-point context.'],
+ ['Beersheba',[31.244722,34.840833],'Tel Beer Sheva — leading/high-confidence identification.']
+];
+markers.forEach(([n,ll,d])=>L.circleMarker(ll,{radius:6,color:'#06122d',weight:2,fillColor:'#06122d',fillOpacity:.95}).addTo(sites).bindPopup('<strong>'+n+'</strong><br>'+d));
+L.control.layers(null,{'Approximate tribal allotments':tribes,'Key biblical sites':sites,'Later Dan migration':later},{collapsed:false}).addTo(map);
+map.fitBounds([[30.85,34.55],[33.38,36.08]]);
+</script><script src="script.js"></script>
+</body></html>

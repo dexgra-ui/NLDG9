@@ -2,7 +2,7 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 import { createRequire } from 'node:module';
-import { chromium, webkit } from 'playwright';
+import { chromium, firefox, webkit } from 'playwright';
 
 const require=createRequire(import.meta.url);
 const axeModulePath=['axe-core','axe','min','js'];
@@ -193,6 +193,7 @@ async function browserChecks(){
 
   await testBiblicalSearch(chromium,'Chromium mobile');
   await testBiblicalSearch(webkit,'WebKit/Safari mobile');
+  await testBiblicalSearch(firefox,'Firefox mobile');
 }
 
 function section(title,items,empty){

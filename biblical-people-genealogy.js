@@ -6,7 +6,8 @@ db.records.forEach(r=>(r.parents||[]).forEach(p=>{if(!children.has(p))children.s
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const name=id=>byId.get(id)?.name||id;
 const unique=a=>[...new Set(a)];
-const stats={total:db.records.length,people:db.records.filter(r=>r.kind==='Person'||r.kind==='Person / ancestor name').length,collective:db.records.filter(r=>r.kind.includes('nation')||r.kind.includes('group')).length,variants:db.records.filter(r=>r.certainty!=='explicit').length};
+const isCollective=r=>/group|clan|nation/i.test(r.kind||'');
+const stats={total:db.records.length,people:db.records.filter(r=>!isCollective(r)).length,collective:db.records.filter(isCollective).length,variants:db.records.filter(r=>r.certainty!=='explicit').length};
 
 document.querySelectorAll('[data-genealogy-stat="total"]').forEach(el=>el.textContent=stats.total);
 document.querySelectorAll('[data-genealogy-stat="people"]').forEach(el=>el.textContent=stats.people);
@@ -24,15 +25,22 @@ if(lineFilter){lines.forEach(v=>lineFilter.insertAdjacentHTML('beforeend',`<opti
 const kinds=unique(db.records.map(r=>r.kind));
 if(kindFilter){kinds.forEach(v=>kindFilter.insertAdjacentHTML('beforeend',`<option value="${esc(v)}">${esc(v)}</option>`));}
 
+const connectionText=r=>(r.connections||[]).map(c=>`${c.type}: ${name(c.target)}`);
 function familyText(r){
   const p=(r.parents||[]).map(name);
   const s=(r.spouses||[]).map(name);
   const c=(children.get(r.id)||[]).map(name);
-  return [p.length?`Parent${p.length>1?'s':''}: ${p.join(', ')}`:'',s.length?`Spouse${s.length>1?'s':''}: ${s.join(', ')}`:'',c.length?`Child/descendant${c.length>1?'s':''}: ${c.join(', ')}`:''].filter(Boolean).join(' · ');
+  return [p.length?`Parent${p.length>1?'s':''}: ${p.join(', ')}`:'',s.length?`Spouse${s.length>1?'s':''}: ${s.join(', ')}`:'',c.length?`${c.length>1?'Children':'Child'}: ${c.join(', ')}`:'',...connectionText(r)].filter(Boolean).join(' · ');
+}
+function certainty(r){
+ if(r.certainty==='explicit')return ['Scripture-stated','explicit'];
+ if(r.certainty==='probable')return ['Probable relationship','probable'];
+ if(r.certainty==='textual variant')return ['Textual variant','variant'];
+ if(r.certainty==='unresolved identification')return ['Identity not forced','variant'];
+ return [r.certainty||'Review note','variant'];
 }
 function card(r){
- const badge=r.certainty==='explicit'?'Scripture-stated':r.certainty==='probable'?'Probable relationship':'Textual variant';
- const cls=r.certainty==='explicit'?'explicit':r.certainty==='probable'?'probable':'variant';
+ const [badge,cls]=certainty(r);
  return `<article class="bp-card" id="person-${esc(r.id)}"><div class="bp-card-top"><span class="bp-line">${esc(r.line)}</span><span class="bp-certainty ${cls}">${esc(badge)}</span></div><h3>${esc(r.name)}</h3>${r.aliases?.length?`<p class="bp-alias">Also/variant: ${r.aliases.map(esc).join(', ')}</p>`:''}<p class="bp-kind">${esc(r.kind)}${r.gender&&r.gender!=='unknown'?` · ${esc(r.gender)}`:''}</p>${familyText(r)?`<p class="bp-family">${esc(familyText(r))}</p>`:''}<p class="bp-ref">${esc(r.ref)}</p>${r.note?`<p class="bp-note">${esc(r.note)}</p>`:''}</article>`;
 }
 function render(){
@@ -40,11 +48,12 @@ function render(){
  const line=lineFilter?.value||'all';
  const kind=kindFilter?.value||'all';
  const rows=db.records.filter(r=>{
-   const hay=[r.name,r.line,r.kind,r.ref,r.note,...(r.aliases||[]),...(r.parents||[]).map(name),...(r.spouses||[]).map(name)].join(' ').toLowerCase();
+   const connectionHay=(r.connections||[]).flatMap(c=>[c.type,name(c.target),c.ref,c.note]);
+   const hay=[r.name,r.line,r.kind,r.ref,r.note,r.certainty,...(r.aliases||[]),...(r.parents||[]).map(name),...(r.spouses||[]).map(name),...connectionHay].join(' ').toLowerCase();
    return (!q||hay.includes(q))&&(line==='all'||r.line===line)&&(kind==='all'||r.kind===kind);
  });
  if(grid)grid.innerHTML=rows.map(card).join('');
- if(summary)summary.textContent=`Showing ${rows.length} of ${db.records.length} Genesis 1–11 records.`;
+ if(summary)summary.textContent=`Showing ${rows.length} of ${db.records.length} ${db.scope||'biblical'} records.`;
 }
 [search,lineFilter,kindFilter].forEach(el=>el?.addEventListener(el===search?'input':'change',render));
 render();
@@ -53,6 +62,12 @@ function renderLine(id,ids,title){
  const host=document.getElementById(id);if(!host)return;
  host.innerHTML=`<h3>${esc(title)}</h3><div class="bp-line-chain">${ids.map(x=>`<a href="#person-${esc(x)}">${esc(name(x))}</a>`).join('<span aria-hidden="true">→</span>')}</div>`;
 }
+function renderGroup(id,ids,title){
+ const host=document.getElementById(id);if(!host)return;
+ host.innerHTML=`<h3>${esc(title)}</h3><div class="bp-line-chain bp-line-group">${ids.map(x=>`<a href="#person-${esc(x)}">${esc(name(x))}</a>`).join('')}</div>`;
+}
 renderLine('seth-line',['adam','seth','enosh','kenan','mahalalel','jared','enoch-sethite','methuselah','lamech-sethite','noah'],'Adam to Noah through Seth');
-renderLine('shem-line',['noah','shem','arpachshad','shelah','eber','peleg','reu','serug','nahor-ancestor','terah','abram'],'Noah to Abram through Shem');
+renderLine('shem-line',['noah','shem','arpachshad','shelah','eber','peleg','reu','serug','nahor-ancestor','terah','abram'],'Noah to Abraham through Shem');
+renderLine('patriarch-line',['abram','isaac','jacob'],'Abraham to Isaac to Jacob / Israel');
+renderGroup('tribes-line',['reuben','simeon','levi','judah','dan','naphtali','gad','asher','issachar','zebulun','joseph','benjamin'],'The twelve sons of Jacob / Israel');
 })();

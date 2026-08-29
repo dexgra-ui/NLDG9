@@ -3,3 +3,8 @@
 /* Accessibility contrast overrides for the youth reference build. */
 .fyj-study-card.planned small{color:#586273}
 .fyj-block .scripture-reference-link{color:#0b5555;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+
+/* Keep generated breadcrumbs readable on the light transition band. */
+.fyj-page .breadcrumbs{color:#445267;background:#f4f6f9}
+.fyj-page .breadcrumbs a{color:#17324d}
+.fyj-page .breadcrumbs span{color:#566173}

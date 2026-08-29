@@ -1,14 +1,24 @@
 (()=>{
-const db=window.NLDG_BIBLICAL_GENEALOGY;if(!db)return;
-const byId=new Map(db.records.map(r=>[r.id,r]));
+const db=window.NLDG_BIBLICAL_GENEALOGY;
+if(!db)return;
+
+const asArray=value=>Array.isArray(value)?value:(value==null||value===''?[]:[value]);
+const records=asArray(db.records).filter(r=>r&&typeof r==='object'&&r.id&&r.name).map(r=>({
+  ...r,
+  parents:asArray(r.parents),
+  spouses:asArray(r.spouses),
+  aliases:asArray(r.aliases),
+  connections:asArray(r.connections).filter(Boolean)
+}));
+const byId=new Map(records.map(r=>[r.id,r]));
 const children=new Map();
-db.records.forEach(r=>(r.parents||[]).forEach(p=>{if(!children.has(p))children.set(p,[]);children.get(p).push(r.id)}));
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]));
+records.forEach(r=>r.parents.forEach(p=>{if(!children.has(p))children.set(p,[]);children.get(p).push(r.id)}));
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const name=id=>byId.get(id)?.name||id;
 const pick=(...ids)=>ids.find(id=>byId.has(id))||ids[0];
-const unique=a=>[...new Set(a)];
+const unique=a=>[...new Set(a.filter(v=>v!=null&&v!==''))];
 const isCollective=r=>/group|clan|nation/i.test(r.kind||'');
-const stats={total:db.records.length,people:db.records.filter(r=>!isCollective(r)).length,collective:db.records.filter(isCollective).length,variants:db.records.filter(r=>r.certainty!=='explicit').length};
+const stats={total:records.length,people:records.filter(r=>!isCollective(r)).length,collective:records.filter(isCollective).length,variants:records.filter(r=>r.certainty!=='explicit').length};
 
 document.querySelectorAll('[data-genealogy-stat="total"]').forEach(el=>el.textContent=stats.total);
 document.querySelectorAll('[data-genealogy-stat="people"]').forEach(el=>el.textContent=stats.people);
@@ -20,18 +30,37 @@ const search=document.getElementById('biblical-people-search');
 const lineFilter=document.getElementById('biblical-line-filter');
 const kindFilter=document.getElementById('biblical-kind-filter');
 const summary=document.getElementById('biblical-people-summary');
+const tools=document.querySelector('.bp-tools');
 
-const lines=unique(db.records.map(r=>r.line));
-if(lineFilter){lines.forEach(v=>lineFilter.insertAdjacentHTML('beforeend',`<option value="${esc(v)}">${esc(v)}</option>`));}
-const kinds=unique(db.records.map(r=>r.kind));
-if(kindFilter){kinds.forEach(v=>kindFilter.insertAdjacentHTML('beforeend',`<option value="${esc(v)}">${esc(v)}</option>`));}
+if(!grid||!search||!summary){
+ console.warn('Biblical people search controls are missing from the page.');
+ return;
+}
 
-const connectionText=r=>(r.connections||[]).map(c=>`${c.type}: ${name(c.target)}`);
+unique(records.map(r=>r.line)).forEach(v=>lineFilter?.insertAdjacentHTML('beforeend',`<option value="${esc(v)}">${esc(v)}</option>`));
+unique(records.map(r=>r.kind)).forEach(v=>kindFilter?.insertAdjacentHTML('beforeend',`<option value="${esc(v)}">${esc(v)}</option>`));
+
+const actions=document.createElement('div');
+actions.className='bp-search-actions';
+const searchButton=document.createElement('button');
+searchButton.type='button';
+searchButton.className='button primary';
+searchButton.textContent='Search';
+searchButton.id='biblical-people-search-button';
+const clearButton=document.createElement('button');
+clearButton.type='button';
+clearButton.className='button secondary';
+clearButton.textContent='Clear';
+clearButton.id='biblical-people-clear-button';
+actions.append(searchButton,clearButton);
+tools?.appendChild(actions);
+
+const connectionText=r=>r.connections.map(c=>`${c.type||'connection'}: ${name(c.target)}`);
 function familyText(r){
-  const p=(r.parents||[]).map(name);
-  const s=(r.spouses||[]).map(name);
-  const c=(children.get(r.id)||[]).map(name);
-  return [p.length?`Parent${p.length>1?'s':''}: ${p.join(', ')}`:'',s.length?`Spouse${s.length>1?'s':''}: ${s.join(', ')}`:'',c.length?`${c.length>1?'Children':'Child'}: ${c.join(', ')}`:'',...connectionText(r)].filter(Boolean).join(' · ');
+ const p=r.parents.map(name);
+ const s=r.spouses.map(name);
+ const c=(children.get(r.id)||[]).map(name);
+ return [p.length?`Parent${p.length>1?'s':''}: ${p.join(', ')}`:'',s.length?`Spouse${s.length>1?'s':''}: ${s.join(', ')}`:'',c.length?`${c.length>1?'Children':'Child'}: ${c.join(', ')}`:'',...connectionText(r)].filter(Boolean).join(' · ');
 }
 function certainty(r){
  if(r.certainty==='explicit')return ['Scripture-stated','explicit'];
@@ -42,21 +71,59 @@ function certainty(r){
 }
 function card(r){
  const [badge,cls]=certainty(r);
- return `<article class="bp-card" id="person-${esc(r.id)}"><div class="bp-card-top"><span class="bp-line">${esc(r.line)}</span><span class="bp-certainty ${cls}">${esc(badge)}</span></div><h3>${esc(r.name)}</h3>${r.aliases?.length?`<p class="bp-alias">Also/variant: ${r.aliases.map(esc).join(', ')}</p>`:''}<p class="bp-kind">${esc(r.kind)}${r.gender&&r.gender!=='unknown'?` · ${esc(r.gender)}`:''}</p>${familyText(r)?`<p class="bp-family">${esc(familyText(r))}</p>`:''}<p class="bp-ref">${esc(r.ref)}</p>${r.note?`<p class="bp-note">${esc(r.note)}</p>`:''}</article>`;
+ const family=familyText(r);
+ return `<article class="bp-card" id="person-${esc(r.id)}"><div class="bp-card-top"><span class="bp-line">${esc(r.line)}</span><span class="bp-certainty ${cls}">${esc(badge)}</span></div><h3>${esc(r.name)}</h3>${r.aliases.length?`<p class="bp-alias">Also/variant: ${r.aliases.map(esc).join(', ')}</p>`:''}<p class="bp-kind">${esc(r.kind)}${r.gender&&r.gender!=='unknown'?` · ${esc(r.gender)}`:''}</p>${family?`<p class="bp-family">${esc(family)}</p>`:''}<p class="bp-ref">${esc(r.ref)}</p>${r.note?`<p class="bp-note">${esc(r.note)}</p>`:''}</article>`;
 }
-function render(){
- const q=(search?.value||'').trim().toLowerCase();
- const line=lineFilter?.value||'all';
- const kind=kindFilter?.value||'all';
- const rows=db.records.filter(r=>{
-   const connectionHay=(r.connections||[]).flatMap(c=>[c.type,name(c.target),c.ref,c.note]);
-   const hay=[r.name,r.line,r.kind,r.ref,r.note,r.certainty,...(r.aliases||[]),...(r.parents||[]).map(name),...(r.spouses||[]).map(name),...connectionHay].join(' ').toLowerCase();
-   return (!q||hay.includes(q))&&(line==='all'||r.line===line)&&(kind==='all'||r.kind===kind);
- });
- if(grid)grid.innerHTML=rows.map(card).join('');
- if(summary)summary.textContent=`Showing ${rows.length} of ${db.records.length} ${db.scope||'biblical'} records.`;
+function haystack(r){
+ const connectionHay=r.connections.flatMap(c=>[c?.type,name(c?.target),c?.ref,c?.note]);
+ return [r.name,r.line,r.kind,r.ref,r.note,r.certainty,...r.aliases,...r.parents.map(name),...r.spouses.map(name),...connectionHay].filter(Boolean).join(' ').toLowerCase();
 }
-[search,lineFilter,kindFilter].forEach(el=>el?.addEventListener(el===search?'input':'change',render));
+function render({focusResults=false}={}){
+ try{
+  const q=search.value.trim().toLowerCase();
+  const line=lineFilter?.value||'all';
+  const kind=kindFilter?.value||'all';
+  const matched=records.filter(r=>{
+   const matchesText=!q||haystack(r).includes(q);
+   return matchesText&&(line==='all'||r.line===line)&&(kind==='all'||r.kind===kind);
+  });
+  const cap=q||line!=='all'||kind!=='all'?150:80;
+  const visible=matched.slice(0,cap);
+  grid.innerHTML=visible.map(card).join('');
+  if(!matched.length){
+   summary.textContent=`No matches found${q?` for “${search.value.trim()}”`:''}. Try an alternate spelling, relative, book, or Scripture reference.`;
+  }else if(matched.length>visible.length){
+   summary.textContent=`Showing the first ${visible.length} of ${matched.length} matching records. Narrow the search to see a specific person.`;
+  }else if(!q&&line==='all'&&kind==='all'){
+   summary.textContent=`Showing the first ${visible.length} of ${records.length} records. Start typing a name to search the complete Genesis–Revelation database.`;
+  }else{
+   summary.textContent=`Showing ${matched.length} matching record${matched.length===1?'':'s'} of ${records.length} total.`;
+  }
+  if(focusResults)summary.scrollIntoView({behavior:'smooth',block:'nearest'});
+ }catch(error){
+  console.error('Biblical people search failed:',error);
+  summary.textContent='The database search hit an error. Please refresh the page and try again.';
+ }
+}
+
+let timer;
+const scheduleRender=()=>{
+ clearTimeout(timer);
+ timer=setTimeout(()=>render(),60);
+};
+search.addEventListener('input',scheduleRender);
+search.addEventListener('search',scheduleRender);
+search.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();render({focusResults:true});}});
+lineFilter?.addEventListener('change',()=>render());
+kindFilter?.addEventListener('change',()=>render());
+searchButton.addEventListener('click',()=>render({focusResults:true}));
+clearButton.addEventListener('click',()=>{
+ search.value='';
+ if(lineFilter)lineFilter.value='all';
+ if(kindFilter)kindFilter.value='all';
+ render();
+ search.focus();
+});
 render();
 
 function renderLine(id,ids,title){

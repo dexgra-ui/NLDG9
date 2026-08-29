@@ -79,4 +79,8 @@
   document.getElementById('toggle-complete').onclick=()=>{const st=read(),set=new Set(st.completed||[]);set.has(x.number)?set.delete(x.number):set.add(x.number);st.completed=[...set].sort((a,b)=>a-b);save(st);location.reload()}
  }
  lesson?render(lesson):landing();
+ const geographyScript=document.createElement('script');
+ geographyScript.src='biblical-study-map-links.js?v=1.0.0';
+ geographyScript.async=false;
+ document.head.appendChild(geographyScript);
 })();

@@ -22,6 +22,7 @@
   '1 samuel':['united'],'2 samuel':['united'],'1 chronicles':['united'],
   '1 kings':['united','divided'],'2 kings':['divided','exile'],'2 chronicles':['divided','exile'],
   ezra:['return'],nehemiah:['return'],esther:['return'],
+  job:['world'],psalms:['world'],proverbs:['world'],ecclesiastes:['world'],'song of songs':['world'],
   isaiah:['divided','exile'],jeremiah:['divided','exile'],lamentations:['exile'],ezekiel:['exile'],daniel:['exile'],
   hosea:['divided'],joel:['divided'],amos:['divided'],obadiah:['exile'],jonah:['world','divided'],micah:['divided'],nahum:['world','exile'],habakkuk:['divided','exile'],zephaniah:['divided','exile'],
   haggai:['return'],zechariah:['return'],malachi:['return'],
@@ -40,9 +41,11 @@
  else if(['1 kings','2 kings','2 chronicles','isaiah','jeremiah','hosea','joel','amos','micah','habakkuk','zephaniah'].includes(book))note='Track Israel and Judah with period-sensitive boundaries; political control changed repeatedly across these books.';
  else if(['lamentations','ezekiel','daniel','obadiah','nahum'].includes(book))note='Use the exile geography to distinguish Assyrian and Babylonian settings and generalized deportation corridors.';
  else if(['ezra','nehemiah','esther','haggai','zechariah','malachi'].includes(book))note='Explore the Persian-period world and generalized return routes; uncertain locations are shown as study zones rather than exact pins.';
+ else if(['job','psalms','proverbs','ecclesiastes','song of songs'].includes(book))note='This book is not a single travel narrative. Use the biblical-world map for broad geographic orientation without assigning a precise route or setting the text does not establish.';
  else if(['matthew','mark','luke','john'].includes(book))note='Read the Gospel with Galilee, Samaria, Judea, and Jerusalem in view. The maps avoid forcing the Gospel accounts into one speculative itinerary.';
  else if(book==='acts')note='Follow Acts through Paul’s missionary world with separate journey layers and reconstructed route segments clearly identified.';
  else if(ids.includes('paul'))note='Situate this letter in Paul’s missionary world. The map is geographic orientation, not a claim that every route segment can be reconstructed exactly.';
+ else if(['hebrews','james','1 peter','2 peter','1 john','2 john','3 john','jude','revelation'].includes(book))note='Use the biblical-world map for regional orientation. The resource does not assign a precise writing location or audience location where the biblical text or scholarship remains uncertain.';
  if(lesson&&['matthew','mark','luke','john'].includes(book))note+=' Jerusalem is included as a second resource for Passion-week and city-context study.';
  const style=document.createElement('style');
  style.textContent='.book-geography-resource{margin:1rem auto 1.5rem;max-width:1180px;padding:1.05rem 1.15rem;border:1px solid rgba(24,59,112,.16);border-left:5px solid #c79b45;border-radius:16px;background:linear-gradient(135deg,#fffaf0,#f6f8fc);box-shadow:0 8px 22px rgba(6,18,45,.05)}.book-geography-resource .kicker{margin:0 0 .2rem}.book-geography-resource h2{margin:.1rem 0 .45rem;font-size:clamp(1.2rem,2vw,1.55rem)}.book-geography-resource p{margin:.25rem 0 .8rem}.book-geography-links{display:flex;gap:.6rem;flex-wrap:wrap}.book-geography-links a{display:inline-flex;align-items:center;padding:.58rem .82rem;border-radius:999px;background:#06122d;color:#fff;text-decoration:none;font-weight:800;font-size:.9rem}.book-geography-links a:nth-child(even){background:#fff;color:#183b70;border:1px solid rgba(24,59,112,.22)}@media(max-width:640px){.book-geography-resource{margin:0 .85rem 1.2rem}.book-geography-links{display:grid}.book-geography-links a{justify-content:center;width:100%;box-sizing:border-box}}';

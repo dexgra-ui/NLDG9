@@ -1,4 +1,4 @@
-const CACHE='nldg-v1-1-6';
+const CACHE='nldg-v1-1-7';
 const CORE=[
   './',
   'index.html',
@@ -33,8 +33,16 @@ self.addEventListener('activate',event=>{
 
 self.addEventListener('fetch',event=>{
   if(event.request.method!=='GET')return;
+
+  const url=new URL(event.request.url);
+  const fileName=url.pathname.split('/').pop()||'';
+  const isGenealogyAsset=url.origin===self.location.origin&&fileName.startsWith('biblical-people-genealogy');
+  const networkRequest=isGenealogyAsset
+    ? new Request(event.request,{cache:'reload'})
+    : event.request;
+
   event.respondWith(
-    fetch(event.request)
+    fetch(networkRequest)
       .then(response=>{
         if(response.ok){
           const copy=response.clone();

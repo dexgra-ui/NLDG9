@@ -71,6 +71,7 @@ renderLine('shem-line',['noah','shem','arpachshad','shelah','eber','peleg','reu'
 renderLine('patriarch-line',['abram','isaac','jacob'],'Abraham to Isaac to Jacob / Israel');
 renderGroup('tribes-line',['reuben','simeon','levi','judah','dan','naphtali','gad','asher','issachar','zebulun','joseph','benjamin'],'The twelve sons of Jacob / Israel');
 renderLine('davidic-line',['perez','hezron-perez','ram-ruth','amminadab','nahshon','salmon','boaz','obed','jesse','david'],'Perez to David in Ruth 4');
-renderGroup('saul-house',['saul','jonathan-saul','ishvi-saul','malchishua','abinadab-saul','merab','michal','ishbosheth','mephibosheth-jonathan'],'Saul’s named royal house across Samuel');
-renderLine('davidic-kings-line',['david','solomon','rehoboam','abijam','asa','jehoshaphat-king','jehoram-judah','ahaziah-judah','joash-judah','amaziah','uzziah','jotham','ahaz','hezekiah','manasseh-judah','amon-judah','josiah'],'Davidic royal line through Josiah');
+renderGroup('saul-house',['saul','jonathan-saul','ishvi-saul','malchishua','abinadab-saul','merab','michal','ishbosheth','mephibosheth-jonathan'],'Saul’s named royal house across Samuel and Chronicles');
+renderLine('davidic-kings-line',['david','solomon','rehoboam','abijah-judah','asa','jehoshaphat','jehoram-judah','ahaziah-judah','joash-judah','amaziah-judah','azariah-uzziah','jotham-judah','ahaz-judah','hezekiah','manasseh-judah','amon-judah','josiah'],'Davidic royal line through Josiah');
+renderLine('aaronic-line',['aaron','eleazar-aaron','phinehas','abishua-priest','bukki-priest','uzzi-priest','zerahiah-priest','meraioth-priest','amariah-priest-1','ahitub-priest-1','zadok-ahitub','ahimaaz-zadok'],'Aaronic priestly succession highlighted in Chronicles');
 })();

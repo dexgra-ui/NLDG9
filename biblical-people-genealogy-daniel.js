@@ -1,0 +1,28 @@
+(()=>{
+const db=window.NLDG_BIBLICAL_GENEALOGY;if(!db)return;
+const R=(id,name,line,kind='Person',gender='male',parents=[],spouses=[],ref='',note='',certainty='explicit',aliases=[],connections=[])=>({id,name,line,kind,gender,parents,spouses,ref,note,certainty,aliases,connections});
+const C=(type,target,ref='',note='')=>({type,target,ref,note});
+const merge=(id,p)=>{const r=db.records.find(x=>x.id===id);if(!r)return;if(p.ref&&!String(r.ref||'').includes(p.ref))r.ref=[r.ref,p.ref].filter(Boolean).join('; ');if(p.note)r.note=[r.note,p.note].filter(Boolean).join(' ');if(p.name)r.name=p.name;if(p.parents)r.parents=p.parents;if(p.spouses)r.spouses=[...new Set([...(r.spouses||[]),...p.spouses])];if(p.aliases)r.aliases=[...new Set([...(r.aliases||[]),...p.aliases])];if(p.connections)r.connections=[...(r.connections||[]),...p.connections];if(p.certainty)r.certainty=p.certainty;};
+const put=r=>db.records.some(x=>x.id===r.id)?merge(r.id,r):db.records.push(r);
+
+merge('jehoiakim',{ref:'Daniel 1:1–2',note:'Daniel opens in the reign of Jehoiakim king of Judah.'});
+merge('nebuchadnezzar',{ref:'Daniel 1–4; 5:11,18,22',note:'King of Babylon who takes Judean captives, promotes Daniel and his companions, and dominates the first four chapters of Daniel.'});
+merge('cyrus',{ref:'Daniel 1:21; 6:28; 10:1',note:'Cyrus king of Persia is named at the close of Daniel’s early court career and in the dating of the later vision.'});
+
+put(R('ashpenaz','Ashpenaz','Daniel / Babylonian court','Chief court official','male',[],[],'Daniel 1:3–11','Chief of Nebuchadnezzar’s court officials/eunuchs charged with selecting and training Judean youths.'));
+put(R('daniel-judean','Daniel / Belteshazzar','Daniel / Judean exiles','Prophet / court official','male',[],[],'Daniel 1:6–21; 2–12','One of four Judean youths named in Daniel 1. Ashpenaz gives Daniel the Babylonian name Belteshazzar. The book does not name Daniel’s father.','explicit',['Daniel','Belteshazzar'],[C('tribe / people','judah','Daniel 1:6','Named among youths from Judah.'),C('possible identity','daniel-ezekiel','Ezekiel 14:14,20; 28:3; Daniel 1:6','Ezekiel’s Daniel/Danel may or may not be the Daniel of this book; the database preserves the uncertainty.') ]));
+put(R('hananiah-daniel','Hananiah / Shadrach','Daniel / Judean exiles','Court official','male',[],[],'Daniel 1:6–20; 2:17,49; 3:12–30','Judean companion of Daniel. Ashpenaz gives him the Babylonian name Shadrach.','explicit',['Hananiah','Shadrach'],[C('tribe / people','judah','Daniel 1:6')]));
+put(R('mishael-daniel','Mishael / Meshach','Daniel / Judean exiles','Court official','male',[],[],'Daniel 1:6–20; 2:17,49; 3:12–30','Judean companion of Daniel. Ashpenaz gives him the Babylonian name Meshach.','explicit',['Mishael','Meshach'],[C('tribe / people','judah','Daniel 1:6')]));
+put(R('azariah-daniel','Azariah / Abednego','Daniel / Judean exiles','Court official','male',[],[],'Daniel 1:6–20; 2:17,49; 3:12–30','Judean companion of Daniel. Ashpenaz gives him the Babylonian name Abednego.','explicit',['Azariah','Abednego','Abed-Nego'],[C('tribe / people','judah','Daniel 1:6')]));
+put(R('melzar-daniel','Melzar / the steward','Daniel / Babylonian court','Possible personal name / title','male',[],[],'Daniel 1:11,16','The KJV treats Melzar as a name; many modern translations understand the Hebrew as a title such as guard or steward appointed by the chief official. Retained as a textual/name-reading issue rather than asserted as an undisputed personal name.','textual variant',['Melzar','the steward','the guard']));
+put(R('arioch-daniel','Arioch','Daniel / Babylonian court','Military official','male',[],[],'Daniel 2:14–25','Captain of the king’s guard charged with executing Babylon’s wise men; Daniel speaks with him and is brought before Nebuchadnezzar. Distinct from Arioch king of Ellasar in Genesis 14.','explicit',['Arioch captain of the guard']));
+put(R('belshazzar','Belshazzar','Babylon','King / ruler','male',[],[],'Daniel 5; 7:1; 8:1','Babylonian king in Daniel’s later court narratives and vision datings. Daniel repeatedly distinguishes Belshazzar from Daniel’s Babylonian name Belteshazzar. Daniel 5 uses father/son language connecting Belshazzar with Nebuchadnezzar, but the relationship is recorded as royal/dynastic wording rather than an unqualified biological parent field.','explicit',['Belshazzar king of Babylon'],[C('called father / royal predecessor','nebuchadnezzar','Daniel 5:2,11,13,18,22','Daniel 5 uses father language for Nebuchadnezzar in relation to Belshazzar; this may function as ancestor or dynastic-predecessor language and is not forced into the biological parent field.') ]));
+put(R('darius-mede','Darius the Mede','Medo-Persian period','King / ruler','male',['ahasuerus-daniel9'],[],'Daniel 5:31; 6:1–28; 9:1; 11:1','Ruler called Darius the Mede. Daniel 9:1 calls him son of Ahasuerus and a Mede by descent. Kept distinct from Darius the Persian king in Ezra because Scripture does not identify them as the same ruler.','unresolved identification',['Darius the Mede']));
+put(R('ahasuerus-daniel9','Ahasuerus','Medo-Persian period','Person / royal ancestor','male',[],[],'Daniel 9:1','Father of Darius the Mede according to Daniel 9:1. Kept distinct from the Ahasuerus of Esther and the Ahasuerus named in Ezra 4 unless Scripture supplies an identity link.','unresolved identification',['Ahasuerus father of Darius the Mede']));
+
+// Gabriel and Michael are named in Daniel but are angelic/heavenly beings, outside this human people/genealogy database.
+// The unnamed queen/queen mother in Daniel 5 is not assigned a name.
+db.scope='Genesis–Daniel';
+db.phase=9;
+db.completedBooks=[...new Set([...(db.completedBooks||[]),'Daniel'])];
+})();

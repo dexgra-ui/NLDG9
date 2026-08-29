@@ -59,112 +59,47 @@ function linkReferences(root=document.body){
  nodes.forEach(linkTextNode);
 }
 const style=document.createElement('style');
-style.textContent='.scripture-reference-link{color:#8fe9b6;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:750}.scripture-reference-link:hover,.scripture-reference-link:focus-visible{color:#ffd55f}.scripture-reference-link:focus-visible{outline:3px solid #ffd55f;outline-offset:3px;border-radius:3px}.wof-language-switch,.mof-language-switch{display:flex;gap:.6rem;flex-wrap:wrap;margin:.8rem 0 1rem}';
+style.textContent='.scripture-reference-link{color:#8fe9b6;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:750}.scripture-reference-link:hover,.scripture-reference-link:focus-visible{color:#ffd55f}.scripture-reference-link:focus-visible{outline:3px solid #ffd55f;outline-offset:3px;border-radius:3px}.wof-language-switch,.mof-language-switch,.fyj-language-switch,.gwj-language-switch{display:flex;gap:.6rem;flex-wrap:wrap;margin:.8rem 0 1rem}';
 document.head.appendChild(style);
-const WOMEN_STUDY_ES={
- 'women-known-by-god':1,
- 'women-jesus-saw':2,
- 'women-identity-beyond-roles':3,
- 'women-faith-hard-seasons':4,
- 'women-strength-surrender':5,
- 'women-healing-hurt-rejection':6,
- 'women-healthy-community':7,
- 'women-calling-gifts':8,
- 'women-prayer-discernment':9,
- 'women-helping-another-grow':10
-};
-const MEN_STUDY_ES={
- 'men-identity-before-performance':1,
- 'men-free-indeed':2,
- 'men-integrity':3,
- 'men-honest-strength':4,
- 'men-servant-leadership':5,
- 'men-relationships':6,
- 'men-brotherhood':7,
- 'men-temptation-integrity':8,
- 'men-stewardship':9,
- 'men-help-another-grow':10
-};
+const WOMEN_STUDY_ES={'women-known-by-god':1,'women-jesus-saw':2,'women-identity-beyond-roles':3,'women-faith-hard-seasons':4,'women-strength-surrender':5,'women-healing-hurt-rejection':6,'women-healthy-community':7,'women-calling-gifts':8,'women-prayer-discernment':9,'women-helping-another-grow':10};
+const MEN_STUDY_ES={'men-identity-before-performance':1,'men-free-indeed':2,'men-integrity':3,'men-honest-strength':4,'men-servant-leadership':5,'men-relationships':6,'men-brotherhood':7,'men-temptation-integrity':8,'men-stewardship':9,'men-help-another-grow':10};
+const FYJ_STUDY_ES={'following-jesus-for-yourself-1':1,'following-jesus-for-yourself-2':2,'following-jesus-for-yourself-3':3,'following-jesus-for-yourself-4':4,'following-jesus-for-yourself-5':5,'following-jesus-for-yourself-6':6,'following-jesus-for-yourself-7':7,'following-jesus-for-yourself-8':8,'following-jesus-for-yourself-9':9,'following-jesus-for-yourself-10':10};
+const GWJ_STUDY_ES={'growing-with-jesus-1':1,'growing-with-jesus-2':2,'growing-with-jesus-3':3,'growing-with-jesus-4':4,'growing-with-jesus-5':5,'growing-with-jesus-6':6,'growing-with-jesus-7':7,'growing-with-jesus-8':8,'growing-with-jesus-9':9,'growing-with-jesus-10':10};
 function addWomenSpanishLink(){
  if(document.documentElement.lang==='es')return;
- const id=String(document.body?.dataset.studyPage||'');
- const number=WOMEN_STUDY_ES[id];
- if(number){
-  const hero=document.querySelector('.wof-study-hero');
-  if(!hero||hero.querySelector('[data-wof-spanish-link]'))return;
-  const switcher=document.createElement('div');
-  switcher.className='wof-language-switch';
-  switcher.dataset.wofSpanishLink='true';
-  switcher.innerHTML=`<a class="button primary" href="${location.pathname.split('/').pop()}" aria-current="page">English</a><a class="button secondary" href="mujeres-de-fe.html?study=${number}">Español</a>`;
-  const meta=hero.querySelector('.wof-study-meta');
-  (meta||hero.lastElementChild)?.insertAdjacentElement('afterend',switcher);
-  return;
- }
- const page=location.pathname.split('/').pop()||'';
- if(page==='women-of-faith.html'){
-  const hero=document.querySelector('.wof-hero>div:first-child');
-  if(!hero||hero.querySelector('[data-wof-spanish-link]'))return;
-  const switcher=document.createElement('div');
-  switcher.className='wof-language-switch';
-  switcher.dataset.wofSpanishLink='true';
-  switcher.innerHTML='<a class="button primary" href="women-of-faith.html" aria-current="page">English</a><a class="button secondary" href="mujeres-de-fe.html">Español</a>';
-  const lead=hero.querySelector('.lead');
-  lead?.insertAdjacentElement('afterend',switcher);
- }
+ const id=String(document.body?.dataset.studyPage||''),number=WOMEN_STUDY_ES[id];
+ if(number){const hero=document.querySelector('.wof-study-hero');if(!hero||hero.querySelector('[data-wof-spanish-link]'))return;const switcher=document.createElement('div');switcher.className='wof-language-switch';switcher.dataset.wofSpanishLink='true';switcher.innerHTML=`<a class="button primary" href="${location.pathname.split('/').pop()}" aria-current="page">English</a><a class="button secondary" href="mujeres-de-fe.html?study=${number}">Español</a>`;const meta=hero.querySelector('.wof-study-meta');(meta||hero.lastElementChild)?.insertAdjacentElement('afterend',switcher);return;}
+ const page=location.pathname.split('/').pop()||'';if(page==='women-of-faith.html'){const hero=document.querySelector('.wof-hero>div:first-child');if(!hero||hero.querySelector('[data-wof-spanish-link]'))return;const switcher=document.createElement('div');switcher.className='wof-language-switch';switcher.dataset.wofSpanishLink='true';switcher.innerHTML='<a class="button primary" href="women-of-faith.html" aria-current="page">English</a><a class="button secondary" href="mujeres-de-fe.html">Español</a>';hero.querySelector('.lead')?.insertAdjacentElement('afterend',switcher);}
 }
 function addMenSpanishLink(){
  if(document.documentElement.lang==='es')return;
- const id=String(document.body?.dataset.studyPage||'');
- const number=MEN_STUDY_ES[id];
- if(number){
-  const hero=document.querySelector('.mof-study-hero');
-  if(!hero||hero.querySelector('[data-mof-spanish-link]'))return;
-  const switcher=document.createElement('div');
-  switcher.className='mof-language-switch';
-  switcher.dataset.mofSpanishLink='true';
-  switcher.innerHTML=`<a class="button primary" href="${location.pathname.split('/').pop()}" aria-current="page">English</a><a class="button secondary" href="hombres-de-fe.html?study=${number}">Español</a>`;
-  const meta=hero.querySelector('.mof-study-meta');
-  (meta||hero.lastElementChild)?.insertAdjacentElement('afterend',switcher);
-  return;
- }
- const page=location.pathname.split('/').pop()||'';
- if(page==='men-of-faith.html'){
-  const hero=document.querySelector('.mof-hero>div:first-child');
-  if(!hero||hero.querySelector('[data-mof-spanish-link]'))return;
-  const switcher=document.createElement('div');
-  switcher.className='mof-language-switch';
-  switcher.dataset.mofSpanishLink='true';
-  switcher.innerHTML='<a class="button primary" href="men-of-faith.html" aria-current="page">English</a><a class="button secondary" href="hombres-de-fe.html">Español</a>';
-  const lead=hero.querySelector('.lead');
-  lead?.insertAdjacentElement('afterend',switcher);
- }
+ const id=String(document.body?.dataset.studyPage||''),number=MEN_STUDY_ES[id];
+ if(number){const hero=document.querySelector('.mof-study-hero');if(!hero||hero.querySelector('[data-mof-spanish-link]'))return;const switcher=document.createElement('div');switcher.className='mof-language-switch';switcher.dataset.mofSpanishLink='true';switcher.innerHTML=`<a class="button primary" href="${location.pathname.split('/').pop()}" aria-current="page">English</a><a class="button secondary" href="hombres-de-fe.html?study=${number}">Español</a>`;const meta=hero.querySelector('.mof-study-meta');(meta||hero.lastElementChild)?.insertAdjacentElement('afterend',switcher);return;}
+ const page=location.pathname.split('/').pop()||'';if(page==='men-of-faith.html'){const hero=document.querySelector('.mof-hero>div:first-child');if(!hero||hero.querySelector('[data-mof-spanish-link]'))return;const switcher=document.createElement('div');switcher.className='mof-language-switch';switcher.dataset.mofSpanishLink='true';switcher.innerHTML='<a class="button primary" href="men-of-faith.html" aria-current="page">English</a><a class="button secondary" href="hombres-de-fe.html">Español</a>';hero.querySelector('.lead')?.insertAdjacentElement('afterend',switcher);}
+}
+function addFYJSpanishLink(){
+ if(document.documentElement.lang==='es')return;
+ const id=String(document.body?.dataset.studyPage||''),number=FYJ_STUDY_ES[id];
+ if(number){const hero=document.querySelector('.fyj-study-hero');if(!hero||hero.querySelector('[data-fyj-spanish-link]'))return;const switcher=document.createElement('div');switcher.className='fyj-language-switch';switcher.dataset.fyjSpanishLink='true';switcher.innerHTML=`<a class="button primary" href="${location.pathname.split('/').pop()}" aria-current="page">English</a><a class="button secondary" href="siguiendo-a-jesus-por-ti-mismo.html?study=${number}">Español</a>`;const meta=hero.querySelector('.fyj-study-meta');(meta||hero.lastElementChild)?.insertAdjacentElement('afterend',switcher);return;}
+ const page=location.pathname.split('/').pop()||'';if(page==='following-jesus-for-yourself.html'){const hero=document.querySelector('.fyj-hero-copy');if(!hero||hero.querySelector('[data-fyj-spanish-link]'))return;const switcher=document.createElement('div');switcher.className='fyj-language-switch';switcher.dataset.fyjSpanishLink='true';switcher.innerHTML='<a class="button primary" href="following-jesus-for-yourself.html" aria-current="page">English</a><a class="button secondary" href="siguiendo-a-jesus-por-ti-mismo.html">Español</a>';hero.querySelector('.lead')?.insertAdjacentElement('afterend',switcher);}
+}
+function addGWJSpanishLink(){
+ if(document.documentElement.lang==='es')return;
+ const id=String(document.body?.dataset.studyPage||''),number=GWJ_STUDY_ES[id];
+ if(number){const hero=document.querySelector('.gwj-study-hero');if(!hero||hero.querySelector('[data-gwj-spanish-link]'))return;const switcher=document.createElement('div');switcher.className='gwj-language-switch';switcher.dataset.gwjSpanishLink='true';switcher.innerHTML=`<a class="button primary" href="${location.pathname.split('/').pop()}" aria-current="page">English</a><a class="button secondary" href="creciendo-con-jesus.html?study=${number}">Español</a>`;const meta=hero.querySelector('.gwj-study-meta');(meta||hero.lastElementChild)?.insertAdjacentElement('afterend',switcher);return;}
+ const page=location.pathname.split('/').pop()||'';if(page==='growing-with-jesus.html'){const hero=document.querySelector('.gwj-hero-copy');if(!hero||hero.querySelector('[data-gwj-spanish-link]'))return;const switcher=document.createElement('div');switcher.className='gwj-language-switch';switcher.dataset.gwjSpanishLink='true';switcher.innerHTML='<a class="button primary" href="growing-with-jesus.html" aria-current="page">English</a><a class="button secondary" href="creciendo-con-jesus.html">Español</a>';hero.querySelector('.lead')?.insertAdjacentElement('afterend',switcher);}
 }
 const loadDepthEnhancement=()=>{
- let src='';
- const studyId=String(document.body?.dataset.studyPage||'');
- if(document.body?.classList.contains('fyj-study-page'))src='following-jesus-depth.js?v=1.0.0';
+ let src='';const studyId=String(document.body?.dataset.studyPage||'');
+ if(document.body?.classList.contains('fyj-study-page')&&document.documentElement.lang!=='es')src='following-jesus-depth.js?v=1.0.0';
  else if(studyId.startsWith('men-'))src='men-of-faith-depth.js?v=1.0.0';
  else if(studyId.startsWith('women-'))src='women-of-faith-depth.js?v=1.0.0';
  if(!src||[...document.scripts].some(script=>script.src.includes(src.split('?')[0])))return;
- const script=document.createElement('script');
- script.src=new URL(src,document.currentScript?.src||location.href).href;
- script.async=false;
- document.head.appendChild(script);
+ const script=document.createElement('script');script.src=new URL(src,document.currentScript?.src||location.href).href;script.async=false;document.head.appendChild(script);
 };
 const start=()=>{
- linkReferences(document.body);
- loadDepthEnhancement();
- addWomenSpanishLink();
- addMenSpanishLink();
- let queued=false;
- const pending=new Set();
- const observer=new MutationObserver(records=>{
-  records.forEach(record=>record.addedNodes.forEach(node=>pending.add(node)));
-  if(queued)return;
-  queued=true;
-  requestAnimationFrame(()=>{queued=false;const nodes=[...pending];pending.clear();nodes.forEach(linkReferences);});
- });
- observer.observe(document.body,{childList:true,subtree:true});
+ linkReferences(document.body);loadDepthEnhancement();addWomenSpanishLink();addMenSpanishLink();addFYJSpanishLink();addGWJSpanishLink();
+ let queued=false;const pending=new Set();const observer=new MutationObserver(records=>{records.forEach(record=>record.addedNodes.forEach(node=>pending.add(node)));if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;const nodes=[...pending];pending.clear();nodes.forEach(linkReferences);});});observer.observe(document.body,{childList:true,subtree:true});
 };
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 window.NLDG_SCRIPTURE_LINKS={linkReferences,passageUrl,findReferences,normalizeReference};

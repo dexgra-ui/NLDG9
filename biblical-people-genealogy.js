@@ -70,10 +70,21 @@ function certainty(r){
  if(r.certainty==='unresolved identification')return ['Identity not forced','variant'];
  return [r.certainty||'Review note','variant'];
 }
-function card(r){
+function highlightedName(value,query){
+ const text=String(value??'');
+ const needle=String(query??'').trim();
+ if(!needle)return esc(text);
+ const index=text.toLocaleLowerCase('en-US').indexOf(needle.toLocaleLowerCase('en-US'));
+ if(index<0)return esc(text);
+ const before=text.slice(0,index);
+ const match=text.slice(index,index+needle.length);
+ const after=text.slice(index+needle.length);
+ return `${esc(before)}<mark class="bp-name-match">${esc(match)}</mark>${esc(after)}`;
+}
+function card(r,query=''){
  const [badge,cls]=certainty(r);
  const family=familyText(r);
- return `<article class="bp-card" id="person-${esc(r.id)}"><div class="bp-card-top"><span class="bp-line">${esc(r.line)}</span><span class="bp-certainty ${cls}">${esc(badge)}</span></div><h3>${esc(r.name)}</h3>${r.aliases.length?`<p class="bp-alias">Also/variant: ${r.aliases.map(esc).join(', ')}</p>`:''}<p class="bp-kind">${esc(r.kind)}${r.gender&&r.gender!=='unknown'?` · ${esc(r.gender)}`:''}</p>${family?`<p class="bp-family">${esc(family)}</p>`:''}<p class="bp-ref">${esc(r.ref)}</p>${r.note?`<p class="bp-note">${esc(r.note)}</p>`:''}</article>`;
+ return `<article class="bp-card" id="person-${esc(r.id)}"><div class="bp-card-top"><span class="bp-line">${esc(r.line)}</span><span class="bp-certainty ${cls}">${esc(badge)}</span></div><h3>${highlightedName(r.name,query)}</h3>${r.aliases.length?`<p class="bp-alias">Also/variant: ${r.aliases.map(esc).join(', ')}</p>`:''}<p class="bp-kind">${esc(r.kind)}${r.gender&&r.gender!=='unknown'?` · ${esc(r.gender)}`:''}</p>${family?`<p class="bp-family">${esc(family)}</p>`:''}<p class="bp-ref">${esc(r.ref)}</p>${r.note?`<p class="bp-note">${esc(r.note)}</p>`:''}</article>`;
 }
 function makeSearchText(r){
  const connectionHay=[];
@@ -116,7 +127,7 @@ function render({focusResults=false}={}){
   const filtered=q||line!=='all'||kind!=='all';
   const cap=filtered?60:30;
   const visible=matched.slice(0,cap);
-  grid.innerHTML=visible.map(card).join('');
+  grid.innerHTML=visible.map(r=>card(r,rawQuery)).join('');
 
   if(!matched.length){
    summary.textContent=`No matches found${q?` for “${rawQuery}”`:''}. Try an alternate spelling, relative, book, or Scripture reference.`;

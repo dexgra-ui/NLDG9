@@ -83,7 +83,7 @@ G('admin-luke','Admin','arni-luke','Luke 3:33','Name preserved in many modern cr
 G('arni-luke','Arni','hezron-perez','Luke 3:33','Name preserved in many modern critical-text translations before Hezron. Some manuscript traditions instead have Aram/Ram, corresponding more directly to Matthew and Chronicles.','textual variant',['Arni','Aram','Ram?'],[ ]);
 merge('arni-luke',{connections:[gc('hezron-perez','Luke 3:33'),C('possible textual identity','ram-ruth','Luke 3:33; Matthew 1:3–4; 1 Chronicles 2:9–10','Some manuscript/translation traditions use Aram/Ram here rather than the critical-text Arni/Admin sequence.')]});
 // Remove duplicate predecessor connection introduced by the helper + explanatory merge.
-const arni=db.records.find(r=>r.id==='arni-luke');if(arni)arni.connections=arni.connections.filter((c,i,a)=>a.findIndex(x=>x.type===c.type&&x.target===c.target&&x.ref===c.ref)===i;
+const arni=db.records.find(r=>r.id==='arni-luke');if(arni)arni.connections=arni.connections.filter((c,i,a)=>a.findIndex(x=>x.type===c.type&&x.target===c.target&&x.ref===c.ref)===i);
 GE(['amminadab'],'admin-luke','Luke 3:33','Luke’s critical-text sequence places Admin after Amminadab; other textual traditions differ.');
 GE(['hezron-perez'],'perez','Luke 3:33','Hezron is explicitly named in Luke’s genealogy.');
 GE(['perez'],'judah','Luke 3:33','Perez is explicitly named in Luke’s genealogy.');

@@ -1,0 +1,42 @@
+(()=>{
+const db=window.NLDG_BIBLICAL_GENEALOGY;if(!db)return;
+const R=(id,name,line,kind,gender,parents=[],spouses=[],ref='',note='',certainty='explicit',aliases=[],connections=[])=>({id,name,line,kind,gender,parents,spouses,ref,note,certainty,aliases,connections});
+const C=(type,target,ref='',note='')=>({type,target,ref,note});
+const update=(id,patch)=>{const r=db.records.find(x=>x.id===id);if(r)Object.assign(r,{...r,...patch,aliases:[...new Set([...(r.aliases||[]),...(patch.aliases||[])])],connections:[...(r.connections||[]),...(patch.connections||[])]});};
+
+update('ahaziah-ahab',{ref:'1 Kings 22:40,51–53; 2 Kings 1','note':'Son of Ahab and Jezebel; king of Israel who dies without a son after Elijah announces judgment.'});
+update('elijah',{ref:'1 Kings 17–19; 21; 2 Kings 1–2','note':'Tishbite prophet; confronts Ahaziah and is taken up as Elisha succeeds him.'});
+update('elisha',{ref:'1 Kings 19:16,19–21; 2 Kings 2–13','note':'Son of Shaphat; succeeds Elijah and ministers through the reigns of multiple northern kings.'});
+update('jehoshaphat-king',{ref:'1 Kings 22:41–50; 2 Kings 3:7–14; 8:16','note':'Son of Asa and Azubah; king of Judah; father of Jehoram/Joram of Judah.'});
+update('jehu-king',{ref:'1 Kings 19:16–17; 2 Kings 9–10','note':'Son of Jehoshaphat and grandson of Nimshi; anointed to destroy Ahab’s house and becomes king of Israel.'});
+update('jezebel',{ref:'1 Kings 16:31–22:52; 2 Kings 9:7,10,22,30–37','note':'Daughter of Ethbaal, wife of Ahab, mother of Ahaziah and Joram/Jehoram of Israel; killed during Jehu’s coup.'});
+update('ahab',{ref:'1 Kings 16:28–22:40; 2 Kings 3:1; 8:18,26; 9–10','note':'Son of Omri and husband of Jezebel; father of Ahaziah and Joram/Jehoram of Israel. The southern royal house becomes linked to Ahab through Jehoram of Judah’s marriage to a daughter of Ahab.'});
+
+const rows=[
+R('joram-israel','Joram / Jehoram','Omride dynasty','King / ruler','male',['ahab','jezebel'],[],'2 Kings 3:1–27; 5:1–8; 6:8–7:20; 8:16,25,28–29; 9:14–26','Son of Ahab; 2 Kings 9:22 explicitly identifies Jezebel as his mother. King of Israel after Ahaziah. English translations alternate Joram and Jehoram; distinct from Jehoram king of Judah.','explicit',['Joram king of Israel','Jehoram king of Israel']),
+R('mesha','Mesha','Moab','King / ruler','male',[],[],'2 Kings 3:4–27','King of Moab who rebels against Israel after Ahab’s death. Distinct from Mesha in Genesis genealogies.','explicit',['Mesha king of Moab']),
+R('gehazi','Gehazi','Elisha','Servant / attendant','male',[],[],'2 Kings 4:12–37; 5:20–27; 8:4–5','Servant/attendant of Elisha who is struck with Naaman’s leprosy after pursuing gifts dishonestly.','explicit',[],[C('servant of','elisha','2 Kings 4:12; 5:20')]),
+R('naaman-syria','Naaman','Aram / Elisha','Military commander','male',[],[],'2 Kings 5','Commander of the army of the king of Aram who is healed of leprosy after obeying Elisha’s instruction. Distinct from Naaman in Benjamin’s genealogy.','explicit',['Naaman the Syrian']),
+R('benhadad-elisha','Ben-Hadad','Aram / Damascus','King / ruler','male',[],[],'2 Kings 6:24; 8:7–15','King of Aram during Elisha’s ministry who besieges Samaria and later becomes ill; Hazael succeeds him after his death. He may be the Ben-Hadad of 1 Kings 20 or a successor; identity is not forced.','unresolved identification',['Ben-Hadad (Elisha era)']),
+R('hazael','Hazael','Aram / Damascus','King / ruler','male',[],[],'1 Kings 19:15,17; 2 Kings 8:7–15,28–29; 9:14–15; 10:32–33; 12:17–18; 13:3,22–24','Aramean court figure whom Elijah was told to anoint; Elisha foretells his kingship. Hazael succeeds Ben-Hadad and becomes a major enemy of Israel and Judah.'),
+R('jehoram-judah','Jehoram / Joram','Davidic kings','King / ruler','male',['jehoshaphat-king'],['athaliah'],'2 Kings 8:16–24','Son of Jehoshaphat and king of Judah. Married a daughter of Ahab; his son Ahaziah’s mother is Athaliah. Distinct from Joram/Jehoram son of Ahab, king of Israel.','explicit',['Jehoram king of Judah','Joram king of Judah']),
+R('athaliah','Athaliah','Davidic kings / Omride connection','Queen / ruler','female',[],['jehoram-judah'],'2 Kings 8:18,26; 11:1–20','Mother of Ahaziah king of Judah and daughter/descendant of Omri’s house. Because 2 Kings says Jehoram married a daughter of Ahab and then names Athaliah as Ahaziah’s mother, she is commonly understood as that daughter, but the direct father statement is not made in Kings.','probable',['Athaliah'],[C('probable father','ahab','2 Kings 8:18,26','Jehoram married a daughter of Ahab; his son Ahaziah’s mother is Athaliah, linking her strongly to Ahab’s house.')]),
+R('ahaziah-judah','Ahaziah','Davidic kings','King / ruler','male',['jehoram-judah','athaliah'],[],'2 Kings 8:24–29; 9:16–29; 11:1–2','Son of Jehoram/Joram of Judah and Athaliah; king of Judah; killed during Jehu’s coup. Distinct from Ahaziah son of Ahab, king of Israel.','explicit',['Ahaziah king of Judah']),
+R('bidkar','Bidkar','Jehu house','Military officer','male',[],[],'2 Kings 9:25–26','Jehu’s officer/adjutant who is ordered to throw Joram’s body onto Naboth’s field.','explicit',['Bidkar']),
+R('rechab-jonadab','Rechab','Rechabites','Person','male',[],[],'2 Kings 10:15,23','Father of Jehonadab. Distinct from Rechab son of Rimmon in 2 Samuel.'),
+R('jehonadab-rechab','Jehonadab / Jonadab','Rechabites','Person','male',['rechab-jonadab'],[],'2 Kings 10:15–23','Son of Rechab who joins Jehu and witnesses the purge of Baal worship. Jeremiah later remembers the Rechabite tradition under the form Jonadab.','textual variant',['Jehonadab son of Rechab','Jonadab son of Rechab']),
+R('jehosheba','Jehosheba','Davidic kings','Princess','female',['jehoram-judah'],[],'2 Kings 11:2–3','Daughter of King Jehoram and sister of Ahaziah; rescues the infant Joash from Athaliah’s purge. Chronicles later calls her Jehoshabeath and identifies her as wife of Jehoiada; 2 Kings itself does not state that marriage.','explicit',['Jehosheba','Jehoshabeath'],[C('brother','ahaziah-judah','2 Kings 11:2')]),
+R('zibiah','Zibiah','Davidic kings','Queen mother','female',[],[],'2 Kings 12:1','Woman from Beersheba and mother of Joash/Jehoash king of Judah. The text names her as his mother but does not separately narrate a marriage to Ahaziah.','explicit',['Zibiah of Beersheba']),
+R('joash-judah','Joash / Jehoash','Davidic kings','King / ruler','male',['ahaziah-judah','zibiah'],[],'2 Kings 11–12','Son of Ahaziah and Zibiah; rescued by Jehosheba, hidden in the temple, crowned under Jehoiada, and later assassinated by his servants.','explicit',['Joash king of Judah','Jehoash king of Judah']),
+R('jehoiada-priest','Jehoiada','Davidic kings / priesthood','Priest','male',[],[],'2 Kings 11–12','Priest who protects Joash, organizes Athaliah’s overthrow, and guides Joash’s early reign. Chronicles later adds family relationships not stated here. Distinct from Jehoiada father of Benaiah in David’s era unless later genealogy explicitly connects them.','unresolved identification',['Jehoiada the priest']),
+R('mattan-baal','Mattan','Judah / Baal cult','Priest','male',[],[],'2 Kings 11:18','Priest of Baal killed when the temple of Baal is destroyed after Joash is crowned.','explicit',['Mattan priest of Baal']),
+R('shimeath','Shimeath','Judah royal assassins','Person','female',[],[],'2 Kings 12:21','Mother of Jozabad, one of the servants who assassinate Joash. Kings calls her Shimeath; Chronicles later identifies her as an Ammonite woman.','explicit',['Shimeath']),
+R('jozabad-shimeath','Jozabad','Judah royal assassins','Person','male',['shimeath'],[],'2 Kings 12:21','Son of Shimeath; one of the servants who assassinate Joash. Distinct from later people named Jozabad.','explicit',['Jozabad son of Shimeath']),
+R('shomer-jehozabad','Shomer','Judah royal assassins','Person','male',[],[],'2 Kings 12:21','Father of Jehozabad. Chronicles later gives a variant form Shimrith and a Moabite identification for the mother/family tradition.','textual variant',['Shomer','Shimrith']),
+R('jehozabad-shomer','Jehozabad','Judah royal assassins','Person','male',['shomer-jehozabad'],[],'2 Kings 12:21','Son of Shomer; one of the servants who assassinate Joash.','explicit',['Jehozabad son of Shomer'])
+];
+
+db.records.push(...rows);
+db.scope='Genesis–2 Kings 12';
+db.phase=5;
+})();

@@ -50,6 +50,14 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Check genealogy JavaScript syntax
+        run: |
+          set -e
+          for file in biblical-people-genealogy*.js; do
+            echo "Checking $file"
+            node --check "$file"
+          done
+
       - name: Install audit tools
         run: |
           npm install --no-save playwright axe-core

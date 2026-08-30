@@ -10,14 +10,14 @@ const exists=async file=>{try{await fs.access(file);return true;}catch{return fa
 
 const routerPath=path.join(ROOT,'nldg-i18n.js');
 if(!await exists(routerPath)){
-  console.error('FAILED\nMissing nldg-i18n.js');
+  console.error('FAILED\nMissing bilingual locale router');
   process.exit(1);
 }
 
 const router=await fs.readFile(routerPath,'utf8');
 const block=router.match(/const pairs=\{([\s\S]*?)\n\};/);
 if(!block){
-  console.error('FAILED\nCould not find the bilingual route registry in nldg-i18n.js');
+  console.error('FAILED\nCould not find the bilingual route registry');
   process.exit(1);
 }
 

@@ -74,6 +74,66 @@ Current paired ministry resources include:
 
 The Spanish article `Un cristiano guiado por el Gran Mandamiento` remains a Spanish resource without an exact English page pair until a canonical English counterpart is identified or published.
 
+## Spanish content expansion roadmap
+
+The bilingual framework is considered established. Expansion should now focus on reviewed ministry content rather than more infrastructure.
+
+### Priority 1 — Start Here discipleship pathway
+
+Build a clear Spanish path for someone who is new to the Bible, new to following Jesus, or unsure where to begin.
+
+Already available:
+
+- `Biblia para principiantes`
+- `Cómo estudiar la Biblia`
+- `Gracia para esta etapa`
+- `Un cristiano guiado por el Gran Mandamiento`
+
+Next steps:
+
+1. Identify the best existing English canonical resources for knowing Jesus, following Jesus, prayer, and basic discipleship.
+2. Translate and review those resources individually.
+3. Add them to the Spanish home and Resource Center as a simple ordered pathway.
+4. Do not create a route pair until the English source and reviewed Spanish counterpart are both confirmed.
+
+### Priority 2 — Walking With Jesus / Caminando con Jesús
+
+The Spanish landing page is already paired with the English series. Translate the actual series gradually rather than attempting all lessons at once.
+
+Recommended rollout:
+
+1. Translate and review the first participant lesson and its key interface labels.
+2. Verify Scripture references, Bible-translation handling, discussion questions, and Christ-centered teaching intent.
+3. Test the English | Español switch on that lesson.
+4. Use the approved lesson as the translation pattern for the remaining series.
+5. Continue lesson by lesson in the same order as the English canonical series.
+
+Leader-only notes should be translated after the corresponding participant lesson is approved unless a ministry need makes the leader material urgent.
+
+### Priority 3 — Evergreen devotionals
+
+Select a small first collection of strong, broadly useful devotionals from the English library. Favor resources that introduce NLDG's Christ-centered voice and do not depend heavily on time-sensitive context.
+
+Target: 3–5 reviewed devotional pairs before expanding further.
+
+### Priority 4 — Evergreen articles
+
+Identify the English canonical counterpart for `Un cristiano guiado por el Gran Mandamiento`, or publish one if appropriate. Then select a small group of Christ-centered, evergreen articles for reviewed Spanish editions.
+
+Target: 3–5 reviewed article pairs.
+
+### Priority 5 — Beyond the Label newsletter
+
+Do not translate the full archive at once. Begin with one complete reviewed Spanish edition so the newsletter format, headings, links, Scripture references, and calls to action have an approved bilingual pattern.
+
+### Priority 6 — Prayer Center and interactive tools
+
+Translate interface text only after the underlying English experience is stable. Preserve privacy and safety language exactly in meaning. Do not expose a partially translated prayer workflow that could confuse visitors about privacy or submission behavior.
+
+### Priority 7 — Games and larger interactive experiences
+
+The language selector is available on the game surfaces, but game content does not need to be translated merely because the framework supports Spanish. Treat each game as its own future localization project.
+
 ## Translation status language
 
 Use clear statuses when useful:

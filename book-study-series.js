@@ -79,6 +79,15 @@
   document.getElementById('toggle-complete').onclick=()=>{const st=read(),set=new Set(st.completed||[]);set.has(x.number)?set.delete(x.number):set.add(x.number);st.completed=[...set].sort((a,b)=>a-b);save(st);location.reload()}
  }
  lesson?render(lesson):landing();
+ if(lesson){
+  const navEntry=typeof performance!=='undefined'&&performance.getEntriesByType?performance.getEntriesByType('navigation')[0]:null;
+  if(navEntry?.type!=='back_forward'){
+   const resetLessonScroll=()=>window.scrollTo({top:0,left:0,behavior:'auto'});
+   requestAnimationFrame(()=>requestAnimationFrame(resetLessonScroll));
+   window.addEventListener('load',resetLessonScroll,{once:true});
+   setTimeout(resetLessonScroll,250);
+  }
+ }
  const geographyScript=document.createElement('script');
  geographyScript.src='biblical-study-map-links.js?v=1.0.0';
  geographyScript.async=false;

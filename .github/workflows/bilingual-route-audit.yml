@@ -1,0 +1,33 @@
+name: Bilingual Route Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'nldg-i18n.js'
+      - 'es/**'
+      - 'scripts/bilingual-route-audit.mjs'
+      - '.github/workflows/bilingual-route-audit.yml'
+  pull_request:
+    paths:
+      - 'nldg-i18n.js'
+      - 'es/**'
+      - 'scripts/bilingual-route-audit.mjs'
+      - '.github/workflows/bilingual-route-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  bilingual-routes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify bilingual route pairs
+        run: node scripts/bilingual-route-audit.mjs

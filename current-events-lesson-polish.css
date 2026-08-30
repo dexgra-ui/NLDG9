@@ -36,9 +36,7 @@
   overflow-wrap:anywhere;
 }
 .v2-view-switcher-shell .v2-view-tabs button:hover,
-.v2-view-switcher-shell .v2-view-tabs button:focus-visible{
-  border-color:#ffd34f;
-}
+.v2-view-switcher-shell .v2-view-tabs button:focus-visible{border-color:#ffd34f}
 .v2-view-switcher-shell .v2-view-tabs button[aria-selected="true"]{
   border-color:#ffd34f;
   background:#ffd34f;
@@ -58,6 +56,48 @@
 }
 .v2-leader-grid>*,.v2-print-grid>*,.v2-resources>*{min-width:0}
 
+/* The guide itself comes before optional productivity tools. */
+.v2-leader-guide:not([hidden]),.v2-teaching-view:not([hidden]){
+  display:flex;
+  flex-direction:column;
+}
+.v2-leader-guide>*,.v2-teaching-view>*{order:3}
+.v2-leader-guide>.v2-leader-intro,.v2-teaching-view>.v2-leader-intro{order:1}
+.v2-leader-guide>.v2-leader-grid,.v2-teaching-view>.v2-leader-grid{order:2}
+.v2-leader-guide>.teaching-dashboard,.v2-teaching-view>.teaching-dashboard{margin-top:1.25rem}
+.v2-leader-guide>.presentation-launch,.v2-teaching-view>.presentation-launch,
+.v2-leader-guide>.teaching-notebook,.v2-teaching-view>.teaching-notebook{margin-top:1rem}
+
+/* Keep utility actions in the NLDG visual language. */
+#leader-print-v2{
+  width:max-content;
+  max-width:100%;
+  min-height:44px;
+  padding:.62rem 1rem;
+  border:1px solid #ffd34f;
+  border-radius:999px;
+  background:rgba(255,211,79,.08);
+  color:#ffd34f;
+  font:inherit;
+  font-weight:850;
+  cursor:pointer;
+}
+#leader-print-v2:hover,#leader-print-v2:focus-visible{
+  background:#ffd34f;
+  color:#06122d;
+  outline:none;
+}
+
+/* Make the advanced packet builder secondary to the four quick print choices. */
+.v2-print-view .print-center-entry{
+  margin-top:1rem;
+  padding:.9rem 1rem;
+  border-style:dashed;
+  background:rgba(91,33,182,.1);
+}
+.v2-print-view .print-center-entry h3{font-size:1.05rem}
+.v2-print-view .print-center-entry p{font-size:.9rem}
+
 /* Make the visitor-facing curriculum label read like a publication, not a build string. */
 .curriculum-v2-badge{
   color:#d6fff0;
@@ -65,10 +105,13 @@
   background:rgba(16,185,129,.13);
 }
 
-/* The lesson's central idea should be one of the strongest elements on the page. */
+/* The central idea stays strong without swallowing the whole first screen. */
 .v2-snapshot .v2-card:first-child h2{
   color:#f7f9ff!important;
   opacity:1!important;
+  font-size:clamp(1.8rem,3.2vw,2.4rem);
+  line-height:1.08;
+  letter-spacing:-.035em;
 }
 .v2-snapshot .v2-card:first-child .kicker{color:#c9d5ea}
 
@@ -76,20 +119,17 @@
 @media(min-width:1025px){
   .v2-view-switcher-shell .v2-view-tabs{grid-template-columns:repeat(4,minmax(0,1fr))}
   .series-lesson{min-width:0}
-  .v2-snapshot{grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr)}
+  .v2-snapshot{grid-template-columns:minmax(0,1.75fr) minmax(250px,.65fr)}
 }
 
-/* Tablet: two-by-two view switcher and a less crowded reading column.
-   Portrait tablets collapse secondary grids; landscape tablets retain room where useful. */
+/* Tablet: two-by-two view switcher and a less crowded reading column. */
 @media(min-width:621px) and (max-width:1024px){
   .series-shell{padding-left:1.25rem;padding-right:1.25rem}
   .v2-view-switcher-shell{
     width:calc(100% - 2.5rem);
     margin-bottom:1.15rem;
   }
-  .v2-view-switcher-shell .v2-view-tabs{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
+  .v2-view-switcher-shell .v2-view-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
   .v2-view-switcher-shell .v2-view-tabs button{min-height:56px}
   .series-lesson{padding:clamp(1.2rem,3vw,2rem)}
   .v2-snapshot{grid-template-columns:1fr}
@@ -101,8 +141,7 @@
   .v2-leader-grid,.v2-resources,.v2-application-columns,.v2-case-grid,.v2-print-grid{grid-template-columns:1fr}
 }
 
-/* Mobile: preserve 2x2 switching for fast access, then flatten the surrounding shell
-   so the lesson itself gets nearly the full viewport width. */
+/* Mobile: preserve 2x2 switching for fast access, then flatten the surrounding shell. */
 @media(max-width:620px){
   .series-shell{padding-top:1rem;padding-left:1rem;padding-right:1rem}
   .v2-view-switcher-shell{
@@ -121,7 +160,6 @@
     border-radius:18px;
     font-size:.88rem;
   }
-
   .lesson-layout{grid-template-columns:1fr;gap:.65rem}
   .lesson-layout>.lesson-sidebar{display:none!important}
   .series-lesson{
@@ -159,14 +197,13 @@
   .series-lesson-nav{gap:.75rem}
   .series-lesson-nav a{max-width:48%;overflow-wrap:anywhere}
   .v2-print-grid button{min-height:96px}
+  #leader-print-v2{width:100%;justify-content:center;text-align:center}
+  .v2-print-view .print-center-entry{grid-template-columns:1fr}
 }
 
-/* Narrow phones get slightly smaller controls without losing tap size. */
 @media(max-width:390px){
   .series-shell{padding-left:.75rem;padding-right:.75rem}
   .v2-view-switcher-shell .v2-view-tabs button{font-size:.82rem;padding:.6rem .4rem}
 }
 
-@media print{
-  .v2-view-switcher-shell{display:none!important}
-}
+@media print{.v2-view-switcher-shell{display:none!important}}

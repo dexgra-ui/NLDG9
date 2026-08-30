@@ -151,6 +151,14 @@
   overflow-wrap:anywhere;
 }
 
+/* Tablet-sized reading surfaces get a calmer Big Idea scale. */
+@media(min-width:621px) and (max-width:1200px){
+  .v2-snapshot>.v2-card:first-child h2{
+    font-size:clamp(1.75rem,2.75vw,2.1rem);
+    line-height:1.1;
+  }
+}
+
 /* Desktop: full four-option switcher, sidebar + lesson layout, generous content width. */
 @media(min-width:1025px){
   .v2-view-switcher-shell .v2-view-tabs{grid-template-columns:repeat(4,minmax(0,1fr))}

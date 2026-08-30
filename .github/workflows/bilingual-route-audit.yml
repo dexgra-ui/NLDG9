@@ -4,13 +4,17 @@ on:
   push:
     branches: [main]
     paths:
+      - '**/*.html'
       - 'nldg-i18n.js'
+      - 'contact-links.js'
       - 'es/**'
       - 'scripts/bilingual-route-audit.mjs'
       - '.github/workflows/bilingual-route-audit.yml'
   pull_request:
     paths:
+      - '**/*.html'
       - 'nldg-i18n.js'
+      - 'contact-links.js'
       - 'es/**'
       - 'scripts/bilingual-route-audit.mjs'
       - '.github/workflows/bilingual-route-audit.yml'
@@ -29,5 +33,5 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Verify bilingual route pairs
+      - name: Verify bilingual route pairs and selector coverage
         run: node scripts/bilingual-route-audit.mjs

@@ -29,6 +29,7 @@ try{
    await page.evaluate(()=>window.scrollTo(0,0));
    const metrics=await page.evaluate(expected=>{
     const visible=e=>Boolean(e)&&!e.hidden&&getComputedStyle(e).display!=='none'&&getComputedStyle(e).visibility!=='hidden';
+    const insideHorizontalScroller=el=>{for(let parent=el?.parentElement;parent;parent=parent.parentElement){const style=getComputedStyle(parent);if(['auto','scroll'].includes(style.overflowX))return true;}return false;};
     const root=document.documentElement;
     const groups=[...document.querySelectorAll('[role="tablist"]')].filter(g=>g.querySelector('[data-view="participant"]')&&g.querySelector('[data-view="leader"]'));
     const tabs=[...document.querySelectorAll('.v2-view-switcher-shell [data-view]')];
@@ -40,7 +41,7 @@ try{
     const article=document.querySelector('.series-lesson')?.getBoundingClientRect();
     const rows=[...new Set(tabs.map(b=>Math.round(b.getBoundingClientRect().top)))].length;
     const buttonMin=tabs.length?Math.min(...tabs.map(b=>b.getBoundingClientRect().height)):0;
-    const outside=[...document.querySelectorAll('body *')].filter(el=>{const s=getComputedStyle(el);if(s.display==='none'||s.visibility==='hidden'||el.closest('[hidden],[aria-hidden="true"]'))return false;const r=el.getBoundingClientRect();return r.width>2&&r.height>2&&!['auto','scroll'].includes(s.overflowX)&&(r.right>root.clientWidth+3||r.left<-3)}).slice(0,6).map(el=>({tag:el.tagName,className:typeof el.className==='string'?el.className.slice(0,70):'',text:(el.textContent||'').trim().replace(/\s+/g,' ').slice(0,80)}));
+    const outside=[...document.querySelectorAll('body *')].filter(el=>{const s=getComputedStyle(el);if(s.display==='none'||s.visibility==='hidden'||el.closest('[hidden],[aria-hidden="true"]')||insideHorizontalScroller(el))return false;const r=el.getBoundingClientRect();return r.width>2&&r.height>2&&!['auto','scroll'].includes(s.overflowX)&&(r.right>root.clientWidth+3||r.left<-3)}).slice(0,6).map(el=>({tag:el.tagName,className:typeof el.className==='string'?el.className.slice(0,70):'',text:(el.textContent||'').trim().replace(/\s+/g,' ').slice(0,80)}));
     return {expected,viewport:root.clientWidth,documentWidth:Math.max(root.scrollWidth,document.body.scrollWidth),groups:groups.length,labels:tabs.map(b=>(b.textContent||'').trim()),active,visibleViews,sidebar,rows,buttonMin,fullWidth:document.querySelector('.lesson-layout')?.classList.contains('v2-full-width-view')||false,articleFill:layout&&article?article.width/layout.width:0,outside};
    },view);
    const expectedRows=size.width<=1024?2:1;

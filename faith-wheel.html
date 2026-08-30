@@ -44,4 +44,4 @@ function next(){active=1-active;renderScore();newPuzzle()}
 function end(){if(current&&!roundSolved)window.NLDG_GAME_PACKS?.record(current);$('gameView').classList.add('hidden');$('completeView').classList.remove('hidden');const winner=scores[0]===scores[1]?'The game ended in a tie.':`${scores[0]>scores[1]?names[0]:names[1]} wins!`;$('summary').textContent=`${winner} ${names[0]}: ${scores[0]} points. ${names[1]}: ${scores[1]} points.`}
 $('start').onclick=start;$('spin').onclick=spin;$('solve').onclick=()=>solveRound(false);$('nextPuzzle').onclick=next;$('endGame').onclick=end;$('again').onclick=()=>{$('completeView').classList.add('hidden');$('setupView').classList.remove('hidden')};$('resetHistory').onclick=()=>{window.NLDG_GAME_PACKS?.resetHistory($('pack').value==='all'?undefined:$('pack').value);$('notice').textContent='Puzzle history cleared.'};$('fullscreen').onclick=async()=>{try{document.fullscreenElement?await document.exitFullscreen():await document.documentElement.requestFullscreen()}catch{}};loadPacks();
 </script>
-</body></html>
+<script src="nldg-i18n.js?v=1.1.0"></script></body></html>

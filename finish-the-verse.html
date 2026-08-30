@@ -161,5 +161,5 @@ function next(){index++;if($('mode').value==='teams')activeTeam=(activeTeam+1)%2
 function finish(){$('gameView').classList.add('hidden');$('completeView').classList.remove('hidden');$('summary').textContent=$('mode').value==='solo'?`You answered ${soloCorrect} of ${round.length} correctly.`:`Team Grace: ${scores[0]} points • Team Truth: ${scores[1]} points`}
 $('start').onclick=start;$('next').onclick=next;$('again').onclick=()=>{$('completeView').classList.add('hidden');$('setupView').classList.remove('hidden')};$('quit').onclick=()=>{if(confirm('Exit this round?')){$('gameView').classList.add('hidden');$('setupView').classList.remove('hidden')}};$('group').onchange=updateBankCount;$('resetHistory').onclick=()=>{Object.keys(BANK).forEach(group=>localStorage.removeItem(historyKey(group)));alert('Recent-question history has been reset.')};$('fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen()}catch{alert('Fullscreen is blocked here. On iPad, use Share → Add to Home Screen.')}};updateBankCount();
 </script>
-</body>
+<script src="nldg-i18n.js?v=1.1.0"></script></body>
 </html>

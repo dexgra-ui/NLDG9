@@ -26,4 +26,4 @@ function textReport(){return flags.map((flag,index)=>`${index+1}. ${flag.game} |
 $('copy').onclick=async()=>{try{await navigator.clipboard.writeText(textReport());$('summary').textContent='Review list copied.'}catch{alert(textReport())}}
 $('download').onclick=()=>{const blob=new Blob([textReport()],{type:'text/plain'}),link=document.createElement('a');link.href=URL.createObjectURL(blob);link.download='nldg-question-review.txt';link.click();setTimeout(()=>URL.revokeObjectURL(link.href),1000)}
 $('clear').onclick=()=>{if(confirm('Clear every flagged question saved on this device?')){flags=[];save()}};load();
-</script></body></html>
+</script><script src="nldg-i18n.js?v=1.1.0"></script></body></html>

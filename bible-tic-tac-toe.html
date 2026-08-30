@@ -187,5 +187,5 @@ function pickSquare(index){if(phase!=='pick'||board[index])return;pendingSquare=
 function finish(title,text,mark){phase='done';$('gameView').classList.add('hidden');$('completeView').classList.remove('hidden');$('resultMark').textContent=mark;$('resultTitle').textContent=title;$('resultText').textContent=text}
 $('start').onclick=startGame;$('nextTurn').onclick=()=>{if(!nextAction)return;const action=nextAction;nextAction=null;action()};$('rematch').onclick=()=>{$('completeView').classList.add('hidden');$('gameView').classList.remove('hidden');newRound()};$('newPlayers').onclick=()=>{$('completeView').classList.add('hidden');$('setupView').classList.remove('hidden')};$('exit').onclick=()=>{if(confirm('Return to game setup?')){$('gameView').classList.add('hidden');$('setupView').classList.remove('hidden')}};$('fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen()}catch{alert('Fullscreen is blocked here. On iPad, use Share → Add to Home Screen.')}};
 </script>
-</body>
+<script src="nldg-i18n.js?v=1.1.0"></script></body>
 </html>

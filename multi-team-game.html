@@ -46,5 +46,5 @@ function renderAwards(doc,noAward){const meta=doc.getElementById('meta')?.textCo
 function skipQuestion(){const doc=$('gameframe').contentDocument;if(!doc)return;lastFeedback='';if(gameFile==='memory-match.html'){move(1);setStatus('Turn skipped');return}if(gameFile==='bible-jeopardy.html'){const reveal=doc.getElementById('reveal'),noAward=doc.getElementById('noAward');if(reveal&&!reveal.classList.contains('hidden'))reveal.click();setTimeout(()=>{if(noAward)noAward.click();$('awardPanel').classList.add('hidden');move(1);setStatus('Clue skipped')},40);return}const next=doc.getElementById('next');if(next){next.click();setStatus('Question skipped')}else{move(1);setStatus('Turn skipped')}}
 $('teamCount').onchange=renderNames;$('begin').onclick=begin;$('previous').onclick=()=>move(-1);$('nextTeam').onclick=()=>move(1);$('minusPoints').onclick=()=>add(-100,'manual deduction');$('plusPoints').onclick=()=>add(100,'manual award');$('undo').onclick=undo;$('skip').onclick=skipQuestion;$('resetScores').onclick=()=>{if(confirm('Reset all team scores?')){snapshot('score reset');teams.forEach(t=>t.score=0);renderScore();setStatus('Scores reset')}};$('gameframe').onload=()=>setTimeout(configureChild,180);renderNames();
 </script>
-</body>
+<script src="nldg-i18n.js?v=1.1.0"></script></body>
 </html>

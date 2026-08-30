@@ -105,21 +105,56 @@
   background:rgba(16,185,129,.13);
 }
 
-/* The central idea stays strong without swallowing the whole first screen. */
-.v2-snapshot .v2-card:first-child h2{
+/* The lesson opens in reading order: Big Idea first, Scripture/details directly beneath it. */
+.v2-snapshot{
+  grid-template-columns:1fr;
+  gap:.8rem;
+}
+.v2-snapshot>.v2-card:first-child{
+  padding:clamp(1.25rem,2.4vw,1.8rem);
+}
+.v2-snapshot>.v2-card:first-child h2{
+  max-width:980px;
   color:#f7f9ff!important;
   opacity:1!important;
   font-size:clamp(1.8rem,3.2vw,2.4rem);
   line-height:1.08;
   letter-spacing:-.035em;
 }
-.v2-snapshot .v2-card:first-child .kicker{color:#c9d5ea}
+.v2-snapshot>.v2-card:first-child .kicker{color:#c9d5ea}
+.v2-snapshot>.v2-card:last-child{
+  padding:1rem 1.1rem;
+}
+.v2-snapshot>.v2-card:last-child .v2-meta-list{
+  display:grid;
+  grid-template-columns:minmax(0,2fr) minmax(150px,.8fr) minmax(150px,.8fr);
+  gap:0;
+}
+.v2-snapshot>.v2-card:last-child .v2-meta-list li{
+  min-width:0;
+  grid-template-columns:1fr;
+  gap:.35rem;
+  align-content:start;
+  padding:.15rem 1rem;
+  border-left:1px solid rgba(148,163,184,.18);
+}
+.v2-snapshot>.v2-card:last-child .v2-meta-list li:first-child{
+  padding-left:.1rem;
+  border-left:0;
+}
+.v2-snapshot>.v2-card:last-child .v2-meta-list strong{
+  font-size:.78rem;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.v2-snapshot>.v2-card:last-child .v2-meta-list span{
+  overflow-wrap:anywhere;
+}
 
 /* Desktop: full four-option switcher, sidebar + lesson layout, generous content width. */
 @media(min-width:1025px){
   .v2-view-switcher-shell .v2-view-tabs{grid-template-columns:repeat(4,minmax(0,1fr))}
   .series-lesson{min-width:0}
-  .v2-snapshot{grid-template-columns:minmax(0,1.75fr) minmax(250px,.65fr)}
 }
 
 /* Tablet: two-by-two view switcher and a less crowded reading column. */
@@ -132,7 +167,6 @@
   .v2-view-switcher-shell .v2-view-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
   .v2-view-switcher-shell .v2-view-tabs button{min-height:56px}
   .series-lesson{padding:clamp(1.2rem,3vw,2rem)}
-  .v2-snapshot{grid-template-columns:1fr}
 }
 
 @media(min-width:621px) and (max-width:880px){
@@ -180,7 +214,7 @@
     border-bottom:0;
   }
   .series-lesson-toolbar>a{font-size:.92rem}
-  .v2-snapshot{grid-template-columns:1fr;margin:.35rem 0 .85rem;gap:.75rem}
+  .v2-snapshot{margin:.35rem 0 .85rem;gap:.75rem}
   .v2-card,.v2-section,.v2-resource-card,.v2-leader-card{
     min-width:0;
     padding:1rem;
@@ -188,6 +222,17 @@
   }
   .v2-leader-grid,.v2-resources,.v2-application-columns,.v2-case-grid,.v2-print-grid{grid-template-columns:1fr}
   .v2-meta-list li{grid-template-columns:1fr}
+  .v2-snapshot>.v2-card:last-child .v2-meta-list{grid-template-columns:1fr}
+  .v2-snapshot>.v2-card:last-child .v2-meta-list li{
+    padding:.8rem 0;
+    border-left:0;
+    border-top:1px solid rgba(148,163,184,.18);
+  }
+  .v2-snapshot>.v2-card:last-child .v2-meta-list li:first-child{
+    padding-top:0;
+    border-top:0;
+  }
+  .v2-snapshot>.v2-card:last-child .v2-meta-list li:last-child{padding-bottom:0}
   .v2-leader-intro{grid-template-columns:1fr}
   .curriculum-v2-badge{
     margin-bottom:.8rem;

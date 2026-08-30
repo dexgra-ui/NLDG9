@@ -1,9 +1,9 @@
 /* Faith & Truth lesson-page hierarchy polish
    Keeps one clear view switcher, reduces nested mobile chrome,
-   and improves Curriculum v2 readability without changing lesson data. */
+   and gives desktop, tablet, and mobile deliberate layouts. */
 
 .v2-view-switcher-shell{
-  max-width:1160px;
+  width:min(1160px,calc(100% - 2rem));
   margin:0 auto 1.35rem;
   padding:1rem;
   border:1px solid rgba(255,255,255,.12);
@@ -60,33 +60,62 @@
 }
 .v2-snapshot .v2-card:first-child .kicker{color:#c9d5ea}
 
-@media(max-width:850px){
+/* Desktop: full four-option switcher, sidebar + lesson layout, generous content width. */
+@media(min-width:1025px){
+  .v2-view-switcher-shell .v2-view-tabs{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .series-lesson{min-width:0}
+  .v2-snapshot{grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr)}
+}
+
+/* Tablet: two-by-two view switcher and a less crowded reading column.
+   Portrait tablets collapse secondary grids; landscape tablets retain room where useful. */
+@media(min-width:621px) and (max-width:1024px){
+  .series-shell{padding-left:1.25rem;padding-right:1.25rem}
   .v2-view-switcher-shell{
-    margin:0 1rem 1.15rem;
+    width:calc(100% - 2.5rem);
+    margin-bottom:1.15rem;
   }
   .v2-view-switcher-shell .v2-view-tabs{
     grid-template-columns:repeat(2,minmax(0,1fr));
   }
+  .v2-view-switcher-shell .v2-view-tabs button{min-height:56px}
+  .series-lesson{padding:clamp(1.2rem,3vw,2rem)}
+  .v2-snapshot{grid-template-columns:1fr}
 }
 
+@media(min-width:621px) and (max-width:880px){
+  .lesson-layout{grid-template-columns:1fr}
+  .lesson-layout>.lesson-sidebar{display:none!important}
+  .v2-leader-grid,.v2-resources,.v2-application-columns,.v2-case-grid,.v2-print-grid{grid-template-columns:1fr}
+}
+
+/* Mobile: preserve 2x2 switching for fast access, then flatten the surrounding shell
+   so the lesson itself gets nearly the full viewport width. */
 @media(max-width:620px){
-  .series-shell{padding-top:1rem}
+  .series-shell{padding-top:1rem;padding-left:1rem;padding-right:1rem}
   .v2-view-switcher-shell{
-    margin:0 1rem 1rem;
+    width:100%;
+    margin:0 0 1rem;
     padding:.8rem;
     border-radius:17px;
   }
-  .v2-view-switcher-shell .v2-view-tabs{gap:.6rem}
+  .v2-view-switcher-shell .v2-view-tabs{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:.6rem;
+  }
   .v2-view-switcher-shell .v2-view-tabs button{
+    min-width:0;
     min-height:58px;
-    padding:.65rem .7rem;
-    border-radius:999px;
-    font-size:.92rem;
+    padding:.65rem .55rem;
+    border-radius:18px;
+    font-size:.88rem;
+    overflow-wrap:anywhere;
   }
 
-  /* Let the content cards provide the hierarchy instead of card-inside-card framing. */
-  .lesson-layout{gap:.65rem}
+  .lesson-layout{grid-template-columns:1fr;gap:.65rem}
+  .lesson-layout>.lesson-sidebar{display:none!important}
   .series-lesson{
+    min-width:0;
     padding:0;
     border:0;
     border-radius:0;
@@ -103,16 +132,28 @@
     border-bottom:0;
   }
   .series-lesson-toolbar>a{font-size:.92rem}
-  .v2-snapshot{margin:.35rem 0 .85rem;gap:.75rem}
+  .v2-snapshot{grid-template-columns:1fr;margin:.35rem 0 .85rem;gap:.75rem}
   .v2-card,.v2-section,.v2-resource-card,.v2-leader-card{
+    min-width:0;
     padding:1rem;
     border-radius:16px;
   }
+  .v2-leader-grid,.v2-resources,.v2-application-columns,.v2-case-grid,.v2-print-grid{grid-template-columns:1fr}
+  .v2-meta-list li{grid-template-columns:1fr}
+  .v2-leader-intro{grid-template-columns:1fr}
   .curriculum-v2-badge{
     margin-bottom:.8rem;
     font-size:.72rem;
     letter-spacing:.045em;
   }
+  .series-lesson-nav{gap:.75rem}
+  .series-lesson-nav a{max-width:48%;overflow-wrap:anywhere}
+}
+
+/* Narrow phones get slightly smaller controls without losing tap size. */
+@media(max-width:390px){
+  .series-shell{padding-left:.75rem;padding-right:.75rem}
+  .v2-view-switcher-shell .v2-view-tabs button{font-size:.82rem;padding:.6rem .4rem}
 }
 
 @media print{

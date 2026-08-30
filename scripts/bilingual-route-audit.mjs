@@ -40,7 +40,7 @@ for(const pair of pairs){
   if(await exists(esPath)&&path.extname(esPath).toLowerCase()==='.html'){
     const html=await fs.readFile(esPath,'utf8');
     if(!/<html\b[^>]*\blang=["']es["']/i.test(html))errors.push(`Spanish page is missing lang="es": ${pair.es}`);
-    if(!/hreflang=["']en["']/i.test(html)||!/hreflang=["']es["']/i.test(html))warnings.push(`Static hreflang links are not both present in ${pair.es}; runtime alternates may still be added by nldg-i18n.js.`);
+    if(!/hreflang=["']en["']/i.test(html)||!/hreflang=["']es["']/i.test(html))warnings.push(`Static hreflang links are not both present in ${pair.es}; runtime alternates may still be added by the bilingual router.`);
   }
 }
 
@@ -48,6 +48,31 @@ const fallback='es/proximamente.html';
 if(!await exists(path.join(ROOT,fallback)))errors.push(`Missing Spanish fallback route: ${fallback}`);
 else notes.push(`Verified fallback route ${fallback}.`);
 notes.push(`Verified ${pairs.length} registered English/Spanish route pair${pairs.length===1?'':'s'}.`);
+
+const excludedDirectories=new Set(['.git','.github','node_modules','templates','tools','dist','coverage']);
+const excludedPages=new Set(['study-template.html','host-test-checklist.html']);
+const publicPages=[];
+async function collectPages(directory){
+  for(const entry of await fs.readdir(directory,{withFileTypes:true})){
+    if(entry.isDirectory()&&excludedDirectories.has(entry.name))continue;
+    if(entry.name.startsWith('.')&&entry.isDirectory())continue;
+    const full=path.join(directory,entry.name);
+    if(entry.isDirectory())await collectPages(full);
+    else if(path.extname(entry.name).toLowerCase()==='.html'&&!excludedPages.has(entry.name))publicPages.push(full);
+  }
+}
+await collectPages(ROOT);
+
+const covered=[];
+for(const page of publicPages){
+  const html=await fs.readFile(page,'utf8');
+  const relativePath=path.relative(ROOT,page).split(path.sep).join('/');
+  const hasLocaleRuntime=/nldg-i18n/i.test(html)||/contact-links/i.test(html)||/<script\b[^>]*\bsrc=["'][^"']*script\.js(?:\?[^"']*)?["']/i.test(html);
+  const hasLanguageControl=/nldg-language-switcher/i.test(html)||(/>\s*Español\s*</i.test(html)&&/>\s*English\s*</i.test(html));
+  if(hasLocaleRuntime||hasLanguageControl)covered.push(relativePath);
+  else warnings.push(`No bilingual selector runtime detected in public page: ${relativePath}`);
+}
+notes.push(`Detected bilingual selector coverage on ${covered.length} of ${publicPages.length} public HTML pages.`);
 
 const report=[
   errors.length?'FAILED':'PASSED',

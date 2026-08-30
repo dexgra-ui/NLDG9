@@ -7,6 +7,7 @@
  const participant=document.querySelector('.v2-participant-guide');
  const leader=document.querySelector('.v2-leader-guide');
  const sidebar=document.querySelector('.lesson-sidebar');
+ const lessonLayout=document.querySelector('.lesson-layout');
  if(!article||!tabs||!participant||!leader)return;
  const escapeHtml=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
  tabs.querySelector('#v2-print')?.remove();
@@ -20,9 +21,18 @@
  printPanel.innerHTML='<section class="v2-leader-intro"><div><div class="curriculum-v2-badge">Print View</div><h2>Choose what to print</h2><p>Select a focused guide or print the complete curriculum package.</p></div></section><div class="v2-print-grid"><button type="button" data-v2-print="participant"><strong>Participant Guide</strong><span>Lesson, questions, challenge, and prayer</span></button><button type="button" data-v2-print="leader"><strong>Leader Guide</strong><span>Background, theology, coaching, and preparation</span></button><button type="button" data-v2-print="teaching"><strong>Teaching View</strong><span>Condensed outline and personal notes</span></button><button type="button" data-v2-print="all"><strong>Complete Package</strong><span>All three views in one print job</span></button></div>';
  const complete=article.querySelector('.lesson-complete-panel');article.insertBefore(teaching,complete||null);article.insertBefore(printPanel,complete||null);
  const views={participant,leader,teaching,print:printPanel};
- const setView=(view,{scroll=true}={})=>{Object.entries(views).forEach(([name,node])=>node.hidden=name!==view);tabs.querySelectorAll('[role="tab"]').forEach(button=>button.setAttribute('aria-selected',String(button.dataset.view===view)));if(sidebar)sidebar.hidden=view!=='participant';localStorage.setItem(`nldg-v2-view-${week}`,view);if(scroll)views[view].scrollIntoView({behavior:'smooth',block:'start'});};
+ const setView=(view,{scroll=true}={})=>{
+  const isParticipant=view==='participant';
+  Object.entries(views).forEach(([name,node])=>node.hidden=name!==view);
+  tabs.querySelectorAll('[role="tab"]').forEach(button=>button.setAttribute('aria-selected',String(button.dataset.view===view)));
+  if(sidebar)sidebar.hidden=!isParticipant;
+  lessonLayout?.classList.toggle('v2-full-width-view',!isParticipant);
+  document.body.dataset.v2View=view;
+  localStorage.setItem(`nldg-v2-view-${week}`,view);
+  if(scroll)views[view].scrollIntoView({behavior:'smooth',block:'start'});
+ };
  tabs.querySelectorAll('[role="tab"]').forEach(button=>{const replacement=button.cloneNode(true);button.replaceWith(replacement);replacement.addEventListener('click',()=>setView(replacement.dataset.view));});
- const saved=localStorage.getItem(`nldg-v2-view-${week}`);if(views[saved])setView(saved,{scroll:false});
+ const saved=localStorage.getItem(`nldg-v2-view-${week}`);if(views[saved])setView(saved,{scroll:false});else setView('participant',{scroll:false});
  const key=`nldg-v2-teaching-week-${week}`;const notes=teaching.querySelector('[data-v2-teaching-notes]');notes.value=localStorage.getItem(key)||'';teaching.querySelector('[data-v2-save-teaching]').addEventListener('click',()=>{localStorage.setItem(key,notes.value);const status=teaching.querySelector('[data-v2-teaching-status]');status.textContent='Teaching notes saved.';setTimeout(()=>status.textContent='',1800);});
  printPanel.querySelectorAll('[data-v2-print]').forEach(button=>button.addEventListener('click',()=>{document.body.dataset.v2Print=button.dataset.v2Print;window.print();setTimeout(()=>delete document.body.dataset.v2Print,500);}));
 })();

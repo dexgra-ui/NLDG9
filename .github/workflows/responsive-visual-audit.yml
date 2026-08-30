@@ -9,6 +9,13 @@ on:
       - 'scripts/responsive-audit.mjs'
       - 'scripts/faith-wheel-layout-browser-audit.mjs'
       - 'faith-wheel.html'
+      - 'current-events-series.html'
+      - 'current-events-series.css'
+      - 'current-events-lesson-v2.css'
+      - 'current-events-lesson-polish.css'
+      - 'current-events-lesson-v2.js'
+      - 'current-events-four-views.js'
+      - 'current-events-lesson-polish.js'
   push:
     branches: [main]
     paths:
@@ -16,6 +23,13 @@ on:
       - 'scripts/responsive-audit.mjs'
       - 'scripts/faith-wheel-layout-browser-audit.mjs'
       - 'faith-wheel.html'
+      - 'current-events-series.html'
+      - 'current-events-series.css'
+      - 'current-events-lesson-v2.css'
+      - 'current-events-lesson-polish.css'
+      - 'current-events-lesson-v2.js'
+      - 'current-events-four-views.js'
+      - 'current-events-lesson-polish.js'
 
 permissions:
   contents: read

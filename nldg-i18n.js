@@ -2,7 +2,7 @@
 if(window.NLDG_I18N_LOADED)return;window.NLDG_I18N_LOADED=true;
 const script=document.currentScript;const root=new URL('./',script?.src||location.href);
 const pairs={
-'index.html':'es/index.html','about.html':'es/acerca-de.html','studies.html':'es/estudios-biblicos.html','devotionals.html':'es/devocionales.html','articles.html':'es/articulos.html','resource-center.html':'es/recursos.html','newsletter.html':'es/boletin.html','walking-with-jesus.html':'es/caminando-con-jesus.html','contact.html':'es/contacto.html','privacy.html':'es/privacidad.html','terms.html':'es/terminos.html'
+'index.html':'es/index.html','about.html':'es/acerca-de.html','studies.html':'es/estudios-biblicos.html','devotionals.html':'es/devocionales.html','articles.html':'es/articulos.html','resource-center.html':'es/recursos.html','newsletter.html':'es/boletin.html','walking-with-jesus.html':'es/caminando-con-jesus.html','contact.html':'es/contacto.html','privacy.html':'es/privacidad.html','terms.html':'es/terminos.html','disclaimer.html':'es/aviso.html','copyright.html':'es/copyright-y-marca.html','new-believers.html':'es/biblia-para-principiantes.html','study-scripture-context.html':'es/como-estudiar-la-biblia.html','devotionals/grace-for-this-season.html':'es/gracia-para-esta-etapa.html'
 };
 const reverse=Object.fromEntries(Object.entries(pairs).map(([en,es])=>[es,en]));
 const basePath=root.pathname.endsWith('/')?root.pathname:`${root.pathname}/`;

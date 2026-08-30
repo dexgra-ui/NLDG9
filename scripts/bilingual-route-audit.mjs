@@ -76,6 +76,7 @@ for(const page of publicPages){
   else warnings.push(`No bilingual selector runtime detected in public page: ${relativePath}`);
 }
 notes.push(`Detected bilingual selector coverage on ${covered.length} non-redirect public HTML pages; ${redirects} redirect stub${redirects===1?' was':'s were'} excluded from selector coverage.`);
+notes.push('Coverage check includes standalone game, article, devotional, newsletter, and Spanish resource surfaces.');
 
 const report=[
   errors.length?'FAILED':'PASSED',

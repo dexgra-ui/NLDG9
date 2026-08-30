@@ -4,8 +4,8 @@ import process from 'node:process';
 
 const ROOT = process.cwd();
 const REPORT_PATH = path.join(ROOT, 'site-audit-report.md');
-const EXCLUDED_DIRS = new Set(['.git', 'node_modules', '.cache', 'dist', 'coverage', 'tools', 'templates']);
-const EXCLUDED_FILES = new Set(['builder.js', 'study-template.html', 'site-audit-report.md', 'scripts/audit-site.mjs', 'scripts/accessibility-audit.mjs', 'scripts/responsive-audit.mjs', 'scripts/interactive-audit.mjs', 'scripts/leadership-quality-audit.mjs', 'scripts/leadership-toolkit-audit.mjs']);
+const EXCLUDED_DIRS = new Set(['.git', 'node_modules', '.cache', 'dist', 'coverage', 'tools']);
+const EXCLUDED_FILES = new Set(['builder.js', 'study-template.html', 'site-audit-report.md', 'scripts/audit-site.mjs', 'scripts/accessibility-audit.mjs', 'scripts/responsive-audit.mjs', 'scripts/interactive-audit.mjs', 'scripts/leadership-quality-audit.mjs', 'scripts/leadership-toolkit-audit.mjs', 'templates/content-entry.template.js', 'templates/content-page.template.html']);
 const TEXT_EXTENSIONS = new Set(['.html', '.js', '.mjs', '.css', '.json', '.webmanifest']);
 const ROUTE_EXTENSIONS = new Set(['.html', '.js', '.mjs', '.css', '.json', '.webmanifest', '.png', '.jpg', '.jpeg', '.webp', '.svg', '.ico', '.pdf', '.zip']);
 

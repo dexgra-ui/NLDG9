@@ -1,0 +1,62 @@
+name: Faith and Truth View Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/faith-truth-view-audit.yml'
+      - 'scripts/faith-truth-view-audit.mjs'
+      - 'current-events-series.html'
+      - 'current-events-series.css'
+      - 'current-events-lesson-v2.css'
+      - 'current-events-lesson-polish.css'
+      - 'current-events-lesson-v2.js'
+      - 'current-events-four-views.js'
+      - 'current-events-lesson-polish.js'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/faith-truth-view-audit.yml'
+      - 'scripts/faith-truth-view-audit.mjs'
+      - 'current-events-series.html'
+      - 'current-events-series.css'
+      - 'current-events-lesson-v2.css'
+      - 'current-events-lesson-polish.css'
+      - 'current-events-lesson-v2.js'
+      - 'current-events-four-views.js'
+      - 'current-events-lesson-polish.js'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Start site
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/nldg-http.log 2>&1 &
+          for attempt in {1..30}; do
+            curl --fail --silent http://127.0.0.1:4173/index.html > /dev/null && exit 0
+            sleep 1
+          done
+          cat /tmp/nldg-http.log
+          exit 1
+      - name: Inspect 20 Faith and Truth layouts
+        run: node scripts/faith-truth-view-audit.mjs
+      - name: Upload view screenshots and metrics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: faith-truth-view-audit
+          path: faith-truth-view-audit-results
+          if-no-files-found: error

@@ -10,12 +10,17 @@ const viewports = [
   { name: 'mobile-375', width: 375, height: 812 },
   { name: 'tablet-768', width: 768, height: 1024 },
   { name: 'small-laptop-1024', width: 1024, height: 768 },
+  { name: 'tablet-landscape-1180', width: 1180, height: 820 },
   { name: 'desktop-1440', width: 1440, height: 1000 }
 ];
 
 const pages = [
   { name: 'home', url: 'index.html' },
   { name: 'study-center', url: 'studies.html' },
+  { name: 'faith-truth-participant', url: 'current-events-series.html?week=1', prepare: 'faith-truth-participant' },
+  { name: 'faith-truth-leader', url: 'current-events-series.html?week=1', prepare: 'faith-truth-leader' },
+  { name: 'faith-truth-teaching', url: 'current-events-series.html?week=1', prepare: 'faith-truth-teaching' },
+  { name: 'faith-truth-print', url: 'current-events-series.html?week=1', prepare: 'faith-truth-print' },
   { name: 'men-of-faith', url: 'men-of-faith.html' },
   { name: 'women-of-faith', url: 'women-of-faith.html' },
   { name: 'marriage-family', url: 'marriage-family.html' },
@@ -61,6 +66,13 @@ async function preparePage(page, kind) {
       await start.click().catch(() => {});
       await page.waitForTimeout(350);
     }
+  }
+  if (kind?.startsWith('faith-truth-')) {
+    const view = kind.replace('faith-truth-', '');
+    const selector = `.v2-view-switcher-shell [data-view="${view}"]`;
+    await page.waitForSelector(selector, { state: 'visible', timeout: 10000 });
+    await page.locator(selector).click();
+    await page.waitForTimeout(250);
   }
   await page.evaluate(() => window.scrollTo(0, 0));
   await page.waitForTimeout(150);
@@ -124,6 +136,71 @@ async function inspectLayout(page) {
   });
 }
 
+async function inspectFaithTruth(page, expectedView) {
+  return page.evaluate(expected => {
+    const visible = element => Boolean(element) && !element.hidden && getComputedStyle(element).display !== 'none' && getComputedStyle(element).visibility !== 'hidden';
+    const allViewGroups = [...document.querySelectorAll('[role="tablist"]')].filter(group => group.querySelector('[data-view="participant"]') && group.querySelector('[data-view="leader"]'));
+    const switchers = [...document.querySelectorAll('.v2-view-switcher-shell .v2-view-tabs')];
+    const switcher = switchers[0] || null;
+    const buttons = switcher ? [...switcher.querySelectorAll('[data-view]')] : [];
+    const active = buttons.filter(button => button.getAttribute('aria-selected') === 'true').map(button => button.dataset.view);
+    const labels = buttons.map(button => (button.textContent || '').trim());
+    const rows = [...new Set(buttons.map(button => Math.round(button.getBoundingClientRect().top / 4) * 4))].length;
+    const minButtonHeight = buttons.length ? Math.min(...buttons.map(button => button.getBoundingClientRect().height)) : 0;
+    const panels = {
+      participant: document.querySelector('.v2-participant-guide'),
+      leader: document.querySelector('.v2-leader-guide'),
+      teaching: document.querySelector('.v2-teaching-view'),
+      print: document.querySelector('.v2-print-view')
+    };
+    const visibleViews = Object.entries(panels).filter(([, panel]) => visible(panel)).map(([name]) => name);
+    const sidebar = document.querySelector('.lesson-sidebar');
+    const sidebarVisible = visible(sidebar);
+    const layout = document.querySelector('.lesson-layout');
+    const article = document.querySelector('.series-lesson');
+    const layoutRect = layout?.getBoundingClientRect();
+    const articleRect = article?.getBoundingClientRect();
+    const articleFill = layoutRect?.width && articleRect?.width ? articleRect.width / layoutRect.width : 0;
+    return {
+      expected,
+      bodyView: document.body.dataset.v2View || '',
+      allViewGroupCount: allViewGroups.length,
+      switcherCount: switchers.length,
+      tabCount: buttons.length,
+      active,
+      labels,
+      rows,
+      minButtonHeight,
+      visibleViews,
+      sidebarVisible,
+      fullWidthClass: Boolean(layout?.classList.contains('v2-full-width-view')),
+      articleFill
+    };
+  }, expectedView);
+}
+
+function validateFaithTruth(state, viewport, label) {
+  const expectedLabels = ['Participant Guide', 'Expanded Leader Guide', 'Teaching Guide', 'Print'];
+  if (state.allViewGroupCount !== 1 || state.switcherCount !== 1) failures.push(`${label}: expected exactly one four-view switcher, found ${state.allViewGroupCount} related tab list(s) and ${state.switcherCount} polished switcher(s).`);
+  if (state.tabCount !== 4) failures.push(`${label}: expected 4 guide-view controls, found ${state.tabCount}.`);
+  if (JSON.stringify(state.labels) !== JSON.stringify(expectedLabels)) failures.push(`${label}: unexpected view labels ${JSON.stringify(state.labels)}.`);
+  if (state.active.length !== 1 || state.active[0] !== state.expected) failures.push(`${label}: expected active view ${state.expected}, got ${JSON.stringify(state.active)}.`);
+  if (state.bodyView !== state.expected) failures.push(`${label}: body view state is ${state.bodyView || 'unset'}, expected ${state.expected}.`);
+  if (state.visibleViews.length !== 1 || state.visibleViews[0] !== state.expected) failures.push(`${label}: expected only ${state.expected} panel visible, got ${JSON.stringify(state.visibleViews)}.`);
+  if (state.minButtonHeight < 44) failures.push(`${label}: smallest view control is ${Math.round(state.minButtonHeight)}px high; minimum target is 44px.`);
+  const expectedRows = viewport.width <= 1024 ? 2 : 1;
+  if (state.rows !== expectedRows) failures.push(`${label}: expected ${expectedRows} switcher row(s), found ${state.rows}.`);
+  if (state.expected === 'participant') {
+    const shouldShowSidebar = viewport.width > 880;
+    if (state.sidebarVisible !== shouldShowSidebar) failures.push(`${label}: participant sidebar visibility is ${state.sidebarVisible}, expected ${shouldShowSidebar} at ${viewport.width}px.`);
+    if (state.fullWidthClass) failures.push(`${label}: participant view should not use the nonparticipant full-width layout class.`);
+  } else {
+    if (state.sidebarVisible) failures.push(`${label}: ${state.expected} view should not show the participant sidebar.`);
+    if (!state.fullWidthClass) failures.push(`${label}: ${state.expected} view is missing the full-width layout class.`);
+    if (state.articleFill < 0.94) failures.push(`${label}: ${state.expected} view fills only ${Math.round(state.articleFill * 100)}% of the lesson layout width.`);
+  }
+}
+
 async function auditResponsive(browser) {
   for (const viewport of viewports) {
     const context = await browser.newContext({ viewport: { width: viewport.width, height: viewport.height }, deviceScaleFactor: 1 });
@@ -139,6 +216,11 @@ async function auditResponsive(browser) {
         }
         await preparePage(page, item.prepare);
         const layout = await inspectLayout(page);
+        if (item.prepare?.startsWith('faith-truth-')) {
+          const expectedView = item.prepare.replace('faith-truth-', '');
+          const state = await inspectFaithTruth(page, expectedView);
+          validateFaithTruth(state, viewport, label);
+        }
         const directory = path.join(OUTPUT, viewport.name);
         await fs.mkdir(directory, { recursive: true });
         await page.screenshot({ path: path.join(directory, `${item.name}.png`), fullPage: true });

@@ -64,15 +64,18 @@ async function collectPages(directory){
 await collectPages(ROOT);
 
 const covered=[];
+let redirects=0;
 for(const page of publicPages){
   const html=await fs.readFile(page,'utf8');
   const relativePath=path.relative(ROOT,page).split(path.sep).join('/');
-  const hasLocaleRuntime=/nldg-i18n/i.test(html)||/contact-links/i.test(html)||/<script\b[^>]*\bsrc=["'][^"']*script\.js(?:\?[^"']*)?["']/i.test(html);
+  const isRedirect=/<meta\b[^>]*http-equiv=["']refresh["']/i.test(html)||/location\.replace\s*\(/i.test(html);
+  if(isRedirect){redirects+=1;continue;}
+  const hasLocaleRuntime=/nldg-i18n/i.test(html)||/contact-links/i.test(html)||/<script\b[^>]*\bsrc=["'][^"']*(?:script|seo|newsletter)\.js(?:\?[^"']*)?["']/i.test(html);
   const hasLanguageControl=/nldg-language-switcher/i.test(html)||(/>\s*Español\s*</i.test(html)&&/>\s*English\s*</i.test(html));
   if(hasLocaleRuntime||hasLanguageControl)covered.push(relativePath);
   else warnings.push(`No bilingual selector runtime detected in public page: ${relativePath}`);
 }
-notes.push(`Detected bilingual selector coverage on ${covered.length} of ${publicPages.length} public HTML pages.`);
+notes.push(`Detected bilingual selector coverage on ${covered.length} non-redirect public HTML pages; ${redirects} redirect stub${redirects===1?' was':'s were'} excluded from selector coverage.`);
 
 const report=[
   errors.length?'FAILED':'PASSED',

@@ -39,15 +39,25 @@ function isIgnoredReference(value) {
   return !trimmed || trimmed === '#' || trimmed.startsWith('#') || trimmed.startsWith('//') || trimmed.includes('${') || trimmed.includes('<%') || /^(?:https?:|mailto:|tel:|sms:|data:|blob:|javascript:|about:)/i.test(trimmed);
 }
 
+function isGeneratedAuditReference(sourceFile, reference) {
+  return relative(sourceFile) === 'scripts/faith-truth-view-audit.mjs' && stripQueryAndHash(reference.trim()) === 'metrics.json';
+}
+
 function resolveReference(sourceFile, reference) {
   let clean = stripQueryAndHash(reference.trim());
   if (isIgnoredReference(reference) || !clean) return null;
   try { clean = decodeURIComponent(clean); } catch {}
-  if (clean.startsWith('/')) clean = clean.slice(1);
+  const rootRelative = clean.startsWith('/');
+  if (rootRelative) clean = clean.slice(1);
   const sourceDir = path.dirname(sourceFile);
-  let resolved = clean.startsWith('./') || clean.startsWith('../')
-    ? path.resolve(sourceDir, clean)
-    : path.resolve(ROOT, clean);
+  const sourceExt = path.extname(sourceFile).toLowerCase();
+  const sourcePath = relative(sourceFile);
+  const browserRelative = sourceExt === '.html' || sourceExt === '.css' || sourcePath.startsWith('es/');
+  let resolved = rootRelative
+    ? path.resolve(ROOT, clean)
+    : clean.startsWith('./') || clean.startsWith('../') || browserRelative
+      ? path.resolve(sourceDir, clean)
+      : path.resolve(ROOT, clean);
   if (clean.endsWith('/')) resolved = path.join(resolved, 'index.html');
   return resolved;
 }
@@ -101,6 +111,7 @@ async function validateReferences(files, fileSet) {
       : collectScriptReferences(content);
     const unique = [...new Set(references)];
     for (const reference of unique) {
+      if (isGeneratedAuditReference(file, reference)) continue;
       const target = resolveReference(file, reference);
       if (!target) continue;
       const targetExt = path.extname(target).toLowerCase();
@@ -179,7 +190,6 @@ async function validateQueryHistory(fileSet) {
   }
   if (checks.every(([, pattern]) => pattern.test(content))) notes.push('Confirmed query-based study pages preserve full URLs in matching and saved history.');
 }
-
 
 async function validateNavigationHierarchy(fileSet) {
   const landingPages = [

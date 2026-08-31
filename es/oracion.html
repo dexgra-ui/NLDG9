@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#06122d">
+<meta name="description" content="Comparte una petición de oración de manera privada o, con tu permiso y después de revisión, con la comunidad de oración de No Labels, Designed by God.">
+<title>Centro de oración | No Labels, Designed by God</title>
+<link rel="canonical" href="https://nolabelsdesignedbygod.org/es/oracion.html">
+<link rel="alternate" hreflang="en" href="https://nolabelsdesignedbygod.org/prayer.html">
+<link rel="alternate" hreflang="es" href="https://nolabelsdesignedbygod.org/es/oracion.html">
+<link rel="alternate" hreflang="x-default" href="https://nolabelsdesignedbygod.org/prayer.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="No Labels, Designed by God">
+<meta property="og:title" content="Centro de oración">
+<meta property="og:description" content="Un lugar tranquilo para pedir oración, orar por otros y compartir actualizaciones de oraciones respondidas con cuidado y privacidad.">
+<meta property="og:url" content="https://nolabelsdesignedbygod.org/es/oracion.html">
+<meta property="og:image" content="https://nolabelsdesignedbygod.org/no-labels-approved-logo.png">
+<meta property="og:image:alt" content="Logotipo del ministerio No Labels, Designed by God">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Centro de oración">
+<meta name="twitter:description" content="Un lugar tranquilo para pedir oración y orar por otros.">
+<meta name="twitter:image" content="https://nolabelsdesignedbygod.org/no-labels-approved-logo.png">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../prayer.css?v=1.0.0">
+<link rel="stylesheet" href="spanish.css?v=1.0.0">
+</head>
+<body class="spanish-page prayer-page">
+<header data-nldg-es-header></header>
+<main>
+<section class="prayer-hero">
+  <div class="prayer-hero-copy">
+    <p class="kicker">Centro de oración</p>
+    <h1>No tienes que cargarlo solo.</h1>
+    <p class="lead">Comparte una petición en privado con el ministerio o, con tu permiso y después de revisión, invita a otros a orar contigo.</p>
+    <div class="prayer-actions">
+      <a class="button primary" href="#enviar-oracion">Enviar una petición</a>
+      <a class="button secondary" href="#muro-oracion">Orar por alguien</a>
+    </div>
+  </div>
+  <aside class="prayer-focus" aria-label="Enfoque de oración del ministerio">
+    <span>Enfoque de oración del ministerio</span>
+    <strong>Ora por sabiduría, fidelidad y por las personas que necesitan recordar que Dios las ve.</strong>
+    <p>Las peticiones públicas nunca se publican automáticamente. Toda petición seleccionada para compartir públicamente se revisa primero.</p>
+  </aside>
+</section>
+
+<section class="prayer-safety" aria-labelledby="seguridad-oracion-titulo">
+  <div>
+    <p class="kicker">Antes de compartir</p>
+    <h2 id="seguridad-oracion-titulo">Cuidado en la oración con dignidad y privacidad.</h2>
+  </div>
+  <div class="prayer-safety-grid">
+    <article><strong>Privado significa fuera del muro.</strong><p>Las peticiones privadas se envían al correo de cuidado de oración del ministerio y no se publican intencionalmente.</p></article>
+    <article><strong>Público significa revisado primero.</strong><p>Elegir público da permiso para que una versión aprobada y cuidadosa con la privacidad pueda aparecer en el Muro de oración.</p></article>
+    <article><strong>Protege los detalles identificables.</strong><p>No incluyas direcciones, teléfonos, información financiera, expedientes médicos, nombres completos de otras personas ni otros datos sensibles.</p></article>
+    <article><strong>Este no es un servicio de emergencia.</strong><p>Si tú u otra persona pueden estar en peligro inmediato, comunícate ahora con los servicios de emergencia locales o con un profesional local calificado.</p></article>
+  </div>
+</section>
+
+<section id="enviar-oracion" class="section prayer-submit-section" aria-labelledby="enviar-oracion-titulo">
+  <div class="section-heading">
+    <p class="kicker">Enviar una petición</p>
+    <h2 id="enviar-oracion-titulo">Cuéntanos cómo podemos orar.</h2>
+    <p>Tu petición se abrirá en tu aplicación de correo electrónico dirigida al equipo del ministerio. Nada se publica directamente en el Muro de oración desde este formulario.</p>
+  </div>
+  <form id="prayerRequestForm" class="prayer-form" novalidate>
+    <fieldset>
+      <legend>1. ¿Cómo debemos manejar esta petición?</legend>
+      <div class="prayer-choice-grid">
+        <label class="prayer-choice"><input type="radio" name="visibility" value="Private" checked><span><strong>Privada</strong><small>Solo para el equipo de oración. No se publica en el Muro de oración.</small></span></label>
+        <label class="prayer-choice"><input type="radio" name="visibility" value="Public"><span><strong>Pública después de revisión</strong><small>Puede aparecer en el Muro de oración solamente después de moderación y con tu permiso.</small></span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. ¿Cómo debe aparecer tu nombre?</legend>
+      <div class="prayer-choice-grid">
+        <label class="prayer-choice"><input type="radio" name="identity" value="Anonymous" checked><span><strong>Anónimo</strong><small>El muro público no mostrará tu nombre.</small></span></label>
+        <label class="prayer-choice"><input type="radio" name="identity" value="First name"><span><strong>Primer nombre</strong><small>Usaremos solamente el primer nombre que escribas abajo.</small></span></label>
+      </div>
+      <label class="prayer-field">Primer nombre <span>(opcional, excepto si eliges Primer nombre)</span><input id="prayerName" name="name" type="text" autocomplete="given-name" maxlength="40"></label>
+    </fieldset>
+
+    <div class="prayer-form-grid">
+      <label class="prayer-field">Categoría
+        <select id="prayerCategory" name="category" required>
+          <option value="">Elige una categoría</option>
+          <option value="Family">Familia</option>
+          <option value="Health">Salud</option>
+          <option value="Grief">Duelo</option>
+          <option value="Faith">Fe</option>
+          <option value="Work & Finances">Trabajo y finanzas</option>
+          <option value="Relationships">Relaciones</option>
+          <option value="Guidance">Dirección</option>
+          <option value="Praise / Answered Prayer">Alabanza / Oración respondida</option>
+          <option value="Other">Otro</option>
+        </select>
+      </label>
+      <label class="prayer-field">Título de la petición <span>(breve y sin datos identificables)</span><input id="prayerTitle" name="title" type="text" maxlength="80" required placeholder="Ejemplo: Sabiduría para una decisión familiar"></label>
+    </div>
+
+    <label class="prayer-field">Petición de oración
+      <textarea id="prayerRequest" name="request" rows="8" maxlength="1500" required placeholder="Comparte solamente lo necesario para orar. Por favor, evita detalles privados que identifiquen a otras personas."></textarea>
+      <small><span id="prayerCount">0</span>/1500 caracteres</small>
+    </label>
+
+    <div id="publicConsentWrap" class="prayer-consent" hidden>
+      <label><input id="publicConsent" type="checkbox"> <span>Doy permiso a No Labels, Designed by God para publicar una versión revisada de esta petición en el Muro de oración. Entiendo que el ministerio puede acortarla, redactarla, rechazarla o retirarla después por razones de privacidad, seguridad o moderación.</span></label>
+    </div>
+
+    <div class="prayer-consent">
+      <label><input id="ageConsent" type="checkbox" required> <span>Tengo al menos 13 años, o estoy enviando esto con un padre, madre o tutor.</span></label>
+      <label><input id="guidelineConsent" type="checkbox" required> <span>Entiendo que este ministerio no ofrece servicios de emergencia ni atención médica, legal, financiera o de salud mental, y he leído la <a href="privacidad.html">Política de privacidad</a> y los <a href="terminos.html">Términos de uso</a>.</span></label>
+    </div>
+
+    <div class="prayer-moderation-note">
+      <strong>Protección para compartir públicamente</strong>
+      <p>Las peticiones públicas pueden retenerse o editarse para proteger a menores, terceras personas, privacidad médica, ubicaciones precisas, acusaciones, detalles gráficos u otra información sensible. No se publican peticiones que soliciten dinero, contacto directo o servicios.</p>
+    </div>
+
+    <div class="prayer-submit-actions">
+      <button class="button primary" type="submit">Abrir correo de petición</button>
+      <p id="prayerFormMessage" class="prayer-form-message" role="status" aria-live="polite"></p>
+    </div>
+  </form>
+</section>
+
+<section id="muro-oracion" class="section prayer-wall-section" aria-labelledby="muro-oracion-titulo">
+  <div class="prayer-wall-heading">
+    <div>
+      <p class="kicker">Muro de oración</p>
+      <h2 id="muro-oracion-titulo">Ora con alguien hoy.</h2>
+      <p>Solo aparecen aquí peticiones revisadas que tienen permiso para compartirse. No hay comentarios públicos.</p>
+    </div>
+    <label class="prayer-wall-filter">Categoría
+      <select id="prayerWallFilter"><option value="all">Todas las categorías</option></select>
+    </label>
+  </div>
+  <div id="prayerWallGrid" class="prayer-wall-grid"></div>
+  <div id="prayerWallEmpty" class="prayer-wall-empty" hidden>
+    <strong>Todavía no hay peticiones públicas disponibles en esta vista.</strong>
+    <p>Las peticiones privadas permanecen fuera del muro, y las públicas aparecen solamente después de revisión.</p>
+  </div>
+</section>
+
+<section class="section prayer-answered" aria-labelledby="oracion-respondida-titulo">
+  <div>
+    <p class="kicker">Oración respondida</p>
+    <h2 id="oracion-respondida-titulo">También hay espacio para dar gracias.</h2>
+    <p>Si anteriormente enviaste una petición y deseas compartir una actualización o marcarla como respondida, escribe al equipo del ministerio usando, cuando sea posible, la misma cuenta de correo que utilizaste para la petición original.</p>
+  </div>
+  <a class="button secondary" href="mailto:team@nolabelsdesignedbygod.org?subject=Actualizaci%C3%B3n%20de%20petici%C3%B3n%20de%20oraci%C3%B3n&body=T%C3%ADtulo%20de%20la%20petici%C3%B3n%20original%3A%0AActualizaci%C3%B3n%3A%0A%C2%BFSe%20puede%20compartir%20esta%20actualizaci%C3%B3n%20p%C3%BAblicamente%3F%20S%C3%AD%20o%20No%3A%0A">Enviar una actualización</a>
+</section>
+</main>
+<footer data-nldg-es-footer></footer>
+<script src="../prayer-wall-data.js?v=1.1.0"></script>
+<script src="es-framework.js"></script>
+<script src="oracion.js?v=1.0.0"></script>
+<script src="../nldg-i18n.js?v=1.5.0"></script>
+</body>
+</html>

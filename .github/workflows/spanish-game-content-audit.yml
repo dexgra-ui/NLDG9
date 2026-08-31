@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'who-am-i.html'
+      - 'finish-the-verse.html'
       - 'lightning-round.html'
       - 'memory-match.html'
       - 'bible-jeopardy.html'
@@ -11,6 +12,7 @@ on:
       - 'game-packs/general-bible-expanded.js'
       - 'es/juegos-contenido-escritura-sospecha.js'
       - 'es/juegos-contenido-quien-soy.js'
+      - 'es/juegos-contenido-completa-versiculo.js'
       - 'es/juegos-contenido-trivia-biblica.js'
       - 'es/juegos-contenido-ronda-relampago.js'
       - 'es/juegos-contenido-memoria.js'
@@ -23,6 +25,7 @@ on:
     branches: [main]
     paths:
       - 'who-am-i.html'
+      - 'finish-the-verse.html'
       - 'lightning-round.html'
       - 'memory-match.html'
       - 'bible-jeopardy.html'
@@ -30,6 +33,7 @@ on:
       - 'game-packs/general-bible-expanded.js'
       - 'es/juegos-contenido-escritura-sospecha.js'
       - 'es/juegos-contenido-quien-soy.js'
+      - 'es/juegos-contenido-completa-versiculo.js'
       - 'es/juegos-contenido-trivia-biblica.js'
       - 'es/juegos-contenido-ronda-relampago.js'
       - 'es/juegos-contenido-memoria.js'

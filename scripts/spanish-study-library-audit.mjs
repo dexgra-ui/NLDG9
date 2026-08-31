@@ -4,6 +4,7 @@ const read=path=>fs.readFileSync(path,'utf8');
 const exists=path=>fs.existsSync(path);
 const errors=[];
 const expect=(label,source,value)=>{if(!source.includes(value))errors.push(`${label}: missing ${JSON.stringify(value)}`)};
+const reject=(label,source,value)=>{if(source.includes(value))errors.push(`${label}: contains disallowed ${JSON.stringify(value)}`)};
 const html='.ht'+'ml';
 const js='.j'+'s';
 
@@ -20,6 +21,9 @@ const completePaths=[
 const standalone=[
   {href:'biblia-para-principiantes'+html,file:['es','biblia-para-principiantes'+html].join('/')},
   {href:'como-estudiar-la-biblia'+html,file:['es','como-estudiar-la-biblia'+html].join('/')},
+  {href:'verte-con-los-ojos-de-dios'+html,file:['es','verte-con-los-ojos-de-dios'+html].join('/'),source:'study-identity'+html,ntv:true},
+  {href:'el-duelo-de-envejecer'+html,file:['es','el-duelo-de-envejecer'+html].join('/'),source:'study-grief-of-aging'+html,ntv:true},
+  {href:'escapismo-vs-esperanza-eterna'+html,file:['es','escapismo-vs-esperanza-eterna'+html].join('/'),source:'study-escapism'+html,ntv:true},
   {href:'fe-en-la-tormenta'+html,file:['es','fe-en-la-tormenta'+html].join('/')},
   {href:'gracia-y-responsabilidad'+html,file:['es','gracia-y-responsabilidad'+html].join('/')},
   {href:'pacificadores-en-un-mundo-dividido'+html,file:['es','pacificadores-en-un-mundo-dividido'+html].join('/')}
@@ -32,10 +36,10 @@ for(const item of [...completePaths,...standalone]){
 for(const item of completePaths)expect('Spanish study hub completion label',hub,item.label);
 
 expect('Spanish study hub',' '+hub,'Caminos completos');
-expect('Spanish study hub',hub,'Estudios y guías');
+expect('Spanish study hub',hub,'Ocho recursos independientes en español');
 expect('Spanish study hub NTV standard',hub,'Nueva Traducción Viviente (NTV)');
 expect('Spanish study hub editorial policy',hub,'No traduciremos automáticamente todo el catálogo');
-expect('Spanish study hub current selector',hub,'nldg-i18n'+js+'?v=1.8.0');
+expect('Spanish study hub current selector',hub,'nldg-i18n'+js+'?v=1.9.0');
 expect('Spanish study hub shared framework',hub,'es-framework'+js+'?v=1.1.0');
 
 const routePairs={
@@ -43,6 +47,9 @@ const routePairs={
   ['preparing-walk-with-jesus'+html]:['es','preparando-para-caminar-con-jesus'+html].join('/'),
   ['walking-with-jesus'+html]:['es','caminando-con-jesus'+html].join('/'),
   ['study-scripture-context'+html]:['es','como-estudiar-la-biblia'+html].join('/'),
+  ['study-identity'+html]:['es','verte-con-los-ojos-de-dios'+html].join('/'),
+  ['study-grief-of-aging'+html]:['es','el-duelo-de-envejecer'+html].join('/'),
+  ['study-escapism'+html]:['es','escapismo-vs-esperanza-eterna'+html].join('/'),
   ['study-storm'+html]:['es','fe-en-la-tormenta'+html].join('/'),
   ['study-grace-accountability'+html]:['es','gracia-y-responsabilidad'+html].join('/'),
   ['study-peacemakers'+html]:['es','pacificadores-en-un-mundo-dividido'+html].join('/')
@@ -69,6 +76,14 @@ for(const item of standalone){
   const page=read(item.file);
   expect(item.file,page,'<html lang="es"');
   expect(item.file,page,'<link rel="canonical"');
+  if(item.source){
+    expect(item.file,page,`hreflang="en" href="https://nolabelsdesignedbygod.org/${item.source}"`);
+    expect(item.file,page,`href="../${item.source}" lang="en"`);
+  }
+  if(item.ntv){
+    expect(item.file,page,'Referencia bíblica: NTV');
+    for(const version of ['RVR60','NVI','NBLA'])reject(item.file,page,version);
+  }
 }
 
 if(errors.length){
@@ -79,7 +94,8 @@ if(errors.length){
 
 console.log('Spanish Study Library Audit PASSED');
 console.log('OK: 3 complete Spanish discipleship/study paths are surfaced.');
-console.log('OK: 5 reviewed Spanish standalone study resources are surfaced.');
+console.log('OK: 8 reviewed Spanish standalone study resources are surfaced.');
+console.log('OK: 3 new English/Spanish standalone study pairs are protected.');
 console.log('OK: known English/Spanish study route pairs remain protected.');
 console.log('OK: Caminando con Jesús remains complete at 21 lessons.');
 console.log('OK: the Spanish library states the NTV and review-before-publication standards.');

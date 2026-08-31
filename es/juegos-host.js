@@ -3,13 +3,17 @@ const state=window.NLDG_SPANISH_GAME||{};
 const frame=document.getElementById('gameHostFrame');
 if(!frame)return;
 const spanishHub=new URL('juegos.html',location.href).href;
+const playFile='play'+'.html';
+const teamHostFile='multi-team-game-v095'+'.html';
+const teamShellFile='multi-team-game-v094'+'.html';
+const slugOf=file=>String(file||'').replace(/\.html$/,'');
 const gameTitles={
-'scripture-or-suspicion.html':'Escritura o sospecha',
-'who-am-i.html':'¿Quién soy?',
-'finish-the-verse.html':'Completa el versículo',
-'bible-jeopardy.html':'Trivia bíblica',
-'lightning-round.html':'Ronda relámpago',
-'memory-match.html':'Memoria bíblica'
+'scripture-or-suspicion':'Escritura o sospecha',
+'who-am-i':'¿Quién soy?',
+'finish-the-verse':'Completa el versículo',
+'bible-jeopardy':'Trivia bíblica',
+'lightning-round':'Ronda relámpago',
+'memory-match':'Memoria bíblica'
 };
 const exact={
 'Game Center':'Centro de juegos','Fullscreen':'Pantalla completa','Game Setup':'Configuración del juego',
@@ -25,14 +29,13 @@ const exact={
 'Team Grace':'Equipo Gracia','Team Truth':'Equipo Verdad','Team Faith':'Equipo Fe','Team Hope':'Equipo Esperanza','Team Mercy':'Equipo Misericordia','Team Joy':'Equipo Gozo','Team Peace':'Equipo Paz','Team Light':'Equipo Luz'
 };
 const descriptions={
-'scripture-or-suspicion.html':'Decide si cada afirmación viene de la Escritura o solamente suena bíblica.',
-'who-am-i.html':'Identifica personajes bíblicos por pistas sobre sus vidas, decisiones y encuentros con Dios.',
-'finish-the-verse.html':'Completa pasajes conocidos de la Escritura y fortalece la memoria bíblica.',
-'bible-jeopardy.html':'Elige una categoría, revela la respuesta y otorga los puntos.',
-'lightning-round.html':'Responde rápido antes de que el temporizador llegue a cero.',
-'memory-match.html':'Encuentra parejas de personas, lugares, eventos y enseñanzas bíblicas.'
+'scripture-or-suspicion':'Decide si cada afirmación viene de la Escritura o solamente suena bíblica.',
+'who-am-i':'Identifica personajes bíblicos por pistas sobre sus vidas, decisiones y encuentros con Dios.',
+'finish-the-verse':'Completa pasajes conocidos de la Escritura y fortalece la memoria bíblica.',
+'bible-jeopardy':'Elige una categoría, revela la respuesta y otorga los puntos.',
+'lightning-round':'Responde rápido antes de que el temporizador llegue a cero.',
+'memory-match':'Encuentra parejas de personas, lugares, eventos y enseñanzas bíblicas.'
 };
-const ownText=(label,value)=>{if(!label)return;for(const node of label.childNodes){if(node.nodeType===3&&node.textContent.trim()){const raw=node.textContent.trim();if(raw===value||exact[raw]===value)return;node.textContent=node.textContent.replace(raw,value);return}}};
 const setText=(el,value)=>{if(el&&value!=null&&el.textContent!==value)el.textContent=value};
 const translateExact=(el)=>{if(!el)return;const raw=el.textContent.trim();if(exact[raw])setText(el,exact[raw])};
 const translateOptions=(doc)=>doc.querySelectorAll('option').forEach(option=>{const raw=option.textContent.trim();if(exact[raw])option.textContent=exact[raw];else if(/^([0-9]+) pairs$/.test(raw))option.textContent=raw.replace(' pairs',' parejas')});
@@ -67,25 +70,25 @@ return value;
 };
 const patchDialogs=(doc)=>{const win=doc.defaultView;if(!win||win.__nldgEsDialogs)return;win.__nldgEsDialogs=true;const alert0=win.alert.bind(win),confirm0=win.confirm.bind(win),prompt0=win.prompt.bind(win);const modal=text=>({
 'Exit this game?':'¿Salir de este juego?','Reset all team scores?':'¿Reiniciar la puntuación de todos los equipos?','Recent-pair history has been reset.':'Se reinició el historial de parejas recientes.','Fullscreen is blocked here. On iPad, use Share → Add to Home Screen.':'La pantalla completa está bloqueada aquí. En iPad, usa Compartir → Añadir a pantalla de inicio.','Fullscreen is unavailable in this browser':'La pantalla completa no está disponible en este navegador.','What should be reviewed about this question?':'¿Qué debe revisarse de esta pregunta?','Check wording or biblical accuracy':'Revisar redacción o precisión bíblica'}[text]||text);win.alert=message=>alert0(modal(message));win.confirm=message=>confirm0(modal(message));win.prompt=(message,defaultValue)=>prompt0(modal(message),modal(defaultValue));};
-const rewriteGameCenter=(doc)=>doc.querySelectorAll('a[href="play.html"]').forEach(link=>{link.href=spanishHub;link.target='_top';if(link.textContent.trim()==='Game Center'||link.textContent.trim()==='Return to Game Center')link.textContent=link.textContent.trim()==='Game Center'?'Centro de juegos':'Volver al Centro de juegos'});
+const rewriteGameCenter=(doc)=>doc.querySelectorAll('a').forEach(link=>{if(link.getAttribute('href')!==playFile)return;link.href=spanishHub;link.target='_top';if(link.textContent.trim()==='Game Center'||link.textContent.trim()==='Return to Game Center')link.textContent=link.textContent.trim()==='Game Center'?'Centro de juegos':'Volver al Centro de juegos'});
 const translateV095=(doc)=>{
 patchDialogs(doc);rewriteGameCenter(doc);setText(doc.getElementById('tieLabel'),dynamic(doc.getElementById('tieLabel')?.textContent));setText(doc.getElementById('tieTitle'),dynamic(doc.getElementById('tieTitle')?.textContent));setText(doc.getElementById('tieMessage'),dynamic(doc.getElementById('tieMessage')?.textContent));['startTiebreaker','acceptTie','playAgain'].forEach(id=>translateExact(doc.getElementById(id)));translateExact(doc.querySelector('#finalChoices a[href]'));doc.querySelector('h1.sr-only')?.replaceChildren(document.createTextNode('Juego bíblico por equipos de No Labels'));
 };
 const translateV094=(doc)=>{
-patchDialogs(doc);rewriteGameCenter(doc);setText(doc.getElementById('gameTitle'),gameTitles[state.game]||'Juego en equipo');setText(doc.querySelector('.hero h1'),'Configuración del juego');setText(doc.querySelector('.hero p'),'Elige la audiencia y de uno a ocho equipos. Las respuestas correctas pueden incluir efectos opcionales de sonido y celebración.');translateLabels(doc);translateOptions(doc);translateDefaults(doc);setText(doc.getElementById('begin'),'Comenzar juego');
+patchDialogs(doc);rewriteGameCenter(doc);setText(doc.getElementById('gameTitle'),gameTitles[state.slug]||'Juego en equipo');setText(doc.querySelector('.hero h1'),'Configuración del juego');setText(doc.querySelector('.hero p'),'Elige la audiencia y de uno a ocho equipos. Las respuestas correctas pueden incluir efectos opcionales de sonido y celebración.');translateLabels(doc);translateOptions(doc);translateDefaults(doc);setText(doc.getElementById('begin'),'Comenzar juego');
 const ids={previous:'← Equipo',nextTeam:'Equipo →',undo:'Deshacer',skip:'Saltar',flagQuestion:'Marcar pregunta',fullscreen:'Pantalla completa',resetScores:'Reiniciar puntuaciones'};Object.entries(ids).forEach(([id,text])=>setText(doc.getElementById(id),text));const effects=doc.getElementById('effectsToggle');if(effects)setText(effects,effects.textContent.includes('Off')?'🔇 Efectos desactivados':'🔊 Efectos activados');const status=doc.getElementById('status');if(status)setText(status,dynamic(status.textContent));doc.querySelectorAll('#awardPanel button').forEach(button=>setText(button,dynamic(button.textContent)));
 };
 const translateRaw=(doc,file)=>{
-patchDialogs(doc);rewriteGameCenter(doc);const title=gameTitles[file];if(title){setText(doc.querySelector('.brand small'),title);setText(doc.querySelector('.hero h1'),title);if(descriptions[file])setText(doc.querySelector('.hero p'),descriptions[file]);doc.title=`${title} | No Labels, Designed by God`;}
+const slug=slugOf(file);patchDialogs(doc);rewriteGameCenter(doc);const title=gameTitles[slug];if(title){setText(doc.querySelector('.brand small'),title);setText(doc.querySelector('.hero h1'),title);if(descriptions[slug])setText(doc.querySelector('.hero p'),descriptions[slug]);doc.title=`${title} | No Labels, Designed by God`;}
 translateLabels(doc);translateOptions(doc);translateDefaults(doc);translateExact(doc.getElementById('fullscreen'));
 const buttonIds=['start','resetHistory','quit','next','again','newBoard','endGame','reveal','noAward'];buttonIds.forEach(id=>translateExact(doc.getElementById(id)));
-const reset=doc.getElementById('resetHistory');if(reset){const map={'scripture-or-suspicion.html':'Reiniciar historial del paquete','bible-jeopardy.html':'Reiniciar historial de pistas','memory-match.html':'Reiniciar parejas recientes'};setText(reset,map[file]||'Reiniciar preguntas recientes')}
+const reset=doc.getElementById('resetHistory');if(reset){const map={'scripture-or-suspicion':'Reiniciar historial del paquete','bible-jeopardy':'Reiniciar historial de pistas','memory-match':'Reiniciar parejas recientes'};setText(reset,map[slug]||'Reiniciar preguntas recientes')}
 doc.querySelectorAll('.stats .stat').forEach(translateExact);['bankCount','historyCount','packNotice','notice','counter','feedback','summary','reference','status'].forEach(id=>{const el=doc.getElementById(id);if(el)setText(el,dynamic(el.textContent))});
-const complete=doc.querySelector('#completeView h2');if(complete){const map={'memory-match.html':'¡Encontraste todas las parejas!','bible-jeopardy.html':'¡Juego completado!'};setText(complete,map[file]||'¡Ronda completada!')}
-if(file==='scripture-or-suspicion.html'){doc.querySelectorAll('.answer[data-answer="Scripture"]').forEach(el=>setText(el,'Escritura'));doc.querySelectorAll('.answer[data-answer="Suspicion"]').forEach(el=>setText(el,'Sospecha'))}
-if(file==='bible-jeopardy.html'){doc.querySelectorAll('.cell.header').forEach(el=>setText(el,dynamic(el.textContent)));const meta=doc.getElementById('meta');if(meta){let text=meta.textContent;Object.entries(exact).forEach(([en,es])=>{if(['Old Testament','Jesus & Gospels','Acts & Church','Faith & Teaching','Bible People & Events'].includes(en))text=text.replace(en,es)});setText(meta,text)}['award1','award2'].forEach(id=>{const el=doc.getElementById(id);if(el)setText(el,dynamic(el.textContent))})}
+const complete=doc.querySelector('#completeView h2');if(complete){const map={'memory-match':'¡Encontraste todas las parejas!','bible-jeopardy':'¡Juego completado!'};setText(complete,map[slug]||'¡Ronda completada!')}
+if(slug==='scripture-or-suspicion'){doc.querySelectorAll('.answer[data-answer="Scripture"]').forEach(el=>setText(el,'Escritura'));doc.querySelectorAll('.answer[data-answer="Suspicion"]').forEach(el=>setText(el,'Sospecha'))}
+if(slug==='bible-jeopardy'){doc.querySelectorAll('.cell.header').forEach(el=>setText(el,dynamic(el.textContent)));const meta=doc.getElementById('meta');if(meta){let text=meta.textContent;Object.entries(exact).forEach(([en,es])=>{if(['Old Testament','Jesus & Gospels','Acts & Church','Faith & Teaching','Bible People & Events'].includes(en))text=text.replace(en,es)});setText(meta,text)}['award1','award2'].forEach(id=>{const el=doc.getElementById(id);if(el)setText(el,dynamic(el.textContent))})}
 };
-const translateDocument=(doc)=>{if(!doc)return;try{doc.documentElement.lang='es';const file=doc.location.pathname.split('/').pop();if(file==='multi-team-game-v095.html')translateV095(doc);else if(file==='multi-team-game-v094.html')translateV094(doc);else if(gameTitles[file])translateRaw(doc,file);doc.querySelectorAll('iframe').forEach(child=>{try{translateDocument(child.contentDocument)}catch{}})}catch{}};
+const translateDocument=(doc)=>{if(!doc)return;try{doc.documentElement.lang='es';const file=doc.location.pathname.split('/').pop();if(file===teamHostFile)translateV095(doc);else if(file===teamShellFile)translateV094(doc);else if(gameTitles[slugOf(file)])translateRaw(doc,file);doc.querySelectorAll('iframe').forEach(child=>{try{translateDocument(child.contentDocument)}catch{}})}catch{}};
 const apply=()=>{try{translateDocument(frame.contentDocument)}catch{}};
 frame.addEventListener('load',()=>{apply();setTimeout(apply,150);setTimeout(apply,500)});
 const timer=setInterval(apply,300);window.addEventListener('pagehide',()=>clearInterval(timer),{once:true});

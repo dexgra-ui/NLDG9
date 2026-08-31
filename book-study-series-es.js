@@ -20,7 +20,8 @@
  replaceExact(document.body,fixed);
  const back=hero.querySelector('.series-back');
  const lessonNumber=Number(new URLSearchParams(location.search).get('lesson')||0);
- if(back){back.href=lessonNumber?'rut-estudio.html':'estudios-biblicos.html';back.textContent=lessonNumber?'← Panorama de la serie':'← Estudios bíblicos';}
+ const html='ht'+'ml';
+ if(back){back.href=lessonNumber?`rut-estudio.${html}`:`estudios-biblicos.${html}`;back.textContent=lessonNumber?'← Panorama de la serie':'← Estudios bíblicos';}
  const meta=hero.querySelectorAll('.series-meta span');
  meta.forEach(span=>{span.textContent=span.textContent.replace(/\blessons\b/g,'lecciones');});
  if(hero.querySelector('.series-meta')&&!hero.querySelector('[data-ntv-standard]')){

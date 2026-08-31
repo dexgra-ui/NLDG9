@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071735">
+<meta name="robots" content="noindex,follow">
+<title>Juego bíblico | No Labels, Designed by God</title>
+<style>
+:root{--gold:#ffd34e;--text:#f7f9ff;--muted:#cbd5f3;--line:rgba(255,255,255,.16)}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,sans-serif;background:#030713;color:var(--text)}.host{height:100dvh;display:grid;grid-template-rows:auto 1fr}.hostbar{z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;border-bottom:1px solid var(--line);background:rgba(3,10,30,.98)}.host-left,.host-right{display:flex;align-items:center;gap:10px;min-width:0}.back,.language a{color:#fff;text-decoration:none;font-weight:800}.back{padding:8px 10px;border-radius:10px;background:#243b78}.title{min-width:0}.title strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.title small{display:block;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.language{display:flex;align-items:center;gap:6px;white-space:nowrap;font-size:.9rem}.language a[aria-current="true"]{color:var(--gold)}iframe{display:block;width:100%;height:100%;border:0;background:#030713}@media(max-width:700px){.hostbar{align-items:flex-start;flex-wrap:wrap}.host-right{width:100%;justify-content:space-between}.title small{font-size:.75rem}}
+</style>
+</head>
+<body>
+<div class="host">
+<header class="hostbar">
+<div class="host-left"><a class="back" href="juegos.html">← Juegos</a><div class="title"><strong id="gameName">Juego bíblico</strong><small>Interfaz en español · contenido bíblico en inglés por ahora</small></div></div>
+<div class="host-right"><div class="language" aria-label="Selector de idioma"><a id="englishGame" lang="en" href="#">English</a><span aria-hidden="true">|</span><a lang="es" href="#" aria-current="true">Español</a></div></div>
+</header>
+<iframe id="gameHostFrame" title="Juego bíblico de No Labels" allow="fullscreen" allowfullscreen></iframe>
+</div>
+<script>
+const params=new URLSearchParams(location.search);
+const allowed=['scripture-or-suspicion.html','who-am-i.html','finish-the-verse.html','bible-jeopardy.html','lightning-round.html','memory-match.html'];
+const groups=['preschool','kids','teens','adults','family'];
+const game=allowed.includes(params.get('game'))?params.get('game'):allowed[0];
+const group=groups.includes(params.get('group'))?params.get('group'):'family';
+const titles={'scripture-or-suspicion.html':'Escritura o sospecha','who-am-i.html':'¿Quién soy?','finish-the-verse.html':'Completa el versículo','bible-jeopardy.html':'Trivia bíblica','lightning-round.html':'Ronda relámpago','memory-match.html':'Memoria bíblica'};
+document.getElementById('gameName').textContent=titles[game];
+const english=new URL('../multi-team-game-v095.html',location.href);english.searchParams.set('game',game);english.searchParams.set('group',group);document.getElementById('englishGame').href=english.href;
+const frameUrl=new URL('../multi-team-game-v095.html',location.href);frameUrl.searchParams.set('game',game);frameUrl.searchParams.set('group',group);document.getElementById('gameHostFrame').src=frameUrl.href;
+window.NLDG_SPANISH_GAME={game,group,titles};
+</script>
+<script src="juegos-host.js?v=1.0.0"></script>
+</body>
+</html>

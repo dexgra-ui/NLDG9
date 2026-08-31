@@ -1,0 +1,55 @@
+name: Spanish Start Here Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'new-believers.html'
+      - 'new-believer-step.html'
+      - 'new-believer-complete.html'
+      - 'new-believers-data.js'
+      - 'new-believers-data-es.js'
+      - 'new-believers-ntv-es.js'
+      - 'new-believers-path.js'
+      - 'new-believer-step.js'
+      - 'new-believer-complete.js'
+      - 'es/empezar.html'
+      - 'es/paso-nuevo-creyente.html'
+      - 'es/proximos-pasos.html'
+      - 'nldg-i18n.js'
+      - 'scripts/spanish-start-here-audit.mjs'
+      - '.github/workflows/spanish-start-here-audit.yml'
+  pull_request:
+    paths:
+      - 'new-believers.html'
+      - 'new-believer-step.html'
+      - 'new-believer-complete.html'
+      - 'new-believers-data.js'
+      - 'new-believers-data-es.js'
+      - 'new-believers-ntv-es.js'
+      - 'new-believers-path.js'
+      - 'new-believer-step.js'
+      - 'new-believer-complete.js'
+      - 'es/empezar.html'
+      - 'es/paso-nuevo-creyente.html'
+      - 'es/proximos-pasos.html'
+      - 'nldg-i18n.js'
+      - 'scripts/spanish-start-here-audit.mjs'
+      - '.github/workflows/spanish-start-here-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  spanish-start-here:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify Spanish Start Here pathway
+        run: node scripts/spanish-start-here-audit.mjs

@@ -23,7 +23,7 @@ const sourceReference=value=>{
 const translateReference=value=>{
  const reference=sourceReference(value);if(!reference||!content.referenceBooks)return String(value||'').trim();
  const books=Object.keys(content.referenceBooks).sort((a,b)=>b.length-a.length);
- const book=books.find(name=>reference===name||reference.startsWith(`${name} `));
+ const book=books.find(name=>reference===book||reference.startsWith(`${name} `));
  return `Referencia: ${book?content.referenceBooks[book]+reference.slice(book.length):reference}`;
 };
 const translateFinishVerse=doc=>{
@@ -31,8 +31,9 @@ const translateFinishVerse=doc=>{
  if(group!==content.sourceAudience)return;
  const reference=doc.getElementById('reference');
  if(!reference)return;
- if(!reference.dataset.nldgSourceReference)reference.dataset.nldgSourceReference=sourceReference(reference.textContent);
- const source=reference.dataset.nldgSourceReference;
+ const current=sourceReference(reference.textContent);
+ if(content.entries?.[current])reference.dataset.nldgSourceReference=current;
+ const source=reference.dataset.nldgSourceReference||current;
  const entry=content.entries?.[source];
  if(!entry?.verified)return;
  setText(doc.getElementById('question'),entry.prompt);

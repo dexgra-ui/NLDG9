@@ -28,7 +28,7 @@ const game=`${slug}.html`;
 const group=groups.includes(params.get('group'))?params.get('group'):'family';
 const titles={'scripture-or-suspicion':'Escritura o sospecha','who-am-i':'¿Quién soy?','finish-the-verse':'Completa el versículo','bible-jeopardy':'Trivia bíblica','lightning-round':'Ronda relámpago','memory-match':'Memoria bíblica'};
 document.getElementById('gameName').textContent=titles[slug];document.title=`${titles[slug]} | No Labels, Designed by God`;
-if(['who-am-i','lightning-round'].includes(slug))document.getElementById('contentStatus').textContent='Interfaz y banco completo de preguntas revisados en español';
+if(['who-am-i','lightning-round','memory-match'].includes(slug))document.getElementById('contentStatus').textContent='Interfaz y banco completo de contenido revisados en español';
 const english=new URL('../multi-team-game-v095.html',location.href);english.searchParams.set('game',game);english.searchParams.set('group',group);document.getElementById('englishGame').href=english.href;
 const spanish=new URL(location.href);spanish.searchParams.set('game',game);spanish.searchParams.set('group',group);document.getElementById('spanishGame').href=spanish.href;
 const frameUrl=new URL('../multi-team-game-v095.html',location.href);frameUrl.searchParams.set('game',game);frameUrl.searchParams.set('group',group);document.getElementById('gameHostFrame').src=frameUrl.href;
@@ -36,7 +36,8 @@ window.NLDG_SPANISH_GAME={game,slug,group,titles};
 </script>
 <script src="juegos-contenido-quien-soy.js?v=1.0.0"></script>
 <script src="juegos-contenido-ronda-relampago.js?v=1.0.0"></script>
+<script src="juegos-contenido-memoria.js?v=1.0.0"></script>
 <script src="juegos-host.js?v=1.2.0"></script>
-<script src="juegos-contenido-aplicador.js?v=1.0.0"></script>
+<script src="juegos-contenido-aplicador.js?v=1.1.0"></script>
 </body>
 </html>

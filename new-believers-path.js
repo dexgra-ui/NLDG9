@@ -1,12 +1,17 @@
 (()=>{
-  const params=new URLSearchParams(location.search),lang=params.get('lang')==='es'?'es':'en';
+  const params=new URLSearchParams(location.search);
+  const runtimeRoot=new URL('./',document.currentScript?.src||location.href);
+  const isSpanishRoute=decodeURI(location.pathname).split('/').includes('es');
+  const lang=(isSpanishRoute||params.get('lang')==='es')?'es':'en';
   const steps=lang==='es'?(window.NEW_BELIEVER_STEPS_ES||[]):(window.NEW_BELIEVER_STEPS||[]);
   document.documentElement.lang=lang;
   const suffix=lang==='es'?'-es':'';
   const completed=JSON.parse(localStorage.getItem(`nldg-new-believers-progress${suffix}`)||'[]');
   const q=(s)=>document.querySelector(s),qa=(s)=>[...document.querySelectorAll(s)];
-  const stepHref=n=>`new-believer-step.html?step=${n}${lang==='es'?'&lang=es':''}`;
-  const languageSwitch=`<div class="actions path-language-switch"><a class="button secondary" href="new-believers.html">English</a><a class="button secondary" href="new-believers.html?lang=es">Español</a></div>`;
+  const siteHref=path=>new URL(path,runtimeRoot).href;
+  const pathHref=lang==='es'?siteHref('es/empezar.html'):siteHref('new-believers.html');
+  const stepHref=n=>lang==='es'?`${siteHref('es/paso-nuevo-creyente.html')}?step=${n}`:`${siteHref('new-believer-step.html')}?step=${n}`;
+  const languageSwitch=`<div class="actions path-language-switch"><a class="button secondary" href="${siteHref('new-believers.html')}" lang="en">English</a><a class="button secondary" href="${siteHref('es/empezar.html')}" lang="es">Español</a></div>`;
   if(lang==='es'){
     document.title='Camino para Nuevos Creyentes | No Labels, Designed by God';
     const hero=q('.path-hero > div:first-child');
@@ -35,4 +40,5 @@
   const count=completed.filter(step=>step>=1&&step<=10).length;
   document.getElementById('progressLabel').textContent=lang==='es'?`Tu progreso: ${count} de 10 pasos`:`Your progress: ${count} of 10 steps`;
   document.getElementById('progressBar').style.width=`${count*10}%`;
+  window.NLDG_NEW_BELIEVER_PATH={lang,pathHref,stepHref};
 })();

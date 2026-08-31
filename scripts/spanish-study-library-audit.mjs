@@ -44,8 +44,8 @@ expect('Spanish study hub',' '+hub,'Caminos completos');
 expect('Spanish study hub',hub,'Once recursos independientes en español');
 expect('Spanish study hub completion claim',hub,'Los diez estudios independientes del catálogo inglés ya tienen una contraparte completa en español');
 expect('Spanish study hub NTV standard',hub,'Nueva Traducción Viviente (NTV)');
-expect('Spanish study hub editorial policy',hub,'no traduciremos automáticamente todo el sitio');
-expect('Spanish study hub current selector',hub,'nldg-i18n'+js+'?v=1.10.0');
+expect('Spanish study hub editorial policy',hub,'No traduciremos automáticamente todo el sitio');
+expect('Spanish study hub current selector',hub,'nldg-i18n'+js+'?v=1.11.0');
 expect('Spanish study hub shared framework',hub,'es-framework'+js+'?v=1.1.0');
 
 const translatedStandalonePairs={

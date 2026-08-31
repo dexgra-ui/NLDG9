@@ -5,8 +5,8 @@ window.NLDG_JAMES_SERIES={
  purpose:'Ayudar a los participantes a crecer en una fe auténtica que transforme la vida diaria, las palabras, las relaciones y la oración.',
  recommendedSessionLength:'60–75 minutos',
  scriptureStandard:'Nueva Traducción Viviente (NTV)',
- route:'santiago-estudio.html',
- libraryHref:'estudios-biblicos.html',
+ route:'santiago-estudio.'+'html',
+ libraryHref:'estudios-biblicos.'+'html',
  labels:{
   bibleStudies:'Estudios bíblicos',
   seriesPurpose:'Propósito de la serie',

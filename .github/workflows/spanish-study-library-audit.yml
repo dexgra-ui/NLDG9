@@ -1,0 +1,54 @@
+name: Spanish Study Library Audit
+
+on:
+  push:
+    paths:
+      - 'es/estudios-biblicos.html'
+      - 'es/empezar.html'
+      - 'es/preparando-para-caminar-con-jesus.html'
+      - 'es/caminando-con-jesus.html'
+      - 'es/biblia-para-principiantes.html'
+      - 'es/como-estudiar-la-biblia.html'
+      - 'es/fe-en-la-tormenta.html'
+      - 'es/gracia-y-responsabilidad.html'
+      - 'es/pacificadores-en-un-mundo-dividido.html'
+      - 'new-believers-data-es.js'
+      - 'preparing-walk-data-es.js'
+      - 'walking-with-jesus-data-es-*.js'
+      - 'nldg-i18n.js'
+      - 'scripts/spanish-study-library-audit.mjs'
+      - '.github/workflows/spanish-study-library-audit.yml'
+  pull_request:
+    paths:
+      - 'es/estudios-biblicos.html'
+      - 'es/empezar.html'
+      - 'es/preparando-para-caminar-con-jesus.html'
+      - 'es/caminando-con-jesus.html'
+      - 'es/biblia-para-principiantes.html'
+      - 'es/como-estudiar-la-biblia.html'
+      - 'es/fe-en-la-tormenta.html'
+      - 'es/gracia-y-responsabilidad.html'
+      - 'es/pacificadores-en-un-mundo-dividido.html'
+      - 'new-believers-data-es.js'
+      - 'preparing-walk-data-es.js'
+      - 'walking-with-jesus-data-es-*.js'
+      - 'nldg-i18n.js'
+      - 'scripts/spanish-study-library-audit.mjs'
+      - '.github/workflows/spanish-study-library-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  spanish-study-library:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit Spanish study library
+        run: node scripts/spanish-study-library-audit.mjs

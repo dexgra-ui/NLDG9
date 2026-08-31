@@ -107,6 +107,8 @@ if(exists('philippians-study-data-es.js')){
 }
 
 const jamesRequired=['james-series.html','james-series-data.js','james-series-data-es.js','james-series.js','es/santiago-estudio.html'];
+const jamesSpanishRoute='santiago-estudio'+html;
+const jamesLibraryRoute='estudios-biblicos'+html;
 for(const file of jamesRequired)if(!exists(file))errors.push(`James: required bilingual resource is missing: ${file}`);
 if(jamesRequired.every(exists)){
   const en=loadJamesSeries('james-series-data.js');
@@ -114,6 +116,8 @@ if(jamesRequired.every(exists)){
   if(en?.lessons?.length!==10)errors.push(`James: expected 10 English lessons, found ${en?.lessons?.length??0}.`);
   if(es?.lessons?.length!==10)errors.push(`James: expected 10 Spanish lessons, found ${es?.lessons?.length??0}.`);
   if(es?.scriptureStandard!=='Nueva Traducción Viviente (NTV)')errors.push('James: Spanish study must declare Nueva Traducción Viviente (NTV) as its Scripture standard.');
+  if(es?.route!==jamesSpanishRoute)errors.push('James: Spanish route metadata must resolve to the Santiago study page.');
+  if(es?.libraryHref!==jamesLibraryRoute)errors.push('James: Spanish library route metadata must resolve to the Spanish Bible Study Library.');
   for(const field of ['suggestedFlow','leaderChecklist']){
     if(!Array.isArray(es?.[field])||es[field].length!==en?.[field]?.length)errors.push(`James: Spanish ${field} must match the English item count.`);
   }
@@ -146,13 +150,13 @@ if(jamesRequired.every(exists)){
   const englishPage=read('james-series.html');
   expect('James English page',englishPage,'james-series.js?v=1.2.0');
   expect('James English page',englishPage,'nldg-i18n.js?v=1.13.0');
-  expect('James route pair',i18n,"'james-series.html':'es/santiago-estudio.html'");
-  expect('Spanish study hub',hub,`href="santiago-estudio${html}"`);
+  expect('James route pair',i18n,`'james-series${html}':'es/${jamesSpanishRoute}'`);
+  expect('Spanish study hub',hub,`href="${jamesSpanishRoute}"`);
   expect('Spanish study hub',hub,'10 lecciones completas');
 
   const engine=read('james-series.js');
   for(const marker of ["route=s.route||'james-series.html'","Object.assign(labels,s.labels||{})","Bible Studies","Recommended Session Length","Progress is saved on this device.","key='nldg-series-james'"])expect('Bilingual James engine',engine,marker);
-  reject('Bilingual James engine',engine,'santiago-estudio.html');
+  reject('Bilingual James engine',engine,jamesSpanishRoute);
 }
 
 if(errors.length){

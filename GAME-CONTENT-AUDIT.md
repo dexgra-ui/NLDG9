@@ -24,6 +24,10 @@ Every question should be checked for:
 - Games that show a Scripture reference without quoting the verse may localize the Bible-book name without changing the underlying reference.
 - Published NTV verse fragments must display the NTV/Tyndale credit line supplied with the Spanish content module.
 
+## Spanish primary-game localization status
+
+✅ Complete for all six primary games and all current audience banks.
+
 ## Game review order
 
 ### 1. Who Am I?
@@ -42,12 +46,14 @@ Every question should be checked for:
   - Preschool: ✅ 20/20 reviewed in NTV
   - Kids: ✅ 20/20 reviewed in NTV
   - Teens: ✅ 20/20 reviewed in NTV
-  - Adults: pending
+  - Adults: ✅ 20/20 reviewed in NTV
+- Total Spanish Finish the Verse coverage: ✅ 100 reviewed audience entries.
 - Family remains the stable base NTV module; each additional reviewed audience is loaded as a focused extension so completed banks do not need to be rewritten.
 - Preschool review note: Luke 1:37 follows the NTV main text, “la palabra de Dios nunca dejará de cumplirse,” rather than substituting the familiar alternate manuscript rendering used in some translations.
 - Kids review note: several NTV renderings differ materially from the English source wording while preserving the same verse and teaching target, including Isaiah 40:31, Colossians 3:2, Romans 12:12, Ephesians 2:10, Colossians 3:23, and Psalm 91:2. The Spanish display bank follows NTV rather than translating the English wording literally.
 - Kids review note: Mark 12:30 includes the surrounding NTV sequence in the Spanish prompt so “corazón” is the single intended blank even though alma, mente, and fuerzas also occur in the verse. The shorter English source prompt remains an English-bank cleanup item for a later canonical review.
 - Teens review note: several NTV renderings differ materially from the English source wording, especially Ephesians 2:8, Philippians 1:6, Psalm 139:14, and John 10:10. The Spanish bank follows the NTV phrasing while preserving the canonical English question mapping for game logic.
+- Adults review note: several NTV renderings require a different visible target than the English source wording, including 2 Timothy 3:16, James 2:17, Romans 5:3, Hebrews 4:12, Romans 14:19, 2 Corinthians 12:9, Hebrews 10:24, and James 3:17. The Spanish display bank follows NTV while retaining the canonical English source-answer keys for game logic.
 
 ### 3. Scripture or Suspicion
 

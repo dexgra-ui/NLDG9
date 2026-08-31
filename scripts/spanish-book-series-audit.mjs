@@ -6,6 +6,7 @@ const exists=path=>fs.existsSync(path);
 const errors=[];
 const expect=(label,source,value)=>{if(!source.includes(value))errors.push(`${label}: missing ${JSON.stringify(value)}`)};
 const reject=(label,source,value)=>{if(source.includes(value))errors.push(`${label}: contains disallowed ${JSON.stringify(value)}`)};
+const rejectVersion=(label,source,version)=>{if(new RegExp(`\\b${version}\\b`).test(source))errors.push(`${label}: contains disallowed Bible version label ${JSON.stringify(version)}`)};
 const html='.ht'+'ml';
 const loadSeries=(...files)=>{
   const context={window:{}};vm.createContext(context);
@@ -59,7 +60,7 @@ for(const config of series){
     for(const movement of b.teaching||[])if(!movement.heading?.trim()||!movement.body?.trim())errors.push(`${lessonLabel}: incomplete Spanish teaching movement.`);
   }
   const spanishData=read(config.esData);
-  for(const version of ['RVR60','NVI','NBLA'])reject(`${config.label} Spanish data`,spanishData,version);
+  for(const version of ['RVR60','NVI','NBLA'])rejectVersion(`${config.label} Spanish data`,spanishData,version);
   for(const englishLeak of ['Discussion Questions','Personal examination','Weekly practice','Closing prayer','Leader guidance','TEACHING MOVEMENT'])reject(`${config.label} Spanish data`,spanishData,englishLeak);
   const page=read(config.esPage);
   expect(`${config.label} Spanish page`,page,'<html lang="es"');

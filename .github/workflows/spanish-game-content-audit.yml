@@ -5,8 +5,10 @@ on:
     paths:
       - 'who-am-i.html'
       - 'lightning-round.html'
+      - 'memory-match.html'
       - 'es/juegos-contenido-quien-soy.js'
       - 'es/juegos-contenido-ronda-relampago.js'
+      - 'es/juegos-contenido-memoria.js'
       - 'es/juegos-contenido-aplicador.js'
       - 'es/juegos-host.js'
       - 'es/juego.html'
@@ -17,8 +19,10 @@ on:
     paths:
       - 'who-am-i.html'
       - 'lightning-round.html'
+      - 'memory-match.html'
       - 'es/juegos-contenido-quien-soy.js'
       - 'es/juegos-contenido-ronda-relampago.js'
+      - 'es/juegos-contenido-memoria.js'
       - 'es/juegos-contenido-aplicador.js'
       - 'es/juegos-host.js'
       - 'es/juego.html'

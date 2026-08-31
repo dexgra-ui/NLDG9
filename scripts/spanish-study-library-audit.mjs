@@ -41,11 +41,14 @@ for(const item of [...completePaths,...standalone]){
 for(const item of completePaths)expect('Spanish study hub completion label',hub,item.label);
 
 expect('Spanish study hub',' '+hub,'Caminos completos');
+expect('Spanish study hub',hub,'tres series completas y revisadas');
+expect('Spanish study hub',hub,'href="santiago-estudio'+html+'"');
+expect('Spanish study hub',hub,'10 lecciones completas');
 expect('Spanish study hub',hub,'Once recursos independientes en español');
 expect('Spanish study hub completion claim',hub,'Los diez estudios independientes del catálogo inglés ya tienen una contraparte completa en español');
 expect('Spanish study hub NTV standard',hub,'Nueva Traducción Viviente (NTV)');
 expect('Spanish study hub editorial policy',hub,'No traduciremos automáticamente todo el sitio');
-expect('Spanish study hub current selector',hub,'nldg-i18n'+js+'?v=1.12.0');
+expect('Spanish study hub current selector',hub,'nldg-i18n'+js+'?v=1.13.0');
 expect('Spanish study hub shared framework',hub,'es-framework'+js+'?v=1.1.0');
 
 const translatedStandalonePairs={
@@ -120,6 +123,7 @@ if(errors.length){
 
 console.log('Spanish Study Library Audit PASSED');
 console.log('OK: 3 complete Spanish discipleship/study paths are surfaced.');
+console.log('OK: 3 complete reviewed Spanish book-by-book series are surfaced.');
 console.log('OK: 11 reviewed Spanish independent study resources are surfaced.');
 console.log('OK: all 10 English standalone studies have protected Spanish route pairs.');
 console.log('OK: the 3 final standalone translations preserve source section structure and NTV discipline.');

@@ -39,11 +39,12 @@ Every question should be checked for:
 - Avoid mixing wording from different translations in one question.
 - Spanish audience review status:
   - Family: ✅ 20/20 reviewed in NTV
-  - Preschool: pending
+  - Preschool: ✅ 20/20 reviewed in NTV
   - Kids: pending
   - Teens: pending
   - Adults: pending
-- Family is the first published Spanish NTV bank. Other audiences remain in English until their own NTV review is complete.
+- Family remains the stable base NTV module; each additional reviewed audience is loaded as a focused extension so completed banks do not need to be rewritten.
+- Preschool review note: Luke 1:37 follows the NTV main text, “la palabra de Dios nunca dejará de cumplirse,” rather than substituting the familiar alternate manuscript rendering used in some translations.
 
 ### 3. Scripture or Suspicion
 

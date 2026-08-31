@@ -2,6 +2,7 @@
 const state=window.NLDG_SPANISH_GAME||{};
 const outer=document.getElementById('gameHostFrame');
 if(!outer)return;
+const contentStatus=document.getElementById('contentStatus');
 const contentBySlug={
 'scripture-or-suspicion':window.NLDG_ES_SCRIPTURE_OR_SUSPICION||null,
 'who-am-i':window.NLDG_ES_WHO_AM_I?{prompts:window.NLDG_ES_WHO_AM_I.prompts,labels:window.NLDG_ES_WHO_AM_I.names}:null,
@@ -28,7 +29,9 @@ const translateReference=value=>{
 };
 const translateFinishVerse=doc=>{
  const group=doc.getElementById('group')?.value;
- if(group!==content.sourceAudience)return;
+ const reviewed=group===content.sourceAudience;
+ setText(contentStatus,reviewed?'Interfaz y banco Familia revisados en español · NTV':'Interfaz en español · banco NTV de esta audiencia aún en revisión');
+ if(!reviewed)return;
  const reference=doc.getElementById('reference');
  if(!reference)return;
  const current=sourceReference(reference.textContent);

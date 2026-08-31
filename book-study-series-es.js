@@ -21,7 +21,8 @@
  const back=hero.querySelector('.series-back');
  const lessonNumber=Number(new URLSearchParams(location.search).get('lesson')||0);
  const html='ht'+'ml';
- if(back){back.href=lessonNumber?`rut-estudio.${html}`:`estudios-biblicos.${html}`;back.textContent=lessonNumber?'← Panorama de la serie':'← Estudios bíblicos';}
+ const currentPage=(location.pathname.split('/').pop()||'').trim()||`${String(s.slug||'').replace(/\.html$/,'')}.${html}`;
+ if(back){back.href=lessonNumber?currentPage:`estudios-biblicos.${html}`;back.textContent=lessonNumber?'← Panorama de la serie':'← Estudios bíblicos';}
  const meta=hero.querySelectorAll('.series-meta span');
  meta.forEach(span=>{span.textContent=span.textContent.replace(/\blessons\b/g,'lecciones');});
  if(hero.querySelector('.series-meta')&&!hero.querySelector('[data-ntv-standard]')){

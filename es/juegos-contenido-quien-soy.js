@@ -4,6 +4,7 @@ const prompts={
 "I defeated a giant named Goliath. Who am I?":"Derroté a un gigante llamado Goliat. ¿Quién soy?",
 "I was swallowed by a great fish. Who am I?":"Fui tragado por un gran pez. ¿Quién soy?",
 "I spent a night in a lions' den. Who am I?":"Pasé una noche en un foso de leones. ¿Quién soy?",
+"I spent a night in the lions' den. Who am I?":"Pasé una noche en el foso de los leones. ¿Quién soy?",
 "I was the mother of Jesus. Who am I?":"Fui la madre de Jesús. ¿Quién soy?",
 "I led God's people out of Egypt. Who am I?":"Guié al pueblo de Dios fuera de Egipto. ¿Quién soy?",
 "I was born in Bethlehem and grew up to save the world. Who am I?":"Nací en Belén y vine a salvar al mundo. ¿Quién soy?",

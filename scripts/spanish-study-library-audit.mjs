@@ -48,7 +48,7 @@ const routePairs={
 for(const [en,es] of Object.entries(routePairs))expect('Bilingual study route map',i18n,`'${en}':'${es}'`);
 
 const walking=read('es/caminando-con-jesus.html');
-expect('Caminando con Jesús',walking,'21 lecciones están disponibles en español');
+expect('Caminando con Jesús',walking,'data-caminando-count>21</span> lecciones están disponibles en español');
 expect('Caminando con Jesús',walking,'max="21" value="21"');
 for(const dataFile of [
   'walking-with-jesus-data-es-01-04.js',

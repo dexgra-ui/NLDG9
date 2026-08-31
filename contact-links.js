@@ -6,7 +6,7 @@ const isContact=/(^|\/)contact\.html$/i.test(location.pathname);
 const root=nested?'../':'';
 const shopUrl='https://no-labels-designed-by-god-shop.fourthwall.com/';
 const i18nScript=document.createElement('script');
-i18nScript.src=new URL('nldg-i18n.js?v=1.2.0',document.currentScript?.src||location.href).href;
+i18nScript.src=new URL('nldg-i18n.js?v=1.3.0',document.currentScript?.src||location.href).href;
 i18nScript.async=false;
 document.head.appendChild(i18nScript);
 const surveyIntegration=document.createElement('script');

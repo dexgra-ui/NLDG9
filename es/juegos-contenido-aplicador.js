@@ -5,6 +5,7 @@ if(!outer)return;
 const contentBySlug={
 'scripture-or-suspicion':window.NLDG_ES_SCRIPTURE_OR_SUSPICION||null,
 'who-am-i':window.NLDG_ES_WHO_AM_I?{prompts:window.NLDG_ES_WHO_AM_I.prompts,labels:window.NLDG_ES_WHO_AM_I.names}:null,
+'bible-jeopardy':window.NLDG_ES_BIBLE_TRIVIA||null,
 'lightning-round':window.NLDG_ES_LIGHTNING||null,
 'memory-match':window.NLDG_ES_MEMORY||null
 };
@@ -29,9 +30,15 @@ if(state.slug==='memory-match'){
  return;
 }
 const question=doc.getElementById('question');
-if(question){if(!question.dataset.nldgSourcePrompt)question.dataset.nldgSourcePrompt=question.textContent.trim();const source=question.dataset.nldgSourcePrompt;if(content.prompts?.[source])setText(question,content.prompts[source])}
+if(question){
+ const raw=question.textContent.trim();
+ if(content.prompts?.[raw]){question.dataset.nldgSourcePrompt=raw;setText(question,content.prompts[raw]);}
+ else if(!question.dataset.nldgSourcePrompt&&raw)question.dataset.nldgSourcePrompt=raw;
+}
 const buttons=[...doc.querySelectorAll('#answers .answer')];
 buttons.forEach(button=>{const source=sourceChoice(button);const translated=content.labels?.[source];if(translated)setText(button,translated)});
+const revealedAnswer=doc.getElementById('answer');
+if(revealedAnswer){const raw=revealedAnswer.textContent.trim();if(content.answers?.[raw]){revealedAnswer.dataset.nldgSourceAnswer=raw;setText(revealedAnswer,content.answers[raw]);}}
 const feedback=doc.getElementById('feedback');
 if(feedback){
  const raw=feedback.textContent.trim();

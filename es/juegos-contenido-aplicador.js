@@ -5,6 +5,7 @@ if(!outer)return;
 const contentBySlug={
 'scripture-or-suspicion':window.NLDG_ES_SCRIPTURE_OR_SUSPICION||null,
 'who-am-i':window.NLDG_ES_WHO_AM_I?{prompts:window.NLDG_ES_WHO_AM_I.prompts,labels:window.NLDG_ES_WHO_AM_I.names}:null,
+'finish-the-verse':window.NLDG_ES_FINISH_VERSE||null,
 'bible-jeopardy':window.NLDG_ES_BIBLE_TRIVIA||null,
 'lightning-round':window.NLDG_ES_LIGHTNING||null,
 'memory-match':window.NLDG_ES_MEMORY||null
@@ -13,13 +14,37 @@ const content=contentBySlug[state.slug];
 if(!content)return;
 const setText=(el,value)=>{if(el&&value!=null&&el.textContent!==value)el.textContent=value};
 const sourceChoice=button=>{if(!button.dataset.nldgSourceChoice)button.dataset.nldgSourceChoice=button.dataset.answer||button.textContent.trim();return button.dataset.nldgSourceChoice};
+const sourceReference=value=>{
+ const raw=String(value||'').trim();
+ if(raw.startsWith('Reference: '))return raw.slice('Reference: '.length);
+ if(raw.startsWith('Referencia: '))return raw.slice('Referencia: '.length);
+ return raw;
+};
 const translateReference=value=>{
- const raw=String(value||'').trim();if(!raw||!content.referenceBooks)return raw;
- const prefix=raw.startsWith('Reference: ')?'Reference: ':raw.startsWith('Referencia: ')?'Referencia: ':'';
- const reference=prefix?raw.slice(prefix.length):raw;
+ const reference=sourceReference(value);if(!reference||!content.referenceBooks)return String(value||'').trim();
  const books=Object.keys(content.referenceBooks).sort((a,b)=>b.length-a.length);
  const book=books.find(name=>reference===name||reference.startsWith(`${name} `));
  return `Referencia: ${book?content.referenceBooks[book]+reference.slice(book.length):reference}`;
+};
+const translateFinishVerse=doc=>{
+ const group=doc.getElementById('group')?.value;
+ if(group!==content.sourceAudience)return;
+ const reference=doc.getElementById('reference');
+ if(!reference)return;
+ if(!reference.dataset.nldgSourceReference)reference.dataset.nldgSourceReference=sourceReference(reference.textContent);
+ const source=reference.dataset.nldgSourceReference;
+ const entry=content.entries?.[source];
+ if(!entry?.verified)return;
+ setText(doc.getElementById('question'),entry.prompt);
+ const buttons=[...doc.querySelectorAll('#answers .answer')];
+ buttons.forEach(button=>{const sourceAnswer=sourceChoice(button);const translated=entry.choiceMap?.[sourceAnswer];if(translated)setText(button,translated)});
+ const feedback=doc.getElementById('feedback');
+ if(feedback){
+  const raw=feedback.textContent.trim();
+  const match=raw.match(/^The answer is (.+)\.$/);
+  if(match){const correct=match[1];const translated=entry.choiceMap?.[correct]||entry.answer||correct;setText(feedback,`La respuesta es ${translated}.`);buttons.forEach(button=>{if(sourceChoice(button)===correct)button.classList.add('correct')})}
+ }
+ setText(reference,translateReference(source));
 };
 const translateGameDoc=doc=>{
 if(!doc)return;
@@ -29,6 +54,7 @@ if(state.slug==='memory-match'){
  doc.querySelectorAll('#grid .card').forEach(card=>{const raw=card.textContent.trim();if(content.labels?.[raw])setText(card,content.labels[raw])});
  return;
 }
+if(state.slug==='finish-the-verse'){translateFinishVerse(doc);return;}
 const question=doc.getElementById('question');
 if(question){
  const raw=question.textContent.trim();

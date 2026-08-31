@@ -20,16 +20,18 @@
 </div>
 <script>
 const params=new URLSearchParams(location.search);
-const allowed=['scripture-or-suspicion.html','who-am-i.html','finish-the-verse.html','bible-jeopardy.html','lightning-round.html','memory-match.html'];
+const allowed=['scripture-or-suspicion','who-am-i','finish-the-verse','bible-jeopardy','lightning-round','memory-match'];
 const groups=['preschool','kids','teens','adults','family'];
-const game=allowed.includes(params.get('game'))?params.get('game'):allowed[0];
+const requested=(params.get('game')||'').replace(/\.html$/,'');
+const slug=allowed.includes(requested)?requested:allowed[0];
+const game=`${slug}.html`;
 const group=groups.includes(params.get('group'))?params.get('group'):'family';
-const titles={'scripture-or-suspicion.html':'Escritura o sospecha','who-am-i.html':'¿Quién soy?','finish-the-verse.html':'Completa el versículo','bible-jeopardy.html':'Trivia bíblica','lightning-round.html':'Ronda relámpago','memory-match.html':'Memoria bíblica'};
-document.getElementById('gameName').textContent=titles[game];document.title=`${titles[game]} | No Labels, Designed by God`;
+const titles={'scripture-or-suspicion':'Escritura o sospecha','who-am-i':'¿Quién soy?','finish-the-verse':'Completa el versículo','bible-jeopardy':'Trivia bíblica','lightning-round':'Ronda relámpago','memory-match':'Memoria bíblica'};
+document.getElementById('gameName').textContent=titles[slug];document.title=`${titles[slug]} | No Labels, Designed by God`;
 const english=new URL('../multi-team-game-v095.html',location.href);english.searchParams.set('game',game);english.searchParams.set('group',group);document.getElementById('englishGame').href=english.href;
 const spanish=new URL(location.href);spanish.searchParams.set('game',game);spanish.searchParams.set('group',group);document.getElementById('spanishGame').href=spanish.href;
 const frameUrl=new URL('../multi-team-game-v095.html',location.href);frameUrl.searchParams.set('game',game);frameUrl.searchParams.set('group',group);document.getElementById('gameHostFrame').src=frameUrl.href;
-window.NLDG_SPANISH_GAME={game,group,titles};
+window.NLDG_SPANISH_GAME={game,slug,group,titles};
 </script>
 <script src="juegos-host.js?v=1.0.0"></script>
 </body>

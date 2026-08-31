@@ -24,6 +24,50 @@ async function readModule(file,globalName,label){
   return module;
 }
 
+async function readGamePack(file,label){
+  const source=await fs.readFile(file,'utf8');
+  let registered=null;
+  const sandbox={window:{}};
+  sandbox.window.NLDG_GAME_PACKS={register(pack){registered=pack;}};
+  sandbox.window.addEventListener=()=>{};
+  try{vm.runInNewContext(source,sandbox);}
+  catch(error){throw new Error(`Could not parse ${label}: ${error.message}`);}
+  if(!registered)throw new Error(`${label} did not register a game pack.`);
+  return registered;
+}
+
+async function auditScriptureOrSuspicion(){
+  const label='Scripture or Suspicion';
+  let packs,spanish;
+  try{
+    packs=await Promise.all([
+      readGamePack('game-packs/general-bible.js','General Bible pack'),
+      readGamePack('game-packs/general-bible-expanded.js','General Bible Expanded pack')
+    ]);
+    spanish=await readModule('es/juegos-contenido-escritura-sospecha.js','NLDG_ES_SCRIPTURE_OR_SUSPICION',label);
+  }catch(error){errors.push(error.message);return;}
+  const entries=packs.flatMap(pack=>(pack.questions||[]).filter(item=>item.game==='scripture-or-suspicion'));
+  const labels=spanish.labels||{};
+  const referenceBooks=spanish.referenceBooks||{};
+  for(const item of entries){
+    if(!spanish.prompts?.[item.prompt])errors.push(`[${label}] Missing Spanish prompt: ${item.prompt}`);
+    if(!['Scripture','Suspicion'].includes(item.answer))errors.push(`[${label}] Unexpected canonical answer "${item.answer}": ${item.prompt}`);
+    if(!labels[item.answer])errors.push(`[${label}] Missing Spanish answer label "${item.answer}": ${item.prompt}`);
+    if(!item.scripture)errors.push(`[${label}] Missing supporting Scripture reference: ${item.prompt}`);
+    if(item.scripture){
+      const books=Object.keys(referenceBooks).sort((a,b)=>b.length-a.length);
+      if(!books.some(book=>item.scripture===book||item.scripture.startsWith(`${book} `)))errors.push(`[${label}] Missing Spanish Bible-book label for reference ${item.scripture}`);
+    }
+  }
+  const uniquePrompts=new Set(entries.map(item=>item.prompt));
+  if(entries.length!==80)errors.push(`[${label}] Expected 80 canonical questions across two active packs; found ${entries.length}.`);
+  if(uniquePrompts.size!==entries.length)errors.push(`[${label}] Canonical packs contain duplicate prompts: ${entries.length-uniquePrompts.size} duplicate(s).`);
+  if(spanish.sourceQuestionCount!==entries.length)errors.push(`[${label}] Spanish module declares ${spanish.sourceQuestionCount} source questions; canonical packs have ${entries.length}.`);
+  if(spanish.sourcePackCount!==packs.length)errors.push(`[${label}] Spanish module declares ${spanish.sourcePackCount} source packs; audit found ${packs.length}.`);
+  notes.push(`${label}: verified ${entries.length} canonical questions across ${packs.length} active source packs.`);
+  notes.push(`${label}: verified every Spanish prompt, Scripture/Suspicion label, and localized Scripture reference.`);
+}
+
 async function auditGame({label,sourceFile,moduleFile,globalName,labelField}){
   let bank,spanish;
   try{bank=await readBank(sourceFile,label);spanish=await readModule(moduleFile,globalName,label);}
@@ -92,6 +136,7 @@ async function auditMemory(){
   notes.push(`${label}: verified ${uniquePairs.size} unique pair combinations and every visible Spanish card label.`);
 }
 
+await auditScriptureOrSuspicion();
 await auditGame({
   label:'Who Am I',
   sourceFile:'who-am-i.html',

@@ -29,15 +29,16 @@ const translateReference=value=>{
 };
 const translateFinishVerse=doc=>{
  const group=doc.getElementById('group')?.value;
- const reviewed=group===content.sourceAudience;
- setText(contentStatus,reviewed?'Interfaz y banco Familia revisados en español · NTV':'Interfaz en español · banco NTV de esta audiencia aún en revisión');
+ const audience=content.audiences?.[group]||null;
+ const reviewed=Boolean(audience&&content.reviewedAudiences?.includes(group));
+ setText(contentStatus,reviewed?`Interfaz y banco ${audience.label} revisados en español · NTV`:'Interfaz en español · banco NTV de esta audiencia aún en revisión');
  if(!reviewed)return;
  const reference=doc.getElementById('reference');
  if(!reference)return;
  const current=sourceReference(reference.textContent);
- if(content.entries?.[current])reference.dataset.nldgSourceReference=current;
+ if(audience.entries?.[current])reference.dataset.nldgSourceReference=current;
  const source=reference.dataset.nldgSourceReference||current;
- const entry=content.entries?.[source];
+ const entry=audience.entries?.[source];
  if(!entry?.verified)return;
  setText(doc.getElementById('question'),entry.prompt);
  const buttons=[...doc.querySelectorAll('#answers .answer')];
@@ -45,8 +46,10 @@ const translateFinishVerse=doc=>{
  const feedback=doc.getElementById('feedback');
  if(feedback){
   const raw=feedback.textContent.trim();
-  const match=raw.match(/^The answer is (.+)\.$/);
-  if(match){const correct=match[1];const translated=entry.choiceMap?.[correct]||entry.answer||correct;setText(feedback,`La respuesta es ${translated}.`);buttons.forEach(button=>{if(sourceChoice(button)===correct)button.classList.add('correct')})}
+  let correct=null;
+  let match=raw.match(/^The answer is (.+)\.$/);if(match)correct=match[1];
+  if(!correct){match=raw.match(/^La respuesta es (.+)\.$/);if(match){const shown=match[1];correct=Object.keys(entry.choiceMap||{}).find(key=>entry.choiceMap[key]===shown)||shown}}
+  if(correct){const translated=entry.choiceMap?.[correct]||entry.answer||correct;setText(feedback,`La respuesta es ${translated}.`);buttons.forEach(button=>{if(sourceChoice(button)===correct)button.classList.add('correct')})}
  }
  setText(reference,translateReference(source));
 };

@@ -1,0 +1,41 @@
+name: Spanish Easter Finale Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cross-empty-tomb.html'
+      - 'cross-empty-tomb.js'
+      - 'cross-empty-tomb-data-es.js'
+      - 'es/caminando-con-jesus.html'
+      - 'es/la-cruz-y-la-tumba-vacia.html'
+      - 'nldg-i18n.js'
+      - 'scripts/spanish-easter-finale-audit.mjs'
+      - '.github/workflows/spanish-easter-finale-audit.yml'
+  pull_request:
+    paths:
+      - 'cross-empty-tomb.html'
+      - 'cross-empty-tomb.js'
+      - 'cross-empty-tomb-data-es.js'
+      - 'es/caminando-con-jesus.html'
+      - 'es/la-cruz-y-la-tumba-vacia.html'
+      - 'nldg-i18n.js'
+      - 'scripts/spanish-easter-finale-audit.mjs'
+      - '.github/workflows/spanish-easter-finale-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  spanish-easter-finale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify Spanish Easter finale route and NTV wording
+        run: node scripts/spanish-easter-finale-audit.mjs

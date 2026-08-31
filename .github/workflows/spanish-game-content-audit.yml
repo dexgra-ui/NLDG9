@@ -14,6 +14,7 @@ on:
       - 'es/juegos-contenido-quien-soy.js'
       - 'es/juegos-contenido-completa-versiculo.js'
       - 'es/juegos-contenido-completa-versiculo-preescolar.js'
+      - 'es/juegos-contenido-completa-versiculo-ninos.js'
       - 'es/juegos-contenido-trivia-biblica.js'
       - 'es/juegos-contenido-ronda-relampago.js'
       - 'es/juegos-contenido-memoria.js'
@@ -22,6 +23,7 @@ on:
       - 'es/juego.html'
       - 'scripts/spanish-game-content-audit.mjs'
       - 'scripts/spanish-finish-verse-preschool-audit.mjs'
+      - 'scripts/spanish-finish-verse-kids-audit.mjs'
       - '.github/workflows/spanish-game-content-audit.yml'
   push:
     branches: [main]
@@ -37,6 +39,7 @@ on:
       - 'es/juegos-contenido-quien-soy.js'
       - 'es/juegos-contenido-completa-versiculo.js'
       - 'es/juegos-contenido-completa-versiculo-preescolar.js'
+      - 'es/juegos-contenido-completa-versiculo-ninos.js'
       - 'es/juegos-contenido-trivia-biblica.js'
       - 'es/juegos-contenido-ronda-relampago.js'
       - 'es/juegos-contenido-memoria.js'
@@ -45,6 +48,7 @@ on:
       - 'es/juego.html'
       - 'scripts/spanish-game-content-audit.mjs'
       - 'scripts/spanish-finish-verse-preschool-audit.mjs'
+      - 'scripts/spanish-finish-verse-kids-audit.mjs'
       - '.github/workflows/spanish-game-content-audit.yml'
 
 permissions:
@@ -65,3 +69,5 @@ jobs:
         run: node scripts/spanish-game-content-audit.mjs
       - name: Verify Preschool NTV Finish the Verse coverage
         run: node scripts/spanish-finish-verse-preschool-audit.mjs
+      - name: Verify Kids NTV Finish the Verse coverage
+        run: node scripts/spanish-finish-verse-kids-audit.mjs

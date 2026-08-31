@@ -11,6 +11,7 @@ const i18n=read('nldg-i18n.js');
 const errors=[];
 const expect=(label,source,value)=>{if(!source.includes(value))errors.push(`${label}: missing ${JSON.stringify(value)}`)};
 const reject=(label,source,value)=>{if(source.includes(value))errors.push(`${label}: legacy wording still present ${JSON.stringify(value)}`)};
+const finaleFile=['la-cruz-y-la-tumba-vacia','.html'].join('');
 
 expect('Spanish route',spanish,'https://nolabelsdesignedbygod.org/es/la-cruz-y-la-tumba-vacia.html');
 expect('Spanish route',spanish,'Nueva Traducción Viviente (NTV)');
@@ -18,7 +19,7 @@ expect('English hreflang',english,'https://nolabelsdesignedbygod.org/es/la-cruz-
 expect('Bilingual pair',i18n,"'cross-empty-tomb.html':'es/la-cruz-y-la-tumba-vacia.html'");
 expect('Shared engine',engine,"site('es/la-cruz-y-la-tumba-vacia.html')");
 expect('Shared engine',engine,"site('es/caminando-con-jesus.html')");
-expect('Spanish Walking hub',hub,'href="la-cruz-y-la-tumba-vacia.html"');
+expect('Spanish Walking hub',hub,`href="${finaleFile}"`);
 
 for(const [label,value] of [
   ['Juan 13:1','los amó hasta el final'],

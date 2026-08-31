@@ -1,11 +1,11 @@
 (()=>{
 const register=()=>window.NLDG_GAME_PACKS?.register({
- id:'general-bible',name:'General Bible',description:'A mixed-audience starter pack covering major Bible people, events, teachings, and common misconceptions.',version:'1.0.0',author:'No Labels, Designed by God',games:['scripture-or-suspicion','jeopardy','wheel','survey'],audiences:['kids','teens','adults','family','mixed'],
+ id:'general-bible',name:'General Bible',description:'A mixed-audience starter pack covering major Bible people, events, teachings, and common misconceptions.',version:'1.0.1',author:'No Labels, Designed by God',games:['scripture-or-suspicion','jeopardy','wheel','survey'],audiences:['kids','teens','adults','family','mixed'],
  questions:[
  {id:'sos-001',game:'scripture-or-suspicion',prompt:'Noah built an ark.',answer:'Scripture',category:'Genesis',difficulty:'easy',audience:['kids','family','mixed'],scripture:'Genesis 6:14'},
- {id:'sos-002',game:'scripture-or-suspicion',prompt:'God helps those who help themselves is a Bible verse.',answer:'Suspicion',category:'Biblical Wisdom',difficulty:'easy',audience:['teens','adults','family','mixed']},
+ {id:'sos-002',game:'scripture-or-suspicion',prompt:'God helps those who help themselves is a Bible verse.',answer:'Suspicion',category:'Biblical Wisdom',difficulty:'easy',audience:['teens','adults','family','mixed'],scripture:'Psalm 121:2'},
  {id:'sos-003',game:'scripture-or-suspicion',prompt:'James teaches that faith without works is dead.',answer:'Scripture',category:'General Epistles',difficulty:'medium',audience:['teens','adults','mixed'],scripture:'James 2:26'},
- {id:'sos-004',game:'scripture-or-suspicion',prompt:'Paul was one of Jesus’ original twelve disciples.',answer:'Suspicion',category:'Acts and Paul',difficulty:'easy',audience:['kids','teens','family','mixed']},
+ {id:'sos-004',game:'scripture-or-suspicion',prompt:'Paul was one of Jesus’ original twelve disciples.',answer:'Suspicion',category:'Acts and Paul',difficulty:'easy',audience:['kids','teens','family','mixed'],scripture:'Matthew 10:2-4'},
  {id:'sos-005',game:'scripture-or-suspicion',prompt:'Jesus taught His followers to pray for their enemies.',answer:'Scripture',category:'Jesus',difficulty:'medium',audience:['teens','adults','family','mixed'],scripture:'Matthew 5:44'},
  {id:'sos-006',game:'scripture-or-suspicion',prompt:'The Bible says money itself is the root of all evil.',answer:'Suspicion',category:'Biblical Wisdom',difficulty:'medium',audience:['teens','adults','mixed'],scripture:'1 Timothy 6:10'},
  {id:'sos-007',game:'scripture-or-suspicion',prompt:'Lydia was a seller of purple cloth.',answer:'Scripture',category:'Acts and Paul',difficulty:'medium',audience:['teens','adults','mixed'],scripture:'Acts 16:14'},

@@ -22,16 +22,16 @@ const completePaths=[
 
 const standalone=[
   {href:'biblia-para-principiantes'+html,file:['es','biblia-para-principiantes'+html].join('/')},
-  {href:'como-estudiar-la-biblia'+html,file:['es','como-estudiar-la-biblia'+html].join('/'),source:'study-scripture-context'+html},
+  {href:'como-estudiar-la-biblia'+html,file:['es','como-estudiar-la-biblia'+html].join('/')},
   {href:'de-adan-a-abram'+html,file:['es','de-adan-a-abram'+html].join('/'),source:'study-genesis-genealogy-foundations'+html,ntv:true,block:'study-block'},
   {href:'por-que-dos-genealogias'+html,file:['es','por-que-dos-genealogias'+html].join('/'),source:'study-genealogy-of-jesus'+html,ntv:true,block:'study-block'},
   {href:'la-ofrenda-de-la-viuda'+html,file:['es','la-ofrenda-de-la-viuda'+html].join('/'),source:'study-widows-mite'+html,ntv:true,block:'context-block'},
   {href:'verte-con-los-ojos-de-dios'+html,file:['es','verte-con-los-ojos-de-dios'+html].join('/'),source:'study-identity'+html,ntv:true},
   {href:'el-duelo-de-envejecer'+html,file:['es','el-duelo-de-envejecer'+html].join('/'),source:'study-grief-of-aging'+html,ntv:true},
   {href:'escapismo-vs-esperanza-eterna'+html,file:['es','escapismo-vs-esperanza-eterna'+html].join('/'),source:'study-escapism'+html,ntv:true},
-  {href:'fe-en-la-tormenta'+html,file:['es','fe-en-la-tormenta'+html].join('/'),source:'study-storm'+html},
-  {href:'gracia-y-responsabilidad'+html,file:['es','gracia-y-responsabilidad'+html].join('/'),source:'study-grace-accountability'+html},
-  {href:'pacificadores-en-un-mundo-dividido'+html,file:['es','pacificadores-en-un-mundo-dividido'+html].join('/'),source:'study-peacemakers'+html}
+  {href:'fe-en-la-tormenta'+html,file:['es','fe-en-la-tormenta'+html].join('/')},
+  {href:'gracia-y-responsabilidad'+html,file:['es','gracia-y-responsabilidad'+html].join('/')},
+  {href:'pacificadores-en-un-mundo-dividido'+html,file:['es','pacificadores-en-un-mundo-dividido'+html].join('/')}
 ];
 
 for(const item of [...completePaths,...standalone]){

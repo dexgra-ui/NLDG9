@@ -31,7 +31,8 @@ document.getElementById('gameName').textContent=titles[slug];document.title=`${t
 if(['scripture-or-suspicion','who-am-i','bible-jeopardy','lightning-round','memory-match'].includes(slug))document.getElementById('contentStatus').textContent='Interfaz y banco completo de contenido revisados en español';
 if(slug==='finish-the-verse'){
  document.getElementById('ntvCredit').hidden=false;
- document.getElementById('contentStatus').textContent=group==='family'?'Interfaz y banco Familia revisados en español · NTV':'Interfaz en español · banco NTV de esta audiencia aún en revisión';
+ const reviewed={family:'Familia',preschool:'Preescolar'};
+ document.getElementById('contentStatus').textContent=reviewed[group]?`Interfaz y banco ${reviewed[group]} revisados en español · NTV`:'Interfaz en español · banco NTV de esta audiencia aún en revisión';
 }
 const english=new URL('../multi-team-game-v095.html',location.href);english.searchParams.set('game',game);english.searchParams.set('group',group);document.getElementById('englishGame').href=english.href;
 const spanish=new URL(location.href);spanish.searchParams.set('game',game);spanish.searchParams.set('group',group);document.getElementById('spanishGame').href=spanish.href;
@@ -40,11 +41,11 @@ window.NLDG_SPANISH_GAME={game,slug,group,titles};
 </script>
 <script src="juegos-contenido-escritura-sospecha.js?v=1.0.0"></script>
 <script src="juegos-contenido-quien-soy.js?v=1.0.0"></script>
-<script src="juegos-contenido-completa-versiculo.js?v=1.0.0"></script>
+<script src="juegos-contenido-completa-versiculo.js?v=1.1.0"></script>
 <script src="juegos-contenido-trivia-biblica.js?v=1.0.0"></script>
 <script src="juegos-contenido-ronda-relampago.js?v=1.0.0"></script>
 <script src="juegos-contenido-memoria.js?v=1.0.0"></script>
 <script src="juegos-host.js?v=1.2.0"></script>
-<script src="juegos-contenido-aplicador.js?v=1.4.0"></script>
+<script src="juegos-contenido-aplicador.js?v=1.5.0"></script>
 </body>
 </html>

@@ -43,6 +43,17 @@ Before publishing, confirm all of the following:
 
 If a request can be made safe by shortening or redacting it, do so without changing its meaning. If not, keep it off the public wall and, when appropriate, let the submitter know it can still be held privately in prayer.
 
+## Spanish Prayer Wall translations
+
+The English-approved public request remains the canonical moderation record. A reviewed Spanish display translation may be added under the optional `es` field in `prayer-wall-data.js` only after the English public version has already passed the checklist above.
+
+- Translate only the already-approved public title, display name, category, request, and answered update.
+- Do not add context, explanation, identifying details, medical detail, names, locations, or other information that is not present in the approved public version.
+- Preserve the meaning and tone of the approved request rather than embellishing it.
+- Apply the same privacy and safety review to the Spanish display text before publishing it.
+- If a safe reviewed translation is not available yet, the Spanish Prayer Center may show the approved English text and clearly identify it as original English text.
+- A Spanish translation never changes the submitter's original sharing permission or creates a second public request.
+
 ## Private requests
 
 Private requests are never copied into `prayer-wall-data.js`. Keep private requests in the designated ministry prayer-care channel only. Do not forward them beyond people who genuinely need access for prayer care or safety response.

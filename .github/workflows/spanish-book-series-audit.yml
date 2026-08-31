@@ -1,0 +1,48 @@
+name: Spanish Book Series Audit
+
+on:
+  push:
+    paths:
+      - 'ruth-study.html'
+      - 'ruth-study-data.js'
+      - 'ruth-study-guide.js'
+      - 'ruth-study-data-es.js'
+      - 'book-study-series.js'
+      - 'book-study-series-es.js'
+      - 'es/rut-estudio.html'
+      - 'es/biblical-study-map-links.js'
+      - 'es/estudios-biblicos.html'
+      - 'nldg-i18n.js'
+      - 'scripts/spanish-book-series-audit.mjs'
+      - '.github/workflows/spanish-book-series-audit.yml'
+  pull_request:
+    paths:
+      - 'ruth-study.html'
+      - 'ruth-study-data.js'
+      - 'ruth-study-guide.js'
+      - 'ruth-study-data-es.js'
+      - 'book-study-series.js'
+      - 'book-study-series-es.js'
+      - 'es/rut-estudio.html'
+      - 'es/biblical-study-map-links.js'
+      - 'es/estudios-biblicos.html'
+      - 'nldg-i18n.js'
+      - 'scripts/spanish-book-series-audit.mjs'
+      - '.github/workflows/spanish-book-series-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  spanish-book-series:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit Spanish book series
+        run: node scripts/spanish-book-series-audit.mjs

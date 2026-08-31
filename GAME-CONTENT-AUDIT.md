@@ -22,6 +22,7 @@ Every question should be checked for:
 - Finish the Verse must be checked line by line against NTV before a Spanish question is published.
 - Do not mix NTV wording with RVR60, NVI, NBLA, or another Spanish translation inside the same published question bank.
 - Games that show a Scripture reference without quoting the verse may localize the Bible-book name without changing the underlying reference.
+- Published NTV verse fragments must display the NTV/Tyndale credit line supplied with the Spanish content module.
 
 ## Game review order
 
@@ -36,6 +37,13 @@ Every question should be checked for:
 - Spanish standard: Nueva Traducción Viviente (NTV).
 - Compare every Spanish verse ending, answer choice, and reference against NTV.
 - Avoid mixing wording from different translations in one question.
+- Spanish audience review status:
+  - Family: ✅ 20/20 reviewed in NTV
+  - Preschool: pending
+  - Kids: pending
+  - Teens: pending
+  - Adults: pending
+- Family is the first published Spanish NTV bank. Other audiences remain in English until their own NTV review is complete.
 
 ### 3. Scripture or Suspicion
 

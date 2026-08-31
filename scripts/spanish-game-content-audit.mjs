@@ -70,6 +70,53 @@ async function auditScriptureOrSuspicion(){
   notes.push(`${label}: verified every Spanish prompt, Scripture/Suspicion label, and localized Scripture reference.`);
 }
 
+async function auditFinishVerse(){
+  const label='Finish the Verse';
+  let extra,spanish;
+  try{
+    const source=await fs.readFile('finish-the-verse.html','utf8');
+    const match=source.match(/const EXTRA=(\{[\s\S]*?\});\s*const BANK=/);
+    if(!match)throw new Error('Could not read the Finish the Verse audience banks.');
+    extra=vm.runInNewContext(`(${match[1]})`,Object.create(null));
+    spanish=await readModule('es/juegos-contenido-completa-versiculo.js','NLDG_ES_FINISH_VERSE',label);
+  }catch(error){errors.push(error.message);return;}
+
+  if(spanish.translation!=='NTV')errors.push(`[${label}] Spanish translation standard must be NTV; found ${spanish.translation||'none'}.`);
+  if(spanish.sourceAudience!=='family')errors.push(`[${label}] This release must be scoped to the Family audience; found ${spanish.sourceAudience||'none'}.`);
+  if(!String(spanish.copyrightNotice||'').includes('NTV')||!String(spanish.copyrightNotice||'').includes('2010')||!String(spanish.copyrightNotice||'').includes('Tyndale'))errors.push(`[${label}] Missing required NTV/Tyndale copyright credit metadata.`);
+
+  const sourceQuestions=extra?.family;
+  if(!Array.isArray(sourceQuestions)){errors.push(`[${label}] Missing canonical Family audience bank.`);return;}
+  if(sourceQuestions.length!==20)errors.push(`[${label}] Expected 20 canonical Family questions; found ${sourceQuestions.length}.`);
+  if(spanish.sourceQuestionCount!==sourceQuestions.length)errors.push(`[${label}] Spanish module declares ${spanish.sourceQuestionCount} Family questions; canonical bank has ${sourceQuestions.length}.`);
+
+  const displayEntries=spanish.entries||{};
+  if(Object.keys(displayEntries).length!==sourceQuestions.length)errors.push(`[${label}] Expected exactly ${sourceQuestions.length} reviewed Spanish entries for this Family release; found ${Object.keys(displayEntries).length}.`);
+  const sourceReferences=new Set();
+
+  for(const item of sourceQuestions){
+    if(!Array.isArray(item)||item.length!==4){errors.push(`[${label}] Malformed canonical Family question.`);continue;}
+    const [reference,prompt,answer,choices]=item;
+    sourceReferences.add(reference);
+    const entry=displayEntries[reference];
+    if(!entry){errors.push(`[${label}] Missing reviewed NTV Family entry: ${reference}`);continue;}
+    if(entry.verified!==true)errors.push(`[${label}] NTV Family entry is not marked verified: ${reference}`);
+    if(entry.sourceAnswer!==answer)errors.push(`[${label}] Source-answer mismatch for ${reference}: expected "${answer}", found "${entry.sourceAnswer}".`);
+    if(!Array.isArray(choices)||!choices.includes(answer))errors.push(`[${label}] Canonical correct answer is not present in choices: ${reference}`);
+    if((String(prompt).match(/____/g)||[]).length!==1)errors.push(`[${label}] Canonical question must contain exactly one blank: ${reference}`);
+    if((String(entry.prompt||'').match(/____/g)||[]).length!==1)errors.push(`[${label}] Spanish NTV question must contain exactly one blank: ${reference}`);
+    for(const choice of choices||[]){if(!entry.choiceMap?.[choice])errors.push(`[${label}] Missing Spanish display choice "${choice}" for ${reference}`);}
+    if(entry.choiceMap?.[answer]!==entry.answer)errors.push(`[${label}] Spanish correct-answer display does not match choice map for ${reference}`);
+    const translated=(choices||[]).map(choice=>entry.choiceMap?.[choice]);
+    if(translated.every(Boolean)&&new Set(translated).size!==translated.length)errors.push(`[${label}] Spanish answer choices collapse into duplicates for ${reference}`);
+    if(!hasLocalizedReference(reference,spanish.referenceBooks||{}))errors.push(`[${label}] Missing Spanish Bible-book label for reference ${reference}`);
+  }
+
+  if(sourceReferences.size!==sourceQuestions.length)errors.push(`[${label}] Family bank contains duplicate Scripture references, which is incompatible with reference-keyed NTV display entries.`);
+  notes.push(`${label}: verified ${sourceQuestions.length} Family questions in the reviewed NTV display module.`);
+  notes.push(`${label}: verified source-answer mapping, choice coverage, localized references, NTV metadata, and copyright credit.`);
+}
+
 async function auditBibleTrivia(){
   const label='Bible Trivia';
   let packs,spanish,fallback;
@@ -180,6 +227,7 @@ async function auditMemory(){
 }
 
 await auditScriptureOrSuspicion();
+await auditFinishVerse();
 await auditBibleTrivia();
 await auditGame({
   label:'Who Am I',

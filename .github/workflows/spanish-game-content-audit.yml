@@ -4,7 +4,10 @@ on:
   pull_request:
     paths:
       - 'who-am-i.html'
+      - 'lightning-round.html'
       - 'es/juegos-contenido-quien-soy.js'
+      - 'es/juegos-contenido-ronda-relampago.js'
+      - 'es/juegos-contenido-aplicador.js'
       - 'es/juegos-host.js'
       - 'es/juego.html'
       - 'scripts/spanish-game-content-audit.mjs'
@@ -13,7 +16,10 @@ on:
     branches: [main]
     paths:
       - 'who-am-i.html'
+      - 'lightning-round.html'
       - 'es/juegos-contenido-quien-soy.js'
+      - 'es/juegos-contenido-ronda-relampago.js'
+      - 'es/juegos-contenido-aplicador.js'
       - 'es/juegos-host.js'
       - 'es/juego.html'
       - 'scripts/spanish-game-content-audit.mjs'

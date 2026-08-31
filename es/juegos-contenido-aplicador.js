@@ -4,7 +4,8 @@ const outer=document.getElementById('gameHostFrame');
 if(!outer)return;
 const contentBySlug={
 'who-am-i':window.NLDG_ES_WHO_AM_I?{prompts:window.NLDG_ES_WHO_AM_I.prompts,labels:window.NLDG_ES_WHO_AM_I.names}:null,
-'lightning-round':window.NLDG_ES_LIGHTNING||null
+'lightning-round':window.NLDG_ES_LIGHTNING||null,
+'memory-match':window.NLDG_ES_MEMORY||null
 };
 const content=contentBySlug[state.slug];
 if(!content)return;
@@ -14,6 +15,10 @@ const translateGameDoc=doc=>{
 if(!doc)return;
 const file=(doc.location?.pathname||'').split('/').pop();
 if(file!==state.game)return;
+if(state.slug==='memory-match'){
+ doc.querySelectorAll('#grid .card').forEach(card=>{const raw=card.textContent.trim();if(content.labels?.[raw])setText(card,content.labels[raw])});
+ return;
+}
 const question=doc.getElementById('question');
 if(question){if(!question.dataset.nldgSourcePrompt)question.dataset.nldgSourcePrompt=question.textContent.trim();const source=question.dataset.nldgSourcePrompt;if(content.prompts?.[source])setText(question,content.prompts[source])}
 const buttons=[...doc.querySelectorAll('#answers .answer')];

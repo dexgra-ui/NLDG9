@@ -15,6 +15,14 @@ Every question should be checked for:
 - Translation consistency in Finish the Verse
 - No accidental duplicate or near-duplicate questions within the same audience bank
 
+## Spanish Scripture standard
+
+- English remains the canonical editorial source for the game architecture and source banks.
+- The **Nueva Traducción Viviente (NTV)** is the standard Spanish Bible translation for direct Scripture quotations and verse-completion wording.
+- Finish the Verse must be checked line by line against NTV before a Spanish question is published.
+- Do not mix NTV wording with RVR60, NVI, NBLA, or another Spanish translation inside the same published question bank.
+- Games that show a Scripture reference without quoting the verse may localize the Bible-book name without changing the underlying reference.
+
 ## Game review order
 
 ### 1. Who Am I?
@@ -25,8 +33,8 @@ Every question should be checked for:
 
 ### 2. Finish the Verse
 
-- Choose and document the translation used by each question bank.
-- Compare every verse ending and reference against that translation.
+- Spanish standard: Nueva Traducción Viviente (NTV).
+- Compare every Spanish verse ending, answer choice, and reference against NTV.
 - Avoid mixing wording from different translations in one question.
 
 ### 3. Scripture or Suspicion
@@ -40,6 +48,7 @@ Every question should be checked for:
 - Verify clue values match difficulty.
 - Check category labels, answers, names, dates, places, and events.
 - Remove clues that allow multiple reasonable responses.
+- Current English-source cleanup items to revisit: the generated Adam/Eve sentence grammar, Josiah being described as finding the Book of the Law rather than responding to it, and identifying John as the disciple Jesus loved without noting that this is the traditional identification.
 
 ### 5. Lightning Round
 

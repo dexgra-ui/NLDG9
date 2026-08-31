@@ -4,59 +4,70 @@ import process from 'node:process';
 
 const errors=[];
 const notes=[];
-
-const source=await fs.readFile('who-am-i.html','utf8');
-const bankMatch=source.match(/const BANK=(\{[\s\S]*?\});\s*const \$=/);
-if(!bankMatch){
-  console.error('FAILED\nERROR: Could not read the Who Am I question bank.');
-  process.exit(1);
-}
-
-let bank;
-try{bank=vm.runInNewContext(`(${bankMatch[1]})`,Object.create(null));}
-catch(error){
-  console.error(`FAILED\nERROR: Could not parse the Who Am I bank: ${error.message}`);
-  process.exit(1);
-}
-
-const spanishSource=await fs.readFile('es/juegos-contenido-quien-soy.js','utf8');
-const sandbox={window:{}};
-try{vm.runInNewContext(spanishSource,sandbox);}
-catch(error){
-  console.error(`FAILED\nERROR: Could not parse the Spanish Who Am I content module: ${error.message}`);
-  process.exit(1);
-}
-const spanish=sandbox.window.NLDG_ES_WHO_AM_I;
-if(!spanish?.prompts||!spanish?.names){
-  console.error('FAILED\nERROR: Spanish Who Am I module did not expose prompts and names.');
-  process.exit(1);
-}
-
 const groups=['preschool','kids','teens','adults','family'];
-const entries=[];
-for(const group of groups){
-  const questions=bank[group];
-  if(!Array.isArray(questions)){errors.push(`Missing canonical audience bank: ${group}`);continue;}
-  for(const item of questions){
-    if(!Array.isArray(item)||item.length!==3){errors.push(`Malformed canonical question in ${group}`);continue;}
-    const [prompt,answer,choices]=item;
-    entries.push({group,prompt,answer,choices});
-    if(!spanish.prompts[prompt])errors.push(`Missing Spanish prompt [${group}]: ${prompt}`);
-    if(!Array.isArray(choices)||!choices.includes(answer))errors.push(`Canonical answer is not present in choices [${group}]: ${prompt}`);
-    for(const choice of choices||[]){if(!spanish.names[choice])errors.push(`Missing Spanish answer label [${group}]: ${choice}`);}
-    if(!spanish.names[answer])errors.push(`Missing Spanish correct-answer label [${group}]: ${answer}`);
-    const translated=(choices||[]).map(choice=>spanish.names[choice]);
-    if(new Set(translated).size!==translated.length)errors.push(`Spanish answer labels collapse into duplicates [${group}]: ${prompt}`);
-  }
+
+async function readBank(file,label){
+  const source=await fs.readFile(file,'utf8');
+  const match=source.match(/const BANK=(\{[\s\S]*?\});\s*const \$=/);
+  if(!match)throw new Error(`Could not read the ${label} question bank.`);
+  try{return vm.runInNewContext(`(${match[1]})`,Object.create(null));}
+  catch(error){throw new Error(`Could not parse the ${label} bank: ${error.message}`);}
 }
 
-if(entries.length!==100)errors.push(`Expected 100 canonical Who Am I questions; found ${entries.length}.`);
-if(spanish.sourceQuestionCount!==entries.length)errors.push(`Spanish module declares ${spanish.sourceQuestionCount} source questions; canonical bank has ${entries.length}.`);
+async function readModule(file,globalName,label){
+  const source=await fs.readFile(file,'utf8');
+  const sandbox={window:{}};
+  try{vm.runInNewContext(source,sandbox);}
+  catch(error){throw new Error(`Could not parse the Spanish ${label} content module: ${error.message}`);}
+  const module=sandbox.window[globalName];
+  if(!module?.prompts)throw new Error(`Spanish ${label} module did not expose prompts.`);
+  return module;
+}
 
-notes.push(`Verified ${entries.length} canonical Who Am I questions across ${groups.length} audience banks.`);
-notes.push(`Verified Spanish prompt coverage for ${new Set(entries.map(item=>item.prompt)).size} unique source clues.`);
-notes.push(`Verified Spanish labels for every answer choice used by the canonical bank.`);
-notes.push('English Who Am I remains the canonical question bank; Spanish content is a display-layer counterpart.');
+async function auditGame({label,sourceFile,moduleFile,globalName,labelField}){
+  let bank,spanish;
+  try{bank=await readBank(sourceFile,label);spanish=await readModule(moduleFile,globalName,label);}
+  catch(error){errors.push(error.message);return;}
+  const labels=spanish[labelField];
+  if(!labels){errors.push(`Spanish ${label} module did not expose ${labelField}.`);return;}
+  const entries=[];
+  for(const group of groups){
+    const questions=bank[group];
+    if(!Array.isArray(questions)){errors.push(`[${label}] Missing canonical audience bank: ${group}`);continue;}
+    for(const item of questions){
+      if(!Array.isArray(item)||item.length!==3){errors.push(`[${label}] Malformed canonical question in ${group}`);continue;}
+      const [prompt,answer,choices]=item;
+      entries.push({group,prompt,answer,choices});
+      if(!spanish.prompts[prompt])errors.push(`[${label}] Missing Spanish prompt [${group}]: ${prompt}`);
+      if(!Array.isArray(choices)||!choices.includes(answer))errors.push(`[${label}] Canonical answer is not present in choices [${group}]: ${prompt}`);
+      for(const choice of choices||[]){if(!labels[choice])errors.push(`[${label}] Missing Spanish answer label [${group}]: ${choice}`);}
+      if(!labels[answer])errors.push(`[${label}] Missing Spanish correct-answer label [${group}]: ${answer}`);
+      const translated=(choices||[]).map(choice=>labels[choice]);
+      if(new Set(translated).size!==translated.length)errors.push(`[${label}] Spanish answer labels collapse into duplicates [${group}]: ${prompt}`);
+    }
+  }
+  if(entries.length!==100)errors.push(`[${label}] Expected 100 canonical questions; found ${entries.length}.`);
+  if(spanish.sourceQuestionCount!==entries.length)errors.push(`[${label}] Spanish module declares ${spanish.sourceQuestionCount} source questions; canonical bank has ${entries.length}.`);
+  notes.push(`${label}: verified ${entries.length} canonical questions across ${groups.length} audience banks.`);
+  notes.push(`${label}: verified Spanish prompt coverage for ${new Set(entries.map(item=>item.prompt)).size} unique source questions.`);
+  notes.push(`${label}: verified Spanish labels for every answer choice used by the canonical bank.`);
+}
 
+await auditGame({
+  label:'Who Am I',
+  sourceFile:'who-am-i.html',
+  moduleFile:'es/juegos-contenido-quien-soy.js',
+  globalName:'NLDG_ES_WHO_AM_I',
+  labelField:'names'
+});
+await auditGame({
+  label:'Lightning Round',
+  sourceFile:'lightning-round.html',
+  moduleFile:'es/juegos-contenido-ronda-relampago.js',
+  globalName:'NLDG_ES_LIGHTNING',
+  labelField:'labels'
+});
+
+notes.push('English game banks remain canonical; Spanish content modules are audited display-layer counterparts.');
 console.log([errors.length?'FAILED':'PASSED',...errors.map(item=>`ERROR: ${item}`),...notes.map(item=>`OK: ${item}`)].join('\n'));
 if(errors.length)process.exitCode=1;

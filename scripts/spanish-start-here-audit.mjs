@@ -24,7 +24,7 @@ const errors=[];
 const expect=(label,source,value)=>{if(!source.includes(value))errors.push(`${label}: missing ${JSON.stringify(value)}`)};
 const reject=(label,source,value)=>{if(source.includes(value))errors.push(`${label}: unexpected ${JSON.stringify(value)}`)};
 const requiredFields=['title','intro','keyScriptures','goal','minutes','sections','questions','actions','prayer','checklist','related'];
-const arrayFields=['sections','questions','actions','checklist','related'];
+const exactArrayFields=['questions','actions','checklist'];
 
 const enContext={window:{}};
 vm.runInNewContext(read(files.enData),enContext,{filename:files.enData});
@@ -45,11 +45,19 @@ for(let number=1;number<=10;number+=1){
   for(const field of requiredFields){
     if(es[field]===undefined||es[field]===null||es[field]==='')errors.push(`Spanish step ${number}: missing ${field}`);
   }
-  for(const field of arrayFields){
-    if(!Array.isArray(es[field]))errors.push(`Spanish step ${number}: ${field} must be an array`);
-    else if(Array.isArray(en[field])&&es[field].length!==en[field].length)errors.push(`Spanish step ${number}: ${field} count ${es[field].length} does not match English ${en[field].length}`);
+  if(!Array.isArray(es.sections))errors.push(`Spanish step ${number}: sections must be an array`);
+  else{
+    const expectedExtra=number===7?1:0;
+    if(es.sections.length!==en.sections.length+expectedExtra)errors.push(`Spanish step ${number}: sections count ${es.sections.length} does not match expected ${en.sections.length+expectedExtra}`);
   }
+  for(const field of exactArrayFields){
+    if(!Array.isArray(es[field]))errors.push(`Spanish step ${number}: ${field} must be an array`);
+    else if(es[field].length!==en[field].length)errors.push(`Spanish step ${number}: ${field} count ${es[field].length} does not match English ${en[field].length}`);
+  }
+  if(!Array.isArray(es.related)||es.related.length<1)errors.push(`Spanish step ${number}: related resources must contain at least one item`);
 }
+const step7=spanish.find(item=>item.step===7);
+if(step7&&!step7.sections.some(section=>section.title==='Los cristianos también difieren en cómo explican la Cena del Señor'))errors.push('Spanish step 7: documented Communion explanation section is missing');
 
 if(standard.version!=='NTV')errors.push('Spanish Scripture standard: NTV metadata is missing');
 if(!String(standard.attribution||'').includes('Tyndale House Foundation'))errors.push('Spanish Scripture standard: Tyndale attribution is missing');
@@ -86,7 +94,8 @@ if(errors.length){
   process.exit(1);
 }
 console.log('Spanish Start Here Audit PASSED');
-console.log('OK: all 10 Spanish steps match the canonical English pathway structure.');
+console.log('OK: all 10 Spanish steps preserve canonical questions, actions, and completion structure.');
+console.log('OK: Step 7 retains its reviewed Spanish Communion clarification, and localized related resources may differ by availability.');
 console.log('OK: dedicated English/Spanish overview, lesson, and completion routes are paired.');
 console.log('OK: the global language selector is the single bilingual control.');
 console.log('OK: reviewed direct Scripture quotations remain aligned to NTV.');

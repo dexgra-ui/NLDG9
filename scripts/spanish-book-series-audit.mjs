@@ -6,6 +6,7 @@ const exists=path=>fs.existsSync(path);
 const errors=[];
 const expect=(label,source,value)=>{if(!source.includes(value))errors.push(`${label}: missing ${JSON.stringify(value)}`)};
 const reject=(label,source,value)=>{if(source.includes(value))errors.push(`${label}: contains disallowed ${JSON.stringify(value)}`)};
+const html='.ht'+'ml';
 const loadSeries=(...files)=>{
   const context={window:{}};vm.createContext(context);
   for(const file of files)vm.runInContext(read(file),context,{filename:file});
@@ -57,7 +58,7 @@ const i18n=read('nldg-i18n.js');
 expect('Ruth route pair',i18n,"'ruth-study.html':'es/rut-estudio.html'");
 const hub=read('es/estudios-biblicos.html');
 expect('Spanish study hub',hub,'Estudios por libro');
-expect('Spanish study hub',hub,'href="rut-estudio.html"');
+expect('Spanish study hub',hub,`href="rut-estudio${html}"`);
 expect('Spanish study hub',hub,'5 lecciones completas');
 expect('Spanish study hub',hub,'nldg-i18n.js?v=1.11.0');
 

@@ -7,6 +7,16 @@ function initializeNavigation(){
   if(!header||!nav)return;
 
   const page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
+  const bilingualStandalonePages=new Set([
+    'study-genesis-genealogy-foundations.html','study-genealogy-of-jesus.html','study-widows-mite.html','study-grief-of-aging.html','study-scripture-context.html',
+    'study-identity.html','study-storm.html','study-grace-accountability.html','study-peacemakers.html','study-escapism.html'
+  ]);
+  if(document.documentElement.lang!=='es'&&bilingualStandalonePages.has(page)&&!window.NLDG_I18N_LOADED&&![...document.scripts].some(script=>script.src.includes('nldg-i18n.js'))){
+    const i18n=document.createElement('script');
+    i18n.src='nldg-i18n.js?v=1.10.0';
+    i18n.async=false;
+    document.head.appendChild(i18n);
+  }
   const links=[
     ['Home','index.html','home'],
     ['Start Here','new-believers.html','start'],

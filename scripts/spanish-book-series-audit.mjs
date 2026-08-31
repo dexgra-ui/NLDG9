@@ -122,7 +122,7 @@ if(exists('first-peter-study-data-es.js')){
   const pe=loadBookSeries('first-peter-study-data-es.js');
   const lesson1=pe.lessons?.[0],lesson4=pe.lessons?.[3],lesson5=pe.lessons?.[4],lesson6=pe.lessons?.[5],lesson7=pe.lessons?.[6],lesson8=pe.lessons?.[7];
   for(const lesson of pe.lessons||[])if(!String(lesson.scripture||'').startsWith('1 Pedro '))errors.push(`1 Peter lesson ${lesson.number}: Scripture reference must use the Spanish book name 1 Pedro.`);
-  if(!lesson1?.teaching?.[4]?.body?.includes('no exige celebrar el abuso'))errors.push('1 Peter lesson 1 must preserve the safeguard that trials do not make abuse good.');
+  if(!lesson1?.teaching?.[4]?.body?.toLowerCase().includes('no exige celebrar el abuso'))errors.push('1 Peter lesson 1 must preserve the safeguard that trials do not make abuse good.');
   if(!lesson4?.teaching?.[2]?.body?.includes('trata de personas')||!lesson4?.teaching?.[2]?.body?.includes('abuso laboral'))errors.push('1 Peter lesson 4 must reject slavery, trafficking, and workplace abuse as Christian ideals.');
   if(!lesson4?.teaching?.[4]?.body?.includes('control coercitivo')||!lesson4?.teaching?.[4]?.body?.includes('violencia sexual'))errors.push('1 Peter lesson 4 must preserve the domestic-abuse safeguard in the household text.');
   if(!lesson5?.teaching?.[1]?.body?.includes('denunciar')||!lesson5?.teaching?.[1]?.body?.includes('protección legal'))errors.push('1 Peter lesson 5 must preserve reporting, boundaries, and lawful-protection language.');

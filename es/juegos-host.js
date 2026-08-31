@@ -1,5 +1,6 @@
 (()=>{
 const state=window.NLDG_SPANISH_GAME||{};
+const whoAmI=window.NLDG_ES_WHO_AM_I||{prompts:{},names:{}};
 const frame=document.getElementById('gameHostFrame');
 if(!frame)return;
 const spanishHub=new URL('juegos.html',location.href).href;
@@ -41,6 +42,7 @@ const translateExact=(el)=>{if(!el)return;const raw=el.textContent.trim();if(exa
 const translateOptions=(doc)=>doc.querySelectorAll('option').forEach(option=>{const raw=option.textContent.trim();if(exact[raw])option.textContent=exact[raw];else if(/^([0-9]+) pairs$/.test(raw))option.textContent=raw.replace(' pairs',' parejas')});
 const translateLabels=(doc)=>doc.querySelectorAll('label').forEach(label=>{for(const node of label.childNodes){if(node.nodeType!==3)continue;const raw=node.textContent.trim();if(exact[raw]){node.textContent=node.textContent.replace(raw,exact[raw]);break}const team=raw.match(/^Team (\d+)$/);if(team){node.textContent=node.textContent.replace(raw,`Equipo ${team[1]}`);break}}});
 const translateDefaults=(doc)=>doc.querySelectorAll('input').forEach(input=>{if(exact[input.value])input.value=exact[input.value]});
+const spanishName=value=>whoAmI.names?.[value]||value;
 const dynamic=(text)=>{
 let value=String(text||'').trim();if(!value)return value;if(exact[value])return exact[value];
 let m;
@@ -52,7 +54,7 @@ if((m=value.match(/^(\d+) matching clues available\. The board favors unused and
 if((m=value.match(/^(\d+) questions available$/)))return `${m[1]} preguntas disponibles`;
 if((m=value.match(/^(\d+) of (\d+) unused in this pack$/)))return `${m[1]} de ${m[2]} sin usar en este paquete`;
 if((m=value.match(/^Reference: (.+)$/)))return `Referencia: ${m[1]}`;
-if((m=value.match(/^The answer is (.+)\.$/)))return `La respuesta es ${m[1]}.`;
+if((m=value.match(/^The answer is (.+)\.$/)))return `La respuesta es ${state.slug==='who-am-i'?spanishName(m[1]):m[1]}.`;
 if((m=value.match(/^You answered (\d+) of (\d+) correctly\.$/)))return `Respondiste correctamente ${m[1]} de ${m[2]}.`;
 if((m=value.match(/^You completed the board in (\d+) turns\.$/)))return `Completaste el tablero en ${m[1]} turnos.`;
 if((m=value.match(/^Team (Grace|Truth):/)))return value.replace('Team Grace','Equipo Gracia').replace('Team Truth','Equipo Verdad').replace(/ points/g,' puntos');
@@ -69,7 +71,7 @@ if(value.includes(' points.'))value=value.replace(/ points/g,' puntos');
 return value;
 };
 const patchDialogs=(doc)=>{const win=doc.defaultView;if(!win||win.__nldgEsDialogs)return;win.__nldgEsDialogs=true;const alert0=win.alert.bind(win),confirm0=win.confirm.bind(win),prompt0=win.prompt.bind(win);const modal=text=>({
-'Exit this game?':'¿Salir de este juego?','Reset all team scores?':'¿Reiniciar la puntuación de todos los equipos?','Recent-pair history has been reset.':'Se reinició el historial de parejas recientes.','Fullscreen is blocked here. On iPad, use Share → Add to Home Screen.':'La pantalla completa está bloqueada aquí. En iPad, usa Compartir → Añadir a pantalla de inicio.','Fullscreen is unavailable in this browser':'La pantalla completa no está disponible en este navegador.','What should be reviewed about this question?':'¿Qué debe revisarse de esta pregunta?','Check wording or biblical accuracy':'Revisar redacción o precisión bíblica'}[text]||text);win.alert=message=>alert0(modal(message));win.confirm=message=>confirm0(modal(message));win.prompt=(message,defaultValue)=>prompt0(modal(message),modal(defaultValue));};
+'Exit this game?':'¿Salir de este juego?','Exit this round?':'¿Salir de esta ronda?','Reset all team scores?':'¿Reiniciar la puntuación de todos los equipos?','Recent-question history has been reset.':'Se reinició el historial de preguntas recientes.','Recent-pair history has been reset.':'Se reinició el historial de parejas recientes.','Fullscreen is blocked here. On iPad, use Share → Add to Home Screen.':'La pantalla completa está bloqueada aquí. En iPad, usa Compartir → Añadir a pantalla de inicio.','Fullscreen is unavailable in this browser':'La pantalla completa no está disponible en este navegador.','What should be reviewed about this question?':'¿Qué debe revisarse de esta pregunta?','Check wording or biblical accuracy':'Revisar redacción o precisión bíblica'}[text]||text);win.alert=message=>alert0(modal(message));win.confirm=message=>confirm0(modal(message));win.prompt=(message,defaultValue)=>prompt0(modal(message),modal(defaultValue));};
 const rewriteGameCenter=(doc)=>doc.querySelectorAll('a').forEach(link=>{if(link.getAttribute('href')!==playFile)return;link.href=spanishHub;link.target='_top';if(link.textContent.trim()==='Game Center'||link.textContent.trim()==='Return to Game Center')link.textContent=link.textContent.trim()==='Game Center'?'Centro de juegos':'Volver al Centro de juegos'});
 const translateV095=(doc)=>{
 patchDialogs(doc);rewriteGameCenter(doc);setText(doc.getElementById('tieLabel'),dynamic(doc.getElementById('tieLabel')?.textContent));setText(doc.getElementById('tieTitle'),dynamic(doc.getElementById('tieTitle')?.textContent));setText(doc.getElementById('tieMessage'),dynamic(doc.getElementById('tieMessage')?.textContent));['startTiebreaker','acceptTie','playAgain'].forEach(id=>translateExact(doc.getElementById(id)));translateExact(doc.querySelector('#finalChoices a[href]'));doc.querySelector('h1.sr-only')?.replaceChildren(document.createTextNode('Juego bíblico por equipos de No Labels'));
@@ -78,12 +80,20 @@ const translateV094=(doc)=>{
 patchDialogs(doc);rewriteGameCenter(doc);setText(doc.getElementById('gameTitle'),gameTitles[state.slug]||'Juego en equipo');setText(doc.querySelector('.hero h1'),'Configuración del juego');setText(doc.querySelector('.hero p'),'Elige la audiencia y de uno a ocho equipos. Las respuestas correctas pueden incluir efectos opcionales de sonido y celebración.');translateLabels(doc);translateOptions(doc);translateDefaults(doc);setText(doc.getElementById('begin'),'Comenzar juego');
 const ids={previous:'← Equipo',nextTeam:'Equipo →',undo:'Deshacer',skip:'Saltar',flagQuestion:'Marcar pregunta',fullscreen:'Pantalla completa',resetScores:'Reiniciar puntuaciones'};Object.entries(ids).forEach(([id,text])=>setText(doc.getElementById(id),text));const effects=doc.getElementById('effectsToggle');if(effects)setText(effects,effects.textContent.includes('Off')?'🔇 Efectos desactivados':'🔊 Efectos activados');const status=doc.getElementById('status');if(status)setText(status,dynamic(status.textContent));doc.querySelectorAll('#awardPanel button').forEach(button=>setText(button,dynamic(button.textContent)));
 };
+const translateWhoAmI=(doc)=>{
+if(state.slug!=='who-am-i'||!whoAmI.prompts)return;
+const question=doc.getElementById('question');if(question){const raw=question.textContent.trim();if(whoAmI.prompts[raw])setText(question,whoAmI.prompts[raw])}
+doc.querySelectorAll('#answers .answer').forEach(button=>{if(!button.dataset.nldgSourceChoice)button.dataset.nldgSourceChoice=button.textContent.trim();const source=button.dataset.nldgSourceChoice;if(whoAmI.names[source])setText(button,whoAmI.names[source])});
+const feedback=doc.getElementById('feedback');if(feedback){const raw=feedback.textContent.trim();const miss=raw.match(/^The answer is (.+)\.$/);if(miss){const correct=miss[1];setText(feedback,`La respuesta es ${spanishName(correct)}.`);doc.querySelectorAll('#answers .answer').forEach(button=>{if(button.dataset.nldgSourceChoice===correct)button.classList.add('correct')})}}
+};
 const translateRaw=(doc,file)=>{
 const slug=slugOf(file);patchDialogs(doc);rewriteGameCenter(doc);const title=gameTitles[slug];if(title){setText(doc.querySelector('.brand small'),title);setText(doc.querySelector('.hero h1'),title);if(descriptions[slug])setText(doc.querySelector('.hero p'),descriptions[slug]);doc.title=`${title} | No Labels, Designed by God`;}
 translateLabels(doc);translateOptions(doc);translateDefaults(doc);translateExact(doc.getElementById('fullscreen'));
 const buttonIds=['start','resetHistory','quit','next','again','newBoard','endGame','reveal','noAward'];buttonIds.forEach(id=>translateExact(doc.getElementById(id)));
 const reset=doc.getElementById('resetHistory');if(reset){const map={'scripture-or-suspicion':'Reiniciar historial del paquete','bible-jeopardy':'Reiniciar historial de pistas','memory-match':'Reiniciar parejas recientes'};setText(reset,map[slug]||'Reiniciar preguntas recientes')}
-doc.querySelectorAll('.stats .stat').forEach(translateExact);['bankCount','historyCount','packNotice','notice','counter','feedback','summary','reference','status'].forEach(id=>{const el=doc.getElementById(id);if(el)setText(el,dynamic(el.textContent))});
+doc.querySelectorAll('.stats .stat').forEach(translateExact);
+if(slug==='who-am-i')translateWhoAmI(doc);
+['bankCount','historyCount','packNotice','notice','counter','feedback','summary','reference','status'].forEach(id=>{const el=doc.getElementById(id);if(el)setText(el,dynamic(el.textContent))});
 const complete=doc.querySelector('#completeView h2');if(complete){const map={'memory-match':'¡Encontraste todas las parejas!','bible-jeopardy':'¡Juego completado!'};setText(complete,map[slug]||'¡Ronda completada!')}
 if(slug==='scripture-or-suspicion'){doc.querySelectorAll('.answer[data-answer="Scripture"]').forEach(el=>setText(el,'Escritura'));doc.querySelectorAll('.answer[data-answer="Suspicion"]').forEach(el=>setText(el,'Sospecha'))}
 if(slug==='bible-jeopardy'){doc.querySelectorAll('.cell.header').forEach(el=>setText(el,dynamic(el.textContent)));const meta=doc.getElementById('meta');if(meta){let text=meta.textContent;Object.entries(exact).forEach(([en,es])=>{if(['Old Testament','Jesus & Gospels','Acts & Church','Faith & Teaching','Bible People & Events'].includes(en))text=text.replace(en,es)});setText(meta,text)}['award1','award2'].forEach(id=>{const el=doc.getElementById(id);if(el)setText(el,dynamic(el.textContent))})}

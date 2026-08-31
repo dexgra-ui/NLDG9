@@ -36,6 +36,11 @@ async function readGamePack(file,label){
   return registered;
 }
 
+const hasLocalizedReference=(reference,referenceBooks)=>{
+  const books=Object.keys(referenceBooks||{}).sort((a,b)=>b.length-a.length);
+  return books.some(book=>reference===book||reference.startsWith(`${book} `));
+};
+
 async function auditScriptureOrSuspicion(){
   const label='Scripture or Suspicion';
   let packs,spanish;
@@ -54,10 +59,7 @@ async function auditScriptureOrSuspicion(){
     if(!['Scripture','Suspicion'].includes(item.answer))errors.push(`[${label}] Unexpected canonical answer "${item.answer}": ${item.prompt}`);
     if(!labels[item.answer])errors.push(`[${label}] Missing Spanish answer label "${item.answer}": ${item.prompt}`);
     if(!item.scripture)errors.push(`[${label}] Missing supporting Scripture reference: ${item.prompt}`);
-    if(item.scripture){
-      const books=Object.keys(referenceBooks).sort((a,b)=>b.length-a.length);
-      if(!books.some(book=>item.scripture===book||item.scripture.startsWith(`${book} `)))errors.push(`[${label}] Missing Spanish Bible-book label for reference ${item.scripture}`);
-    }
+    if(item.scripture&&!hasLocalizedReference(item.scripture,referenceBooks))errors.push(`[${label}] Missing Spanish Bible-book label for reference ${item.scripture}`);
   }
   const uniquePrompts=new Set(entries.map(item=>item.prompt));
   if(entries.length!==80)errors.push(`[${label}] Expected 80 canonical questions across two active packs; found ${entries.length}.`);
@@ -66,6 +68,47 @@ async function auditScriptureOrSuspicion(){
   if(spanish.sourcePackCount!==packs.length)errors.push(`[${label}] Spanish module declares ${spanish.sourcePackCount} source packs; audit found ${packs.length}.`);
   notes.push(`${label}: verified ${entries.length} canonical questions across ${packs.length} active source packs.`);
   notes.push(`${label}: verified every Spanish prompt, Scripture/Suspicion label, and localized Scripture reference.`);
+}
+
+async function auditBibleTrivia(){
+  const label='Bible Trivia';
+  let packs,spanish,fallback;
+  try{
+    packs=await Promise.all([
+      readGamePack('game-packs/general-bible.js','General Bible pack'),
+      readGamePack('game-packs/general-bible-expanded.js','General Bible Expanded pack')
+    ]);
+    spanish=await readModule('es/juegos-contenido-trivia-biblica.js','NLDG_ES_BIBLE_TRIVIA',label);
+    const source=await fs.readFile('bible-jeopardy.html','utf8');
+    const match=source.match(/const \$=id=>document\.getElementById\(id\);const FALLBACK=(\[[\s\S]*?\]);let scores=/);
+    if(!match)throw new Error('Could not read the Bible Trivia fallback clue bank.');
+    fallback=vm.runInNewContext(`(${match[1]})`,Object.create(null));
+  }catch(error){errors.push(error.message);return;}
+  const entries=packs.flatMap(pack=>(pack.questions||[]).filter(item=>item.game==='jeopardy'));
+  const referenceBooks=spanish.referenceBooks||{};
+  for(const item of entries){
+    if(!spanish.prompts?.[item.prompt])errors.push(`[${label}] Missing Spanish pack clue: ${item.prompt}`);
+    if(!spanish.answers?.[item.answer])errors.push(`[${label}] Missing Spanish pack answer: ${item.answer}`);
+    if(!item.scripture)errors.push(`[${label}] Missing Scripture reference: ${item.prompt}`);
+    if(item.scripture&&!hasLocalizedReference(item.scripture,referenceBooks))errors.push(`[${label}] Missing Spanish Bible-book label for reference ${item.scripture}`);
+  }
+  for(const item of fallback||[]){
+    if(!Array.isArray(item)||item.length!==4){errors.push(`[${label}] Malformed fallback clue.`);continue;}
+    const [,prompt,answer,scripture]=item;
+    if(!spanish.prompts?.[prompt])errors.push(`[${label}] Missing Spanish fallback clue: ${prompt}`);
+    if(!spanish.answers?.[answer])errors.push(`[${label}] Missing Spanish fallback answer: ${answer}`);
+    if(!scripture)errors.push(`[${label}] Missing fallback Scripture reference: ${prompt}`);
+    if(scripture&&!hasLocalizedReference(scripture,referenceBooks))errors.push(`[${label}] Missing Spanish Bible-book label for fallback reference ${scripture}`);
+  }
+  const uniquePrompts=new Set(entries.map(item=>item.prompt));
+  if(entries.length!==63)errors.push(`[${label}] Expected 63 canonical pack clues across two active packs; found ${entries.length}.`);
+  if(uniquePrompts.size!==entries.length)errors.push(`[${label}] Canonical packs contain duplicate Trivia prompts: ${entries.length-uniquePrompts.size} duplicate(s).`);
+  if((fallback||[]).length!==5)errors.push(`[${label}] Expected 5 fallback clues; found ${(fallback||[]).length}.`);
+  if(spanish.sourceQuestionCount!==entries.length)errors.push(`[${label}] Spanish module declares ${spanish.sourceQuestionCount} source clues; canonical packs have ${entries.length}.`);
+  if(spanish.sourcePackCount!==packs.length)errors.push(`[${label}] Spanish module declares ${spanish.sourcePackCount} source packs; audit found ${packs.length}.`);
+  if(spanish.fallbackQuestionCount!==(fallback||[]).length)errors.push(`[${label}] Spanish module declares ${spanish.fallbackQuestionCount} fallback clues; game has ${(fallback||[]).length}.`);
+  notes.push(`${label}: verified ${entries.length} canonical pack clues across ${packs.length} active source packs.`);
+  notes.push(`${label}: verified ${(fallback||[]).length} fallback clues plus every Spanish prompt, answer, and localized Scripture reference.`);
 }
 
 async function auditGame({label,sourceFile,moduleFile,globalName,labelField}){
@@ -137,6 +180,7 @@ async function auditMemory(){
 }
 
 await auditScriptureOrSuspicion();
+await auditBibleTrivia();
 await auditGame({
   label:'Who Am I',
   sourceFile:'who-am-i.html',

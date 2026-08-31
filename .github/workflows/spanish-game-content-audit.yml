@@ -1,0 +1,37 @@
+name: Spanish Game Content Audit
+
+on:
+  pull_request:
+    paths:
+      - 'who-am-i.html'
+      - 'es/juegos-contenido-quien-soy.js'
+      - 'es/juegos-host.js'
+      - 'es/juego.html'
+      - 'scripts/spanish-game-content-audit.mjs'
+      - '.github/workflows/spanish-game-content-audit.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'who-am-i.html'
+      - 'es/juegos-contenido-quien-soy.js'
+      - 'es/juegos-host.js'
+      - 'es/juego.html'
+      - 'scripts/spanish-game-content-audit.mjs'
+      - '.github/workflows/spanish-game-content-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  spanish-game-content:
+    name: Spanish game question coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify Spanish game content coverage
+        run: node scripts/spanish-game-content-audit.mjs

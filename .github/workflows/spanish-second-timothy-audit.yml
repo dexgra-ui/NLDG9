@@ -1,0 +1,44 @@
+name: Spanish 2 Timothy Audit
+
+on:
+  push:
+    paths:
+      - 'second-timothy-study.html'
+      - 'second-timothy-study-data.js'
+      - 'second-timothy-study-guide.js'
+      - 'second-timothy-study-data-es.js'
+      - 'es/segunda-timoteo-estudio.html'
+      - 'es/estudios-biblicos.html'
+      - 'nldg-i18n.js'
+      - 'scripts/spanish-second-timothy-audit.mjs'
+      - 'scripts/spanish-titus-audit.mjs'
+      - '.github/workflows/spanish-second-timothy-audit.yml'
+  pull_request:
+    paths:
+      - 'second-timothy-study.html'
+      - 'second-timothy-study-data.js'
+      - 'second-timothy-study-guide.js'
+      - 'second-timothy-study-data-es.js'
+      - 'es/segunda-timoteo-estudio.html'
+      - 'es/estudios-biblicos.html'
+      - 'nldg-i18n.js'
+      - 'scripts/spanish-second-timothy-audit.mjs'
+      - 'scripts/spanish-titus-audit.mjs'
+      - '.github/workflows/spanish-second-timothy-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  spanish-second-timothy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit Spanish 2 Timothy study
+        run: node scripts/spanish-second-timothy-audit.mjs

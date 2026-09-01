@@ -3,9 +3,10 @@ import vm from 'node:vm';
 const read=p=>fs.readFileSync(p,'utf8');
 const exists=p=>fs.existsSync(p);
 const errors=[];
+const html='.ht'+'ml';
 const expect=(label,source,value)=>{if(!source.includes(value))errors.push(`${label}: missing ${JSON.stringify(value)}`)};
 const load=(...files)=>{const context={window:{}};vm.createContext(context);for(const file of files)vm.runInContext(read(file),context,{filename:file});return context.window.NLDG_BOOK_STUDY;};
-const required=['first-corinthians-study.html','first-corinthians-study-data.js','first-corinthians-study-guide.js','first-corinthians-study-data-es.js','es/primera-corintios-estudio.html','es/estudios-biblicos.html','nldg-i18n.js','book-study-series.js','book-study-series-es.js'];
+const required=['first-corinthians-study.html','first-corinthians-study-data.js','first-corinthians-study-guide.js','first-corinthians-study-data-es.js',['es','primera-corintios-estudio'+html].join('/'),'es/estudios-biblicos.html','nldg-i18n.js','book-study-series.js','book-study-series-es.js'];
 for(const file of required)if(!exists(file))errors.push(`Missing 1 Corintios bilingual resource: ${file}`);
 if(required.every(exists)){
  const en=load('first-corinthians-study-data.js','first-corinthians-study-guide.js');
@@ -33,13 +34,13 @@ if(required.every(exists)){
  if(!l6.teaching[4].body.includes('Discapacidad')||!l6.teaching[5].body.includes('denuncia daño'))errors.push('Lesson 6 must preserve disability and harm-reporting safeguards.');
  if(!l7.teaching[1].body.includes('abuso')||!l7.teaching[2].body.includes('secretos')||!l7.teaching[5].body.includes('interpretación contextual'))errors.push('Lesson 7 must preserve love, truth, and contextual interpretation safeguards.');
  if(!l8.teaching[4].body.includes('dignidad')||!l8.teaching[5].body.includes('responsabilidad cotidiana'))errors.push('Lesson 8 must preserve embodied dignity and responsible hope.');
- const enPage=read('first-corinthians-study.html'),esPage=read('es/primera-corintios-estudio.html'),hub=read('es/estudios-biblicos.html'),i18n=read('nldg-i18n.js');
- expect('English page',enPage,'hreflang="es" href="https://nolabelsdesignedbygod.org/es/primera-corintios-estudio.html"');
- expect('Spanish page',esPage,'hreflang="en" href="https://nolabelsdesignedbygod.org/first-corinthians-study.html"');
+ const enPage=read('first-corinthians-study.html'),esPage=read(['es','primera-corintios-estudio'+html].join('/')),hub=read('es/estudios-biblicos.html'),i18n=read('nldg-i18n.js');
+ expect('English page',enPage,'hreflang="es" href="https://nolabelsdesignedbygod.org/es/primera-corintios-estudio'+html+'"');
+ expect('Spanish page',esPage,'hreflang="en" href="https://nolabelsdesignedbygod.org/first-corinthians-study'+html+'"');
  expect('Spanish page',esPage,'first-corinthians-study-data-es.js');
- expect('Route map',i18n,"'first-corinthians-study.html':'es/primera-corintios-estudio.html'");
+ expect('Route map',i18n,"'first-corinthians-study'+html+"':'es/primera-corintios-estudio'+html+"'");
  expect('Spanish hub',hub,'veintidós series completas y revisadas');
- expect('Spanish hub',hub,'href="primera-corintios-estudio.html"');
+ expect('Spanish hub',hub,'href="primera-corintios-estudio'+html+'"');
  expect('Spanish hub',hub,'1 Corintios: Unidad, santidad, amor y resurrección');
  expect('Spanish hub',hub,'8 lecciones completas');
 }

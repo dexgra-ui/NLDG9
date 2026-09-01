@@ -65,6 +65,12 @@ const standardSeries=[
     enData:'third-john-study-data.js',enGuide:'third-john-study-guide.js',esData:'third-john-study-data-es.js',
     enPage:'third-john-study.html',esPage:'es/tercera-juan-estudio.html',esRoute:'tercera-juan-estudio',
     canonical:'https://nolabelsdesignedbygod.org/es/tercera-juan-estudio.html',completion:'3 lecciones completas',i18nVersion:'1.18.0'
+  },
+  {
+    label:'Jude',expected:4,bookPrefix:'Judas ',
+    enData:'jude-study-data.js',enGuide:'jude-study-guide.js',esData:'jude-study-data-es.js',
+    enPage:'jude-study.html',esPage:'es/judas-estudio.html',esRoute:'judas-estudio',
+    canonical:'https://nolabelsdesignedbygod.org/es/judas-estudio.html',completion:'4 lecciones completas',i18nVersion:'1.19.0'
   }
 ];
 
@@ -124,10 +130,10 @@ for(const config of standardSeries){
 }
 
 expect('Spanish study hub',hub,'Estudios por libro');
-expect('Spanish study hub',hub,'ocho series completas y revisadas');
-expect('Spanish study hub',hub,'nldg-i18n.js?v=1.18.0');
+expect('Spanish study hub',hub,'nueve series completas y revisadas');
+expect('Spanish study hub',hub,'nldg-i18n.js?v=1.19.0');
 for(const marker of ['Estudio bíblico libro por libro','Lección $1 de $2','El progreso se guarda en este dispositivo','Referencia bíblica: NTV','location.pathname.split'])expect('Spanish book-series adapter',adapter,marker);
-for(const route of ['rut-estudio.','filipenses-estudio.','primera-pedro-estudio.','segunda-pedro-estudio.','primera-juan-estudio.','segunda-juan-estudio.','tercera-juan-estudio.'])reject('Spanish book-series adapter',adapter,route);
+for(const route of ['rut-estudio.','filipenses-estudio.','primera-pedro-estudio.','segunda-pedro-estudio.','primera-juan-estudio.','segunda-juan-estudio.','tercera-juan-estudio.','judas-estudio.'])reject('Spanish book-series adapter',adapter,route);
 expect('Spanish Ruth geography bridge',mapBridge,"rut:{");
 expect('Spanish Ruth geography bridge',mapBridge,'../biblical-map-tribes.html');
 expect('Spanish Philippians geography bridge',mapBridge,"filipenses:{");
@@ -186,6 +192,18 @@ if(exists('third-john-study-data-es.js')){
   for(const phrase of ['evidencia clara','liderazgo coercitivo','experiencias traumáticas','confidencialidad','reportes de daño'])if(!guide.includes(phrase))errors.push(`3 John leader safeguards must preserve ${phrase}.`);
 }
 
+if(exists('jude-study-data-es.js')){
+  const s=loadBookSeries('jude-study-data-es.js'),l1=s.lessons?.[0],l2=s.lessons?.[1],l3=s.lessons?.[2],l4=s.lessons?.[3],guide=(s.postLessonMapGuideBlocks||[]).map(x=>x.text||'').join(' ');
+  if(!l1?.context?.includes('desacuerdo menor')||!l1?.teaching?.[3]?.body?.includes('preferencias personales'))errors.push('Jude lesson 1 must distinguish core gospel threats from secondary or personal disagreements.');
+  if(!l2?.context?.includes('se discuten entre intérpretes')||!l2?.context?.includes('no requieren especulación'))errors.push('Jude lesson 2 must preserve interpretive humility around debated Jewish traditions.');
+  if(!l2?.teaching?.[2]?.body?.includes('no autoriza rumores')||!l2?.teaching?.[2]?.body?.includes('no podemos demostrar'))errors.push('Jude lesson 2 must reject rumor-driven or overconfident spiritual-warfare claims.');
+  if(!l3?.teaching?.[2]?.body?.includes('no invita a fijar fechas')||!l3?.teaching?.[2]?.body?.includes('titulares'))errors.push('Jude lesson 3 must reject date-setting and headline speculation.');
+  if(!l4?.teaching?.[4]?.body?.includes('misericordia')||!l4?.teaching?.[4]?.body?.includes('sospecha automática'))errors.push('Jude lesson 4 must preserve compassionate care for doubters.');
+  if(!l4?.teaching?.[5]?.body?.includes('Dios')||!l4?.teaching?.[5]?.body?.includes('control'))errors.push('Jude lesson 4 must ground final security in God rather than human control.');
+  for(const phrase of ['No llames falsa enseñanza a cada desacuerdo','evidencia','rumores','control centrado en el líder','experiencias traumáticas','confidencialidad','ayuda pastoral o profesional'])if(!guide.includes(phrase))errors.push(`Jude leader safeguards must preserve ${phrase}.`);
+  if(!s.lessons?.every(x=>x.caution?.includes('superioridad nacional')&&x.caution?.includes('rumores')))errors.push('Jude must reject national superiority and rumor in severe-warning applications.');
+}
+
 // James uses its mature custom renderer and data shape.
 const jamesRequired=['james-series.html','james-series-data.js','james-series-data-es.js','james-series.js','es/santiago-estudio.html'];
 for(const file of jamesRequired)if(!exists(file))errors.push(`James: required bilingual resource is missing: ${file}`);
@@ -215,7 +233,7 @@ if(errors.length){
   process.exit(1);
 }
 console.log('Spanish Book Series Audit PASSED');
-console.log('OK: Ruth 5, Philippians 6, James 10, 1 Peter 8, 2 Peter 5, 1 John 7, 2 John 3, and 3 John 3 have protected English/Spanish parity.');
+console.log('OK: Ruth 5, Philippians 6, James 10, 1 Peter 8, 2 Peter 5, 1 John 7, 2 John 3, 3 John 3, and Jude 4 have protected English/Spanish parity.');
 console.log('OK: NTV is declared without mixed Spanish Bible-version labels.');
-console.log('OK: all eight published Spanish book-series routes and library entries are protected.');
+console.log('OK: all nine published Spanish book-series routes and library entries are protected.');
 console.log('OK: book-specific pastoral and interpretive safeguards remain enforced.');

@@ -1,0 +1,281 @@
+const epLessonsEs=[
+{
+ number:1,
+ title:"Toda bendición espiritual en Cristo",
+ scripture:"Efesios 1:1–14",
+ supporting:["Deuteronomio 7:6–9; Juan 15:16; Romanos 8:28–39; 1 Pedro 1:3–9"],
+ question:"¿Cómo transforma el propósito salvador de Dios nuestra identidad, adoración y esperanza?",
+ truth:"Antes de que los creyentes hagan algo, Dios los bendice en Cristo mediante elección, adopción, redención, perdón, revelación, herencia y el sello del Espíritu.",
+ goal:"Leer la alabanza inicial de Pablo como adoración y fundamentar la identidad cristiana en la acción bondadosa de Dios, no en los logros.",
+ opening:"¿Qué etiquetas o logros tientan más a las personas a definir su valor?",
+ context:"Pablo comienza con una larga expresión de alabanza. La frase repetida «en Cristo» ubica cada bendición en la unión con Jesús, y Padre, Hijo y Espíritu actúan juntos en la salvación.",
+ teaching:[
+  {heading:"MOVIMIENTO 1 — LA BENDICIÓN COMIENZA CON DIOS",body:"El pasaje centra la iniciativa de Dios. La identidad cristiana comienza con la gracia recibida, no con una identidad fabricada por nosotros mismos."},
+  {heading:"MOVIMIENTO 2 — LA ELECCIÓN ES EN CRISTO Y PARA SANTIDAD",body:"La elección no es una insignia de superioridad. Dios elige un pueblo en Cristo para vivir en santidad y amor delante de Él."},
+  {heading:"MOVIMIENTO 3 — LA ADOPCIÓN CREA PERTENENCIA",body:"Por medio de Jesús, los creyentes son recibidos como hijos e hijas conforme al propósito amoroso de Dios."},
+  {heading:"MOVIMIENTO 4 — LA REDENCIÓN COSTÓ LA SANGRE DE CRISTO",body:"El perdón es gracia abundante, no indiferencia divina ante el pecado. Cristo carga con el costo de nuestra liberación."},
+  {heading:"MOVIMIENTO 5 — EL PROPÓSITO DE DIOS ES CÓSMICO",body:"El misterio de su voluntad es reunir todas las cosas en Cristo. La salvación es personal, pero nunca meramente privada."},
+  {heading:"MOVIMIENTO 6 — EL ESPÍRITU SELLA NUESTRA ESPERANZA",body:"El Espíritu prometido marca nuestra pertenencia y garantiza la herencia hasta la redención final. La seguridad descansa en la fidelidad de Dios."}
+ ],
+ questions:["¿Qué acciones pertenecen a Dios?","¿Qué aporta la frase «en Cristo»?","¿Por qué la elección no es superioridad?","¿Qué revela la adopción?","¿Cómo se relacionan redención y perdón?","¿Cuál es el plan de Dios para todas las cosas?","¿Qué asegura el sello del Espíritu?","¿Qué identidad falsa debe ceder ante la gracia?"],
+ examination:"¿Qué aspecto de la acción bondadosa de Dios te cuesta más recibir como verdad personal?",
+ challenge:"Convierte el pasaje en alabanza diaria: agradece al Padre, al Hijo y al Espíritu por acciones específicas de salvación.",
+ caution:"No conviertan la elección en un debate abstracto separado de Cristo, la santidad, el amor y la adoración, ni en una razón para sentirse superiores.",
+ prayer:"Dios bendito, enséñanos a vivir desde la identidad y la esperanza que nos das gratuitamente en Cristo. Amén."
+},
+{
+ number:2,
+ title:"Los ojos del corazón iluminados",
+ scripture:"Efesios 1:15–23",
+ supporting:["Salmo 8; Colosenses 1:15–20; Filipenses 3:7–14; Hebreos 2:5–9"],
+ question:"¿Qué necesitan ver los creyentes para vivir con esperanza, valor y sabiduría?",
+ truth:"El crecimiento espiritual requiere visión dada por Dios para conocer nuestra esperanza, su herencia entre su pueblo y su poder de resurrección bajo el gobierno supremo de Cristo.",
+ goal:"Aprender el patrón de gratitud y oración de Pablo y comprender la exaltación de Cristo y su autoridad sobre la iglesia.",
+ opening:"¿Cuál es la diferencia entre poseer información y realmente comprender su significado?",
+ context:"Después de alabar el plan salvador de Dios, Pablo da gracias por la fe y el amor de la iglesia. No ora por novedades, sino por un conocimiento más profundo de Dios y una percepción más clara de realidades ya dadas en Cristo.",
+ teaching:[
+  {heading:"MOVIMIENTO 1 — LA FE Y EL AMOR PRODUCEN GRATITUD",body:"Pablo reconoce la gracia en otros y responde con gratitud antes de instruir o corregir."},
+  {heading:"MOVIMIENTO 2 — CONOCER A DIOS REQUIERE REVELACIÓN",body:"El Espíritu da sabiduría para comprender la verdad. Esto no evita las Escrituras ni el pensamiento cuidadoso; nos hace receptivos para entender."},
+  {heading:"MOVIMIENTO 3 — EL CORAZÓN TIENE OJOS",body:"El conocimiento bíblico involucra a la persona interior y forma deseo, imaginación, confianza y acción."},
+  {heading:"MOVIMIENTO 4 — LA ESPERANZA ESTÁ ARRAIGADA EN EL LLAMADO DE DIOS",body:"La esperanza cristiana no es optimismo sobre las circunstancias, sino confianza en el futuro prometido por Dios."},
+  {heading:"MOVIMIENTO 5 — EL PODER DE LA RESURRECCIÓN YA ESTÁ OBRANDO",body:"El poder que levantó a Jesús sostiene a los creyentes. Muchas veces se ve en perseverancia, santidad, reconciliación y testimonio fiel."},
+  {heading:"MOVIMIENTO 6 — CRISTO GOBIERNA PARA EL BIEN DE LA IGLESIA",body:"Jesús está exaltado sobre todo poder y es la cabeza de su cuerpo. Ninguna autoridad rival es definitiva."}
+ ],
+ questions:["¿Qué celebra Pablo?","¿Por qué orar por sabiduría y revelación?","¿Qué son los ojos del corazón?","¿Cómo crea esperanza el llamado de Dios?","¿Qué significa la herencia de Dios entre su pueblo?","¿Cómo puede verse el poder de resurrección de maneras silenciosas?","¿Qué significa que Cristo sea la cabeza?","¿Qué necesitas que Dios te ayude a ver?"],
+ examination:"¿Tus oraciones están dominadas por el deseo de cambiar las circunstancias o por conocer más profundamente a Dios dentro de ellas?",
+ challenge:"Ora Efesios 1:17–23 por nombre por tres personas esta semana.",
+ caution:"No prometan resultados dramáticos como prueba del poder de resurrección. Honren también la transformación silenciosa y la perseverancia.",
+ prayer:"Dios de gloria, ilumina nuestros corazones para conocer tu esperanza y el poder de la resurrección de Cristo. Amén."
+},
+{
+ number:3,
+ title:"Salvados por gracia para buenas obras",
+ scripture:"Efesios 2:1–10",
+ supporting:["Ezequiel 36:24–28; Lucas 15:11–24; Romanos 3:21–28; Tito 3:3–8"],
+ question:"¿Por qué la salvación solo puede recibirse como gracia y qué clase de vida produce esa gracia?",
+ truth:"Dios da vida con Cristo a personas espiritualmente muertas por gracia mediante la fe y las crea de nuevo para buenas obras que Él preparó.",
+ goal:"Confrontar tanto la desesperación como el orgullo siguiendo el movimiento de muerte a vida y de regalo a propósito.",
+ opening:"¿Por qué las personas prefieren pensar que deben ganar la salvación o que están demasiado lejos para ser rescatadas?",
+ context:"Pablo describe a la humanidad bajo el pecado, el mundo y la rebelión espiritual. El giro decisivo no es la mejora humana, sino «Pero Dios», cuya misericordia y amor dan vida con Cristo a quienes estaban muertos.",
+ teaching:[
+  {heading:"MOVIMIENTO 1 — EL PECADO ES MÁS QUE IMPERFECCIÓN",body:"La muerte espiritual describe cautiverio e incapacidad, no simplemente malos hábitos que necesitan refinamiento."},
+  {heading:"MOVIMIENTO 2 — NINGÚN GRUPO ESTÁ POR ENCIMA DE OTRO",body:"Pablo incluye a «todos nosotros». El evangelio elimina la superioridad porque todos dependemos de la misericordia."},
+  {heading:"MOVIMIENTO 3 — PERO DIOS CAMBIA LA HISTORIA",body:"Su rica misericordia y gran amor inician la vida nueva con Cristo. La gracia alcanza a quienes no pueden presumir que la merecen."},
+  {heading:"MOVIMIENTO 4 — LA UNIÓN CON CRISTO DA UNA NUEVA POSICIÓN",body:"Los creyentes reciben vida, son levantados y sentados con Cristo. La identidad queda anclada en su victoria."},
+  {heading:"MOVIMIENTO 5 — LA SALVACIÓN ES REGALO RECIBIDO POR FE",body:"La gracia es la fuente y la fe recibe. Las obras no pueden comprar salvación ni establecer rango espiritual."},
+  {heading:"MOVIMIENTO 6 — LA GRACIA CREA OBRAS CON PROPÓSITO",body:"Las buenas obras son resultado, no precio. La obra de Dios en nosotros produce una vida preparada de amor y obediencia."}
+ ],
+ questions:["¿Cómo describe Pablo la vida apartada de Cristo?","¿Por qué incluye a todos bajo el pecado?","¿Qué anuncia «Pero Dios»?","¿Qué da la unión con Cristo?","¿Cómo se relacionan gracia y fe?","¿Por qué queda excluida la jactancia?","¿Qué lugar tienen entonces las buenas obras?","¿Dónde necesitas libertad de la desesperación o del orgullo?"],
+ examination:"¿Estás tratando de pagar la gracia, demostrar tu valor o usar la gracia como excusa para no actuar?",
+ challenge:"Realiza una buena obra como respuesta agradecida a la gracia, sin usarla para buscar reconocimiento.",
+ caution:"Eviten lenguaje que deshumanice a quienes no creen. La muerte espiritual describe necesidad de Dios, no permiso para el desprecio.",
+ prayer:"Dios misericordioso, gracias por darnos vida con Cristo. Que tu regalo produzca hermosas obras de amor. Amén."
+},
+{
+ number:4,
+ title:"Cristo es nuestra paz",
+ scripture:"Efesios 2:11–22",
+ supporting:["Isaías 57:14–21; Juan 17:20–23; Hechos 10:34–48; Gálatas 3:26–29"],
+ question:"¿Cómo crea la cruz un pueblo reconciliado en medio de hostilidades profundamente arraigadas?",
+ truth:"Cristo no solo trae paz; Él es nuestra paz, derriba la hostilidad y crea una nueva humanidad con acceso compartido al Padre.",
+ goal:"Comprender la exclusión de los gentiles, la obra reconciliadora de la cruz y el llamado de la iglesia a hacer visible la pertenencia.",
+ opening:"¿Qué se necesita para pasar de coexistir a una reconciliación verdadera?",
+ context:"Los gentiles habían estado social y espiritualmente alejados de las promesas del pacto. Pablo no borra esa historia; anuncia que quienes estaban lejos han sido acercados y que Cristo derribó la pared de hostilidad.",
+ teaching:[
+  {heading:"MOVIMIENTO 1 — RECORDAR LA EXCLUSIÓN DEBE PRODUCIR HUMILDAD",body:"Pablo pide a los creyentes gentiles recordar su antigua distancia, no para avergonzarlos, sino para profundizar gratitud y solidaridad."},
+  {heading:"MOVIMIENTO 2 — CRISTO MISMO ES NUESTRA PAZ",body:"La paz no es evitar educadamente el conflicto ni negar el mal. Descansa en Jesús y en su cruz de entrega propia."},
+  {heading:"MOVIMIENTO 3 — LA HOSTILIDAD ES LLEVADA A LA MUERTE",body:"La cruz reconcilia a las personas con Dios y entre sí. La reconciliación pertenece al corazón social del evangelio."},
+  {heading:"MOVIMIENTO 4 — UNA NUEVA HUMANIDAD NO EXIGE SER IGUALES EN TODO",body:"Cristo crea pertenencia compartida sin fingir que la historia, la cultura o las diferencias nunca existieron."},
+  {heading:"MOVIMIENTO 5 — TODOS TENEMOS ACCESO POR UN MISMO ESPÍRITU",body:"Ningún grupo étnico o religioso posee acceso privilegiado al Padre. El acceso es por Cristo en el Espíritu."},
+  {heading:"MOVIMIENTO 6 — LA IGLESIA SE CONVIERTE EN MORADA DE DIOS",body:"Quienes antes eran extranjeros se convierten en ciudadanos, familia y piedras vivas unidas. La reconciliación debe convertirse en comunidad visible."}
+ ],
+ questions:["¿Qué debían recordar los gentiles?","¿Por qué se llama a Cristo nuestra paz?","¿Qué hostilidad enfrenta la cruz?","¿La unidad borra las diferencias?","¿Qué confronta el acceso compartido?","¿Qué imágenes describen la pertenencia?","¿Dónde pueden las iglesias mantener paredes divisorias?","¿Qué práctica haría visible la reconciliación?"],
+ examination:"¿La pertenencia de quién te sientes tentado a tratar como secundaria? ¿Dónde te has conformado con una paz superficial?",
+ challenge:"Comparte una comida, escucha una historia o busca reparar una relación a través de una diferencia real sin exigir uniformidad.",
+ caution:"No apresuren a personas heridas por racismo, abuso o injusticia hacia una reconciliación barata. La verdad, el arrepentimiento, la reparación y la seguridad importan.",
+ prayer:"Jesús, nuestra paz, destruye la hostilidad y edifícanos como una morada reconciliada y verdadera para Dios. Amén."
+},
+{
+ number:5,
+ title:"El misterio, la iglesia y el amor de Cristo",
+ scripture:"Efesios 3:1–21",
+ supporting:["Isaías 49:5–6; Romanos 11:33–36; Colosenses 1:24–29; Apocalipsis 7:9–12"],
+ question:"¿Cómo usa Dios a la iglesia para mostrar su sabiduría y qué sostiene ese llamado?",
+ truth:"Dios revela la inclusión de las naciones en Cristo y fortalece a la iglesia por medio del Espíritu para conocer el amor inconmensurable de Cristo.",
+ goal:"Conectar la mayordomía y el sufrimiento de Pablo con el testimonio diverso de la iglesia, y luego orar por un amor arraigado y fortalecido por el Espíritu.",
+ opening:"¿Qué haría que la vida de una iglesia mostrara una sabiduría que el mundo a su alrededor no puede explicar?",
+ context:"Pablo interrumpe su oración para explicar el misterio confiado a él: los gentiles son coherederos, miembros iguales y participantes de Cristo. Luego vuelve a orar por fortaleza interior y una comunidad llena de la plenitud de Dios.",
+ teaching:[
+  {heading:"MOVIMIENTO 1 — EL SUFRIMIENTO DE PABLO ACOMPAÑA UNA MAYORDOMÍA",body:"Su prisión resulta del ministerio del evangelio. No glorifica el dolor, pero tampoco interpreta el sufrimiento fiel como derrota."},
+  {heading:"MOVIMIENTO 2 — EL MISTERIO ES INCLUSIÓN EN IGUALDAD",body:"Los gentiles no son invitados de segunda categoría. Son coherederos, miembros del mismo cuerpo y copartícipes por el evangelio."},
+  {heading:"MOVIMIENTO 3 — EL MINISTERIO ES GRACIA, NO ESTATUS",body:"Pablo llama a su ministerio un regalo y se describe con humildad. El llamado debe producir humildad, no celebridad."},
+  {heading:"MOVIMIENTO 4 — LA IGLESIA MUESTRA LA SABIDURÍA DE DIOS",body:"Un pueblo reconciliado y multiétnico hace visible la sabiduría de Dios incluso ante los poderes espirituales."},
+  {heading:"MOVIMIENTO 5 — EL ESPÍRITU FORTALECE A LA PERSONA INTERIOR",body:"Pablo pide que Cristo habite profundamente en los corazones por la fe. Un ministerio sostenible necesita estar arraigado en amor."},
+  {heading:"MOVIMIENTO 6 — EL AMOR DE CRISTO SUPERA TODA MEDIDA",body:"La iglesia comprende este amor en comunidad. Pablo termina confiando en que Dios obra mucho más de lo que pedimos o imaginamos."}
+ ],
+ questions:["¿Cómo entiende Pablo su encarcelamiento?","¿Qué igualdad concede el misterio?","¿Por qué el llamado debe producir humildad?","¿Cómo muestra la iglesia la sabiduría de Dios?","¿Qué logra la fortaleza interior?","¿Por qué comprendemos el amor juntos?","¿Cómo anima a la oración la doxología de Pablo?","¿Qué haría más visible la unidad de tu iglesia?"],
+ examination:"¿Ves el ministerio como posesión, logro o gracia confiada? ¿Estás suficientemente arraigado en el amor de Cristo para servir sin tener que demostrar tu valor?",
+ challenge:"Ora Efesios 3:14–21 cada día y fortalece el sentido de pertenencia igualitaria de una persona.",
+ caution:"Nunca usen el sufrimiento de Pablo para romantizar el abuso o el agotamiento. La fidelidad también incluye límites apropiados y cuidado.",
+ prayer:"Padre, fortalécenos por tu Espíritu y arráiganos juntos en el amor inconmensurable de Cristo. Amén."
+},
+{
+ number:6,
+ title:"Unidad y madurez en el cuerpo",
+ scripture:"Efesios 4:1–16",
+ supporting:["Salmo 133; Juan 13:34–35; Romanos 12:3–8; 1 Corintios 12:4–27"],
+ question:"¿Cómo preserva la iglesia la unidad dada por el Espíritu mientras crece hacia la madurez de Cristo?",
+ truth:"Un solo cuerpo comparte una esperanza y un Señor, mientras Cristo da gracia diversa para que cada miembro contribuya a una iglesia madura y amorosa.",
+ goal:"Unir humildad y paciencia con unidad doctrinal, diversidad de dones, ministerio equipado y verdad hablada en amor.",
+ opening:"¿Cuál es la diferencia entre unidad y uniformidad?",
+ context:"Pablo pasa de lo que Dios ha hecho al andar digno. La unidad ya creada por el Espíritu debe cuidarse mediante el carácter. Los dones de Cristo equipan a todo el cuerpo en lugar de concentrar el ministerio en unos pocos líderes visibles.",
+ teaching:[
+  {heading:"MOVIMIENTO 1 — EL ANDAR DIGNO COMIENZA CON EL CARÁCTER",body:"Humildad, amabilidad, paciencia y soportarnos unos a otros no son simples buenos modales; protegen la vida compartida."},
+  {heading:"MOVIMIENTO 2 — LA UNIDAD ES DADA Y DEBE SER CUIDADA",body:"Los creyentes no fabrican un solo cuerpo, pero sí deben esforzarse por preservar el vínculo de paz dado por el Espíritu."},
+  {heading:"MOVIMIENTO 3 — LA CONFESIÓN CENTRAL UNE A LA IGLESIA",body:"Un cuerpo, un Espíritu, una esperanza, un Señor, una fe, un bautismo y un Padre ofrecen un centro más profundo que nuestras preferencias."},
+  {heading:"MOVIMIENTO 4 — LA GRACIA ES DIVERSA",body:"Cristo da gracia según su medida. La diferencia de función no significa diferencia de valor."},
+  {heading:"MOVIMIENTO 5 — LOS LÍDERES EQUIPAN A LOS SANTOS",body:"Apóstoles, profetas, evangelistas, pastores y maestros preparan al pueblo de Dios para el ministerio en vez de realizar todo el ministerio por ellos."},
+  {heading:"MOVIMIENTO 6 — VERDAD Y AMOR PRODUCEN MADUREZ",body:"La iglesia resiste la inestabilidad hablando la verdad con amor. Cada parte contribuye mientras el cuerpo crece y se edifica."}
+ ],
+ questions:["¿Qué cualidades de carácter preservan la unidad?","¿Qué unidad ya ha sido dada?","¿Qué centra a la iglesia?","¿Cómo coexisten unidad y diversidad?","¿Cuál es la función de los líderes al equipar?","¿Qué caracteriza la inmadurez?","¿Por qué verdad y amor deben permanecer juntos?","¿Qué contribución te pide Cristo que hagas?"],
+ examination:"¿Confundes una preferencia personal con el centro esencial de la iglesia? ¿Solo consumes ministerio o también contribuyes?",
+ challenge:"Usa uno de tus dones para fortalecer a otra persona y practica una conversación difícil con verdad y amor.",
+ caution:"No usen la unidad para silenciar preocupaciones sobre daño o falsedad. La paz bíblica incluye verdad y reparación responsable.",
+ prayer:"Único Señor, haznos humildes, pacientes, equipados y maduros mientras cada miembro sirve con amor. Amén."
+},
+{
+ number:7,
+ title:"Quitar lo viejo y vestir lo nuevo",
+ scripture:"Efesios 4:17–5:20",
+ supporting:["Salmo 4; Romanos 12:1–2; Colosenses 3:1–17; Santiago 3:1–12"],
+ question:"¿Cómo se convierte la nueva identidad en Cristo en hábitos, palabras, sexualidad, amor y sabiduría transformados?",
+ truth:"La nueva vida reemplaza patrones corruptos con prácticas renovadas que imitan a Dios, caminan en amor, exponen la oscuridad y viven sabiamente en el Espíritu.",
+ goal:"Ir más allá de llamados vagos a mejorar identificando los patrones concretos de quitar y vestir que enseña Pablo.",
+ opening:"¿Por qué dejar una conducta dañina suele ser insuficiente si no la reemplazamos con una práctica fiel?",
+ context:"Pablo contrasta la vieja humanidad con la vida aprendida en Cristo. Los mandatos se dirigen a una comunidad y muestran que la santidad personal protege las relaciones y fortalece el testimonio público.",
+ teaching:[
+  {heading:"MOVIMIENTO 1 — LA RENOVACIÓN COMIENZA EN LA MENTE",body:"Los creyentes se quitan el viejo ser y se visten del nuevo mediante una mente renovada por la verdad que está en Jesús."},
+  {heading:"MOVIMIENTO 2 — LA VERDAD REEMPLAZA LA FALSEDAD",body:"Dejen la mentira y hablen verdad porque pertenecemos unos a otros. El engaño hiere a todo el cuerpo."},
+  {heading:"MOVIMIENTO 3 — EL ENOJO NO DEBE CONVERTIRSE EN DESTRUCCIÓN",body:"El enojo puede señalar que algo está mal, pero el enojo no resuelto o usado como arma abre espacio al mal. Enfrenten el conflicto sin pecar."},
+  {heading:"MOVIMIENTO 4 — EL TRABAJO Y LAS PALABRAS SE CONVIERTEN EN REGALOS",body:"Quien robaba trabaja para poder compartir; la palabra corrupta se reemplaza por palabras que edifican. La gracia no solo frena el daño: crea beneficio."},
+  {heading:"MOVIMIENTO 5 — IMITEN A DIOS CAMINANDO EN AMOR Y LUZ",body:"El amor entregado de Cristo gobierna sexualidad, codicia, humor y exposición de la oscuridad. La luz busca verdad y sanidad, no humillación."},
+  {heading:"MOVIMIENTO 6 — VIVAN CON SABIDURÍA Y LLENOS DEL ESPÍRITU",body:"Los creyentes aprovechan bien el tiempo, entienden la voluntad de Dios, rechazan el control de la intoxicación, adoran juntos y viven agradecidos."}
+ ],
+ questions:["¿Qué implica quitar y vestir?","¿Por qué la mentira daña al cuerpo?","¿Cómo debe manejarse el enojo?","¿Qué reemplaza el robo y la palabra corrupta?","¿Cómo define Cristo el amor?","¿Cuál es el propósito de exponer la oscuridad?","¿Qué caracteriza a una comunidad llena del Espíritu?","¿Qué cambio emparejado necesitas practicar?"],
+ examination:"¿Qué patrón dañino estás simplemente reprimiendo en vez de reemplazar con una práctica semejante a Cristo?",
+ challenge:"Elige un par: falsedad/verdad, robo/generosidad, palabras destructivas/ánimo, amargura/perdón o necedad/sabiduría.",
+ caution:"Exponer la oscuridad nunca debe convertirse en chisme o humillación pública. El abuso y el delito deben abordarse por canales seguros y responsables.",
+ prayer:"Espíritu Santo, renueva nuestras mentes y enséñanos a caminar en verdad, amor, luz y sabiduría. Amén."
+},
+{
+ number:8,
+ title:"Relaciones semejantes a Cristo bajo un solo Señor",
+ scripture:"Efesios 5:21–6:9",
+ supporting:["Génesis 1:26–28; Marcos 10:42–45; Gálatas 3:26–29; Colosenses 3:18–4:1"],
+ question:"¿Cómo transforma la reverencia a Cristo el poder y la responsabilidad en el matrimonio, la familia y el trabajo?",
+ truth:"Toda relación del hogar está bajo Cristo, comenzando con la sumisión mutua y exigiendo amor sacrificial, crianza sin provocar, integridad, justicia y libertad de amenazas.",
+ goal:"Leer las instrucciones del hogar dentro de la cultura romana y aplicarlas sin excusar coerción, abuso, desigualdad de dignidad o explotación.",
+ opening:"¿Qué cambia cuando la autoridad se entiende como responsabilidad delante de Cristo en vez de control sobre otras personas?",
+ context:"Los códigos domésticos romanos giraban alrededor del varón jefe de casa. Pablo comienza con someternos unos a otros y trata a cada miembro como moralmente responsable. Los esposos reciben el mandato más extenso: amar con el cuidado sacrificial de Cristo. A los amos se les recuerda que ellos también tienen un Amo.",
+ teaching:[
+  {heading:"MOVIMIENTO 1 — LA SUMISIÓN MUTUA ESTABLECE EL MARCO",body:"La reverencia a Cristo lleva a ceder el interés propio y buscar el bien del otro. Ningún cristiano responde solamente ante sí mismo."},
+  {heading:"MOVIMIENTO 2 — EL MATRIMONIO APUNTA AL AMOR DE PACTO DE CRISTO",body:"El misterio más profundo del pasaje se refiere a Cristo y la iglesia. El matrimonio debe reflejar cuidado fiel, nutritivo y sacrificial."},
+  {heading:"MOVIMIENTO 3 — LA SUMISIÓN NUNCA AUTORIZA ABUSO",body:"Nada aquí permite violencia, control coercitivo, violación dentro del matrimonio, amenazas o peligro. Buscar seguridad y ayuda es coherente con la verdad y la dignidad."},
+  {heading:"MOVIMIENTO 4 — LOS PADRES DEBEN CRIAR SIN PROVOCAR",body:"Los hijos son tratados como personas responsables, mientras los padres son llamados a no exasperarlos y a criarlos en el Señor. La disciplina nunca autoriza abuso físico, humillación o control cruel."},
+  {heading:"MOVIMIENTO 5 — EL TRABAJO SE REALIZA DELANTE DE CRISTO",body:"Las personas esclavizadas en Roma tenían libertad restringida. Pablo habla dentro de esa realidad sin presentar la esclavitud como el ideal de Dios. El trabajo moderno requiere integridad sin idolatrar a empleadores."},
+  {heading:"MOVIMIENTO 6 — EL PODER RESPONDE ANTE EL SEÑOR IMPARCIAL",body:"Los amos deben dejar las amenazas. Empleadores y líderes responderán ante Cristo por justicia, dignidad, seguridad y trato justo."}
+ ],
+ questions:["¿Por qué comenzar con el versículo 21?","¿Cómo define Cristo el amor matrimonial?","¿Qué interpretaciones abusivas deben rechazarse?","¿Qué limita la autoridad de los padres?","¿Cómo afecta al trabajo servir a Cristo?","¿Por qué la esclavitud no debe presentarse como ideal de Dios?","¿Qué advertencia confronta a quienes tienen poder?","¿Qué relación necesita más responsabilidad semejante a Cristo?"],
+ examination:"Si tienes poder, ¿las personas experimentan seguridad y dignidad contigo? Si estás siendo herido, ¿qué apoyo confiable puede ayudarte a avanzar hacia la seguridad?",
+ challenge:"Practica un acto de cuidado sacrificial, liderazgo justo, crianza que no provoque o establecimiento de límites saludables.",
+ caution:"Declaren claramente que el abuso es pecado. No presionen a nadie para revelar trauma ni hacia una reconciliación insegura. Ante peligro, busquen apoyo profesional, pastoral o de emergencia apropiado.",
+ prayer:"Señor Jesús, gobierna nuestros hogares y nuestro trabajo. Protege a las personas vulnerables, humilla al poderoso y enséñanos amor sacrificial. Amén."
+},
+{
+ number:9,
+ title:"Permanezcan firmes con la armadura de Dios",
+ scripture:"Efesios 6:10–24",
+ supporting:["Isaías 11:1–5; Isaías 59:15–20; Mateo 4:1–11; 2 Corintios 10:3–5"],
+ question:"¿Cómo permanecen firmes los creyentes contra el mal espiritual sin miedo, superstición u hostilidad hacia las personas?",
+ truth:"Dios provee su propia armadura para que los creyentes permanezcan firmes juntos mediante verdad, justicia, paz del evangelio, fe, salvación, Escritura y oración perseverante.",
+ goal:"Comprender la guerra espiritual como resistencia dependiente de Dios y conectar cada pieza de la armadura con el evangelio y la oración comunitaria.",
+ opening:"Cuando las personas piensan en guerra espiritual, ¿qué extremos poco saludables de negación o miedo pueden aparecer?",
+ context:"Pablo termina con imágenes tomadas de un soldado y del retrato de la armadura de Dios en Isaías. El enemigo es espiritual, no seres humanos. El mandato repetido es permanecer firmes, no convertir a oponentes humanos en blancos.",
+ teaching:[
+  {heading:"MOVIMIENTO 1 — LA FORTALEZA VIENE DEL SEÑOR",body:"Los creyentes son fortalecidos por el gran poder de Dios. La resistencia espiritual no es autosuficiencia ni fascinación con la oscuridad."},
+  {heading:"MOVIMIENTO 2 — LA LUCHA NO ES CONTRA LAS PERSONAS",body:"Las personas pueden participar en el daño, pero no deben ser deshumanizadas como el enemigo definitivo. Verdad y justicia pueden oponerse al mal sin odio."},
+  {heading:"MOVIMIENTO 3 — LA ARMADURA ES EL CARÁCTER DE DIOS Y SU EVANGELIO",body:"Verdad, justicia, paz, fe, salvación y Palabra de Dios no son objetos mágicos. Describen una vida asegurada y formada por Dios."},
+  {heading:"MOVIMIENTO 4 — LA META ES PERMANECER FIRMES",body:"Pablo repite permanecer y resistir. La resistencia fiel puede verse como rechazar mentiras, mantener integridad, buscar paz y soportar presión."},
+  {heading:"MOVIMIENTO 5 — LA ESCRITURA ES UN ARMA DADA POR EL ESPÍRITU",body:"La Palabra expone el engaño y guía la obediencia. Debe entenderse en contexto y no usarse como una colección de frases aisladas."},
+  {heading:"MOVIMIENTO 6 — LA ORACIÓN RODEA TODA LA BATALLA",body:"La oración es continua, alerta, amplia y orientada hacia otros. Pablo pide valentía para testificar del evangelio aun estando encadenado."}
+ ],
+ questions:["¿De dónde viene la fortaleza?","¿Por qué la carne y la sangre no son el enemigo?","¿Cómo podemos enfrentar el mal sin deshumanizar?","¿Qué representa cada pieza de la armadura?","¿Por qué se enfatiza permanecer firmes?","¿Cómo debe usarse la Escritura?","¿Qué caracteriza el mandato de oración de Pablo?","¿Dónde necesitas permanecer firme ahora?"],
+ examination:"¿El miedo, el enojo o la fascinación con el mal te distraen de la armadura ordinaria que Dios provee?",
+ challenge:"Ora cada día a través de cada pieza de la armadura y elige una situación en la que permanecer firme mediante verdad, paz, integridad o fe.",
+ caution:"No atribuyan automáticamente enfermedad mental, desacuerdo o toda dificultad a actividad demoníaca. La oración puede acompañar atención médica y profesional apropiada.",
+ prayer:"Señor poderoso, vístenos con tu armadura. Haznos veraces, justos, pacíficos, fieles, esperanzados, formados por la Escritura y constantes en oración. Amén."
+}
+];
+
+window.NLDG_BOOK_STUDY={
+ slug:"ephesians-study",
+ book:"Efesios",
+ title:"Efesios: Identidad en Cristo, reconciliación, unidad y fe firme",
+ description:"Identidad en Cristo, gracia, reconciliación, unidad madura, relaciones transformadas y fe firme.",
+ themeLabel:"TEMA CENTRAL",
+ theme:"Dios reúne todas las cosas en Cristo y forma un pueblo reconciliado que vive desde la gracia mediante unidad, madurez, santidad, amor, relaciones responsables y resistencia espiritual centrada en el evangelio.",
+ audience:"Estudio bíblico por libro",
+ scriptureStandard:"Nueva Traducción Viviente (NTV)",
+ lessons:epLessonsEs,
+ seriesPurposeLabel:"PANORAMA DE LA SERIE",
+ seriesOverviewParagraphs:[
+  "Efesios despliega el propósito de Dios de reunir todas las cosas en Cristo y formar un pueblo reconciliado que muestre su sabiduría. La primera mitad enfatiza lo que Dios ha hecho: elegir, redimir, sellar, dar vida, reconciliar y recibir a los creyentes. La segunda mitad llama a la iglesia a vivir dignamente esa gracia mediante unidad, madurez, santidad, amor, sabiduría, relaciones saludables, oración y resistencia espiritual."
+ ],
+ seriesGuideBlocks:[
+  {title:"METAS DE LA SERIE",items:[
+   "Fundamentar la identidad en la gracia de Dios y la obra terminada de Cristo.",
+   "Comprender la salvación como regalo que crea una vida de buenas obras.",
+   "Explorar la reconciliación a través de hostilidad y diferencia.",
+   "Crecer hacia una iglesia madura que habla verdad, comparte dones y ama.",
+   "Reemplazar patrones viejos con hábitos semejantes a Cristo.",
+   "Leer las relaciones del hogar bajo la sumisión mutua y la autoridad de Cristo.",
+   "Practicar la armadura de Dios mediante verdad, justicia, paz, fe, salvación, Escritura y oración."
+  ]},
+  {title:"MAPA DE LECCIONES",items:[
+   "Lección 1: Toda bendición espiritual en Cristo — Efesios 1:1–14",
+   "Lección 2: Los ojos del corazón iluminados — Efesios 1:15–23",
+   "Lección 3: Salvados por gracia para buenas obras — Efesios 2:1–10",
+   "Lección 4: Cristo es nuestra paz — Efesios 2:11–22",
+   "Lección 5: El misterio, la iglesia y el amor de Cristo — Efesios 3",
+   "Lección 6: Unidad y madurez en el cuerpo — Efesios 4:1–16",
+   "Lección 7: Quitar lo viejo y vestir lo nuevo — Efesios 4:17–5:20",
+   "Lección 8: Relaciones semejantes a Cristo bajo un solo Señor — Efesios 5:21–6:9",
+   "Lección 9: Permanezcan firmes con la armadura de Dios — Efesios 6:10–24"
+  ]}
+ ],
+ postLessonMapGuideBlocks:[
+  {title:"PREPARACIÓN DEL LÍDER",paragraphs:[
+   "Lean toda la carta y mantengan la gracia antes de los mandatos. No usen la elección como especulación separada de Cristo ni como arma de superioridad. Traten la reconciliación étnica como central, no incidental.",
+   "En la lección 8, comiencen con la sumisión mutua de 5:21. Nunca usen sumisión, perdón u orden familiar para excusar violencia, coerción, violación dentro del matrimonio, abuso infantil, control severo o condiciones inseguras. Lean la esclavitud dentro del mundo romano caído, no como el ideal de Dios. Quienes tienen mayor poder responden directamente ante Cristo."
+  ]},
+  {title:"RITMO RECOMENDADO",text:"Dedica 60–75 minutos por lección a Escritura, enseñanza, conversación, examen personal, práctica y oración."},
+  {title:"TEXTOS CLAVE",text:"Efesios 1:3–14; 2:8–10; 2:14–18; 3:20–21; 4:1–7; 4:15–16; 5:1–2; 5:21; 6:10–18"}
+ ],
+ seriesPrayerLabel:"ORACIÓN FINAL",
+ seriesPrayer:"Padre, arráiganos en tu gracia, únenos por medio de Cristo, llénanos con tu Espíritu y haz de la iglesia un testimonio visible de tu sabiduría y amor. Amén.",
+ lessonPurposeLabel:"PROPÓSITO DE LA LECCIÓN",
+ openingLabel:"CONVERSACIÓN INICIAL",
+ mainPassageLabel:"PASAJE PRINCIPAL",
+ supportingScriptureLabel:"TEXTOS DE APOYO",
+ scriptureContextLabel:"CONTEXTO BÍBLICO",
+ keyTruthLabel:"VERDAD CLAVE",
+ lessonQuestionLabel:"PREGUNTA CENTRAL",
+ lessonTeachingLabel:"",
+ discussionQuestionsLabel:"PREGUNTAS PARA CONVERSAR",
+ personalExaminationLabel:"EXAMEN PERSONAL",
+ personalExaminationTitle:"",
+ weeklyPracticeLabel:"PRÁCTICA SEMANAL",
+ weeklyPracticeTitle:"",
+ leaderGuidanceLabel:"GUÍA PARA EL LÍDER",
+ closingPrayerLabel:"ORACIÓN FINAL"
+};

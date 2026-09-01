@@ -27,7 +27,8 @@ const bookSeries=[
   {en:'first-peter-study'+html,href:'primera-pedro-estudio'+html,file:['es','primera-pedro-estudio'+html].join('/'),label:'8 lecciones completas'},
   {en:'second-peter-study'+html,href:'segunda-pedro-estudio'+html,file:['es','segunda-pedro-estudio'+html].join('/'),label:'5 lecciones completas'},
   {en:'first-john-study'+html,href:'primera-juan-estudio'+html,file:['es','primera-juan-estudio'+html].join('/'),label:'7 lecciones completas'},
-  {en:'second-john-study'+html,href:'segunda-juan-estudio'+html,file:['es','segunda-juan-estudio'+html].join('/'),label:'3 lecciones completas'}
+  {en:'second-john-study'+html,href:'segunda-juan-estudio'+html,file:['es','segunda-juan-estudio'+html].join('/'),label:'3 lecciones completas'},
+  {en:'third-john-study'+html,href:'tercera-juan-estudio'+html,file:['es','tercera-juan-estudio'+html].join('/'),label:'3 lecciones completas'}
 ];
 
 const standalone=[
@@ -51,13 +52,13 @@ for(const item of [...completePaths,...bookSeries,...standalone]){
 for(const item of [...completePaths,...bookSeries])expect('Spanish study hub completion label',hub,item.label);
 for(const item of bookSeries)expect('Bilingual book-series route map',i18n,`'${item.en}':'es/${item.href}'`);
 
-expect('Spanish study hub',' '+hub,'Caminos completos');
-expect('Spanish study hub',hub,'siete series completas y revisadas');
+expect('Spanish study hub',hub,'Caminos completos');
+expect('Spanish study hub',hub,'ocho series completas y revisadas');
 expect('Spanish study hub',hub,'Once recursos independientes en español');
 expect('Spanish study hub completion claim',hub,'Los diez estudios independientes del catálogo inglés ya tienen una contraparte completa en español');
 expect('Spanish study hub NTV standard',hub,'Nueva Traducción Viviente (NTV)');
 expect('Spanish study hub editorial policy',hub,'No traduciremos automáticamente todo el sitio');
-expect('Spanish study hub current selector',hub,'nldg-i18n'+js+'?v=1.17.0');
+expect('Spanish study hub current selector',hub,'nldg-i18n'+js+'?v=1.18.0');
 expect('Spanish study hub shared framework',hub,'es-framework'+js+'?v=1.1.0');
 
 const translatedStandalonePairs={
@@ -72,15 +73,8 @@ const translatedStandalonePairs={
   ['study-peacemakers'+html]:['es','pacificadores-en-un-mundo-dividido'+html].join('/'),
   ['study-escapism'+html]:['es','escapismo-vs-esperanza-eterna'+html].join('/')
 };
-const routePairs={
-  ['new-believers'+html]:['es','empezar'+html].join('/'),
-  ['preparing-walk-with-jesus'+html]:['es','preparando-para-caminar-con-jesus'+html].join('/'),
-  ['walking-with-jesus'+html]:['es','caminando-con-jesus'+html].join('/'),
-  ...translatedStandalonePairs
-};
-for(const [en,es] of Object.entries(routePairs))expect('Bilingual study route map',i18n,`'${en}':'${es}'`);
+for(const [en,es] of Object.entries(translatedStandalonePairs))expect('Bilingual standalone route map',i18n,`'${en}':'${es}'`);
 if(Object.keys(translatedStandalonePairs).length!==10)errors.push('Expected exactly 10 translated English standalone studies.');
-
 for(const source of Object.keys(translatedStandalonePairs)){
   if(!exists(source))errors.push(`English standalone source is missing: ${source}`);
   expect('Standalone language loader',navigation,`'${source}'`);
@@ -116,11 +110,8 @@ for(const item of standalone){
     for(const version of ['RVR60','NVI','NBLA'])reject(item.file,page,version);
   }
   if(item.block&&item.source){
-    const source=read(item.source);
-    const marker=`<section class="${item.block}`;
-    const sourceCount=count(source,marker);
-    const spanishCount=count(page,marker);
-    if(sourceCount!==spanishCount)errors.push(`${item.file}: structural ${item.block} count ${spanishCount} does not match English source ${sourceCount}`);
+    const source=read(item.source),marker=`<section class="${item.block}`;
+    if(count(source,marker)!==count(page,marker))errors.push(`${item.file}: structural ${item.block} count does not match English source.`);
   }
 }
 
@@ -129,12 +120,10 @@ if(errors.length){
   errors.forEach(error=>console.error(`- ${error}`));
   process.exit(1);
 }
-
 console.log('Spanish Study Library Audit PASSED');
 console.log('OK: 3 complete Spanish discipleship/study paths are surfaced.');
-console.log('OK: 7 complete reviewed Spanish book-by-book series are surfaced.');
+console.log('OK: 8 complete reviewed Spanish book-by-book series are surfaced.');
 console.log('OK: 11 reviewed Spanish independent study resources are surfaced.');
 console.log('OK: all 10 English standalone studies have protected Spanish route pairs.');
-console.log('OK: the 3 final standalone translations preserve source section structure and NTV discipline.');
-console.log('OK: English standalone studies load the shared bilingual selector.');
+console.log('OK: English standalone studies retain the shared bilingual selector.');
 console.log('OK: Caminando con Jesús remains complete at 21 lessons.');

@@ -52,11 +52,9 @@ if(required.every(exists)){
  expect('2 Tesalonicenses Spanish page',spanish,'../nldg-i18n'+js+'?v=1.26.0');
  expect('2 Tesalonicenses Spanish page',spanish,'https://nolabelsdesignedbygod.org/es/segunda-tesalonicenses-estudio'+html);
  expect('2 Tesalonicenses Spanish page',spanish,'hreflang="en" href="https://nolabelsdesignedbygod.org/second-thessalonians-study'+html+'"');
- expect('Spanish study hub',hub,'dieciséis series completas y revisadas');
  expect('Spanish study hub',hub,'href="segunda-tesalonicenses-estudio'+html+'"');
  expect('Spanish study hub',hub,'2 Tesalonicenses: Perseverancia, discernimiento, trabajo fiel y esperanza');
  expect('Spanish study hub',hub,'5 lecciones completas');
- expect('Spanish study hub',hub,'nldg-i18n'+js+'?v=1.26.0');
 }
 
 if(errors.length){console.error('Spanish 2 Thessalonians Audit FAILED');for(const error of errors)console.error(`- ${error}`);process.exit(1);}

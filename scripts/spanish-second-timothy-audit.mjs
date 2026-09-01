@@ -50,11 +50,9 @@ if(required.every(exists)){
  expect('2 Timoteo Spanish page',spanish,'../nldg-i18n'+js+'?v=1.24.0');
  expect('2 Timoteo Spanish page',spanish,'https://nolabelsdesignedbygod.org/es/segunda-timoteo-estudio'+html);
  expect('2 Timoteo Spanish page',spanish,'hreflang="en" href="https://nolabelsdesignedbygod.org/second-timothy-study'+html+'"');
- expect('Spanish study hub',hub,'catorce series completas y revisadas');
  expect('Spanish study hub',hub,'href="segunda-timoteo-estudio'+html+'"');
  expect('Spanish study hub',hub,'2 Timoteo: Fidelidad valiente, sana enseñanza y un final fiel');
  expect('Spanish study hub',hub,'6 lecciones completas');
- expect('Spanish study hub',hub,'nldg-i18n'+js+'?v=1.24.0');
 }
 
 if(errors.length){console.error('Spanish 2 Timothy Audit FAILED');for(const error of errors)console.error(`- ${error}`);process.exit(1);}

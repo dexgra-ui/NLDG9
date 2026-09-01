@@ -5,7 +5,7 @@ for(const f of['seriesMainScripture','seriesQuestion','seriesOpening','seriesCon
 const [l1,l2,l3,l4,l5,l6,l7,l8]=b.lessons;
 if(!l1.teaching[1].body.includes('consentimiento')||!l1.teaching[2].body.includes('mal político'))e.push('Lesson 1 safeguards');
 if(!l2.teaching[2].body.includes('no autolesión')||!l2.teaching[3].body.includes('protección legal')||!l2.teaching[4].body.includes('finanzas ocultas'))e.push('Lesson 2 safeguards');
-if(!l3.teaching[1].body.includes('no es fórmula')||!l3.teaching[2].body.includes('enfermedad mental')||!l3.teaching[5].body.includes('colonialismo'))e.push('Lesson 3 safeguards');
+if(!l3.teaching[1].body.includes('No es fórmula')||!l3.teaching[2].body.includes('enfermedad mental')||!l3.teaching[5].body.includes('colonialismo'))e.push('Lesson 3 safeguards');
 if(!l4.teaching[1].body.includes('cargas aplastantes')||!l4.teaching[3].body.includes('pensamientos ansiosos')||!l4.teaching[5].body.includes('no tienen autorización'))e.push('Lesson 4 safeguards');
 if(!l5.teaching[2].body.includes('Nunca debe mantener')||!l5.teaching[3].body.includes('protección')||!l5.teaching[4].body.includes('autoridades')||!l5.teaching[5].body.includes('no borra consecuencias'))e.push('Lesson 5 safeguards');
 if(!l6.teaching[0].body.includes('violencia')||!l6.teaching[4].body.includes('antisemitismo')||!l6.teaching[5].body.includes('no permite despreciar'))e.push('Lesson 6 safeguards');

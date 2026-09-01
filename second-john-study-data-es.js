@@ -65,7 +65,7 @@ window.NLDG_BOOK_STUDY={
   },
   {
    title:'ÉNFASIS INTERPRETATIVO',
-   text:'Segunda de Juan no debe usarse para hacer que una iglesia tema a los de afuera ni sea hostil hacia quienes hacen preguntas sinceras. Su límite responde a la promoción activa de una enseñanza que niega a Cristo y usa la hospitalidad cristiana para extender influencia. El amor verdadero protege a la comunidad mientras conserva la compasión común y un camino hacia el arrepentimiento.'
+   text:'Segunda de Juan no debe usarse para alimentar temor a los de afuera ni hostilidad hacia quienes hacen preguntas sinceras. Su límite responde a la promoción activa de una enseñanza que niega a Cristo y usa la hospitalidad cristiana para extender influencia. El amor verdadero protege a la comunidad mientras conserva la compasión común y un camino hacia el arrepentimiento.'
   }
  ],
  lessonPurposeLabel:'PROPÓSITO',

@@ -26,6 +26,7 @@ const commonRequired=['book-study-series.js','book-study-series-es.js','es/bibli
 const standardSeries=[
   {label:'Ruth',expected:5,bookPrefix:'Rut ',enData:'ruth-study-data.js',enGuide:'ruth-study-guide.js',esData:'ruth-study-data-es.js',enPage:'ruth-study.html',esPage:'es/rut-estudio.html',esRoute:'rut-estudio',canonical:'https://nolabelsdesignedbygod.org/es/rut-estudio.html',completion:'5 lecciones completas',i18nVersion:'1.12.0'},
   {label:'Philippians',expected:6,bookPrefix:'Filipenses ',enData:'philippians-study-data.js',enGuide:'philippians-study-guide.js',esData:'philippians-study-data-es.js',enPage:'philippians-study.html',esPage:'es/filipenses-estudio.html',esRoute:'filipenses-estudio',canonical:'https://nolabelsdesignedbygod.org/es/filipenses-estudio.html',completion:'6 lecciones completas',i18nVersion:'1.12.0'},
+  {label:'Hebrews',expected:8,bookPrefix:'Hebreos ',enData:'hebrews-study-data.js',enGuide:'hebrews-study-guide.js',esData:'hebrews-study-data-es.js',enPage:'hebrews-study.html',esPage:'es/hebreos-estudio.html',esRoute:'hebreos-estudio',canonical:'https://nolabelsdesignedbygod.org/es/hebreos-estudio.html',completion:'8 lecciones completas',i18nVersion:'1.21.0'},
   {label:'1 Peter',expected:8,bookPrefix:'1 Pedro ',enData:'first-peter-study-data.js',enGuide:'first-peter-study-guide.js',esData:'first-peter-study-data-es.js',enPage:'first-peter-study.html',esPage:'es/primera-pedro-estudio.html',esRoute:'primera-pedro-estudio',canonical:'https://nolabelsdesignedbygod.org/es/primera-pedro-estudio.html',completion:'8 lecciones completas',i18nVersion:'1.14.0'},
   {label:'2 Peter',expected:5,bookPrefix:'2 Pedro ',enData:'second-peter-study-data.js',enGuide:'second-peter-study-guide.js',esData:'second-peter-study-data-es.js',enPage:'second-peter-study.html',esPage:'es/segunda-pedro-estudio.html',esRoute:'segunda-pedro-estudio',canonical:'https://nolabelsdesignedbygod.org/es/segunda-pedro-estudio.html',completion:'5 lecciones completas',i18nVersion:'1.15.0'},
   {label:'1 John',expected:7,bookPrefix:'1 Juan ',enData:'first-john-study-data.js',enGuide:'first-john-study-guide.js',esData:'first-john-study-data-es.js',enPage:'first-john-study.html',esPage:'es/primera-juan-estudio.html',esRoute:'primera-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/primera-juan-estudio.html',completion:'7 lecciones completas',i18nVersion:'1.16.0'},
@@ -91,17 +92,29 @@ for(const config of standardSeries){
 }
 
 expect('Spanish study hub',hub,'Estudios por libro');
-expect('Spanish study hub',hub,'diez series completas y revisadas');
-expect('Spanish study hub',hub,'nldg-i18n.js?v=1.20.0');
+expect('Spanish study hub',hub,'once series completas y revisadas');
+expect('Spanish study hub',hub,'nldg-i18n.js?v=1.21.0');
 for(const marker of ['Estudio bíblico libro por libro','Lección $1 de $2','El progreso se guarda en este dispositivo','Referencia bíblica: NTV','location.pathname.split'])expect('Spanish book-series adapter',adapter,marker);
-for(const route of ['rut-estudio.','filipenses-estudio.','primera-pedro-estudio.','segunda-pedro-estudio.','primera-juan-estudio.','segunda-juan-estudio.','tercera-juan-estudio.','judas-estudio.','apocalipsis-estudio.'])reject('Spanish book-series adapter',adapter,route);
+for(const route of ['rut-estudio.','filipenses-estudio.','hebreos-estudio.','primera-pedro-estudio.','segunda-pedro-estudio.','primera-juan-estudio.','segunda-juan-estudio.','tercera-juan-estudio.','judas-estudio.','apocalipsis-estudio.'])reject('Spanish book-series adapter',adapter,route);
 expect('Spanish Ruth geography bridge',mapBridge,"rut:{");
 expect('Spanish Ruth geography bridge',mapBridge,'../biblical-map-tribes.html');
 expect('Spanish Philippians geography bridge',mapBridge,"filipenses:{");
 expect('Spanish Philippians geography bridge',mapBridge,'../biblical-map-paul.html');
 expect('Spanish geography bridge',mapBridge,'inglés');
 
-// Book-specific interpretive and pastoral safeguards.
+if(exists('hebrews-study-data-es.js')){
+  const s=loadBookSeries('hebrews-study-data-es.js'),l2=s.lessons?.[1],l3=s.lessons?.[2],l4=s.lessons?.[3],l5=s.lessons?.[4],l6=s.lessons?.[5],l7=s.lessons?.[6],l8=s.lessons?.[7];
+  if((s.seriesTeaching?.length??0)!==6)errors.push('Hebrews must preserve all six series-level teaching movements.');
+  if(!l2?.teaching?.[4]?.body?.includes('no da permiso a líderes'))errors.push('Hebrews lesson 2 must reject leaders claiming access to hidden motives.');
+  if(!l3?.teaching?.[3]?.body?.includes('no está dirigido a cada pensamiento intrusivo')||!l3?.teaching?.[3]?.body?.includes('aterrorizar conciencias sensibles'))errors.push('Hebrews lesson 3 must preserve the non-terrorizing reading of Hebrews 6.');
+  if(!l4?.teaching?.[4]?.body?.includes('Nunca autoriza antisemitismo')||!l4?.teaching?.[4]?.body?.includes('desprecio por el judaísmo'))errors.push('Hebrews lesson 4 must reject antisemitic better-covenant readings.');
+  if(!l5?.teaching?.[2]?.body?.includes('Nunca debe usarse para glorificar abuso')||!l5?.teaching?.[2]?.body?.includes('víctima'))errors.push('Hebrews lesson 5 must preserve abuse-safe sacrifice language.');
+  if(!l6?.teaching?.[2]?.body?.includes('no debe usarse para controlar asistencia')||!l6?.teaching?.[3]?.body?.includes('un solo pecado consciente'))errors.push('Hebrews lesson 6 must preserve non-coercive attendance and warning-passage guidance.');
+  if(!l7?.teaching?.[4]?.body?.includes('no son una medida confiable de cuánta fe'))errors.push('Hebrews lesson 7 must reject outcome-based measures of faith.');
+  if(!l8?.teaching?.[2]?.body?.includes('abuso físico')||!l8?.teaching?.[2]?.body?.includes('control coercitivo')||!l8?.teaching?.[5]?.body?.includes('obedecer nunca significa seguir abuso'))errors.push('Hebrews lesson 8 must preserve discipline and leadership abuse safeguards.');
+  for(const phrase of ['crear miedo','silenciar preguntas','exigir lealtad','justificar abuso','reconciliación insegura','seguridad','ayuda calificada','responsabilidades de denuncia'])if(!s.seriesLeaderGuidance?.includes(phrase))errors.push(`Hebrews leader safeguards must preserve ${phrase}.`);
+}
+
 if(exists('philippians-study-data-es.js')){
   const s=loadBookSeries('philippians-study-data-es.js'),l2=s.lessons?.[1],l3=s.lessons?.[2],l5=s.lessons?.[4],l6=s.lessons?.[5];
   if(!l2?.teaching?.[5]?.heading?.includes('ABUSO'))errors.push('Philippians lesson 2 must preserve the safeguard that suffering never justifies abuse.');
@@ -180,7 +193,6 @@ if(exists('revelation-study-data-es.js')){
   if(!s.lessons?.every(x=>x.caution?.includes('antisemitismo')&&x.caution?.includes('vacunas')&&x.caution?.includes('microchips')&&x.caution?.includes('violencia cristiana')))errors.push('Revelation leader guidance must reject antisemitism, technology panic, and Christian violence throughout the series.');
 }
 
-// James uses its mature custom renderer and data shape.
 const jamesRequired=['james-series.html','james-series-data.js','james-series-data-es.js','james-series.js','es/santiago-estudio.html'];
 for(const file of jamesRequired)if(!exists(file))errors.push(`James: required bilingual resource is missing: ${file}`);
 if(jamesRequired.every(exists)){
@@ -209,7 +221,7 @@ if(errors.length){
   process.exit(1);
 }
 console.log('Spanish Book Series Audit PASSED');
-console.log('OK: Ruth 5, Philippians 6, James 10, 1 Peter 8, 2 Peter 5, 1 John 7, 2 John 3, 3 John 3, Jude 4, and Revelation 8 have protected English/Spanish parity.');
+console.log('OK: Ruth 5, Philippians 6, James 10, Hebrews 8, 1 Peter 8, 2 Peter 5, 1 John 7, 2 John 3, 3 John 3, Jude 4, and Revelation 8 have protected English/Spanish parity.');
 console.log('OK: NTV is declared without mixed Spanish Bible-version labels.');
-console.log('OK: all ten published Spanish book-series routes and library entries are protected.');
+console.log('OK: all eleven published Spanish book-series routes and library entries are protected.');
 console.log('OK: book-specific pastoral and interpretive safeguards remain enforced.');

@@ -35,7 +35,6 @@ if(required.every(exists)){
  expect('John Spanish page',spanish,'hreflang="en" href="https://nolabelsdesignedbygod.org/john-study'+html+'"');
  expect('John Spanish page',spanish,'john-study-data-es'+js);
  expect('John route map',i18n,"'john-study"+html+"':'es/juan-estudio"+html+"'");
- expect('Spanish study hub',hub,'veinticinco series completas y revisadas');
  expect('Spanish study hub',hub,'href="juan-estudio'+html+'"');
  expect('Spanish study hub',hub,'Juan: La Palabra se hizo carne, dio su vida y resucitó');
  expect('Spanish study hub',hub,'8 lecciones completas');

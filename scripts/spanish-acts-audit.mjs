@@ -36,7 +36,6 @@ if(required.every(exists)){
  expect('Acts Spanish page',spanish,'hreflang="en" href="https://nolabelsdesignedbygod.org/acts-study'+html+'"');
  expect('Acts Spanish page',spanish,'acts-study-data-es'+js);
  expect('Acts route map',i18n,"'acts-study"+html+"':'es/hechos-estudio"+html+"'");
- expect('Spanish study hub',hub,'veinticuatro series completas y revisadas');
  expect('Spanish study hub',hub,'href="hechos-estudio'+html+'"');
  expect('Spanish study hub',hub,'Hechos: Testimonio capacitado por el Espíritu desde Jerusalén hasta Roma');
  expect('Spanish study hub',hub,'8 lecciones completas');

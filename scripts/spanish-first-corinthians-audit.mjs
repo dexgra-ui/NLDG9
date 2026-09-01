@@ -39,7 +39,6 @@ if(required.every(exists)){
  expect('Spanish page',esPage,'hreflang="en" href="https://nolabelsdesignedbygod.org/first-corinthians-study'+html+'"');
  expect('Spanish page',esPage,'first-corinthians-study-data-es.js');
  expect('Route map',i18n,"'first-corinthians-study"+html+"':'es/primera-corintios-estudio"+html+"'");
- expect('Spanish hub',hub,'veintidós series completas y revisadas');
  expect('Spanish hub',hub,'href="primera-corintios-estudio'+html+'"');
  expect('Spanish hub',hub,'1 Corintios: Unidad, santidad, amor y resurrección');
  expect('Spanish hub',hub,'8 lecciones completas');

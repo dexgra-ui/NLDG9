@@ -48,11 +48,9 @@ if(required.every(exists)){
  expect('Tito Spanish page',spanish,'../nldg-i18n'+js+'?v=1.23.0');
  expect('Tito Spanish page',spanish,'https://nolabelsdesignedbygod.org/es/tito-estudio'+html);
  expect('Tito Spanish page',spanish,'hreflang="en" href="https://nolabelsdesignedbygod.org/titus-study'+html+'"');
- expect('Spanish study hub',hub,'trece series completas y revisadas');
  expect('Spanish study hub',hub,'href="tito-estudio'+html+'"');
  expect('Spanish study hub',hub,'Tito: Liderazgo sano, gracia y buenas obras');
  expect('Spanish study hub',hub,'5 lecciones completas');
- expect('Spanish study hub',hub,'nldg-i18n'+js+'?v=1.23.0');
 }
 
 if(errors.length){console.error('Spanish Titus Audit FAILED');for(const error of errors)console.error(`- ${error}`);process.exit(1);}

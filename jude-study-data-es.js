@@ -168,7 +168,7 @@ window.NLDG_BOOK_STUDY={
     {heading:'2. Oren en el Espíritu Santo',body:'El discernimiento depende de la comunión con Dios y no solo de una vigilancia humana constante.'},
     {heading:'3. Manténganse en el amor de Dios',body:'Los creyentes permanecen donde el amor de Dios da forma a la obediencia, la comunidad y la esperanza.'},
     {heading:'4. Esperen la misericordia de Cristo',body:'La esperanza futura está centrada en Jesús y en la vida eterna que él trae.'},
-    {heading:'5. Tengan misericordia de quienes dudan',body:'Las preguntas y la incertidumbre necesitan cuidado compasivo, no sospecha automática, humillación ni etiquetas apresuradas.'},
+    {heading:'5. Tengan misericordia de quienes dudan',body:'Las preguntas y la incertidumbre necesitan misericordia y cuidado compasivo, no sospecha automática, humillación ni etiquetas apresuradas.'},
     {heading:'6. Rescaten con sabiduría y confíen en que Dios guarda',body:'La ayuda urgente puede requerir límites para proteger a las personas; aun así, la seguridad final no descansa en nuestro control, sino en el Dios que puede sostener a su pueblo y presentarlo con alegría.'}
    ],
    questions:judeQuestions,

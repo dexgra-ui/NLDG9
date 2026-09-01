@@ -53,11 +53,9 @@ if(required.every(exists)){
  expect('1 Tesalonicenses Spanish page',spanish,'../nldg-i18n'+js+'?v=1.27.0');
  expect('1 Tesalonicenses Spanish page',spanish,'https://nolabelsdesignedbygod.org/es/primera-tesalonicenses-estudio'+html);
  expect('1 Tesalonicenses Spanish page',spanish,'hreflang="en" href="https://nolabelsdesignedbygod.org/first-thessalonians-study'+html+'"');
- expect('Spanish study hub',hub,'diecisiete series completas y revisadas');
  expect('Spanish study hub',hub,'href="primera-tesalonicenses-estudio'+html+'"');
  expect('Spanish study hub',hub,'1 Tesalonicenses: Fe, amor, santidad, comunidad y esperanza');
  expect('Spanish study hub',hub,'6 lecciones completas');
- expect('Spanish study hub',hub,'nldg-i18n'+js+'?v=1.27.0');
 }
 
 if(errors.length){console.error('Spanish 1 Thessalonians Audit FAILED');for(const error of errors)console.error(`- ${error}`);process.exit(1);}

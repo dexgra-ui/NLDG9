@@ -1,0 +1,44 @@
+name: Spanish Titus Audit
+
+on:
+  push:
+    paths:
+      - 'titus-study.html'
+      - 'titus-study-data.js'
+      - 'titus-study-guide.js'
+      - 'titus-study-data-es.js'
+      - 'es/tito-estudio.html'
+      - 'es/estudios-biblicos.html'
+      - 'nldg-i18n.js'
+      - 'scripts/spanish-titus-audit.mjs'
+      - 'scripts/spanish-philemon-audit.mjs'
+      - '.github/workflows/spanish-titus-audit.yml'
+  pull_request:
+    paths:
+      - 'titus-study.html'
+      - 'titus-study-data.js'
+      - 'titus-study-guide.js'
+      - 'titus-study-data-es.js'
+      - 'es/tito-estudio.html'
+      - 'es/estudios-biblicos.html'
+      - 'nldg-i18n.js'
+      - 'scripts/spanish-titus-audit.mjs'
+      - 'scripts/spanish-philemon-audit.mjs'
+      - '.github/workflows/spanish-titus-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  spanish-titus:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit Spanish Titus study
+        run: node scripts/spanish-titus-audit.mjs

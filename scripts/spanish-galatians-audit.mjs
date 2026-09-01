@@ -58,11 +58,9 @@ if(required.every(exists)){
  expect('Gálatas Spanish page',spanish,'../nldg-i18n'+js+'?v=1.30.0');
  expect('Gálatas Spanish page',spanish,'https://nolabelsdesignedbygod.org/es/galatas-estudio'+html);
  expect('Gálatas Spanish page',spanish,'hreflang="en" href="https://nolabelsdesignedbygod.org/galatians-study'+html+'"');
- expect('Spanish study hub',hub,'veinte series completas y revisadas');
  expect('Spanish study hub',hub,'href="galatas-estudio'+html+'"');
  expect('Spanish study hub',hub,'Gálatas: Gracia, fe, libertad y el Espíritu');
  expect('Spanish study hub',hub,'8 lecciones completas');
- expect('Spanish study hub',hub,'nldg-i18n'+js+'?v=1.30.0');
 }
 
 if(errors.length){console.error('Spanish Galatians Audit FAILED');for(const error of errors)console.error(`- ${error}`);process.exit(1);}

@@ -1,0 +1,48 @@
+name: Spanish 2 Corinthians Audit
+
+on:
+  push:
+    paths:
+      - 'second-corinthians-study.html'
+      - 'second-corinthians-study-data.js'
+      - 'second-corinthians-study-guide.js'
+      - 'second-corinthians-study-data-es.js'
+      - 'es/segunda-corintios-estudio.html'
+      - 'es/estudios-biblicos.html'
+      - 'nldg-i18n.js'
+      - 'book-study-series.js'
+      - 'book-study-series-es.js'
+      - 'scripts/spanish-second-corinthians-audit.mjs'
+      - 'scripts/spanish-galatians-audit.mjs'
+      - '.github/workflows/spanish-second-corinthians-audit.yml'
+  pull_request:
+    paths:
+      - 'second-corinthians-study.html'
+      - 'second-corinthians-study-data.js'
+      - 'second-corinthians-study-guide.js'
+      - 'second-corinthians-study-data-es.js'
+      - 'es/segunda-corintios-estudio.html'
+      - 'es/estudios-biblicos.html'
+      - 'nldg-i18n.js'
+      - 'book-study-series.js'
+      - 'book-study-series-es.js'
+      - 'scripts/spanish-second-corinthians-audit.mjs'
+      - 'scripts/spanish-galatians-audit.mjs'
+      - '.github/workflows/spanish-second-corinthians-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  spanish-second-corinthians:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit Spanish 2 Corinthians study
+        run: node scripts/spanish-second-corinthians-audit.mjs

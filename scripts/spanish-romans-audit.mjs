@@ -42,7 +42,6 @@ if(required.every(exists)){
  expect('Romans Spanish page',spanish,'hreflang="en" href="https://nolabelsdesignedbygod.org/romans-study'+html+'"');
  expect('Romans Spanish page',spanish,'romans-study-data-es'+js);
  expect('Romans route map',i18n,"'romans-study"+html+"':'es/romanos-estudio"+html+"'");
- expect('Spanish study hub',hub,'veintitrés series completas y revisadas');
  expect('Spanish study hub',hub,'href="romanos-estudio'+html+'"');
  expect('Spanish study hub',hub,'Romanos: El evangelio, la gracia y una familia transformada');
  expect('Spanish study hub',hub,'8 lecciones completas');

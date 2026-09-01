@@ -54,7 +54,7 @@ const philemonLessons=[
   {heading:"1. La autoridad puede apelar en vez de coaccionar",body:"Pablo podría ordenar, pero apela sobre la base del amor."},
   {heading:"2. La conversión crea familia",body:"Onésimo es hijo de Pablo en la fe, no simplemente un problema que administrar."},
   {heading:"3. Una persona vale más que su utilidad económica",body:"El juego de palabras sobre la utilidad rechaza reducir a Onésimo al valor de su trabajo."},
-  {heading:"4. El consentimiento importa al hacer el bien",body:"Pablo no quiere que la acción de Filemón sea forzada, aunque el poder desigual complica lo que significa libertad."},
+  {heading:"4. El consentimiento importa al hacer el bien",body:"El consentimiento importa: Pablo no quiere que la acción de Filemón sea forzada, y reconoce que el poder desigual complica si una decisión puede considerarse verdaderamente libre."},
   {heading:"5. La providencia debe expresarse con humildad",body:"Pablo dice “quizás”, negándose a afirmar certeza acerca de las razones ocultas de Dios."},
   {heading:"6. La hermandad transforma categorías sociales",body:"“Ya no como esclavo” dirige a Filemón hacia una recepción que supera propiedad y estatus."}
  ],

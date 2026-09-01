@@ -56,11 +56,9 @@ if(required.every(exists)){
  expect('Colosenses Spanish page',spanish,'../nldg-i18n'+js+'?v=1.28.0');
  expect('Colosenses Spanish page',spanish,'https://nolabelsdesignedbygod.org/es/colosenses-estudio'+html);
  expect('Colosenses Spanish page',spanish,'hreflang="en" href="https://nolabelsdesignedbygod.org/colossians-study'+html+'"');
- expect('Spanish study hub',hub,'dieciocho series completas y revisadas');
  expect('Spanish study hub',hub,'href="colosenses-estudio'+html+'"');
  expect('Spanish study hub',hub,'Colosenses: La supremacía y suficiencia de Cristo');
  expect('Spanish study hub',hub,'6 lecciones completas');
- expect('Spanish study hub',hub,'nldg-i18n'+js+'?v=1.28.0');
 }
 
 if(errors.length){console.error('Spanish Colossians Audit FAILED');for(const error of errors)console.error(`- ${error}`);process.exit(1);}

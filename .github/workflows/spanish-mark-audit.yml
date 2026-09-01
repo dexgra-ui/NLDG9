@@ -1,0 +1,17 @@
+name: Spanish Mark Audit
+on:
+  push:
+    paths: ['mark-study.html','mark-study-data.js','mark-study-guide.js','mark-study-data-es.js','es/marcos-estudio.html','es/estudios-biblicos.html','nldg-i18n.js','book-study-series.js','book-study-series-es.js','scripts/spanish-mark-audit.mjs','scripts/spanish-luke-audit.mjs','.github/workflows/spanish-mark-audit.yml']
+  pull_request:
+    paths: ['mark-study.html','mark-study-data.js','mark-study-guide.js','mark-study-data-es.js','es/marcos-estudio.html','es/estudios-biblicos.html','nldg-i18n.js','book-study-series.js','book-study-series-es.js','scripts/spanish-mark-audit.mjs','scripts/spanish-luke-audit.mjs','.github/workflows/spanish-mark-audit.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  spanish-mark:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: node scripts/spanish-mark-audit.mjs

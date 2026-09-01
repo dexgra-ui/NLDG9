@@ -26,7 +26,8 @@ const bookSeries=[
   {en:'james-series'+html,href:'santiago-estudio'+html,file:['es','santiago-estudio'+html].join('/'),label:'10 lecciones completas'},
   {en:'first-peter-study'+html,href:'primera-pedro-estudio'+html,file:['es','primera-pedro-estudio'+html].join('/'),label:'8 lecciones completas'},
   {en:'second-peter-study'+html,href:'segunda-pedro-estudio'+html,file:['es','segunda-pedro-estudio'+html].join('/'),label:'5 lecciones completas'},
-  {en:'first-john-study'+html,href:'primera-juan-estudio'+html,file:['es','primera-juan-estudio'+html].join('/'),label:'7 lecciones completas'}
+  {en:'first-john-study'+html,href:'primera-juan-estudio'+html,file:['es','primera-juan-estudio'+html].join('/'),label:'7 lecciones completas'},
+  {en:'second-john-study'+html,href:'segunda-juan-estudio'+html,file:['es','segunda-juan-estudio'+html].join('/'),label:'3 lecciones completas'}
 ];
 
 const standalone=[
@@ -51,12 +52,12 @@ for(const item of [...completePaths,...bookSeries])expect('Spanish study hub com
 for(const item of bookSeries)expect('Bilingual book-series route map',i18n,`'${item.en}':'es/${item.href}'`);
 
 expect('Spanish study hub',' '+hub,'Caminos completos');
-expect('Spanish study hub',hub,'seis series completas y revisadas');
+expect('Spanish study hub',hub,'siete series completas y revisadas');
 expect('Spanish study hub',hub,'Once recursos independientes en español');
 expect('Spanish study hub completion claim',hub,'Los diez estudios independientes del catálogo inglés ya tienen una contraparte completa en español');
 expect('Spanish study hub NTV standard',hub,'Nueva Traducción Viviente (NTV)');
 expect('Spanish study hub editorial policy',hub,'No traduciremos automáticamente todo el sitio');
-expect('Spanish study hub current selector',hub,'nldg-i18n'+js+'?v=1.16.0');
+expect('Spanish study hub current selector',hub,'nldg-i18n'+js+'?v=1.17.0');
 expect('Spanish study hub shared framework',hub,'es-framework'+js+'?v=1.1.0');
 
 const translatedStandalonePairs={
@@ -131,7 +132,7 @@ if(errors.length){
 
 console.log('Spanish Study Library Audit PASSED');
 console.log('OK: 3 complete Spanish discipleship/study paths are surfaced.');
-console.log('OK: 6 complete reviewed Spanish book-by-book series are surfaced.');
+console.log('OK: 7 complete reviewed Spanish book-by-book series are surfaced.');
 console.log('OK: 11 reviewed Spanish independent study resources are surfaced.');
 console.log('OK: all 10 English standalone studies have protected Spanish route pairs.');
 console.log('OK: the 3 final standalone translations preserve source section structure and NTV discipline.');

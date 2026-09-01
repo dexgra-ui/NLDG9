@@ -106,7 +106,8 @@ if(exists('hebrews-study-data-es.js')){
   const s=loadBookSeries('hebrews-study-data-es.js'),l2=s.lessons?.[1],l3=s.lessons?.[2],l4=s.lessons?.[3],l5=s.lessons?.[4],l6=s.lessons?.[5],l7=s.lessons?.[6],l8=s.lessons?.[7];
   if((s.seriesTeaching?.length??0)!==6)errors.push('Hebrews must preserve all six series-level teaching movements.');
   if(!l2?.teaching?.[4]?.body?.includes('no da permiso a líderes'))errors.push('Hebrews lesson 2 must reject leaders claiming access to hidden motives.');
-  if(!l3?.teaching?.[3]?.body?.includes('no está dirigido a cada pensamiento intrusivo')||!l3?.teaching?.[3]?.body?.includes('aterrorizar conciencias sensibles'))errors.push('Hebrews lesson 3 must preserve the non-terrorizing reading of Hebrews 6.');
+  const l3Warning=(l3?.teaching?.[3]?.body||'').toLowerCase();
+  if(!l3Warning.includes('no está dirigido a cada pensamiento intrusivo')||!l3Warning.includes('aterrorizar conciencias sensibles'))errors.push('Hebrews lesson 3 must preserve the non-terrorizing reading of Hebrews 6.');
   if(!l4?.teaching?.[4]?.body?.includes('Nunca autoriza antisemitismo')||!l4?.teaching?.[4]?.body?.includes('desprecio por el judaísmo'))errors.push('Hebrews lesson 4 must reject antisemitic better-covenant readings.');
   if(!l5?.teaching?.[2]?.body?.includes('Nunca debe usarse para glorificar abuso')||!l5?.teaching?.[2]?.body?.includes('víctima'))errors.push('Hebrews lesson 5 must preserve abuse-safe sacrifice language.');
   if(!l6?.teaching?.[2]?.body?.includes('no debe usarse para controlar asistencia')||!l6?.teaching?.[3]?.body?.includes('un solo pecado consciente'))errors.push('Hebrews lesson 6 must preserve non-coercive attendance and warning-passage guidance.');

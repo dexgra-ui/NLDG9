@@ -50,6 +50,13 @@ const series=[
     enPage:'second-peter-study.html',esPage:'es/segunda-pedro-estudio.html',esCanonical:'https://nolabelsdesignedbygod.org/es/segunda-pedro-estudio.html',
     pair:`'second-peter-study${html}':'es/segunda-pedro-estudio${html}'`,hubHref:`href="segunda-pedro-estudio${html}"`,completion:'5 lecciones completas',
     esDataSrc:'../second-peter-study-data-es.js?v=1.0.0',i18nVersion:'1.15.0'
+  },
+  {
+    label:'1 John',expected:7,
+    enData:'first-john-study-data.js',enGuide:'first-john-study-guide.js',esData:'first-john-study-data-es.js',
+    enPage:'first-john-study.html',esPage:'es/primera-juan-estudio.html',esCanonical:'https://nolabelsdesignedbygod.org/es/primera-juan-estudio.html',
+    pair:`'first-john-study${html}':'es/primera-juan-estudio${html}'`,hubHref:`href="primera-juan-estudio${html}"`,completion:'7 lecciones completas',
+    esDataSrc:'../first-john-study-data-es.js?v=1.0.0',i18nVersion:'1.16.0'
   }
 ];
 
@@ -103,10 +110,10 @@ for(const config of series){
 }
 
 expect('Spanish study hub',hub,'Estudios por libro');
-expect('Spanish study hub',hub,'cinco series completas y revisadas');
-expect('Spanish study hub',hub,'nldg-i18n.js?v=1.15.0');
+expect('Spanish study hub',hub,'seis series completas y revisadas');
+expect('Spanish study hub',hub,'nldg-i18n.js?v=1.16.0');
 for(const marker of ['Estudio bíblico libro por libro','Lección $1 de $2','El progreso se guarda en este dispositivo','Referencia bíblica: NTV','location.pathname.split'])expect('Spanish book-series adapter',adapter,marker);
-for(const route of ['rut-estudio.','filipenses-estudio.','primera-pedro-estudio.','segunda-pedro-estudio.'])reject('Spanish book-series adapter',adapter,route);
+for(const route of ['rut-estudio.','filipenses-estudio.','primera-pedro-estudio.','segunda-pedro-estudio.','primera-juan-estudio.'])reject('Spanish book-series adapter',adapter,route);
 expect('Spanish Ruth geography bridge',mapBridge,"rut:{");
 expect('Spanish Ruth geography bridge',mapBridge,'Ubica Rut en el mundo bíblico');
 expect('Spanish Ruth geography bridge',mapBridge,'../biblical-map-tribes.html');
@@ -155,6 +162,21 @@ if(exists('second-peter-study-data-es.js')){
   if(!lesson5?.caution?.includes('preguntas honestas')||!lesson5?.caution?.includes('distorsión deliberada')||!lesson5?.caution?.includes('control'))errors.push('2 Peter lesson 5 must distinguish honest questions from deliberate distortion and control.');
   const guide=(pe2.postLessonMapGuideBlocks||[]).map(x=>x.text||'').join(' ');
   for(const phrase of ['rumores','evidencia','confidencialidad','experiencias traumáticas'])if(!guide.toLowerCase().includes(phrase.toLowerCase()))errors.push(`2 Peter leader safeguards must preserve ${phrase}.`);
+}
+
+if(exists('first-john-study-data-es.js')){
+  const j1=loadBookSeries('first-john-study-data-es.js');
+  const lesson2=j1.lessons?.[1],lesson4=j1.lessons?.[3],lesson5=j1.lessons?.[4],lesson6=j1.lessons?.[5],lesson7=j1.lessons?.[6];
+  for(const lesson of j1.lessons||[])if(!String(lesson.scripture||'').startsWith('1 Juan '))errors.push(`1 John lesson ${lesson.number}: Scripture reference must use the Spanish book name 1 Juan.`);
+  if(!lesson2?.caution?.includes('no exige revelar públicamente')||!lesson2?.caution?.includes('ayuda pastoral, profesional, legal o de seguridad'))errors.push('1 John lesson 2 must preserve appropriate disclosure and safety-help guidance.');
+  if(!lesson4?.teaching?.[2]?.body?.includes('oponente político')||!lesson4?.teaching?.[2]?.body?.includes('desacuerdo secundario'))errors.push('1 John lesson 4 must preserve careful use of the antichrist category.');
+  if(!lesson5?.teaching?.[2]?.heading?.includes('NO DE PERFECCIÓN SIN PECADO'))errors.push('1 John lesson 5 must preserve the distinction between sinful practice and sinless perfection.');
+  if(!lesson5?.caution?.includes('escrupulosidad')||!lesson5?.caution?.includes('ansiedad espiritual')||!lesson5?.caution?.includes('no con un desempeño perfecto'))errors.push('1 John lesson 5 must preserve the scrupulosity and perfectionism safeguard.');
+  if(!lesson6?.caution?.includes('ansiedad')||!lesson6?.caution?.includes('consejería')||!lesson6?.caution?.includes('atención médica')||!lesson6?.caution?.includes('juicio de Dios'))errors.push('1 John lesson 6 must preserve the anxiety, counseling, medical-care, and judgment context safeguard.');
+  if(!lesson7?.teaching?.[2]?.body?.includes('riqueza')||!lesson7?.teaching?.[2]?.body?.includes('salud')||!lesson7?.teaching?.[2]?.body?.includes('control político'))errors.push('1 John lesson 7 must reject prosperity and political-control readings of overcoming the world.');
+  if(!lesson7?.caution?.includes('especulación dogmática')||!lesson7?.caution?.includes('pecado que lleva a muerte'))errors.push('1 John lesson 7 must preserve humility around sin leading to death.');
+  const guide=(j1.postLessonMapGuideBlocks||[]).map(x=>x.text||'').join(' ');
+  for(const phrase of ['aterrorizar','orgullo doctrinal sin amor','perfección sin pecado','cada desacuerdo'])if(!guide.includes(phrase))errors.push(`1 John leader commitment must preserve ${phrase}.`);
 }
 
 const jamesRequired=['james-series.html','james-series-data.js','james-series-data-es.js','james-series.js','es/santiago-estudio.html'];
@@ -219,5 +241,6 @@ console.log('OK: Philippians has 6 complete English/Spanish lessons with matched
 console.log('OK: James has 10 complete English/Spanish weeks with matched structure.');
 console.log('OK: 1 Peter has 8 complete English/Spanish lessons with matched structure and safety safeguards.');
 console.log('OK: 2 Peter has 5 complete English/Spanish lessons with matched structure and discernment safeguards.');
+console.log('OK: 1 John has 7 complete English/Spanish lessons with matched structure and assurance/discernment safeguards.');
 console.log('OK: NTV is declared without mixing Spanish Bible-version labels.');
-console.log('OK: all five published Spanish book-series routes are protected.');
+console.log('OK: all six published Spanish book-series routes are protected.');

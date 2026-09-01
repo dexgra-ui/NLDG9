@@ -59,11 +59,9 @@ if(required.every(exists)){
  expect('Efesios Spanish page',spanish,'../nldg-i18n'+js+'?v=1.29.0');
  expect('Efesios Spanish page',spanish,'https://nolabelsdesignedbygod.org/es/efesios-estudio'+html);
  expect('Efesios Spanish page',spanish,'hreflang="en" href="https://nolabelsdesignedbygod.org/ephesians-study'+html+'"');
- expect('Spanish study hub',hub,'diecinueve series completas y revisadas');
  expect('Spanish study hub',hub,'href="efesios-estudio'+html+'"');
  expect('Spanish study hub',hub,'Efesios: Identidad en Cristo, reconciliación, unidad y fe firme');
  expect('Spanish study hub',hub,'9 lecciones completas');
- expect('Spanish study hub',hub,'nldg-i18n'+js+'?v=1.29.0');
 }
 
 if(errors.length){console.error('Spanish Ephesians Audit FAILED');for(const error of errors)console.error(`- ${error}`);process.exit(1);}

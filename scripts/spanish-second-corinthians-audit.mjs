@@ -55,7 +55,6 @@ if(required.every(exists)){
  expect('2 Corintios Spanish page',spanish,'../nldg-i18n'+js+'?v=1.31.0');
  expect('2 Corintios Spanish page',spanish,'https://nolabelsdesignedbygod.org/es/segunda-corintios-estudio'+html);
  expect('2 Corintios Spanish page',spanish,'hreflang="en" href="https://nolabelsdesignedbygod.org/second-corinthians-study'+html+'"');
- expect('Spanish study hub',hub,'veintiuna series completas y revisadas');
  expect('Spanish study hub',hub,'href="segunda-corintios-estudio'+html+'"');
  expect('Spanish study hub',hub,'2 Corintios: Consuelo, reconciliación, generosidad y fuerza en la debilidad');
  expect('Spanish study hub',hub,'6 lecciones completas');

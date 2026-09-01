@@ -40,8 +40,8 @@ if(required.every(exists)){
  expect('Filemón Spanish page',esPage,'../nldg-i18n'+js+'?v=1.22.0');
  expect('Filemón Spanish page',esPage,'https://nolabelsdesignedbygod.org/es/filemon-estudio'+html);
  expect('Filemón Spanish page',esPage,'hreflang="en" href="https://nolabelsdesignedbygod.org/philemon-study'+html+'"');
- expect('Spanish study hub',hub,'doce series completas y revisadas');
  expect('Spanish study hub',hub,'href="filemon-estudio'+html+'"');
+ expect('Spanish study hub',hub,'Filemón: Dignidad, reconciliación y relaciones formadas por el evangelio');
  expect('Spanish study hub',hub,'3 lecciones completas');
 }
 

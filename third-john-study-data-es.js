@@ -119,7 +119,7 @@ window.NLDG_BOOK_STUDY={
     {heading:'2. Los líderes sin rendición de cuentas rechazan la corrección',body:'Diótrefes rechaza la relación apostólica en lugar de examinar el consejo con humildad.'},
     {heading:'3. Las palabras maliciosas controlan la percepción',body:'Las acusaciones falsas aíslan voces externas y protegen el poder.'},
     {heading:'4. Controlar el acceso puede obstaculizar un ministerio fiel',body:'Diótrefes se niega a recibir a los hermanos e impide que otros lo hagan.'},
-    {heading:'5. El castigo crea temor',body:'Expulsar a miembros hospitalarios hace costoso el desacuerdo y desalienta la conciencia.'},
+    {heading:'5. El castigo crea temor',body:'Expulsar a miembros hospitalarios crea temor, hace costoso el desacuerdo y desalienta la conciencia.'},
     {heading:'6. La rendición de cuentas verdadera es necesaria',body:'Juan piensa llamar la atención sobre esa conducta; el amor no exige silencio frente al abuso de autoridad.'}
    ],
    questions:thirdJohnQuestions,
@@ -142,7 +142,7 @@ window.NLDG_BOOK_STUDY={
     {heading:'1. La imitación es inevitable',body:'La pregunta no es si aprenderemos de ejemplos, sino cuáles ejemplos nos darán forma.'},
     {heading:'2. El buen fruto refleja una relación con Dios',body:'Juan conecta hacer el bien con conocer a Dios sin afirmar que las obras ganan la salvación.'},
     {heading:'3. La conducta mala contradice las afirmaciones espirituales',body:'Los patrones visibles importan cuando evaluamos a los líderes.'},
-    {heading:'4. Un testimonio confiable tiene múltiples testigos',body:'Demetrio es recomendado por todos, por la verdad misma y por el anciano.'},
+    {heading:'4. Un testimonio confiable tiene múltiples testigos',body:'Demetrio cuenta con múltiples testigos: es recomendado por todos, por la verdad misma y por el anciano.'},
     {heading:'5. La comunicación personal puede reducir la distorsión',body:'Juan prefiere conversar cara a cara sobre asuntos que una carta breve no puede resolver por completo.'},
     {heading:'6. El liderazgo sano termina en paz y amistad',body:'El cierre habla de amigos, no de seguidores, y busca integridad en las relaciones.'}
    ],

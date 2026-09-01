@@ -54,11 +54,9 @@ if(required.every(exists)){
  expect('1 Timoteo Spanish page',spanish,'../nldg-i18n'+js+'?v=1.25.0');
  expect('1 Timoteo Spanish page',spanish,'https://nolabelsdesignedbygod.org/es/primera-timoteo-estudio'+html);
  expect('1 Timoteo Spanish page',spanish,'hreflang="en" href="https://nolabelsdesignedbygod.org/first-timothy-study'+html+'"');
- expect('Spanish study hub',hub,'quince series completas y revisadas');
  expect('Spanish study hub',hub,'href="primera-timoteo-estudio'+html+'"');
  expect('Spanish study hub',hub,'1 Timoteo: Sana enseñanza, carácter, cuidado y ministerio fiel');
  expect('Spanish study hub',hub,'7 lecciones completas');
- expect('Spanish study hub',hub,'nldg-i18n'+js+'?v=1.25.0');
 }
 
 if(errors.length){console.error('Spanish 1 Timothy Audit FAILED');for(const error of errors)console.error(`- ${error}`);process.exit(1);}

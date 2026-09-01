@@ -1,0 +1,44 @@
+name: Spanish 2 Thessalonians Audit
+
+on:
+  push:
+    paths:
+      - 'second-thessalonians-study.html'
+      - 'second-thessalonians-study-data.js'
+      - 'second-thessalonians-study-guide.js'
+      - 'second-thessalonians-study-data-es.js'
+      - 'es/segunda-tesalonicenses-estudio.html'
+      - 'es/estudios-biblicos.html'
+      - 'nldg-i18n.js'
+      - 'scripts/spanish-second-thessalonians-audit.mjs'
+      - 'scripts/spanish-first-timothy-audit.mjs'
+      - '.github/workflows/spanish-second-thessalonians-audit.yml'
+  pull_request:
+    paths:
+      - 'second-thessalonians-study.html'
+      - 'second-thessalonians-study-data.js'
+      - 'second-thessalonians-study-guide.js'
+      - 'second-thessalonians-study-data-es.js'
+      - 'es/segunda-tesalonicenses-estudio.html'
+      - 'es/estudios-biblicos.html'
+      - 'nldg-i18n.js'
+      - 'scripts/spanish-second-thessalonians-audit.mjs'
+      - 'scripts/spanish-first-timothy-audit.mjs'
+      - '.github/workflows/spanish-second-thessalonians-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  spanish-second-thessalonians:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit Spanish 2 Thessalonians study
+        run: node scripts/spanish-second-thessalonians-audit.mjs

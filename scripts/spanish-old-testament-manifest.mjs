@@ -1,0 +1,52 @@
+export const spanishOldTestamentBooks = [
+  { key: 'genesis', label: 'Genesis', spanishBook: 'Génesis', englishStem: 'genesis', spanishSlug: 'genesis-estudio', status: 'prepared' },
+  { key: 'exodus', label: 'Exodus', spanishBook: 'Éxodo', englishStem: 'exodus', spanishSlug: 'exodo-estudio', status: 'prepared' },
+  { key: 'leviticus', label: 'Leviticus', spanishBook: 'Levítico', englishStem: 'leviticus', spanishSlug: 'levitico-estudio', status: 'prepared' },
+  { key: 'numbers', label: 'Numbers', spanishBook: 'Números', englishStem: 'numbers', spanishSlug: 'numeros-estudio', status: 'prepared' },
+  { key: 'deuteronomy', label: 'Deuteronomy', spanishBook: 'Deuteronomio', englishStem: 'deuteronomy', spanishSlug: 'deuteronomio-estudio', status: 'prepared' },
+  { key: 'joshua', label: 'Joshua', spanishBook: 'Josué', englishStem: 'joshua', spanishSlug: 'josue-estudio', status: 'prepared' },
+  { key: 'judges', label: 'Judges', spanishBook: 'Jueces', englishStem: 'judges', spanishSlug: 'jueces-estudio', status: 'prepared' },
+  { key: 'ruth', label: 'Ruth', spanishBook: 'Rut', englishStem: 'ruth', spanishSlug: 'rut-estudio', status: 'published' },
+  { key: 'first-samuel', label: '1 Samuel', spanishBook: '1 Samuel', englishStem: 'first-samuel', spanishSlug: 'primera-samuel-estudio', status: 'prepared' },
+  { key: 'second-samuel', label: '2 Samuel', spanishBook: '2 Samuel', englishStem: 'second-samuel', spanishSlug: 'segunda-samuel-estudio', status: 'prepared' },
+  { key: 'first-kings', label: '1 Kings', spanishBook: '1 Reyes', englishStem: 'first-kings', spanishSlug: 'primera-reyes-estudio', status: 'prepared' },
+  { key: 'second-kings', label: '2 Kings', spanishBook: '2 Reyes', englishStem: 'second-kings', spanishSlug: 'segunda-reyes-estudio', status: 'prepared' },
+  { key: 'first-chronicles', label: '1 Chronicles', spanishBook: '1 Crónicas', englishStem: 'first-chronicles', spanishSlug: 'primera-cronicas-estudio', status: 'prepared' },
+  { key: 'second-chronicles', label: '2 Chronicles', spanishBook: '2 Crónicas', englishStem: 'second-chronicles', spanishSlug: 'segunda-cronicas-estudio', status: 'prepared' },
+  { key: 'ezra', label: 'Ezra', spanishBook: 'Esdras', englishStem: 'ezra', spanishSlug: 'esdras-estudio', status: 'prepared' },
+  { key: 'nehemiah', label: 'Nehemiah', spanishBook: 'Nehemías', englishStem: 'nehemiah', spanishSlug: 'nehemias-estudio', status: 'prepared' },
+  { key: 'esther', label: 'Esther', spanishBook: 'Ester', englishStem: 'esther', spanishSlug: 'ester-estudio', status: 'prepared' },
+  { key: 'job', label: 'Job', spanishBook: 'Job', englishStem: 'job', spanishSlug: 'job-estudio', status: 'prepared' },
+  { key: 'psalms', label: 'Psalms', spanishBook: 'Salmos', englishStem: 'psalms', spanishSlug: 'salmos-estudio', status: 'prepared' },
+  { key: 'proverbs', label: 'Proverbs', spanishBook: 'Proverbios', englishStem: 'proverbs', spanishSlug: 'proverbios-estudio', status: 'prepared' },
+  { key: 'ecclesiastes', label: 'Ecclesiastes', spanishBook: 'Eclesiastés', englishStem: 'ecclesiastes', spanishSlug: 'eclesiastes-estudio', status: 'prepared' },
+  { key: 'song-of-songs', label: 'Song of Songs', spanishBook: 'Cantar de los Cantares', englishStem: 'song-of-songs', spanishSlug: 'cantares-estudio', status: 'prepared' },
+  { key: 'isaiah', label: 'Isaiah', spanishBook: 'Isaías', englishStem: 'isaiah', spanishSlug: 'isaias-estudio', status: 'prepared' },
+  { key: 'jeremiah', label: 'Jeremiah', spanishBook: 'Jeremías', englishStem: 'jeremiah', spanishSlug: 'jeremias-estudio', status: 'prepared' },
+  { key: 'lamentations', label: 'Lamentations', spanishBook: 'Lamentaciones', englishStem: 'lamentations', spanishSlug: 'lamentaciones-estudio', status: 'prepared' },
+  { key: 'ezekiel', label: 'Ezekiel', spanishBook: 'Ezequiel', englishStem: 'ezekiel', spanishSlug: 'ezequiel-estudio', status: 'prepared' },
+  { key: 'daniel', label: 'Daniel', spanishBook: 'Daniel', englishStem: 'daniel', spanishSlug: 'daniel-estudio', status: 'prepared' },
+  { key: 'hosea', label: 'Hosea', spanishBook: 'Oseas', englishStem: 'hosea', spanishSlug: 'oseas-estudio', status: 'prepared' },
+  { key: 'joel', label: 'Joel', spanishBook: 'Joel', englishStem: 'joel', spanishSlug: 'joel-estudio', status: 'prepared' },
+  { key: 'amos', label: 'Amos', spanishBook: 'Amós', englishStem: 'amos', spanishSlug: 'amos-estudio', status: 'prepared' },
+  { key: 'obadiah', label: 'Obadiah', spanishBook: 'Abdías', englishStem: 'obadiah', spanishSlug: 'abdias-estudio', status: 'prepared' },
+  { key: 'jonah', label: 'Jonah', spanishBook: 'Jonás', englishStem: 'jonah', spanishSlug: 'jonas-estudio', status: 'prepared' },
+  { key: 'micah', label: 'Micah', spanishBook: 'Miqueas', englishStem: 'micah', spanishSlug: 'miqueas-estudio', status: 'prepared' },
+  { key: 'nahum', label: 'Nahum', spanishBook: 'Nahúm', englishStem: 'nahum', spanishSlug: 'nahum-estudio', status: 'prepared' },
+  { key: 'habakkuk', label: 'Habakkuk', spanishBook: 'Habacuc', englishStem: 'habakkuk', spanishSlug: 'habacuc-estudio', status: 'prepared' },
+  { key: 'zephaniah', label: 'Zephaniah', spanishBook: 'Sofonías', englishStem: 'zephaniah', spanishSlug: 'sofonias-estudio', status: 'prepared' },
+  { key: 'haggai', label: 'Haggai', spanishBook: 'Hageo', englishStem: 'haggai', spanishSlug: 'hageo-estudio', status: 'prepared' },
+  { key: 'zechariah', label: 'Zechariah', spanishBook: 'Zacarías', englishStem: 'zechariah', spanishSlug: 'zacarias-estudio', status: 'prepared' },
+  { key: 'malachi', label: 'Malachi', spanishBook: 'Malaquías', englishStem: 'malachi', spanishSlug: 'malaquias-estudio', status: 'prepared' }
+].map(book => ({
+  ...book,
+  englishData: `${book.englishStem}-study-data.js`,
+  englishGuide: `${book.englishStem}-study-guide.js`,
+  englishPage: `${book.englishStem}-study.html`,
+  spanishData: `${book.englishStem}-study-data-es.js`,
+  spanishPage: `es/${book.spanishSlug}.html`
+}));
+
+export const spanishOldTestamentByKey = new Map(
+  spanishOldTestamentBooks.map(book => [book.key, book])
+);

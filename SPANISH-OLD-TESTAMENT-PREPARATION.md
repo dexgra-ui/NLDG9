@@ -3,8 +3,8 @@
 ## Current position
 
 - All 39 English Old Testament book studies are the canonical source.
-- Ruth is already published and reviewed in Spanish.
-- The remaining 38 books are mapped and ready for book-by-book conversion.
+- Genesis and Ruth are published in Spanish.
+- The remaining 37 books are mapped and ready for book-by-book conversion.
 - Spanish Scripture references and quotations use Nueva Traducción Viviente (NTV) as the editorial standard.
 - Nothing is added to the public Spanish library or language switcher until the Spanish study is complete and reviewed.
 
@@ -51,7 +51,7 @@ The Spanish-speaking reviewer should confirm:
 
 ## File pattern
 
-For Genesis, the prepared mapping is:
+Genesis now demonstrates the completed conversion pattern:
 
 - English data: `genesis-study-data.js`
 - English guide: `genesis-study-guide.js`
@@ -68,10 +68,10 @@ Every remaining book follows this same pattern through Malachi.
 
 - the manifest contains exactly 39 unique Old Testament books;
 - all English source data, guide, and page files exist;
-- Ruth remains the published Spanish baseline;
-- the other 38 books do not create dead public links before translation;
+- published and prepared statuses stay synchronized with actual Spanish files;
+- prepared books do not create dead public links before translation;
 - once Spanish files appear, their lesson structure matches English;
 - NTV, metadata, shared rendering, route registration, and Spanish library placement are present;
-- published status, public routing, and actual files stay synchronized.
+- public routing and actual files stay synchronized.
 
-The workflow `.github/workflows/spanish-old-testament-prep-audit.yml` runs this protection on pull requests and on the main branch.
+Book-specific audits add pastoral safeguards for difficult texts as each study is converted. The workflow `.github/workflows/spanish-old-testament-prep-audit.yml` runs the shared protection on pull requests and on the main branch.

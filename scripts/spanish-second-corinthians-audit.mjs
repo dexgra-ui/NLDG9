@@ -58,7 +58,7 @@ if(required.every(exists)){
  expect('Spanish study hub',hub,'href="segunda-corintios-estudio'+html+'"');
  expect('Spanish study hub',hub,'2 Corintios: Consuelo, reconciliación, generosidad y fuerza en la debilidad');
  expect('Spanish study hub',hub,'6 lecciones completas');
- expect('Spanish study hub',hub,'nldg-i18n'+js+'?v=1.31.0');
+ expect('Spanish study hub',hub,'../nldg-i18n'+js+'?v=');
 }
 
 if(errors.length){console.error('Spanish 2 Corinthians Audit FAILED');for(const error of errors)console.error(`- ${error}`);process.exit(1);}

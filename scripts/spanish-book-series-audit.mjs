@@ -168,14 +168,14 @@ if(exists('jude-study-data-es.js')){
 if(exists('revelation-study-data-es.js')){
   const s=loadBookSeries('revelation-study-data-es.js'),l1=s.lessons?.[0],l3=s.lessons?.[2],l4=s.lessons?.[3],l5=s.lessons?.[4],l6=s.lessons?.[5],l7=s.lessons?.[6],l8=s.lessons?.[7];
   const guides=[...(s.seriesGuideBlocks||[]),...(s.postLessonMapGuideBlocks||[])].map(x=>x.text||'').join(' ');
-  if(!s.theme?.includes('no para fijar fechas')||!s.theme?.includes('identificación partidista'))errors.push('Revelation foundation must reject date-setting and partisan decoding.');
+  if(!s.theme?.includes('no para fijar fechas')||!s.theme?.includes('descifrar partidos políticos'))errors.push('Revelation foundation must reject date-setting and partisan decoding.');
   for(const phrase of ['cronologías debatidas','antisemitismo','señalamiento étnico','pánico tecnológico','violencia cristiana'])if(!guides.includes(phrase))errors.push(`Revelation interpretive safeguards must preserve ${phrase}.`);
   if(!l1?.teaching?.[3]?.body?.includes('buscar seguridad')||!l1?.teaching?.[5]?.body?.includes('insulto contra las mujeres'))errors.push('Revelation lesson 1 must preserve safety and non-gendered Jezebel safeguards.');
   if(!l3?.teaching?.[1]?.body?.includes('rechaza la supremacía étnica')||!l3?.teaching?.[4]?.body?.includes('maneras distintas'))errors.push('Revelation lesson 3 must preserve ethnic-equality and 144,000 humility safeguards.');
   if(!l4?.teaching?.[4]?.body?.includes('no en resistencia religiosa armada'))errors.push('Revelation lesson 4 must reject armed-religious-resistance readings of the witnesses.');
   if(!l5?.teaching?.[2]?.body?.includes('sin llamar casualmente “la bestia”')||!l5?.teaching?.[4]?.body?.includes('vacunas')||!l5?.teaching?.[4]?.body?.includes('microchips'))errors.push('Revelation lesson 5 must reject casual beast labels and vaccine/microchip panic.');
   if(!l6?.teaching?.[2]?.body?.includes('una sola nación actual')||!l6?.teaching?.[3]?.body?.includes('vidas humanas'))errors.push('Revelation lesson 6 must preserve Babylon humility and anti-exploitation teaching.');
-  if(!l7?.teaching?.[1]?.body?.includes('no autoriza guerra cristiana')||!l7?.teaching?.[3]?.body?.includes('premilenial')||!l7?.teaching?.[4]?.body?.includes('no debe usarse como amenaza'))errors.push('Revelation lesson 7 must preserve nonviolence, millennial humility, and non-coercive judgment teaching.');
+  if(!l7?.teaching?.[1]?.body?.includes('no autoriza guerra cristiana')||!l7?.teaching?.[3]?.body?.includes('premilenial')||!l7?.teaching?.[4]?.body?.includes('No debe usarse como amenaza'))errors.push('Revelation lesson 7 must preserve nonviolence, millennial humility, and non-coercive judgment teaching.');
   if(!l8?.teaching?.[0]?.body?.includes('no almas escapando')||!l8?.teaching?.[2]?.body?.includes('nunca debe alimentar antisemitismo')||!l8?.teaching?.[5]?.body?.includes('No calculamos fechas'))errors.push('Revelation lesson 8 must preserve embodied hope, anti-antisemitism, and no-date-setting safeguards.');
   if(!s.lessons?.every(x=>x.caution?.includes('antisemitismo')&&x.caution?.includes('vacunas')&&x.caution?.includes('microchips')&&x.caution?.includes('violencia cristiana')))errors.push('Revelation leader guidance must reject antisemitism, technology panic, and Christian violence throughout the series.');
 }

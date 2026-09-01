@@ -1,0 +1,48 @@
+name: Spanish Galatians Audit
+
+on:
+  push:
+    paths:
+      - 'galatians-study.html'
+      - 'galatians-study-data.js'
+      - 'galatians-study-guide.js'
+      - 'galatians-study-data-es.js'
+      - 'es/galatas-estudio.html'
+      - 'es/estudios-biblicos.html'
+      - 'nldg-i18n.js'
+      - 'book-study-series.js'
+      - 'book-study-series-es.js'
+      - 'scripts/spanish-galatians-audit.mjs'
+      - 'scripts/spanish-ephesians-audit.mjs'
+      - '.github/workflows/spanish-galatians-audit.yml'
+  pull_request:
+    paths:
+      - 'galatians-study.html'
+      - 'galatians-study-data.js'
+      - 'galatians-study-guide.js'
+      - 'galatians-study-data-es.js'
+      - 'es/galatas-estudio.html'
+      - 'es/estudios-biblicos.html'
+      - 'nldg-i18n.js'
+      - 'book-study-series.js'
+      - 'book-study-series-es.js'
+      - 'scripts/spanish-galatians-audit.mjs'
+      - 'scripts/spanish-ephesians-audit.mjs'
+      - '.github/workflows/spanish-galatians-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  spanish-galatians:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit Spanish Galatians study
+        run: node scripts/spanish-galatians-audit.mjs

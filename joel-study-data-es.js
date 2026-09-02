@@ -1,0 +1,123 @@
+window.NLDG_BOOK_STUDY={
+  "slug":"joel-estudio",
+  "book":"Joel",
+  "title":"Joel: Lamento, arrepentimiento, Espíritu, justicia y restauración",
+  "description":"Cuatro lecciones sobre crisis, lamento, regreso a Dios, derramamiento del Espíritu, justicia para personas explotadas y la presencia restauradora de Dios.",
+  "theme":"Joel llama a una comunidad devastada a prestar atención, lamentar, regresar de todo corazón y esperar en la misericordia de Dios. No uses el lenguaje del día del Señor para culpar a víctimas de desastres modernos, fabricar pánico, fijar fechas o justificar represalias. La restauración es misericordia, no una fórmula de prosperidad.",
+  "audience":"Adultos, grupos, clases y equipos de ministerio",
+  "purpose":"Este estudio de cuatro lecciones ayuda a leer Joel en contexto, practicar lamento verdadero, arrepentimiento sincero, testimonio capacitado por el Espíritu, justicia para personas explotadas y esperanza en la presencia restauradora de Dios.",
+  "background":"Una grave crisis de langostas enmarca el libro. Joel interpreta la devastación mediante el día del Señor y conduce al pueblo desde el lamento y el arrepentimiento hacia el Espíritu derramado, la justicia y la presencia de Dios.",
+  "scriptureStandard":"Nueva Traducción Viviente (NTV)",
+  "seriesPurposeLabel":"Propósito de la serie",
+  "lessonPurposeLabel":"Propósito",
+  "supportingScriptureLabel":"Escrituras de apoyo",
+  "seriesGuideBlocks":[
+    {"title":"Contexto histórico y literario","text":"Una grave crisis de langostas enmarca el libro. Joel interpreta el desastre mediante el día del Señor sin dar permiso a lectores modernos para declarar que una catástrofe específica ocurrió por pecados ocultos de sus víctimas."},
+    {"title":"Propósito central","text":"Los participantes practicarán lamento verdadero, arrepentimiento sincero, testimonio inclusivo capacitado por el Espíritu, justicia para personas explotadas y esperanza en la presencia restauradora de Dios."},
+    {"title":"Mapa de lecciones","items":["Despierten y lamenten — Joel 1","Vuelvan a mí con todo su corazón — Joel 2:1–27","Derramaré mi Espíritu — Joel 2:28–32","El Señor habita en Sion — Joel 3"]},
+    {"title":"Ritmo recomendado","text":"Reserva de 60 a 75 minutos para oración, lectura, seis movimientos de enseñanza, conversación, examen personal, práctica semanal y oración final."},
+    {"title":"Compromisos del líder","text":"Interpreta los pasajes difíciles con humildad, contexto y todo el testimonio de las Escrituras. No uses juicio, género, liderazgo, esclavitud o dinero para excusar dominio, silenciamiento, explotación ni daño a personas vulnerables."},
+    {"title":"Salvaguardas pastorales","text":"Los temas pueden tocar desastre, abuso, sexismo, racismo, presión económica y manipulación espiritual. Nunca presiones a nadie a revelar trauma. Protege seguridad, dignidad humana, procesos justos y rendición de cuentas basada en hechos. En crisis reales, la oración acompaña ayuda médica, de salud mental, legal, financiera, de vivienda y de emergencia cuando corresponda."},
+    {"title":"Lectura centrada en Cristo","text":"Jesús es el Señor resucitado que derrama el Espíritu, salva a quienes claman a él, confronta la explotación y habita con su pueblo restaurado. Pedro usa Joel en Pentecostés para explicar el testimonio del Espíritu en la iglesia."},
+    {"title":"Fruto deseado","text":"Que los participantes crezcan en compasión, discernimiento, oración, enseñanza sana, liderazgo responsable, cuidado generoso, santidad encarnada y esperanza confiada."},
+    {"title":"Énfasis interpretativo","text":"El lenguaje de crisis en Joel debe conducir a compasión, lamento, arrepentimiento y esperanza, no a afirmaciones seguras sobre por qué ocurrió un desastre moderno. Conserva el movimiento desde tierra devastada a comunidad restaurada, desde oración reunida al Espíritu sobre toda clase de personas, y desde explotación a la presencia justa y sanadora de Dios."}
+  ],
+  "lessons":[
+    {
+      "number":1,
+      "title":"Despierten y lamenten",
+      "scripture":"Joel 1:1–20",
+      "supporting":["Salmo 42","Lamentaciones 3:19–33","Romanos 8:18–25"],
+      "question":"¿Cómo debe responder el pueblo de Dios cuando una crisis altera la vida cotidiana y la adoración?",
+      "truth":"La respuesta fiel comienza prestando atención, diciendo la verdad entre generaciones, lamentando juntos y clamando a Dios en vez de adormecer el dolor o asignar culpas simplistas.",
+      "goal":"Aprender a responder a la devastación con atención, lamento compartido, compasión y dependencia de Dios sin convertir el sufrimiento en prueba de culpa personal.",
+      "opening":"Ora y lee el pasaje. Invita a observar antes de explicar. Nadie tiene que contar experiencias de desastre, pérdida, adicción, pobreza, trauma o salud mental. Cualquier participante puede pasar una pregunta.",
+      "context":"Una plaga devastadora de langostas arrasa campos, viñedos y árboles, afectando comida, economía, alegría y ofrendas del templo. Joel no identifica en este capítulo un pecado oculto particular como causa directa de la calamidad; convoca a toda la comunidad a prestar atención y lamentar.",
+      "teaching":[
+        {"heading":"1. Escuchar entre generaciones","body":"Ancianos y habitantes deben observar y contar lo ocurrido a hijos y nietos. Recordar una crisis con verdad puede formar sabiduría futura sin convertir a sobrevivientes en objetos de vergüenza."},
+        {"heading":"2. La pérdida alcanza la vida cotidiana","body":"Vino, grano, árboles y cosecha muestran daño ecológico, económico y emocional. La iglesia debe reconocer necesidades materiales además de ofrecer palabras espirituales."},
+        {"heading":"3. Se confronta el adormecimiento","body":"A quienes se embriagan se les llama a despertar porque la crisis expone dependencias que no pueden salvar. No uses el texto para humillar a personas con adicciones; acompaña arrepentimiento con tratamiento competente, comunidad y apoyo cuando sea necesario."},
+        {"heading":"4. El lamento pertenece a la adoración","body":"Los sacerdotes lloran porque cesan las ofrendas. La fe madura hace espacio para duelo, enojo, preguntas y lágrimas; lamentar no significa falta de fe."},
+        {"heading":"5. Reunir a toda la comunidad","body":"La asamblea sagrada convierte dolor privado en oración y responsabilidad compartidas. Una reunión religiosa nunca debe reemplazar evacuaciones, atención médica, refugio, comida, vivienda o instrucciones legítimas de seguridad durante una emergencia."},
+        {"heading":"6. Clamar al Señor","body":"La propia oración de Joel modela dependencia honesta en lugar de explicación distante. Ante un desastre moderno, ora, escucha, ayuda y evita afirmar con certeza que conoces la razón secreta de Dios."}
+      ],
+      "questions":["¿Qué detalle sobresale en Joel 1?","¿Qué revela este pasaje acerca de Dios y de una respuesta fiel al sufrimiento?","¿Qué pérdida humana, económica o ecológica necesita ser reconocida?","¿Por qué el lamento no debe confundirse con falta de fe?","¿Quién podría ser herido por culpar a víctimas de una calamidad?","¿Qué salvaguarda pastoral necesita una comunidad en crisis?","¿Cómo puede la iglesia unir oración con ayuda práctica?","¿Qué acción compasiva practicarás esta semana?"],
+      "examination":"¿Dónde estoy evitando dolor, buscando una explicación fácil o juzgando el sufrimiento de otros? Pide a Dios verdad, compasión y valor para lamentar sin abandonar esperanza ni responsabilidad.",
+      "challenge":"Escucha a una persona afectada por pérdida o presión sin apresurarte a explicar. Luego realiza una acción práctica de cuidado, oración, apoyo material o conexión con ayuda competente.",
+      "caution":"No declares que un desastre, enfermedad, pobreza o pérdida específica prueba pecado oculto o falta de fe. No uses lamento para retrasar ayuda urgente. Nunca presiones revelaciones personales. La oración puede caminar junto a atención médica, de salud mental, emergencia, vivienda y otras formas responsables de cuidado.",
+      "prayer":"Dios misericordioso, enséñanos a mirar de frente el dolor, lamentar con quienes sufren, proteger a personas vulnerables y clamar a ti con esperanza. Haznos una comunidad atenta, compasiva y fiel. Amén."
+    },
+    {
+      "number":2,
+      "title":"Vuelvan a mí con todo su corazón",
+      "scripture":"Joel 2:1–27",
+      "supporting":["Éxodo 34:5–7","Isaías 58:1–12","Lucas 15:11–24"],
+      "question":"¿Qué distingue el arrepentimiento verdadero de una actuación religiosa?",
+      "truth":"Dios llama a su pueblo a regresar de todo corazón porque es compasivo y misericordioso; el arrepentimiento genuino cambia dirección y recibe restauración como gracia, no como derecho adquirido.",
+      "goal":"Distinguir advertencia bíblica de manipulación religiosa y practicar un arrepentimiento que nace del carácter misericordioso de Dios y produce fruto real.",
+      "opening":"Ora por humildad y lee el pasaje lentamente. Nadie debe ser obligado a confesar detalles privados delante del grupo. La convicción del Espíritu nunca necesita humillación pública, amenazas ni presión emocional fabricada.",
+      "context":"La imagen de las langostas se expande hacia el temible día del Señor. En el centro del juicio aparece una invitación: todavía pueden volver. La esperanza descansa en el carácter de Dios revelado también en Éxodo: compasivo, misericordioso, paciente y lleno de amor fiel.",
+      "teaching":[
+        {"heading":"1. La alarma despierta a la comunidad","body":"La trompeta comunica peligro real, no pánico manufacturado. Predicación sobre juicio debe servir verdad y arrepentimiento, no miedo destinado a controlar dinero, votos, lealtad o conducta."},
+        {"heading":"2. Todavía es posible volver","body":"Aun ahora, Dios llama al pueblo a regresar. La advertencia bíblica abre una puerta al arrepentimiento y nunca autoriza a líderes a declarar a una persona fuera del alcance de la misericordia."},
+        {"heading":"3. Rasguen el corazón","body":"Las señales externas solo tienen valor cuando expresan entrega interior. Lágrimas, ropa, ayuno o lenguaje intenso no sustituyen verdad, cambio de conducta, restitución ni responsabilidad."},
+        {"heading":"4. El carácter de Dios sostiene la esperanza","body":"Dios es misericordioso, compasivo, lento para enojarse y lleno de amor fiel. Su carácter impide convertir el arrepentimiento en un sistema de terror religioso."},
+        {"heading":"5. Toda la comunidad es convocada","body":"Niños, ancianos, recién casados, sacerdotes y congregación participan. Incluir a niños no significa exponerlos a vergüenza, amenazas aterradoras ni confesiones inapropiadas; su dignidad y desarrollo deben protegerse."},
+        {"heading":"6. Restauración sin fórmula de prosperidad","body":"Dios renueva provisión, honra y alabanza en el contexto de Joel. No conviertas estas promesas en garantía de que toda persona arrepentida recuperará dinero, cosechas, salud, matrimonio o pérdidas en esta vida."}
+      ],
+      "questions":["¿Qué diferencia hay entre una alarma verdadera y miedo manipulado?","¿Qué revela la invitación 'aun ahora' acerca de Dios?","¿Cómo puede una señal externa ocultar un corazón no transformado?","¿Qué aspecto del carácter de Dios sostiene el arrepentimiento?","¿Cómo protegemos a niños y personas vulnerables durante llamados públicos?","¿Qué cambios concretos muestran fruto de arrepentimiento?","¿Por qué la restauración no debe convertirse en fórmula de prosperidad?","¿Qué regreso obediente necesitas comenzar esta semana?"],
+      "examination":"¿Hay una práctica, relación, hábito o uso del poder que necesita arrepentimiento real y no solo palabras? Pide a Dios un corazón rendido y un paso concreto de reparación.",
+      "challenge":"Haz una acción verificable de regreso: confiesa a Dios, corrige una práctica, devuelve lo que corresponde, pide rendición de cuentas o establece un plan seguro de cambio.",
+      "caution":"No fabriques pánico para producir decisiones religiosas. No obligues confesiones públicas ni uses vergüenza, amenazas o autoridad espiritual para controlar. El perdón de Dios no borra automáticamente consecuencias, restitución, límites o procesos de seguridad. La restauración no es una promesa de prosperidad garantizada.",
+      "prayer":"Señor compasivo y misericordioso, llévanos de la apariencia al arrepentimiento verdadero. Forma en nosotros corazones rendidos, acciones justas y esperanza fundada en tu amor fiel. Amén."
+    },
+    {
+      "number":3,
+      "title":"Derramaré mi Espíritu",
+      "scripture":"Joel 2:28–32",
+      "supporting":["Hechos 2:14–21","Números 11:24–30","Gálatas 3:26–29"],
+      "question":"¿Qué revela el derramamiento del Espíritu acerca de quién puede participar en la misión de Dios?",
+      "truth":"Dios derrama su Espíritu sobre personas de distintos géneros, edades y posiciones sociales, capacitando testimonio profético y ofreciendo salvación a todo el que clama al Señor.",
+      "goal":"Recibir la amplitud del don del Espíritu, honrar los dones de personas que el poder humano suele marginar y mantener el día del Señor centrado en fidelidad en vez de especulación.",
+      "opening":"Lee Joel junto con Hechos 2. Invita al grupo a observar a quiénes nombra el texto. No uses diferencias sobre roles ministeriales para deshumanizar, ridiculizar ni silenciar el testimonio fiel de otra persona.",
+      "context":"Después de la restauración agrícola, Joel mira hacia un regalo más amplio: el Espíritu sobre toda clase de personas. Pedro declara en Pentecostés que esta promesa está siendo cumplida mientras Jesús resucitado forma una comunidad testigo.",
+      "teaching":[
+        {"heading":"1. El Espíritu se derrama con abundancia","body":"La imagen comunica generosidad, no acceso reservado a una élite. Los dones son gracia para servir, nunca certificado de superioridad ni inmunidad frente a rendición de cuentas."},
+        {"heading":"2. Hijos e hijas profetizan","body":"Joel nombra explícitamente a mujeres y hombres como receptores del Espíritu para testimonio profético. No uses género para negar dignidad, voz espiritual o el hecho de que el Espíritu obra en hijas e hijos."},
+        {"heading":"3. Ancianos y jóvenes reciben","body":"La edad no monopoliza ni descalifica participación. La comunidad necesita escuchar experiencia y juventud sin convertir ninguna generación en incuestionable."},
+        {"heading":"4. Siervos reciben el Espíritu","body":"La posición social no define valor espiritual ni acceso a Dios. El texto nunca debe usarse para defender esclavitud, trata, explotación laboral o relaciones donde unas personas son tratadas como propiedad."},
+        {"heading":"5. Las señales cósmicas crean urgencia","body":"El día del Señor es serio y llama a respuesta fiel. No conviertas sol, luna y señales en calendario secreto, fijación de fechas, pánico por titulares ni acusaciones contra grupos modernos."},
+        {"heading":"6. Todo el que clama puede ser salvo","body":"La invitación rompe pretensiones de privilegio espiritual. En Hechos 2, Pedro dirige a la multitud hacia Jesús, arrepentimiento, bautismo, Espíritu y una nueva comunidad."}
+      ],
+      "questions":["¿Qué grupos nombra Joel como receptores del Espíritu?","¿Qué corrige esta promesa acerca de privilegio espiritual?","¿Cómo usa Pedro este texto en Hechos 2?","¿Cómo pueden edad, género o estatus convertirse en barreras humanas?","¿Qué diferencia existe entre dones espirituales y autoridad sin rendición de cuentas?","¿Por qué las señales no justifican fijar fechas?","¿Cómo puede la iglesia reconocer dones sin crear una nueva élite?","¿A quién puedes animar esta semana en su servicio fiel?"],
+      "examination":"¿Estoy descartando la voz de alguien por género, edad, clase, educación o posición? ¿Estoy confundiendo don espiritual con derecho a controlar? Pide humildad para recibir y servir.",
+      "challenge":"Anima de manera concreta el don de una persona cuya voz suele ser pasada por alto. Ora por ella y busca una forma responsable de abrir espacio para servicio y testimonio.",
+      "caution":"No uses Joel 2 para crear una élite espiritual, negar la dignidad o voz de mujeres, despreciar generaciones, justificar esclavitud o explotación, ni reclamar autoridad sin supervisión. No fijes fechas ni conviertas titulares en códigos proféticos. El Espíritu forma testigos de Jesús, no celebridades incuestionables.",
+      "prayer":"Jesús resucitado, gracias por derramar tu Espíritu. Danos humildad para reconocer tus dones en todo tu pueblo, valor para testificar y sabiduría para servir sin dominio ni orgullo. Amén."
+    },
+    {
+      "number":4,
+      "title":"El Señor habita en Sion",
+      "scripture":"Joel 3:1–21",
+      "supporting":["Isaías 2:1–4","Mateo 25:31–46","Apocalipsis 21:1–5"],
+      "question":"¿Cómo responde Dios a la explotación, la trata, la violencia y el sufrimiento de su pueblo?",
+      "truth":"Dios llama a cuentas a las naciones por tratar a personas como mercancía, se vuelve refugio para su pueblo, renueva la creación y establece su santa presencia.",
+      "goal":"Leer el juicio como defensa de personas explotadas y esperanza de la presencia de Dios, sin convertirlo en permiso para venganza, violencia política o deshumanización étnica.",
+      "opening":"Ora por justicia y misericordia. Lee el capítulo reconociendo que contiene guerra, desplazamiento, niños vendidos y juicio. Nadie debe relatar experiencias personales de violencia, trata o desplazamiento para participar.",
+      "context":"Joel presenta una escena parecida a un tribunal de las naciones. Las acusaciones incluyen dispersar personas, dividir tierra, vender niños y niñas y saquear recursos sagrados. La imagen de conflicto final culmina en refugio, abundancia renovada y la presencia de Dios.",
+      "teaching":[
+        {"heading":"1. Dios recuerda a las personas desplazadas","body":"Dispersión y pérdida de tierra no son invisibles para Dios. La iglesia debe tratar a refugiados, migrantes y desplazados con dignidad, verdad y cuidado práctico, sin convertir su sufrimiento en propaganda."},
+        {"heading":"2. Los seres humanos no son mercancía","body":"Vender niños y niñas por placer o ganancia recibe juicio explícito. Trata, explotación sexual, trabajo forzado y cualquier práctica que convierta personas en propiedad contradicen la dignidad que Dios reclama."},
+        {"heading":"3. Justicia divina sin venganza privada","body":"La violencia de los explotadores vuelve sobre ellos en la visión profética. El texto no autoriza venganza personal, vigilantismo, castigo colectivo ni violencia contra civiles, etnias, religiones o adversarios políticos."},
+        {"heading":"4. El día del Señor derriba falsa seguridad","body":"Las multitudes enfrentan rendición de cuentas. La imagen no ofrece un mapa para identificar con certeza naciones actuales ni justificar guerras modernas como cumplimiento profético."},
+        {"heading":"5. El Señor es refugio","body":"El rugido de Dios confronta opresión y protege a su pueblo. Refugio espiritual nunca significa que personas fieles quedarán automáticamente libres de guerra, crimen, persecución, desastre o muerte."},
+        {"heading":"6. La presencia de Dios renueva la tierra","body":"Agua, fruto, limpieza y morada reemplazan devastación. La esperanza incluye creación restaurada y justicia. No es garantía individual de riqueza, propiedad, fertilidad o salud en esta vida."}
+      ],
+      "questions":["¿Qué injusticias específicas nombra Joel 3?","¿Qué enseña el capítulo acerca del valor de personas desplazadas y explotadas?","¿Por qué la justicia de Dios no autoriza venganza privada?","¿Cómo evitamos convertir profecía en mapa de guerras modernas?","¿Qué significa que Dios sea refugio sin prometer inmunidad al sufrimiento?","¿Cómo conecta justicia humana con cuidado de la creación?","¿Qué responsabilidad tiene la iglesia frente a trata y explotación?","¿Qué práctica de justicia o apoyo asumirás esta semana?"],
+      "examination":"¿Dónde he tolerado lenguaje o sistemas que tratan a personas como mercancía, enemigos desechables o herramientas políticas? Pide a Dios una respuesta de justicia, misericordia y cuidado concreto.",
+      "challenge":"Apoya una práctica segura y verificable de justicia: aprende señales de explotación, fortalece protocolos de protección, ayuda a una persona desplazada, apoya una organización confiable o revisa cómo tu comunidad responde a personas vulnerables.",
+      "caution":"No uses Joel 3 para justificar venganza, violencia religiosa o política, odio étnico, antisemitismo, castigo colectivo ni guerras modernas como si tu interpretación fuera infalible. Cuando exista sospecha de trata, abuso o delito, prioriza seguridad, autoridades o profesionales apropiados y obligaciones de denuncia aplicables. No prometas prosperidad o protección física automática.",
+      "prayer":"Dios de justicia y refugio, defiende a quienes son explotados, corrige nuestro uso del poder, haznos protectores de la dignidad humana y llena nuestra esperanza con tu presencia restauradora. Amén."
+    }
+  ]
+};

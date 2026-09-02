@@ -33,11 +33,11 @@ if(!errors.length){
  const raw=read(esData),all=JSON.stringify(es);
  for(const version of ['RVR60','NVI','NBLA'])if(new RegExp(`\\b${version}\\b`).test(raw))fail(`Spanish Song of Songs contains disallowed Bible version ${version}.`);
  const safeguards=[
-  ['plain love poetry',['honra el amor humano del poema','sin convertir cada imagen en un código escondido']],
+  ['plain love poetry',['honra el amor humano del poema','en vez de convertir cada imagen en un código escondido']],
   ['woman has agency',['La mujer habla ampliamente','dignidad incluye agencia']],
   ['colorism and body dignity',['resiste colorismo y vergüenza corporal','La belleza no pertenece a una sola tez, edad, talla, capacidad o estándar cultural']],
   ['no entitlement',['Un cumplido nunca crea deuda, derecho de acceso','El lenguaje del pacto nunca justifica control, vigilancia, coerción o aislamiento']],
-  ['marriage not only complete life',['sin presentar el matrimonio como la única vida cristiana completa']],
+  ['marriage not only complete life',['ni presentar el matrimonio como la única vida cristiana completa']],
   ['invitation not consent',['Una invitación no es consentimiento si no puede aceptarse, rechazarse o posponerse libremente sin castigo']],
   ['anti stalking',['La poesía no autoriza acecho, monitoreo ni negarse a respetar el límite de otra persona']],
   ['consent requirements',['El consentimiento debe ser específico, mutuo, continuo y libre de miedo, intoxicación, manipulación, presión espiritual o poder desigual','derecho a pausar o decir no ahora']],

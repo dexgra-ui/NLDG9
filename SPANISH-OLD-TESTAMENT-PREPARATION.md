@@ -3,8 +3,8 @@
 ## Current position
 
 - All 39 English Old Testament book studies are the canonical source.
-- Genesis and Ruth are published in Spanish.
-- The remaining 37 books are mapped and ready for book-by-book conversion.
+- Genesis, Exodus, and Ruth are published in Spanish.
+- The remaining 36 books are mapped and ready for book-by-book conversion.
 - Spanish Scripture references and quotations use Nueva Traducción Viviente (NTV) as the editorial standard.
 - Nothing is added to the public Spanish library or language switcher until the Spanish study is complete and reviewed.
 
@@ -51,14 +51,14 @@ The Spanish-speaking reviewer should confirm:
 
 ## File pattern
 
-Genesis now demonstrates the completed conversion pattern:
+Genesis and Exodus now demonstrate the completed conversion pattern:
 
-- English data: `genesis-study-data.js`
-- English guide: `genesis-study-guide.js`
-- English page: `genesis-study.html`
-- Spanish data: `genesis-study-data-es.js`
-- Spanish page: `es/genesis-estudio.html`
-- Route pair: `'genesis-study.html':'es/genesis-estudio.html'`
+- English data: `*-study-data.js`
+- English guide: `*-study-guide.js`
+- English page: `*-study.html`
+- Spanish data: `*-study-data-es.js`
+- Spanish page: `es/*-estudio.html`
+- English/Spanish route pair in `nldg-i18n.js`
 
 Every remaining book follows this same pattern through Malachi.
 

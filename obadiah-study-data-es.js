@@ -1,0 +1,102 @@
+window.NLDG_BOOK_STUDY={
+  "slug":"abdias-estudio",
+  "book":"Abdías",
+  "title":"Abdías: Orgullo, amor al prójimo, justicia y el reino de Dios",
+  "description":"Tres lecciones sobre orgullo, parentesco traicionado, complicidad, justicia y el reino de Dios.",
+  "theme":"Abdías expone el orgullo, la traición entre pueblos emparentados, la indiferencia ante el sufrimiento, el oportunismo y la violencia, y llama al pueblo de Dios a confiar en su justicia sin buscar venganza y a esperar en su reino.",
+  "audience":"Adultos, grupos, clases y equipos de ministerio",
+  "purpose":"Reconocer el engaño del orgullo, examinar la complicidad pasiva, negarse a sacar ventaja del sufrimiento ajeno, confiar en la justicia de Dios en lugar de la venganza y esperar en su reino.",
+  "background":"Abdías, el libro más breve del Antiguo Testamento, habla contra Edom, pueblo emparentado con Judá por medio de Esaú. Durante la calamidad de Jerusalén, Edom observa, se alegra, saquea e intercepta sobrevivientes. No identifiques a Edom o Judá de manera simplista con pueblos o naciones modernas. Jesús es el Rey humilde, el prójimo sufriente, el Juez justo, el Libertador y el Señor cuyo reino reemplaza todo dominio orgulloso.",
+  "scriptureStandard":"Nueva Traducción Viviente (NTV)",
+  "seriesPurposeLabel":"Propósito de la serie",
+  "lessonPurposeLabel":"Propósito",
+  "openingLabel":"Inicio",
+  "mainPassageLabel":"Pasaje principal",
+  "supportingScriptureLabel":"Escrituras de apoyo",
+  "scriptureContextLabel":"Contexto bíblico",
+  "seriesGuideBlocks":[
+    {"title":"Contexto histórico y literario","text":"Edom, descendiente de Esaú, vive al sureste de Judá y se beneficia de fortalezas montañosas. Durante la calamidad de Jerusalén, Edom observa, se alegra, saquea e intercepta sobrevivientes. El parentesco entre ambos pueblos hace la traición especialmente grave."},
+    {"title":"Propósito central","text":"Los participantes reconocerán el engaño del orgullo, examinarán la complicidad pasiva, se negarán a lucrar con el sufrimiento, confiarán en la justicia de Dios en vez de la venganza y pondrán su esperanza en su reino."},
+    {"title":"Mapa de lecciones","items":["El engaño del orgullo — Abdías 1–9","Violencia, indiferencia y traición — Abdías 10–14","El reino será del Señor — Abdías 15–21"]},
+    {"title":"Ritmo recomendado","text":"Usa de 60 a 75 minutos para oración, lectura, movimientos de enseñanza, conversación, examen personal, práctica semanal y oración final."},
+    {"title":"Compromisos del líder","text":"No uses textos de juicio nacional para declarar que desastres contemporáneos son castigo de Dios sobre un pueblo específico. Aplica primero la advertencia al orgullo, la indiferencia, la explotación y la complicidad entre nosotros."},
+    {"title":"Salvaguardas pastorales","text":"Los temas de violencia, traición, coerción, desplazamiento y abuso espiritual pueden tocar trauma. Nunca presiones revelaciones personales. Protege la seguridad, usa límites proporcionados y busca ayuda pastoral, legal o profesional apropiada cuando corresponda."},
+    {"title":"Lectura centrada en Cristo","text":"Jesús es el Rey humilde, el prójimo sufriente, el Juez justo, el Libertador y el Señor cuyo reino reemplaza el dominio orgulloso. Su camino nos llama a amar al prójimo sin convertir la justicia en crueldad."},
+    {"title":"Fruto deseado","text":"Que los participantes crezcan en humildad, amor al prójimo, claridad bíblica, discernimiento ético, misericordia sabia, valentía responsable y confianza en el reinado final de Dios."},
+    {"title":"Énfasis interpretativo","text":"Abdías es una advertencia contra orgullo y complicidad, no permiso para celebrar la destrucción de otro pueblo. Mantén visible la relación familiar entre Edom y Judá, distingue el juicio de Dios de la venganza humana y ayuda al grupo a practicar solidaridad con vecinos en peligro. No conviertas Edom en código para judíos, árabes, palestinos, israelíes ni ninguna nación moderna, y no uses el libro para antisemitismo, odio étnico o propaganda nacionalista."}
+  ],
+  "lessons":[
+    {
+      "number":1,
+      "title":"El engaño del orgullo",
+      "scripture":"Abdías 1–9",
+      "supporting":["Proverbios 16:18–19","Jeremías 49:7–16","Santiago 4:6–10"],
+      "question":"¿Por qué el orgullo hace que personas y naciones se sientan más seguras de lo que realmente están?",
+      "truth":"El orgullo engaña al confiar en posición, sabiduría, alianzas y fuerza mientras ignora nuestra dependencia de Dios y responsabilidad hacia el prójimo.",
+      "goal":"Entender el texto en su contexto y practicar una fe humilde y discernida que protege al prójimo y honra a Jesús.",
+      "opening":"Ora y lee el pasaje. Observa acciones repetidas, contrastes morales, imágenes, advertencias, promesas y cómo se usa el poder. Evita comenzar buscando una nación moderna que encaje con Edom; deja que el texto examine primero nuestro propio orgullo.",
+      "context":"Abdías habla contra Edom, pueblo vecino y pariente de Judá por medio de Esaú. Sus fortalezas montañosas y ubicación estratégica produjeron confianza, pero Dios expone la ilusión de una seguridad intocable.",
+      "teaching":[
+        {"heading":"1. El orgullo habla desde el corazón","body":"Edom piensa que nadie puede derribarlo. La altura exterior se convierte en autoexaltación interior. El problema no es usar recursos legítimos, sino convertir ventaja en sentimiento de superioridad o inmunidad moral."},
+        {"heading":"2. La geografía segura no reemplaza a Dios","body":"Las fortalezas rocosas ofrecen ventaja práctica, pero no absolución. Ninguna frontera, ejército, economía, iglesia, partido o institución vuelve a un pueblo incapaz de ser examinado."},
+        {"heading":"3. Dios saca a la luz la arrogancia escondida","body":"El Señor anuncia una inversión que la reputación humana no puede impedir. La corrección bíblica debe producir humildad, no placer al ver caer a otra persona o nación."},
+        {"heading":"4. La falsa seguridad produce una pérdida más profunda","body":"Los ladrones suelen dejar algo; la imagen de Abdías comunica que Edom será completamente expuesto. No uses esta metáfora para justificar saqueo, confiscación arbitraria ni daño a civiles."},
+        {"heading":"5. Las alianzas de conveniencia pueden fallar","body":"Socios confiables se vuelven contra Edom. Relaciones basadas solo en ventaja mutua no pueden cargar con la confianza última que pertenece a Dios."},
+        {"heading":"6. Sabiduría y fuerza pueden convertirse en ídolos","body":"La inteligencia celebrada y los guerreros de Edom no pueden salvar una sociedad corrompida por orgullo. Capacidad, educación, tecnología o poder militar son herramientas, no certificados de rectitud."}
+      ],
+      "questions":["¿Qué detalle del pasaje desafía más tu sentido de seguridad?","¿Qué revela acerca de Dios y del orgullo humano?","¿Qué ventajas de Edom se convierten en falsa seguridad?","¿Quién puede ser dañado cuando privilegio se interpreta como superioridad?","¿Cómo debemos evaluar nuestras propias instituciones antes de juzgar otras?","¿Qué aplicación nacionalista o étnica del texto debe rechazarse?","¿Cómo trabajan juntas humildad, verdad y misericordia?","¿Qué paso de humildad practicarás esta semana?"],
+      "examination":"Pregunta dónde orgullo, distancia del sufrimiento, deseo de ventaja, temor al conflicto o identidad grupal están moldeando tu respuesta. Recibe corrección dentro de la seguridad del amor de Dios.",
+      "challenge":"Elige un paso concreto: escucha a alguien afectado por una decisión tuya, reconoce una dependencia, corrige una afirmación exagerada de superioridad, comparte poder o recursos, o invita evaluación honesta de una persona que normalmente no tiene voz contigo.",
+      "caution":"No conviertas Edom en una etiqueta para pueblos modernos ni uses el juicio para alimentar antisemitismo, odio contra árabes, nacionalismo religioso o superioridad étnica. No celebres sufrimiento ajeno. Mantén las advertencias conectadas con evidencia, contexto y un camino hacia arrepentimiento.",
+      "prayer":"Dios de verdad y misericordia, humilla nuestro orgullo, líbranos de falsa seguridad y haznos vecinos fieles que usan fuerza, conocimiento y recursos para servir. Centra nuestra esperanza en Jesús. Amén."
+    },
+    {
+      "number":2,
+      "title":"Violencia, indiferencia y traición",
+      "scripture":"Abdías 10–14",
+      "supporting":["Génesis 4:8–10","Lucas 10:25–37","Santiago 4:17"],
+      "question":"¿Cuándo observar el sufrimiento de otra persona se convierte en participación en el daño?",
+      "truth":"Dios responsabiliza no solo por violencia directa, sino también por regodeo, explotación, silencio calculado y acciones que impiden escapar a quienes sufren.",
+      "goal":"Reconocer cómo la indiferencia puede avanzar hacia complicidad activa y practicar solidaridad segura con personas vulnerables.",
+      "opening":"Ora y lee lentamente los versículos 10–14. Observa la progresión: violencia, mirar desde lejos, alegrarse, entrar, saquear, bloquear caminos y entregar sobrevivientes. Nadie debe contar experiencias personales de violencia o desplazamiento para participar.",
+      "context":"Edom permanece al margen mientras extranjeros atacan Jerusalén. El parentesco entre Edom y Judá hace la traición especialmente grave. Abdías describe un movimiento desde observar pasivamente hasta saquear e interceptar fugitivos.",
+      "teaching":[
+        {"heading":"1. La violencia contra un hermano produce vergüenza","body":"La historia compartida intensifica el deber que Edom viola. El principio no enseña que solo debemos cuidar a familiares; Jesús amplía el amor al prójimo más allá de fronteras y parentesco."},
+        {"heading":"2. Permanecer al margen no siempre es neutralidad","body":"Cuando personas vulnerables son atacadas, una distancia calculada puede beneficiar al agresor. Aun así, ayudar debe considerar seguridad, capacidad y medios responsables; no toda persona está obligada a intervenir físicamente en una situación peligrosa."},
+        {"heading":"3. Alegrarse por la caída de otro deforma el corazón","body":"Celebrar ruina convierte el dolor ajeno en autoexaltación. La justicia puede exigir consecuencias sin convertir humillación, muerte, desplazamiento o desastre en entretenimiento."},
+        {"heading":"4. La calamidad no debe convertirse en oportunidad de lucro","body":"Edom entra por las puertas y toma posesiones. Desastres, guerras, desahucios, migración o crisis económicas nunca justifican precios abusivos, robo, fraude, explotación laboral ni apropiación del patrimonio de personas debilitadas."},
+        {"heading":"5. Las palabras pueden aumentar el daño","body":"Jactarse durante la angustia humilla públicamente a quienes ya están heridos. Esto alcanza rumores, burlas, publicaciones virales y propaganda que deshumaniza a sobrevivientes o grupos enteros."},
+        {"heading":"6. Bloquear la salida se vuelve participación directa","body":"Edom intercepta fugitivos y entrega sobrevivientes. Impedir que alguien busque refugio, seguridad, atención o ayuda puede convertir indiferencia en complicidad activa. En casos de abuso, trata o peligro, protege rutas seguras y sigue obligaciones legales aplicables."}
+      ],
+      "questions":["¿Qué progresión moral observas en los versículos 10–14?","¿Por qué el parentesco hace más grave la conducta de Edom?","¿Cuándo la pasividad puede ayudar al agresor?","¿Cómo puede una crisis convertirse en oportunidad de explotación?","¿Qué daño pueden causar palabras de burla o propaganda?","¿Qué diferencia existe entre ayudar responsablemente y exponerse de manera imprudente?","¿Cómo puede una iglesia proteger rutas seguras para personas en peligro?","¿Qué forma de solidaridad concreta practicarás esta semana?"],
+      "examination":"Pregunta dónde comodidad, miedo al conflicto, deseo de ventaja o lealtad grupal te mantienen distante del sufrimiento de un vecino. Examina también si alguna ayuda que ofreces necesita mejores límites, capacitación o procesos de seguridad.",
+      "challenge":"Elige una acción segura: escucha a una persona afectada, apoya un recurso de refugio o asistencia, rechaza un rumor deshumanizante, revisa una práctica de precios o cobros, fortalece un protocolo de protección o ayuda a conectar a alguien con atención apropiada.",
+      "caution":"No romantices intervención peligrosa ni obligues a víctimas o testigos a exponerse. Nunca presiones revelaciones de trauma. Si hay violencia, trata, abuso o delito, prioriza seguridad, profesionales o autoridades apropiadas y responsabilidades de denuncia aplicables. No uses el pasaje para negar debido proceso ni para justificar represalias.",
+      "prayer":"Señor Jesús, prójimo fiel de quienes sufren, rompe nuestra indiferencia. Danos compasión, discernimiento y valor responsable para proteger, acompañar y actuar sin buscar ventaja ni gloria. Amén."
+    },
+    {
+      "number":3,
+      "title":"El reino será del Señor",
+      "scripture":"Abdías 15–21",
+      "supporting":["Salmo 22:27–28","Mateo 25:31–46","Apocalipsis 11:15"],
+      "question":"¿Cómo trae el día del Señor tanto responsabilidad como esperanza?",
+      "truth":"La justicia de Dios responde al orgullo violento según sus obras, preserva un pueblo santo, restaura lo perdido y establece su reino legítimo.",
+      "goal":"Confiar en la justicia de Dios sin tomar venganza personal y terminar el libro con esperanza en su reino, no en la supremacía de un grupo humano.",
+      "opening":"Ora y lee los versículos finales. Pregunta qué pertenece a Dios y qué no ha sido entregado a nuestra venganza. Mantén juntos juicio, liberación, restauración y la declaración final sobre el reino.",
+      "context":"Abdías amplía la visión desde Edom hacia todas las naciones. El día del Señor aplica una medida moral: lo hecho vuelve sobre quien lo hizo. El libro termina con liberación en Sion y la declaración de que el reino pertenece al Señor.",
+      "teaching":[
+        {"heading":"1. El día del Señor alcanza a todas las naciones","body":"Ningún pueblo o poder queda fuera de la rendición de cuentas divina. Esto incluye a la comunidad que lee el texto; no es una licencia para señalar solo enemigos."},
+        {"heading":"2. El juicio refleja las obras","body":"El principio de reversión expone violencia y explotación sin autorizar venganza personal. Los cristianos pueden buscar justicia, protección y procesos legales sin asumir el papel del Juez final."},
+        {"heading":"3. La celebración arrogante del dolor es invertida","body":"La imagen de la copa pasa de festejo orgulloso a juicio. El texto no invita a disfrutar sufrimiento civil ni a hablar de pueblos enteros como si fueran desechables."},
+        {"heading":"4. La liberación crea pertenencia santa","body":"La restauración de Sion incluye rescate y consagración renovada. Para cristianos, la esperanza culmina en el reinado de Jesús, no en convertir una nación moderna en dueño indiscutible de la promesa."},
+        {"heading":"5. Quienes fueron dañados reciben futuro","body":"Herencias perdidas son restauradas; la opresión no escribe el capítulo final. Esperanza no debe utilizarse para evitar restitución, reparación material, duelo o atención a sobrevivientes en el presente."},
+        {"heading":"6. El reino pertenece al Señor","body":"La última esperanza no es Judá reemplazando a Edom como gobernante orgulloso, sino el reinado de Dios. Todo nacionalismo cristiano, supremacía étnica o mesianismo político queda bajo esta afirmación."}
+      ],
+      "questions":["¿Qué significa que el día del Señor alcance a todas las naciones?","¿Cómo funciona el principio de acuerdo con las obras?","¿Por qué la justicia divina no autoriza venganza personal?","¿Qué peligro existe en celebrar la caída de un enemigo?","¿Cómo mantiene el texto juntos rescate y santidad?","¿Qué reparación puede acompañar una esperanza verdadera?","¿Qué ideologías son desafiadas por la frase 'el reino será del Señor'?","¿Cómo practicarás esperanza sin dominio esta semana?"],
+      "examination":"Pregunta si tu idea de justicia depende de que tu grupo gane, de que otro grupo sea humillado o de que tus enemigos sufran. Entrega a Dios el deseo de venganza y pide valor para buscar justicia sin perder humanidad.",
+      "challenge":"Realiza una práctica de reino: rechaza lenguaje deshumanizante, apoya reparación justa, ora por un adversario sin negar responsabilidad, ayuda a una persona desplazada o revisa una lealtad política que esté ocupando un lugar mesiánico.",
+      "caution":"No uses Abdías para celebrar guerra, muerte, desplazamiento o desastre; no identifiques pueblos modernos como Edom con certeza profética; no uses el libro para antisemitismo, antiarabismo, supremacía étnica, nacionalismo cristiano ni venganza. La esperanza en el reino de Dios debe producir humildad, justicia y amor al prójimo.",
+      "prayer":"Rey justo, confiamos en tu juicio y en tu reino. Líbranos de venganza y superioridad, restaura a quienes han sido dañados y forma en nosotros una justicia que protege sin deshumanizar. Que el reino sea tuyo en nuestra vida y comunidad. Amén."
+    }
+  ]
+};

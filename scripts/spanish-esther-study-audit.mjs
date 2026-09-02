@@ -34,13 +34,13 @@ if(!errors.length){
  for(const version of ['RVR60','NVI','NBLA'])if(new RegExp(`\\b${version}\\b`).test(raw))fail(`Spanish Esther contains disallowed Bible version ${version}.`);
  const safeguards=[
   ['coercive authority and women dignity',['control masculino, humillación ni obediencia forzada','la agencia limitada deben permanecer visibles']],
-  ['survival is not consent',['no presenta la entrada de Ester al sistema real como consentimiento libre moderno','No culpes a víctimas por la coerción']],
+  ['survival is not consent',['No describas la entrada de Ester al sistema real como un romance moderno','No culpes a víctimas por la coerción']],
   ['sexual exploitation safety',['explotación sexual','prioriza seguridad, apoyo apropiado']],
   ['antisemitism and genocide',['nombrar claramente el antisemitismo','minimicen el genocidio']],
   ['ethnic difference not suspicion',['conviertan diferencias étnicas en sospecha']],
   ['unsafe disclosure',['no exijas revelaciones que puedan ponerlo en peligro','nadie debe ser avergonzado por no revelar algo inmediatamente']],
-  ['calling with boundaries',['no presionar a alguien a exponerse a peligro','El llamado incluye sabiduría, comunidad, límites y seguridad']],
-  ['providence without overclaiming',['sin afirmar que toda coincidencia es un mensaje directo de Dios','no una fórmula para interpretar coincidencias']],
+  ['calling with boundaries',['ni presionar a alguien a exponerse a peligro','El llamado incluye sabiduría, comunidad, límites y seguridad']],
+  ['providence without overclaiming',['sin afirmar que toda coincidencia es un mensaje directo de Dios','ni una fórmula para interpretar coincidencias']],
   ['truth with due process',['verdad, evidencia, debido proceso y seguridad','castigo sin proceso justo']],
   ['structural repair',['LAS ESTRUCTURAS INJUSTAS REQUIEREN RESPUESTA ESTRUCTURAL','La protección no debe dejar a personas vulnerables permanentemente dependientes y sin voz']],
   ['self-defense not revenge',['Distingue la defensa comunitaria antigua','venganza personal, el vigilantismo moderno']],

@@ -1,7 +1,7 @@
 export const spanishOldTestamentBooks = [
   { key: 'genesis', label: 'Genesis', spanishBook: 'Génesis', englishStem: 'genesis', spanishSlug: 'genesis-estudio', status: 'published' },
   { key: 'exodus', label: 'Exodus', spanishBook: 'Éxodo', englishStem: 'exodus', spanishSlug: 'exodo-estudio', status: 'published' },
-  { key: 'leviticus', label: 'Leviticus', spanishBook: 'Levítico', englishStem: 'leviticus', spanishSlug: 'levitico-estudio', status: 'prepared' },
+  { key: 'leviticus', label: 'Leviticus', spanishBook: 'Levítico', englishStem: 'leviticus', spanishSlug: 'levitico-estudio', status: 'published' },
   { key: 'numbers', label: 'Numbers', spanishBook: 'Números', englishStem: 'numbers', spanishSlug: 'numeros-estudio', status: 'prepared' },
   { key: 'deuteronomy', label: 'Deuteronomy', spanishBook: 'Deuteronomio', englishStem: 'deuteronomy', spanishSlug: 'deuteronomio-estudio', status: 'prepared' },
   { key: 'joshua', label: 'Joshua', spanishBook: 'Josué', englishStem: 'joshua', spanishSlug: 'josue-estudio', status: 'prepared' },

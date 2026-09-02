@@ -35,7 +35,7 @@ export const spanishOldTestamentBooks = [
   { key: 'nahum', label: 'Nahum', spanishBook: 'Nahúm', englishStem: 'nahum', spanishSlug: 'nahum-estudio', status: 'published' },
   { key: 'habakkuk', label: 'Habakkuk', spanishBook: 'Habacuc', englishStem: 'habakkuk', spanishSlug: 'habacuc-estudio', status: 'published' },
   { key: 'zephaniah', label: 'Zephaniah', spanishBook: 'Sofonías', englishStem: 'zephaniah', spanishSlug: 'sofonias-estudio', status: 'published' },
-  { key: 'haggai', label: 'Haggai', spanishBook: 'Hageo', englishStem: 'haggai', spanishSlug: 'hageo-estudio', status: 'prepared' },
+  { key: 'haggai', label: 'Haggai', spanishBook: 'Hageo', englishStem: 'haggai', spanishSlug: 'hageo-estudio', status: 'published' },
   { key: 'zechariah', label: 'Zechariah', spanishBook: 'Zacarías', englishStem: 'zechariah', spanishSlug: 'zacarias-estudio', status: 'prepared' },
   { key: 'malachi', label: 'Malachi', spanishBook: 'Malaquías', englishStem: 'malachi', spanishSlug: 'malaquias-estudio', status: 'prepared' }
 ].map(book => ({

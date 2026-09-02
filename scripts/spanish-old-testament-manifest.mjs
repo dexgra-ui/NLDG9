@@ -14,7 +14,7 @@ export const spanishOldTestamentBooks = [
   { key: 'first-chronicles', label: '1 Chronicles', spanishBook: '1 Crónicas', englishStem: 'first-chronicles', spanishSlug: 'primera-cronicas-estudio', status: 'published' },
   { key: 'second-chronicles', label: '2 Chronicles', spanishBook: '2 Crónicas', englishStem: 'second-chronicles', spanishSlug: 'segunda-cronicas-estudio', status: 'published' },
   { key: 'ezra', label: 'Ezra', spanishBook: 'Esdras', englishStem: 'ezra', spanishSlug: 'esdras-estudio', status: 'published' },
-  { key: 'nehemiah', label: 'Nehemiah', spanishBook: 'Nehemías', englishStem: 'nehemiah', spanishSlug: 'nehemias-estudio', status: 'prepared' },
+  { key: 'nehemiah', label: 'Nehemiah', spanishBook: 'Nehemías', englishStem: 'nehemiah', spanishSlug: 'nehemias-estudio', status: 'published' },
   { key: 'esther', label: 'Esther', spanishBook: 'Ester', englishStem: 'esther', spanishSlug: 'ester-estudio', status: 'prepared' },
   { key: 'job', label: 'Job', spanishBook: 'Job', englishStem: 'job', spanishSlug: 'job-estudio', status: 'prepared' },
   { key: 'psalms', label: 'Psalms', spanishBook: 'Salmos', englishStem: 'psalms', spanishSlug: 'salmos-estudio', status: 'prepared' },

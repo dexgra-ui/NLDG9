@@ -3,16 +3,16 @@
 ## Current position
 
 - All 39 English Old Testament book studies are the canonical source.
-- Genesis, Exodus, Leviticus, Numbers, Deuteronomy, Joshua, Judges, Ruth, 1 Samuel, 2 Samuel, 1 Kings, 2 Kings, 1 Chronicles, 2 Chronicles, Ezra, Nehemiah, Esther, Job, Psalms, Proverbs, Ecclesiastes, Song of Songs, Isaiah, Jeremiah, Lamentations, Ezekiel, Daniel, Hosea, Joel, Amos, Obadiah, Jonah, Micah, Nahum, Habakkuk, Zephaniah, Haggai, and Zechariah are published in Spanish.
-- The remaining 1 book is mapped and ready for book-by-book conversion.
+- All 39 Old Testament book studies, Genesis through Malachi, are published in Spanish.
+- The Spanish Old Testament book-by-book conversion is complete.
 - Spanish Scripture references and quotations use Nueva Traducción Viviente (NTV) as the editorial standard.
 - Nothing is added to the public Spanish library or language switcher until the Spanish study is complete and reviewed.
 
-The machine-readable source of truth is `scripts/spanish-old-testament-manifest.mjs`. It defines every English source file, planned Spanish data file, planned Spanish page, Spanish book name, route slug, and publication status.
+The machine-readable source of truth is `scripts/spanish-old-testament-manifest.mjs`. It defines every English source file, Spanish data file, Spanish page, Spanish book name, route slug, and publication status.
 
 ## Conversion order
 
-Work in canonical order unless a ministry need changes the priority:
+The completed conversion followed canonical order unless a ministry need changed the priority:
 
 1. Law: Genesis through Deuteronomy
 2. History: Joshua through Esther
@@ -51,7 +51,7 @@ The Spanish-speaking reviewer should confirm:
 
 ## File pattern
 
-Genesis, Exodus, Leviticus, Numbers, Deuteronomy, Joshua, Judges, 1 Samuel, 2 Samuel, 1 Kings, 2 Kings, 1 Chronicles, 2 Chronicles, Ezra, Nehemiah, Esther, Job, Psalms, Proverbs, Ecclesiastes, Song of Songs, Isaiah, Jeremiah, Lamentations, Ezekiel, Daniel, Hosea, Joel, Amos, Obadiah, Jonah, Micah, Nahum, Habakkuk, Zephaniah, Haggai, and Zechariah now demonstrate the completed conversion pattern:
+Genesis through Malachi now demonstrate the completed conversion pattern:
 
 - English data: `*-study-data.js`
 - English guide: `*-study-guide.js`
@@ -60,7 +60,7 @@ Genesis, Exodus, Leviticus, Numbers, Deuteronomy, Joshua, Judges, 1 Samuel, 2 Sa
 - Spanish page: `es/*-estudio.html`
 - English/Spanish route pair in `nldg-i18n.js`
 
-Every remaining book follows this same pattern through Malachi.
+The full 39-book Old Testament collection now follows this same bilingual pattern.
 
 ## Audit behavior
 

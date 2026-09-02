@@ -36,7 +36,7 @@ if(!errors.length){
  const safeguards=[
   ['prophetic violence and children',['No autorizan a creyentes a amenazar oponentes','Nunca debe usarse para justificar violencia contra niños, jóvenes o críticos verbales']],
   ['war and prosperity misuse',['Dios respalda toda campaña militar','No es una técnica de prosperidad']],
-  ['grief and healing dignity',['no garantiza que toda oración produzca sanidad inmediata','familia en duelo carezca de fe']],
+  ['grief and healing dignity',['No garantiza que toda oración produzca sanidad inmediata','familia en duelo carezca de fe']],
   ['captivity and survivor agency',['sin aprobar su cautiverio','ni exigir que personas dañadas rescaten a quienes les hicieron daño']],
   ['illness disability dignity',['Personas con enfermedad o discapacidad llevan la imagen de Dios','nunca deben ser tratadas como maldiciones']],
   ['financial exploitation',['el acceso a Dios está en venta','engaño en recaudación, enriquecimiento privado']],

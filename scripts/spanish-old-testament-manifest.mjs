@@ -17,7 +17,7 @@ export const spanishOldTestamentBooks = [
   { key: 'nehemiah', label: 'Nehemiah', spanishBook: 'Nehemías', englishStem: 'nehemiah', spanishSlug: 'nehemias-estudio', status: 'published' },
   { key: 'esther', label: 'Esther', spanishBook: 'Ester', englishStem: 'esther', spanishSlug: 'ester-estudio', status: 'published' },
   { key: 'job', label: 'Job', spanishBook: 'Job', englishStem: 'job', spanishSlug: 'job-estudio', status: 'published' },
-  { key: 'psalms', label: 'Psalms', spanishBook: 'Salmos', englishStem: 'psalms', spanishSlug: 'salmos-estudio', status: 'prepared' },
+  { key: 'psalms', label: 'Psalms', spanishBook: 'Salmos', englishStem: 'psalms', spanishSlug: 'salmos-estudio', status: 'published' },
   { key: 'proverbs', label: 'Proverbs', spanishBook: 'Proverbios', englishStem: 'proverbs', spanishSlug: 'proverbios-estudio', status: 'prepared' },
   { key: 'ecclesiastes', label: 'Ecclesiastes', spanishBook: 'Eclesiastés', englishStem: 'ecclesiastes', spanishSlug: 'eclesiastes-estudio', status: 'prepared' },
   { key: 'song-of-songs', label: 'Song of Songs', spanishBook: 'Cantar de los Cantares', englishStem: 'song-of-songs', spanishSlug: 'cantares-estudio', status: 'prepared' },

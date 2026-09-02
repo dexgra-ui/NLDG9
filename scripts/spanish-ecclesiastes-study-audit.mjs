@@ -41,7 +41,7 @@ if(!errors.length){
   ['oppression and accountable institutions',['protección, acompañamiento, defensa veraz y justicia responsable','transparencia, rendición de cuentas']],
   ['community beyond marriage',['Esto no se limita al matrimonio']],
   ['wealth not spiritual superiority',['Tener recursos trae responsabilidad, no prueba de una fe superior','La abundancia no equivale al bienestar']],
-  ['victims not told to tolerate abuse',['nunca excusa pecado ni dice a víctimas que toleren abuso']],
+  ['victims not told to tolerate abuse',['Nunca excusa pecado ni dice a víctimas que toleren abuso']],
   ['authority not absolute',['la obediencia a la autoridad nunca es absoluta']],
   ['document harm',['documentamos daño','rendición de cuentas justa']],
   ['outcomes beyond merit',['Los resultados dependen de condiciones más allá del mérito','culpar a cada persona que lucha']],

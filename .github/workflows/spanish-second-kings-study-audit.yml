@@ -1,0 +1,22 @@
+name: Spanish 2 Kings Study Audit
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Verify Spanish 2 Kings study
+        run: node scripts/spanish-second-kings-study-audit.mjs

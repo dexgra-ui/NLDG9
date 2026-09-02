@@ -8,7 +8,7 @@ export const spanishOldTestamentBooks = [
   { key: 'judges', label: 'Judges', spanishBook: 'Jueces', englishStem: 'judges', spanishSlug: 'jueces-estudio', status: 'published' },
   { key: 'ruth', label: 'Ruth', spanishBook: 'Rut', englishStem: 'ruth', spanishSlug: 'rut-estudio', status: 'published' },
   { key: 'first-samuel', label: '1 Samuel', spanishBook: '1 Samuel', englishStem: 'first-samuel', spanishSlug: 'primera-samuel-estudio', status: 'published' },
-  { key: 'second-samuel', label: '2 Samuel', spanishBook: '2 Samuel', englishStem: 'second-samuel', spanishSlug: 'segunda-samuel-estudio', status: 'prepared' },
+  { key: 'second-samuel', label: '2 Samuel', spanishBook: '2 Samuel', englishStem: 'second-samuel', spanishSlug: 'segunda-samuel-estudio', status: 'published' },
   { key: 'first-kings', label: '1 Kings', spanishBook: '1 Reyes', englishStem: 'first-kings', spanishSlug: 'primera-reyes-estudio', status: 'prepared' },
   { key: 'second-kings', label: '2 Kings', spanishBook: '2 Reyes', englishStem: 'second-kings', spanishSlug: 'segunda-reyes-estudio', status: 'prepared' },
   { key: 'first-chronicles', label: '1 Chronicles', spanishBook: '1 Crónicas', englishStem: 'first-chronicles', spanishSlug: 'primera-cronicas-estudio', status: 'prepared' },

@@ -11,7 +11,7 @@ export const spanishOldTestamentBooks = [
   { key: 'second-samuel', label: '2 Samuel', spanishBook: '2 Samuel', englishStem: 'second-samuel', spanishSlug: 'segunda-samuel-estudio', status: 'published' },
   { key: 'first-kings', label: '1 Kings', spanishBook: '1 Reyes', englishStem: 'first-kings', spanishSlug: 'primera-reyes-estudio', status: 'published' },
   { key: 'second-kings', label: '2 Kings', spanishBook: '2 Reyes', englishStem: 'second-kings', spanishSlug: 'segunda-reyes-estudio', status: 'published' },
-  { key: 'first-chronicles', label: '1 Chronicles', spanishBook: '1 Crónicas', englishStem: 'first-chronicles', spanishSlug: 'primera-cronicas-estudio', status: 'prepared' },
+  { key: 'first-chronicles', label: '1 Chronicles', spanishBook: '1 Crónicas', englishStem: 'first-chronicles', spanishSlug: 'primera-cronicas-estudio', status: 'published' },
   { key: 'second-chronicles', label: '2 Chronicles', spanishBook: '2 Crónicas', englishStem: 'second-chronicles', spanishSlug: 'segunda-cronicas-estudio', status: 'prepared' },
   { key: 'ezra', label: 'Ezra', spanishBook: 'Esdras', englishStem: 'ezra', spanishSlug: 'esdras-estudio', status: 'prepared' },
   { key: 'nehemiah', label: 'Nehemiah', spanishBook: 'Nehemías', englishStem: 'nehemiah', spanishSlug: 'nehemias-estudio', status: 'prepared' },

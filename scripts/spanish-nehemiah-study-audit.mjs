@@ -35,7 +35,7 @@ if(!errors.length){
  for(const version of ['RVR60','NVI','NBLA'])if(new RegExp(`\\b${version}\\b`).test(raw))fail(`Spanish Nehemiah contains disallowed Bible version ${version}.`);
  const safeguards=[
   ['grief and honest reality',['no se apresura a pasar por encima del dolor','buscamos la verdad en vez de protegernos de realidades incómodas']],
-  ['vision and honest assessment',['no construye entusiasmo sobre suposiciones','promesas que ignoran la condición real de la obra']],
+  ['vision and honest assessment',['No construye entusiasmo sobre suposiciones','promesas que ignoran la condición real de la obra']],
   ['shared work without exploitation',['no de coerción ni de un sistema que explota repetidamente a las personas confiables']],
   ['burnout dignity',['Los líderes no deben tratar la fatiga como rebeldía','permite nombrar límites y reorganizar cargas']],
   ['prayer and safety',['Las medidas de seguridad sabias pueden ser expresiones de responsabilidad']],

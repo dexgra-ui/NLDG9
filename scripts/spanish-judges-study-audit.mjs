@@ -43,7 +43,7 @@ if(!errors.length){
   ['Judges 19 victim dignity and anti-retaliation',['La concubina es una víctima','violencia sexual','indignación moral sin sabiduría']]
  ];
  for(const [label,phrases] of safeguards)for(const phrase of phrases)if(!all.includes(phrase))fail(`Judges safeguard missing ${label}: ${phrase}.`);
- for(const phrase of ['no fuerces revelaciones personales','No prometas confidencialidad absoluta','procedimientos aprobados de denuncia','protección contra represalias','Los oponentes modernos no son cananeos'])if(!all.includes(phrase))fail(`Judges leader safeguard missing ${phrase}.`);
+ for(const phrase of ['No fuerces revelaciones personales','No prometas confidencialidad absoluta','procedimientos aprobados de denuncia','protección contra represalias','Los oponentes modernos no son cananeos'])if(!all.includes(phrase))fail(`Judges leader safeguard missing ${phrase}.`);
  const english=read(enPage),spanish=read(esPage),hub=read(hubPath),i18n=read(i18nPath);
  if(!english.includes('hreflang="es" href="https://nolabelsdesignedbygod.org/es/jueces-estudio'+html+'"'))fail('English Judges page must link Spanish alternate.');
  if(!english.includes('nldg-i18n'+js+'?v=1.45.0'))fail('English Judges page must load current language switcher.');

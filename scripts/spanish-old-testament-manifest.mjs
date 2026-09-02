@@ -27,7 +27,7 @@ export const spanishOldTestamentBooks = [
   { key: 'ezekiel', label: 'Ezekiel', spanishBook: 'Ezequiel', englishStem: 'ezekiel', spanishSlug: 'ezequiel-estudio', status: 'published' },
   { key: 'daniel', label: 'Daniel', spanishBook: 'Daniel', englishStem: 'daniel', spanishSlug: 'daniel-estudio', status: 'published' },
   { key: 'hosea', label: 'Hosea', spanishBook: 'Oseas', englishStem: 'hosea', spanishSlug: 'oseas-estudio', status: 'published' },
-  { key: 'joel', label: 'Joel', spanishBook: 'Joel', englishStem: 'joel', spanishSlug: 'joel-estudio', status: 'prepared' },
+  { key: 'joel', label: 'Joel', spanishBook: 'Joel', englishStem: 'joel', spanishSlug: 'joel-estudio', status: 'published' },
   { key: 'amos', label: 'Amos', spanishBook: 'Amós', englishStem: 'amos', spanishSlug: 'amos-estudio', status: 'prepared' },
   { key: 'obadiah', label: 'Obadiah', spanishBook: 'Abdías', englishStem: 'obadiah', spanishSlug: 'abdias-estudio', status: 'prepared' },
   { key: 'jonah', label: 'Jonah', spanishBook: 'Jonás', englishStem: 'jonah', spanishSlug: 'jonas-estudio', status: 'prepared' },

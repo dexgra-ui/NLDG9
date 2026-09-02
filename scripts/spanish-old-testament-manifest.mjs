@@ -16,7 +16,7 @@ export const spanishOldTestamentBooks = [
   { key: 'ezra', label: 'Ezra', spanishBook: 'Esdras', englishStem: 'ezra', spanishSlug: 'esdras-estudio', status: 'published' },
   { key: 'nehemiah', label: 'Nehemiah', spanishBook: 'Nehemías', englishStem: 'nehemiah', spanishSlug: 'nehemias-estudio', status: 'published' },
   { key: 'esther', label: 'Esther', spanishBook: 'Ester', englishStem: 'esther', spanishSlug: 'ester-estudio', status: 'published' },
-  { key: 'job', label: 'Job', spanishBook: 'Job', englishStem: 'job', spanishSlug: 'job-estudio', status: 'prepared' },
+  { key: 'job', label: 'Job', spanishBook: 'Job', englishStem: 'job', spanishSlug: 'job-estudio', status: 'published' },
   { key: 'psalms', label: 'Psalms', spanishBook: 'Salmos', englishStem: 'psalms', spanishSlug: 'salmos-estudio', status: 'prepared' },
   { key: 'proverbs', label: 'Proverbs', spanishBook: 'Proverbios', englishStem: 'proverbs', spanishSlug: 'proverbios-estudio', status: 'prepared' },
   { key: 'ecclesiastes', label: 'Ecclesiastes', spanishBook: 'Eclesiastés', englishStem: 'ecclesiastes', spanishSlug: 'eclesiastes-estudio', status: 'prepared' },

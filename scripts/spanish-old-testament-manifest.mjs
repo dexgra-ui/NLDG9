@@ -30,7 +30,7 @@ export const spanishOldTestamentBooks = [
   { key: 'joel', label: 'Joel', spanishBook: 'Joel', englishStem: 'joel', spanishSlug: 'joel-estudio', status: 'published' },
   { key: 'amos', label: 'Amos', spanishBook: 'Amós', englishStem: 'amos', spanishSlug: 'amos-estudio', status: 'published' },
   { key: 'obadiah', label: 'Obadiah', spanishBook: 'Abdías', englishStem: 'obadiah', spanishSlug: 'abdias-estudio', status: 'published' },
-  { key: 'jonah', label: 'Jonah', spanishBook: 'Jonás', englishStem: 'jonah', spanishSlug: 'jonas-estudio', status: 'prepared' },
+  { key: 'jonah', label: 'Jonah', spanishBook: 'Jonás', englishStem: 'jonah', spanishSlug: 'jonas-estudio', status: 'published' },
   { key: 'micah', label: 'Micah', spanishBook: 'Miqueas', englishStem: 'micah', spanishSlug: 'miqueas-estudio', status: 'prepared' },
   { key: 'nahum', label: 'Nahum', spanishBook: 'Nahúm', englishStem: 'nahum', spanishSlug: 'nahum-estudio', status: 'prepared' },
   { key: 'habakkuk', label: 'Habakkuk', spanishBook: 'Habacuc', englishStem: 'habakkuk', spanishSlug: 'habacuc-estudio', status: 'prepared' },

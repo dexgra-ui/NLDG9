@@ -51,7 +51,7 @@ if(!errors.length){
   if(!l7.teaching[1].body.includes('decisiones que facilitaron')||!l7.teaching[3].body.includes('Nunca autoriza')||!l7.teaching[3].body.includes('desacuerdo religioso'))fail('Lesson 7 must preserve accountable leadership and reject religious violence.');
   if(!l8.teaching[0].body.includes('coerción')||!l8.teaching[0].body.includes('riqueza garantizada')||!l8.teaching[4].body.includes('límites humanos')||!l8.teaching[5].body.includes('líderes puedan controlar'))fail('Lesson 8 must preserve voluntary giving, anti-prosperity, rest, and non-controlling leadership safeguards.');
   const guide=String(es.seriesLeaderGuidance||'');
-  for(const phrase of ['esclavitud','antisemitismo','violencia religiosa','represalias modernas','médica','legal','financiero','protección'])if(!guide.includes(phrase))fail(`Exodus leader guidance must preserve ${phrase}.`);
+  for(const phrase of ['esclavitud','antisemitismo','violencia religiosa','represalias modernas','médica','legal','financiera','protección'])if(!guide.includes(phrase))fail(`Exodus leader guidance must preserve ${phrase}.`);
   const english=read(enPage),spanish=read(esPage),hub=read(hubPath),i18n=read(i18nPath);
   if(!english.includes('hreflang="es" href="https://nolabelsdesignedbygod.org/es/exodo-estudio'+html+'"'))fail('English Exodus page must link Spanish alternate.');
   if(!english.includes('nldg-i18n'+js+'?v=1.40.0'))fail('English Exodus page must load current language switcher.');

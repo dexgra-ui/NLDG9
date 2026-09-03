@@ -1,0 +1,24 @@
+name: Spanish Bible Book Audit
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  spanish-bible-books:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run consolidated Spanish Bible book audits
+        run: node scripts/spanish-bible-book-audit.mjs

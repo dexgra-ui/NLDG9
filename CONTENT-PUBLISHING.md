@@ -13,6 +13,20 @@ The shared content registry is the source of truth for ministry discovery. A pub
 
 New content should not require manual edits to homepage sections, search, topic browsing, Scripture browsing, related-content blocks, or the complete-content site-map index.
 
+## Default bilingual workflow for new Bible studies
+
+Every new Bible study is bilingual by default.
+
+- English is the canonical source edition.
+- The Spanish counterpart is created as part of the same active study project once the English structure is stable; it is not deferred into a future translation backlog.
+- Preserve the complete lesson and series structure in both languages, including Scripture references, teaching movements, questions, personal examination, weekly practice, leader guidance, cautions, and prayers.
+- Spanish should read naturally while preserving the theology, pastoral intent, and safeguards of the English source. Nueva Traducción Viviente (NTV) is the Spanish editorial Scripture standard where Scripture text is quoted.
+- Do not register the bilingual route or publish the Spanish edition until its files exist, the content has completed review, and the relevant audits pass.
+- The English and Spanish editions should normally be prepared together and be ready within the same publishing cycle.
+- If ministry timing requires English to publish first, that is an explicit exception. The Spanish edition remains part of the same active project until review and publication are complete.
+
+For implementation details, route pairing, selector behavior, Spanish-page requirements, and bilingual testing, see `BILINGUAL-PUBLISHING.md`.
+
 ## Source fidelity for imported studies
 
 When a Bible study is published from a Google Drive source document, the Drive document is the authoritative content source. Website formatting may change, but the content must remain complete.
@@ -74,5 +88,6 @@ The service worker installs the application shell and major ministry hubs. Other
 - The generated site-map index includes the new entry.
 - Related content is relevant.
 - Imported studies have been checked against their authoritative source for complete text and Scripture references.
+- For every new Bible study, the Spanish counterpart has been built in the same project, reviewed, route-paired, and audited unless an explicit English-first exception is documented.
 - Print output is checked when applicable.
 - Automated audits pass before merge.

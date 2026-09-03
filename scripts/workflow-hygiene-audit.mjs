@@ -18,13 +18,26 @@ const permanentAudits=[
   '.github/workflows/accessibility-audit.yml',
   '.github/workflows/repository-completion-audit.yml',
   '.github/workflows/seo-social-audit.yml',
-  '.github/workflows/site-quality.yml'
+  '.github/workflows/site-quality.yml',
+  '.github/workflows/spanish-bible-book-audit.yml'
 ];
 for(const file of permanentAudits){
   assert(exists(file),`${file}: permanent audit workflow is missing`);
   if(!exists(file))continue;
   const yaml=read(file);
   assert(!/contents:\s*write/i.test(yaml),`${file}: permanent audit workflows must not request contents: write`);
+}
+
+const spanishAggregate='scripts/spanish-bible-book-audit.mjs';
+assert(exists(spanishAggregate),`${spanishAggregate}: consolidated Spanish Bible book runner is missing`);
+if(exists(spanishAggregate)){
+  const aggregate=read(spanishAggregate);
+  const legacyScripts=[...aggregate.matchAll(/'scripts\/(spanish-[^']+-audit\.mjs)'/g)].map(match=>match[1]);
+  assert(legacyScripts.length>=50,`${spanishAggregate}: expected the completed book collection to retain at least 50 legacy safeguard audits`);
+  for(const script of legacyScripts){
+    const workflow=`.github/workflows/${script.replace(/\.mjs$/,'.yml')}`;
+    assert(!exists(workflow),`${workflow}: legacy per-book workflow must stay retired; its script now runs through Spanish Bible Book Audit`);
+  }
 }
 
 if(exists('.github/workflows/site-quality.yml')){
@@ -39,4 +52,4 @@ if(failures.length){
   failures.forEach(item=>console.error(`- ${item}`));
   process.exit(1);
 }
-console.log('Workflow hygiene audit PASSED: one-time repair workflows are retired and permanent audits remain read-only.');
+console.log('Workflow hygiene audit PASSED: one-time repair workflows stay retired, Spanish book safeguards run through one workflow, and permanent audits remain read-only.');

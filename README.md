@@ -6,7 +6,7 @@ Production website and installable ministry platform for No Labels, Designed by 
 
 **Version 1.1.1 — Ministry Platform Maintenance Release**
 
-This maintenance release captures the expanded study collections, complete Book-by-Book Bible Study library, Biblical Maps & Geography reference system, Complete Biblical People & Genealogy Reference, Bible Tic-Tac-Toe improvements, linked Scripture references, podcast correction, accessibility fixes, repository cleanup, and stronger quality automation now serving the ministry platform.
+This maintenance release captures the expanded study collections, complete bilingual Book-by-Book Bible Study library, Biblical Maps & Geography reference system, Complete Biblical People & Genealogy Reference, Bible Tic-Tac-Toe improvements, linked Scripture references, podcast correction, accessibility fixes, repository cleanup, and stronger quality automation now serving the ministry platform.
 
 ## Ministry journeys
 
@@ -23,6 +23,21 @@ This maintenance release captures the expanded study collections, complete Book-
 - When Preferences Become Idols study series
 - Walking with Jesus chronological Gospel journey
 - Book-by-Book Bible Studies across all 66 books with 447 complete lessons
+
+## Bilingual platform
+
+English is the canonical source language and Spanish is the first reviewed translated language under `/es/`.
+
+The foundational Spanish publishing phase is complete:
+
+- all 66 Bible book studies are published in English and Spanish;
+- the Spanish book library is organized at `es/libro-por-libro.html` with 39 Old Testament and 27 New Testament books;
+- the Spanish Bible Studies hub remains compact at `es/estudios-biblicos.html`;
+- the New Believer / Start Here and Walking With Jesus pathways are available in Spanish;
+- NTV is the primary editorial Spanish Bible translation;
+- one consolidated Spanish Bible Book Audit preserves the book-specific translation, route, completion, and pastoral safeguards without separate per-book GitHub Actions workflows.
+
+Future Spanish work is normal ministry-content publishing and selective expansion, not completion of a remaining Bible-book conversion backlog. See `BILINGUAL-PUBLISHING.md` and `SPANISH-OLD-TESTAMENT-PREPARATION.md` for the current publishing rules and closed conversion record.
 
 ## Biblical reference resources
 
@@ -42,7 +57,7 @@ This maintenance release captures the expanded study collections, complete Book-
 - Resource Center, teaching tools, biblical reference resources, devotionals, articles, podcast, and ministry news centers
 - Installable progressive web app with offline caching
 - Responsive layouts for phone, tablet, laptop, and desktop
-- Automated site, accessibility, SEO/social, responsive, repository-completion, Leadership, and Toolkit quality audits
+- Automated site, accessibility, SEO/social, responsive, repository-completion, Leadership, Toolkit, bilingual-route, and consolidated Spanish Bible-book quality audits
 
 ## No Labels Games
 
@@ -83,7 +98,7 @@ Before merging a release:
 1. Run the Site Quality Audit.
 2. Run the Accessibility Audit.
 3. Run the SEO/social and Repository Completion audits.
-4. Run any journey-specific audit affected by the change.
+4. Run any journey-specific, bilingual, or content-specific audit affected by the change.
 5. Open the homepage, search, Resource Center, site map, and changed ministry pages.
 6. Test portrait and landscape layouts on phone and tablet.
 7. Launch all six games and verify scoring, navigation, standings, presentation mode, and replay.

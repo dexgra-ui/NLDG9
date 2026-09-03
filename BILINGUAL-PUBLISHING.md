@@ -4,7 +4,7 @@
 
 No Labels, Designed by God™ uses English as the canonical source language and Spanish as the first translated language under `/es/`.
 
-The goal is not automatic translation. The goal is a maintainable publishing system where framework pages and ministry resources can have deliberate, reviewed English and Spanish counterparts.
+The goal is not automatic publication of machine translation. The goal is a maintainable publishing system where framework pages and ministry resources have deliberate, reviewed English and Spanish counterparts. For new Bible studies, bilingual creation is the default workflow: the Spanish counterpart is built as part of the same study project rather than left for a future backlog.
 
 ## Current status
 
@@ -23,11 +23,13 @@ There is no remaining book-by-book Spanish conversion backlog. Future bilingual 
 
 1. English remains the canonical source unless a page explicitly says otherwise.
 2. Spanish routes live under `/es/`.
-3. Published ministry content is translated and reviewed intentionally. Do not blindly machine-translate studies, devotionals, articles, newsletters, or lesson resources.
-4. When an equivalent Spanish page exists, the English | Español selector should keep the visitor on the equivalent page.
-5. When no Spanish version exists, the selector routes to `/es/proximamente.html` with a safe link back to the English source.
-6. Preserve NLDG branding, Scripture-link behavior, legal notices, accessibility, responsive layout, and content structure.
-7. The public ministry name remains `No Labels, Designed by God™` in both languages.
+3. Every new Bible study is bilingual by default. Build the Spanish counterpart in the same project once the English source structure is stable; do not defer it into a translation backlog unless an explicit exception is approved.
+4. Published ministry content is translated and reviewed intentionally. Do not blindly machine-translate studies, devotionals, articles, newsletters, or lesson resources.
+5. A Spanish Bible study is not published merely because a draft translation exists. It must preserve the English teaching intent and structure, use the NTV editorial standard where Scripture text is quoted, pass the relevant audits, and complete the normal review step.
+6. When an equivalent Spanish page exists, the English | Español selector should keep the visitor on the equivalent page.
+7. When no Spanish version exists, the selector routes to `/es/proximamente.html` with a safe link back to the English source.
+8. Preserve NLDG branding, Scripture-link behavior, legal notices, accessibility, responsive layout, and content structure.
+9. The public ministry name remains `No Labels, Designed by God™` in both languages.
 
 ## Route registry
 
@@ -60,10 +62,28 @@ The primary Spanish Bible translation for NLDG is Nueva Traducción Viviente (NT
 
 Do not assume an English quotation can be translated freely and still carry the original publisher permissions. Prefer references or properly licensed Spanish Bible text.
 
+## Default workflow for every new Bible study
+
+A new Bible-study project is considered bilingual work from the beginning.
+
+1. Build and approve the English canonical study structure and source content.
+2. In the same project, create the Spanish counterpart under `/es/` rather than placing it on a future translation list.
+3. Preserve every lesson, Scripture reference, teaching movement, discussion question, personal examination, weekly practice, leader safeguard, caution, prayer, and other source section unless an editorial change is explicitly approved.
+4. Use natural ministry Spanish while preserving theological meaning and pastoral safeguards. Use Nueva Traducción Viviente (NTV) as the Spanish Scripture standard where Scripture text is quoted.
+5. Add the English/Spanish route pair only after both files exist and the Spanish version has completed review.
+6. Surface the Spanish study in the appropriate Spanish hub or library when it is ready for visitors.
+7. Run bilingual-route, Site Quality, accessibility, SEO/repository checks, and any study-specific or Spanish-study audit that applies.
+8. Verify the English | Español selector in both directions and test phone, tablet, laptop, and desktop layouts.
+9. Treat the study project as complete when the English edition is ready and the Spanish edition is also ready for reviewed publication.
+
+If ministry timing requires the English edition to publish before the Spanish review is complete, that is an explicit exception, not the default. The Spanish counterpart should still remain part of the same active project until it is reviewed and published.
+
 ## Publishing a new bilingual resource
 
+For resources other than Bible studies, use this general workflow:
+
 1. Publish or confirm the English canonical resource.
-2. Create the reviewed Spanish counterpart under `/es/`.
+2. Create the reviewed Spanish counterpart under `/es/` when bilingual publication is part of the project.
 3. Preserve the same major teaching structure and Scripture references unless an editorial revision is intentionally approved.
 4. Add the pair to `nldg-i18n.js`.
 5. Add the Spanish resource to the appropriate Spanish hub page.
@@ -103,7 +123,7 @@ The Spanish article `Un cristiano guiado por el Gran Mandamiento` may remain a S
 
 ## Future Spanish expansion
 
-With the foundational conversion phase closed, new Spanish work should follow ministry value rather than a backlog-driven rollout.
+With the foundational conversion phase closed, new Spanish work should follow ministry value rather than a backlog-driven rollout. New Bible studies are the exception to selective expansion: they are bilingual by default under the workflow above.
 
 ### Evergreen devotionals
 

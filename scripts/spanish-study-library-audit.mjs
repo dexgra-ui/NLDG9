@@ -110,7 +110,7 @@ for(const item of standalone){
   expect(item.file,page,'<link rel="canonical"');
   if(item.source){
     expect(item.file,page,`hreflang="en" href="https://nolabelsdesignedbygod.org/${item.source}"`);
-    expect(item.file,page,`href="../${item.source}" lang="en"`);
+    if(!page.includes(`href="../${item.source}" lang="en"`)&&!page.includes('../nldg-i18n'+js))errors.push(`${item.file}: must provide an English return link or the bilingual selector.`);
   }
   if(item.ntv){
     expect(item.file,page,'NTV');

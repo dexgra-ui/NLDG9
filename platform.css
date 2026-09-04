@@ -19,3 +19,14 @@
 .compact-lesson-header :is(.series-back){margin-bottom:14px}
 .compact-lesson-header :is(.prep-hero,.book-hero) blockquote{margin-top:18px;margin-bottom:16px;padding:15px 18px;font-size:clamp(1.05rem,1.8vw,1.3rem)}
 @media(max-width:700px){.compact-lesson-header :is(.mof-study-hero,.wof-study-hero,.mf-study-hero,.dq-study-hero,.ld-study-hero,.wj-hero,.prep-hero,.book-hero){padding:24px 16px 26px}.compact-lesson-header :is(.mof-study-hero,.wof-study-hero,.mf-study-hero,.dq-study-hero,.ld-study-hero,.wj-hero,.prep-hero,.book-hero) h1{font-size:clamp(2.25rem,11vw,3.45rem);line-height:1.02}.compact-lesson-header :is(.mof-study-meta,.wof-study-meta,.mf-study-meta,.dq-study-meta,.ld-study-meta,.wj-meta,.prep-meta,.series-meta) span{font-size:.76rem}.compact-lesson-header :is(.prep-hero,.book-hero) blockquote{margin-top:14px}}
+
+/* Biblical map light surfaces keep readable contrast against the dark site theme. */
+.map-hero~.section :is(.map-shell,.map-panel,.map-side,.accuracy-note,.caution-note,.warning-note,.debated,.legend-grid>div,.place-grid>article,.feature,.related-grid>a){color:#334155}
+.map-hero~.section :is(.accuracy-note,.caution-note,.warning-note,.debated,.legend-grid>div,.place-grid>article,.feature,.related-grid>a) :is(h2,h3,strong){color:#112d46}
+.map-hero~.section :is(.legend-grid>div,.place-grid>article,.feature,.related-grid>a,.map-side) p{color:#475569}
+.map-hero~.section :is(.place-grid>article,.feature) small{color:#5f6673}
+.map-hero~.section .related-grid>a span{color:#475569}
+.map-hero~.section .map-side .kicker{color:#8a5e0a}
+.map-hero~.section .map-side h2{color:#112d46;font-size:1.55rem;line-height:1.2;letter-spacing:-.02em;margin:1.25rem 0 .3rem}
+.map-hero~.section .map-side p{margin:.25rem 0 .75rem;color:#475569}
+@media(max-width:850px){.map-hero~.section .map-side h2{font-size:1.4rem}}

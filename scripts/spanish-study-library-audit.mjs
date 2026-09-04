@@ -40,6 +40,7 @@ const standalone=[
   {href:'de-adan-a-abram'+html,file:['es','de-adan-a-abram'+html].join('/'),source:'study-genesis-genealogy-foundations'+html,ntv:true,block:'study-block'},
   {href:'por-que-dos-genealogias'+html,file:['es','por-que-dos-genealogias'+html].join('/'),source:'study-genealogy-of-jesus'+html,ntv:true,block:'study-block'},
   {href:'la-ofrenda-de-la-viuda'+html,file:['es','la-ofrenda-de-la-viuda'+html].join('/'),source:'study-widows-mite'+html,ntv:true,block:'context-block'},
+  {href:'estudio-identidad-familiar'+html,file:['es','estudio-identidad-familiar'+html].join('/'),source:'family-identity-study'+html},
   {href:'verte-con-los-ojos-de-dios'+html,file:['es','verte-con-los-ojos-de-dios'+html].join('/'),source:'study-identity'+html,ntv:true},
   {href:'el-duelo-de-envejecer'+html,file:['es','el-duelo-de-envejecer'+html].join('/'),source:'study-grief-of-aging'+html,ntv:true},
   {href:'escapismo-vs-esperanza-eterna'+html,file:['es','escapismo-vs-esperanza-eterna'+html].join('/'),source:'study-escapism'+html,ntv:true},
@@ -57,17 +58,18 @@ for(const item of bookSeries)expect('Bilingual book-series route map',i18n,`'${i
 
 expect('Spanish study hub',hub,'Caminos completos');
 expect('Spanish study hub',hub,'once series completas y revisadas');
-expect('Spanish study hub',hub,'Once recursos independientes en español');
-expect('Spanish study hub completion claim',hub,'Los diez estudios independientes del catálogo inglés ya tienen una contraparte completa en español');
+expect('Spanish study hub',hub,'Doce recursos independientes en español');
+expect('Spanish study hub completion claim',hub,'Los once estudios independientes del catálogo inglés ya tienen una contraparte completa en español');
 expect('Spanish study hub NTV standard',hub,'Nueva Traducción Viviente (NTV)');
 expect('Spanish study hub editorial policy',hub,'No traduciremos automáticamente todo el sitio');
-expect('Spanish study hub current selector',hub,'nldg-i18n'+js+'?v=1.21.0');
+expect('Spanish study hub current selector',hub,'nldg-i18n'+js+'?v=1.78.0');
 expect('Spanish study hub shared framework',hub,'es-framework'+js+'?v=1.1.0');
 
 const translatedStandalonePairs={
   ['study-genesis-genealogy-foundations'+html]:['es','de-adan-a-abram'+html].join('/'),
   ['study-genealogy-of-jesus'+html]:['es','por-que-dos-genealogias'+html].join('/'),
   ['study-widows-mite'+html]:['es','la-ofrenda-de-la-viuda'+html].join('/'),
+  ['family-identity-study'+html]:['es','estudio-identidad-familiar'+html].join('/'),
   ['study-grief-of-aging'+html]:['es','el-duelo-de-envejecer'+html].join('/'),
   ['study-scripture-context'+html]:['es','como-estudiar-la-biblia'+html].join('/'),
   ['study-identity'+html]:['es','verte-con-los-ojos-de-dios'+html].join('/'),
@@ -77,12 +79,14 @@ const translatedStandalonePairs={
   ['study-escapism'+html]:['es','escapismo-vs-esperanza-eterna'+html].join('/')
 };
 for(const [en,es] of Object.entries(translatedStandalonePairs))expect('Bilingual standalone route map',i18n,`'${en}':'${es}'`);
-if(Object.keys(translatedStandalonePairs).length!==10)errors.push('Expected exactly 10 translated English standalone studies.');
+if(Object.keys(translatedStandalonePairs).length!==11)errors.push('Expected exactly 11 translated English standalone studies.');
 for(const source of Object.keys(translatedStandalonePairs)){
   if(!exists(source))errors.push(`English standalone source is missing: ${source}`);
-  expect('Standalone language loader',navigation,`'${source}'`);
+  const sourcePage=exists(source)?read(source):'';
+  if(!navigation.includes(`'${source}'`)&&!sourcePage.includes('nldg-i18n'+js))errors.push(`Standalone language loader: ${source} must load the bilingual selector through navigation or directly.`);
 }
-expect('Standalone language loader',navigation,'nldg-i18n'+js+'?v=1.10.0');
+expect('Existing standalone language loader',navigation,'nldg-i18n'+js+'?v=1.10.0');
+expect('Family identity study current selector',read('family-identity-study'+html),'nldg-i18n'+js+'?v=1.78.0');
 
 const walking=read(['es','caminando-con-jesus'+html].join('/'));
 expect('Caminando con Jesús',walking,'data-caminando-count>21</span> lecciones están disponibles en español');
@@ -106,7 +110,7 @@ for(const item of standalone){
   expect(item.file,page,'<link rel="canonical"');
   if(item.source){
     expect(item.file,page,`hreflang="en" href="https://nolabelsdesignedbygod.org/${item.source}"`);
-    expect(item.file,page,`href="../${item.source}" lang="en"`);
+    if(!page.includes(`href="../${item.source}" lang="en"`)&&!page.includes('../nldg-i18n'+js))errors.push(`${item.file}: must provide an English return link or the bilingual selector.`);
   }
   if(item.ntv){
     expect(item.file,page,'NTV');
@@ -126,7 +130,7 @@ if(errors.length){
 console.log('Spanish Study Library Audit PASSED');
 console.log('OK: 3 complete Spanish discipleship/study paths are surfaced.');
 console.log('OK: 11 complete reviewed Spanish book-by-book series are surfaced.');
-console.log('OK: 11 reviewed Spanish independent study resources are surfaced.');
-console.log('OK: all 10 English standalone studies have protected Spanish route pairs.');
-console.log('OK: English standalone studies retain the shared bilingual selector.');
+console.log('OK: 12 reviewed Spanish independent study resources are surfaced.');
+console.log('OK: all 11 English standalone studies have protected Spanish route pairs.');
+console.log('OK: English standalone studies retain a shared or direct bilingual selector.');
 console.log('OK: Caminando con Jesús remains complete at 21 lessons.');

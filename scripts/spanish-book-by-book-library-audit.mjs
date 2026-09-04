@@ -42,8 +42,8 @@ if(!errors.length){
  if(!hub.includes('Biblioteca libro por libro'))fail('Spanish Bible Studies hub needs a visible book-library section.');
  if(hub.includes('data-spanish-book-audit-compatibility'))fail('Spanish Bible Studies hub must not carry legacy hidden audit compatibility markup.');
  if(!i18n.includes("'book-by-book"+html+"':'es/libro-por-libro"+html+"'"))fail('Book-by-book bilingual route pair is missing.');
- if(!page.includes('../nldg-i18n'+js+'?v=1.77.0'))fail('Dedicated book library must load current language selector.');
- if(!hub.includes('../nldg-i18n'+js+'?v=1.77.0'))fail('Spanish Bible Studies hub must load current language selector.');
+ if(!page.includes('../nldg-i18n'+js+'?v=1.77.0'))fail('Dedicated book library must load its published language selector version.');
+ if(!hub.includes('../nldg-i18n'+js+'?v=1.78.0'))fail('Spanish Bible Studies hub must load the current language selector.');
 }
 
 if(errors.length){

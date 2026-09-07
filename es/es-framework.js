@@ -3,7 +3,7 @@ if(window.NLDG_ES_FRAMEWORK_LOADED)return;window.NLDG_ES_FRAMEWORK_LOADED=true;
 const root=new URL('../',document.currentScript?.src||location.href);const es=new URL('es/',root);
 const url=(base,path)=>new URL(path,base).href;
 const current=(location.pathname.split('/').pop()||'index.html').toLowerCase();
-const devotionalPages=['gracia-para-esta-etapa.html','dios-te-conoce.html','tu-pasado-no-te-define.html','mas-que-una-etiqueta.html','la-paz-se-practica.html'];
+const devotionalPages=['mira-el-fruto.html','gracia-para-esta-etapa.html','dios-te-conoce.html','tu-pasado-no-te-define.html','mas-que-una-etiqueta.html','la-paz-se-practica.html'];
 const articlePages=['gran-mandamiento.html','jesus-te-ama.html','fe-en-temporadas-dificiles.html','la-gracia-no-elimina-la-responsabilidad.html','antes-de-compartir.html'];
 const newsletterPages=['quien-dice-dios-que-eres.html'];
 const studyPages=['caminando-con-jesus.html','caminando-con-jesus-estudio.html','preparando-para-caminar-con-jesus.html','la-cruz-y-la-tumba-vacia.html'];

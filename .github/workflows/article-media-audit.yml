@@ -3,6 +3,7 @@ name: Article Media Audit
 on:
   push:
     branches:
+      - main
       - feature/article-media
     paths:
       - 'assets/articles/**'
@@ -30,7 +31,9 @@ jobs:
         run: |
           set -euo pipefail
           node --check article-detail.js
-          node --check we-raised-the-generation-we-complain-about-article-data.js
+          for file in *-article-data.js; do
+            node --check "$file"
+          done
 
       - name: Verify article media contract
         shell: bash

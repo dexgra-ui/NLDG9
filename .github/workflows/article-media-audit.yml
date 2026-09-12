@@ -40,10 +40,11 @@ jobs:
         run: |
           set -euo pipefail
           grep -Fq "type:'image-stack'" we-raised-the-generation-we-complain-about-article-data.js
+          grep -Fq "placement:{section:1,afterParagraph:1}" we-raised-the-generation-we-complain-about-article-data.js
           grep -Fq "assets/articles/we-raised/skeletor-1.webp" we-raised-the-generation-we-complain-about-article-data.js
           grep -Fq "assets/articles/we-raised/skeletor-2.webp" we-raised-the-generation-we-complain-about-article-data.js
           grep -Fq "article-detail.js?v=1.3.0" articles/we-raised-the-generation-we-complain-about.html
-          grep -Fq "we-raised-the-generation-we-complain-about-article-data.js?v=1.1.0" articles/we-raised-the-generation-we-complain-about.html
+          grep -Fq "we-raised-the-generation-we-complain-about-article-data.js?v=" articles/we-raised-the-generation-we-complain-about.html
           grep -Fq ".article-media-stack" article-media.css
           grep -Fq "item.type==='video'" article-detail.js
 
@@ -87,3 +88,112 @@ jobs:
             cmp --silent "$file" "/tmp/$(basename "$file")"
             echo "raw-url-byte-match: $file"
           done
+
+  render-media:
+    needs: verify-media
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Start branch test server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/nldg-media-server.log 2>&1 &
+          for attempt in {1..20}; do
+            if curl --fail --silent http://127.0.0.1:4173/articles/we-raised-the-generation-we-complain-about.html > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/nldg-media-server.log
+          exit 1
+
+      - name: Verify desktop, mobile, no-media, and failure fallback
+        run: |
+          node <<'JS'
+          const { chromium } = require('playwright');
+          const assert = require('node:assert/strict');
+          const fs = require('node:fs');
+
+          (async () => {
+            const browser = await chromium.launch({ headless: true });
+            const route = 'http://127.0.0.1:4173/articles/we-raised-the-generation-we-complain-about.html';
+            const viewports = [
+              { name: 'iphone', width: 390, height: 844 },
+              { name: 'desktop', width: 1440, height: 1000 },
+            ];
+
+            for (const viewport of viewports) {
+              const page = await browser.newPage({ viewport });
+              const browserErrors = [];
+              page.on('console', message => { if (message.type() === 'error') browserErrors.push(message.text()); });
+              page.on('pageerror', error => browserErrors.push(error.message));
+              await page.goto(route, { waitUntil: 'networkidle' });
+
+              assert.equal(await page.locator('#section-1 > p:first-of-type + figure.article-media').count(), 1, 'media must follow opening paragraph');
+              assert.equal(await page.locator('.article-media').count(), 1, 'expected one media block');
+              assert.equal(await page.locator('.article-media img').count(), 2, 'expected two meme panels');
+
+              const images = await page.locator('.article-media img').evaluateAll(nodes => nodes.map(img => ({
+                complete: img.complete,
+                naturalWidth: img.naturalWidth,
+                naturalHeight: img.naturalHeight,
+                renderedWidth: img.getBoundingClientRect().width,
+                renderedHeight: img.getBoundingClientRect().height,
+              })));
+              assert.deepEqual(images.map(image => [image.naturalWidth, image.naturalHeight]), [[240,331],[240,332]]);
+              assert.ok(images.every(image => image.complete && image.renderedWidth > 0 && image.renderedHeight > 0), 'all media must render');
+
+              const bodyWidth = await page.locator('.article-body').evaluate(node => node.getBoundingClientRect().width);
+              const mediaWidth = await page.locator('.article-media').evaluate(node => node.getBoundingClientRect().width);
+              assert.ok(mediaWidth <= bodyWidth + 1, `media overflow: media=${mediaWidth}, body=${bodyWidth}`);
+              assert.ok(images.every(image => image.renderedWidth <= bodyWidth + 1), 'image must not overflow article body');
+
+              const caption = await page.locator('.article-media figcaption').innerText();
+              assert.match(caption, /Source clip posted by Isaak Wells\. Shared here for commentary and reflection\./);
+              const continuation = await page.locator('#section-1 > figure.article-media + p').innerText();
+              assert.match(continuation, /^I laughed\. Then I remembered/);
+              assert.equal(browserErrors.length, 0, `browser errors: ${browserErrors.join(' | ')}`);
+
+              await page.locator('#section-1').screenshot({ path: `article-media-${viewport.name}.png` });
+              console.log(`${viewport.name}: PASS article=${bodyWidth.toFixed(1)}px media=${mediaWidth.toFixed(1)}px`);
+              await page.close();
+            }
+
+            const noMedia = await browser.newPage({ viewport: { width: 390, height: 844 } });
+            await noMedia.goto('http://127.0.0.1:4173/articles/before-you-hit-share.html', { waitUntil: 'networkidle' });
+            assert.equal(await noMedia.locator('.article-media').count(), 0, 'articles without media must remain unchanged');
+            await noMedia.close();
+            console.log('no-media article: PASS');
+
+            const fallback = await browser.newPage({ viewport: { width: 390, height: 844 } });
+            await fallback.goto(route, { waitUntil: 'networkidle' });
+            await fallback.locator('.article-media img').first().evaluate(img => { img.src = '/missing-media.webp'; });
+            await fallback.waitForFunction(() => document.querySelectorAll('.article-media img').length === 1);
+            assert.equal(await fallback.locator('.article-media').count(), 1, 'one surviving stack panel should remain');
+            await fallback.locator('.article-media img').first().evaluate(img => { img.src = '/missing-media-2.webp'; });
+            await fallback.waitForFunction(() => document.querySelectorAll('.article-media').length === 0);
+            await fallback.close();
+            console.log('failed-image fallback: PASS');
+
+            await browser.close();
+            fs.writeFileSync('article-media-browser-check.txt', 'desktop mobile no-media fallback: PASS\n');
+          })().catch(error => {
+            console.error(error);
+            process.exit(1);
+          });
+          JS
+
+      - name: Upload render evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: article-media-render-evidence
+          path: |
+            article-media-iphone.png
+            article-media-desktop.png
+            article-media-browser-check.txt
+          retention-days: 7

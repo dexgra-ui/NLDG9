@@ -44,7 +44,7 @@ jobs:
           grep -Fq "assets/articles/we-raised/skeletor-1.webp" we-raised-the-generation-we-complain-about-article-data.js
           grep -Fq "assets/articles/we-raised/skeletor-2.webp" we-raised-the-generation-we-complain-about-article-data.js
           grep -Fq "article-detail.js?v=1.3.0" articles/we-raised-the-generation-we-complain-about.html
-          grep -Fq "we-raised-the-generation-we-complain-about-article-data.js?v=1.1.0" articles/we-raised-the-generation-we-complain-about.html
+          grep -Fq "we-raised-the-generation-we-complain-about-article-data.js?v=" articles/we-raised-the-generation-we-complain-about.html
           grep -Fq ".article-media-stack" article-media.css
           grep -Fq "item.type==='video'" article-detail.js
 

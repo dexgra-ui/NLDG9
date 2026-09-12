@@ -1,7 +1,12 @@
 (()=>{
 if(!window.NLDG_ARTICLES)return;
 const article={
- id:'we-raised-the-generation-we-complain-about',slug:'we-raised-the-generation-we-complain-about',title:'We Raised the Generation We Complain About',excerpt:'Before criticizing the generations behind us, maybe we should examine what we handed them.',category:'Faith & Today’s World',series:'Generations & Discipleship',author:'Dexter Graham',publishedAt:'2026-09-12',updatedAt:'2026-09-12',readingTime:7,featured:true,scripture:['Matthew 7:3-5','Galatians 6:4-5'],topics:['generations','parenting','responsibility','discipleship','culture','example','self-examination'],audience:['Adults','Parents','Churches','Leaders'],content:[
+ id:'we-raised-the-generation-we-complain-about',slug:'we-raised-the-generation-we-complain-about',title:'We Raised the Generation We Complain About',excerpt:'Before criticizing the generations behind us, maybe we should examine what we handed them.',category:'Faith & Today’s World',series:'Generations & Discipleship',author:'Dexter Graham',publishedAt:'2026-09-12',updatedAt:'2026-09-12',readingTime:7,featured:true,scripture:['Matthew 7:3-5','Galatians 6:4-5'],topics:['generations','parenting','responsibility','discipleship','culture','example','self-examination'],audience:['Adults','Parents','Churches','Leaders'],media:[
+  {type:'image-stack',afterSection:1,afterParagraph:1,eager:true,alt:'Two-panel Skeletor meme about older generations criticizing the generation they raised.',credit:'Source clip posted by Isaak Wells. Shared here for commentary and reflection.',images:[
+    {src:'assets/articles/we-raised/skeletor-1.webp',alt:'Skeletor meme panel reading: Older people often criticize the generation.',width:260,height:359},
+    {src:'assets/articles/we-raised/skeletor-2.webp',alt:'Skeletor meme panel reading: That they were responsible for raising.',width:260,height:360}
+  ]}
+],content:[
   {heading:'Skeletor Had a Point',paragraphs:[
     'Every now and then a meme makes you laugh and then makes you uncomfortable because it is right. This one did that to me.',
     'I laughed. Then I remembered I have done exactly what Skeletor was talking about. I have caught myself criticizing a younger generation, their attitudes, work ethic, relationships, faith, or dependence on a screen, only to run into an inconvenient fact: we raised them.',

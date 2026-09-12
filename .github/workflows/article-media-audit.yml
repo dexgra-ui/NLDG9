@@ -1,0 +1,63 @@
+name: Article Media Audit
+
+on:
+  push:
+    branches:
+      - feature/article-media
+    paths:
+      - 'assets/articles/**'
+      - 'article-detail.js'
+      - 'article-media.css'
+      - '*-article-data.js'
+      - 'articles/**'
+      - '.github/workflows/article-media-audit.yml'
+  pull_request:
+    paths:
+      - 'assets/articles/**'
+      - 'article-detail.js'
+      - 'article-media.css'
+      - '*-article-data.js'
+      - 'articles/**'
+
+jobs:
+  verify-media:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify Skeletor media binaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m pip install --disable-pip-version-check --quiet pillow
+          python3 - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+
+          expected = {
+              'assets/articles/we-raised/skeletor-1.webp': (7414, 'a6d115d05d24e1364aa2a20e7d9ddb49be54f995'),
+              'assets/articles/we-raised/skeletor-2.webp': (7180, '83d1067e3a8021fc1e1ac8d11190055af94f10fc'),
+          }
+
+          for filename, (expected_size, _) in expected.items():
+              path = Path(filename)
+              data = path.read_bytes()
+              assert len(data) == expected_size, f'{filename}: expected {expected_size} bytes, got {len(data)}'
+              assert data[:4] == b'RIFF' and data[8:12] == b'WEBP', f'{filename}: invalid WebP signature'
+              with Image.open(path) as image:
+                  image.verify()
+              with Image.open(path) as image:
+                  print(f'{filename}: {len(data)} bytes, {image.format}, {image.width}x{image.height}')
+          PY
+
+          for file in assets/articles/we-raised/skeletor-1.webp assets/articles/we-raised/skeletor-2.webp; do
+            echo "$file git-blob=$(git hash-object "$file")"
+            case "$file" in
+              *skeletor-1.webp) test "$(git hash-object "$file")" = "a6d115d05d24e1364aa2a20e7d9ddb49be54f995" ;;
+              *skeletor-2.webp) test "$(git hash-object "$file")" = "83d1067e3a8021fc1e1ac8d11190055af94f10fc" ;;
+            esac
+            raw="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_SHA}/${file}"
+            curl --fail --location --silent --show-error "$raw" --output "/tmp/$(basename "$file")"
+            cmp --silent "$file" "/tmp/$(basename "$file")"
+            echo "raw-url-byte-match: $file"
+          done

@@ -2,7 +2,7 @@
 if(!window.NLDG_ARTICLES)return;
 const article={
  id:'we-raised-the-generation-we-complain-about',slug:'we-raised-the-generation-we-complain-about',title:'We Raised the Generation We Complain About',excerpt:'Before criticizing the generations behind us, maybe we should examine what we handed them.',category:'Faith & Today’s World',series:'Generations & Discipleship',author:'Dexter Graham',publishedAt:'2026-09-12',updatedAt:'2026-09-12',readingTime:7,featured:true,scripture:['Matthew 7:3-5','Galatians 6:4-5'],topics:['generations','parenting','responsibility','discipleship','culture','example','self-examination'],audience:['Adults','Parents','Churches','Leaders'],media:[
-  {type:'image-stack',afterSection:1,afterParagraph:1,eager:true,alt:'Two-panel Skeletor meme about older generations criticizing the generation they raised.',credit:'Source clip posted by Isaak Wells. Shared here for commentary and reflection.',images:[
+  {type:'image-stack',placement:{section:1,afterParagraph:1},eager:true,maxWidth:280,alt:'Two-panel Skeletor meme about older generations criticizing the generation they raised.',credit:'Source clip posted by Isaak Wells. Shared here for commentary and reflection.',images:[
     {src:'assets/articles/we-raised/skeletor-1.webp',alt:'Skeletor meme panel reading: Older people often criticize the generation.',width:240,height:331},
     {src:'assets/articles/we-raised/skeletor-2.webp',alt:'Skeletor meme panel reading: That they were responsible for raising.',width:240,height:332}
   ]}

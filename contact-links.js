@@ -5,6 +5,7 @@ const nested=/\/(?:articles|devotionals|newsletter)\//i.test(location.pathname);
 const isContact=/(^|\/)contact\.html$/i.test(location.pathname);
 const root=nested?'../':'';
 const shopUrl='https://no-labels-designed-by-god-shop.fourthwall.com/';
+const blueskyUrl='https://bsky.app/profile/mayhemreigns.bsky.social';
 const i18nScript=document.createElement('script');
 i18nScript.src=new URL('nldg-i18n.js?v=1.6.0',document.currentScript?.src||location.href).href;
 i18nScript.async=false;
@@ -47,9 +48,31 @@ const ensure=()=>{
    shop.textContent='Shop';
    links.insertBefore(shop,contact);
   }
+  if(!links.querySelector('a[data-bluesky-link]')){
+   const bluesky=document.createElement('a');
+   bluesky.href=blueskyUrl;
+   bluesky.dataset.blueskyLink='true';
+   bluesky.target='_blank';
+   bluesky.rel='noopener noreferrer';
+   bluesky.setAttribute('aria-label','Follow Dexter A. Graham on Bluesky');
+   bluesky.textContent='Bluesky ↗';
+   links.insertBefore(bluesky,contact);
+  }
   if(isContact)contact.setAttribute('aria-current','page');
   links.querySelectorAll('a[href="mailto:team@nolabelsdesignedbygod.org"]').forEach(link=>link.remove());
  });
+ const homeConnect=document.querySelector('.connect .actions');
+ if(homeConnect&&!homeConnect.querySelector('a[data-bluesky-link]')){
+  const bluesky=document.createElement('a');
+  bluesky.href=blueskyUrl;
+  bluesky.dataset.blueskyLink='true';
+  bluesky.className='button secondary';
+  bluesky.target='_blank';
+  bluesky.rel='noopener noreferrer';
+  bluesky.setAttribute('aria-label','Follow Dexter A. Graham on Bluesky');
+  bluesky.textContent='Follow on Bluesky ↗';
+  homeConnect.appendChild(bluesky);
+ }
  if(isContact){const nav=document.getElementById('primary-navigation');nav?.querySelectorAll('.active').forEach(link=>link.classList.remove('active'));nav?.querySelectorAll('[aria-current="page"]').forEach(link=>link.removeAttribute('aria-current'))}
 };
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ensure,{once:true});else ensure();

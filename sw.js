@@ -1,4 +1,4 @@
-const CACHE='nldg-v1-1-7';
+const CACHE='nldg-v1-1-8';
 const CORE=[
   './',
   'index.html',
@@ -12,6 +12,11 @@ const CORE=[
   'site-intro.js?v=1.0.0',
   'site-navigation.js?v=1.9.7',
   'no-labels-approved-logo.png',
+  'nldg-app-icon-180.png',
+  'nldg-app-icon-192.png',
+  'nldg-app-icon-512.png',
+  'apple-touch-icon.png',
+  'favicon.ico',
   'manifest.webmanifest'
 ];
 

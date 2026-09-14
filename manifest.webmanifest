@@ -8,7 +8,7 @@
   "background_color": "#06122d",
   "theme_color": "#06122d",
   "icons": [
-    {"src":"no-labels-approved-logo.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
-    {"src":"no-labels-approved-logo.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+    {"src":"nldg-app-icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"nldg-app-icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
   ]
 }

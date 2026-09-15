@@ -6,7 +6,7 @@ Production website and installable ministry platform for No Labels, Designed by 
 
 **Version 1.1.8 — Current Merged Site Baseline**
 
-Version 1.1.8 documents the production baseline currently merged to `main` through PR #358. The service worker uses the matching `nldg-v1-1-8` cache key. The most recent formal GitHub Release tag remains `V1.1.1`; this documentation does not create or imply a new release tag.
+Version 1.1.8 documents the production baseline currently merged to `main` through PR #358. The service worker uses the matching `nldg-v1-1-8` cache key. The most recent formal GitHub Release is Version 1.1.1 (`V1.1.1`); this documentation does not create or imply a new release tag.
 
 ### Merged release notes through 1.1.8
 

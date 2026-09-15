@@ -135,6 +135,10 @@ function initializeNavigation(){
     ['My Journey','dashboard.html',['dashboard.html','community.html'].includes(page)],
     ['Ministry Tools','ministry-tools.html',['ministry-tools.html','ministry-assistant.html'].includes(page)]
   ]};
+  if(section==='devotionals')context={label:'Devotionals navigation',links:[
+    ['Devotionals Home','devotionals.html',page==='devotionals.html'],
+    ['My Journey','dashboard.html',false]
+  ]};
   if(section==='resources')context={label:'Resource Center navigation',links:[
     ['Resource Center','resource-center.html',['resource-center.html','resources.html'].includes(page)],
     ['Biblical Maps','biblical-maps.html',page==='biblical-maps.html'||page.startsWith('biblical-map-')],

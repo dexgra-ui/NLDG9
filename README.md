@@ -4,9 +4,20 @@ Production website and installable ministry platform for No Labels, Designed by 
 
 ## Current release
 
-**Version 1.1.1 — Ministry Platform Maintenance Release**
+**Version 1.1.8 — Current Merged Site Baseline**
 
-This maintenance release captures the expanded study collections, complete bilingual Book-by-Book Bible Study library, Biblical Maps & Geography reference system, Complete Biblical People & Genealogy Reference, Bible Tic-Tac-Toe improvements, linked Scripture references, podcast correction, accessibility fixes, repository cleanup, and stronger quality automation now serving the ministry platform.
+Version 1.1.8 documents the production baseline currently merged to `main` through PR #358. The service worker uses the matching `nldg-v1-1-8` cache key. The most recent formal GitHub Release is Version 1.1.1 (`V1.1.1`); this documentation does not create or imply a new release tag.
+
+### Merged release notes through 1.1.8
+
+- Expanded study collections and the complete bilingual Book-by-Book Bible Study library.
+- Biblical Maps & Geography and the Complete Biblical People & Genealogy Reference.
+- Shared ministry search, content discovery, personal study tools, and related-content support.
+- Devotional, article, newsletter, podcast, ministry-news, and resource-center publishing already present on `main`.
+- PWA, cache, app-icon, responsive-layout, accessibility, SEO/social, repository, and bilingual quality-maintenance work already merged to `main`.
+- September 2026 ministry-news refresh merged in PR #358.
+
+Changes proposed by the current maintenance branch are intentionally excluded from these release notes until they are reviewed and merged.
 
 ## Ministry journeys
 

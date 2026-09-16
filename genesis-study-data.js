@@ -1,421 +1,503 @@
 window.NLDG_BOOK_STUDY={
-  "slug": "genesis-study",
-  "book": "Genesis",
-  "title": "Genesis: Creation, Covenant, Human Failure, and God’s Faithful Promise",
-  "description": "Genesis introduces the Creator, the goodness and fracture of creation, the spread of violence, the covenant with Noah, the call of Abraham, and God’s preserving work through deeply imperfect families. The series reads familiar stories without excusing abuse, racism, coercion, slavery, family manipulation, or violence.",
-  "theme": "Distinguish what Genesis reports from what it approves. Read ancient family and judgment stories within the whole biblical witness. Reject racist uses of Cain, Ham, or Babel; reject every attempt to justify domination, slavery, sexual violence, child harm, or coerced reconciliation.",
-  "audience": "Adults, groups, classes, and ministry teams",
-  "purpose": "This eight-lesson series helps groups read Genesis in context, encounter God honestly, examine harmful assumptions, and practice faithful worship, compassion, justice, and hope.",
-  "background": "Genesis introduces the Creator, the goodness and fracture of creation, the spread of violence, the covenant with Noah, the call of Abraham, and God’s preserving work through deeply imperfect families. The series reads familiar stories without excusing abuse, racism, coercion, slavery, family manipulation, or violence.",
-  "lessons": [
+  "slug":"genesis-study",
+  "book":"Genesis",
+  "title":"Genesis: Creation, Covenant, Human Failure, and God’s Faithful Promise",
+  "description":"Genesis introduces the Creator, the goodness and fracture of creation, the spread of violence, the covenant with Noah, the call of Abraham, and God’s preserving work through deeply imperfect families. The series reads familiar stories without excusing abuse, racism, coercion, slavery, family manipulation, or violence.",
+  "theme":"Distinguish what Genesis reports from what it approves. Read ancient family and judgment stories within the whole biblical witness. Reject racist uses of Cain, Ham, or Babel; reject every attempt to justify domination, slavery, sexual violence, child harm, or coerced reconciliation.",
+  "audience":"Adults, groups, classes, and ministry teams",
+  "purpose":"This eight-lesson series helps groups read Genesis in context, encounter God honestly, examine harmful assumptions, and practice faithful worship, compassion, justice, and hope.",
+  "background":"Genesis introduces the Creator, the goodness and fracture of creation, the spread of violence, the covenant with Noah, the call of Abraham, and God’s preserving work through deeply imperfect families. The series reads familiar stories without excusing abuse, racism, coercion, slavery, family manipulation, or violence.",
+  "lessons":[
     {
-      "number": 1,
-      "title": "Creation and Human Dignity",
-      "scripture": "Genesis 1:1–2:3",
-      "supporting": [],
-      "question": "What does creation reveal about God, humanity, work, and the world?",
-      "truth": "The sovereign God creates an ordered, good world and gives every human equal dignity as his image-bearer.",
-      "goal": "This lesson helps participants read Genesis 1:1–2:3 within Genesis, receive its truth without flattening difficult details, and respond through worship, compassion, justice, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to identify one word, image, or question from the passage. No one must disclose trauma, illness, family conflict, mental-health history, or experiences of abuse. Listen without rushing to correct or solve another person’s story.",
-      "context": "Read Genesis 1:1–2:3 in manageable sections. Observe speakers, repeated words, narrative consequences, and connections to surrounding chapters. Distinguish what the text reports from what it commends. Interpret difficult scenes within the book’s purpose and the wider witness of Scripture before making modern applications.",
-      "teaching": [
-        {
-          "heading": "God Creates Without Rivalry",
-          "body": "Genesis begins with God, not a struggle among competing deities. Creation exists by God’s purposeful word. The chapter forms worship and trust rather than answering every modern scientific question."
-        },
-        {
-          "heading": "A World Called Good",
-          "body": "Light, land, seas, plants, creatures, and rhythms receive God’s approval. Matter is not evil or disposable. Christian hope values bodies, neighborhoods, animals, and responsible care for creation."
-        },
-        {
-          "heading": "Every Human Bears God’s Image",
-          "body": "Male and female alike bear God’s image and share the vocation of representing his wise rule. Race, ability, wealth, age, citizenship, and social status never increase or reduce human worth."
-        },
-        {
-          "heading": "Dominion as Responsible Stewardship",
-          "body": "Human rule is accountable to the Creator. Dominion cannot justify exploitation, cruelty, environmental destruction, or control of vulnerable people. It imitates God through life-giving care."
-        },
-        {
-          "heading": "Work Before the Fall",
-          "body": "Human vocation belongs to good creation. Paid labor, caregiving, learning, art, rest, and service can honor God. Productivity is not the source of a person’s identity or value."
-        },
-        {
-          "heading": "Sabbath and Human Limits",
-          "body": "God rests and blesses the seventh day. Rest declares that creation is sustained by God, not our endless effort. Communities should resist systems that treat people as machines and should make room for worship and renewal."
-        }
+      "number":1,
+      "title":"Creation and Human Dignity",
+      "scripture":"Genesis 1:1–2:3",
+      "supporting":["Psalm 33","John 1:1–5","Colossians 1:15–17"],
+      "question":"What does Genesis 1 reveal about the Creator, the created world, human identity, vocation, and the rhythm of life with God?",
+      "truth":"Genesis 1 presents one sovereign God bringing order, abundance, and life by His word. Creation is repeatedly called good, every human being shares the dignity and vocation of bearing God’s image, and the creation week reaches its goal in God’s blessed seventh-day rest.",
+      "goal":"This lesson slows down before the Bible’s opening chapter rather than forcing it to answer questions it was not written to address directly. It observes Genesis 1’s literary structure, repeated language, ancient setting, theology of creation, image-of-God language, human dominion, and Sabbath climax while distinguishing the chapter’s clear theological claims from modern debates about scientific mechanisms and chronology.",
+      "openingParagraphs":[
+        "Ask: When you hear “Genesis 1,” what question do you instinctively expect the chapter to answer?",
+        "Modern readers often enter debates about the age of the earth, evolution, cosmology, or the meaning of the creation days. Those questions can matter, but Genesis begins with more basic questions: Who is God? What kind of world has He made? What are human beings within it? What is creation for?"
       ],
-      "questions": [
-        "What detail in Genesis 1:1–2:3 first draws your attention?",
-        "What does this passage reveal about God’s character?",
-        "Where do you see trust, fear, grief, pride, or courage?",
-        "Which action is described but should not be copied?",
-        "Whose voice or vulnerability might readers overlook?",
-        "What harmful interpretation should the church reject?",
-        "How does the passage correct our use of power or certainty?",
-        "What faithful response will you practice this week?"
+      "contextParagraphs":[
+        "Genesis opens the Torah and the entire biblical canon. Before Scripture tells the story of Abraham, Israel, exodus, covenant, kings, exile, or Messiah, it places every later story inside God’s creation. Israel’s God is not merely a local deity attached to one land or people; He is the Creator of the heavens and the earth.",
+        "Genesis 1 speaks from the ancient Near Eastern world, where cultures told creation stories involving gods, cosmic conflict, divine ancestry, temples, kings, and the ordering of the world. Genesis makes striking theological claims of its own: one God creates without rival combat, heavenly bodies are creatures rather than gods, and the divine image is shared by humanity rather than reserved for a king.",
+        "Repeated phrases such as “God said,” “and it was so,” “God saw that it was good,” and the evening-morning formula give the account rhythm. The six days also display broad correspondences between ordered realms and their inhabitants, while the seventh day stands apart because God blesses and sanctifies it.",
+        "Christians who affirm Scripture’s authority have interpreted the relationship between Genesis 1 and scientific chronology in several ways. The chapter itself should not be reduced to a weapon in that debate. Its direct claims are that creation depends upon God, is ordered by God, is declared good by God, and receives its purpose from Him."
       ],
-      "examination": "Where am I seeking control, protecting a false explanation, or overlooking another person’s dignity? Where do fear, grief, envy, shame, or certainty shape my response? Ask God for one truthful conviction and one grace-filled next step. Examination should lead toward repentance and repair, not self-hatred.",
-      "challenge": "Read Genesis 1:1–2:3 again. Write one sentence about God, one warning to receive, and one hope to carry. Then choose a practical action: listen without fixing, repair harm, share resources, seek wise care, protect a vulnerable person, honor a boundary, or practice Sabbath trust.",
-      "caution": "Do not defend harmful behavior simply because a major biblical character performs it. Reject racism, misogyny, slavery, coercion, sexual violence, child harm, ableism, and forced reconciliation. Providence never makes evil good. Center victims’ dignity, respect boundaries, and pair prayer with safeguarding, counseling, medical care, or legal help where appropriate.",
-      "prayer": "Holy God, meet us in Genesis 1:1–2:3. Correct what is false in us, protect the vulnerable, teach us to listen, and give us courage to live truthfully. Form our lives through your grace and help us practice what we have learned. Amen."
+      "teaching":[
+        {"heading":"In the Beginning, God","paragraphs":["The opening sentence places God before everything else in the story. Genesis does not explain where God came from; God is simply there, while the heavens and the earth belong to the created order.","This Creator-creation distinction becomes basic to biblical worship. Sun, moon, stars, seas, animals, human beings, nations, and rulers may be powerful or beautiful, but none belongs on God’s side of that distinction."]},
+        {"heading":"Formless, Empty, and Awaiting Order","paragraphs":["Genesis 1:2 describes the earth as “formless and empty,” with darkness over the deep and God’s Spirit or wind hovering over the waters. The picture is not necessarily one of moral evil; the chapter shows God ordering an unformed and unfilled world for life.","The Hebrew word ruach can mean spirit, wind, or breath depending on context. Translations differ over whether verse 2 should be rendered “Spirit of God” or a powerful/divine wind. Later Christian theology can recognize the verse within the wider biblical theology of the Spirit without pretending the translation question does not exist."]},
+        {"heading":"God Creates by His Word","paragraphs":["Again and again Genesis says, “God said,” and creation responds. There is no divine struggle for control and no suggestion that matter resists God as an equal power.","Later Scripture develops the theology of God’s creative word. Psalm 33 celebrates creation by the LORD’s word, and John 1 deliberately opens with Genesis-like language when speaking of the Word through whom all things came into being."]},
+        {"heading":"Light, Luminaries, and the Demotion of Rival Gods","paragraphs":["God creates light before the sun, moon, and stars are introduced as the greater and lesser lights. Genesis does not even use the ordinary Hebrew names for sun and moon in that section.","In a world where heavenly bodies could be worshiped, Genesis strips them of divine status. They are creatures assigned functions within God’s order, not rivals to the Creator."]},
+        {"heading":"God Forms, Fills, and Calls Creation Good","paragraphs":["Days 1–3 establish realms and days 4–6 populate or govern corresponding realms. The pattern does not settle every chronology question, but it shows that the chapter is carefully literary as well as sequential.","God repeatedly calls creation good, and after humanity appears the whole is called very good. Biblical faith therefore does not treat material existence as inherently evil. Bodies, food, land, work, animals, seasons, and physical life belong to a creation God approves."]},
+        {"heading":"Humankind in God’s Image","paragraphs":["Genesis slows down at humanity’s creation: “Let us make humankind in our image.” The plural has generated several interpretations. Christians may hear harmony with later Trinitarian revelation, but Genesis itself does not explicitly identify the plural as Father, Son, and Spirit. Other proposals include God addressing the heavenly court or divine deliberation.","What is explicit is that humanity bears God’s image. The language likely carries royal and representative significance. In the ancient world, kings could be described as bearing divine image; Genesis extends image-bearing dignity and vocation to humanity rather than one elite ruler.","Human worth is therefore not awarded by government, wealth, intelligence, productivity, physical ability, ethnicity, age, social status, usefulness, or reproductive success. Male and female together bear the image and share humanity’s vocation."]},
+        {"heading":"Dominion Under the Creator","paragraphs":["Human beings are commissioned to fill the earth and exercise dominion over other creatures, but that authority is delegated rather than absolute. Image-bearers govern inside a world that still belongs to God.","Dominion cannot reasonably mean cruelty, reckless destruction, or domination of other human beings. Every human in the passage belongs to the image-bearing community, and authority remains accountable to the Creator."]},
+        {"heading":"Fruitfulness, Dependence, and Gift","paragraphs":["Fruitfulness is a creational blessing for humanity, not a measure of every individual person’s worth. The text must not be weaponized against people who are infertile, unmarried, childless, widowed, celibate, or unable to have children.","God also provides food for humans and animals. Human beings enter a world they did not create and receive life before they achieve anything. Creaturely dependence is not a defect; it is part of receiving life as gift."]},
+        {"heading":"The Seventh Day: Creation’s Goal","paragraphs":["Genesis 1 does not truly end at 1:31. The literary unit reaches Genesis 2:1–3, where God finishes His work, rests, blesses the seventh day, and makes it holy.","God’s rest does not imply exhaustion. The seventh day’s distinctive treatment gives unusual emphasis to settled, ordered life with God as creation’s culmination. Humanity is more than a workforce. Our dignity precedes our productivity."]},
+        {"heading":"Genesis 1 and Modern Science","paragraphs":["Genesis makes theological claims Christians should affirm with confidence, but it is not a modern laboratory account written in the categories of contemporary physics, geology, or biology.","Faithful Christians have read the days as ordinary solar days, literary or framework arrangements, analogical days, and in other old-earth or young-earth ways. Those models involve arguments beyond the wording of Genesis 1 itself. The chapter should govern our theology before we recruit it into modern culture wars."]}
+      ],
+      "jesusParagraphs":[
+        "The New Testament intentionally speaks about Jesus with creation language. John 1 begins “In the beginning,” identifies Jesus as the Word, and says all things came into being through Him. Colossians 1:15–17 describes the Son in relation to creation and calls Him the image of the invisible God.",
+        "Jesus should not be forced into every object or day as a hidden code. The strongest connection is the New Testament’s own testimony: the One through whom creation came is also the One through whom God brings new creation.",
+        "Humanity’s value does not begin with Jesus as though Genesis had not already grounded it in creation. In Christ, God renews His image-bearing people toward the life for which humanity was made."
+      ],
+      "guardrailParagraphs":[
+        "Genesis 1 is not primarily a modern science textbook. Do not force the text into questions framed thousands of years later and then make one reconstruction the measure of Christian faithfulness.",
+        "“Image of God” cannot be applied selectively. Every human bears God-given dignity.",
+        "Dominion is not domination. Genesis authorizes accountable stewardship within creation, not coercive rule over other image-bearers.",
+        "The seventh day prevents us from making productivity the meaning of human life."
+      ],
+      "questions":[
+        "What repeated words or patterns do you notice across the seven-day structure?",
+        "What does Genesis 1 say explicitly about God, and what common questions does it leave unanswered?",
+        "How would Genesis’s treatment of the sun, moon, stars, and humanity challenge religious assumptions in the ancient world?",
+        "What does it mean that the image of God is given to humanity rather than only to kings or elites?",
+        "How should equal image-bearing dignity shape the way Christians treat people whose abilities, status, background, or beliefs differ from their own?",
+        "What is the difference between dominion and domination?",
+        "Why is Genesis 2:1–3 necessary for understanding the goal of the creation account?",
+        "How can Christians discuss disagreements about the creation days without making speculation more important than the chapter’s clear theological claims?"
+      ],
+      "examination":"Do I genuinely treat every person I encounter as someone who bears God-given dignity, or only people I respect, understand, or agree with? Have I made productivity, control, status, or certainty part of my identity in a way Genesis 1 challenges? Where might receiving life as God’s gift change the way I work, rest, consume, or exercise authority?",
+      "challenge":"Read Genesis 1:1–2:3 slowly twice. On the first reading, mark every repeated phrase and every action performed by God. On the second, make four headings: God, Creation, Humanity, and Rest. Write only what the passage actually supports beneath each heading. Then read John 1:1–5 and Colossians 1:15–17 and note the connections the New Testament itself makes to creation and Christ.",
+      "caution":"Do not let this lesson become a contest over young-earth, old-earth, or evolution questions. State clearly that committed Christians who affirm Scripture’s authority hold different interpretations of the chapter’s chronology and literary structure. Do not imply that disability, cognitive capacity, age, fertility, sex, ethnicity, status, or productivity changes a person’s dignity. Do not use dominion to justify exploitation, and when discussing “Let us,” distinguish harmony with later Trinitarian revelation from what Genesis 1 itself explicitly states.",
+      "prayer":"Creator God, You spoke a world of order, abundance, beauty, and life into being. Teach us to worship You without turning created things into gods. Train us to see Your image-bearing dignity in every person, to exercise authority as accountable stewardship, and to receive both work and rest as gifts. Keep us humble where Your word leaves questions open, confident where it speaks clearly, and centered on Jesus, through whom all things were made and in whom You are making all things new. Amen."
     },
     {
-      "number": 2,
-      "title": "The Garden, Marriage, and Human Choice",
-      "scripture": "Genesis 2:4–3:24",
-      "supporting": [],
-      "question": "What do the garden and the fall teach about relationship, freedom, shame, and grace?",
-      "truth": "God creates people for relationship and faithful freedom; sin fractures trust, yet God seeks, clothes, and promises hope.",
-      "goal": "This lesson helps participants read Genesis 2:4–3:24 within Genesis, receive its truth without flattening difficult details, and respond through worship, compassion, justice, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to identify one word, image, or question from the passage. No one must disclose trauma, illness, family conflict, mental-health history, or experiences of abuse. Listen without rushing to correct or solve another person’s story.",
-      "context": "Read Genesis 2:4–3:24 in manageable sections. Observe speakers, repeated words, narrative consequences, and connections to surrounding chapters. Distinguish what the text reports from what it commends. Interpret difficult scenes within the book’s purpose and the wider witness of Scripture before making modern applications.",
-      "teaching": [
-        {
-          "heading": "Formed from Dust and Breath",
-          "body": "The human is both earth-creature and recipient of divine breath. Humility and dignity belong together. Dependence on God is not weakness but the truth of creaturely life."
-        },
-        {
-          "heading": "A Vocation to Cultivate and Guard",
-          "body": "The garden is gift and responsibility. Work is meant to cultivate life, not exploit it. Boundaries remind humanity that wisdom is received from God rather than seized as self-rule."
-        },
-        {
-          "heading": "Not Good to Be Alone",
-          "body": "God addresses human aloneness with a corresponding partner. The marriage account honors covenant companionship and mutuality. It must not be used to demean single people or imply that marriage completes human worth."
-        },
-        {
-          "heading": "The Serpent’s Distortion",
-          "body": "Temptation questions God’s goodness, exaggerates restriction, and promises autonomy. Deception often works by mixing truth with distrust. Discernment attends to both words and the picture of God they create."
-        },
-        {
-          "heading": "Shame, Blame, and Hiding",
-          "body": "After disobedience, the couple hides and redirects responsibility. Sin damages relationship with God, self, neighbor, and creation. Accountability tells the truth without using shame to destroy a person."
-        },
-        {
-          "heading": "Judgment with a Promise",
-          "body": "Consequences are real, but God searches for the hiding pair, clothes them, and announces conflict with the serpent. The passage does not authorize domination or abuse in marriage; domination is part of the rupture Christ comes to heal."
-        }
+      "number":2,
+      "title":"The Garden, Marriage, and Human Choice",
+      "scripture":"Genesis 2:4–3:24",
+      "supporting":["Romans 5:12–21","1 Corinthians 15:20–28","Revelation 22:1–5"],
+      "question":"What happens when human beings who were created for trusting relationship with God reach for moral autonomy, and how does God respond when trust gives way to shame, blame, fractured relationships, and exile?",
+      "truth":"Genesis 2–3 portrays humanity as earth-creatures given God’s breath, placed in a garden to serve and guard it, and made for relationship with God and one another. The serpent reframes God’s generosity as deprivation, the humans seize what God prohibited, and the result is shame, alienation, distorted desire, painful toil, and exile. Yet judgment is not God’s final action: He seeks the hiding humans, clothes them, preserves their lives, and leaves the story moving toward the defeat of the serpent and the restoration of what sin has fractured.",
+      "goal":"This lesson reads Genesis 2:4–3:24 as one connected narrative rather than isolated proof texts about marriage, gender, temptation, or punishment. It examines the garden as sacred space, the human formed from dust and breath, the vocation to serve and guard, the tree of the knowledge of good and evil, the woman as a corresponding helper, the serpent’s strategy, the human decision, the consequences God announces, and the expulsion from Eden while distinguishing what the text explicitly says from later assumptions.",
+      "openingParagraphs":[
+        "Ask: If Genesis 1 ends with creation declared very good, what must Genesis 2–3 explain about the world we actually experience?",
+        "Genesis 2–3 begins with gift: life, place, vocation, abundance, relationship, and access to God. Sin enters not because God failed to provide enough, but because humans become persuaded that receiving life from God is less desirable than determining good and evil on their own terms."
       ],
-      "questions": [
-        "What detail in Genesis 2:4–3:24 first draws your attention?",
-        "What does this passage reveal about God’s character?",
-        "Where do you see trust, fear, grief, pride, or courage?",
-        "Which action is described but should not be copied?",
-        "Whose voice or vulnerability might readers overlook?",
-        "What harmful interpretation should the church reject?",
-        "How does the passage correct our use of power or certainty?",
-        "What faithful response will you practice this week?"
+      "contextParagraphs":[
+        "Genesis 2:4 introduces the recurring formula often translated “these are the generations” or “this is the account of.” The narrative slows down and focuses on humanity within the created world. Genesis 1 and 2 use different perspectives and literary emphases; chapter 2 should not automatically be treated as a rival creation story.",
+        "The narrator repeatedly speaks of the LORD God. The human is formed from the ground, placed in Eden, given a command, and joined by the woman. Chapter 3 then introduces the serpent and the first human violation of God’s command. The movement is gift → vocation → boundary → relationship → distrust → transgression → shame → judgment → exile.",
+        "Later biblical temple imagery shares features with Eden, including divine presence, cherubim, sacred orientation, and priestly language. Genesis does not explicitly call Eden a temple, but the parallels help readers see the garden as more than scenery."
       ],
-      "examination": "Where am I seeking control, protecting a false explanation, or overlooking another person’s dignity? Where do fear, grief, envy, shame, or certainty shape my response? Ask God for one truthful conviction and one grace-filled next step. Examination should lead toward repentance and repair, not self-hatred.",
-      "challenge": "Read Genesis 2:4–3:24 again. Write one sentence about God, one warning to receive, and one hope to carry. Then choose a practical action: listen without fixing, repair harm, share resources, seek wise care, protect a vulnerable person, honor a boundary, or practice Sabbath trust.",
-      "caution": "Do not defend harmful behavior simply because a major biblical character performs it. Reject racism, misogyny, slavery, coercion, sexual violence, child harm, ableism, and forced reconciliation. Providence never makes evil good. Center victims’ dignity, respect boundaries, and pair prayer with safeguarding, counseling, medical care, or legal help where appropriate.",
-      "prayer": "Holy God, meet us in Genesis 2:4–3:24. Correct what is false in us, protect the vulnerable, teach us to listen, and give us courage to live truthfully. Form our lives through your grace and help us practice what we have learned. Amen."
+      "teaching":[
+        {"heading":"Formed from Dust and Given Breath","paragraphs":["Genesis 2:7 uses a Hebrew wordplay: the human, adam, is formed from the ground, adamah. Humanity is dignified but never self-created. God forms the human from dust and breathes into him the breath of life.","The verse holds humility and dignity together. It does not provide a complete philosophical theory of body and soul; later Christian reflection must draw from the whole biblical witness."]},
+        {"heading":"A Garden of Abundance and a Real Boundary","paragraphs":["God’s command concerning the tree of the knowledge of good and evil appears within abundance, not deprivation. Freedom is genuine, but freedom is not identical with unlimited autonomy.","The phrase “knowledge of good and evil” has several proposed meanings, including moral discernment, comprehensive wisdom, or authority to determine good and evil. The narrative does not define it exhaustively, so confidence should not exceed the text."]},
+        {"heading":"To Serve and Guard","paragraphs":["Genesis 2:15 says the human is placed in the garden to work or serve it and to keep or guard it. These verbs later appear in priestly settings, contributing to canonical sanctuary connections without proving that Genesis explicitly calls Eden a temple.","Work therefore precedes the fall. Work itself is not the curse; Genesis 3 describes toil, frustration, and resistance entering the human relationship with the ground."]},
+        {"heading":"Not Good to Be Alone","paragraphs":["Genesis 2:18 contains the Bible’s first “not good.” The human’s aloneness is answered by a helper corresponding to him. The Hebrew ezer kenegdo does not naturally mean an inferior assistant; ezer is often used of God, and kenegdo carries the sense of one corresponding to or facing him.","The woman shares the man’s humanity, and the one-flesh bond grounds a biblical vision of marriage. Yet the passage should not be turned into “every individual must marry,” and “helper” must not be used to establish female inferiority."]},
+        {"heading":"Naked and Not Ashamed","paragraphs":["Genesis 2:25 prepares the reader for chapter 3. The man and woman are exposed without fear and relationship exists without concealment.","After disobedience, nakedness becomes something they try to cover and hide. The fall affects more than rule-breaking; trust fractures and the humans become afraid, defensive, and alienated."]},
+        {"heading":"The Serpent Rewrites the Story of God","paragraphs":["Genesis introduces the serpent as crafty. Genesis itself does not explicitly call the serpent Satan; later Scripture, especially Revelation 12:9 and 20:2, develops that identification.","The serpent distorts God’s generous command before directly contradicting it. Temptation works by reframing a protective boundary as evidence that God is withholding good."]},
+        {"heading":"The Woman Takes, and the Man Eats","paragraphs":["Genesis 3:6 says the woman takes and eats, then gives some to her husband, “who was with her,” and he eats. The man cannot disappear from responsibility.","Later texts may emphasize Eve’s deception or Adam’s representative role for particular theological purposes, but Genesis itself shows both humans violating the command. The passage cannot responsibly support contempt for women as uniquely responsible for human sin."]},
+        {"heading":"Eyes Opened, but Not as Promised","paragraphs":["Their eyes do open, but the immediate result is not liberated godlike existence. They recognize nakedness, sew coverings, and hide. The temptation contains enough truth to attract them, yet rebellion produces alienation rather than freedom.","Sin here is mistrust expressed through grasping: the humans reject creaturely dependence and seek wisdom on terms contrary to God’s command."]},
+        {"heading":"Where Are You?","paragraphs":["God’s question draws the hiding humans into truth; it is not evidence that God has lost track of them. Adam answers with fear and blame, and the woman identifies the serpent’s deception.","Accountability should bring truth into the open without turning the passage into permission for coercive interrogation, public shaming, or forcing vulnerable people to disclose trauma."]},
+        {"heading":"Conflict, Desire, Rule, and Toil","paragraphs":["Genesis 3:15 announces conflict between the serpent and the woman and their offspring. Christians have long read it canonically as an early anticipation of Christ’s victory, but Genesis does not yet supply the later details of Jesus’ identity, crucifixion, and resurrection.","Genesis 3:16’s language of desire and rule is debated, but male domination appears after disobedience as part of the fractured human condition. It is a consequence, not a command authorizing husbands to dominate wives.","The ground is cursed because of the man. Work itself already existed before sin; what changes is the human relationship with labor, the ground, pain, frustration, and mortality."]},
+        {"heading":"God Clothes the Humans and Sends Them East","paragraphs":["The LORD God makes garments of skin and clothes the humans. The text does not explicitly say God performs a sacrifice here, so calling Genesis 3:21 the Bible’s first animal sacrifice goes beyond what is written.","The humans are expelled from Eden and cherubim guard the way to the tree of life. Exile is judgment, but the story also prevents fallen humanity from seizing immortality. The rest of Scripture repeatedly returns to the themes of exile, restoration, divine presence, and the tree of life."
+        ]}
+      ],
+      "jesusParagraphs":[
+        "The New Testament directly connects Jesus to the Adam story. Romans 5 contrasts Adam’s trespass and the reign of death with the obedience and grace associated with Jesus Christ. First Corinthians 15 contrasts the first Adam with Christ in the resurrection story.",
+        "Jesus cites Genesis 2:24 when teaching about marriage, while His own singleness and His teaching about those who remain unmarried for the kingdom prevent Christians from turning marriage into the measure of complete human life.",
+        "Revelation 22 returns to the tree of life and the removal of the curse. Jesus is not a hidden character behind every tree or garment; He is the canonical answer Scripture eventually gives to the alienation, sin, mortality, and exile Genesis describes."
+      ],
+      "guardrailParagraphs":[
+        "Genesis 2–3 must not be used to teach that women are morally inferior because Eve ate first. Both humans bear responsibility.",
+        "“Helper” does not mean servant or inferior, and Genesis 3:16 does not command male domination. Abuse, coercive control, intimidation, and violence cannot be sanctified by calling them biblical headship.",
+        "Do not tell suffering people that every pain, disability, infertility, miscarriage, natural disaster, or personal tragedy can be traced to a specific individual sin.",
+        "Do not turn the garments of skin into an explicit sacrificial system the text never states, or treat Genesis 3:15 as though the original audience possessed the full New Testament explanation."
+      ],
+      "questions":[
+        "What gifts and freedoms does God give the human before introducing the prohibition concerning the tree?",
+        "What do dust and divine breath together communicate about human identity?",
+        "What does ezer kenegdo contribute to our understanding of the woman’s relationship to the man?",
+        "How does the serpent alter the picture of God’s original command before directly contradicting it?",
+        "What changes immediately after the humans eat: in their view of themselves, their relationship with God, and their relationship with one another?",
+        "Why is it important to distinguish God’s description of domination in Genesis 3:16 from a command authorizing domination?",
+        "What does God’s clothing of the humans reveal, and what popular claims about that scene go beyond the text?",
+        "How does exile from Eden establish a pattern that the rest of Scripture will revisit?",
+        "Which connections to Jesus are explicitly made by the New Testament, and which common Christian connections require more interpretive caution?"
+      ],
+      "examination":"Where have I begun to interpret God’s boundaries as evidence that He is withholding good from me? When confronted with wrongdoing, do I confess truthfully or instinctively hide, blame, minimize, or redirect responsibility? Do my closest relationships reflect the mutual dignity of people made in God’s image, or have I used Scripture, authority, fear, or shame to control another person?",
+      "challenge":"Read Genesis 2:4–3:24 twice. On the first reading, mark everything God gives, commands, asks, provides, or protects. On the second, trace the human movement from trust to distrust, nakedness without shame to hiding, and garden presence to exile. Then read Romans 5:12–21, 1 Corinthians 15:20–28, 42–49, and Revelation 22:1–5. Write two columns: “What Genesis says” and “How later Scripture develops it.”",
+      "caution":"Handle Genesis 2–3 carefully because these chapters have been used to justify misogyny, coercive marriage, victim-blaming, shame about the body, and simplistic explanations of suffering. Do not force personal disclosure. If abuse or danger is disclosed, prioritize safety and appropriate professional or civil help. Explain uncertainty where it exists, especially around “knowledge of good and evil,” the meaning of “desire” in 3:16, and the serpent’s Genesis-level identity versus later canonical identification.",
+      "prayer":"Creator God, You give life before we can earn it and surround Your creatures with gifts we did not create. Teach us to trust Your goodness without pretending Your boundaries are meaningless. Where we hide, bring us into truth. Where we blame, lead us to responsibility. Where relationships have been distorted by control, fear, or shame, teach us the way of Christ. Thank You that judgment did not end Your pursuit of humanity and that the story moves toward Jesus, resurrection, restored creation, and life again in Your presence. Amen."
     },
     {
-      "number": 3,
-      "title": "Cain, Abel, and the Spread of Violence",
-      "scripture": "Genesis 4:1–6:8",
-      "supporting": [],
-      "question": "How does sin spread through jealousy, violence, pride, and corrupt power?",
-      "truth": "God confronts violence, hears innocent blood, limits vengeance, and calls people to master destructive desire.",
-      "goal": "This lesson helps participants read Genesis 4:1–6:8 within Genesis, receive its truth without flattening difficult details, and respond through worship, compassion, justice, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to identify one word, image, or question from the passage. No one must disclose trauma, illness, family conflict, mental-health history, or experiences of abuse. Listen without rushing to correct or solve another person’s story.",
-      "context": "Read Genesis 4:1–6:8 in manageable sections. Observe speakers, repeated words, narrative consequences, and connections to surrounding chapters. Distinguish what the text reports from what it commends. Interpret difficult scenes within the book’s purpose and the wider witness of Scripture before making modern applications.",
-      "teaching": [
-        {
-          "heading": "God Questions Cain",
-          "body": "God warns Cain before the murder and invites honest self-examination. Strong emotion is not itself sin, but anger must be named and governed before it governs us."
-        },
-        {
-          "heading": "Your Brother’s Blood Cries Out",
-          "body": "Abel’s blood has a voice before God. Hidden violence is never invisible to the Creator. Communities must center victims’ safety and truth rather than protect a perpetrator’s image."
-        },
-        {
-          "heading": "A Mark That Limits Vengeance",
-          "body": "Cain receives consequences, yet God restrains retaliatory killing. The mark is protection, not a racial sign; racist interpretations have no basis in the text."
-        },
-        {
-          "heading": "Lamech Celebrates Escalation",
-          "body": "Lamech turns violence into a boast and multiplies revenge. Cultures become dangerous when domination is treated as strength. God’s people must resist glorifying retaliation."
-        },
-        {
-          "heading": "Image-Bearing Continues",
-          "body": "The genealogy from Adam to Seth repeats humanity’s creation in God’s likeness. Sin is severe but does not erase God-given dignity. No person becomes disposable."
-        },
-        {
-          "heading": "Corruption Grieves God",
-          "body": "Violence fills the earth and grieves God’s heart. Judgment is not divine indifference but God’s opposition to a world consuming itself. The text calls readers to repentance, protection, and peace."
-        }
+      "number":3,
+      "title":"Cain, Abel, and the Spread of Violence",
+      "scripture":"Genesis 4:1–6:8",
+      "supporting":["Matthew 18:21–22","Hebrews 11:4","Hebrews 12:22–24","1 John 3:11–12"],
+      "question":"How does the rebellion introduced in Eden move from distrust of God to murder, vengeance, corrupted relationships, and a world increasingly filled with human evil, and what does God do as violence spreads?",
+      "truth":"Genesis 4:1–6:8 shows sin moving outward through the human family. Cain is warned before he kills Abel, innocent blood cries from the ground, violence escalates through Lamech, and by Genesis 6 human wickedness has become pervasive. Yet God continues to address sinners, protect life from unlimited vengeance, preserve a line through Seth, and grieve over the corruption of the creatures He made.",
+      "goal":"This lesson follows the movement from the first murder to the conditions immediately preceding the flood. It examines Cain and Abel’s offerings without inventing a reason Scripture does not give, God’s warning that sin is crouching at the door, Abel’s blood crying from the ground, Cain’s punishment and protective mark, the cultural development and violent boasting of Cain’s descendants, the Seth genealogy, Enoch, the difficult “sons of God” and Nephilim passage, and God’s grief over human wickedness.",
+      "openingParagraphs":[
+        "Ask: Genesis 3 ends with humans expelled from Eden. How quickly would you expect the consequences of that rebellion to affect the next generation?",
+        "Genesis answers immediately. Worship becomes entangled with anger, a brother becomes a rival, warning is ignored, and the ground that received Adam now receives Abel’s blood. By the end of the section, violence is no longer an isolated act; it has become part of human culture."
       ],
-      "questions": [
-        "What detail in Genesis 4:1–6:8 first draws your attention?",
-        "What does this passage reveal about God’s character?",
-        "Where do you see trust, fear, grief, pride, or courage?",
-        "Which action is described but should not be copied?",
-        "Whose voice or vulnerability might readers overlook?",
-        "What harmful interpretation should the church reject?",
-        "How does the passage correct our use of power or certainty?",
-        "What faithful response will you practice this week?"
+      "contextParagraphs":[
+        "Genesis 4–6 continues themes introduced in chapters 2–3. The ground, which was cursed because of Adam’s sin, now receives Abel’s blood and becomes the sphere of Cain’s judgment. Hiding and deflection reappear when Cain answers God, and the desire/mastery language of Genesis 4:7 echoes Genesis 3:16.",
+        "Genesis 4 traces Cain’s descendants and shows both genuine cultural development and escalating violence. Genesis 5 returns to Adam through Seth and repeatedly records the refrain of death, while highlighting Enoch. Genesis 6:1–4 introduces one of the Bible’s most debated passages before 6:5–8 gives the theological assessment that prepares for the flood.",
+        "The movement is from one family conflict to a world in crisis: jealousy → murder → vengeance → death across generations → mysterious boundary violation → pervasive wickedness and divine grief."
       ],
-      "examination": "Where am I seeking control, protecting a false explanation, or overlooking another person’s dignity? Where do fear, grief, envy, shame, or certainty shape my response? Ask God for one truthful conviction and one grace-filled next step. Examination should lead toward repentance and repair, not self-hatred.",
-      "challenge": "Read Genesis 4:1–6:8 again. Write one sentence about God, one warning to receive, and one hope to carry. Then choose a practical action: listen without fixing, repair harm, share resources, seek wise care, protect a vulnerable person, honor a boundary, or practice Sabbath trust.",
-      "caution": "Do not defend harmful behavior simply because a major biblical character performs it. Reject racism, misogyny, slavery, coercion, sexual violence, child harm, ableism, and forced reconciliation. Providence never makes evil good. Center victims’ dignity, respect boundaries, and pair prayer with safeguarding, counseling, medical care, or legal help where appropriate.",
-      "prayer": "Holy God, meet us in Genesis 4:1–6:8. Correct what is false in us, protect the vulnerable, teach us to listen, and give us courage to live truthfully. Form our lives through your grace and help us practice what we have learned. Amen."
+      "teaching":[
+        {"heading":"Two Brothers Bring Offerings","paragraphs":["Cain and Abel both bring offerings to the LORD. Abel brings from the firstborn and fat portions of his flock; Cain brings from the fruit of the ground. God regards Abel and his offering but not Cain and his offering.","Genesis does not explicitly explain why. Hebrews 11 emphasizes Abel’s faith, and 1 John contrasts Cain’s evil deeds with Abel’s righteous deeds. Grain offerings are later acceptable in Israel, so the story should not be reduced to “animal sacrifice good, produce offering bad.”"]},
+        {"heading":"God Warns Cain Before the Murder","paragraphs":["Cain becomes angry, and God addresses him before violence becomes action. Genesis 4:7 is difficult Hebrew, but its central picture is clear: sin crouches at the door like a predator, its desire is toward Cain, and Cain is called to rule or master it.","Anger itself is not identified as murder, but anger that refuses God’s warning becomes the soil in which violence grows. Scripture neither demands emotional denial nor excuses harmful action because someone was angry."]},
+        {"heading":"Abel’s Blood Cries from the Ground","paragraphs":["The Bible’s first recorded human death is a brother killing a brother. Abel has no speech in the story, yet his blood cries to God from the ground. The silenced victim is heard by God.","Hidden violence may be concealed from families, communities, courts, or institutions, but it does not become morally invisible before God. Hebrews 12 later contrasts Abel’s blood with the blood of Jesus, which speaks a greater redemptive word."]},
+        {"heading":"Am I My Brother’s Keeper?","paragraphs":["Cain lies and asks whether he is his brother’s keeper. The question is bitterly ironic: human beings cannot treat another person’s life as morally irrelevant.","At the same time, this passage should not be used to make every person responsible for controlling everyone else. It establishes moral responsibility toward another’s life without erasing healthy boundaries or individual agency."]},
+        {"heading":"Cain’s Punishment and Protective Mark","paragraphs":["Cain’s punishment is tied to the ground, and he becomes a restless wanderer. Genesis does not stop to solve every demographic question about who else is alive; its concern is Cain’s fear of retaliatory violence.","God places a mark or sign on Cain to restrain vengeance. Genesis never describes the mark as dark skin, a racial identity, or an inherited ethnic curse. Racialized interpretations of the mark are later inventions imposed on the text."]},
+        {"heading":"Culture Develops While Violence Escalates","paragraphs":["Cain builds a city, and his descendants are associated with livestock, music, and metalworking. Genesis does not say cities or cultural achievements are inherently evil. Image-bearing creativity continues in a fallen world.","Yet the genealogy culminates with Lamech, who boasts of disproportionate revenge. Human culture can grow technologically and artistically while moral corruption deepens."]},
+        {"heading":"Lamech Multiplies Vengeance","paragraphs":["Lamech boasts that if Cain is avenged sevenfold, he will be avenged seventy-sevenfold. What God used to restrain retaliation, Lamech turns into a celebration of escalating revenge.","Jesus later reverses this arithmetic in Matthew 18:21–22, using seventy-seven or seventy-times-seven language not to intensify vengeance but to teach radical forgiveness. Forgiveness, however, does not require victims to remain unsafe or cancel appropriate justice."]},
+        {"heading":"Seth, Death, and Enoch","paragraphs":["Genesis returns to Adam through Seth. The line is not sinless, but it preserves the story after Abel’s death and Cain’s exile. Genesis 5 deliberately echoes creation language, showing that the image theme persists after the fall.","The repeated refrain “and he died” turns the genealogy into theological narration of mortality. Enoch interrupts the pattern by walking with God and being taken by God. Genesis gives few details and should not be turned into a speculative map of the afterlife."]},
+        {"heading":"Sons of God, Nephilim, and Interpretive Humility","paragraphs":["Genesis 6:1–4 is one of the most disputed passages in Genesis. Major interpretations of the “sons of God” include heavenly beings, rulers or warrior-kings, and the Sethite line. Each view has arguments and difficulties; Genesis does not explicitly settle the matter.","The Nephilim are mentioned as mighty or renowned figures, but the text does not supply enough information for elaborate theories about giants, angel-human biology, demons, surviving bloodlines, or race. The 120 years of Genesis 6:3 is likewise interpreted either as a countdown to the flood or as a lifespan limitation."]},
+        {"heading":"God Sees Wickedness and Grieves","paragraphs":["Genesis 6:5 expands the crisis from one murder to pervasive human wickedness. The problem has become societal, and Genesis 8:21 will later show that flood judgment by itself does not recreate the human heart.","The LORD is described as regretting or being sorry and as grieved in His heart. These statements communicate genuine divine sorrow without requiring us to imagine God discovering information He previously lacked. The section ends with Noah finding favor, creating the bridge into the flood story."]}
+      ],
+      "jesusParagraphs":[
+        "Jesus refers to righteous Abel, Hebrews 11 presents Abel’s offering as an act of faith, and Hebrews 12 says Jesus’ blood speaks a better word than Abel’s. Abel’s blood cries for justice; Jesus’ blood is placed within God’s work of reconciliation and covenant.",
+        "Jesus’ teaching on forgiveness provides a canonical reversal of Lamech’s escalating vengeance. Genesis multiplies retaliation; Jesus calls His followers away from retaliation toward a community shaped by forgiveness, without erasing justice or safety.",
+        "Noah will preserve a family through judgment but will not eliminate sin. The New Testament’s answer to the heart problem Genesis exposes ultimately centers on Jesus."
+      ],
+      "guardrailParagraphs":[
+        "Genesis never says Cain’s offering was rejected because vegetables were unacceptable. Do not turn an unstated explanation into the lesson’s main point.",
+        "The mark of Cain is protective and has nothing to do with skin color or race.",
+        "Do not use “Am I my brother’s keeper?” to erase healthy boundaries, and do not glorify Lamech’s violence as strength.",
+        "Do not present one interpretation of the sons of God, Nephilim, the 120 years, or the long lifespans as though Genesis explicitly settles every question.",
+        "God’s grief over violence should never be used to imply that victims caused their abuse or that every tragedy is a direct punishment for a particular person’s sin."
+      ],
+      "questions":[
+        "What does Genesis actually tell us about Cain’s and Abel’s offerings, and what popular explanation goes beyond the text?",
+        "What does God’s warning in Genesis 4:6–7 reveal about Cain’s responsibility before the murder occurs?",
+        "How does Abel’s blood “crying” from the ground change the way we understand hidden or unacknowledged violence?",
+        "Why does God protect Cain from retaliatory killing while still imposing serious consequences?",
+        "What does Lamech do with the principle of vengeance, and how does his boast show violence becoming cultural rather than merely individual?",
+        "What do the cultural achievements in Cain’s genealogy teach us about the difference between human creativity and moral faithfulness?",
+        "How does Genesis 5 use repetition, especially “and he died,” to develop the consequences of Genesis 3?",
+        "Which interpretation of the “sons of God” have you heard before? What does the text actually establish, and what remains uncertain?",
+        "Why is Genesis 6:5–8 about more than isolated bad behavior? What does God’s grief contribute to the picture of judgment?",
+        "How do the New Testament references to Abel and Jesus’ reversal of vengeance deepen this section without erasing Genesis’s original message?"
+      ],
+      "examination":"What do I do when another person’s acceptance, success, gift, or recognition exposes envy in me? When God confronts something destructive in my life, do I listen before it becomes action, or do I defend the emotion until it controls me? Have I ever treated retaliation, humiliation, or domination as strength? Where might God be calling me to protect life, tell the truth about harm, or refuse a culture of escalating revenge?",
+      "challenge":"Read Genesis 4:1–6:8 in three movements: 4:1–26, chapter 5, and 6:1–8. For each movement, write down what increases, what God says or does, and what remains unresolved. Mark every reference to brother, blood, ground, death, violence, walking with God, and the human heart. Then read Matthew 18:21–22, Hebrews 11:4, Hebrews 12:22–24, and 1 John 3:11–12. Note only the connections those New Testament passages actually make.",
+      "caution":"Do not reduce Cain and Abel to a generic sermon about “giving God your best.” When discussing murder, abuse, or retaliation, do not pressure anyone to disclose personal experiences, and never use forgiveness to prevent reporting crimes, seeking safety, maintaining boundaries, or pursuing appropriate justice. Correct racist interpretations of Cain’s mark explicitly. Handle Genesis 6:1–4 with humility and resist sensationalism.",
+      "prayer":"God of life and justice, You warned Cain before violence consumed him, heard Abel when his voice had been silenced, and grieved when violence filled the world. Search our anger before it becomes harm. Free us from envy, retaliation, and the need to dominate. Give us courage to hear the voices others ignore and wisdom to distinguish what Your Word says from what we merely assume. Thank You that human violence does not have the final word and that in Jesus You lead us toward reconciliation, resurrection, and peace. Amen."
     },
     {
-      "number": 4,
-      "title": "Noah, Judgment, and Covenant Mercy",
-      "scripture": "Genesis 6:9–9:29",
-      "supporting": [],
-      "question": "How do the flood and covenant reveal God’s judgment, mercy, and commitment to creation?",
-      "truth": "God judges pervasive violence, preserves life through grace, and binds himself to the future of the earth.",
-      "goal": "This lesson helps participants read Genesis 6:9–9:29 within Genesis, receive its truth without flattening difficult details, and respond through worship, compassion, justice, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to identify one word, image, or question from the passage. No one must disclose trauma, illness, family conflict, mental-health history, or experiences of abuse. Listen without rushing to correct or solve another person’s story.",
-      "context": "Read Genesis 6:9–9:29 in manageable sections. Observe speakers, repeated words, narrative consequences, and connections to surrounding chapters. Distinguish what the text reports from what it commends. Interpret difficult scenes within the book’s purpose and the wider witness of Scripture before making modern applications.",
-      "teaching": [
-        {
-          "heading": "Noah Finds Grace",
-          "body": "Noah’s righteousness is real, but the story begins with grace. Rescue is not self-salvation. Faith responds obediently to God amid a violent culture."
-        },
-        {
-          "heading": "The Flood Is Lament, Not Spectacle",
-          "body": "The flood is a severe judgment on pervasive corruption. Teaching should not trivialize its deaths through cheerful imagery. The passage invites grief over violence and sober trust in God’s justice."
-        },
-        {
-          "heading": "God Remembers",
-          "body": "God’s remembering means covenant action, not recovered memory. God attends to the vulnerable ark community and brings creation toward renewed life."
-        },
-        {
-          "heading": "The Rainbow Covenant",
-          "body": "God makes a covenant with Noah, his descendants, and every living creature. The sign emphasizes God’s restraint and commitment to creation, giving ecological as well as human significance."
-        },
-        {
-          "heading": "Life Is Sacred",
-          "body": "The prohibition of murder is grounded in God’s image. Human life may not be treated as property or a tool. This principle challenges violence, racism, abuse, and exploitation."
-        },
-        {
-          "heading": "Noah’s Family After the Crisis",
-          "body": "Noah’s drunkenness and family shame show that survival does not remove sin or trauma. The curse falls on Canaan, not on a race; the passage has been horribly misused to defend slavery and must never be read that way."
-        }
+      "number":4,
+      "title":"Noah, Judgment, and Covenant Mercy",
+      "scripture":"Genesis 6:9–9:29",
+      "supporting":["Hebrews 11:7","Matthew 24:37–39","1 Peter 3:18–22","2 Peter 3"],
+      "question":"What does the flood reveal about God’s response to a world filled with violence, and why does God answer judgment by making a covenant not only with Noah but with humanity, living creatures, and the earth’s future?",
+      "truth":"The flood is Genesis’s terrifying answer to a creation corrupted by violence, but destruction does not cure the human heart. God preserves Noah’s family and animal life, brings them into a renewed creation, reaffirms humanity’s image-bearing dignity, and freely binds Himself by covenant never again to destroy all flesh by flood. The story ends by showing that Noah is preserved by grace but is not humanity’s final redeemer: sin survives the waters.",
+      "goal":"This lesson reads Genesis 6:9–9:29 as one theological movement: corruption → judgment → preservation → remembered creation → worship → covenant → renewed human vocation → continuing human failure. It examines Noah’s righteousness, the ark, creation and de-creation echoes, God’s “remembering,” Noah’s altar, the unchanged human heart, covenant with all flesh, the rainbow, the image of God, animal life and blood, and the difficult account involving Noah, Ham, and Canaan while distinguishing the text from modern flood-science debates.",
+      "openingParagraphs":[
+        "Ask: If the flood removes a violent generation, what would have to change for violence never to return?",
+        "Genesis 6:5 describes the human heart as continually inclined toward evil before the flood, while Genesis 8:21 still speaks of the human heart’s evil inclination afterward. The waters judge a corrupt world, but they do not perform heart surgery. The covenant that follows rests on God’s commitment rather than a perfected humanity."
       ],
-      "questions": [
-        "What detail in Genesis 6:9–9:29 first draws your attention?",
-        "What does this passage reveal about God’s character?",
-        "Where do you see trust, fear, grief, pride, or courage?",
-        "Which action is described but should not be copied?",
-        "Whose voice or vulnerability might readers overlook?",
-        "What harmful interpretation should the church reject?",
-        "How does the passage correct our use of power or certainty?",
-        "What faithful response will you practice this week?"
+      "contextParagraphs":[
+        "Genesis 6:9 resumes the Noah account after 6:5–8 has described pervasive wickedness, divine grief, coming judgment, and Noah finding favor. Noah is called righteous and blameless in his generation and one who walked with God; “blameless” should not be confused with sinless perfection.",
+        "The earth is described as corrupt and filled with violence. The Hebrew word hamas refers to violence or wrongdoing and is central to the reason given for judgment. The flood therefore belongs to Genesis’s progression from Cain’s murder through Lamech’s vengeance into systemic corruption.",
+        "The flood narrative deliberately echoes Genesis 1. Ordered waters overwhelm their boundaries, then wind passes over the waters, dry ground appears, living creatures emerge, humanity is blessed again, and the command to be fruitful and multiply is renewed. The story is judgment and de-creation followed by renewed creation.",
+        "Ancient Mesopotamian literature also contains flood traditions. Comparisons can illuminate the ancient setting, but Genesis has its own theology: one sovereign God, judgment tied to moral corruption and violence, and a covenant commitment to creation."
       ],
-      "examination": "Where am I seeking control, protecting a false explanation, or overlooking another person’s dignity? Where do fear, grief, envy, shame, or certainty shape my response? Ask God for one truthful conviction and one grace-filled next step. Examination should lead toward repentance and repair, not self-hatred.",
-      "challenge": "Read Genesis 6:9–9:29 again. Write one sentence about God, one warning to receive, and one hope to carry. Then choose a practical action: listen without fixing, repair harm, share resources, seek wise care, protect a vulnerable person, honor a boundary, or practice Sabbath trust.",
-      "caution": "Do not defend harmful behavior simply because a major biblical character performs it. Reject racism, misogyny, slavery, coercion, sexual violence, child harm, ableism, and forced reconciliation. Providence never makes evil good. Center victims’ dignity, respect boundaries, and pair prayer with safeguarding, counseling, medical care, or legal help where appropriate.",
-      "prayer": "Holy God, meet us in Genesis 6:9–9:29. Correct what is false in us, protect the vulnerable, teach us to listen, and give us courage to live truthfully. Form our lives through your grace and help us practice what we have learned. Amen."
+      "teaching":[
+        {"heading":"Noah: Righteous, Blameless, Walking with God","paragraphs":["Genesis 6:8 says Noah found favor before 6:9 describes his faithful character. The text does not force a choice between grace and obedience; Noah receives divine favor and genuinely responds in faithful obedience.","Hebrews 11 later presents Noah as acting by faith, and 2 Peter calls him a herald of righteousness. Genesis itself does not record sermons Noah preached, so later canonical descriptions should not be turned into invented dialogue."]},
+        {"heading":"The Earth Is Filled with Violence","paragraphs":["The flood is not divine irritation over minor failures. Humanity, commissioned to fill the earth with image-bearing life, has instead filled it with violence.","The story is severe and should remain severe. People and animals die. A responsible study must resist turning the flood into a cheerful animal spectacle detached from judgment and grief."]},
+        {"heading":"The Ark and God’s Means of Preservation","paragraphs":["The Hebrew word for ark, tevah, appears elsewhere in the Hebrew Bible only for the basket that preserves the infant Moses in Exodus 2. In both stories a vessel carries vulnerable life through deadly waters.","Genesis emphasizes Noah’s obedience. The ark is not Noah’s independent escape plan but God’s provided means of preservation to which Noah responds."]},
+        {"heading":"Clean and Unclean Animals, and the Long Wait","paragraphs":["Genesis 6 speaks generally of pairs while Genesis 7 distinguishes additional clean animals and birds. The narrative can naturally distinguish general preservation from the greater number of clean animals used for sacrifice and continued life. The categories appear before Sinai, but Genesis does not explain their origin.","The flood lasts far longer than forty days. Forty days refers to the rain, while the household remains in the ark for many months as waters rise, recede, and the land dries. Preservation does not mean immediate resolution."]},
+        {"heading":"Creation Unmade and the Flood’s Extent","paragraphs":["The fountains of the deep and floodgates of the heavens reverse the ordered separation of waters in Genesis 1. The flood is de-creation in ancient biblical imagery.","Christians disagree about whether Genesis requires a geographically global flood in modern terms or describes the total destruction of the inhabited world within the narrator’s horizon. The Hebrew erets can mean earth, land, or territory. The passage’s theological emphasis should not be lost in overconfidence about questions it does not frame in modern scientific vocabulary."]},
+        {"heading":"God Remembered Noah","paragraphs":["Genesis 8:1 is the turning point: God remembers Noah and the animals. Biblical remembering does not mean God had forgotten; it signals faithful movement toward covenant action.","God sends a ruach, wind, over the earth, echoing the ruach over the waters in Genesis 1:2. The renewed-creation resonance is meaningful, but Genesis 8:1 does not explicitly identify this wind as the Holy Spirit in later Trinitarian terms."]},
+        {"heading":"The Dove, the Altar, and Worship After Survival","paragraphs":["The raven and dove help Noah determine the condition of the land. The olive leaf indicates that vegetation is accessible again; later cultural symbolism should not replace the narrative’s immediate purpose.","Noah’s first recorded action after leaving is to build an altar. He emerges not as owner of a world he saved but as a worshiper. The pleasing-aroma language is relational and cultic; unlike some ancient flood stories, the biblical God is not hungry or dependent on human food."]},
+        {"heading":"The Human Heart Has Not Been Fixed","paragraphs":["Genesis 8:21 is crucial: God promises restraint while still acknowledging that the inclination of the human heart is evil from youth. Flood judgment has not regenerated humanity.","Seedtime and harvest, cold and heat, summer and winter, day and night establish dependable creation order. This is not a promise that no local disaster, crop failure, climate disruption, or human-caused environmental harm will ever occur."]},
+        {"heading":"Renewed Vocation, Blood, and the Image of God","paragraphs":["God renews the command to be fruitful and fill the earth, but the post-flood world is not Eden. Animals now fear humans, animal food is permitted, and blood receives special treatment as representing life.","Genesis 9:5–6 grounds the seriousness of human bloodshed in the image of God. The image therefore persists after the fall and flood. The passage establishes accountability for homicide without supplying a complete modern theory of criminal justice or settling every Christian debate about capital punishment."]},
+        {"heading":"Covenant with Noah, All Flesh, and the Bow","paragraphs":["God’s covenant extends to Noah, his descendants, and every living creature. Its central promise is strikingly unilateral: God binds Himself never again to destroy all flesh by flood.","The covenant sign is the bow, qeshet, the ordinary Hebrew word for a bow including a weapon bow. Some interpreters see imagery of God hanging up a warrior’s bow, but Genesis itself identifies it simply as the covenant sign. The rainbow is not merely a sentimental statement that storms end; it marks God’s self-binding commitment to creation."]},
+        {"heading":"Noah, Ham, Canaan, and the Return of Human Failure","paragraphs":["Noah plants a vineyard, becomes drunk, and lies uncovered. The renewed world has not produced a new Eden. Noah is preserved by grace but remains flawed.","Genesis says Ham sees his father’s nakedness and tells his brothers. Interpretations involving a more serious sexual act exist, but the text uses “saw” rather than the standard “uncover nakedness” language, so certainty should be resisted.","Noah says, “Cursed be Canaan.” The text does not say Ham is cursed. The so-called “curse of Ham” was grotesquely manipulated to justify African enslavement, segregation, colonialism, and anti-Black racism. Genesis says nothing about Black skin or a racial hierarchy, and turning the passage into one is an abuse of the text."]}
+      ],
+      "jesusParagraphs":[
+        "Jesus refers to the days of Noah in Matthew 24:37–39 to warn about unexpected judgment and readiness, not to provide a timetable for predicting the end.",
+        "First Peter 3:18–22 connects Noah’s preservation through water with Christian baptism while centering salvation on Jesus Christ’s death, resurrection, and exaltation. This is a later apostolic use of the flood story, not permission to allegorize every ark detail.",
+        "Second Peter 3 uses the flood in an argument about judgment and future renewal, and Hebrews 11 presents Noah’s obedience as faith. Noah preserves a family through judgment but cannot change the human heart; Jesus deals with sin at a deeper level and inaugurates new-creation hope."
+      ],
+      "guardrailParagraphs":[
+        "Do not turn the flood into a cute animal story or detach judgment from the violence and grief that precede it.",
+        "Do not say God “remembered” because He had forgotten Noah, and do not teach that Noah was sinless.",
+        "Do not pretend Christians agree on every geographic or scientific question concerning the flood. Explain major readings fairly while keeping the narrative’s theological claims clear.",
+        "Do not call Genesis 9 the “curse of Ham.” Canaan is the person cursed in the text, and nothing in the passage associates the curse with Black skin, Africans, or a divinely mandated racial hierarchy.",
+        "Do not claim certainty about a sexual act in Noah’s tent that Genesis does not explicitly describe."
+      ],
+      "questions":[
+        "What reason does Genesis give for the flood, and how does that connect to the violence traced from Cain through Genesis 6?",
+        "How can Noah both “find favor” and be described as righteous and obedient? Why is it unnecessary to choose between grace and faithful response?",
+        "What creation language reappears during and after the flood, and how does it help us understand the story as de-creation and renewed creation?",
+        "What does “God remembered Noah” mean in biblical narrative?",
+        "Compare Genesis 6:5 with 8:21. What does their similarity tell us about what the flood did and did not change?",
+        "Who receives the Noahic covenant? What changes when we notice that animals and “all flesh” are explicitly included?",
+        "Why does Genesis 9 ground the seriousness of human bloodshed in the image of God?",
+        "What does the rainbow actually signify in Genesis, and which popular applications go beyond the passage?",
+        "What does Genesis explicitly say Ham did, what remains debated, and who does Noah actually curse?",
+        "Why is the post-flood failure of Noah important to Genesis’s larger story rather than an embarrassing detail to skip?"
+      ],
+      "examination":"Do I take violence and the destruction of others as seriously as Genesis does, or do I excuse harm when it benefits my family, group, nation, or institution? Where am I tempted to confuse God’s grace with my own moral superiority? Have I inherited an interpretation of Scripture that needs to be corrected because it devalues another people? What would it look like for me to treat human life and the wider creation as gifts held under God’s covenant care?",
+      "challenge":"Read Genesis 6:9–9:29 in four movements: 6:9–7:24; chapter 8; 9:1–17; and 9:18–29. Mark every reference to violence, corruption, command and obedience, remembering, blessing, covenant, living creatures, blood, image, and curse. Then compare Genesis 1:1–2:3 with Genesis 8:1–9:17. Finish with Hebrews 11:7, Matthew 24:37–39, and 1 Peter 3:18–22, noting what each New Testament writer actually does with Noah.",
+      "caution":"Teach the flood with gravity. Do not dismiss questions about divine judgment as lack of faith. If participants debate global versus regional models, distinguish biblical interpretation from geology, archaeology, or earth-history claims requiring evidence beyond the passage. Correct racial misuse explicitly, and do not sensationalize Noah’s drunkenness and nakedness. Keep the central tension visible: God judges violence yet commits Himself to a human family whose heart problem remains.",
+      "prayer":"God of creation, justice, and covenant mercy, You see the violence that fills Your world and You do not call evil good. Teach us to grieve what grieves You. Thank You for preserving life, for remembering Your creatures, and for binding Yourself to creation with mercy even when the human heart remains broken. Correct every way we have used Scripture to demean another people. Teach us to honor Your image in every human life and to receive Your world as a gift. Lead us beyond mere survival toward the deeper redemption You have given in Jesus Christ. Amen."
     },
     {
-      "number": 5,
-      "title": "Babel and the Call of Abraham",
-      "scripture": "Genesis 10:1–12:9",
-      "supporting": [],
-      "question": "How does God answer humanity’s self-exalting unity with a mission of blessing?",
-      "truth": "God scatters proud empire and calls Abraham so that every family of the earth may receive blessing.",
-      "goal": "This lesson helps participants read Genesis 10:1–12:9 within Genesis, receive its truth without flattening difficult details, and respond through worship, compassion, justice, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to identify one word, image, or question from the passage. No one must disclose trauma, illness, family conflict, mental-health history, or experiences of abuse. Listen without rushing to correct or solve another person’s story.",
-      "context": "Read Genesis 10:1–12:9 in manageable sections. Observe speakers, repeated words, narrative consequences, and connections to surrounding chapters. Distinguish what the text reports from what it commends. Interpret difficult scenes within the book’s purpose and the wider witness of Scripture before making modern applications.",
-      "teaching": [
-        {
-          "heading": "Nations Within God’s Story",
-          "body": "The table of nations portrays diverse peoples within one human family. Difference is not a curse. Ethnic diversity belongs within God’s providential world."
-        },
-        {
-          "heading": "A City for Our Own Name",
-          "body": "Babel gathers power to secure fame and resist creaturely limits. Unity becomes oppressive when it serves self-exaltation. Large institutions require humility and accountability."
-        },
-        {
-          "heading": "God Confuses Imperial Speech",
-          "body": "The scattering limits centralized pride. The passage does not condemn languages or cultures; it challenges the use of human cooperation to build domination."
-        },
-        {
-          "heading": "Abram Is Called to Go",
-          "body": "God calls Abram away from familiar land and securities. Faith begins with trustful response before the whole route is visible. Migration should not be romanticized; leaving home can include loss and vulnerability."
-        },
-        {
-          "heading": "Blessed to Become a Blessing",
-          "body": "Election serves mission. Abram is blessed so that all families may be blessed. God’s people are never chosen for superiority but for generous service."
-        },
-        {
-          "heading": "Altars Along the Way",
-          "body": "Abram worships while living as a sojourner. Promise does not mean immediate possession or ease. Faith practices worship amid unfinished journeys."
-        }
+      "number":5,
+      "title":"Babel and the Call of Abraham",
+      "scripture":"Genesis 10:1–12:9",
+      "supporting":["Acts 2:1–12","Acts 3:25–26","Galatians 3:6–16","Revelation 7:9–10"],
+      "question":"How does God respond when humanity gathers to secure its own name and resist being scattered, and why does His answer begin by calling one family through whom all the families of the earth are to be blessed?",
+      "truth":"Genesis moves from the spread of Noah’s descendants among the nations to Babel’s attempt to manufacture security and a great name. God frustrates that project and scatters humanity, then calls Abram with a striking counter-promise: God Himself will make Abram’s name great, form a people from him, and make that people an instrument of blessing for all the families of the earth.",
+      "goal":"This lesson connects the Table of Nations, Babel, Shem’s genealogy, Terah’s family, and Abram’s call as one movement in Genesis. It examines what Genesis means by nations and languages, Nimrod and Babel, the city and tower, humanity’s desire to make a name, God’s descent and scattering, the relationship between Genesis 10 and 11, Sarai’s barrenness, Abram’s departure from Haran, the promises of land, offspring, name, blessing, and worldwide blessing, and Abram’s first journey through Canaan.",
+      "openingParagraphs":[
+        "Ask: What is the difference between receiving a name from God and building something so that people cannot forget your name?",
+        "Babel says, “Let us make a name for ourselves.” Immediately afterward God tells Abram, “I will make your name great.” Babel tries to manufacture greatness through concentrated human power. Abram receives a promise he cannot produce for himself."
       ],
-      "questions": [
-        "What detail in Genesis 10:1–12:9 first draws your attention?",
-        "What does this passage reveal about God’s character?",
-        "Where do you see trust, fear, grief, pride, or courage?",
-        "Which action is described but should not be copied?",
-        "Whose voice or vulnerability might readers overlook?",
-        "What harmful interpretation should the church reject?",
-        "How does the passage correct our use of power or certainty?",
-        "What faithful response will you practice this week?"
+      "contextParagraphs":[
+        "Genesis 10, often called the Table of Nations, traces descendants of Noah’s sons and organizes peoples known to the biblical world by clans, languages, lands, and nations. It is selective rather than a modern catalog of every ethnic group, and it places the nations within one post-flood human family.",
+        "Genesis 10 already mentions languages and territories, while Genesis 11 narrates humanity sharing one language before Babel. The chapters need not be read as strict chronology: chapter 10 surveys the resulting spread of peoples, while 11:1–9 steps back to explain the scattering and language confusion associated with Babel.",
+        "After Babel, Genesis narrows through Shem’s genealogy to Terah and Abram. This narrowing is not God abandoning the nations; Genesis 12:3 shows that the call of one family keeps all the families of the earth in view."
       ],
-      "examination": "Where am I seeking control, protecting a false explanation, or overlooking another person’s dignity? Where do fear, grief, envy, shame, or certainty shape my response? Ask God for one truthful conviction and one grace-filled next step. Examination should lead toward repentance and repair, not self-hatred.",
-      "challenge": "Read Genesis 10:1–12:9 again. Write one sentence about God, one warning to receive, and one hope to carry. Then choose a practical action: listen without fixing, repair harm, share resources, seek wise care, protect a vulnerable person, honor a boundary, or practice Sabbath trust.",
-      "caution": "Do not defend harmful behavior simply because a major biblical character performs it. Reject racism, misogyny, slavery, coercion, sexual violence, child harm, ableism, and forced reconciliation. Providence never makes evil good. Center victims’ dignity, respect boundaries, and pair prayer with safeguarding, counseling, medical care, or legal help where appropriate.",
-      "prayer": "Holy God, meet us in Genesis 10:1–12:9. Correct what is false in us, protect the vulnerable, teach us to listen, and give us courage to live truthfully. Form our lives through your grace and help us practice what we have learned. Amen."
+      "teaching":[
+        {"heading":"The Nations Belong to One Human Family","paragraphs":["Genesis 10 traces multiple peoples, lands, languages, and clans from Noah’s three sons. The ancient names do not map neatly onto modern racial categories or nation-states.","Attempts to turn Shem, Ham, and Japheth into fixed modern races go beyond the text and have historically fed racist systems Genesis does not teach. The chapter emphasizes both unity and diversity without establishing a hierarchy of human worth."]},
+        {"heading":"Nimrod, Kingdom, and Babel","paragraphs":["Genesis pauses over Nimrod, calling him a mighty figure and mighty hunter before the LORD. His kingdom begins with Babel, Erech, Accad, and Calneh in Shinar.","Later traditions portray Nimrod as a rebel or the tower’s builder, but Genesis does not explicitly say he built the tower or led Babel’s rebellion. “Before the LORD” can simply mean in God’s sight or presence. What the text establishes is an association between Nimrod’s kingdom and Babel."]},
+        {"heading":"Shinar, Bricks, and the Tower","paragraphs":["The builders settle in Shinar, associated with southern Mesopotamia and Babylonia, and use baked brick and bitumen. Those materials fit the alluvial Mesopotamian environment and help root the story culturally.","The tower is often compared with Mesopotamian ziggurats, but Genesis does not use the technical term or identify a particular historical monument. “Its top in the heavens” can describe extraordinary height; the text’s deeper concern is the builders’ stated goals."]},
+        {"heading":"Let Us Make a Name for Ourselves","paragraphs":["The builders want a city, a great name, and protection against being scattered. Yet God had blessed Noah’s family and told them to fill the earth.","The problem is not cooperation, technology, cities, or shared language by themselves. The danger is organized self-exaltation, self-secured permanence, and resistance to God’s creational purpose."]},
+        {"heading":"God Comes Down","paragraphs":["The story responds to humanity’s heaven-reaching project with irony: the LORD must “come down” to see the city and tower. Genesis is not teaching that God literally cannot see from heaven; it shrinks human achievement before the transcendent Creator.","When God says nothing they plan will be impossible, the issue is not divine fear that humans may become gods. The concern is the destructive potential of concentrated human capacity organized around a rebellious purpose."]},
+        {"heading":"Language Is Confused and the People Are Scattered","paragraphs":["God confuses the builders’ speech and scatters them. The action interrupts a specific centralized project and accomplishes the dispersion they were trying to prevent.","The story does not teach that linguistic or cultural diversity is evil. Genesis 10 already describes peoples by language and land without condemning their existence. Later Scripture envisions redeemed people from every nation, tribe, people, and language rather than one uniform culture."]},
+        {"heading":"Babel and Babylon","paragraphs":["The Hebrew name Babel is the same name later used for Babylon, and Genesis links it by wordplay to balal, “to confuse.” Mesopotamian etymology associated Babylon with a “gate of god/the gods,” while Genesis gives the city a theological counter-memory of confused speech and scattering.","Later Scripture will make Babylon a major symbol of imperial arrogance and opposition to God, but those later associations should not be imported backward into every detail of Genesis 11."]},
+        {"heading":"From Babel to Shem and Terah","paragraphs":["After Babel, Genesis traces Shem’s line toward Terah and Abram. The lens narrows from all nations to one family so that God can address universal brokenness through a particular covenant history.","Terah’s family includes Abram, Nahor, and Haran. Sarai’s barrenness is stated before God promises Abram a great nation, deliberately placing impossibility beside promise."]},
+        {"heading":"Ur, Haran, and God’s Call","paragraphs":["Terah leaves Ur intending Canaan but settles in Haran. Ur is commonly identified with the major southern Mesopotamian city, though alternatives have been proposed; Haran stood in upper Mesopotamia.","God tells Abram to leave country, kindred, and father’s household for a land He will show. Hebrews later emphasizes Abram going without knowing the destination. This is a particular covenant call, not a universal command that faithful people must leave family or homeland."]},
+        {"heading":"A Great Nation, a Great Name, and a Blessing","paragraphs":["God promises to make Abram a great nation even though Sarai has no child. The promise confronts barrenness and establishes offspring, land, blessing, and covenant relationship as central themes.","“I will make your name great” deliberately contrasts Babel’s “let us make a name for ourselves.” Abram receives significance as gift and vocation rather than self-manufactured permanence.","Abram is blessed so that blessing can move outward. Election is not a declaration of inherent superiority; God chooses one family for a purpose that reaches every family of the earth."]},
+        {"heading":"Blessing, Protection, and All the Families of the Earth","paragraphs":["God promises to bless those who bless Abram and to respond to those who treat him with contempt. The central point is divine protection of the covenant bearer.","Genesis 12:3 should not be lifted directly into a modern geopolitical slogan. The promise first concerns Abram and the covenant story that develops through his family; later political questions require the rest of Scripture and actual historical realities.","The worldwide climax is that all the families of the earth will be blessed through Abram. The nations scattered in Genesis 10–11 remain the horizon of God’s purpose."]},
+        {"heading":"Abram Goes, Enters Canaan, and Builds Altars","paragraphs":["Abram goes at age seventy-five, taking Sarai, Lot, possessions, and people acquired in Haran. Ancient households could include servants, dependents, workers, and enslaved persons. The text should not be sanitized, but description of an ancient institution is not automatic divine endorsement.","At Shechem God promises the land to Abram’s offspring even though the Canaanites are there and Abram does not yet possess the land. Promise precedes possession.","Abram builds altars and calls on the name of the LORD. The contrast with Babel is suggestive: Babel builds to secure a human name; Abram lives in tents and worships the God who gives name and future."
+        ]}
+      ],
+      "jesusParagraphs":[
+        "Matthew opens by identifying Jesus as the son of Abraham as well as the son of David. Galatians 3 says Scripture announced the gospel beforehand to Abraham in the promise that the nations would be blessed through him and centers fulfillment on Christ.",
+        "Acts 3 connects Abraham’s promise with the blessing that comes through God’s servant turning people from wickedness. The blessing is therefore not merely material advantage but part of God’s redemptive work.",
+        "Pentecost is often called a reversal of Babel, but Acts 2 does not erase languages or restore one language. People from many nations hear God’s mighty works in their own languages. It is better to speak of Pentecost as a redemptive answer to Babel than as the erasure of diversity.",
+        "The canonical movement is scattered nations → Abrahamic blessing → Messiah → Spirit-enabled witness among the nations → redeemed people from every nation, tribe, people, and language worshiping God."
+      ],
+      "guardrailParagraphs":[
+        "Genesis 10 does not divide humanity into modern biological races or establish a racial hierarchy.",
+        "Do not claim Nimrod is explicitly the builder of the tower or a demonic tyrant, and do not insist the Babel builders literally believed they could climb into heaven.",
+        "Do not treat linguistic and cultural diversity as a divine mistake that Christianity should erase.",
+        "Do not make Abraham’s call a universal command to abandon family or homeland, or turn “I will bless those who bless you” into an automatic endorsement of any modern government, party, military policy, or territorial claim.",
+        "Do not reduce Abrahamic blessing to wealth. The promise unfolds through waiting, famine, conflict, and costly obedience as well as provision."
+      ],
+      "questions":[
+        "What does Genesis 10 communicate about the relationship between human unity and the diversity of peoples, languages, and lands?",
+        "Which goals do the Babel builders explicitly state? How do those goals help us identify the problem in the story?",
+        "What irony is created when the LORD must “come down” to inspect a tower intended to reach the heavens?",
+        "Why is human unity not automatically righteous according to Babel? What determines whether cooperation serves good or evil?",
+        "Compare “let us make a name for ourselves” in Genesis 11:4 with “I will make your name great” in Genesis 12:2. What is Genesis teaching through that contrast?",
+        "Why does Sarai’s barrenness appear immediately before the promise that Abram will become a great nation?",
+        "List the promises in Genesis 12:1–3. Which are directed toward Abram, and which intentionally reach beyond him?",
+        "How does “all the families of the earth” connect Abram’s call back to the nations of Genesis 10–11?",
+        "What does Abram actually possess when God promises the land to his offspring? How does this shape the meaning of faith and promise?",
+        "How does the New Testament connect Jesus to Abraham’s promise without erasing the original Genesis setting?"
+      ],
+      "examination":"Where am I tempted to build a name that I need other people to recognize, protect, or remember? Do I treat God’s gifts as evidence of superiority or as resources for blessing others? Is there a place where I want complete security before I will obey what I already understand? How might my church, family, ministry, or work pursue unity around God’s purposes rather than unity merely for influence, reputation, or control?",
+      "challenge":"Read Genesis 10:1–12:9 in four movements: chapter 10; 11:1–9; 11:10–32; and 12:1–9. Mark every occurrence or idea connected to nation, language, land, scattering, name, blessing, offspring, going, and worship. Write the Babel builders’ stated goals beside God’s promises to Abram and compare them. Then read Acts 2:1–12, Acts 3:25–26, Galatians 3:6–16, and Revelation 7:9–10. Record what each passage preserves about the nations and what it says about God’s blessing reaching them.",
+      "caution":"Do not reduce Babel to a generic “pride is bad” lesson. Keep the concrete social dimensions visible: self-made name, centralized permanence, and resistance to scattering. Do not turn Genesis 10 into racial classification. When discussing Babel and Pentecost, emphasize that Acts 2 preserves multiple languages. When discussing Abraham, distinguish the ancient covenant promise from modern political claims and keep the central movement clear: God calls one family so blessing can move outward to the nations.",
+      "prayer":"God of every family and nation, You see how easily we build our names and call it security. Free us from the need to make ourselves great. Teach us to receive identity, blessing, and purpose from You. Thank You that after humanity scattered, You did not abandon the nations but began a promise through Abraham that reaches outward to the world and ultimately to Jesus Christ. Make us people who use what You give us to bless rather than dominate, who honor the dignity of every people, and who call on Your name instead of living for our own. Amen."
     },
     {
-      "number": 6,
-      "title": "Promise, Failure, and Abraham’s Family",
-      "scripture": "Genesis 12:10–25:18",
-      "supporting": [],
-      "question": "How does God remain faithful through fear, family conflict, delay, and human failure?",
-      "truth": "God keeps covenant promises by grace while confronting manipulation, exploitation, and attempts to control the outcome.",
-      "goal": "This lesson helps participants read Genesis 12:10–25:18 within Genesis, receive its truth without flattening difficult details, and respond through worship, compassion, justice, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to identify one word, image, or question from the passage. No one must disclose trauma, illness, family conflict, mental-health history, or experiences of abuse. Listen without rushing to correct or solve another person’s story.",
-      "context": "Read Genesis 12:10–25:18 in manageable sections. Observe speakers, repeated words, narrative consequences, and connections to surrounding chapters. Distinguish what the text reports from what it commends. Interpret difficult scenes within the book’s purpose and the wider witness of Scripture before making modern applications.",
-      "teaching": [
-        {
-          "heading": "Fear in Egypt",
-          "body": "Abram’s deception places Sarai at risk. The text reports his conduct without requiring us to defend it. Spiritual leaders’ failures should be named honestly, especially when others bear the danger."
-        },
-        {
-          "heading": "Hagar Is Seen by God",
-          "body": "Sarai and Abram use Hagar’s body and status to secure an heir, and Hagar is mistreated. God finds her, hears her affliction, and gives her a future. The story must center her humanity and never justify slavery, coercion, or reproductive exploitation."
-        },
-        {
-          "heading": "Covenant and a New Name",
-          "body": "God gives covenant signs and renames Abraham and Sarah. Promise rests on God’s faithfulness, not human control. Covenant identity calls for trust and obedience."
-        },
-        {
-          "heading": "Hospitality and Intercession",
-          "body": "Abraham welcomes strangers and pleads for the cities. Hospitality opens space for divine encounter, while intercession refuses indifference toward threatened communities."
-        },
-        {
-          "heading": "Sodom’s Violence",
-          "body": "Genesis 19 centers attempted gang rape, domination, and gross inhospitality. It must never be used to excuse sexual violence or reduce the city’s sin to a weapon against LGBTQ people. Lot’s offer of his daughters is morally indefensible, not a model."
-        },
-        {
-          "heading": "The Binding of Isaac",
-          "body": "Genesis 22 is a difficult test within Abraham’s unique story and ends with God providing a substitute. It cannot justify harming children, obeying abusive voices, or treating family members as sacrifices for ministry. God does not authorize child abuse."
-        }
+      "number":6,
+      "title":"Promise, Failure, and Abraham’s Family",
+      "scripture":"Genesis 12:10–25:18",
+      "supporting":["Romans 4","Galatians 3:6–16","Hebrews 11:8–19"],
+      "question":"How does God preserve His covenant promise when Abraham and Sarah repeatedly face famine, fear, barrenness, conflict, moral failure, impossible circumstances, and even the threatened loss of the promised son?",
+      "truth":"The Abraham story is not a record of flawless faith. God faithfully advances His promises of land, offspring, covenant relationship, and blessing through people who sometimes trust Him courageously and sometimes act from fear or attempt to secure the promise themselves. Grace does not make their failures good; it means their failures do not make God unfaithful.",
+      "goal":"This lesson follows the Abraham cycle from the famine in Genesis 12 through Abraham’s death in Genesis 25. It traces the covenant promise through Egypt, separation from Lot, war and Melchizedek, covenant ceremony, Hagar and Ishmael, circumcision, Sodom, Abimelech, Isaac’s birth, Hagar’s expulsion, the binding of Isaac, Sarah’s burial, Rebekah’s arrival, and Abraham’s final years, handling slavery, sexual vulnerability, violence, judgment, child endangerment, and family power without defending conduct merely because a patriarch performs it.",
+      "openingParagraphs":[
+        "Ask: What happens to faith when God’s promise is clear but the path toward its fulfillment becomes increasingly impossible?",
+        "God promises descendants to a man whose wife cannot bear children. Years pass. Abraham and Sarah sometimes trust, sometimes laugh, sometimes manipulate circumstances, and sometimes place other people in danger. Yet Genesis keeps returning to what God said He would do."
       ],
-      "questions": [
-        "What detail in Genesis 12:10–25:18 first draws your attention?",
-        "What does this passage reveal about God’s character?",
-        "Where do you see trust, fear, grief, pride, or courage?",
-        "Which action is described but should not be copied?",
-        "Whose voice or vulnerability might readers overlook?",
-        "What harmful interpretation should the church reject?",
-        "How does the passage correct our use of power or certainty?",
-        "What faithful response will you practice this week?"
+      "contextParagraphs":[
+        "Genesis 12:1–9 introduced the foundational promises of land, offspring, blessing, protection, and blessing to the families of the earth. Genesis 12:10–25:18 asks whether those promises can survive real life.",
+        "Almost immediately there is famine. Sarai is barren. Lot separates from Abram. Hagar bears Ishmael. Sodom falls. Abraham repeats his deception about Sarah. Isaac is finally born and then appears to be placed under threat in Genesis 22. Sarah dies while Abraham owns almost none of the promised land.",
+        "The narrative repeatedly places threats against land, offspring, and blessing beside God’s continuing faithfulness."
       ],
-      "examination": "Where am I seeking control, protecting a false explanation, or overlooking another person’s dignity? Where do fear, grief, envy, shame, or certainty shape my response? Ask God for one truthful conviction and one grace-filled next step. Examination should lead toward repentance and repair, not self-hatred.",
-      "challenge": "Read Genesis 12:10–25:18 again. Write one sentence about God, one warning to receive, and one hope to carry. Then choose a practical action: listen without fixing, repair harm, share resources, seek wise care, protect a vulnerable person, honor a boundary, or practice Sabbath trust.",
-      "caution": "Do not defend harmful behavior simply because a major biblical character performs it. Reject racism, misogyny, slavery, coercion, sexual violence, child harm, ableism, and forced reconciliation. Providence never makes evil good. Center victims’ dignity, respect boundaries, and pair prayer with safeguarding, counseling, medical care, or legal help where appropriate.",
-      "prayer": "Holy God, meet us in Genesis 12:10–25:18. Correct what is false in us, protect the vulnerable, teach us to listen, and give us courage to live truthfully. Form our lives through your grace and help us practice what we have learned. Amen."
+      "teaching":[
+        {"heading":"Famine, Fear, and Sarah Bearing the Risk","paragraphs":["Genesis does not explicitly condemn Abram’s move to Egypt during famine. The moral problem appears in the strategy he uses there: he asks Sarai to identify herself as his sister so he can protect himself.","Genesis 20 later says Sarah is his half-sister, but partial factual truth does not make the deception righteous. Sarah bears the danger while Abram benefits materially. Pharaoh, a foreign ruler, ends up rebuking the chosen man. Election is not moral superiority."]},
+        {"heading":"Abram and Lot: Promise After Separation","paragraphs":["Conflict between their herdsmen leads Abram and Lot to separate. Abram allows Lot to choose first, and Lot selects the visually attractive Jordan plain near Sodom.","After Lot leaves, God repeats the land and offspring promises to Abram. What appears best by sight is not what determines the covenant future."]},
+        {"heading":"War, Melchizedek, and the King of Sodom","paragraphs":["Genesis 14 places Abram in a regional conflict. He rescues Lot and others, then meets Melchizedek, king of Salem and priest of God Most High, who blesses him. Psalm 110 and Hebrews 7 later develop Melchizedek typologically.","Genesis itself does not say Melchizedek is Jesus appearing before the incarnation. That identification remains an interpretation, not an explicit statement.","Abram refuses the king of Sodom’s wealth so the king cannot claim to have made him rich. The story contrasts a compromised wealth episode in Egypt with a deliberate refusal to let Sodom define the source of blessing."]},
+        {"heading":"Abram Believes the LORD and God Makes Covenant","paragraphs":["Genesis 15 lets Abram voice the contradiction between promise and childlessness. Biblical faith does not require suppressing the problem; Abram brings it to God.","Genesis 15:6 says Abram believed the LORD and it was credited to him as righteousness. Paul later uses this text in Romans 4 and Galatians 3, while James 2 emphasizes that genuine faith produces action.","In the covenant ceremony Abram falls into deep sleep while symbols of God’s presence pass between the divided pieces. The narrative places extraordinary emphasis on God’s commitment to the promise."]},
+        {"heading":"The Future Exodus and the Delay of the Land","paragraphs":["God tells Abram his descendants will be strangers, enslaved, and oppressed in another land before coming out with possessions. Genesis anticipates Exodus.","The return is also delayed because the iniquity of the Amorites is not yet complete. The land promise is not narrated as instant seizure of morally invisible territory; later conquest passages require their own careful reading."]},
+        {"heading":"Hagar: An Enslaved Woman Whom God Sees","paragraphs":["Sarai gives her Egyptian enslaved woman Hagar to Abram in an attempt to secure an heir. Ancient practices can explain the arrangement without making it morally harmless. Hagar has limited power, and the promised family attempts to solve barrenness through the body of an enslaved woman.","Conflict follows, Sarai deals harshly with Hagar, and Hagar flees. God finds her in the wilderness, hears her affliction, promises concerning Ishmael, and allows Hagar to speak of the God who sees her.","The command for Hagar to return belongs to this specific ancient narrative and must never be converted into a universal instruction that abused people return to danger."
+        ]},
+        {"heading":"Ishmael Is Outside the Isaac Covenant Line, Not Outside God’s Care","paragraphs":["Ishmael is not the covenant son through whom the particular promise will continue, but he is not discarded. God hears, names, blesses, and promises descendants to him.","The distinction between covenant line and human worth is essential. Election of Isaac does not mean Ishmael lacks dignity or divine concern."]},
+        {"heading":"Circumcision, New Names, and the Covenant Household","paragraphs":["Genesis 17 reaffirms the covenant, changes Abram to Abraham and Sarai to Sarah, and establishes circumcision as the covenant sign for males in the household.","That household includes enslaved people. The presence of slavery should be acknowledged rather than sanitized. Description and regulation do not make slavery God’s creational ideal or justify later race-based chattel slavery.","God specifically names Sarah as the mother of the promised son. Abraham laughs at the apparent impossibility, yet God both blesses Ishmael and establishes the covenant line through Isaac."]},
+        {"heading":"Hospitality, Intercession, and Sodom","paragraphs":["Genesis 18 portrays Abraham receiving three visitors. Christian interpreters have sometimes identified the three as the Trinity, but Genesis itself does not explicitly identify them as Father, Son, and Holy Spirit.","Abraham intercedes for Sodom by appealing to the justice of the Judge of all the earth. In Genesis 19, the men of Sodom threaten sexual assault and domination against Lot’s guests. Ezekiel 16 later also condemns Sodom’s pride and neglect of the poor, while Jude emphasizes sexual immorality.","Reducing Sodom to a slogan against gay people ignores the attempted gang rape, violence, arrogance, injustice, and wider biblical witness. Lot’s offer of his daughters is morally horrifying and is reported, not approved."
+        ]},
+        {"heading":"Abimelech and Repeated Failure","paragraphs":["Genesis 20 deliberately repeats the “sister” deception. Abraham’s growth in faith has not eliminated old fear. Mature believers can repeat destructive patterns.","God’s covenant faithfulness must never become an excuse for refusing accountability."
+        ]},
+        {"heading":"Isaac Is Born, and Hagar and Ishmael Are Sent Away","paragraphs":["Genesis 21 repeatedly emphasizes that the LORD does for Sarah what He promised. Isaac is born at the appointed time and Sarah’s laughter becomes joy.","Conflict later results in Hagar and Ishmael being sent away. The Hebrew term describing Ishmael’s behavior is debated, and Galatians later characterizes the relationship as persecution. Whatever the precise nuance, God hears the boy, reassures Hagar, and preserves him.","Isaac and Ishmael should never be used as a simplistic template for hostility toward modern Jews, Arabs, Christians, or Muslims."
+        ]},
+        {"heading":"The Binding of Isaac and God’s Provision","paragraphs":["Genesis 22 explicitly says God tests Abraham. The command concerning Isaac is intentionally disturbing because Isaac is the promised son through whom God has said the covenant line will continue.","Ancient cultures practiced forms of child sacrifice, while later biblical law condemns it. Genesis 22 ends with God stopping Abraham and providing a ram. The narrative is not authorization for obeying any private voice that commands harm to a child or another person.","Hebrews 11 later says Abraham reasoned God could raise the dead. That is a legitimate canonical interpretation, while Genesis itself does not narrate Abraham explicitly saying that. Second Chronicles later associates Moriah with the temple, and Christians see typological resonance with Jesus, but Isaac is spared whereas Jesus actually gives His life."
+        ]},
+        {"heading":"Sarah’s Burial, Rebekah’s Choice, and Abraham’s Death","paragraphs":["Abraham purchases Machpelah at full price for Sarah’s burial. God has promised the land, yet the first securely possessed piece of it is a grave. Promise is real but fulfillment extends beyond Abraham’s lifetime.","In Genesis 24 Rebekah is explicitly asked whether she will go, and she says yes. The arranged-marriage setting is ancient and patriarchal, yet the narrative gives her an explicit voice at the decisive moment.","Abraham dies, and Isaac and Ishmael together bury him. Genesis then records Ishmael’s descendants, honoring the fulfillment of God’s promise concerning him before turning to Isaac’s line."
+        ]}
+      ],
+      "jesusParagraphs":[
+        "Matthew calls Jesus the son of Abraham. Paul uses Genesis 15:6 in Romans 4 and Galatians 3 to explain righteousness by faith and argues that Abraham’s promise reaches the nations in Christ. Hebrews 11 remembers Abraham and Sarah as people who lived by faith without receiving the fullness of every promise in their lifetimes.",
+        "Christians have long read Genesis 22 typologically: a beloved son, sacrifice, Moriah, and divine provision resonate with the gospel. Yet the differences matter: Isaac is spared and a ram dies instead; Jesus is not spared from death but willingly gives Himself and is raised.",
+        "Jesus is not merely another Abraham-like example. In the New Testament He is the promised descendant through whom Abraham’s blessing reaches the nations and the one in whom God’s redemptive promise reaches decisive fulfillment."
+      ],
+      "guardrailParagraphs":[
+        "Do not turn Abraham into a flawless hero or make Sarah responsible for Abraham’s deception in Egypt and Gerar.",
+        "Do not treat Hagar as a prop in Abraham’s story or use her commanded return as a universal rule requiring abused people to return to abusers.",
+        "Do not claim Melchizedek is explicitly Jesus or that the three visitors of Genesis 18 are explicitly the Trinity.",
+        "Do not reduce Sodom to a political slogan, defend Lot’s offer of his daughters, or turn Genesis 22 into permission to obey voices commanding harm.",
+        "Do not use Isaac and Ishmael as a template for ethnic or religious hatred today. God’s care for Ishmael is explicit."
+      ],
+      "questions":[
+        "How does the famine in Genesis 12 immediately challenge simplistic ideas about promise and blessing?",
+        "Who bears the danger created by Abraham’s fear in Egypt and Gerar? What does Genesis teach by refusing to hide his repeated failure?",
+        "Why is Genesis 15:6 so important within Abraham’s story before considering how Paul later uses it?",
+        "What does the covenant ceremony in Genesis 15 emphasize about God’s commitment to the promise?",
+        "How do Sarah, Abraham, and Hagar each exercise different levels of power in Genesis 16? Where does God meet the person with the least social power?",
+        "How can Isaac be the covenant son while Ishmael remains genuinely loved, heard, and blessed by God?",
+        "What does Abraham’s intercession for Sodom reveal about justice and judgment?",
+        "Which details in Genesis 19 are actually stated, and which popular claims about Sodom require information from other biblical passages?",
+        "Why is Genesis 22 such a severe test specifically because of what God has already promised about Isaac?",
+        "What is significant about Abraham purchasing Sarah’s burial place when God has promised him the land?",
+        "Where does Rebekah exercise agency in Genesis 24?",
+        "Looking across Genesis 12–25, what depends on Abraham’s faithfulness, and what ultimately depends on God’s?"
+      ],
+      "examination":"Where does fear tempt me to protect myself while allowing someone with less power to bear the cost? Have I confused being chosen, gifted, or called with being beyond correction? Am I trying to force an outcome God has not given me control over? Do I notice the Hagars in the story: people whose suffering can disappear when I focus only on the “main” character? Where is God asking me to trust His character without using faith as an excuse for irresponsibility or harm?",
+      "challenge":"Read the Abraham cycle in movements rather than all at once: Genesis 12:10–14:24; chapter 15; chapters 16–17; chapters 18–19; chapters 20–21; chapter 22; chapters 23–24; and 25:1–18. Keep four columns labeled Promise, Threat, Human Response, and God’s Action. Track land, offspring, blessing, fear, laughter, seeing/hearing, and covenant. Then read Romans 4:1–25, Galatians 3:6–16, and Hebrews 11:8–19 and note exactly which parts of Abraham’s story each New Testament writer emphasizes.",
+      "caution":"This lesson covers a large and emotionally difficult section. Name power differences honestly: Sarah is vulnerable in Abraham’s strategies, yet Sarah also possesses enormous power over Hagar. When teaching slavery, sexual vulnerability, Sodom, Lot’s daughters, or Genesis 22, create room for participants who have experienced abuse or coercion and never demand disclosure. If current abuse or threats are reported, move beyond discussion toward appropriate safeguarding and professional or legal support. Keep God’s grace distinct from moral approval.",
+      "prayer":"God of Abraham, Sarah, Hagar, Ishmael, and Isaac, thank You that Your faithfulness is deeper than human fear and stronger than our attempts to control the future. Teach us to trust Your promises without excusing harm done in Your name. Give us eyes for people whose suffering is easily pushed to the edge of the story. Correct our misuse of power, protect the vulnerable, and make our faith obedient without becoming cruel. Thank You for the promise that moved through this imperfect family and ultimately brings blessing to the nations through Jesus Christ. Amen."
     },
     {
-      "number": 7,
-      "title": "Jacob, Esau, and God’s Transforming Grace",
-      "scripture": "Genesis 25:19–36:43",
-      "supporting": [],
-      "question": "How does God work through rivalry, deception, fear, and reconciliation?",
-      "truth": "God’s grace confronts Jacob’s grasping identity and opens a path toward humility, repair, and reconciliation.",
-      "goal": "This lesson helps participants read Genesis 25:19–36:43 within Genesis, receive its truth without flattening difficult details, and respond through worship, compassion, justice, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to identify one word, image, or question from the passage. No one must disclose trauma, illness, family conflict, mental-health history, or experiences of abuse. Listen without rushing to correct or solve another person’s story.",
-      "context": "Read Genesis 25:19–36:43 in manageable sections. Observe speakers, repeated words, narrative consequences, and connections to surrounding chapters. Distinguish what the text reports from what it commends. Interpret difficult scenes within the book’s purpose and the wider witness of Scripture before making modern applications.",
-      "teaching": [
-        {
-          "heading": "A Family Organized by Rivalry",
-          "body": "Favoritism divides Isaac and Rebekah’s household. Parents and leaders shape conflict when affection becomes competition. Naming patterns honestly is a first step toward repair."
-        },
-        {
-          "heading": "A Blessing Stolen",
-          "body": "Jacob and Rebekah deceive Isaac, and Esau’s loss is real. God’s larger purpose does not make manipulation righteous. Providence never excuses harmful methods."
-        },
-        {
-          "heading": "God Meets a Fugitive",
-          "body": "At Bethel, God meets Jacob while he is fleeing consequences. Grace does not deny wrongdoing; it creates a future in which transformation can occur."
-        },
-        {
-          "heading": "Deceiver Meets Deceiver",
-          "body": "Laban exploits Jacob through changing agreements and family manipulation. The narrative exposes cycles of control rather than endorsing them. Leah and Rachel must be treated as persons, not prizes in male rivalry."
-        },
-        {
-          "heading": "Wrestling and a New Name",
-          "body": "Jacob wrestles through the night and receives the name Israel. Transformation includes both blessing and lasting vulnerability. Disability is not shame or proof of weak faith."
-        },
-        {
-          "heading": "Facing Esau",
-          "body": "Jacob prepares restitution and approaches with humility. Esau’s embrace is freely offered, not owed. Reconciliation cannot be forced; safety, truth, changed behavior, and the harmed person’s agency matter."
-        }
+      "number":7,
+      "title":"Jacob, Esau, and God’s Transforming Grace",
+      "scripture":"Genesis 25:19–36:43",
+      "supporting":["Hosea 12:3–5","John 1:51","Galatians 3:8,16"],
+      "question":"How does God preserve His promise through a family marked by favoritism, rivalry, deception, exploitation, fear, and unfinished reconciliation, and what changes when Jacob can no longer secure his future by grasping for it?",
+      "truth":"God’s covenant purpose advances by grace, not because Jacob’s family behaves well. The God of Abraham and Isaac meets Jacob in flight, remains with him through years of exploitation and conflict, confronts his self-protective striving, gives him the name Israel, and brings him face-to-face with the brother he wronged. Grace does not rename evil as good; it creates a future in which a deeply flawed person can be confronted, changed, and called to walk differently.",
+      "goal":"This lesson follows the Jacob cycle from the birth of Esau and Jacob through the Edomite genealogy. It pays attention to the covenant promise, the distinction between birthright and paternal blessing, the damage caused by parental favoritism, Jacob and Rebekah’s deception, God’s appearance at Bethel, Laban’s exploitation, the experiences of Leah and Rachel, Jacob’s return to Canaan, the wrestling at the Jabbok, reconciliation with Esau, the violence at Shechem, and the continuing consequences within Jacob’s household.",
+      "openingParagraphs":[
+        "Read Genesis 25:19–34 and 27:1–45. Ask: What has God actually promised, and what do the human characters do because they are afraid the promise will not happen without their control?",
+        "Those questions follow Jacob through the entire cycle and keep the lesson from becoming a simple hero story about “fighting for your blessing.”"
       ],
-      "questions": [
-        "What detail in Genesis 25:19–36:43 first draws your attention?",
-        "What does this passage reveal about God’s character?",
-        "Where do you see trust, fear, grief, pride, or courage?",
-        "Which action is described but should not be copied?",
-        "Whose voice or vulnerability might readers overlook?",
-        "What harmful interpretation should the church reject?",
-        "How does the passage correct our use of power or certainty?",
-        "What faithful response will you practice this week?"
+      "contextParagraphs":[
+        "Genesis 25 begins a new section with the generations of Isaac. Rebekah, like Sarah before her, experiences infertility; Isaac prays, and she conceives twins. Before they are born, God tells Rebekah that two nations are in her womb and the older will serve the younger. God’s surprising choice therefore precedes Jacob’s deception.",
+        "Esau becomes associated with Edom and Jacob with Israel. Their personal story stands behind later national relationships, but Genesis first presents them as brothers in one troubled household. Later hostility must not be read backward as permission to demonize either brother.",
+        "Genesis 25–36 is a long family narrative in which the promises of offspring, land, blessing, and divine presence continue while family members repeatedly manipulate circumstances to secure status, affection, fertility, wealth, or safety."
       ],
-      "examination": "Where am I seeking control, protecting a false explanation, or overlooking another person’s dignity? Where do fear, grief, envy, shame, or certainty shape my response? Ask God for one truthful conviction and one grace-filled next step. Examination should lead toward repentance and repair, not self-hatred.",
-      "challenge": "Read Genesis 25:19–36:43 again. Write one sentence about God, one warning to receive, and one hope to carry. Then choose a practical action: listen without fixing, repair harm, share resources, seek wise care, protect a vulnerable person, honor a boundary, or practice Sabbath trust.",
-      "caution": "Do not defend harmful behavior simply because a major biblical character performs it. Reject racism, misogyny, slavery, coercion, sexual violence, child harm, ableism, and forced reconciliation. Providence never makes evil good. Center victims’ dignity, respect boundaries, and pair prayer with safeguarding, counseling, medical care, or legal help where appropriate.",
-      "prayer": "Holy God, meet us in Genesis 25:19–36:43. Correct what is false in us, protect the vulnerable, teach us to listen, and give us courage to live truthfully. Form our lives through your grace and help us practice what we have learned. Amen."
+      "teaching":[
+        {"heading":"Two Nations Before the Brothers Can Compete","paragraphs":["God’s word to Rebekah comes before Jacob or Esau has acted. Jacob does not have to trick God into choosing the covenant line.","Paul later cites this prenatal choice in Romans 9 within his own argument about God’s freedom in covenant history. Genesis itself is narrating the origins of Israel and Edom and the continuation of the Abrahamic promise."]},
+        {"heading":"Birthright and Blessing Are Related but Distinct","paragraphs":["Esau trades the birthright for food, and Genesis says he despised it. That judgment does not make Jacob’s opportunism admirable.","Genesis 27 concerns Isaac’s paternal blessing. Rebekah organizes a deception in which Jacob impersonates Esau. Keeping birthright and blessing distinct prevents a common oversimplification of the story."]},
+        {"heading":"Favoritism Turns the Household into a Contest","paragraphs":["Isaac favors Esau and Rebekah favors Jacob. By Genesis 27, husband and wife work around each other, one son disguises himself as the other, and blessing has become something the family believes must be secured through secrecy.","God had already spoken about the brothers before their birth. A promised end does not sanctify harmful means."]},
+        {"heading":"Esau’s Pain Is Real","paragraphs":["Jacob repeatedly lies to his aging father and receives the blessing through deception. Genesis does not require us to excuse Jacob because he becomes Israel.","Esau’s anguish should not be minimized. Later texts may use Esau in other theological arguments, but Genesis allows us to hear the cry of a son who has been deceived. Biblical characters can be morally complex without their pain becoming unreal."]},
+        {"heading":"Bethel: God Meets Jacob in Flight","paragraphs":["Jacob runs because Esau intends to kill him. At Bethel he dreams of a stairway or ramp between earth and heaven and receives the Abrahamic promises of land, descendants, worldwide blessing, divine presence, protection, and return.","God’s promise comes before Jacob demonstrates mature character. Grace meets him as a fugitive and commits him to a future he cannot manufacture.","John 1:51 later deliberately echoes Bethel. Jesus places the Son of Man at the center of heaven-and-earth imagery, identifying Himself as the decisive meeting place of God and humanity."]},
+        {"heading":"The Deceiver Enters Laban’s House","paragraphs":["Laban substitutes Leah for Rachel and demands another seven years of service. The man who deceived his father now experiences deception within his mother’s family.","The irony should not be used to make Leah or Rachel instruments of repayment. The ancient marriage system is patriarchal, but description is not endorsement."]},
+        {"heading":"Leah Is Seen, and the Household Becomes a Fertility Contest","paragraphs":["The LORD sees Leah in an unloved marriage. Her sons’ names expose her longing to be seen and loved; by Judah’s birth, her words turn toward praise. This does not teach that childbirth is God’s guaranteed cure for rejection or that fertility proves greater favor.","Rachel, Leah, Bilhah, and Zilpah become entangled in competition for affection and children. Bilhah and Zilpah are enslaved women whose bodies are used in the rivalry. Genesis reports these structures; it does not romanticize reproductive coercion, slavery, or polygamous competition."]},
+        {"heading":"Jacob and Laban Fight Over Wealth and Control","paragraphs":["Genesis 31 attributes Jacob’s increase ultimately to God rather than presenting the breeding techniques of chapter 30 as a reproducible prosperity method.","Rachel steals Laban’s household gods, though her motive is not stated. The conflict ends with a covenant boundary at Mizpah. The famous Mizpah words belong to a context of distrust and separation, not primarily sentimental friendship."]},
+        {"heading":"Returning Home Means Facing Esau","paragraphs":["God tells Jacob to return, but obedience does not erase the consequences of the past. Esau approaches with four hundred men, Jacob is afraid, prays by appealing to God’s promise, and sends a large gift ahead.","The gifts may function as restitution, appeasement, or both. What is clear is that Jacob cannot return while pretending the brother he wronged does not exist."]},
+        {"heading":"Jacob Wrestles at the Jabbok","paragraphs":["Jacob wrestles through the night with a mysterious man, receives the name Israel, and leaves blessed but limping. Hosea 12 later reflects on the encounter in divine/angelic terms.","Genesis preserves mystery. Identifying the wrestler as the preincarnate Christ is a Christian interpretation, not an explicit statement. Jacob’s injured hip should not be used to stigmatize disability or teach that physical impairment proves spiritual authenticity."]},
+        {"heading":"Esau Runs to Meet His Brother","paragraphs":["Instead of attacking, Esau runs, embraces Jacob, kisses him, and weeps. Genesis gives Esau a generosity that readers can miss if they reduce him to a rejected villain.","Jacob says seeing Esau’s face is like seeing the face of God because Esau receives him favorably. Yet the story does not command harmed people to restore unsafe proximity. Esau’s welcome is freely given."]},
+        {"heading":"Reconciliation Does Not Require Identical Futures","paragraphs":["Esau offers to travel with Jacob, but Jacob declines. The brothers part peacefully and later reunite for Isaac’s burial. Genesis 36 gives Esau descendants, chiefs, territory, and history of his own.","Reconciliation can be real without constant proximity, merged lives, or erased boundaries. The covenant line through Jacob does not make Esau less human."]},
+        {"heading":"Shechem Prevents a Sentimental Reading","paragraphs":["Genesis 34 describes a grave sexual and family violation involving Dinah and Shechem, followed by male negotiations and then Simeon and Levi using circumcision deceitfully to incapacitate and kill the city’s males.","The chapter does not authorize honor killing, collective punishment, retaliatory massacre, or using a sacred covenant sign as a weapon. Dinah’s voice is absent, which should make readers especially cautious about turning the men around her into uncomplicated heroes."]},
+        {"heading":"Back to Bethel and the Edomite Genealogy","paragraphs":["God calls Jacob back to Bethel, where the name Israel and the promises of fruitfulness, nations, kings, and land are reaffirmed. Yet the chapter also contains Rachel’s death, Reuben’s sexual wrongdoing, and Isaac’s death. Promise does not erase grief or consequence.","Genesis 36 devotes a full chapter to Esau’s descendants. Genealogies are theological narrative, not filler. Election serves God’s promise and must never become permission for ethnic superiority."]}
+      ],
+      "jesusParagraphs":[
+        "God repeats to Jacob the Abrahamic promise that blessing will extend to all the families of the earth. Galatians 3 identifies Jesus as the climactic descendant through whom Abraham’s blessing reaches the nations.",
+        "John 1:51 deliberately echoes Bethel. What Jacob encountered at a place, John presents ultimately in a person: Jesus is the decisive meeting point between God and humanity.",
+        "Judah emerges from the painful Leah-Rachel household and later receives royal promise in Genesis 49. The New Testament identifies Jesus with Judah’s line.",
+        "The deeper pattern is that God’s covenant faithfulness is stronger than human failure. In Jesus, God does not merely preserve another flawed covenant bearer; He gives the faithful Son through whom covenant blessing reaches the world."
+      ],
+      "guardrailParagraphs":[
+        "God chose the covenant line before Jacob’s deception; Jacob did not trick God into blessing him.",
+        "The birthright transaction in Genesis 25 and Isaac’s blessing in Genesis 27 are connected but distinct.",
+        "God’s use of Jacob does not excuse deception, exploitation, household slavery, favoritism, sexual wrongdoing, or retaliatory violence.",
+        "Esau should not be flattened into a villain. Genesis 33 presents him as the brother who unexpectedly runs to embrace Jacob.",
+        "Jacob’s new name does not mean instant moral perfection, his limp must not be used to stigmatize disability, and reconciliation must not be coerced into unsafe proximity."
+      ],
+      "questions":[
+        "Read Genesis 25:21–23 before reading Jacob and Esau’s later conflict. How does God’s word to Rebekah change the claim that Jacob had to deceive his way into the covenant promise?",
+        "Compare Genesis 25:29–34 with Genesis 27. What is the difference between the birthright transaction and the stolen paternal blessing, and what responsibility does the text assign to each brother?",
+        "How does Genesis 25:28 help explain the family dynamics of chapter 27? What happens when parental love becomes organized around preference?",
+        "In Genesis 28:10–22, what does God promise Jacob before Jacob has demonstrated transformed character? What does that teach about grace without excusing Jacob’s behavior?",
+        "Read Leah’s words in Genesis 29:31–35. What do her sons’ names reveal about her experience inside Jacob’s household?",
+        "What does Genesis 31 actually reveal about Mizpah? How is its original setting different from the way the passage is sometimes used devotionally?",
+        "Compare Jacob before the wrestling encounter in Genesis 32:1–21 with Jacob afterward in 32:22–33:11. What changes, and what remains unresolved?",
+        "What does Esau actually do in Genesis 33? How does the text challenge simplistic descriptions of him as merely godless, rejected, or hostile?",
+        "Why might Genesis place the Dinah and Shechem account after the brothers’ reconciliation and before Jacob’s return to Bethel? What does the episode prevent us from romanticizing about Jacob’s household?",
+        "Why does Genesis devote chapter 36 to Esau? What does that genealogy contribute before the Joseph story begins?"
+      ],
+      "examination":"Where am I trying to secure through manipulation, secrecy, competition, or control what I am afraid God will not provide? Have I confused being chosen, gifted, called, or blessed with being automatically right? Is there harm I need to name honestly before speaking about reconciliation? Ask God for the humility to receive grace without using grace as a defense against accountability.",
+      "challenge":"Read Genesis 28, 32, and 33 together. Make three short columns: “What God promised,” “What Jacob tried to control,” and “What Jacob finally had to face.” Then identify one situation in your own life where faithfulness may mean relinquishing manipulation, telling the truth, making appropriate repair, respecting a boundary, or trusting God with an outcome you cannot force.",
+      "caution":"Keep the lesson anchored in the narrative rather than turning Jacob into a motivational story about “wrestling for your blessing.” Do not collapse birthright and blessing into one event or defend Jacob and Rebekah’s deception as necessary. Do not portray Leah, Rachel, Bilhah, or Zilpah merely as instruments for producing tribes. Handle Genesis 34 carefully and never make retaliatory massacre a model. Distinguish reconciliation from forced access, and do not use Jacob’s injury to stigmatize disability.",
+      "prayer":"God of Abraham, Isaac, and Jacob, thank You for being faithful even when Your people are fearful and inconsistent. Expose the ways we manipulate what we should entrust to You. Give us courage to tell the truth about harm, humility to make repair where we can, wisdom to respect boundaries, and faith to receive Your promises without trying to control their fulfillment. Lead us toward Jesus, the faithful Son in whom Your blessing reaches the nations. Amen."
     },
     {
-      "number": 8,
-      "title": "Joseph, Providence, Forgiveness, and Family Repair",
-      "scripture": "Genesis 37–50",
-      "supporting": [],
-      "question": "How can God bring life through betrayal without calling evil good?",
-      "truth": "God can work through human wrongdoing, while forgiveness and reconciliation require truth, testing, and changed relationships.",
-      "goal": "This lesson helps participants read Genesis 37–50 within Genesis, receive its truth without flattening difficult details, and respond through worship, compassion, justice, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to identify one word, image, or question from the passage. No one must disclose trauma, illness, family conflict, mental-health history, or experiences of abuse. Listen without rushing to correct or solve another person’s story.",
-      "context": "Read Genesis 37–50 in manageable sections. Observe speakers, repeated words, narrative consequences, and connections to surrounding chapters. Distinguish what the text reports from what it commends. Interpret difficult scenes within the book’s purpose and the wider witness of Scripture before making modern applications.",
-      "teaching": [
-        {
-          "heading": "Favoritism and Betrayal",
-          "body": "Jacob’s favoritism and Joseph’s dreams intensify family tension, but nothing excuses selling a brother. Trafficking and enslavement are evil even when God later brings good."
-        },
-        {
-          "heading": "Integrity Under Coercion",
-          "body": "Joseph refuses Potiphar’s wife and is falsely accused. The story warns against sexual coercion and abuse of power. False accusations exist, but the passage must not be used to dismiss survivors broadly."
-        },
-        {
-          "heading": "Faithfulness in Hidden Places",
-          "body": "Joseph serves in prison and interprets dreams while forgotten. God’s presence does not always produce immediate release. Faithfulness can coexist with injustice and disappointment."
-        },
-        {
-          "heading": "Power Used to Preserve Life",
-          "body": "Joseph’s administrative wisdom saves lives during famine, yet the later concentration of land and power deserves careful ethical attention. Effective leadership remains accountable to justice."
-        },
-        {
-          "heading": "Brothers Tested for Change",
-          "body": "Joseph does not reveal himself immediately. He observes whether the brothers will protect Benjamin rather than repeat betrayal. Reconciliation wisely looks for truth, responsibility, and changed behavior."
-        },
-        {
-          "heading": "Providence Without Denial",
-          "body": "Joseph says that others intended evil while God intended good. He does not rename evil as good. Forgiveness releases vengeance, but it does not erase memory, consequences, boundaries, or the need for repair."
-        }
+      "number":8,
+      "title":"Joseph, Providence, Forgiveness, and Family Repair",
+      "scripture":"Genesis 37–50",
+      "supporting":["Hebrews 11:21–22","Revelation 5:5"],
+      "question":"How does God preserve the covenant family through betrayal, enslavement, sexual coercion, false accusation, famine, political power, guilt, and grief without ever requiring us to call the evil done to Joseph good?",
+      "truth":"Joseph’s brothers intend evil against him, but their evil does not place God’s promise beyond God’s reach. Across years of slavery, imprisonment, authority, famine, testing, confession, and reunion, God preserves life and begins repairing a family that once sold a brother. Genesis ends with forgiveness and hope, but not with Eden restored: Jacob dies, Joseph dies, the family remains in Egypt, and the promise still awaits fulfillment.",
+      "goal":"This lesson reads Genesis 37–50 as the conclusion of Genesis rather than simply the biography of a successful man. It traces Jacob’s favoritism, Joseph’s dreams, trafficking and enslavement, Judah and Tamar, Joseph in Potiphar’s house and prison, Pharaoh’s dreams, Joseph’s rise to power, famine administration, the brothers’ return, Joseph’s testing, Judah’s transformation, family reunion, migration to Egypt, Jacob’s blessings, Joseph’s statement about providence, and the book’s final coffin in Egypt while distinguishing providence from fatalism, forgiveness from denial, and reconciliation from forced access.",
+      "openingParagraphs":[
+        "Read Genesis 37:18–28 and Genesis 50:15–21. Ask: At the beginning, what do the brothers intend? At the end, what does Joseph say God intended?",
+        "Do not merge the two answers. Genesis holds human responsibility and divine providence together without renaming the brothers’ evil as good."
       ],
-      "questions": [
-        "What detail in Genesis 37–50 first draws your attention?",
-        "What does this passage reveal about God’s character?",
-        "Where do you see trust, fear, grief, pride, or courage?",
-        "Which action is described but should not be copied?",
-        "Whose voice or vulnerability might readers overlook?",
-        "What harmful interpretation should the church reject?",
-        "How does the passage correct our use of power or certainty?",
-        "What faithful response will you practice this week?"
+      "contextParagraphs":[
+        "Genesis 37 begins the generations of Jacob but immediately focuses on Joseph. The Abrahamic promises of offspring, land, divine presence, and blessing remain in the background while the promise-bearing family is fractured by favoritism, jealousy, deception, sexual wrongdoing, and violence.",
+        "Joseph’s story explains how Jacob’s household moves from Canaan to Egypt, preparing the setting for Exodus. Egypt first becomes refuge and survival; only later will a new Pharaoh turn it into the house of slavery.",
+        "The narrative repeatedly uses reversals: Joseph’s special garment is stripped away and later Pharaoh clothes him; Joseph descends into pit and prison and later rises to authority; Judah moves from selling a brother to offering himself in place of another. These reversals show development without turning suffering into a formula for personal promotion."
       ],
-      "examination": "Where am I seeking control, protecting a false explanation, or overlooking another person’s dignity? Where do fear, grief, envy, shame, or certainty shape my response? Ask God for one truthful conviction and one grace-filled next step. Examination should lead toward repentance and repair, not self-hatred.",
-      "challenge": "Read Genesis 37–50 again. Write one sentence about God, one warning to receive, and one hope to carry. Then choose a practical action: listen without fixing, repair harm, share resources, seek wise care, protect a vulnerable person, honor a boundary, or practice Sabbath trust.",
-      "caution": "Do not defend harmful behavior simply because a major biblical character performs it. Reject racism, misogyny, slavery, coercion, sexual violence, child harm, ableism, and forced reconciliation. Providence never makes evil good. Center victims’ dignity, respect boundaries, and pair prayer with safeguarding, counseling, medical care, or legal help where appropriate.",
-      "prayer": "Holy God, meet us in Genesis 37–50. Correct what is false in us, protect the vulnerable, teach us to listen, and give us courage to live truthfully. Form our lives through your grace and help us practice what we have learned. Amen."
+      "teaching":[
+        {"heading":"Favoritism Reaches Another Generation","paragraphs":["Jacob gives Joseph a distinctive garment that marks favored status. The Hebrew ketonet passim does not allow certainty about “many colors”; it may indicate a long-sleeved, ornamented, or special-status robe.","Jacob has experienced parental favoritism himself, yet the pattern continues. Spiritual encounters do not automatically cure unexamined family habits."]},
+        {"heading":"Joseph’s Dreams Announce a Future Without Explaining His Motive","paragraphs":["Joseph dreams of his family bowing before him, and the dreams eventually correspond to his position in Egypt. Genesis does not explicitly tell us whether Joseph was arrogant in reporting them.","Readers should resist filling the narrator’s silence with certainty in either direction."]},
+        {"heading":"The Brothers Traffic Joseph","paragraphs":["The brothers first conspire to kill Joseph. Reuben tries to prevent the murder, and Judah proposes selling Joseph instead.","The Ishmaelite/Midianite wording is complex, but the central fact is clear: Joseph is trafficked away from his home and taken to Egypt while his brothers participate in the betrayal. Selling him rather than murdering him is not righteous mercy."]},
+        {"heading":"The Garment Becomes Evidence in a Lie","paragraphs":["The brothers use Joseph’s bloodied garment to lead Jacob to conclude that Joseph is dead. The deception echoes Jacob’s earlier deception of Isaac involving goat skins and a son’s clothing.","The literary echo exposes how deception reverberates through a family without turning Jacob’s grief into something to mock as deserved punishment."]},
+        {"heading":"Judah and Tamar Belong Inside the Joseph Story","paragraphs":["Genesis 38 exposes Judah’s failures before later showing his transformation. Onan repeatedly exploits Tamar sexually while refusing the family obligation attached to preserving his brother’s line. His sin should not be reduced to masturbation.","Judah then fails to provide Tamar the promised protection. Tamar’s strategy exposes Judah’s hypocrisy, and Judah says she is more righteous than he. Matthew 1 later includes Tamar and Perez in Jesus’ genealogy."]},
+        {"heading":"The LORD Was with Joseph in Slavery and Prison","paragraphs":["Genesis repeatedly says the LORD is with Joseph while Joseph is enslaved in Potiphar’s household and later imprisoned. Divine presence does not mean the circumstances themselves are good.","Potiphar’s wife repeatedly pressures Joseph for sex. Because Joseph is enslaved, the power imbalance is severe. When she later falsely accuses him, the passage calls for truth and justice in this case; it must not be weaponized to suggest sexual-abuse reports are generally untrustworthy.","Joseph’s imprisonment after doing right is a direct corrective to shallow prosperity teaching. Faithfulness does not guarantee immediate vindication."]},
+        {"heading":"Dreams, Waiting, and Pharaoh","paragraphs":["Joseph interprets the cupbearer and baker’s dreams and says interpretations belong to God. He names his own injustice and asks the cupbearer to remember him, but is forgotten for two years.","When Pharaoh dreams, Joseph again refuses autonomous spiritual credit, interprets the coming years of abundance and famine, and proposes a storage policy. Pharaoh elevates him to authority.","The promotion does not retroactively make slavery and imprisonment good. Providence means evil could not defeat God’s preserving purpose; it does not sanctify evil."]},
+        {"heading":"Manasseh, Ephraim, and Remembering Affliction","paragraphs":["Joseph names his sons with language about forgetting hardship and becoming fruitful in the land of affliction. “Forgetting” should not be pressed into literal amnesia; Joseph remembers his family immediately when his brothers arrive.","Biblical gratitude can acknowledge both fruitfulness and affliction. It does not require pretending trauma never happened."]},
+        {"heading":"The Brothers Return, and Guilt Surfaces","paragraphs":["The famine brings the brothers before Joseph. He recognizes them, but does not immediately restore intimate relationship. His motives in testing them are not fully explained, so a complete psychological reconstruction is unwarranted.","When detained, the brothers finally say they are guilty because they saw Joseph’s anguish and would not listen. Family repair begins not by pretending nothing happened but by naming guilt."]},
+        {"heading":"Judah Becomes Responsible for Benjamin","paragraphs":["Judah pledges himself for Benjamin and later offers himself as a slave in Benjamin’s place. The brother who once proposed selling Joseph now chooses costly responsibility for another favored son.","This changed behavior is central to the story. Reconciliation is preceded by more than emotion; Genesis shows responsibility and transformation."]},
+        {"heading":"Joseph Reveals Himself and Names Both Human and Divine Intention","paragraphs":["Joseph tells his brothers, “you sold me,” while also saying God sent him ahead to preserve life. Genesis holds human action and divine providence together without collapsing them.","Providence is not the claim that betrayal secretly became obedience. It is the claim that human evil could not finally prevent God from preserving life."]},
+        {"heading":"Egypt Preserves the Family and Concentrates Power","paragraphs":["God reassures Jacob before the family migrates to Egypt, and Egypt becomes refuge before it becomes bondage. Scripture allows places and institutions to play different roles at different moments.","Joseph’s famine administration preserves people but also results in money, livestock, land, and labor becoming increasingly concentrated under Pharaoh. Genesis does not give a modern economic verdict. It is equally simplistic to say every policy was ideal because Joseph enacted it or that Joseph intentionally created the later oppression of Exodus."]},
+        {"heading":"Jacob Blesses, Judah Receives Royal Promise, and the Family Still Waits","paragraphs":["Jacob blesses Pharaoh, quietly echoing the Abrahamic calling to be a blessing among the nations even while dependent on Egyptian hospitality.","In Genesis 48 Jacob intentionally gives Ephraim the greater blessing over Manasseh. The reversal belongs to the covenant narrative, not a rule that younger siblings are spiritually superior.","Genesis 49 reflects family history and tribal futures. Judah receives royal language associated with rule and the scepter, preparing the line that will later lead to David and, in the New Testament, Jesus."]},
+        {"heading":"You Meant Evil Against Me","paragraphs":["After Jacob dies, Joseph’s brothers fear revenge. Joseph says they intended evil against him, while God intended good in order to preserve many lives.","The moral identities remain distinct: human intention is evil, God’s intention is good. This verse must never be used to tell an abused person the abuse itself was good, necessary, or what God wanted the abuser to do."]},
+        {"heading":"Forgiveness, Reconciliation, and the Coffin in Egypt","paragraphs":["Joseph promises to provide for his brothers and their children, but the path there included years, testing, guilt, Judah’s changed behavior, and truthful naming of the past. Biblical forgiveness does not require pretending nothing happened or restoring unsafe access.","Joseph dies believing God will surely visit His people and carry them back to the promised land. Genesis ends with his body in a coffin in Egypt. The book that began with life ends with death, yet the coffin belongs to a man still pointing toward promise."]}
+      ],
+      "jesusParagraphs":[
+        "Some broad Joseph-Jesus parallels are meaningful: a beloved son is rejected, suffers unjustly, is later exalted, and becomes an instrument through whom others live. But the New Testament does not develop a detailed verse-by-verse Joseph typology, so every pit, garment, prison, and administrative act should not be treated as a hidden prediction of Jesus.",
+        "The strongest path to Jesus runs through the covenant story. Joseph preserves the family through whom Abraham’s promise continues. Judah changes from selling a brother to offering himself for a brother, and Jacob’s words in Genesis 49 locate royal expectation in Judah’s line. The New Testament identifies Jesus as Abraham’s descendant, David’s heir, and the Lion of Judah.",
+        "Joseph can preserve people from famine and forgive his brothers, but he cannot remove sin or death. Genesis still ends with a coffin. Jesus’ resurrection addresses the problem Genesis leaves unresolved and brings Abraham’s blessing to the nations."
+      ],
+      "guardrailParagraphs":[
+        "Genesis does not tell us enough to declare with certainty that teenage Joseph shared his dreams arrogantly.",
+        "Joseph was trafficked and enslaved. Do not soften the brothers’ action into merely “sending him away.”",
+        "Onan’s sin should not be misrepresented as simply masturbation, and Tamar should not be reduced to a scandalous woman in Jesus’ ancestry.",
+        "Joseph’s refusal of Potiphar’s wife occurs within slavery and a serious power imbalance. The false accusation in this story must not be generalized into suspicion toward people reporting sexual abuse.",
+        "“The LORD was with Joseph” is said while he is enslaved and imprisoned. God’s presence is not measured by comfort, wealth, or immediate vindication.",
+        "Joseph’s tests are narrated, not prescribed as a universal reconciliation method. Genesis 50:20 says the brothers intended evil; never use providence to rename abuse, trafficking, betrayal, or violence as good.",
+        "Forgiveness and reconciliation are related but not identical. Reconciliation in this narrative develops alongside truth, responsibility, changed behavior, and Joseph’s freedom to determine when he reveals himself."
+      ],
+      "questions":[
+        "How does Jacob’s favoritism in Genesis 37 repeat patterns from earlier generations, and what consequences does the narrative show?",
+        "What does Genesis explicitly tell us about Joseph’s dreams, and what judgments about Joseph’s attitude are often added by readers?",
+        "Why is Genesis 38 placed inside the Joseph story? Compare Judah there with Judah’s speech in Genesis 44.",
+        "What does the repeated statement “the LORD was with Joseph” mean when Joseph is still enslaved or imprisoned?",
+        "In Genesis 42, what do the brothers finally admit about Joseph’s distress that Genesis 37 had not previously told us?",
+        "What evidence of genuine change appears when Judah speaks for Benjamin in Genesis 44?",
+        "Compare “you sold me” in Genesis 45 with “you meant evil against me, but God meant it for good” in Genesis 50. How does Joseph preserve both human responsibility and divine providence?",
+        "What good does Joseph’s famine administration accomplish, and what concentration of power does Genesis 47 also describe?",
+        "Why are Jacob’s burial in Canaan and Joseph’s request concerning his bones important to the covenant promise?",
+        "Why is a coffin in Egypt an appropriate final image for Genesis? What has God fulfilled, and what remains unresolved?"
+      ],
+      "examination":"Where have I confused forgiveness with pretending harm did not happen? Am I tempted to use “God worked it out” to avoid naming someone’s wrongdoing or my own? Where might genuine repentance require more than words and need changed behavior like Judah’s? Where do I need to trust that God’s faithfulness is larger than what another person intended against me without calling their evil good?",
+      "challenge":"Read Genesis 37, 44, 45, and 50:15–26. Make four columns: “Human intention,” “Human responsibility,” “Evidence of change,” and “God’s preserving action.” Keep the categories separate. Then read Hebrews 11:21–22 and Revelation 5:5. Note how the New Testament remembers Jacob, Joseph, and Judah’s line without turning every detail of the Joseph story into an allegory.",
+      "caution":"Because Genesis 37–50 includes family betrayal, trafficking, slavery, sexual coercion, false accusation, imprisonment, famine, grief, and damaged relationships, never pressure participants to disclose similar experiences. Do not use Joseph as a prosperity formula or Potiphar’s wife as a reason to dismiss abuse reports generally. Be especially careful with Genesis 50:20: providence is hope that evil cannot defeat God’s purposes, not a defense of perpetrators or a command for victims to call trauma a blessing. Emphasize agency and changed behavior when discussing reconciliation.",
+      "prayer":"God of Abraham, Isaac, Jacob, and Joseph, teach us to trust Your providence without calling evil good. Give us courage to name betrayal, exploitation, and injustice truthfully. Form in us the kind of repentance that produces changed behavior, the kind of forgiveness that refuses vengeance without abandoning wisdom, and the kind of hope that keeps trusting Your promise beyond what we can presently see. Thank You for preserving the covenant family and for bringing Your promised blessing to the nations through Jesus Christ. Lead us from the coffin at the end of Genesis toward the resurrection life You reveal in Him. Amen."
     }
   ]
 };
-

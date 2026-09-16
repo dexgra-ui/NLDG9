@@ -3,14 +3,14 @@
   if(!s)return;
   Object.assign(s,{
     description:'God’s Glory, Responsibility, Renewal, Resurrection, and Restored Presence',
-    background:'Ezekiel prophesies among exiles through visions, symbolic actions, judgment speeches, pastoral warnings, and powerful promises of renewal. God’s glory is not trapped in Jerusalem, leaders are accountable, individuals must respond, dry bones can live, and God’s life-giving presence will return.',
+    background:'Ezekiel ministers among Judean exiles in Babylon across the years surrounding Jerusalem’s destruction in 586 BC. His visions, sign-acts, warnings, restoration promises, and temple vision repeatedly ask whether exile, failed leadership, hardened hearts, death, division, and hostile powers can frustrate the covenant purposes of Israel’s sovereign God.',
     themeLabel:'Interpretive Commitments',
-    theme:'Read Ezekiel’s symbolic actions and violent imagery within exile and covenant judgment. Never imitate prophetic performances that harm bodies, use the book to shame trauma survivors, or claim disasters prove individual guilt. Reject antisemitism, religious violence, ableism, and authoritarian watchman language.',
+    theme:'Read Ezekiel first in its exilic, prophetic, covenant, and literary setting. Let the book explain its own symbols where it does so. Distinguish Israel’s original situation from later Christian canonical connections, state disputed interpretations humbly, and never turn judgment, watchman language, or prophetic sign-acts into permission for control or harm.',
     seriesPurposeLabel:'Series Purpose',
     lessonPurposeLabel:'Purpose',
-    recommendedRhythm:'Plan 60–75 minutes. Pray, read the passage, review its historical and literary setting, discuss the six movements, and select questions appropriate to the group. End with a weekly practice and prayer.',
-    facilitatorSafeguards:'Read Ezekiel’s symbolic actions and violent imagery within exile and covenant judgment. Never imitate prophetic performances that harm bodies, use the book to shame trauma survivors, or claim disasters prove individual guilt. Reject antisemitism, religious violence, ableism, and authoritarian watchman language. Participants may pass on questions. Pair pastoral care with medical, mental-health, legal, financial, housing, and safeguarding help when needed.',
-    howToReadTogether:'Observe vision, poetry, metaphor, symbolic action, historical audience, and canonical connections. State disputed interpretations humbly and never turn ancient judgment into modern permission for harm.',
-    seriesPrayer:'Holy and merciful God, give us eyes to see your glory, courage to repent, compassion for vulnerable people, and hope rooted in your faithful presence. Amen.'
+    recommendedRhythm:'Plan 60–75 minutes. Read the passage before explaining it, establish the historical and literary setting, work through the teaching movements, then choose discussion questions appropriate to the group. End with practice and prayer.',
+    facilitatorSafeguards:'Never imitate dangerous prophetic performances, shame trauma survivors, use personal responsibility for victim-blaming, turn watchman language into authoritarian leadership, identify modern nations as Gog with certainty, or make disputed temple interpretations a test of faithfulness.',
+    howToReadTogether:'Observe vision, metaphor, symbolic action, historical audience, covenant setting, repeated language, and canonical connections. State clearly what the text says, what it implies, and where interpreters disagree.',
+    seriesPrayer:'Holy and merciful God, give us eyes to see Your glory, courage to repent, compassion for vulnerable people, discernment to read Your word carefully, and hope rooted in Jesus and Your faithful presence. Amen.'
   });
 })();

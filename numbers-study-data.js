@@ -90,7 +90,7 @@ window.NLDG_BOOK_STUDY={
     {
       "number":4,
       "title":"Rebellion, Authority, and God’s Holiness",
-      "scripture":"Numbers 16–19 (with Numbers 15 as the immediate bridge)",
+      "scripture":"Numbers 15–19",
       "supporting":["Hebrews 9:13–14","Jude 11","Hebrews 13:11–13"],
       "question":"How does Numbers distinguish legitimate holiness from self-authorizing power, protect priestly boundaries, and confront rebellion without giving modern leaders permission to silence criticism or imitate divine judgment?",
       "truth":"All Israel belongs to a holy covenant, yet not every role is interchangeable or self-appointed. God judges rival power, confirms bounded priestly service, requires leaders to seek life during crisis, and provides purification from death.",

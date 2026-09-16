@@ -1,422 +1,224 @@
 window.NLDG_BOOK_STUDY={
-  "slug": "numbers-study",
-  "book": "Numbers",
-  "title": "Numbers: Wilderness Formation, Leadership, Judgment, and Faithful Promise",
-  "description": "Numbers follows a rescued people through ordered worship, repeated rebellion, leadership strain, severe judgments, and God’s faithful preparation of a new generation. Wilderness failure does not cancel covenant promise.",
-  "theme": "Distinguish ancient judgment from modern discipleship. Reject religious violence, ethnic prejudice, racism, ableism, misogyny, victim-blaming, forced reconciliation, and unaccountable leadership. Illness or hardship is not automatic evidence of guilt.",
-  "audience": "Adults, groups, classes, and ministry teams",
-  "purpose": "This eight-lesson series helps groups read Numbers in context, face difficult passages honestly, and practice faithful worship, accountable leadership, neighbor love, justice, and hope.",
-  "background": "Numbers follows a rescued people through ordered worship, repeated rebellion, leadership strain, severe judgments, and God’s faithful preparation of a new generation. Wilderness failure does not cancel covenant promise.",
-  "lessons": [
+  "slug":"numbers-study",
+  "book":"Numbers",
+  "title":"Numbers: Wilderness Formation, Leadership, Judgment, and Faithful Promise",
+  "description":"Numbers follows a rescued people through ordered worship, repeated rebellion, leadership strain, severe judgments, and God’s faithful preparation of a new generation. Wilderness failure does not cancel covenant promise.",
+  "theme":"Distinguish ancient judgment from modern discipleship. Reject religious violence, ethnic prejudice, racism, ableism, misogyny, victim-blaming, forced reconciliation, and unaccountable leadership. Illness or hardship is not automatic evidence of guilt.",
+  "audience":"Adults, groups, classes, and ministry teams",
+  "purpose":"This eight-lesson series helps groups read Numbers in context, face difficult passages honestly, and practice faithful worship, accountable leadership, neighbor love, justice, and hope.",
+  "background":"Numbers follows a rescued people through ordered worship, repeated rebellion, leadership strain, severe judgments, and God’s faithful preparation of a new generation. The book moves from Sinai to the plains of Moab and from the first census generation to the generation prepared to enter the land.",
+  "lessons":[
     {
-      "number": 1,
-      "title": "Ordered for the Journey",
-      "scripture": "Numbers 1–10",
-      "supporting": [],
-      "question": "How does God organize a diverse people for worship, movement, responsibility, and blessing?",
-      "truth": "God forms the rescued community around his presence, gives every group meaningful responsibility, and sends them forward under blessing.",
-      "goal": "This lesson helps participants read Numbers 1–10 within Numbers, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question. No one must disclose trauma, illness, disability, family conflict, financial hardship, sexuality, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Numbers 1–10 in manageable sections. Observe speakers, repeated words, covenant setting, and consequences. Distinguish what the text describes, regulates, uniquely commands, and commends. Interpret severe scenes through the whole book and wider biblical witness.",
-      "teaching": [
-        {
-          "heading": "Counting People, Not Reducing Them",
-          "body": "The census prepares Israel for communal responsibilities in an ancient setting. Numbers serve people; people do not exist to serve metrics. Those not counted for military duty still possess full dignity and necessary roles."
-        },
-        {
-          "heading": "The Tabernacle at the Center",
-          "body": "Israel camps around God’s dwelling. Identity and movement are ordered by divine presence rather than one tribe’s status. Community structures should keep worship and God’s character central."
-        },
-        {
-          "heading": "Distinct Responsibilities, Shared Belonging",
-          "body": "Levites and tribes receive different assignments. Difference in role does not establish difference in human worth. Healthy communities value visible, hidden, physical, administrative, and caregiving work."
-        },
-        {
-          "heading": "Purity and Protection",
-          "body": "Camp instructions preserve God’s holy dwelling and communal well-being. Ritual conditions do not make anyone morally inferior. Modern health concerns require qualified care, privacy, accessibility, and freedom from stigma."
-        },
-        {
-          "heading": "The Priestly Blessing",
-          "body": "God places his name on the people through words of protection, grace, presence, and peace. Blessing is God’s gift, not a magical formula or guarantee of an easy journey."
-        },
-        {
-          "heading": "Cloud, Fire, and Responsive Movement",
-          "body": "Israel moves and rests according to God’s presence. Faithfulness includes action and waiting. Constant motion is not spiritual maturity, and rest is not failure."
-        }
+      "number":1,
+      "title":"Ordered for the Journey",
+      "scripture":"Numbers 1–10",
+      "supporting":["John 1:14","1 Corinthians 5:7","1 Corinthians 12:12–26"],
+      "question":"How does God order a rescued but untested people around his presence for worship, responsibility, protection, blessing, and movement through the wilderness?",
+      "truth":"God prepares Israel to travel by placing his dwelling at the center, assigning bounded responsibilities, addressing threats to communal faithfulness, making room for covenant participation, and sending the people under his name and presence.",
+      "goal":"Follow Israel from its long stay at Sinai to its first departure. Distinguish military counting from human worth, present the census debates honestly, confront the gendered ordeal in Numbers 5, and receive the priestly blessing and Passover provisions without turning Israel’s camp into a blueprint for authoritarian control.",
+      "openingParagraphs":["Read Numbers 1:1–4, 44–54; 2:1–2; 5:5–10, 11–31; 6:1–8, 22–27; 9:6–14, 15–23; and 10:11–13, 33–36. Track who is counted, where groups are placed, who may approach holy objects, what accommodations are given, and who decides when Israel moves.","Numbers 5 includes a husband’s jealousy and a public ordeal involving fertility or reproductive consequence. Participants affected by domestic abuse, infertility, miscarriage, coercive control, or religious humiliation may pass; the ritual must never be applied to a personal relationship."],
+      "contextParagraphs":["The Hebrew title Bemidbar means “In the wilderness”; the English title highlights the censuses. Both fit a book about a counted people being formed and tested in the wilderness.","Numbers opens in the second year after the exodus. Israel has spent almost a year at Sinai receiving covenant instruction and building the tabernacle. Chapters 1–10 prepare the camp to move.","The tabernacle stands at the center, Levites guard holy space, and tribes camp around it. The geography makes a theological claim: Israel’s identity and movement are organized around God’s dwelling rather than military or royal power."],
+      "teaching":[
+        {"heading":"The First Census Counts an Army, Not Everyone’s Worth","paragraphs":["Numbers 1 counts fighting-age men from the non-Levitical tribes for military and organizational purposes. Women, children, older people, many disabled people, and Levites remain part of the covenant community even though they are outside this total.","The large census figures have more than one responsible interpretation. Some read straightforward historical thousands; others note logistical questions and the range of the Hebrew ʾelef. The text presents Israel as an immense ordered host, but one reconstruction should not become a test of faithfulness."]},
+        {"heading":"God’s Dwelling Orders the Camp","paragraphs":["No warrior tribe occupies the center. The tabernacle and Levites do. The arrangement protects holy space and declares that Israel travels around God’s presence.","The camp plan is not a command that churches reproduce rigid hierarchy. Structures should serve worship, shared belonging, safety, and mission rather than concentrate unreviewable control."]},
+        {"heading":"Levitical Roles Are Distinct and Bounded","paragraphs":["Gershonites, Merarites, Kohathites, Aaron, and his sons receive different tasks and dangers. Role difference does not establish a scale of human worth, and leaders remain responsible to make dangerous work safe.","Numbers 4 and 8 give different service ages. Possible harmonizations exist, but the book does not explicitly resolve them. Teachers should say so rather than manufacture certainty."]},
+        {"heading":"Holiness Includes Restitution and Difficult Gendered Law","paragraphs":["Numbers 5 distinguishes ritual impurity from moral guilt and then requires confession, repayment, and an added fifth for wrongdoing. Sacred community does not replace material repair.","The suspected-wife ordeal may remove judgment from a jealous husband and place it before God, but it remains gender-asymmetric, bodily invasive, and potentially humiliating. Translation of the threatened bodily result is disputed. It cannot be reenacted or used to defend coercive control, spiritual theater, or fertility testing."]},
+        {"heading":"Nazirite Devotion and Priestly Blessing","paragraphs":["Numbers 6 permits both women and men to take a voluntary Nazirite vow. Nazirite and Nazarene are different terms; Jesus of Nazareth is not made a Nazirite by etymology.","The priestly blessing places God’s name on the people with protection, grace, divine attention, and shalom. The priests speak, but God blesses; benediction is gift, not magic or a guarantee of an easy life."]},
+        {"heading":"Accommodation, Presence, and Departure","paragraphs":["Numbers 9 provides a second Passover for people prevented by corpse impurity or travel. Accommodation enables faithful participation rather than lowering holiness.","The cloud determines movement and rest, trumpets give clear public signals, and Moses still seeks Hobab’s local wilderness knowledge. Trust in God does not make communication or human expertise unnecessary."]}
       ],
-      "questions": [
-        "What stands out in Numbers 1–10?",
-        "What does this passage reveal about God?",
-        "What fear, desire, or failure shapes the people?",
-        "Which detail requires ancient covenant context?",
-        "Whose dignity or safety needs attention?",
-        "What harmful interpretation must be rejected?",
-        "How does the text shape accountable leadership or justice?",
-        "What faithful response will you practice?"
-      ],
-      "examination": "Where am I driven by fear, craving, certainty, pride, or control? Have I overlooked someone’s voice or protected a leader from fair accountability? Ask God for one truthful conviction and one step toward repair, courage, generosity, or trust.",
-      "challenge": "Read Numbers 1–10 again. Write one sentence about God, one warning, and one hope. Choose a practical action: listen, share responsibility, repair harm, honor a boundary, support due process, provide material help, improve accessibility, or remember God’s faithfulness with someone younger.",
-      "caution": "Do not turn ancient judgment, warfare, priesthood, or zeal into permission for modern violence, retaliation, ethnic prejudice, or silencing critics. Illness and disability are not proof of guilt. Protect survivors, honor boundaries, and use transparent, shared accountability.",
-      "prayer": "Holy God, meet us in Numbers 1–10. Correct our fear and pride, protect vulnerable people, and form us in truthful worship. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["John 1:14 says the Word became flesh and “dwelt” or “tabernacled” among us; God’s presence at the center of Israel prepares Christian readers to recognize God present in Jesus.","The New Testament explicitly connects Jesus to Passover deliverance, calling Christ “our Passover” in 1 Corinthians 5:7. That fulfillment should not erase the living Jewish identity of Passover.","The church as one body with many members carries forward a compatible truth: distinct roles serve shared belonging, and members considered weaker receive special honor."],
+      "guardrailParagraphs":["The census counts military eligibility, not human value.","The suspected-wife ordeal is not equal modern justice and cannot authorize coercive relationship practices.","Ritual impurity is not moral inferiority; illness, menstruation, childbirth, corpse contact, or disability must not become stigma.","The priestly blessing names God’s favor; it does not guarantee health, wealth, military success, or ease."],
+      "questions":["According to 1:2–3, who is included in the first census and for what purpose? Who remains part of Israel outside that total?","What occupies the center of the camp, and what do the surrounding layers protect?","What responsibilities and dangers belong to the Levitical clans and Aaron’s sons?","How do confession, repayment, and the added fifth fit together in 5:5–10?","In the suspected-wife ritual, what is explicit, what is uncertain in translation, and where is the procedure unequal?","What does the second Passover provision teach about barriers and accommodation?","What roles do divine presence, public signals, and Hobab’s knowledge each play in the departure?"],
+      "examination":"Whom have I overlooked because a metric counted only donors, leaders, workers, or visible participants? Have I treated jealousy, intuition, or spiritual status as evidence against another person? Am I able to wait when God’s direction calls for rest rather than confuse constant activity with faithfulness?",
+      "challenge":"Draw the camp from Numbers 2–3 and note what its structure protects and what it does not authorize today. Then review one ministry metric or participation rule: ask who it makes visible, who it leaves out, what barrier could be accommodated, and how private data is protected.",
+      "caution":"Teach Numbers 5 with a domestic-abuse safeguard: no role-play, symbolic drinking, public accusations, fertility speculation, or pressure on participants’ relationships. Keep census disagreements text- and history-focused, avoid romanticizing military organization, and never imply suffering proves failure to receive God’s blessing.",
+      "prayer":"God of the wilderness, place your presence at the center of our life. Teach us to count without reducing people, organize without controlling them, protect without shaming them, and accommodate without contempt. Expose jealousy and coercion, honor hidden service, and lead us in your time. Through Jesus, who dwells among us, place your name upon us and give us peace. Amen."
     },
     {
-      "number": 2,
-      "title": "Complaints, Burdens, and Shared Leadership",
-      "scripture": "Numbers 11–12",
-      "supporting": [],
-      "question": "How does God respond to discontent, exhausted leadership, envy, and prejudice?",
-      "truth": "God hears real burdens, distributes leadership, confronts destructive craving, and defends people targeted by pride or prejudice.",
-      "goal": "This lesson helps participants read Numbers 11–12 within Numbers, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question. No one must disclose trauma, illness, disability, family conflict, financial hardship, sexuality, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Numbers 11–12 in manageable sections. Observe speakers, repeated words, covenant setting, and consequences. Distinguish what the text describes, regulates, uniquely commands, and commends. Interpret severe scenes through the whole book and wider biblical witness.",
-      "teaching": [
-        {
-          "heading": "Complaint Can Reveal or Corrode",
-          "body": "Some complaints expose genuine need; others feed distrust and contempt for God’s provision. Wise leadership listens for the difference rather than silencing every concern."
-        },
-        {
-          "heading": "Moses Names His Exhaustion",
-          "body": "Moses tells God that the burden is too heavy. Burnout is not proof of weak faith. Honest limits create space for shared responsibility and appropriate support."
-        },
-        {
-          "heading": "The Spirit Is Shared",
-          "body": "God empowers seventy elders. Moses refuses possessive leadership and wishes all God’s people could prophesy. Healthy leaders celebrate gifts they do not control."
-        },
-        {
-          "heading": "Craving and Distorted Memory",
-          "body": "The people remember Egypt’s food while forgetting slavery. Fear can romanticize harmful pasts. Liberation communities must tell the whole story and address present needs without returning to bondage."
-        },
-        {
-          "heading": "Miriam and Aaron Challenge Moses",
-          "body": "Their complaint mixes leadership rivalry with contempt involving Moses’ Cushite wife. Ethnic or racial prejudice has no place in spiritual discernment. The passage must never be used to stigmatize skin color."
-        },
-        {
-          "heading": "Correction and Intercession",
-          "body": "Miriam’s punishment is severe and temporary; Moses prays for her healing and the camp waits. It is not a model for shaming women or people with illness. Accountability should seek restoration, not public humiliation."
-        }
+      "number":2,
+      "title":"Complaints, Burdens, and Shared Leadership",
+      "scripture":"Numbers 11–12",
+      "supporting":["Hebrews 3:1–6","Joel 2:28–29","Acts 2:14–21","John 6"],
+      "question":"How does God respond when wilderness pressure exposes destructive craving, exhausted leadership, possessiveness about spiritual gifts, rivalry, and prejudice?",
+      "truth":"God confronts rebellion without dismissing genuine human limits. He hears Moses’ unbearable burden, shares the Spirit among elders, refuses leadership jealousy, exposes attacks on Moses, and leaves room for intercession and restoration.",
+      "goal":"Distinguish lament from corrosive complaint, treat Moses’ wish for death as a crisis rather than a slogan, examine shared leadership and Eldad and Medad, and read Miriam’s punishment without racism, misogyny, or the claim that illness proves guilt.",
+      "openingParagraphs":["Read Numbers 11:1–6, 10–17, 24–35 and 12:1–16. Track who speaks, what each person wants, what God provides, where anger appears, and who intercedes.","The chapters include death wishes, plague, family conflict, illness, and racialized interpretive history. No participant should be required to disclose burnout, suicidality, racism, disability, or conflict with a leader."],
+      "contextParagraphs":["Numbers 1–10 builds an ordered camp. Only three days into the journey, complaint, craving, leadership collapse, plague, sibling rivalry, and exclusion expose spiritual unpreparedness.","Numbers 11 pairs the people’s rejection of manna with Moses’ unbearable burden. God answers shared leadership with mercy and destructive craving with judgment. Numbers 12 narrows the conflict to Miriam and Aaron, Moses’ Cushite wife, and a challenge to Moses’ distinctive vocation."],
+      "teaching":[
+        {"heading":"Not Every Complaint Is the Same","paragraphs":["Numbers condemns destructive complaint, but Scripture also contains faithful lament. Leaders must not label reports of abuse, danger, hunger, racism, or leadership failure “murmuring” simply because they are uncomfortable."]},
+        {"heading":"Craving Rewrites Egypt","paragraphs":["The people remember Egypt’s food “for nothing” while erasing forced labor, state violence, and dead children. Nostalgia can select comfort and delete bondage. The identity of the ʾasafsuf is uncertain and must not become a pretext for blaming foreigners."]},
+        {"heading":"Moses Names an Unbearable Burden","paragraphs":["Moses says the burden is too heavy and asks to die. The speech signals acute distress. God does not shame him; God changes the structure by empowering seventy elders.","No human leader should be made indispensable. Shared leadership needs real authority, clarity, support, and accountability rather than merely redistributed tasks."]},
+        {"heading":"Eldad and Medad Expose Possessive Leadership","paragraphs":["The Spirit rests on Eldad and Medad in the camp. Joshua wants them stopped, but Moses wishes all God’s people could receive the Spirit. Their reason for staying behind is unstated, so speculation should not become moral judgment."]},
+        {"heading":"Quail Becomes Judgment on Craving","paragraphs":["The plague is narrated as divine covenant judgment, not a diagnosis of ordinary food poisoning or a rule for explaining modern epidemics. Physical appetite is not evil; the story exposes desire that rejects truth, freedom, and God’s provision."]},
+        {"heading":"Miriam, Aaron, the Cushite Woman, and Authority","paragraphs":["Miriam and Aaron attack Moses in connection with his Cushite wife and also challenge his authority. The woman’s identity is disputed, but the text never condemns dark skin or ethnicity. Racialized readings reverse the passage.","God differentiates Moses’ role without creating an untouchable-leader doctrine. Miriam receives a severe, unequal, temporary punishment while Aaron also confesses guilt. The asymmetry should be acknowledged rather than explained away; Moses intercedes for her healing and the camp waits for her restoration."]}
       ],
-      "questions": [
-        "What stands out in Numbers 11–12?",
-        "What does this passage reveal about God?",
-        "What fear, desire, or failure shapes the people?",
-        "Which detail requires ancient covenant context?",
-        "Whose dignity or safety needs attention?",
-        "What harmful interpretation must be rejected?",
-        "How does the text shape accountable leadership or justice?",
-        "What faithful response will you practice?"
-      ],
-      "examination": "Where am I driven by fear, craving, certainty, pride, or control? Have I overlooked someone’s voice or protected a leader from fair accountability? Ask God for one truthful conviction and one step toward repair, courage, generosity, or trust.",
-      "challenge": "Read Numbers 11–12 again. Write one sentence about God, one warning, and one hope. Choose a practical action: listen, share responsibility, repair harm, honor a boundary, support due process, provide material help, improve accessibility, or remember God’s faithfulness with someone younger.",
-      "caution": "Do not turn ancient judgment, warfare, priesthood, or zeal into permission for modern violence, retaliation, ethnic prejudice, or silencing critics. Illness and disability are not proof of guilt. Protect survivors, honor boundaries, and use transparent, shared accountability.",
-      "prayer": "Holy God, meet us in Numbers 11–12. Correct our fear and pride, protect vulnerable people, and form us in truthful worship. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Hebrews 3 honors Moses as faithful in God’s house and identifies Jesus as the Son over the house; final authority belongs to Christ.","Moses’ wish that all God’s people receive the Spirit anticipates the prophetic hope fulfilled at Pentecost, where sons and daughters, young and old, and servants receive the Spirit.","Jesus bears his people’s burdens without making the church dependent on one exhausted human leader; he gives the Spirit to a body with many members."],
+      "guardrailParagraphs":["Faithful lament is not destructive complaint.","Moses’ death wish is a crisis signal requiring care and reduced burden, not admiration for burnout.","Miriam’s whitened skin is disease imagery, not an endorsement of whiteness, and illness is not proof of guilt.","Moses’ unique role in Numbers 12 does not make present leaders unquestionable."],
+      "questions":["Compare the unspecified complaint in 11:1–3 with Moses’ specific protest in 11:10–15. What differs?","What does “for nothing” leave out of Israel’s memory of Egypt?","How does God answer Moses’ burden structurally?","What facts are stated about Eldad and Medad, and what remains speculative?","What two complaints appear in 12:1–2?","What distinguishes Moses from other prophets in 12:6–8, and how could that be misused today?","What roles do Aaron, Moses, God, and the waiting camp play in Miriam’s punishment and restoration?"],
+      "examination":"Have I romanticized a harmful past because the present is difficult? Am I jealous when God works through someone outside my preferred role, gender, ethnicity, location, or network? If my burden has become unbearable, whom will I tell today?",
+      "challenge":"Map one area you lead by decisions, emotional care, administration, teaching, crisis response, and follow-up; move at least one responsibility with real authority and accountability. Then reread Numbers 12 using three columns: explicit, inferred, and unknown.",
+      "caution":"Treat death wishes as potentially urgent and involve qualified help when needed. Do not diagnose every complaint as rebellion; maintain protected reporting routes and independent review. Correct racist or colorist readings immediately and allow unresolved discomfort about Miriam’s unequal punishment.",
+      "prayer":"God of provision and mercy, teach us to lament truthfully without rewriting bondage or despising your gifts. Meet exhausted leaders with help, not shame. Pour out your Spirit beyond the boundaries we defend. Expose racism, jealousy, and rival ambition; heal those harmed by them; and make us quick to intercede. Through Jesus, the faithful Son over God’s house, form a community where burdens are shared and every gift serves love. Amen."
     },
     {
-      "number": 3,
-      "title": "Fear at the Border and a Generation’s Turning Point",
-      "scripture": "Numbers 13–14",
-      "supporting": [],
-      "question": "How can a community face real danger without allowing fear to rewrite God’s faithfulness?",
-      "truth": "Faith tells the truth about obstacles while trusting God; collective panic can become rebellion when it dehumanizes others and refuses hope.",
-      "goal": "This lesson helps participants read Numbers 13–14 within Numbers, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question. No one must disclose trauma, illness, disability, family conflict, financial hardship, sexuality, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Numbers 13–14 in manageable sections. Observe speakers, repeated words, covenant setting, and consequences. Distinguish what the text describes, regulates, uniquely commands, and commends. Interpret severe scenes through the whole book and wider biblical witness.",
-      "teaching": [
-        {
-          "heading": "A Shared Mission, Different Reports",
-          "body": "The spies see the same land but interpret it differently. Evidence matters, yet fear and faith shape conclusions. Discernment asks whether a report is accurate, exaggerated, or designed to control."
-        },
-        {
-          "heading": "The Land and Its Challenges",
-          "body": "The land is fruitful and fortified. Faith is not denial of strength, risk, or necessary preparation. Courage begins with honest assessment."
-        },
-        {
-          "heading": "Fear Makes Us Small",
-          "body": "Ten spies say they felt like grasshoppers. Internalized fear becomes a claim about what others think. Communities should resist shame-based narratives that erase God-given dignity."
-        },
-        {
-          "heading": "Caleb and Joshua Trust God",
-          "body": "Their confidence rests in God’s presence, not Israel’s superiority. Faithful courage does not treat opponents as less human or glorify conquest."
-        },
-        {
-          "heading": "The Crowd Turns Violent",
-          "body": "The assembly threatens to stone dissenting leaders and return to Egypt. Panic can produce scapegoating and mob behavior. God’s people must protect truth-tellers and reject intimidation."
-        },
-        {
-          "heading": "Consequences and Presumption",
-          "body": "After refusing God’s command, some attempt the mission without God’s presence and are defeated. Repentance is not frantic action to escape consequences; it listens, accepts correction, and follows God’s current direction."
-        }
+      "number":3,
+      "title":"Fear at the Border and a Generation’s Turning Point",
+      "scripture":"Numbers 13–14",
+      "supporting":["Hebrews 3–4","Matthew 4:1–11","1 Corinthians 10"],
+      "question":"How can a community tell the truth about danger without letting fear distort evidence, erase God’s faithfulness, scapegoat dissenters, or turn delayed obedience into presumption?",
+      "truth":"Faith does not deny fortified cities or powerful opponents. It remembers who God is, resists panic-driven distortion, protects truth-tellers from mob violence, and obeys God’s present word rather than acting merely to escape consequences.",
+      "goal":"Examine the land reports, fear rhetoric, Moses’ intercession, pardon and generational consequence, and Israel’s failed invasion after God says not to go. Place conquest language inside its ancient covenant setting and reject its use for modern ethnic or religious violence.",
+      "openingParagraphs":["Read Numbers 13:1–3, 17–33 and 14:1–10, 13–25, 26–45. Sort statements into observation, interpretation, and proposed action.","The passage includes war, threats to stone leaders, divine judgment, children bearing consequences of adult choices, and occupation of inhabited land. Do not turn fear or trauma into a character diagnosis."],
+      "contextParagraphs":["Israel reaches the Wilderness of Paran near Canaan. The promised land is not empty: it contains fortified cities, settled peoples, productive valleys, and military powers.","Numbers calls the mission a tour or reconnaissance using the verb tur. Deuteronomy 1 later remembers the people proposing the mission while Numbers 13 begins with God commanding Moses to send; the accounts emphasize different aspects.","This becomes Numbers’ hinge: the generation counted for war refuses to enter; the generation counted in chapter 26 will be prepared in its place. Forty days correspond to forty wilderness years."],
+      "teaching":[
+        {"heading":"Observation Is Not the Same as Interpretation","paragraphs":["The scouts examine strength, settlements, soil, trees, and produce. All agree on abundance and fortified cities. The dispute concerns what those facts mean in light of God’s promise and presence."]},
+        {"heading":"Fear Escalates Beyond Evidence","paragraphs":["The “evil report” claims the land devours its inhabitants and assumes how Canaanites viewed Israel: “we seemed like grasshoppers ... and so we seemed to them.” The first is self-perception; the second is inferred mind-reading, not a quotation."]},
+        {"heading":"Collective Fear Rewrites Exodus","paragraphs":["Concern for wives and children becomes an argument to return to the empire that enslaved them. Fear can use safety language while directing people back into bondage.","Joshua and Caleb do not deny danger; they ground courage in God’s presence. Their ancient victory rhetoric must not become Christian dehumanization of opponents."]},
+        {"heading":"Mob Pressure Can Target Truth-Tellers","paragraphs":["The congregation threatens to stone Joshua and Caleb. A frightened majority can be wrong, but minority status alone does not prove truth. Claims still require textual, moral, and evidentiary testing."]},
+        {"heading":"Pardon and Consequence Remain Together","paragraphs":["Moses appeals to God’s name and character. God explicitly pardons and still bars the refusing generation from the land. Forgiveness does not guarantee restored office, access, or unchanged outcomes.","Children are not declared guilty of their parents’ refusal, yet they live with its social consequences. Intergenerational consequence must never become inherited blame."]},
+        {"heading":"Presumption Is Not Repentance","paragraphs":["After judgment, Israel attempts the invasion God has now forbidden. The action resembles yesterday’s obedience but rejects today’s word. Repentance accepts truth and consequence instead of trying to recover control through visible activity."]},
+        {"heading":"Conquest Is Covenant-Specific","paragraphs":["Numbers presents entry into Canaan as promise to Israel and judgment on inhabitants. The church is never commissioned to repeat that conquest; no modern nation, race, denomination, or settler movement may label another people Canaanites to authorize removal or violence."]}
       ],
-      "questions": [
-        "What stands out in Numbers 13–14?",
-        "What does this passage reveal about God?",
-        "What fear, desire, or failure shapes the people?",
-        "Which detail requires ancient covenant context?",
-        "Whose dignity or safety needs attention?",
-        "What harmful interpretation must be rejected?",
-        "How does the text shape accountable leadership or justice?",
-        "What faithful response will you practice?"
-      ],
-      "examination": "Where am I driven by fear, craving, certainty, pride, or control? Have I overlooked someone’s voice or protected a leader from fair accountability? Ask God for one truthful conviction and one step toward repair, courage, generosity, or trust.",
-      "challenge": "Read Numbers 13–14 again. Write one sentence about God, one warning, and one hope. Choose a practical action: listen, share responsibility, repair harm, honor a boundary, support due process, provide material help, improve accessibility, or remember God’s faithfulness with someone younger.",
-      "caution": "Do not turn ancient judgment, warfare, priesthood, or zeal into permission for modern violence, retaliation, ethnic prejudice, or silencing critics. Illness and disability are not proof of guilt. Protect survivors, honor boundaries, and use transparent, shared accountability.",
-      "prayer": "Holy God, meet us in Numbers 13–14. Correct our fear and pride, protect vulnerable people, and form us in truthful worship. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Hebrews 3–4 uses the wilderness refusal to warn Christians not to harden their hearts “today” and promises that God’s rest remains. The application is persevering faith in Christ, not territorial conquest.","Jesus relives Israel’s forty-day wilderness testing and remains faithful where Israel failed, conquering temptation through obedient trust rather than force.","Moses intercedes rather than use Israel’s failure for self-exaltation; Jesus is the greater intercessor whose saving work secures mercy without calling evil good."],
+      "guardrailParagraphs":["Faith does not call danger imaginary.","“Evil report” does not mean every negative assessment; it names distorted testimony that leads away from covenant trust.","Forgiveness can coexist with boundaries and lasting consequences.","Israel’s conquest setting cannot authorize colonization, racial supremacy, holy war, or forced displacement."],
+      "questions":["What concrete observations does Moses request, and what evidence returns?","Where does the report shift from observation to interpretation?","Which claims in 13:31–33 are observed and which are exaggeration or inferred perception?","How does the congregation use family safety language, and where does its solution lead?","What reasons do Joshua and Caleb give for courage?","How do mercy and consequence remain together in God’s response?","Why is the attempted invasion in 14:39–45 not faithful obedience?","How does Hebrews 3–4 apply the episode without repeating its geography or warfare?"],
+      "examination":"Where have I treated my fear as another person’s opinion of me? Have I used “safety” to return someone to bondage or “faith” to dismiss real danger? When corrected, do I repent or rush into visible activity to recover my image?",
+      "challenge":"Use three columns—observation, interpretation, proposed action—on one current decision and invite a trustworthy person to identify exaggeration and missing voices. Then read Hebrews 3:7–4:11 beside Numbers 14 and note what Hebrews repeats and reframes.",
+      "caution":"Do not pathologize anxiety or trauma as rebellion. Reject modern Canaanite labeling explicitly and allow lament over ancient violence. Protect dissenters from retaliation, refuse inherited guilt, and do not reduce the lesson to positive thinking.",
+      "prayer":"Faithful God, teach us to see danger clearly without letting fear rewrite your goodness or another person’s humanity. Protect truth-tellers from the crowd, keep leaders from exploiting panic, and give children a future beyond the failures they inherit. Through Jesus, our faithful intercessor, lead us in repentance that listens, courage that does not dehumanize, and trust that enters your rest. Amen."
     },
     {
-      "number": 4,
-      "title": "Rebellion, Authority, and God’s Holiness",
-      "scripture": "Numbers 16–19",
-      "supporting": [],
-      "question": "How should authority, dissent, judgment, and holiness be handled in covenant community?",
-      "truth": "God holds both leaders and challengers accountable; spiritual authority is stewardship, never immunity from questions or permission to retaliate.",
-      "goal": "This lesson helps participants read Numbers 16–19 within Numbers, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question. No one must disclose trauma, illness, disability, family conflict, financial hardship, sexuality, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Numbers 16–19 in manageable sections. Observe speakers, repeated words, covenant setting, and consequences. Distinguish what the text describes, regulates, uniquely commands, and commends. Interpret severe scenes through the whole book and wider biblical witness.",
-      "teaching": [
-        {
-          "heading": "Korah’s Challenge",
-          "body": "Korah uses a true statement about communal holiness to pursue power against an established calling. Valid language can conceal ambition. Motives and methods matter alongside claims."
-        },
-        {
-          "heading": "Moses Submits the Dispute to God",
-          "body": "Moses does not privately execute opponents. The unique judgment belongs to God in Israel’s wilderness crisis. It cannot authorize leaders to curse, threaten, or harm critics."
-        },
-        {
-          "heading": "Severe Judgment Requires Sobriety",
-          "body": "The earth and fire scenes are frightening. They should be taught with lament, not spectacle. Christian leaders follow the crucified Christ and must never copy these judgments."
-        },
-        {
-          "heading": "Aaron Stands in the Breach",
-          "body": "During plague, Aaron moves toward danger with atonement and stands between living and dead. Priestly leadership seeks life even among a rebellious people."
-        },
-        {
-          "heading": "The Budding Staff",
-          "body": "God publicly confirms Aaron’s priesthood to end destructive rivalry. Confirmation serves peace and responsibility, not personality worship."
-        },
-        {
-          "heading": "Purification and Shared Limits",
-          "body": "The red heifer ritual addresses contact with death. Death affects the whole community. Ritual uncleanness is not moral shame, and grieving people need care rather than exclusion."
-        }
+      "number":4,
+      "title":"Rebellion, Authority, and God’s Holiness",
+      "scripture":"Numbers 16–19 (with Numbers 15 as the immediate bridge)",
+      "supporting":["Hebrews 9:13–14","Jude 11","Hebrews 13:11–13"],
+      "question":"How does Numbers distinguish legitimate holiness from self-authorizing power, protect priestly boundaries, and confront rebellion without giving modern leaders permission to silence criticism or imitate divine judgment?",
+      "truth":"All Israel belongs to a holy covenant, yet not every role is interchangeable or self-appointed. God judges rival power, confirms bounded priestly service, requires leaders to seek life during crisis, and provides purification from death.",
+      "goal":"Read the Korah, Dathan, and Abiram coalition as a layered conflict; face household destruction and plague without spectacle; trace the censers, budding staff, priestly responsibility, and red-heifer rite; and reject abusive use of “Korah” language against people who report harm or ask accountable questions.",
+      "openingParagraphs":["Read selected sections from Numbers 15–19 and keep Korah’s claim, Dathan and Abiram’s claim, Moses’ response, God’s judgment, Aaron’s life-preserving action, and the later public signs distinct.","The passage includes execution, households swallowed by earth, fire, plague, corpse contact, and contested authority. Do not invite anyone to identify a present-day “Korah.”"],
+      "contextParagraphs":["Chapter 15 immediately follows the border judgment with “When you come into the land,” keeping promise alive for the next generation. It also distinguishes unintentional from high-handed sin and gives tassels as embodied covenant memory.","Chapters 16–18 move from rebellion to public confirmation and then to priestly responsibility. Chapter 19 turns to purification from corpse impurity after so much death.","Korah, Dathan, Abiram, and 250 chiefs overlap as a coalition, but they do not make one identical argument."],
+      "teaching":[
+        {"heading":"Holiness, Promise, and Boundaries","paragraphs":["Numbers 15 holds future land promise, equal worship law for native-born and resident alien, severe Sabbath judgment, and tassels together. The Sabbath execution is narrated as covenant enforcement, not permission for churches or vigilantes to punish Sabbath practice."]},
+        {"heading":"Korah and the Reubenite Leaders Make Different Claims","paragraphs":["Korah’s claim that the whole congregation is holy is true within Israel’s calling, but he uses it to erase assigned priestly boundaries. Dathan and Abiram retell Egypt as “milk and honey” and accuse Moses of failed rule. Different challenges require different evaluation.","Moses appeals to his record, but modern allegations cannot be resolved by a leader’s self-testimony. Independent evidence and safe process are required."]},
+        {"heading":"Extraordinary Judgment Is Not a Leadership Tool","paragraphs":["The earth swallows households and fire consumes incense offerers. Numbers 26 later states Korah’s sons did not die, correcting assumptions that every descendant perished. The deaths remain morally harrowing and must not become exciting proof that leaders win.","No leader may interpret a critic’s illness, accident, family tragedy, or death as “Korah judgment,” and no community may punish relatives for an accused person’s conduct."]},
+        {"heading":"Authority Is Confirmed for Service","paragraphs":["The censers become an altar covering and Aaron’s staff buds as public reminders intended to prevent repeated conflict. Numbers 18 then links confirmed authority to responsibility, regulated support, and liability rather than unlimited privilege."]},
+        {"heading":"Aaron Runs Toward the Dying","paragraphs":["When plague begins after the people accuse Moses and Aaron, Aaron runs into the assembly and stands between the dead and the living. Leadership moves toward endangered people rather than using accusation as a reason to withdraw mercy."]},
+        {"heading":"The Red-Heifer Rite Addresses Death","paragraphs":["Numbers 19 uses a red cow, ashes, and purification water for corpse impurity. Those preparing the cleansing become temporarily unclean, creating a ritual paradox: holiness work is not a platform for superiority.","Corpse impurity is not moral guilt. Bereaved families, funeral workers, clinicians, and people who care for the dead must not be stigmatized." ]}
       ],
-      "questions": [
-        "What stands out in Numbers 16–19?",
-        "What does this passage reveal about God?",
-        "What fear, desire, or failure shapes the people?",
-        "Which detail requires ancient covenant context?",
-        "Whose dignity or safety needs attention?",
-        "What harmful interpretation must be rejected?",
-        "How does the text shape accountable leadership or justice?",
-        "What faithful response will you practice?"
-      ],
-      "examination": "Where am I driven by fear, craving, certainty, pride, or control? Have I overlooked someone’s voice or protected a leader from fair accountability? Ask God for one truthful conviction and one step toward repair, courage, generosity, or trust.",
-      "challenge": "Read Numbers 16–19 again. Write one sentence about God, one warning, and one hope. Choose a practical action: listen, share responsibility, repair harm, honor a boundary, support due process, provide material help, improve accessibility, or remember God’s faithfulness with someone younger.",
-      "caution": "Do not turn ancient judgment, warfare, priesthood, or zeal into permission for modern violence, retaliation, ethnic prejudice, or silencing critics. Illness and disability are not proof of guilt. Protect survivors, honor boundaries, and use transparent, shared accountability.",
-      "prayer": "Holy God, meet us in Numbers 16–19. Correct our fear and pride, protect vulnerable people, and form us in truthful worship. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Hebrews 9:13–14 explicitly compares heifer ashes with Christ’s self-offering, which cleanses the conscience for service to God.","Jesus is the faithful high priest, but Hebrews describes his priesthood through Melchizedek rather than as a simple continuation of Aaron’s family line. Christian leaders cannot claim Aaronic immunity.","Jude warns through Korah’s rebellion about corrupt teachers, but the name must not become a label for anyone asking accountability. Jesus’ cross governs the church’s response to opposition."],
+      "guardrailParagraphs":["Do not flatten every leadership challenge into Korah’s motive.","No modern leader may use extraordinary divine judgment scenes to curse or retaliate against critics.","A claimed miracle or self-testimony is not a substitute for independent review.","Red-heifer teaching is about purification from corpse contact, not a timetable for current events or Christ’s return."],
+      "questions":["How does Numbers 15 keep hope visible after chapter 14?","How do Korah’s words differ from Dathan and Abiram’s?","What would a fair modern investigation require beyond Moses’ self-defense in 16:15?","What happens to the censers, and what does the memorial do?","What does Aaron do when plague begins?","How do the budding staff and Numbers 18 join authority with responsibility?","What paradox appears in Numbers 19’s cleansing ritual?","How does Hebrews 9:13–14 receive the red-heifer rite?"],
+      "examination":"Have I dismissed a less visible assignment as beneath me or used equality language to avoid responsibility? If I hold authority, do I move toward endangered people as Aaron did? Have I labeled someone rebellious because their question threatened me?",
+      "challenge":"Create a claim map for Numbers 16 separating claimant, concern, desired outcome, evidence, response, and consequence. Then audit one authority role for scope, qualifications, decision limits, conflict-of-interest rules, complaint path, and succession or removal process.",
+      "caution":"Never call a whistleblower, abuse reporter, or dissenting member “Korah.” Leaders accused of harm must not control fact-finding. Teach mass-death scenes without spectacle; respect Jewish practice around tzitzit and purification; and repeat that corpse impurity is not sin.",
+      "prayer":"Holy God, keep us from using truth to grasp power or authority to silence truth. Protect those who report harm, give leaders courage to run toward life, and teach communities to remember without glorifying judgment. Meet the bereaved with mercy and cleanse our consciences through Jesus, our faithful high priest. Make our service humble, bounded, transparent, and brave. Amen."
     },
     {
-      "number": 5,
-      "title": "Moses’ Failure and Leadership Accountability",
-      "scripture": "Numbers 20",
-      "supporting": [],
-      "question": "What does Moses’ failure teach about grief, anger, representation, and accountability?",
-      "truth": "Even faithful leaders can misrepresent God under pressure, and long service does not remove accountability.",
-      "goal": "This lesson helps participants read Numbers 20 within Numbers, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question. No one must disclose trauma, illness, disability, family conflict, financial hardship, sexuality, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Numbers 20 in manageable sections. Observe speakers, repeated words, covenant setting, and consequences. Distinguish what the text describes, regulates, uniquely commands, and commends. Interpret severe scenes through the whole book and wider biblical witness.",
-      "teaching": [
-        {
-          "heading": "Miriam Dies",
-          "body": "The chapter begins with loss. The text moves quickly, but communities should not. Grief can affect energy, patience, and decision-making, and leaders need space to mourn."
-        },
-        {
-          "heading": "The People Need Water",
-          "body": "Their manner is contentious, but thirst is real. Leaders must not use frustration with people’s tone to ignore material need."
-        },
-        {
-          "heading": "Moses and Aaron Fall Before God",
-          "body": "Their first movement is toward God, and God provides a clear command. Prayer and attentive listening are essential before acting under pressure."
-        },
-        {
-          "heading": "Anger Changes the Message",
-          "body": "Moses calls the people rebels, claims a role in producing water, and strikes the rock. The people receive water, but the leader misrepresents God. Visible results do not prove healthy leadership."
-        },
-        {
-          "heading": "Accountability Reaches Moses",
-          "body": "Moses will not lead the people into the land. The consequence is painful, yet Scripture does not hide a respected leader’s failure. Longevity and past faithfulness do not erase present responsibility."
-        },
-        {
-          "heading": "Edom Refuses Passage",
-          "body": "Israel asks peacefully and withdraws rather than forcing passage. Respecting a boundary can be wiser than escalating conflict, even when refusal is disappointing."
-        }
+      "number":5,
+      "title":"Moses’ Failure and Leadership Accountability",
+      "scripture":"Numbers 20",
+      "supporting":["Psalm 106:32–33","Numbers 27:14","Deuteronomy 32:51","1 Corinthians 10:4","John 4:10–14"],
+      "question":"What does Moses’ failure at Meribah reveal about grief, legitimate need, angry speech, representing God, and accountability for trusted leaders?",
+      "truth":"Long faithfulness does not make a leader immune from consequential failure. God gives water to a needy people despite Moses and Aaron’s misrepresentation, holds the leaders accountable, respects Edom’s refused boundary, and provides succession through grief.",
+      "goal":"Read Numbers 20 as a season of transition marked by Miriam’s death, water crisis, Edom’s refusal, and Aaron’s death. Present the major explanations of Moses’ offense without reducing it to one gesture, and apply leadership accountability without excusing abuse or delighting in a leader’s fall.",
+      "openingParagraphs":["Read Numbers 20 in four movements: verse 1, verses 2–13, 14–21, and 22–29. Mark every loss, need, command, speech, action, boundary, consequence, and succession.","The passage may touch bereavement, water insecurity, verbal abuse, burnout, and forced leadership transition. Do not identify a participant’s hardship as a Meribah consequence."],
+      "contextParagraphs":["Miriam dies at Kadesh at the beginning of the chapter and Aaron dies at its end. The wider narrative has moved near the end of the wilderness generation.","The water-from-rock episode should not be collapsed with Exodus 17. Both are called Meribah, but they occur at different stages and locations.","Jewish tradition connects a traveling well with Miriam; Numbers places her death and the water shortage together but does not explicitly make that causal claim. Tradition should remain identified as tradition."],
+      "teaching":[
+        {"heading":"Grief Opens the Chapter","paragraphs":["Miriam’s death is recorded in one verse with no mourning period. That brevity does not prove she mattered less; it creates a striking narrative imbalance beside thirty days of mourning for Aaron."]},
+        {"heading":"The People’s Need Is Real Even When Their Speech Is Contentious","paragraphs":["Their accusations repeat wilderness patterns, yet dehydration is not imaginary. Leaders must not use a distressed person’s tone as a reason to withhold water, food, shelter, medical care, or safety."]},
+        {"heading":"Moses Receives a Clear Command and Alters It","paragraphs":["God tells Moses to take the staff, assemble the congregation, and speak to the rock. Moses calls the people rebels, asks whether “we” must bring water, and strikes twice. Psalm 106 later highlights rash speech as well as action."]},
+        {"heading":"The Offense Is Described Through Several Terms","paragraphs":["Numbers and Deuteronomy speak of failure to trust, failure to sanctify God, rebellion, and breach of faith. Striking rather than speaking, striking twice, angry words, and “shall we” may all contribute; Scripture does not reduce the failure to one accidental tap."]},
+        {"heading":"God Provides Water and Still Holds Leaders Accountable","paragraphs":["Water comes abundantly despite the failed method. Visible success is not proof a leader’s anger, coercion, or process was approved.","Moses and Aaron will not bring the people into the land. Accountability can honor prior faithfulness while accepting that forgiveness need not restore the same role."]},
+        {"heading":"Boundaries and Succession Matter","paragraphs":["Israel asks Edom for passage and turns away after refusal rather than seizing the route. At Mount Hor, Aaron’s garments pass publicly to Eleazar before Aaron dies. The office continues without pretending the leader is irreplaceable." ]}
       ],
-      "questions": [
-        "What stands out in Numbers 20?",
-        "What does this passage reveal about God?",
-        "What fear, desire, or failure shapes the people?",
-        "Which detail requires ancient covenant context?",
-        "Whose dignity or safety needs attention?",
-        "What harmful interpretation must be rejected?",
-        "How does the text shape accountable leadership or justice?",
-        "What faithful response will you practice?"
-      ],
-      "examination": "Where am I driven by fear, craving, certainty, pride, or control? Have I overlooked someone’s voice or protected a leader from fair accountability? Ask God for one truthful conviction and one step toward repair, courage, generosity, or trust.",
-      "challenge": "Read Numbers 20 again. Write one sentence about God, one warning, and one hope. Choose a practical action: listen, share responsibility, repair harm, honor a boundary, support due process, provide material help, improve accessibility, or remember God’s faithfulness with someone younger.",
-      "caution": "Do not turn ancient judgment, warfare, priesthood, or zeal into permission for modern violence, retaliation, ethnic prejudice, or silencing critics. Illness and disability are not proof of guilt. Protect survivors, honor boundaries, and use transparent, shared accountability.",
-      "prayer": "Holy God, meet us in Numbers 20. Correct our fear and pride, protect vulnerable people, and form us in truthful worship. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Paul calls the wilderness rock Christ in 1 Corinthians 10:4 as apostolic typology. It does not require imagining a physical boulder rolling behind Israel.","Jesus offers living water, yet spiritual thirst never becomes an excuse to ignore literal bodily needs.","The common claim that striking twice symbolizes crucifying Christ a second time is not the explanation Numbers gives and should not be preached as the explicit reason for Moses’ judgment."],
+      "guardrailParagraphs":["The people’s thirst is real even when their words are difficult.","Grief and pressure may explain Moses’ anger but do not excuse degrading speech or disobedience.","Successful outcomes do not prove healthy methods.","A leader’s death, illness, retirement, or failed goal must not automatically be called divine punishment."],
+      "questions":["What does Numbers 20 record about Miriam’s death and leave unstated?","Separate the people’s material need from their accusations. How should a leader respond to both?","Compare God’s command in 20:7–8 with Moses’ response in 20:9–11.","What dimensions of Moses’ failure are named in Numbers 20:12, 27:14, Deuteronomy 32:51, and Psalm 106:32–33?","What do abundant water and leadership consequence each reveal?","How can a community hold a respected leader accountable without erasing faithful service or silencing harmed people?","Why are Aaron’s garments transferred publicly?"],
+      "examination":"When someone’s tone frustrates me, do I stop hearing the underlying need? Have I used a true label, spiritual authority, or visible success to justify anger? If my role must change, can I prepare a successor and grieve honestly?",
+      "challenge":"Create a command-and-response chart for Numbers 20:7–13. Then review one recent leadership decision under need addressed, words used, method used, and outcome; ask a person with permission to challenge you whether visible success has hidden harm.",
+      "caution":"Do not make grieving participants explain anger publicly. Successful ministry does not excuse coercion or verbal abuse. Accountability needs independent review, written standards, due process, anti-retaliation protection, and proportionate safeguards. Do not force fallen leaders and harmed people into premature shared reconciliation.",
+      "prayer":"Holy God, meet us in grief and pressure before anger distorts your face. Help leaders hear real need, speak truth without contempt, and submit both methods and outcomes to you. Give water to the thirsty, safety to those harmed by power, and courage for fair accountability. Through Jesus, the giver of living water, sustain your people through endings, succession, and the journey ahead. Amen."
     },
     {
-      "number": 6,
-      "title": "The Bronze Serpent and Healing Faith",
-      "scripture": "Numbers 21",
-      "supporting": [],
-      "question": "How does God meet a suffering community, and how should the bronze serpent be understood?",
-      "truth": "God provides a sign of healing that requires trust, while later Scripture warns that even a good sign can become an idol.",
-      "goal": "This lesson helps participants read Numbers 21 within Numbers, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question. No one must disclose trauma, illness, disability, family conflict, financial hardship, sexuality, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Numbers 21 in manageable sections. Observe speakers, repeated words, covenant setting, and consequences. Distinguish what the text describes, regulates, uniquely commands, and commends. Interpret severe scenes through the whole book and wider biblical witness.",
-      "teaching": [
-        {
-          "heading": "The Journey Remains Hard",
-          "body": "Israel faces detours, grief, conflict, and scarcity. Spiritual progress does not remove fatigue. Communities should recognize accumulated stress before responding to destructive speech."
-        },
-        {
-          "heading": "Impatience Turns Against God and Moses",
-          "body": "The people despise provision and speak from discouragement. Honest lament differs from contempt that denies grace. God welcomes truthful prayer but confronts hardened rebellion."
-        },
-        {
-          "heading": "Serpents and Severe Consequences",
-          "body": "The judgment is difficult and must not be used to claim that snakebite, illness, or disaster proves personal guilt today. It belongs to this covenant episode."
-        },
-        {
-          "heading": "Confession and Intercession",
-          "body": "The people acknowledge sin and ask Moses to pray. Moses intercedes rather than celebrating their pain. Leadership seeks mercy even after being attacked."
-        },
-        {
-          "heading": "Look and Live",
-          "body": "God provides the bronze serpent as a means of healing. The object has no independent power. Jesus later uses the lifting up as an image of his saving death, directing faith toward God’s provision."
-        },
-        {
-          "heading": "A Gift Can Become an Idol",
-          "body": "Second Kings records that the bronze serpent was later worshiped and destroyed. Sacred history, objects, traditions, and ministries must remain servants of God rather than rivals to him."
-        }
+      "number":6,
+      "title":"The Bronze Serpent and Healing Faith",
+      "scripture":"Numbers 21",
+      "supporting":["2 Kings 18:1–4","John 3:14–17"],
+      "question":"How does a sign shaped like the source of judgment become God’s means of life, and how does the chapter move Israel from detour and impatience toward water, victory, and the edge of the land?",
+      "truth":"God hears confession and provides life, yet the bronze serpent has no independent power. The gift must direct trust to God rather than become an idol, and its later fulfillment in Jesus never authorizes medical neglect or manipulative healing claims.",
+      "goal":"Read the bronze serpent within the whole chapter, distinguish what “look and live” explicitly says from later inference, face the chapter’s conquest violence honestly, and follow Jesus’ direct use of the lifted-serpent sign.",
+      "openingParagraphs":["Read Numbers 21:1–9, 10–20, 21–35; 2 Kings 18:1–4; and John 3:14–17. Track each danger, request, divine response, journey movement, song, and later interpretation.","The lesson includes snakebite, death, warfare, destroyed towns, and religious healing. State clearly at the outset that it does not advise refusing medical care."],
+      "contextParagraphs":["After Aaron’s death and the detour around Edom, chapter 21 moves through military attack, poisonous serpents, renewed travel, songs of water and victory, and battles east of the Jordan.","The bronze serpent occupies only six verses but receives unusual later attention: Hezekiah destroys it after it becomes an idol, and Jesus uses its lifting to speak of his own death.","The chapter combines judgment, healing, poetry, geography, and war; none should be isolated into a promise that faithful people will avoid pain."],
+      "teaching":[
+        {"heading":"Detour and Fatigue Shape the Complaint","paragraphs":["The people’s spirit becomes “short” on the long route around Edom. Fatigue is real, while contempt for God’s provision is also real. Context explains the speech without approving it."]},
+        {"heading":"The Serpents Are Covenant Judgment, Not a Modern Diagnostic Rule","paragraphs":["Numbers attributes the venomous-serpent deaths directly to God. That must not become a rule for interpreting snakebite, illness, epidemic, or disaster today."]},
+        {"heading":"Confession, Intercession, and a Lifted Sign","paragraphs":["The people confess speaking against God and Moses; Moses intercedes. God does not necessarily remove the serpents but provides a bronze serpent on a pole so bitten people who look live.","Numbers describes the act of looking; interpreting it as trusting obedience is reasonable and strengthened by Jesus’ use, but the chapter does not narrate the person’s internal emotion or use the noun “faith.”"]},
+        {"heading":"A God-Given Sign Can Become an Idol","paragraphs":["Numbers does not explain why a serpent shape was chosen. The sign has no independent power. Centuries later Hezekiah destroys it when people burn incense to it. Sacred origin does not guarantee permanently faithful use."]},
+        {"heading":"Travel, Water, and Remembered Sources","paragraphs":["The station list shows steady movement, cites the otherwise-lost Book of the Wars of the LORD, and preserves a well song. Biblical authors could draw on sources no longer extant.","At Beer the people gather, leaders dig, and Israel sings for water. Provision comes through communal action and praise rather than another rock-striking scene."]},
+        {"heading":"The War Accounts Remain Difficult","paragraphs":["Arad attacks and Israel vows ḥerem; Sihon refuses passage and attacks; Og comes out to battle and is defeated. The narrative presents divine victory, occupation, and totalizing language. Christians have no mandate to reproduce ḥerem, holy war, genocide, or ethnic dispossession." ]}
       ],
-      "questions": [
-        "What stands out in Numbers 21?",
-        "What does this passage reveal about God?",
-        "What fear, desire, or failure shapes the people?",
-        "Which detail requires ancient covenant context?",
-        "Whose dignity or safety needs attention?",
-        "What harmful interpretation must be rejected?",
-        "How does the text shape accountable leadership or justice?",
-        "What faithful response will you practice?"
-      ],
-      "examination": "Where am I driven by fear, craving, certainty, pride, or control? Have I overlooked someone’s voice or protected a leader from fair accountability? Ask God for one truthful conviction and one step toward repair, courage, generosity, or trust.",
-      "challenge": "Read Numbers 21 again. Write one sentence about God, one warning, and one hope. Choose a practical action: listen, share responsibility, repair harm, honor a boundary, support due process, provide material help, improve accessibility, or remember God’s faithfulness with someone younger.",
-      "caution": "Do not turn ancient judgment, warfare, priesthood, or zeal into permission for modern violence, retaliation, ethnic prejudice, or silencing critics. Illness and disability are not proof of guilt. Protect survivors, honor boundaries, and use transparent, shared accountability.",
-      "prayer": "Holy God, meet us in Numbers 21. Correct our fear and pride, protect vulnerable people, and form us in truthful worship. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Jesus makes the primary connection explicit: as Moses lifted the serpent, the Son of Man must be lifted up so believers receive eternal life (John 3:14–15).","In John, “lifted up” joins crucifixion and exaltation. Jesus is not being called evil or venomous; he takes the place of public exposure and death so condemned people may receive life.","Christian proclamation can point people to Christ while also calling emergency services, administering antivenom, supporting disability, and respecting clinical care."],
+      "guardrailParagraphs":["The bronze serpent is not an isolated formula for instant physical healing.","The object has no independent power; a sacred gift can become an idol.","Illness or disability is not evidence that someone failed to believe hard enough.","Numbers does not authorize snake handling, refusal of medicine, staged healing, or fundraising tied to promised cures.","The chapter’s wars cannot authorize modern holy war or ethnic dispossession."],
+      "questions":["How does the detour around Edom shape the people’s state in 21:4–5?","What do the people confess and request, and how does God’s response differ?","What does Numbers explicitly require a bitten person to do, and what remains unexplained?","How does 2 Kings 18:4 change how communities should treat sacred objects or traditions?","What do the station list, lost-book citation, and well song add to the chapter?","How do Israel’s requests to Edom and Sihon compare?","Which elements of Numbers 21:8–9 does Jesus take up in John 3:14–17?"],
+      "examination":"Have I allowed a gift, method, leader, building, or memory that once helped me to receive trust that belongs to God? Can I receive God’s provision even when mercy does not remove danger the way I requested? Have I told victory stories while ignoring people harmed or displaced?",
+      "challenge":"Trace the bronze serpent through Numbers 21, 2 Kings 18, and John 3 using three columns: gift, idol, fulfilled sign. Then review one healing practice or testimony for medical referral, consent, no payment for promised cure, no blame for unchanged condition, and no disclosure without permission.",
+      "caution":"State plainly that participants should seek appropriate medical care. Do not ask ill or disabled people why healing has not occurred or make them public prayer objects without consent. Avoid sensational snake imagery and conquest celebration; a revered ministry practice still requires review if it becomes coercive or exploitative.",
+      "prayer":"God of life, meet us when the road is long and our speech turns bitter. Teach us to confess without blaming, receive mercy without making gifts into idols, and seek healing without rejecting wise care. Comfort the sick and bereaved, protect people from spiritual exploitation, and turn us from every violent misuse of Scripture. Fix our trust on Jesus, lifted up in love for the life of the world. Amen."
     },
     {
-      "number": 7,
-      "title": "Balaam, Blessing, and the Danger of Compromise",
-      "scripture": "Numbers 22–25",
-      "supporting": [],
-      "question": "How does God protect his people from curses while exposing greed, spiritual manipulation, and compromise?",
-      "truth": "God cannot be bought or manipulated; he turns intended curses into blessing and calls his people away from exploitative allegiance.",
-      "goal": "This lesson helps participants read Numbers 22–25 within Numbers, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question. No one must disclose trauma, illness, disability, family conflict, financial hardship, sexuality, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Numbers 22–25 in manageable sections. Observe speakers, repeated words, covenant setting, and consequences. Distinguish what the text describes, regulates, uniquely commands, and commends. Interpret severe scenes through the whole book and wider biblical witness.",
-      "teaching": [
-        {
-          "heading": "Balak Wants Spiritual Control",
-          "body": "The king offers payment to secure a curse. Political and financial power try to hire religion. Faithful ministry refuses to sell divine favor or weaponize prayer against opponents."
-        },
-        {
-          "heading": "Balaam’s Mixed Motives",
-          "body": "Balaam speaks with God yet remains attracted to reward. Spiritual language and genuine gifting do not guarantee trustworthy character. Motives, money, and patterns require accountability."
-        },
-        {
-          "heading": "A Donkey Sees What the Seer Misses",
-          "body": "The animal perceives danger before Balaam. God uses an unexpected voice to interrupt violence. The scene challenges pride and condemns Balaam’s beating of a defenseless creature."
-        },
-        {
-          "heading": "Blessing Cannot Be Overruled",
-          "body": "Balaam repeatedly blesses Israel. God’s covenant purpose is not controlled by a king’s fear or a prophet’s fee. This blessing must not become ethnic superiority or contempt for other peoples."
-        },
-        {
-          "heading": "Compromise at Peor",
-          "body": "Israel’s idolatry is connected with sexual and communal betrayal. The text should not become a pretext for blaming women or foreigners; later Scripture also holds Balaam and Israelite men responsible."
-        },
-        {
-          "heading": "Phinehas and a Difficult Zeal",
-          "body": "Phinehas’ violent act occurs within an acute ancient covenant judgment. It is never a model for modern religious violence, vigilantism, or harming people over sexuality. Justice today requires lawful, protective, nonviolent accountability."
-        }
+      "number":7,
+      "title":"Balaam, Blessing, and the Danger of Compromise",
+      "scripture":"Numbers 22–25",
+      "supporting":["Numbers 31:16","Micah 6:5","2 Peter 2:15–16","Jude 11","Revelation 2:14","Galatians 3:8–14"],
+      "question":"How does God turn a hired curse into blessing while exposing the instability of spiritual gifting without integrity, Israel’s willing compromise at Peor, and a form of zeal the church must not imitate?",
+      "truth":"God’s covenant purpose cannot be bought, cursed, or controlled. Yet miraculous speech does not make Balaam trustworthy, divine blessing does not make Israel immune to idolatry, and Phinehas’s covenant-specific violence gives no person permission for religious vigilantism.",
+      "goal":"Follow the tension in Balaam’s permission and resistance, listen to the donkey and four oracles, incorporate Scripture’s later verdict on Balaam, refuse to blame foreign women for Israelite men’s choices, and place the spear at Peor behind firm safeguards against sexualized, ethnic, and religious violence.",
+      "openingParagraphs":["Read Numbers 22:1–14, 20–35; 23:7–12, 18–26; 24:2–9, 15–19; 25:1–18; then Numbers 31:16 and Revelation 2:14. Track money, permission, speech limits, what the donkey sees, what Balaam says, what Israel chooses, and who is held responsible.","The material includes animal beating, sexual and religious exploitation, execution, plague, and a double killing. No participant should be asked to identify a modern group with the women of Peor."],
+      "contextParagraphs":["Israel camps on the plains of Moab opposite Jericho. Balak fears Israel after the defeats of Sihon and Og and seeks a spiritual weapon rather than first fighting Israel.","Balaam is a non-Israelite diviner from Pethor near the Euphrates. Israel’s God speaks to him and constrains his words, but later Scripture gives his character a dark verdict.","Chapters 22–24 occur largely outside Israel’s awareness: God protects the people from attempted curse before they know the danger. Chapter 25 then shows covenant compromise arising from within."],
+      "teaching":[
+        {"heading":"Spiritual Power Cannot Be Purchased","paragraphs":["Balak sends divination fees and increasingly distinguished officials. Balaam’s pious language about silver and gold coexists with repeated reopening of a question God had answered. Later Scripture identifies greed as part of his problem."]},
+        {"heading":"Permission and Anger Create Real Narrative Tension","paragraphs":["God permits Balaam to go under conditions and then opposes him on the road. Interpreters differ on whether the issue is greed, premature departure, permissive will, or testing. The narrator does not collapse the tension into one explicit motive."]},
+        {"heading":"The Donkey Sees What the Seer Cannot","paragraphs":["Three times the donkey perceives danger and three times Balaam strikes her. God opens her mouth, and the angel says she saved Balaam’s life. The animal is not comic relief; a vulnerable creature sees reality while the expert abuses her."]},
+        {"heading":"True Words Do Not Certify a Trustworthy Life","paragraphs":["Balak’s sacrifices cannot purchase a curse. The oracles move from Israel’s uncurseable status, to God’s non-manipulability, to Abrahamic blessing, to a star and scepter from Israel.","Accurate prophecy does not validate a speaker’s finances, private counsel, treatment of vulnerable people, or long-term fruit. Later Scripture says Balaam counseled Israel toward Peor and condemns his greed and corrupt teaching."]},
+        {"heading":"Election Is Not Ethnic Superiority","paragraphs":["“Dwelling apart” describes covenant distinction, not racial segregation. Blessing echoes Abraham’s promise but never makes a modern state’s actions immune from justice or moral critique."]},
+        {"heading":"Peor Requires Responsibility Without Ethnic or Gender Scapegoating","paragraphs":["Israelite men choose sexual relations, sacrificial meals, and worship of Baal of Peor. The women are foregrounded, but the men and later Balaam are accountable. Ethnicity itself is not the contaminant; Moses is married to a Midianite woman and Ruth will be a faithful Moabite."]},
+        {"heading":"Phinehas’s Violence Is Covenant-Specific","paragraphs":["Phinehas kills Zimri and Cozbi and the plague stops; God’s approval within this covenant crisis is explicit and difficult. The text does not narrate every detail of the pair’s act before the killing.","The scene is not a standing command, due-process model, or permission to harm people over sex, marriage, gender, religion, or ethnicity. “Zeal” never justifies vigilantism or honor violence." ]}
       ],
-      "questions": [
-        "What stands out in Numbers 22–25?",
-        "What does this passage reveal about God?",
-        "What fear, desire, or failure shapes the people?",
-        "Which detail requires ancient covenant context?",
-        "Whose dignity or safety needs attention?",
-        "What harmful interpretation must be rejected?",
-        "How does the text shape accountable leadership or justice?",
-        "What faithful response will you practice?"
-      ],
-      "examination": "Where am I driven by fear, craving, certainty, pride, or control? Have I overlooked someone’s voice or protected a leader from fair accountability? Ask God for one truthful conviction and one step toward repair, courage, generosity, or trust.",
-      "challenge": "Read Numbers 22–25 again. Write one sentence about God, one warning, and one hope. Choose a practical action: listen, share responsibility, repair harm, honor a boundary, support due process, provide material help, improve accessibility, or remember God’s faithfulness with someone younger.",
-      "caution": "Do not turn ancient judgment, warfare, priesthood, or zeal into permission for modern violence, retaliation, ethnic prejudice, or silencing critics. Illness and disability are not proof of guilt. Protect survivors, honor boundaries, and use transparent, shared accountability.",
-      "prayer": "Holy God, meet us in Numbers 22–25. Correct our fear and pride, protect vulnerable people, and form us in truthful worship. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Christians recognize the star-and-scepter hope as reaching its fullness in Jesus, whose kingship is defined through cross and resurrection rather than church violence.","Revelation 2:14 uses Balaam to warn the church about compromised teachers inside the community rather than to blame foreign women outside it.","In Christ, Abrahamic blessing reaches the nations, and zeal is disciplined by the crucified Messiah, the Spirit’s fruit, lawful protection, and neighbor love."],
+      "guardrailParagraphs":["The permission/anger tension in Balaam’s journey should be acknowledged rather than flattened.","The donkey’s faithful warning and abuse matter to the story.","Accurate spiritual gifting does not prove trustworthy character.","Peor does not justify blame of women, foreigners, immigrants, or interethnic couples.","Phinehas cannot become a model for church discipline or vigilantism."],
+      "questions":["What does God’s first answer to Balaam include that Balaam leaves out?","How do interpreters explain the tension between 22:20 and 22:22?","What does the donkey see and do, and how does the angel evaluate her?","What repeated limit is placed on Balaam’s words?","What does each main oracle add to the move from curse to blessing?","How do Numbers 31:16 and Revelation 2:14 reshape an overly positive reading of Balaam?","Which Israelite choices are named at Peor, and what is distorted by assigning blame to foreign women?","What is explicit and inferred about Zimri and Cozbi?"],
+      "examination":"Have I kept asking after a clear no because a later offer was more honorable or profitable? Whose reliable warning have I ignored because I considered the source beneath me? Have I shifted responsibility for my choices onto an outsider, woman, minority, or person with less power?",
+      "challenge":"Trace Balaam across Numbers 22–24, Numbers 31:16, Deuteronomy 23, Micah 6, 2 Peter 2, Jude 11, and Revelation 2:14, separating gift, speech, motive, action, and later verdict. Then review one ministry relationship involving money or political access for conflicts and independent accountability.",
+      "caution":"Do not reenact the donkey beating or spear scene. Interrupt collective blame of women or ethnic outsiders. State plainly that Phinehas is not a model for church discipline. Financially or prophetically impressive leaders still require transparent expenses, conflict disclosure, safeguards, and independent accountability.",
+      "prayer":"God of unbreakable promise, free us from buying, selling, or manipulating sacred power. Open our eyes to warnings from voices we have harmed or dismissed. Expose greed, idolatry, sexual exploitation, and ethnic blame. Protect every person threatened by religious zeal, and make leaders accountable in money and conduct. Through Jesus, the true King, turn curse into blessing and form in us the courage of peace. Amen."
     },
     {
-      "number": 8,
-      "title": "A New Generation Prepared to Enter",
-      "scripture": "Numbers 26–36",
-      "supporting": [],
-      "question": "How does God prepare a new generation through inheritance, leadership succession, memory, justice, and boundaries?",
-      "truth": "God preserves promise after wilderness failure and prepares the community to enter with shared responsibility and ordered justice.",
-      "goal": "This lesson helps participants read Numbers 26–36 within Numbers, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question. No one must disclose trauma, illness, disability, family conflict, financial hardship, sexuality, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Numbers 26–36 in manageable sections. Observe speakers, repeated words, covenant setting, and consequences. Distinguish what the text describes, regulates, uniquely commands, and commends. Interpret severe scenes through the whole book and wider biblical witness.",
-      "teaching": [
-        {
-          "heading": "A Second Census Signals Grace",
-          "body": "A new generation is counted after the old generation’s death. God’s promise continues without pretending the losses were insignificant. Renewal remembers consequences and receives a new beginning."
-        },
-        {
-          "heading": "Zelophehad’s Daughters Speak",
-          "body": "Five women identify an injustice in inheritance practice and bring their case publicly. God affirms their claim and the law changes. Faithful communities listen when excluded people expose gaps in existing rules."
-        },
-        {
-          "heading": "Joshua Is Commissioned Publicly",
-          "body": "Moses lays hands on Joshua before the community. Succession is planned, shared, and visible. Healthy leadership prepares others rather than making the mission dependent on one person."
-        },
-        {
-          "heading": "Remembering Worship and Vows",
-          "body": "Offerings and vows shape communal rhythm. Commitments should be voluntary, thoughtful, and accountable. These texts must not be used to place women under abusive control or override safety and consent."
-        },
-        {
-          "heading": "War and Its Moral Weight",
-          "body": "Numbers 31 contains severe violence and troubling treatment of captives. It belongs to ancient Israel’s judgment setting and must not be celebrated, reenacted, or used to justify genocide, sexual exploitation, or modern warfare."
-        },
-        {
-          "heading": "Cities of Refuge and Due Process",
-          "body": "Refuge cities distinguish intentional murder from accidental killing and prevent immediate blood revenge. Justice requires evidence, process, proportion, and protection rather than mob retaliation."
-        }
+      "number":8,
+      "title":"A New Generation Prepared to Enter",
+      "scripture":"Numbers 26–36",
+      "supporting":["Hebrews 4","Matthew 9:36","John 10","Matthew 5:33–37","Romans 12:17–21"],
+      "question":"How does God prepare a new generation to inherit the promise through counting, corrected law, succession, worship, shared duty, boundaries, and justice, even while the text preserves grave violence and patriarchal limits?",
+      "truth":"God’s promise continues after wilderness failure. The new generation must learn to listen to excluded voices, transfer leadership publicly, honor worship and vows, share risk, define land responsibly, and restrain vengeance, while modern readers must refuse to sanctify the section’s warfare or captive abuse.",
+      "goal":"Follow Numbers’ final eleven chapters without skipping their tensions: Zelophehad’s daughters and the later marriage restriction, Joshua’s succession, vows, Numbers 31’s killing and captives, Transjordan settlement, journey memory, land boundaries, and refuge cities.",
+      "openingParagraphs":["Read Numbers 26:1–4, 51–65; 27:1–23; 30:1–16; 31:1–20; 32:1–7, 16–24; 35:9–34; and 36:1–12. Warn participants before reading Numbers 31’s killing of boys and nonvirgin women; an alternate text should be available.","Make two lists: provisions that open a future and provisions that constrain or endanger people. No participant should be pressured to defend God, disclose violence, or resolve every moral tension in one session."],
+      "contextParagraphs":["Israel is on the plains of Moab. The first census generation has died, Peor has ended, and a new generation needs inheritance, succession, worship rhythms, and rules for life in the land.","The second census names the generation that will enter; the chapter 33 itinerary remembers the route by which Israel arrived. The ending contains both legal innovation and patriarchal restriction, refuge and due process alongside commanded vengeance and captive suffering.","Promise continues through an ancient world of war, clan land, patriarchy, and blood vengeance. Faithful reading lets that complexity remain visible."],
+      "teaching":[
+        {"heading":"The Second Census Marks Continuity and Replacement","paragraphs":["The total is close to the first census but represents a new generation. Interpretive questions about ʾelef and the large totals remain. Numbers 26 also explicitly says Korah’s sons did not die."]},
+        {"heading":"Zelophehad’s Daughters Expose a Gap","paragraphs":["Mahlah, Noah, Hoglah, Milcah, and Tirzah bring a precise public claim. Moses brings it before God, and God says the daughters are right and expands inheritance law.","The change improves women’s access within a patrilineal system rather than establishing full equality; sons still receive priority, and chapter 36 later restricts the daughters’ marriage options to preserve tribal land."]},
+        {"heading":"Succession Is Public, Shared, and Limited","paragraphs":["Moses asks for a shepherd rather than bargaining for reinstatement. Joshua is commissioned publicly before Eleazar and the congregation and receives some of Moses’ authority while still seeking priestly guidance. Continuity does not require cloning a leader."]},
+        {"heading":"Worship and Vows Reveal Both Devotion and Patriarchy","paragraphs":["Numbers 28–29 orders daily, weekly, monthly, and annual worship. Entering the land does not make Israel self-sufficient.","Numbers 30 gives fathers and husbands asymmetrical power over women’s vows while widows and divorced women’s vows stand. These rules cannot authorize coercive control, cancellation of abuse reports, medical decisions, legal testimony, consent, or a woman’s conscience." ]},
+        {"heading":"Numbers 31 Must Not Be Sanitized","paragraphs":["The Midian campaign is presented as divine vengeance connected to Peor. Israel kills men, Moses then commands the killing of boys and nonvirgin women, and virgin girls are kept alive “for yourselves.” The collective killing is morally horrifying and the text does not establish that captives were safe, free, or consenting.","No modern group may use Numbers 31 to authorize genocide, rape, forced marriage, enslavement, child killing, or collective punishment. Detailed distribution of spoils does not erase absent voices and human loss." ]},
+        {"heading":"Accommodation Must Carry Shared Duty","paragraphs":["Reuben and Gad request pasture east of the Jordan. Moses requires them to share the wider community’s risk until the other tribes receive inheritance. Different economic needs can be accommodated without abandoning communal responsibility."]},
+        {"heading":"Memory, Borders, and Dispossession","paragraphs":["The itinerary remembers provision, failure, grief, and delay. Land boundaries restrain as well as grant, while commands to dispossess inhabitants remain ethically difficult and covenant-specific. They cannot authorize modern colonization or destruction of another people’s sacred places." ]},
+        {"heading":"Refuge Cities Interrupt Immediate Revenge","paragraphs":["Cities of refuge protect an accused killer from immediate blood vengeance until trial. Intent, weapon, hostility, ambush, circumstances, and multiple witnesses matter; ransom cannot let a wealthy murderer escape.","The system is a restraint inside an ancient blood-avenger world, not a complete modern criminal code. It values the victim’s life while resisting both mob retaliation and purchased impunity." ]}
       ],
-      "questions": [
-        "What stands out in Numbers 26–36?",
-        "What does this passage reveal about God?",
-        "What fear, desire, or failure shapes the people?",
-        "Which detail requires ancient covenant context?",
-        "Whose dignity or safety needs attention?",
-        "What harmful interpretation must be rejected?",
-        "How does the text shape accountable leadership or justice?",
-        "What faithful response will you practice?"
-      ],
-      "examination": "Where am I driven by fear, craving, certainty, pride, or control? Have I overlooked someone’s voice or protected a leader from fair accountability? Ask God for one truthful conviction and one step toward repair, courage, generosity, or trust.",
-      "challenge": "Read Numbers 26–36 again. Write one sentence about God, one warning, and one hope. Choose a practical action: listen, share responsibility, repair harm, honor a boundary, support due process, provide material help, improve accessibility, or remember God’s faithfulness with someone younger.",
-      "caution": "Do not turn ancient judgment, warfare, priesthood, or zeal into permission for modern violence, retaliation, ethnic prejudice, or silencing critics. Illness and disability are not proof of guilt. Protect survivors, honor boundaries, and use transparent, shared accountability.",
-      "prayer": "Holy God, meet us in Numbers 26–36. Correct our fear and pride, protect vulnerable people, and form us in truthful worship. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Hebrews 4 says Joshua did not give God’s final rest; a greater rest remains and is entered through faith in Christ.","Moses asks for a shepherd, and Jesus is the good shepherd who lays down his life rather than abandoning the flock.","In Christ, women and men receive inheritance as heirs of grace. That gospel equality should sharpen rather than hide the limited advance and later constraint in the daughters’ case.","Jesus teaches truthful speech rather than manipulative vows, and Romans 12 tells Christians not to avenge themselves. Whatever one concludes about Numbers 31 in Israel’s history, it cannot become the church’s method."],
+      "guardrailParagraphs":["The census counts a military generation, not every person’s worth.","Zelophehad’s daughters gain real agency but remain inside a system with continuing gender limits.","Numbers 30 cannot authorize coercive control.","Numbers 31’s captive suffering, child killing, and gendered violence must not be sanitized or modernized.","Land promise and boundaries are covenant-specific, not a Christian license to dispossess.","Refuge cities restrain vengeance but are not a directly transferable criminal code."],
+      "questions":["What continuities and changes appear between the two censuses?","What do Zelophehad’s daughters argue, how does Moses respond, and what changes?","What makes Joshua’s succession public, shared, and limited?","Where is the gender asymmetry in Numbers 30?","In Numbers 31, which actions are commanded by God, carried out by soldiers, or ordered by Moses after battle?","Whose voices and losses are absent from the war’s accounting?","What makes the Transjordan agreement acceptable?","What safeguards limit immediate revenge in Numbers 35?","How does chapter 36 complicate a simple celebration of the daughters’ victory?"],
+      "examination":"When an excluded person exposes a gap, do I seek truthful review or defend custom automatically? Have I pursued my group’s advantage while expecting others to carry the risk? Where have I told a victory story through numbers and property while ignoring captives, children, displaced people, or women without recorded voices?",
+      "challenge":"Trace Zelophehad’s daughters through Numbers 26, 27, and 36 with two columns: agency gained and constraint retained. Then audit one policy involving succession, reporting, vows, inheritance, or conflict: who wrote it, who can appeal, whose safety is prioritized, and which voice is missing?",
+      "caution":"Numbers 31 requires a trauma warning and an option not to read aloud. State clearly that the church may not justify genocide, forced marriage, sexual access to captives, child killing, slavery, or collective punishment. Reject coercive control in vow discussions, do not oversell the daughters’ legal victory as full equality, and handle refuge-city material with care for both victims’ families and falsely accused people.",
+      "prayer":"God of every generation, teach us to remember loss without surrendering hope. Give courage to those who expose gaps in our laws, humility to leaders preparing successors, and justice that protects both victims and the accused. Forgive every use of Scripture to sanctify war, captivity, patriarchy, or revenge. Through Jesus our shepherd, lead us into your rest and make our inheritance visible in truth, mercy, shared duty, and peace. Amen."
     }
   ]
 };
-
-

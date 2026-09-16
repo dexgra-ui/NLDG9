@@ -1,421 +1,228 @@
 window.NLDG_BOOK_STUDY={
-  "slug": "joshua-study",
-  "book": "Joshua",
-  "title": "Joshua: An eight-lesson study of courage, covenant, land, judgment, justice, and faithful remembrance",
-  "description": "Read within the book’s historical setting, literary form, covenant location, argument, and whole-Bible witness. Notice repeated words, quotations, contrasts, and narrative movement. Distinguish what the passage explicitly teaches from inference and modern application. Difficult texts deserve honesty rather than defensiveness or simplistic transfer.",
-  "theme": "The covenant-keeping Lord fulfills His promises, judges evil, calls His people to courageous obedience, and gives rest that ultimately points beyond Joshua to Christ.",
-  "audience": "Adults, groups, classes, and ministry teams",
-  "purpose": "To follow Joshua’s theological message, face its morally difficult warfare honestly, and form disciples marked by courage, humility, justice, remembrance, and exclusive worship.",
-  "background": "Read within the book’s historical setting, literary form, covenant location, argument, and whole-Bible witness. Notice repeated words, quotations, contrasts, and narrative movement. Distinguish what the passage explicitly teaches from inference and modern application. Difficult texts deserve honesty rather than defensiveness or simplistic transfer.",
-  "lessons": [
+  "slug":"joshua-study",
+  "book":"Joshua",
+  "title":"Joshua: Courage, Covenant, Land, Judgment, Justice, and Faithful Remembrance",
+  "description":"Joshua continues Deuteronomy after Moses’ death and follows Israel from entry into the land through conquest summaries, allotment, communal institutions, and covenant renewal.",
+  "theme":"Read Joshua in its ancient covenant, literary, geographical, and warfare setting. Never turn Israel’s unique conquest into permission for colonialism, genocide, racism, Christian nationalism, forced conversion, political violence, or modern territorial claims by the church.",
+  "audience":"Adults, groups, classes, and ministry teams",
+  "purpose":"This eight-lesson series follows Joshua from leadership transition through covenant renewal, reading geography, memory, warfare, outsiders, hidden sin, land distribution, refuge, and final choice with historical honesty, interpretive humility, strong safeguarding, and a Christ-centered but non-allegorical approach.",
+  "background":"Joshua presents the land as fulfillment of ancestral promise and its battles as a particular judgment on Canaanite kingdoms while denying Israel any ground for moral superiority. Rahab’s welcome and Achan’s judgment overturn a simple insider-righteous, outsider-rejected framework. The book celebrates real fulfillment while also admitting unfinished work.",
+  "lessons":[
     {
-      "number": 1,
-      "title": "Be Strong and Courageous",
-      "scripture": "Joshua 1:1–18; Deuteronomy 31:1–8; Psalm 1:1–3",
-      "supporting": [],
-      "question": "What kind of courage is formed by God’s presence, Scripture, and shared responsibility?",
-      "truth": "God’s presence and Word enable courageous obedience that serves the community rather than glorifying the leader.",
-      "goal": "To navigate leadership transition, root courage in God, and practice obedient preparation without self-reliance or domination.",
-      "opening": "Begin with prayer for humility, courage, and careful listening. Read the main passage aloud and allow silence before interpretation. Invite observations first. Participants may pass on any question, and no one should be pressured to disclose trauma, conflict, doubt, or private circumstances. The goal is faithful formation under Scripture.",
-      "context": "Read within the book’s historical setting, literary form, covenant location, argument, and whole-Bible witness. Notice repeated words, quotations, contrasts, and narrative movement. Distinguish what the passage explicitly teaches from inference and modern application. Difficult texts deserve honesty rather than defensiveness or simplistic transfer.",
-      "teaching": [
-        {
-          "heading": "After Moses’ Death",
-          "body": "The book begins with grief and transition. Joshua is called to lead, but he does not replace Moses by pretending loss did not matter. Healthy transitions honor the past while accepting a new assignment."
-        },
-        {
-          "heading": "Promise and Responsibility",
-          "body": "God promises the land and commands Joshua to act. Faith neither waits passively nor claims that effort controls God. Preparation and obedience respond to grace."
-        },
-        {
-          "heading": "Courage Is Not Aggression",
-          "body": "Strength and courage mean steadfast obedience to God’s instruction. Biblical courage is not volume, bravado, cruelty, or refusal to seek counsel."
-        },
-        {
-          "heading": "Meditate Day and Night",
-          "body": "Joshua is told to keep the law on his lips and practice it. Meditation shapes imagination and decisions. Success here means faithful completion of God’s commission, not guaranteed wealth or ease."
-        },
-        {
-          "heading": "God’s Presence",
-          "body": "The promise “I am with you” anchors courage. It does not guarantee immunity from grief or hardship. Presence assures Joshua he does not lead alone."
-        },
-        {
-          "heading": "Shared Commitments",
-          "body": "The eastern tribes must help their relatives enter rest before returning home. Community responsibility resists private comfort that ignores another group’s unfinished burden."
-        }
+      "number":1,
+      "title":"Be Strong and Courageous",
+      "scripture":"Joshua 1:1–18",
+      "supporting":["Deuteronomy 31:1–8","Psalm 1:1–3","Hebrews 4:8–11","Matthew 28:18–20"],
+      "question":"What kind of courage grows from God’s presence and instruction, and how does it serve a whole community rather than magnify a leader?",
+      "truth":"God’s promise and presence call Joshua to Scripture-shaped obedience, careful preparation, and shared responsibility; biblical courage is faithful steadiness, not aggression or self-confidence.",
+      "goal":"Read Joshua’s commission within the transition from Moses, clarify the land promise’s unique covenant setting, examine the repeated call to courage, and practice accountable leadership without turning conquest into a modern mandate.",
+      "openingParagraphs":["Notice every source of Joshua’s courage in the passage. Name from the beginning that Joshua includes warfare and dispossession, and refuse to identify modern peoples or opponents as Canaanites."],
+      "contextParagraphs":["Moses has died east of the Jordan, and Joshua must lead Israel into Canaan. In the Jewish canon Joshua begins the Former Prophets, interpreting Israel’s life in the land under covenant.","The book joins divine gift with human action: God gives, while Israel must rise, cross, prepare, obey, and share responsibility. The displacement and death of Canaanites remain morally difficult and should not be hidden."],
+      "teaching":[
+        {"heading":"Leadership Begins Under the Reality of Death","paragraphs":["God says plainly, “Moses my servant is dead.” Joshua’s commission begins in grief. He is not called to erase Moses or imitate his personality; the mission belongs to God." ]},
+        {"heading":"The Land Is Gift Within a Particular Covenant Story","paragraphs":["Joshua’s boundaries echo ancestral promises. Deuteronomy explicitly denies that Israel receives the land because of superior righteousness. These borders cannot be appropriated by churches or modern states to justify seizure." ]},
+        {"heading":"Courage Means Faithful Obedience","paragraphs":["“Strong and courageous” is repeatedly tied to careful obedience. Volume, domination, denial of fear, and refusal of counsel are not biblical strength." ]},
+        {"heading":"Meditation Shapes Wise Action","paragraphs":["The Torah remains on Joshua’s lips day and night. “Prosperity” and “success” concern faithful completion of this covenant task, not guarantees of wealth, health, promotion, or ease." ]},
+        {"heading":"Presence Does Not Make a Leader Untestable","paragraphs":["“As I was with Moses, so I will be with you” grounds confidence in God, not Joshua’s personality. Claiming divine presence never exempts leaders from Scripture, communal duties, or accountability." ]},
+        {"heading":"Promise Includes Planning and Shared Burdens","paragraphs":["Joshua delegates provision and preparation. Reuben, Gad, and half-Manasseh must help the other tribes receive rest rather than enjoy settled security while others carry unfinished risk. Human loyalty to Joshua remains subordinate to God." ]}
       ],
-      "questions": [
-        "What part of the passage is most difficult or important to understand?",
-        "What does this text reveal about God’s character, promise, or gospel?",
-        "What human pride, fear, injustice, or false security does it confront?",
-        "Which interpretive distinction protects this passage from misuse?",
-        "How could this truth bring hope without minimizing pain or responsibility?",
-        "Where is God calling for repentance, courage, humility, or mercy?",
-        "What specific practice can embody this lesson this week?",
-        "How can the group support faithfulness without pressure, superiority, or fear?"
-      ],
-      "examination": "Come honestly before God. Where am I tempted by self-righteousness, fear, control, nationalism, contempt, compromise, or confidence in status? What gift of grace must I receive? What loyalty, habit, relationship, or use of influence needs repentance, courage, mercy, or a wiser boundary?",
-      "challenge": "Choose one concrete practice: reread the passage on three days; write a prayer of confession or gratitude; learn from a trusted perspective; examine one political, ethnic, or religious assumption; welcome someone across a difference; repair a truthful conversation; or serve without recognition. Keep it safe, specific, and measurable.",
-      "caution": "Do not use conquest, divine sovereignty, judgment, authority, election, submission, conscience, forgiveness, or unity to justify violence, nationalism, racism, antisemitism, fatalism, abuse, or silencing. Never identify modern opponents as Canaanites. Where danger, exploitation, severe distress, or criminal conduct is present, prioritize safety, qualified care, fair process, and applicable reporting responsibilities.",
-      "prayer": "Covenant-keeping and merciful God, God’s presence and Word enable courageous obedience that serves the community rather than glorifying the leader. Remove our boasting, deepen our courage, and form Christ in us. Teach us to remember Your grace, love our neighbors, resist evil without becoming evil, and live together in the hope of Your kingdom. Amen."
+      "jesusParagraphs":["Joshua and Jesus share the Hebrew name Yeshua, but that does not make every conquest detail a prediction. Hebrews 4 says Joshua did not provide final rest.","The risen Jesus promises his presence while sending disciples through teaching, baptism, witness, service, and enemy love rather than territorial conquest."],
+      "guardrailParagraphs":["“Be strong and courageous” is defined by obedience, not bravado.","“Prosper and succeed” is not a prosperity-gospel promise.","God’s presence never makes a leader unaccountable.","Israel’s land commission is unique and nontransferable."],
+      "questions":["What continuity and difference do the titles for Moses and Joshua establish?","Which actions belong to God, Joshua, and the people in 1:2–6?","What surrounds each command to be strong and courageous?","How does 1:7–8 define meditation and success?","Why is planning compatible with dependence on God?","What does shared rest require of the eastern tribes?","What keeps loyalty to Joshua from becoming absolute?"],
+      "examination":"Is my courage shaped by Scripture and service or by urgency, image, and control? Where am I enjoying rest while others carry a burden I promised to share? Do I treat any leader, including myself, as necessary to God’s mission?",
+      "challenge":"Read Joshua 1:1–9 aloud on three days, marking promise, command, and purpose. Choose one delayed responsibility, test it by Scripture and wise counsel, and complete one preparation that serves others rather than your reputation.",
+      "caution":"Leadership transition can surface grief, coercion, betrayal, or fear. Do not equate hesitation with faithlessness or use courage to excuse aggression, secrecy, bypassing consent, or process. Keep conquest’s nontransferability explicit.",
+      "prayer":"Faithful God, meet us in grief and transition. Make us strong in obedience, courageous in service, careful with power, and attentive to your word. Keep us from boasting and violence, and lead us into the deeper rest and faithful mission of Jesus. Amen."
     },
     {
-      "number": 2,
-      "title": "Rahab’s Courageous Faith",
-      "scripture": "Joshua 2:1–24; Hebrews 11:31; James 2:25",
-      "supporting": [],
-      "question": "How does Rahab’s faith challenge assumptions about outsiders, courage, and belonging?",
-      "truth": "God welcomes courageous faith from unexpected people and incorporates outsiders into His covenant story.",
-      "goal": "To honor Rahab’s agency and faith, reject stereotypes, and consider the risks and wisdom involved in protecting life under oppressive power.",
-      "opening": "Begin with prayer for humility, courage, and careful listening. Read the main passage aloud and allow silence before interpretation. Invite observations first. Participants may pass on any question, and no one should be pressured to disclose trauma, conflict, doubt, or private circumstances. The goal is faithful formation under Scripture.",
-      "context": "Read within the book’s historical setting, literary form, covenant location, argument, and whole-Bible witness. Notice repeated words, quotations, contrasts, and narrative movement. Distinguish what the passage explicitly teaches from inference and modern application. Difficult texts deserve honesty rather than defensiveness or simplistic transfer.",
-      "teaching": [
-        {
-          "heading": "Rahab Speaks for Herself",
-          "body": "Rahab is not merely a background figure. She assesses events, negotiates protection, acts decisively, and confesses Israel’s God. Teaching should not reduce her to a label or use her past to shame her."
-        },
-        {
-          "heading": "Faith Based on God’s Acts",
-          "body": "She has heard of the exodus and victories and concludes that the Lord is God above and below. Her faith moves from hearing to allegiance and costly action."
-        },
-        {
-          "heading": "Risk and Protection",
-          "body": "Rahab hides the spies and seeks safety for her household. The narrative occurs in wartime and should not become a simplistic rule about deception. Ethical reflection must consider truth, protection of life, coercive power, and context."
-        },
-        {
-          "heading": "A Scarlet Sign",
-          "body": "The cord marks the household for rescue and requires clear coordination. Deliverance includes concrete instructions and community responsibility, not vague optimism."
-        },
-        {
-          "heading": "An Outsider Brought Near",
-          "body": "Rahab’s later biblical witness places her among the faithful and within Messiah’s genealogy. Her inclusion confronts ethnic pride and the assumption that a person’s social history fixes their future."
-        },
-        {
-          "heading": "Do Not Exploit Her Story",
-          "body": "Rahab’s account must not be used to romanticize sexual exploitation or pressure vulnerable people to prove faith through danger. Faith communities should protect dignity, agency, and safety."
-        }
+      "number":2,
+      "title":"Rahab’s Courageous Faith",
+      "scripture":"Joshua 2:1–24",
+      "supporting":["Hebrews 11:31","James 2:25","Matthew 1:5","Deuteronomy 4:39"],
+      "question":"How does Rahab’s informed, risky allegiance to Israel’s God challenge assumptions about outsiders, moral courage, and belonging?",
+      "truth":"Rahab hears what God has done, confesses the Lord’s sovereignty, protects life, negotiates for her household, and is received among Israel; covenant faith is not secured by ethnicity or social reputation.",
+      "goal":"Read Rahab as an active theological voice rather than a stereotype, distinguish narration from explicit commendation, discuss her deception without false certainty, and protect vulnerable people from exploitative applications of her risk.",
+      "openingParagraphs":["List Rahab’s actions and words before assigning motives. The passage involves sex-work stigma, wartime danger, deception, and threatened mass violence; no participant should be pressed to disclose sexual history, exploitation, immigration status, or experience hiding from authorities."],
+      "contextParagraphs":["Rahab is identified by the Hebrew zonah, ordinarily meaning prostitute. Later attempts to make her only an innkeeper should not sanitize the biblical term, but neither should the label be used to shame her.","The military story pauses for the testimony of a Canaanite woman who hides the spies, manages officials, directs the escape, and negotiates an oath while Jericho faces destruction."],
+      "teaching":[
+        {"heading":"Rahab Becomes the Story’s Clear Theologian","paragraphs":["She interprets the exodus and eastern victories and confesses that the LORD is God in heaven above and earth beneath. A marginalized outsider voices Israel’s own theology." ]},
+        {"heading":"Hearing Becomes Costly Allegiance","paragraphs":["Jericho hears the same reports, but Rahab acts on them. Faith is recognition joined to risky action, not information or emotion alone." ]},
+        {"heading":"Rahab’s Lie Raises a Real Ethical Dispute","paragraphs":["The narrative reports her deception, while Hebrews and James praise her faith and reception of the messengers. Interpreters differ over whether deception of violent power may protect life or whether God honored faith despite a wrong means. Joshua does not settle that debate as neatly as later arguments sometimes claim.","The story never gives institutions permission to lie for self-protection; Rahab risks herself to protect others." ]},
+        {"heading":"She Negotiates Protection Rather Than Waiting Passively","paragraphs":["Rahab appeals to hesed, covenant kindness, and names family members she wants protected. The oath creates responsibilities on both sides." ]},
+        {"heading":"The Scarlet Cord Identifies; It Is Not Explained as Blood Symbolism","paragraphs":["The cord marks the protected household. Connections to Passover or Christ’s blood are later typology, not the explicit explanation of Joshua." ]},
+        {"heading":"Rescue Requires Coordinated Follow-Through","paragraphs":["The spies must remember the oath, the army must honor the sign, and the household must gather. In Joshua 6 the promise becomes material protection. Rahab’s inclusion undermines ethnic boasting while Achan’s later sin undermines insider presumption." ]}
       ],
-      "questions": [
-        "What part of the passage is most difficult or important to understand?",
-        "What does this text reveal about God’s character, promise, or gospel?",
-        "What human pride, fear, injustice, or false security does it confront?",
-        "Which interpretive distinction protects this passage from misuse?",
-        "How could this truth bring hope without minimizing pain or responsibility?",
-        "Where is God calling for repentance, courage, humility, or mercy?",
-        "What specific practice can embody this lesson this week?",
-        "How can the group support faithfulness without pressure, superiority, or fear?"
-      ],
-      "examination": "Come honestly before God. Where am I tempted by self-righteousness, fear, control, nationalism, contempt, compromise, or confidence in status? What gift of grace must I receive? What loyalty, habit, relationship, or use of influence needs repentance, courage, mercy, or a wiser boundary?",
-      "challenge": "Choose one concrete practice: reread the passage on three days; write a prayer of confession or gratitude; learn from a trusted perspective; examine one political, ethnic, or religious assumption; welcome someone across a difference; repair a truthful conversation; or serve without recognition. Keep it safe, specific, and measurable.",
-      "caution": "Do not use conquest, divine sovereignty, judgment, authority, election, submission, conscience, forgiveness, or unity to justify violence, nationalism, racism, antisemitism, fatalism, abuse, or silencing. Never identify modern opponents as Canaanites. Where danger, exploitation, severe distress, or criminal conduct is present, prioritize safety, qualified care, fair process, and applicable reporting responsibilities.",
-      "prayer": "Covenant-keeping and merciful God, God welcomes courageous faith from unexpected people and incorporates outsiders into His covenant story. Remove our boasting, deepen our courage, and form Christ in us. Teach us to remember Your grace, love our neighbors, resist evil without becoming evil, and live together in the hope of Your kingdom. Amen."
+      "jesusParagraphs":["Matthew’s genealogy traditionally identifies Rahab within Jesus’ family line and places Gentile-associated and socially stigmatized stories inside the Messiah’s ancestry.","Jesus welcomes stigmatized people without romanticizing exploitation and makes faith rather than inherited status decisive."],
+      "guardrailParagraphs":["Do not reduce Rahab to “the prostitute” or imply exploitation prepared her for divine use.","Do not claim the text clearly praises every element of her deception.","The scarlet cord’s explicit function is identification.","Do not pressure vulnerable people to take danger upon themselves; those with power should organize protection."],
+      "questions":["What actions show Rahab’s agency?","What does she hear and conclude about God?","Which aspects of her deception are narrated and which actions do later texts explicitly praise?","What protection does she negotiate?","What responsibilities belong to each party in the oath?","What does the cord explicitly do?","How does Rahab’s confession echo Israel’s own theology?"],
+      "examination":"Whose testimony do I discount because of occupation, ethnicity, gender, poverty, or reputation? When safety and ordinary truth-telling appear to conflict under coercive power, do I reason carefully or judge quickly? What promise of protection requires my concrete follow-through?",
+      "challenge":"Read Joshua 2 twice, marking Rahab’s and the spies’ speech separately. Learn from one reputable ministry serving people vulnerable to trafficking, sexual exploitation, or migration danger, and support its recommended safeguarding work without requesting anyone’s story.",
+      "caution":"Avoid jokes, euphemisms, or speculation about Rahab’s sexual history. Distinguish protecting life under coercion from covering institutional wrongdoing. If exploitation or danger is disclosed, use safeguarding and reporting processes and specialized trauma-informed help.",
+      "prayer":"God of heaven and earth, deliver us from pride that dismisses unexpected witnesses. Give us Rahab’s attentiveness and courage, wisdom in morally dangerous situations, and integrity to keep promises of protection. Through Jesus, welcome outsiders and make your people a community of safety and faithful action. Amen."
     },
     {
-      "number": 3,
-      "title": "Crossing and Remembering",
-      "scripture": "Joshua 3:1–5:15; Psalm 114; 1 Peter 2:4–10",
-      "supporting": [],
-      "question": "Why do God’s people need preparation, memorials, covenant identity, and holy attention during transition?",
-      "truth": "The holy God makes a way forward and calls His people to remember grace, renew covenant identity, and follow His presence.",
-      "goal": "To develop practices of remembrance and preparation while resisting leader-centered storytelling and triumphalism.",
-      "opening": "Begin with prayer for humility, courage, and careful listening. Read the main passage aloud and allow silence before interpretation. Invite observations first. Participants may pass on any question, and no one should be pressured to disclose trauma, conflict, doubt, or private circumstances. The goal is faithful formation under Scripture.",
-      "context": "Read within the book’s historical setting, literary form, covenant location, argument, and whole-Bible witness. Notice repeated words, quotations, contrasts, and narrative movement. Distinguish what the passage explicitly teaches from inference and modern application. Difficult texts deserve honesty rather than defensiveness or simplistic transfer.",
-      "teaching": [
-        {
-          "heading": "Follow God’s Presence",
-          "body": "The ark goes before the people into an unfamiliar path. Joshua leads by following. Spiritual leaders do not manufacture God’s presence or make themselves its substitute."
-        },
-        {
-          "heading": "Consecrate Yourselves",
-          "body": "Preparation acknowledges the holiness of what God is doing. Consecration is not earning a miracle; it is setting attention and life toward God."
-        },
-        {
-          "heading": "Priests Stand in the River",
-          "body": "The waters stop as the priests step in and remain until the crossing is complete. Courage serves the community and stays until vulnerable people have crossed."
-        },
-        {
-          "heading": "Twelve Stones",
-          "body": "Representatives gather stones so future children can ask what happened. Healthy memory tells what God did, includes the whole people, and does not erase struggle or create a heroic myth around one leader."
-        },
-        {
-          "heading": "Covenant Renewal",
-          "body": "Circumcision and Passover reconnect the new generation with covenant identity and deliverance. These embodied signs belong to Israel’s covenant story and should not be copied as coercive practices."
-        },
-        {
-          "heading": "Commander of the Lord’s Army",
-          "body": "Joshua asks whether the figure is for Israel or its enemies and receives a challenge to holiness. God is not a mascot for our side. Joshua must submit before he commands."
-        }
+      "number":3,
+      "title":"Crossing and Remembering",
+      "scripture":"Joshua 3:1–5:15",
+      "supporting":["Psalm 114","Exodus 14","1 Peter 2:4–10","Hebrews 4:8–11"],
+      "question":"How do God’s presence, communal memory, renewed covenant identity, and holy submission prepare Israel to cross a threshold without making the nation or its leader the hero?",
+      "truth":"The living God leads Israel through the Jordan, gives the whole people a truthful memorial, renews neglected covenant signs, and reminds Joshua that even Israel’s commander stands on holy ground.",
+      "goal":"Read the Jordan as an echo of exodus, examine the memorial stones, handle circumcision without coercive application, and let the commander scene humble every attempt to recruit God as a mascot.",
+      "openingParagraphs":["Watch for presence, preparation, memory, and submission. Circumcision and conquest will be discussed without asking anyone to disclose medical history, bodily trauma, or religious coercion."],
+      "contextParagraphs":["Israel moves from Shittim to the overflowing Jordan opposite Jericho. The ark carried by priests represents the Lord’s presence and leads the people in an event that echoes the Red Sea.","Chapters 3–5 form a preparation sequence: cross, remember, circumcise, celebrate Passover, eat the land’s produce, and encounter the commander. Israel does not begin by attacking; its leader first learns to worship."],
+      "teaching":[
+        {"heading":"The Ark Leads; Joshua Follows","paragraphs":["Consecration prepares response but does not earn the wonder. Leaders do not manufacture divine presence or substitute themselves for it." ]},
+        {"heading":"Joshua Is Established for Service","paragraphs":["God’s public validation makes Joshua trustworthy for the task, not celebrity or immune from correction. Joshua directs attention to the living God and the Lord of all the earth." ]},
+        {"heading":"The Priests Remain Until Everyone Crosses","paragraphs":["The priests stand in the riverbed until the whole nation crosses. Courage serves communal passage rather than displaying individual heroism." ]},
+        {"heading":"Twelve Stones Make Memory Public","paragraphs":["Each tribe carries a stone so later children can ask what happened. The memorial centers God’s action and includes the whole people. Joshua 4:9 may describe a second set of stones or another aspect of the same memorial; the exact arrangement is debated." ]},
+        {"heading":"Circumcision Renews a Neglected Covenant Sign","paragraphs":["The wilderness-born males receive the Abrahamic sign and then recover before further movement. “The reproach of Egypt” is interpreted in several ways. The scene cannot justify forced procedures, humiliating inspection, or overriding bodily consent." ]},
+        {"heading":"Passover and Produce Mark New Provision","paragraphs":["Israel remembers liberation, eats the land’s produce, and manna ceases. Ordinary provision is not divine absence." ]},
+        {"heading":"The Commander Refuses Partisan Ownership of God","paragraphs":["Joshua asks whether the armed figure is for Israel or its enemies; the reply is often rendered “No” or “Neither.” Whether angelic commander or divine manifestation is debated, but Joshua’s need to remove his sandals is clear: even the chosen leader submits on holy ground." ]}
       ],
-      "questions": [
-        "What part of the passage is most difficult or important to understand?",
-        "What does this text reveal about God’s character, promise, or gospel?",
-        "What human pride, fear, injustice, or false security does it confront?",
-        "Which interpretive distinction protects this passage from misuse?",
-        "How could this truth bring hope without minimizing pain or responsibility?",
-        "Where is God calling for repentance, courage, humility, or mercy?",
-        "What specific practice can embody this lesson this week?",
-        "How can the group support faithfulness without pressure, superiority, or fear?"
-      ],
-      "examination": "Come honestly before God. Where am I tempted by self-righteousness, fear, control, nationalism, contempt, compromise, or confidence in status? What gift of grace must I receive? What loyalty, habit, relationship, or use of influence needs repentance, courage, mercy, or a wiser boundary?",
-      "challenge": "Choose one concrete practice: reread the passage on three days; write a prayer of confession or gratitude; learn from a trusted perspective; examine one political, ethnic, or religious assumption; welcome someone across a difference; repair a truthful conversation; or serve without recognition. Keep it safe, specific, and measurable.",
-      "caution": "Do not use conquest, divine sovereignty, judgment, authority, election, submission, conscience, forgiveness, or unity to justify violence, nationalism, racism, antisemitism, fatalism, abuse, or silencing. Never identify modern opponents as Canaanites. Where danger, exploitation, severe distress, or criminal conduct is present, prioritize safety, qualified care, fair process, and applicable reporting responsibilities.",
-      "prayer": "Covenant-keeping and merciful God, The holy God makes a way forward and calls His people to remember grace, renew covenant identity, and follow His presence. Remove our boasting, deepen our courage, and form Christ in us. Teach us to remember Your grace, love our neighbors, resist evil without becoming evil, and live together in the hope of Your kingdom. Amen."
+      "jesusParagraphs":["Hebrews says Jesus leads into a rest beyond Joshua’s. First Peter’s living-stones image gives Christians a theology of communal witness without claiming Joshua’s twelve stones secretly predicted the church.","Jesus makes a holy people by grace and self-giving victory rather than coercion of bodies or territory."],
+      "guardrailParagraphs":["The ark, not Joshua, leads.","Consecration does not purchase miracles.","The memorial belongs to all twelve tribes.","Circumcision is an ancient covenant sign, not a model for bodily coercion.","God is not recruited to “our side”; even Joshua submits."],
+      "questions":["What does the ark’s movement teach about presence and leadership?","Why is Joshua established publicly?","What makes the crossing difficult and complete?","What is the memorial meant to teach children?","What continuity and difference exist between the Jordan and Red Sea crossings?","How do circumcision, healing, Passover, produce, and the end of manna connect?","What is explicit and uncertain about the stones and “reproach of Egypt”?","What partisan use of God does the commander scene confront?"],
+      "examination":"Do I follow God’s presence or ask God to validate a path already chosen? Does the story I preserve center grace rather than a leader? Where do I need to recognize ordinary provision instead of demanding spectacle?",
+      "challenge":"Read Joshua 3–5 in three sittings. Create one modest memorial—a written testimony, object, or shared meal—that answers: What did God do, who carried the burden, and what must not be forgotten?",
+      "caution":"Circumcision can evoke medical, sexual, cultural, or bodily trauma. Do not request disclosure or debate another person’s anatomy. Resist pressure for dramatic “Jordan moments,” honor slow healing and accessibility, and keep the coming conquest from becoming triumphal background music.",
+      "prayer":"Living God, go before us in unfamiliar places. Teach us to remember your grace truthfully, serve until others have crossed, honor bodies without coercion, and receive ordinary provision with gratitude. Keep us from making you a mascot, and bring us into the deeper rest of Jesus. Amen."
     },
     {
-      "number": 4,
-      "title": "Jericho, Achan, and Holy Accountability",
-      "scripture": "Joshua 6:1–7:26; Acts 5:1–11; 1 Corinthians 5:6–8",
-      "supporting": [],
-      "question": "What do Jericho and Achan teach about judgment, obedience, hidden sin, and communal consequences?",
-      "truth": "God’s holiness confronts entrenched evil and covenant betrayal, while His mercy preserves Rahab and calls His people to truthful accountability.",
-      "goal": "To face the chapter’s severity honestly, resist triumphalism, and practice fair, transparent accountability without copying ancient penalties.",
-      "opening": "Begin with prayer for humility, courage, and careful listening. Read the main passage aloud and allow silence before interpretation. Invite observations first. Participants may pass on any question, and no one should be pressured to disclose trauma, conflict, doubt, or private circumstances. The goal is faithful formation under Scripture.",
-      "context": "Read within the book’s historical setting, literary form, covenant location, argument, and whole-Bible witness. Notice repeated words, quotations, contrasts, and narrative movement. Distinguish what the passage explicitly teaches from inference and modern application. Difficult texts deserve honesty rather than defensiveness or simplistic transfer.",
-      "teaching": [
-        {
-          "heading": "Jericho Is God’s Judgment",
-          "body": "Israel follows unusual instructions that prevent military boasting. The narrative presents the city’s fall as divine judgment within a unique command. It is not a modern military strategy or authorization for religious violence."
-        },
-        {
-          "heading": "Rahab Is Rescued",
-          "body": "In the midst of judgment, the promise to Rahab is kept. Her household is brought out and she lives among Israel. Mercy and covenant fidelity remain visible."
-        },
-        {
-          "heading": "The Ban and Human Greed",
-          "body": "Devoted objects are not private spoils. Achan takes what was forbidden and hides it. Spiritual language can conceal ordinary greed, and private misconduct can damage public trust."
-        },
-        {
-          "heading": "Defeat Exposes Dependence",
-          "body": "Israel assumes forward momentum after Jericho, but Ai reveals that prior success does not guarantee present faithfulness. Organizations should not use yesterday’s victories to avoid current examination."
-        },
-        {
-          "heading": "Investigation and Confession",
-          "body": "The process narrows responsibility and Achan confesses. Modern accountability requires evidence, impartial procedure, protection against retaliation, and distinction between accusation and proof."
-        },
-        {
-          "heading": "Do Not Copy the Penalty",
-          "body": "The execution of Achan and his household belongs to ancient covenant judgment and must not be reproduced by the church. Christian discipline uses truth, removal from access when needed, lawful reporting, and hope of repentance, never violence."
-        }
+      "number":4,
+      "title":"Jericho, Achan, and Holy Accountability",
+      "scripture":"Joshua 6:1–7:26",
+      "supporting":["Deuteronomy 24:16","Acts 5:1–11","1 Corinthians 5:6–8"],
+      "question":"How can readers face the destruction of Jericho and the punishment of Achan’s household honestly while learning about covenant holiness, greed, communal harm, and accountable response?",
+      "truth":"Joshua presents Jericho as a unique act of covenant judgment and Achan’s theft as betrayal that harms the community; neither episode authorizes modern violence, collective punishment, or unaccountable religious discipline.",
+      "goal":"Refuse triumphal treatment of Jericho, examine the ban and Achan’s concealment closely, distinguish ancient covenant judgment from Christian discipline, and build safeguards that pursue evidence and responsibility without scapegoating families or victims.",
+      "openingParagraphs":["Give advance notice that the lesson includes mass killing and punishment of Achan, his children, animals, and property. Participants may pass. Read selectively and allow lament before explanation."],
+      "contextParagraphs":["Jericho is Israel’s first battle west of the Jordan and is placed under herem, an irrevocable ban. The narrative frames this as a specific divine command, not reusable warfare strategy.","Chapter 7 reverses the momentum: Achan secretly takes devoted property, Israel is defeated at Ai, and the offender is exposed. Rahab the outsider is preserved while Achan the insider violates covenant."],
+      "teaching":[
+        {"heading":"Jericho Leaves No Ground for Military Boasting","paragraphs":["The seven-day procession with priests, trumpets, and ark makes the fall a narrated act of God, not tactical genius. It is not a prayer formula for defeating opponents." ]},
+        {"heading":"Herem Is Severe and Must Not Be Softened","paragraphs":["Joshua says men, women, young, old, and animals were destroyed. Ancient totalizing battle rhetoric may help explain later surviving peoples, but it cannot make the violence unreal. Christians are never commissioned to place modern cities or peoples under such a ban." ]},
+        {"heading":"Rahab’s Rescue Makes the Oath Matter","paragraphs":["Israel must keep its promise to a vulnerable outsider. Her rescue challenges ethnic equations of insider and outsider without making Jericho’s destruction emotionally easy." ]},
+        {"heading":"Achan’s Greed Is Ordinary Sin Hidden in Sacred Language","paragraphs":["Achan says he saw, coveted, took, and hid. Sacred causes do not make financial secrecy harmless." ]},
+        {"heading":"Ai Shows Communal Consequence Without Licensing Scapegoating","paragraphs":["Israel’s defeat follows hidden misconduct, but the story does not teach that every organizational setback proves a secret sinner. God discloses a specific breach rather than authorizing blame-hunting." ]},
+        {"heading":"Evidence Is Verified; Ancient Procedure Is Not a Modern Model","paragraphs":["The selection process narrows to Achan, and messengers verify the buried goods. Modern accountability should value evidence but not use lots, compelled public confession, or leader certainty instead of competent investigation and due process." ]},
+        {"heading":"The Household Punishment Must Not Be Sanitized","paragraphs":["The text includes Achan’s sons and daughters but does not explicitly explain their culpability. Interpreters differ over corporate identity or possible complicity. Do not invent certainty. Deuteronomy 24:16 explicitly rejects executing children for a parent’s crime, and Christian communities must not punish relatives for another’s misconduct." ]}
       ],
-      "questions": [
-        "What part of the passage is most difficult or important to understand?",
-        "What does this text reveal about God’s character, promise, or gospel?",
-        "What human pride, fear, injustice, or false security does it confront?",
-        "Which interpretive distinction protects this passage from misuse?",
-        "How could this truth bring hope without minimizing pain or responsibility?",
-        "Where is God calling for repentance, courage, humility, or mercy?",
-        "What specific practice can embody this lesson this week?",
-        "How can the group support faithfulness without pressure, superiority, or fear?"
-      ],
-      "examination": "Come honestly before God. Where am I tempted by self-righteousness, fear, control, nationalism, contempt, compromise, or confidence in status? What gift of grace must I receive? What loyalty, habit, relationship, or use of influence needs repentance, courage, mercy, or a wiser boundary?",
-      "challenge": "Choose one concrete practice: reread the passage on three days; write a prayer of confession or gratitude; learn from a trusted perspective; examine one political, ethnic, or religious assumption; welcome someone across a difference; repair a truthful conversation; or serve without recognition. Keep it safe, specific, and measurable.",
-      "caution": "Do not use conquest, divine sovereignty, judgment, authority, election, submission, conscience, forgiveness, or unity to justify violence, nationalism, racism, antisemitism, fatalism, abuse, or silencing. Never identify modern opponents as Canaanites. Where danger, exploitation, severe distress, or criminal conduct is present, prioritize safety, qualified care, fair process, and applicable reporting responsibilities.",
-      "prayer": "Covenant-keeping and merciful God, God’s holiness confronts entrenched evil and covenant betrayal, while His mercy preserves Rahab and calls His people to truthful accountability. Remove our boasting, deepen our courage, and form Christ in us. Teach us to remember Your grace, love our neighbors, resist evil without becoming evil, and live together in the hope of Your kingdom. Amen."
+      "jesusParagraphs":["Acts 5 and 1 Corinthians 5 show that concealed corruption can threaten a community, but they do not authorize reproducing Joshua’s penalties.","Jesus bears judgment and calls the church to truthful confession, restorative discipline where possible, protection of those harmed, and submission to lawful authority."],
+      "guardrailParagraphs":["Jericho is not a model for culture war, colonization, or political violence.","Ancient conquest rhetoric does not make death unreal.","Do not infer hidden sinners behind every failure.","Do not manufacture certainty about Achan’s children or punish relatives.","Confession follows identified wrongdoing and evidence, not rumor or institutional pressure."],
+      "questions":["How does Jericho’s procession direct attention away from military skill?","What does the ban preserve and destroy, and what makes the passage morally difficult?","How is the promise to Rahab fulfilled?","What sequence does Achan confess?","What reversal occurs between Jericho’s fear and Israel’s fear at Ai?","What evidence is recovered?","What does the text explicitly say and leave unexplained about Achan’s household?"],
+      "examination":"What desire am I tempted to hide beneath spiritual language or organizational success? Do I seek scapegoats when things fail or ask for evidence and examine systems? Whose safety and livelihood could be affected by my private choices?",
+      "challenge":"Read Joshua 7 and map action, consequence, disclosure, evidence, and judgment. Review one financial or safeguarding practice and verify that reporting routes, independent review, documentation, and protection from retaliation are clear.",
+      "caution":"Do not invite public confession of crimes or identify suspected “Achans.” If abuse, theft, or danger is disclosed, preserve safety and evidence, use independent investigation and reporting duties, protect families from guilt by association, and allow lament over the unresolved moral tension.",
+      "prayer":"Holy and merciful God, keep us from triumphalism, greed, concealment, and scapegoating. Give us courage to tell the truth, verify claims fairly, protect those endangered by wrongdoing, and refuse violence in your name. Form us under the judgment-bearing mercy of Jesus. Amen."
     },
     {
-      "number": 5,
-      "title": "Covenant, Deception, and Faithful Discernment",
-      "scripture": "Joshua 8:1–9:27; Deuteronomy 27:1–26; James 1:5",
-      "supporting": [],
-      "question": "How do worship, Scripture, consultation, and covenant integrity protect people from careless decisions?",
-      "truth": "Faithful discernment remembers God’s Word, seeks His counsel, examines claims carefully, and honors commitments without ignoring justice.",
-      "goal": "To learn from Israel’s restored worship and the Gibeonite deception while developing careful, accountable decision processes.",
-      "opening": "Begin with prayer for humility, courage, and careful listening. Read the main passage aloud and allow silence before interpretation. Invite observations first. Participants may pass on any question, and no one should be pressured to disclose trauma, conflict, doubt, or private circumstances. The goal is faithful formation under Scripture.",
-      "context": "Read within the book’s historical setting, literary form, covenant location, argument, and whole-Bible witness. Notice repeated words, quotations, contrasts, and narrative movement. Distinguish what the passage explicitly teaches from inference and modern application. Difficult texts deserve honesty rather than defensiveness or simplistic transfer.",
-      "teaching": [
-        {
-          "heading": "Restoration After Failure",
-          "body": "God leads Israel back to Ai with a new strategy. Failure is not always final. Restoration includes addressing wrongdoing, receiving fresh direction, and acting differently."
-        },
-        {
-          "heading": "An Altar and the Law",
-          "body": "Joshua builds an altar and reads blessing and curse to the whole assembly, including resident foreigners. Worship recenters victory under covenant responsibility."
-        },
-        {
-          "heading": "The Gibeonite Strategy",
-          "body": "The Gibeonites use worn supplies and a distant-country story to seek a treaty. Their fear is understandable, yet the account highlights deception and Israel’s vulnerability to appearances."
-        },
-        {
-          "heading": "They Did Not Ask Counsel",
-          "body": "Israel inspects evidence but fails to seek the Lord. Prayer is not a substitute for investigation; faithful discernment includes both spiritual dependence and careful verification."
-        },
-        {
-          "heading": "A Costly Oath",
-          "body": "The leaders preserve the treaty rather than use deception as excuse for slaughter. Integrity may require honoring commitments while correcting terms and protecting those affected."
-        },
-        {
-          "heading": "Discernment Without Suspicion",
-          "body": "The lesson is not to distrust every outsider. Wisdom asks good questions, checks conflicts of interest, involves accountable people, prays, and resists rushed decisions driven by image or urgency."
-        }
+      "number":5,
+      "title":"Covenant, Deception, and Faithful Discernment",
+      "scripture":"Joshua 8:1–9:27",
+      "supporting":["Deuteronomy 27:1–26","James 1:5","James 3:17"],
+      "question":"How do renewed obedience, public Scripture, careful inquiry, prayer, and covenant integrity guide Israel after failure and deception?",
+      "truth":"God restores Israel to its mission, places victory beneath the written covenant, and exposes the danger of decisions based on appearances without seeking divine counsel; integrity must still reckon with vulnerable people affected.",
+      "goal":"Compare Ai with Jericho, locate the Ebal ceremony in Deuteronomy, examine the Gibeonites and Israel’s oath without stereotyping outsiders, and form discernment that combines prayer, evidence, consultation, and humane follow-through.",
+      "openingParagraphs":["Watch what changes between Israel’s first and second approaches to Ai, then identify every decision-maker in chapter 9 and what information each possesses. Do not solicit stories of deception, immigration problems, or exploitative contracts."],
+      "contextParagraphs":["After Achor, God gives new instructions for Ai and permits spoil. The victory is followed by worship and public Torah reading at Ebal before the Gibeonite treaty.","Gibeon is nearby, but its envoys perform the appearance of a distant people. Israel’s leaders inspect evidence yet do not seek the Lord’s counsel before making an oath."],
+      "teaching":[
+        {"heading":"Restoration Requires New Direction, Not Denial","paragraphs":["God restores mission after judgment, but the earlier breach is not treated as irrelevant. Faithful restoration changes practice instead of merely restoring reputation." ]},
+        {"heading":"Strategy and Divine Gift Are Held Together","paragraphs":["Joshua uses an ambush while the narrator credits God. Human planning and divine gift coexist. The severe destruction of Ai remains part of the conquest story and is not a model for Christian plunder or violence." ]},
+        {"heading":"Victory Is Placed Beneath Public Scripture","paragraphs":["At Ebal, sacrifices, written Torah, blessing and curse, and public reading include women, children, elders, officers, and resident immigrants. Scripture belongs before the whole assembly. The Ebal/Gerizim textual history should be acknowledged in deeper study." ]},
+        {"heading":"Gibeon’s Deception Comes from Fear of Destruction","paragraphs":["The worn sacks, wineskins, sandals, clothing, and bread create a convincing story. The envoys deceive, but their fear for survival must not be ignored or turned into a stereotype of outsiders." ]},
+        {"heading":"Evidence Without Prayer Is Incomplete; Prayer Without Evidence Is Also Incomplete","paragraphs":["Israel’s leaders inspect provisions but do not ask the Lord. Faithful discernment needs truthful questions, multiple perspectives, time, prayer, and accountable authority. Prayer is not a substitute for due diligence." ]},
+        {"heading":"The Oath Creates Real Obligations","paragraphs":["When the deception is discovered, leaders preserve the Gibeonites because of their oath. A mistaken decision creates consequences, and Israel later bears risk to defend Gibeon." ]},
+        {"heading":"Preservation Does Not Erase Exploitation","paragraphs":["The Gibeonites are spared but assigned perpetual labor. Survival and incorporation coexist with coercive inequality. The story cannot justify slavery, caste, forced labor, or indefinite exploitation because someone deceived." ]}
       ],
-      "questions": [
-        "What part of the passage is most difficult or important to understand?",
-        "What does this text reveal about God’s character, promise, or gospel?",
-        "What human pride, fear, injustice, or false security does it confront?",
-        "Which interpretive distinction protects this passage from misuse?",
-        "How could this truth bring hope without minimizing pain or responsibility?",
-        "Where is God calling for repentance, courage, humility, or mercy?",
-        "What specific practice can embody this lesson this week?",
-        "How can the group support faithfulness without pressure, superiority, or fear?"
-      ],
-      "examination": "Come honestly before God. Where am I tempted by self-righteousness, fear, control, nationalism, contempt, compromise, or confidence in status? What gift of grace must I receive? What loyalty, habit, relationship, or use of influence needs repentance, courage, mercy, or a wiser boundary?",
-      "challenge": "Choose one concrete practice: reread the passage on three days; write a prayer of confession or gratitude; learn from a trusted perspective; examine one political, ethnic, or religious assumption; welcome someone across a difference; repair a truthful conversation; or serve without recognition. Keep it safe, specific, and measurable.",
-      "caution": "Do not use conquest, divine sovereignty, judgment, authority, election, submission, conscience, forgiveness, or unity to justify violence, nationalism, racism, antisemitism, fatalism, abuse, or silencing. Never identify modern opponents as Canaanites. Where danger, exploitation, severe distress, or criminal conduct is present, prioritize safety, qualified care, fair process, and applicable reporting responsibilities.",
-      "prayer": "Covenant-keeping and merciful God, Faithful discernment remembers God’s Word, seeks His counsel, examines claims carefully, and honors commitments without ignoring justice. Remove our boasting, deepen our courage, and form Christ in us. Teach us to remember Your grace, love our neighbors, resist evil without becoming evil, and live together in the hope of Your kingdom. Amen."
+      "jesusParagraphs":["Jesus teaches truthful speech and covenant integrity. James says God gives wisdom and describes wisdom from above as peaceable, gentle, open to reason, and impartial.","Christian discernment therefore joins prayer with evidence and seeks truth, mercy, and protection rather than domination."],
+      "guardrailParagraphs":["Restored success does not erase prior breach.","Public Scripture includes resident immigrants.","The Gibeonites deceive, but Israel’s leaders also fail.","Do not use the story to justify forced labor or suspicion of outsiders.","“They did not ask counsel” does not mean prayer should replace due diligence."],
+      "questions":["What changes between Ai and Jericho?","How does Joshua 8 hold strategy and divine gift together?","Who hears the law at Ebal?","What evidence do the Gibeonites manufacture?","What do Israel’s leaders do and fail to do?","Why is the oath preserved?","What protection and exploitation coexist in the Gibeonites’ status?","How do Rahab, Achan, and the Gibeonites resist insider-good, outsider-bad readings?"],
+      "examination":"Do I use prayer language without checking facts, or data without seeking God and wise counsel? Have I treated another person’s deception as permission for indefinite exploitation? Which commitment now requires truthful renegotiation, protection, or restitution?",
+      "challenge":"Use one pending decision for a four-part review: verify facts, pray, consult affected or independently accountable people, and record the obligations the decision creates. Do not rush because of appearance, urgency, or pressure.",
+      "caution":"Do not encourage impulsive breaking of contracts or relationships; coercive situations may require legal or safeguarding counsel. Never use Gibeonite labor to defend slavery or punish immigrants. Include vulnerable people’s safety and voice in decisions that affect them.",
+      "prayer":"God of wisdom and covenant truth, restore us after failure without letting us hide it. Teach us to examine evidence, seek your counsel, listen widely, keep integrity, and protect those affected by our decisions. Make us truthful, peaceable, and merciful through Jesus. Amen."
     },
     {
-      "number": 6,
-      "title": "The Lord Fights for Israel",
-      "scripture": "Joshua 10:1–12:24; Deuteronomy 9:4–6; Ephesians 6:10–18",
-      "supporting": [],
-      "question": "How can we read accounts of divine warfare without turning them into permission for modern violence or superiority?",
-      "truth": "Joshua presents God judging Canaanite kingdoms and fulfilling a specific covenant promise, not granting later believers a transferable mandate for conquest.",
-      "goal": "To interpret the battles within their unique setting, reject self-righteous nationalism, and follow Jesus through spiritual courage and enemy love.",
-      "opening": "Begin with prayer for humility, courage, and careful listening. Read the main passage aloud and allow silence before interpretation. Invite observations first. Participants may pass on any question, and no one should be pressured to disclose trauma, conflict, doubt, or private circumstances. The goal is faithful formation under Scripture.",
-      "context": "Read within the book’s historical setting, literary form, covenant location, argument, and whole-Bible witness. Notice repeated words, quotations, contrasts, and narrative movement. Distinguish what the passage explicitly teaches from inference and modern application. Difficult texts deserve honesty rather than defensiveness or simplistic transfer.",
-      "teaching": [
-        {
-          "heading": "Coalitions and Fear",
-          "body": "Canaanite kings organize against Gibeon after its treaty with Israel. Political alliances, fear, and warfare shape the narrative. The text describes a severe ancient conflict, not a timeless ideal."
-        },
-        {
-          "heading": "God Gives Victory",
-          "body": "Joshua acts, yet the narrative repeatedly credits the Lord. Deuteronomy explicitly denies that Israel receives land because of its own righteousness. Grace leaves no room for ethnic superiority."
-        },
-        {
-          "heading": "The Long Day",
-          "body": "The extraordinary account emphasizes God’s intervention. Interpretations of its physical description differ. The theological center is God’s sovereign aid, not a method for demanding signs."
-        },
-        {
-          "heading": "Judgment Is Not Personal Revenge",
-          "body": "Joshua acts under a specific divine commission. Individuals and churches cannot declare opponents under the ban or use private certainty to bypass law, evidence, and Jesus’ commands."
-        },
-        {
-          "heading": "Ancient Battle Language",
-          "body": "Statements of total destruction appear alongside later references to surviving peoples. Ancient conquest rhetoric can summarize decisive victory. This observation does not erase the violence or eliminate the need for moral seriousness."
-        },
-        {
-          "heading": "Christian Warfare Is Spiritual",
-          "body": "The New Testament directs the church’s struggle toward spiritual evil with truth, righteousness, faith, salvation, Scripture, and prayer. People are neighbors to love and witnesses to serve, not Canaanites to destroy."
-        }
+      "number":6,
+      "title":"The Lord Fights for Israel",
+      "scripture":"Joshua 10:1–12:24",
+      "supporting":["Deuteronomy 9:4–6","Ephesians 6:10–18"],
+      "question":"How can Christians read Joshua’s sweeping warfare accounts honestly without turning divine judgment into ethnic superiority, private revenge, or a modern mandate for violence?",
+      "truth":"Joshua attributes Israel’s victories to the Lord within a unique covenant-land judgment, while Deuteronomy denies Israel’s moral superiority; the church’s enemies are not human peoples and its weapons are truth, righteousness, faith, prayer, and suffering witness.",
+      "goal":"Follow the southern and northern campaigns, explain ancient victory language and the debated long-day account, face executions and destruction without sanitizing them, and establish clear Christian guardrails against holy war and nationalist appropriation.",
+      "openingParagraphs":["This lesson contains extended battle scenes, mass death, execution, corpse display, and total-destruction language. Participants may pass or step out. Use representative readings and make room for grief and moral questions."],
+      "contextParagraphs":["Joshua 10–12 narrates southern and northern campaigns after Israel’s treaty with Gibeon and closes with a roster of defeated kings.","The chapters use stylized ancient warfare language. Later texts still name remaining peoples and land. Scholars differ over rhetoric, archaeology, memory, and historical sequence, but literary convention must not make violence imaginary."],
+      "teaching":[
+        {"heading":"Treaty Integrity Creates Responsibility","paragraphs":["The southern kings attack Gibeon because of its peace with Israel. Joshua answers because the oath created a protective obligation." ]},
+        {"heading":"The Narrator Gives Victory to God Without Granting Israel Superiority","paragraphs":["Joshua marches and fights, while the text credits God’s panic and hail. Deuteronomy 9 simultaneously denies that Israel’s righteousness earned the land." ]},
+        {"heading":"The Sun-and-Moon Account Has Several Responsible Readings","paragraphs":["The poem is cited from the lost Book of Jashar. Some read an extraordinary prolonging of daylight; others see poetic ceasing, silence, battle conditions, or defeat of celestial powers. The passage celebrates extraordinary divine aid but does not specify a modern astronomical mechanism with the precision sometimes claimed." ]},
+        {"heading":"The Five Kings’ Humiliation Is Severe and Nontransferable","paragraphs":["Neck-treading, execution, display, and burial communicate subjugation in the ancient setting. Christians cannot reenact this against political or personal opponents or call cruelty courage." ]},
+        {"heading":"Totalizing Victory Language Needs Literary Care","paragraphs":["“No survivors” formulas compress decisive victory, while later chapters acknowledge remaining peoples. This helps explain rhetoric but never makes deaths insignificant." ]},
+        {"heading":"Northern Military Power Is Dismantled","paragraphs":["Hazor’s coalition has horses and chariots; Israel hamstrings horses and burns chariots rather than building future security on captured elite military technology. The destruction remains morally disturbing and nontransferable." ]},
+        {"heading":"Hardening and Human Refusal Remain in Tension","paragraphs":["Joshua says God hardened hearts while also describing coalition-building and resistance. Scripture places sovereignty and human action together without fully explaining the relationship. Hardening must never become permission to declare modern peoples beyond mercy." ]}
       ],
-      "questions": [
-        "What part of the passage is most difficult or important to understand?",
-        "What does this text reveal about God’s character, promise, or gospel?",
-        "What human pride, fear, injustice, or false security does it confront?",
-        "Which interpretive distinction protects this passage from misuse?",
-        "How could this truth bring hope without minimizing pain or responsibility?",
-        "Where is God calling for repentance, courage, humility, or mercy?",
-        "What specific practice can embody this lesson this week?",
-        "How can the group support faithfulness without pressure, superiority, or fear?"
-      ],
-      "examination": "Come honestly before God. Where am I tempted by self-righteousness, fear, control, nationalism, contempt, compromise, or confidence in status? What gift of grace must I receive? What loyalty, habit, relationship, or use of influence needs repentance, courage, mercy, or a wiser boundary?",
-      "challenge": "Choose one concrete practice: reread the passage on three days; write a prayer of confession or gratitude; learn from a trusted perspective; examine one political, ethnic, or religious assumption; welcome someone across a difference; repair a truthful conversation; or serve without recognition. Keep it safe, specific, and measurable.",
-      "caution": "Do not use conquest, divine sovereignty, judgment, authority, election, submission, conscience, forgiveness, or unity to justify violence, nationalism, racism, antisemitism, fatalism, abuse, or silencing. Never identify modern opponents as Canaanites. Where danger, exploitation, severe distress, or criminal conduct is present, prioritize safety, qualified care, fair process, and applicable reporting responsibilities.",
-      "prayer": "Covenant-keeping and merciful God, Joshua presents God judging Canaanite kingdoms and fulfilling a specific covenant promise, not granting later believers a transferable mandate for conquest. Remove our boasting, deepen our courage, and form Christ in us. Teach us to remember Your grace, love our neighbors, resist evil without becoming evil, and live together in the hope of Your kingdom. Amen."
+      "jesusParagraphs":["Jesus refuses to advance God’s reign by the sword, commands love of enemies, and conquers through cross and resurrection.","Ephesians 6 explicitly says the church’s struggle is not against flesh and blood; its armor is truth, righteousness, gospel peace, faith, salvation, God’s word, and prayer."],
+      "guardrailParagraphs":["Joshua’s campaigns are never assigned to the church.","Deuteronomy denies Israel’s superiority.","The long-day passage allows more than one responsible reading.","Totalizing rhetoric may clarify literary claims without sanitizing death.","Divine hardening is not permission to declare modern groups beyond mercy."],
+      "questions":["Why must Israel defend Gibeon?","Which actions in 10:9–15 belong to Israel and which are attributed to God?","What makes the long-day passage poetic and disputed?","What does the five-kings scene communicate, and what modern uses must be rejected?","How does “no survivors” language relate to later remaining peoples?","What do horses and chariots represent?","Where should interpreters admit mystery about hardening?","How does Ephesians 6 redirect Christian battle language?"],
+      "examination":"Where do I turn political, cultural, or theological opponents into people to defeat rather than neighbors whose dignity remains? Do I interpret success as proof of my group’s righteousness? What evil must I resist with truth and courage while refusing hatred and revenge?",
+      "challenge":"Read Joshua 10:1–15, 11:1–9, and Ephesians 6:10–18. Rewrite one conflict sentence that labels a human group as the enemy; name the actual falsehood, injustice, fear, or system being resisted and choose one nonviolent action shaped by truth, peace, prayer, and neighbor love.",
+      "caution":"War and displacement may be personal for participants. Avoid battle celebration or graphic embellishment, never ask affected populations to defend their dignity, and stop direct mapping of current conflicts onto Joshua. Prioritize safety and trauma-informed support when present danger or trauma surfaces.",
+      "prayer":"God of justice and mercy, keep us from pride, cruelty, and holy-war imagination. Teach us to face violent texts honestly, resist evil with truth and courage, love human enemies, and trust the victory of Jesus rather than the weapons of domination. Amen."
     },
     {
-      "number": 7,
-      "title": "Inheritance, Refuge, and Shared Responsibility",
-      "scripture": "Joshua 13:1–22:34; Numbers 35:9–34; Galatians 6:1–5",
-      "supporting": [],
-      "question": "What do land distribution, cities of refuge, and tribal cooperation teach about justice and shared responsibility?",
-      "truth": "God’s gifts are stewarded through ordered responsibility, accessible justice, provision for ministry, and patient resolution of conflict.",
-      "goal": "To explore the quieter work after major battles and form communities committed to fair process, responsibility, and peace.",
-      "opening": "Begin with prayer for humility, courage, and careful listening. Read the main passage aloud and allow silence before interpretation. Invite observations first. Participants may pass on any question, and no one should be pressured to disclose trauma, conflict, doubt, or private circumstances. The goal is faithful formation under Scripture.",
-      "context": "Read within the book’s historical setting, literary form, covenant location, argument, and whole-Bible witness. Notice repeated words, quotations, contrasts, and narrative movement. Distinguish what the passage explicitly teaches from inference and modern application. Difficult texts deserve honesty rather than defensiveness or simplistic transfer.",
-      "teaching": [
-        {
-          "heading": "Much Land Remains",
-          "body": "Joshua is old and work remains unfinished. Faithful leadership acknowledges limits and prepares others rather than pretending one person must complete everything."
-        },
-        {
-          "heading": "Inheritance as Stewardship",
-          "body": "The land is allocated among tribes under God’s promise. Inheritance carries responsibility and boundaries. This text cannot validate modern seizure or deny the rights and dignity of present peoples."
-        },
-        {
-          "heading": "Caleb’s Enduring Faith",
-          "body": "Caleb asks for a difficult assignment after years of waiting. His courage honors God, but older believers should not be pressured to prove value through physical risk. Calling respects capacity."
-        },
-        {
-          "heading": "Provision for Levites",
-          "body": "The Levites receive towns and pasture rather than a tribal territory. Communities carry responsibility to support ministry, while ministry leaders remain accountable and must not exploit that support."
-        },
-        {
-          "heading": "Cities of Refuge",
-          "body": "Refuge cities distinguish accidental killing from murder and require hearing before judgment. They represent due process and protection from immediate vengeance, not escape from accountability."
-        },
-        {
-          "heading": "The Altar Dispute",
-          "body": "A structure near the Jordan nearly triggers war, but representatives investigate and listen before acting. Clarification prevents violence. Wise conflict resolution slows rumor, hears motives, and preserves shared identity."
-        }
+      "number":7,
+      "title":"Inheritance, Refuge, and Shared Responsibility",
+      "scripture":"Joshua 13:1–22:34",
+      "supporting":["Numbers 35:9–34","Galatians 6:1–5","Hebrews 4:8–11"],
+      "question":"What do unfinished land, tribal boundaries, women’s inheritance, refuge cities, Levitical towns, and the Jordan altar teach about stewardship, justice, and shared belonging?",
+      "truth":"God’s gift is administered through patient, imperfect communal work: boundaries matter, excluded voices must be heard, refuge requires due process, ministry receives provision, and threatened conflict must slow down long enough for truthful explanation.",
+      "goal":"Make the allotment section teachable without flattening geography, distinguish fulfillment from unfinished work, face forced labor and patriarchal arrangements honestly, and practice refuge and conflict resolution without transferring ancient land claims to modern politics.",
+      "openingParagraphs":["Imagine the land divided by rivers, ridges, towns, and tribal boundaries and ask why Scripture spends so much time on distribution after battle. Do not solicit property conflict, refugee status, inheritance disputes, or legal danger."],
+      "contextParagraphs":["Joshua 13 shifts from conquest to allotment, unresolved occupation, and communal institutions. Geography becomes theological because promise takes material form among tribes and households.","Joshua 21 says no good promise failed, while chapter 13 and many notices say much land remains. Decisive gift and incomplete occupation coexist in the book."],
+      "teaching":[
+        {"heading":"Much Land Remains and Joshua Is Old","paragraphs":["God names unfinished territory and Joshua’s age without treating either as faithlessness. Faithful leaders can acknowledge limits and distribute future responsibility without becoming disposable." ]},
+        {"heading":"Caleb’s Strength Is Testimony, Not an Ableist Standard","paragraphs":["At eighty-five Caleb remembers promise and asks for difficult terrain while depending on God. His physical strength must not become a standard by which older or disabled people prove faith." ]},
+        {"heading":"Women Exercise Agency Within an Unequal System","paragraphs":["Achsah’s marriage is arranged through patriarchal power, yet she strategically secures water for viable land. Zelophehad’s daughters invoke Moses’ ruling and receive inheritance. Agency is real, but equality is incomplete." ]},
+        {"heading":"Boundaries Limit Expansion but Do Not Make Forced Labor Good","paragraphs":["Detailed allotments make gift concrete and constrain private expansion. Notices of peoples left in place and forced labor describe unequal arrangements; narration does not make coercion morally admirable." ]},
+        {"heading":"Joshua Receives Last","paragraphs":["Only after tribal distribution does Joshua receive his town through communal authorization. Leadership does not entitle him to take first." ]},
+        {"heading":"Refuge Protects the Accused Without Erasing Accountability","paragraphs":["Cities of refuge interrupt immediate vengeance, provide a hearing, and distinguish accident from murder. They are not immunity from consequences, and modern systems must distinguish immediate safety from final adjudication." ]},
+        {"heading":"Levites Receive Distributed Provision","paragraphs":["Forty-eight towns support Levitical service throughout Israel. Ministry provision never authorizes luxury, financial secrecy, coercive giving, or exemption from accountability." ]},
+        {"heading":"The Jordan Altar Crisis Is Defused by Listening","paragraphs":["Western tribes assume apostasy and prepare for war but first send a delegation. The eastern tribes explain the altar is a witness of shared belonging, not a rival sacrifice site. Investigation allows evidence to overturn a rush toward violence." ]}
       ],
-      "questions": [
-        "What part of the passage is most difficult or important to understand?",
-        "What does this text reveal about God’s character, promise, or gospel?",
-        "What human pride, fear, injustice, or false security does it confront?",
-        "Which interpretive distinction protects this passage from misuse?",
-        "How could this truth bring hope without minimizing pain or responsibility?",
-        "Where is God calling for repentance, courage, humility, or mercy?",
-        "What specific practice can embody this lesson this week?",
-        "How can the group support faithfulness without pressure, superiority, or fear?"
-      ],
-      "examination": "Come honestly before God. Where am I tempted by self-righteousness, fear, control, nationalism, contempt, compromise, or confidence in status? What gift of grace must I receive? What loyalty, habit, relationship, or use of influence needs repentance, courage, mercy, or a wiser boundary?",
-      "challenge": "Choose one concrete practice: reread the passage on three days; write a prayer of confession or gratitude; learn from a trusted perspective; examine one political, ethnic, or religious assumption; welcome someone across a difference; repair a truthful conversation; or serve without recognition. Keep it safe, specific, and measurable.",
-      "caution": "Do not use conquest, divine sovereignty, judgment, authority, election, submission, conscience, forgiveness, or unity to justify violence, nationalism, racism, antisemitism, fatalism, abuse, or silencing. Never identify modern opponents as Canaanites. Where danger, exploitation, severe distress, or criminal conduct is present, prioritize safety, qualified care, fair process, and applicable reporting responsibilities.",
-      "prayer": "Covenant-keeping and merciful God, God’s gifts are stewarded through ordered responsibility, accessible justice, provision for ministry, and patient resolution of conflict. Remove our boasting, deepen our courage, and form Christ in us. Teach us to remember Your grace, love our neighbors, resist evil without becoming evil, and live together in the hope of Your kingdom. Amen."
+      "jesusParagraphs":["Hebrews says Joshua’s rest did not exhaust God’s promise; deeper rest remains in Christ. Jesus provides refuge from condemnation while still bringing truth into the light and creating one people across boundaries.","Galatians 6 joins bearing one another’s burdens with carrying one’s own responsibility, fitting the book’s balance of shared rest and distinct assignments."],
+      "guardrailParagraphs":["Biblical borders are not modern deeds for churches or nations to enforce.","Forced labor is reported, not commended as an ideal.","Achsah’s marriage reflects patriarchy even while she shows agency.","Refuge includes hearing and accountability.","The altar conflict is solved through investigation, not assumption of pure motives."],
+      "questions":["How can 13:1–7 and 21:43–45 both be true within Joshua?","What does Caleb’s story say and not say about aging?","Where do Achsah and Zelophehad’s daughters exercise agency, and what inequalities remain?","Why must narration be distinguished from approval in forced-labor notices?","What does Joshua receiving last communicate?","How do refuge cities restrain revenge and impunity?","What do Levitical towns provide?","What prevents war in Joshua 22?"],
+      "examination":"Do I pretend work is finished to protect an image? Where do I benefit from coerced or invisible labor? When conflict arises, do I act on rumor or state the concern, offer a safe hearing, and let verified explanation change my conclusion?",
+      "challenge":"Read Joshua 20 and 22. Map one conflict or safeguarding process: access to refuge, who hears the case, what evidence is gathered, how retaliation is prevented, and how responsibility is assigned. Correct one missing safeguard or communication step.",
+      "caution":"Land, inheritance, forced labor, refuge, aging, and intergroup conflict may touch trauma. Do not use biblical allotments to settle modern territorial claims or imply disability diminishes courage. Distinguish immediate safety from final findings and use lawful reporting and independent review.",
+      "prayer":"Faithful God, help us name unfinished work, steward gifts without entitlement, hear voices overlooked by unequal systems, build accessible refuge, support service without exploitation, and listen before conflict becomes violence. Lead us into the deeper rest of Jesus. Amen."
     },
     {
-      "number": 8,
-      "title": "Choose This Day Whom You Will Serve",
-      "scripture": "Joshua 23:1–24:33; Deuteronomy 6:10–15; John 6:60–69",
-      "supporting": [],
-      "question": "How do remembrance, exclusive worship, honest commitment, and communal witness sustain covenant faithfulness?",
-      "truth": "God’s past grace calls His people to reject idols, serve Him sincerely, and renew commitment with honest awareness of its cost.",
-      "goal": "To conclude through grateful remembrance, serious covenant choice, and practices that help communities resist hidden idols.",
-      "opening": "Begin with prayer for humility, courage, and careful listening. Read the main passage aloud and allow silence before interpretation. Invite observations first. Participants may pass on any question, and no one should be pressured to disclose trauma, conflict, doubt, or private circumstances. The goal is faithful formation under Scripture.",
-      "context": "Read within the book’s historical setting, literary form, covenant location, argument, and whole-Bible witness. Notice repeated words, quotations, contrasts, and narrative movement. Distinguish what the passage explicitly teaches from inference and modern application. Difficult texts deserve honesty rather than defensiveness or simplistic transfer.",
-      "teaching": [
-        {
-          "heading": "Remember the Lord’s Faithfulness",
-          "body": "Joshua recounts what God has done from Abraham through the land. Testimony begins with grace, not human achievement. Memory strengthens obedience and corrects self-made identity."
-        },
-        {
-          "heading": "Guard Against Complacency",
-          "body": "Possession and stability can weaken dependence. Joshua warns leaders not to assume yesterday’s faithfulness automatically continues. Institutions require ongoing humility and examination."
-        },
-        {
-          "heading": "Choose Whom You Will Serve",
-          "body": "Joshua names the alternatives and declares his household’s allegiance. Faith cannot be coerced. Household leadership should model and teach truth, never force declarations through fear."
-        },
-        {
-          "heading": "You Are Not Able",
-          "body": "Joshua challenges the people’s quick confidence because God is holy. Commitment requires more than enthusiasm. Honest discipleship counts the cost and depends on grace."
-        },
-        {
-          "heading": "Put Away Foreign Gods",
-          "body": "The command suggests hidden loyalties remained. Idols may include power, nation, money, family image, comfort, or ministry success. Repentance names and removes rival worship."
-        },
-        {
-          "heading": "Witness and Legacy",
-          "body": "A stone and written covenant witness to the decision, and the book closes with burials. Leaders die, but God’s faithfulness continues. Healthy legacy prepares the next generation to know God rather than preserve a personality."
-        }
+      "number":8,
+      "title":"Choose This Day Whom You Will Serve",
+      "scripture":"Joshua 23:1–24:33",
+      "supporting":["Deuteronomy 6:10–15","John 6:60–69"],
+      "question":"How do remembered grace, honest warning, exclusive allegiance, and communal witness sustain faithfulness after a generation of visible success?",
+      "truth":"Before Israel is told to choose, God recounts what God has done. Covenant response rejects rival gods, clings to the Lord, counts the cost of holiness, and leaves testimony stronger than one leader’s personality.",
+      "goal":"Read Joshua’s two farewell assemblies closely, correct coercive uses of “as for me and my house,” distinguish covenant choice from self-salvation, and follow the closing burials into the unresolved question of the next generation.",
+      "openingParagraphs":["Underline every first-person statement by God in Joshua 24:2–13 before discussing Israel’s response. Grace comes before decision. Do not pressure public pledges or allow household leadership to become religious control."],
+      "contextParagraphs":["Joshua is old. Chapter 23 addresses leaders; chapter 24 gathers all Israel at Shechem, a place saturated with ancestral covenant memory. The speeches echo Deuteronomy: remember, reject rival gods, cling to the Lord, and do not assume possession guarantees future faithfulness.","The book closes with the burials of Joshua, Joseph’s bones, and Eleazar, linking ancestral promise, exodus hope, conquest generation, and priestly leadership while preparing for Judges."],
+      "teaching":[
+        {"heading":"Rest Does Not Eliminate Vigilance","paragraphs":["Joshua celebrates God-given rest while acknowledging remaining nations and future responsibility. Fulfillment does not equal complacency." ]},
+        {"heading":"Intermarriage Warnings Concern Worship, Not Racial Purity","paragraphs":["The stated danger is being turned toward other gods. Rahab’s inclusion and the wider canon’s welcome of faithful foreigners rule out racist or segregationist applications." ]},
+        {"heading":"Fulfilled Promise Makes Warning Serious","paragraphs":["Joshua says every good promise came to pass and still warns that covenant breach has consequences. This ancient land sanction is not a formula for interpreting modern disasters or displacement." ]},
+        {"heading":"God’s Story Comes Before Israel’s Choice","paragraphs":["The repeated divine “I took,” “I gave,” “I sent,” “I brought,” and “I delivered” grounds identity in grace. Israel lives in cities it did not build and eats produce it did not plant." ]},
+        {"heading":"“Choose This Day” Names Real Rival Loyalties","paragraphs":["Joshua names gods beyond the River and in Egypt. “As for me and my house” states his resolve and example; it does not grant a household head power to force belief, silence questions, or punish conscience." ]},
+        {"heading":"“You Are Not Able” Challenges Easy Confidence","paragraphs":["Joshua’s reply to Israel’s quick promise tests whether enthusiasm understands a holy God and exclusive allegiance. Public words require actual removal of rival gods, but repentance cannot be manufactured through coercion." ]},
+        {"heading":"Written and Material Witnesses Preserve Memory","paragraphs":["Joshua writes the covenant and raises a memorial stone as witness. The stone is poetic testimony, not magical power. Written word, communal memory, and lived obedience belong together." ]},
+        {"heading":"The Book Ends with Burials and a Generational Question","paragraphs":["Joshua, Joseph’s bones, and Eleazar are buried. Israel remains faithful while those who knew God’s works are alive, leaving the next generation with the task of turning inherited memory into living knowledge." ]}
       ],
-      "questions": [
-        "What part of the passage is most difficult or important to understand?",
-        "What does this text reveal about God’s character, promise, or gospel?",
-        "What human pride, fear, injustice, or false security does it confront?",
-        "Which interpretive distinction protects this passage from misuse?",
-        "How could this truth bring hope without minimizing pain or responsibility?",
-        "Where is God calling for repentance, courage, humility, or mercy?",
-        "What specific practice can embody this lesson this week?",
-        "How can the group support faithfulness without pressure, superiority, or fear?"
-      ],
-      "examination": "Come honestly before God. Where am I tempted by self-righteousness, fear, control, nationalism, contempt, compromise, or confidence in status? What gift of grace must I receive? What loyalty, habit, relationship, or use of influence needs repentance, courage, mercy, or a wiser boundary?",
-      "challenge": "Choose one concrete practice: reread the passage on three days; write a prayer of confession or gratitude; learn from a trusted perspective; examine one political, ethnic, or religious assumption; welcome someone across a difference; repair a truthful conversation; or serve without recognition. Keep it safe, specific, and measurable.",
-      "caution": "Do not use conquest, divine sovereignty, judgment, authority, election, submission, conscience, forgiveness, or unity to justify violence, nationalism, racism, antisemitism, fatalism, abuse, or silencing. Never identify modern opponents as Canaanites. Where danger, exploitation, severe distress, or criminal conduct is present, prioritize safety, qualified care, fair process, and applicable reporting responsibilities.",
-      "prayer": "Covenant-keeping and merciful God, God’s past grace calls His people to reject idols, serve Him sincerely, and renew commitment with honest awareness of its cost. Remove our boasting, deepen our courage, and form Christ in us. Teach us to remember Your grace, love our neighbors, resist evil without becoming evil, and live together in the hope of Your kingdom. Amen."
+      "jesusParagraphs":["When disciples leave Jesus in John 6, Peter answers, “Lord, to whom can we go? You have the words of eternal life.” Like Joshua 24, faithful choice follows revelation of who God is and what God has done.","Jesus gives grace before demanding allegiance and forms households through witness and love, never coerced belief."],
+      "guardrailParagraphs":["“Choose this day” follows a long recital of grace; it is not self-salvation by willpower.","“Me and my house” does not authorize coercion or abuse.","Intermarriage warnings concern idolatrous allegiance, not race.","“You cannot serve” tests shallow confidence rather than teaching faithful service is impossible.","Inherited memory must be taught, not assumed."],
+      "questions":["What has God completed and what remains in chapter 23?","What reason is given for intermarriage warnings, and what racialized reading is excluded?","What identity is formed by the divine “I” statements of 24:2–13?","What rival loyalties are named?","Why is the people’s first answer inadequate?","How do book, stone, and assembly function together?","Why do the three burials matter?","How does John 6 clarify faithful choice after revelation?"],
+      "examination":"Which gift have I begun to treat as entitlement? What rival loyalty remains “among” my life while my public words sound faithful? Am I modeling allegiance with humility or trying to control another person’s conscience? What testimony must be passed beyond my generation?",
+      "challenge":"Read Joshua 24:1–28 twice. Make two columns: What God has done and Our response. Name one rival loyalty to remove and one story of grace to preserve for a younger person, sharing it without demanding a matching response.",
+      "caution":"Do not stage a pressured household pledge. People may live with unbelieving, questioning, or religiously diverse relatives and some have experienced spiritual control. Household leadership cannot override consent, safety, or conscience, and no modern nation or party should be cast as God’s covenant people.",
+      "prayer":"God of Abraham, exodus, promise, and grace, remind us what you have done before we speak of our commitment. Expose rival loyalties, free our households from coercion, and teach us to serve sincerely. Preserve faithful testimony beyond our lifetime through Jesus, who has the words of eternal life. Amen."
     }
   ]
 };
-

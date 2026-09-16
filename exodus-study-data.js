@@ -1,421 +1,238 @@
 window.NLDG_BOOK_STUDY={
-  "slug": "exodus-study",
-  "book": "Exodus",
-  "title": "Exodus: Liberation, Covenant, Worship, and God’s Presence",
-  "description": "Exodus tells how God hears an enslaved people, confronts Pharaoh, forms Israel in covenant, and dwells among them. Liberation is followed by formation: the rescued must learn not to reproduce Egypt’s domination.",
-  "theme": "Center God’s opposition to oppression without turning ancient judgments into permission for modern violence. Reject antisemitism, racialized readings, slavery apologetics, prosperity claims, and any use of Moses’ story to excuse unaccountable leadership.",
-  "audience": "Adults, groups, classes, and ministry teams",
-  "purpose": "This eight-lesson series helps groups read Exodus in context, encounter God’s holiness and mercy, and practice worship, justice, compassion, accountability, and faithful community.",
-  "background": "Exodus tells how God hears an enslaved people, confronts Pharaoh, forms Israel in covenant, and dwells among them. Liberation is followed by formation: the rescued must learn not to reproduce Egypt’s domination.",
-  "lessons": [
+  "slug":"exodus-study",
+  "book":"Exodus",
+  "title":"Exodus: Liberation, Covenant, Worship, and God’s Presence",
+  "description":"Exodus tells how God hears an enslaved people, confronts Pharaoh, forms Israel in covenant, and dwells among them. Liberation is followed by formation: the rescued must learn not to reproduce Egypt’s domination.",
+  "theme":"Center God’s opposition to oppression without turning ancient judgments into permission for modern violence. Reject antisemitism, racialized readings, slavery apologetics, prosperity claims, and any use of Moses’ story to excuse unaccountable leadership.",
+  "audience":"Adults, groups, classes, and ministry teams",
+  "purpose":"This eight-lesson series helps groups read Exodus in context, encounter God’s holiness and mercy, and practice worship, justice, compassion, accountability, and faithful community.",
+  "background":"Exodus tells how God hears an enslaved people, confronts Pharaoh, forms Israel in covenant, and dwells among them. Liberation is followed by formation: the rescued must learn not to reproduce Egypt’s domination.",
+  "lessons":[
     {
-      "number": 1,
-      "title": "Oppression, Courage, and the God Who Hears",
-      "scripture": "Exodus 1–2",
-      "supporting": [],
-      "question": "How does God begin liberation when an empire reduces people to labor and threats?",
-      "truth": "God hears the oppressed, honors courageous resistance, and prepares deliverance through people whose faith protects life.",
-      "goal": "This lesson helps participants read Exodus 1–2 within Exodus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Exodus 1–2 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
-      "teaching": [
-        {
-          "heading": "Fear Creates Oppressive Policy",
-          "body": "Pharaoh turns demographic fear into forced labor and state violence. The story exposes how rulers manufacture threats to justify exploitation. People are never economic units or political problems; they bear God’s image."
-        },
-        {
-          "heading": "The Midwives Fear God",
-          "body": "Shiphrah and Puah refuse an order to kill. Their courageous disobedience protects children and demonstrates that human authority is never absolute. Faithfulness may require refusing commands that directly violate God’s justice."
-        },
-        {
-          "heading": "Women Preserve a Future",
-          "body": "Moses survives through the actions of his mother, sister, Pharaoh’s daughter, and servants. Women from different social locations cooperate to protect vulnerable life. Their agency belongs at the center of the story."
-        },
-        {
-          "heading": "Moses Acts and Then Flees",
-          "body": "Moses kills an Egyptian who is beating a Hebrew. The text reveals his concern but does not make impulsive killing the model of liberation. Justice needs courage governed by God, community, truth, and accountable means."
-        },
-        {
-          "heading": "God Hears and Remembers",
-          "body": "Israel’s groaning rises to God, who remembers covenant. Remembering means faithful action, not recovered information. The suffering of enslaved people is neither invisible nor spiritually unimportant."
-        },
-        {
-          "heading": "Liberation Begins Before Moses Knows",
-          "body": "God is already working through hidden acts of courage before the public call. Communities should notice and support people preserving life at personal risk, especially those whose names institutions overlook."
-        }
+      "number":1,
+      "title":"Oppression, Courage, and the God Who Hears",
+      "scripture":"Exodus 1:1–2:25",
+      "supporting":["Genesis 1:28","Genesis 15:13–14"],
+      "question":"How does Exodus expose the machinery of oppression, and how does God begin preserving a people before the appointed deliverer is ready?",
+      "truth":"Pharaoh turns fear into forced labor and state violence, but he cannot cancel God’s promise. God works through courageous women, hears the groaning of enslaved people, and prepares a flawed deliverer without ever calling oppression good.",
+      "goal":"This lesson introduces Exodus as the continuation of Genesis. It traces how a family becomes an enslaved people, how political fear dehumanizes neighbors, how hidden acts of courage protect life, and how God’s covenant faithfulness begins moving the story toward liberation. It also refuses to romanticize slavery, excuse Moses’ killing, or pressure survivors to identify with every act in the narrative.",
+      "openingParagraphs":["Read Exodus 1:1–14 and 2:23–25. List the verbs attached to Pharaoh and the verbs attached to God. What different kinds of power do those verbs reveal?","The passage includes forced labor, attempted genocide, infant danger, displacement, and lethal violence. Participants may pass on any question and should never be pressured to disclose trauma."],
+      "contextParagraphs":["Exodus begins by naming Jacob’s sons and connecting directly to Genesis. Joseph’s generation dies, but Israel multiplies, recalling creation blessing and the promises to Abraham, Isaac, and Jacob. Israel’s fruitfulness becomes a “threat” only because Pharaoh chooses to frame it that way.","The new king “does not know Joseph,” which may mean he recognizes no obligation to Joseph’s memory or policies. The narrator leaves Pharaoh unnamed while preserving the names Shiphrah and Puah, the women who protect life.","Egypt is a real ancient civilization, not a symbol for every Egyptian person. Exodus condemns an enslaving regime and its ruler, not Egyptians, Africans, or modern nations as ethnic groups.","The chapters escalate from forced labor to secret infanticide orders, public drowning orders, Moses’ rescue, Moses’ failed violent intervention, and prolonged groaning. The final verbs are decisive: God hears, remembers, sees, and knows."],
+      "teaching":[
+        {"heading":"Fear Becomes Public Policy","paragraphs":["Pharaoh turns demographic fear into forced labor and then child-killing policy. Exodus shows how dehumanization begins with a story told about a group before it becomes a system imposed on bodies.","Pithom and Rameses are built through coerced labor. The text refuses to let monuments erase the bitterness of brick, mortar, and field work. Economic achievement cannot make exploitation righteous."]},
+        {"heading":"Oppression Cannot Cancel God’s Promise","paragraphs":["The more Israel is oppressed, the more the people multiply. This is not a universal promise that every persecuted community will visibly prosper; within Exodus it shows Pharaoh’s inability to overturn God’s covenant purpose.","When control fails, Pharaoh intensifies control. Domination often deepens the fear it claims to solve."]},
+        {"heading":"The Midwives Fear God More Than Pharaoh","paragraphs":["Shiphrah and Puah refuse the king’s command to kill newborn boys. Whether they are Hebrew midwives or midwives serving Hebrew women, the narrative plainly commends their God-fearing protection of life.","Their explanation to Pharaoh raises ethical questions about deception. The text clearly praises refusal to participate in murder, but it does not offer a simple formula for every conflict between truth-telling and protecting life.","Civil authority is not absolute, yet this story does not bless every act of political defiance. The midwives resist a direct command to kill the vulnerable and accept risk to preserve life."]},
+        {"heading":"Women Preserve the Deliverer","paragraphs":["Moses’ mother, sister, Pharaoh’s daughter, and attendants turn the Nile from a place of death into a path of survival. The rare Hebrew word for Moses’ basket is the same word used for Noah’s ark, creating a literary echo of life preserved through deadly waters.","Pharaoh’s daughter recognizes Moses as Hebrew and still has compassion. The royal household unknowingly helps preserve the child who will confront Pharaoh."]},
+        {"heading":"Moses Sees Injustice but Uses Destructive Power","paragraphs":["Moses sees an Egyptian beating a Hebrew and kills the Egyptian. The narrator reports the action and its consequences but never says God commanded it. Concern for injustice does not make every method just.","At a Midianite well, Moses later intervenes against aggressive shepherds without killing. The contrast begins showing courage taking another form."]},
+        {"heading":"Exile Shapes Moses Before His Call","paragraphs":["Moses settles in Midian, marries Zipporah, and names Gershom as a reminder that he is a resident alien. He is Hebrew by birth, raised in Pharaoh’s household, a fugitive from Egypt, and an immigrant in Midian.","His wilderness years are not proof that every setback is secretly a promotion. They do show that the deliverer enters the story without the public power, certainty, or clean record readers might expect."]},
+        {"heading":"God Hears, Remembers, Sees, and Knows","paragraphs":["The king dies, but slavery continues. Israel groans, and God’s response is described through covenant verbs: He hears, remembers, sees, and knows.","“Remembers” does not mean God recovered forgotten information. It signals covenant faithfulness moving toward action. Yet liberation is not yet visible, which prevents shallow promises of immediate relief."]}
       ],
-      "questions": [
-        "What detail in Exodus 1–2 first draws your attention?",
-        "What does this passage reveal about God?",
-        "What human need, danger, or responsibility does it address?",
-        "Which action is described but not given as a modern command?",
-        "Whose dignity or vulnerability needs special attention?",
-        "What harmful interpretation must be rejected?",
-        "How does this text challenge the misuse of power?",
-        "What faithful response will you practice this week?"
-      ],
-      "examination": "Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
-      "challenge": "Read Exodus 1–2 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
-      "caution": "Reject slavery apologetics, antisemitism, ethnic scapegoating, religious violence, and claims that hardship proves guilt. Ancient judgments belong to God and never authorize retaliation. Center oppressed people’s safety and pair prayer with practical, medical, legal, financial, and safeguarding support.",
-      "prayer": "Holy God, meet us in Exodus 1–2. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Matthew places Jesus within exodus-shaped imagery: a threatened child, a murderous ruler, departure from Egypt, passage through water, and wilderness testing. These echoes present Jesus within Israel’s story as the faithful Son and greater deliverer.","Jesus does not liberate by secretly killing an oppressor. He confronts corrupt power, announces good news to the poor, gives His life, and is raised. Following Him includes hearing cries powerful people ignore and refusing leadership built on fear and coercion."],
+      "guardrailParagraphs":["Exodus does not soften slavery into a difficult job. Pharaoh’s policy is forced labor backed by violence and reproductive control and cannot defend racial chattel slavery, trafficking, prison exploitation, or treating people as disposable labor.","Moses’ killing is not approval of vigilantism. Concern for justice does not make every method just.","The women who preserve Moses are not supporting characters to erase. Before Moses confronts Pharaoh, women have already resisted death.","Do not tell people currently facing abuse that they only need to wait for a dramatic deliverer. Scripture’s assurance that God hears suffering should make the church more attentive and practical, not less."],
+      "questions":["Compare Exodus 1:7 with Genesis 1:28 and the promises to the ancestors. Why does Israel’s fruitfulness matter to the opening conflict?","Trace the escalation in Pharaoh’s policy from Exodus 1:8–22. What stories, fears, and institutions make each new step possible?","Why might the narrator name Shiphrah and Puah while leaving Pharaoh unnamed?","What does the passage explicitly commend about the midwives, and what ethical question about their explanation to Pharaoh remains open?","How do the actions of Moses’ mother, sister, Pharaoh’s daughter, and attendants work together to overturn the king’s command?","What details in Exodus 2:11–15 prevent us from treating Moses’ killing as the biblical model of liberation?","What do the verbs “heard,” “remembered,” “saw,” and “knew” reveal about God in Exodus 2:23–25?","Where does this passage require a church to move beyond sympathy toward protection, material help, advocacy, or accountability?"],
+      "examination":"Whose suffering have I learned to discuss without truly seeing? Where do fear, convenience, or loyalty to an institution tempt me to treat people as problems rather than image-bearers? What faithful action would protect life without reproducing coercion or violence?",
+      "challenge":"Read Exodus 1–2 again and make four columns: Pharaoh, courageous resisters, Moses, and God. Record each character’s actions using the passage’s verbs. Then choose one concrete response that protects dignity this week, such as supporting a survivor, challenging dehumanizing speech, helping with food or transportation, learning a safeguarding process, or contacting an appropriate professional resource.",
+      "caution":"Prepare for participants who carry experiences of racism, labor exploitation, reproductive coercion, child loss, domestic abuse, migration, or violence. Do not ask anyone to compare personal trauma with Israel’s slavery. If current abuse, trafficking, threats to a child, or imminent danger is disclosed, prioritize safety and applicable reporting responsibilities. Keep the racial guardrail explicit: ancient Egypt and ancient Israel must not be mapped onto modern racial categories.",
+      "prayer":"God who hears the oppressed, open our eyes to suffering we have ignored. Free us from fear that turns neighbors into threats. Give us the courage of those who protected life, the humility to reject destructive power, and the wisdom to seek safety and justice with accountable means. Form us in the way of Jesus, who confronts evil without becoming its servant. Amen."
     },
     {
-      "number": 2,
-      "title": "The Burning Bush and God’s Call",
-      "scripture": "Exodus 3–4",
-      "supporting": [],
-      "question": "What does God’s call reveal about his character and the shape of faithful leadership?",
-      "truth": "The holy God sees suffering, comes down to deliver, and calls reluctant people to serve with his presence rather than self-confidence.",
-      "goal": "This lesson helps participants read Exodus 3–4 within Exodus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Exodus 3–4 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
-      "teaching": [
-        {
-          "heading": "Holy Ground in an Ordinary Place",
-          "body": "God meets Moses in wilderness work. Holy ground is created by God’s presence, not human prestige. Attention and reverence prepare Moses to hear."
-        },
-        {
-          "heading": "I Have Seen and Heard",
-          "body": "God names Israel’s misery and the oppressors’ actions. Divine compassion is concrete. Ministry begins by seeing, hearing, and knowing real suffering rather than speaking about people from a distance."
-        },
-        {
-          "heading": "I Am Who I Am",
-          "body": "God’s name communicates faithful, free, living presence. Pharaoh does not define reality. God will be known through covenant action and deliverance."
-        },
-        {
-          "heading": "Who Am I? I Will Be With You",
-          "body": "Moses focuses on inadequacy; God promises presence. Calling is not confidence theater. Leaders may name limits while depending on God and receiving help."
-        },
-        {
-          "heading": "Objections Are Heard",
-          "body": "Moses raises questions about authority, credibility, ability, and willingness. God answers patiently, though resistance eventually draws anger. Honest hesitation can be part of discernment."
-        },
-        {
-          "heading": "Aaron and Shared Leadership",
-          "body": "God provides Aaron as a partner. Moses’ speech difficulty does not disqualify him or reduce his dignity. Healthy ministry makes accommodations, shares responsibility, and does not equate disability with weak faith."
-        }
+      "number":2,
+      "title":"The Burning Bush and God’s Call",
+      "scripture":"Exodus 3:1–4:31",
+      "supporting":["John 8:58","Matthew 28:20"],
+      "question":"What does God reveal about His name, presence, and purpose when He calls a reluctant Moses to confront oppression?",
+      "truth":"The holy God sees, hears, and knows the suffering of His people. He comes down to deliver, sends Moses as His servant, answers honest objections, and grounds the mission in His own presence rather than Moses’ ability.",
+      "goal":"This lesson reads Moses’ call in its wilderness, covenant, and literary setting. It examines the burning bush, holy ground, God’s name, the promise of divine presence, Moses’ objections, the signs, Aaron’s partnership, and the difficult incident involving Zipporah while distinguishing clear teaching from disputed translation and interpretation.",
+      "openingParagraphs":["Read Exodus 3:1–12 and mark everything God has seen, heard, known, promised, and commanded. What comes before the words, “So now, go”?","The passage raises issues involving calling, disability, divine judgment, religious authority, and occupied land. Moses’ call must not be used to pressure people into ministry or dismiss real limits."],
+      "contextParagraphs":["Moses is living in Midian and tending Jethro’s flock when he comes to Horeb, another biblical name associated with Sinai. The exact mountain location is disputed; the theological focus is that God meets Moses in wilderness and later brings Israel back there.","The scene fulfills Exodus 2: God has heard groaning and remembered the covenant. At the bush He identifies Himself as the God of Abraham, Isaac, and Jacob and says He has seen, heard, known, and come down to deliver.","The promised land is fruitful but inhabited. The ancient covenant promise cannot be lifted into a modern blank check for ethnic cleansing or private claims to someone else’s land.","Chapters 3–4 alternate divine revelation with Moses’ objections: Who am I? Who are You? What if they do not believe? What about my speech? Finally, please send someone else."],
+      "teaching":[
+        {"heading":"God’s Presence Makes the Ground Holy","paragraphs":["The bush burns without being consumed and the text moves fluidly from the messenger of the LORD to God speaking. It does not pause to explain that relationship, so the grammar should not bear an entire later doctrine by itself.","The ground is holy because God is present, not because wilderness has institutional prestige. Reverence before God never makes human leaders or organizations untouchable."]},
+        {"heading":"The God Who Sees Also Sends","paragraphs":["God’s compassion is concrete: He names oppression, hears cries from under taskmasters, and knows suffering. Then He sends Moses. Divine action and human vocation are joined.","Israel is delivered from Pharaoh’s service in order to worship and belong to the LORD. Liberation is not isolated self-rule but covenant freedom under a God unlike Pharaoh."]},
+        {"heading":"Who Am I? Meets I Will Be with You","paragraphs":["God does not answer Moses’ inadequacy with confidence theater. He answers, “I will be with you.” The mission rests on divine presence rather than personal charisma.","Presence does not erase the need for training, partnership, safety, rest, or accountability. Moses will repeatedly need other people."]},
+        {"heading":"God’s Name Promises Free and Faithful Presence","paragraphs":["Ehyeh asher ehyeh is commonly translated “I Am Who I Am” and can also carry a future sense such as “I Will Be What I Will Be.” The same verb appears in “I will be with you.” God is not defined or controlled by Pharaoh, Moses, or Israel.","God also gives the covenant name YHWH and identifies Himself as the God of the ancestors. Jewish tradition reverently substitutes “Lord” in reading; Christians should explain this respectfully rather than turning the divine name into a magical pronunciation."]},
+        {"heading":"Signs Serve God’s Word, Not Human Spectacle","paragraphs":["The staff, hand, and Nile-water signs answer Moses’ fear that Israel will not believe. They are not techniques for religious performers to copy.","The skin-condition language often translated “leprous” covers a wider range than modern Hansen’s disease and must not stigmatize illness or disability. Miraculous claims still require discernment and accountability."]},
+        {"heading":"Moses’ Speech Concern Leads to Shared Leadership","paragraphs":["Moses says he is slow of speech and tongue. The text does not diagnose whether this is impairment, public-speaking difficulty, language limitation, or resistance.","God promises help and appoints Aaron. Accommodation and shared responsibility can belong inside God’s provision; disability is not weak faith."]},
+        {"heading":"The Difficult Bridegroom-of-Blood Scene","paragraphs":["Exodus 4:24–26 is genuinely obscure. Pronouns are ambiguous, “feet” may be euphemistic, and the text does not explain every action. A common interpretation is that a neglected circumcision obligation creates the crisis, but even whether Moses or the child is threatened is debated.","What is clear is that the deliverer is not above the covenant and Zipporah acts decisively. The scene is not a model for coercive surgery, marital domination, or harming a child in God’s name."]},
+        {"heading":"Calling Is Communal, Not Unaccountable","paragraphs":["Moses and Aaron gather Israel’s elders, speak God’s words, perform the signs, and the people respond. Moses does not privately declare himself beyond examination.","Calling never cancels consent, law, professional standards, financial transparency, or safeguarding." ]}
       ],
-      "questions": [
-        "What detail in Exodus 3–4 first draws your attention?",
-        "What does this passage reveal about God?",
-        "What human need, danger, or responsibility does it address?",
-        "Which action is described but not given as a modern command?",
-        "Whose dignity or vulnerability needs special attention?",
-        "What harmful interpretation must be rejected?",
-        "How does this text challenge the misuse of power?",
-        "What faithful response will you practice this week?"
-      ],
-      "examination": "Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
-      "challenge": "Read Exodus 3–4 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
-      "caution": "Reject slavery apologetics, antisemitism, ethnic scapegoating, religious violence, and claims that hardship proves guilt. Ancient judgments belong to God and never authorize retaliation. Center oppressed people’s safety and pair prayer with practical, medical, legal, financial, and safeguarding support.",
-      "prayer": "Holy God, meet us in Exodus 3–4. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["The New Testament places Jesus inside the exodus story while presenting Him as more than another Moses. He is sent by the Father, announces release, reveals God’s character, and accomplishes a new exodus through death and resurrection.","John’s “I am” sayings, including “Before Abraham was, I am,” belong within the Bible’s larger witness to Jesus’ divine identity. Exodus 3 should first be heard in its own setting, where God reveals free and faithful covenant presence; later revelation deepens rather than erases that meaning.","Jesus’ “I am with you” accompanies mission shaped by truth, service, costly love, and dependence on the Spirit rather than domination."],
+      "guardrailParagraphs":["The burning bush is not a formula for finding a dramatic personal sign. Christian discernment normally involves Scripture, prayer, wisdom, community, gifts, circumstances, and accountable testing.","God’s presence does not validate every self-appointed mission. A calling that requires secrecy, coercion, exploitation, contempt for questions, or harm to vulnerable people contradicts God’s revealed character.","Israel’s requested transfer of Egyptian wealth is part of this specific judgment and deliverance, not permission for theft or a prosperity guarantee.","Do not shame disabled people with the speech passage or turn the bridegroom-of-blood scene into religious or medical coercion."],
+      "questions":["In Exodus 3:1–10, what does God see, hear, know, promise, and command? How does that sequence shape the meaning of Moses’ call?","Why is the ground holy, and how does that challenge attempts by leaders or institutions to make themselves untouchable?","Compare Moses’ “Who am I?” in 3:11 with God’s “I will be with you” in 3:12. Where does the passage locate confidence?","What can the possible translations of ehyeh asher ehyeh teach us, and what should we avoid claiming with certainty?","List Moses’ objections in chapters 3–4. Which are questions God answers, and where does hesitation become refusal?","How do Aaron, the elders, and the people keep Moses’ call from being a story of isolated leadership?","What is clear and what remains uncertain in Exodus 4:24–26? Why is admitting uncertainty important?","Which features of Jesus’ mission echo and transform the exodus pattern without turning every detail into an allegory?"],
+      "examination":"Am I seeking confidence in my ability, title, or control rather than in God’s presence? Where do I need to name a real limitation and receive help? Is there a clear act of service I keep postponing behind questions God has already answered?",
+      "challenge":"Read Exodus 3–4 and underline every occurrence of “I will,” “you shall,” and “they will.” Make two lists: what God promises to do and what Moses is commanded to do. Then identify one responsibility you can take this week and one form of partnership or accommodation that would make your service more faithful.",
+      "caution":"Do not diagnose Moses or suggest God cures every communication or disability issue. Treat Exodus 4:24–26 as obscure and disputed. If land promises arise, reject using ancient covenant claims to excuse modern violence, forced removal, or contempt for any people. Claimed calling never cancels safeguarding, consent, law, or accountability.",
+      "prayer":"God of Abraham, Isaac, and Jacob, You see, hear, and know suffering. Teach us to revere Your presence without making human leaders sacred. Give us courage to obey, honesty about our limits, and humility to receive help. Guard us from coercive claims of calling, and form our service after Jesus, the faithful Deliverer who is with His people. Amen."
     },
     {
-      "number": 3,
-      "title": "Pharaoh, the Plagues, and Hardened Power",
-      "scripture": "Exodus 5–11",
-      "supporting": [],
-      "question": "How does entrenched power respond when God demands freedom for the oppressed?",
-      "truth": "Pharaoh repeatedly resists truth until judgment exposes the violence of his rule and the emptiness of Egypt’s gods.",
-      "goal": "This lesson helps participants read Exodus 5–11 within Exodus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Exodus 5–11 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
-      "teaching": [
-        {
-          "heading": "Oppression Intensifies",
-          "body": "Pharaoh answers the request for worship by increasing quotas and withholding straw. Abusive systems often punish people for naming injustice. Leaders must not interpret retaliation as proof that liberation was a mistake."
-        },
-        {
-          "heading": "God Reaffirms the Covenant",
-          "body": "Discouraged Israel cannot listen because of broken spirit and harsh slavery. God does not shame exhausted people. Trauma can constrain attention, and care must address bodies, safety, and material conditions."
-        },
-        {
-          "heading": "Signs Confront Imperial Claims",
-          "body": "The plagues reveal that creation belongs to God, not Pharaoh. They are not tricks to imitate or excuses to invoke disasters against opponents. They belong to a unique confrontation with an enslaving empire."
-        },
-        {
-          "heading": "Pharaoh Hardens His Heart",
-          "body": "The narrative describes Pharaoh hardening himself and God confirming that hardened path. Judgment develops through repeated refusal. The mystery should not erase Pharaoh’s responsibility or be used to claim that modern abusers lack agency."
-        },
-        {
-          "heading": "Temporary Remorse Is Not Repentance",
-          "body": "Pharaoh repeatedly asks for relief and then reverses course. Genuine repentance includes changed behavior, release of control, and repair, not apologies designed to stop consequences."
-        },
-        {
-          "heading": "Grief Before the Final Plague",
-          "body": "The death of the firstborn is terrifying and must not be celebrated casually. God’s judgment is not permission for believers to harm families or nations. The passage calls for sober lament and opposition to systems that destroy children."
-        }
+      "number":3,
+      "title":"Pharaoh, the Plagues, and Hardened Power",
+      "scripture":"Exodus 5:1–11:10",
+      "supporting":["Romans 9:14–18","Colossians 2:15"],
+      "question":"What happens when God’s demand for worship and freedom confronts a ruler whose power depends on forced labor?",
+      "truth":"Pharaoh answers God’s word with contempt, retaliation, bargaining, and repeated refusal. Through signs and judgments, the LORD exposes enslaving power, distinguishes Himself from Egypt’s rulers and gods, and holds Pharaoh responsible even as the text also speaks of divine hardening.",
+      "goal":"This lesson follows the first confrontation with Pharaoh through the announcement of the final plague. It examines increased labor, Israel’s broken spirit, God’s covenant promises, the literary shape of the plagues, the magicians, the hardening of Pharaoh’s heart, and the difference between regret and repentance while treating judgment soberly and naming major interpretive disputes.",
+      "openingParagraphs":["Read Exodus 5:1–9 and 5:19–23. Identify Pharaoh’s claims about work, worship, and truth. What does he do when people ask for freedom?","The study includes mass suffering and the announced death of firstborn children. Participants affected by child loss, state violence, disaster, or abuse may step out, remain silent, or decline any question."],
+      "contextParagraphs":["Moses and Aaron bring the LORD’s demand that Israel be released to worship. Pharaoh replies, “Who is the LORD, that I should obey?” Chapters 5–11 answer that question through a conflict over service, worship, creation, and royal authority.","The Hebrew narrative repeatedly plays on whom Israel will serve. Pharaoh treats people as his labor force; the LORD calls them out to serve Him. Liberation transfers Israel from dehumanizing slavery to covenant belonging.","The first nine signs form a careful literary pattern often seen as three triads. Exodus calls them signs, wonders, and judgments, not random disasters or a handbook for attacking enemies."],
+      "teaching":[
+        {"heading":"Pharaoh Retaliates Against Worship","paragraphs":["Pharaoh labels worship laziness, withholds straw, keeps brick quotas unchanged, and allows foremen to be beaten. Abusive power punishes people for naming injustice and then blames them for failing impossible demands.","Moses brings the crisis to God. Retaliation does not prove the request for freedom was wrong, but leaders must take increased danger seriously."]},
+        {"heading":"God Repeats Covenant Promise to a Broken People","paragraphs":["Exodus 6 responds with repeated “I will” promises: bring out, deliver, redeem, take as My people, be their God, bring them to the land, and give it.","Israel cannot listen because of “shortness of spirit” and harsh slavery. The narrator does not shame exhausted people for failing to display hope. Trauma-informed care must address practical needs, not treat a sermon as the whole remedy."]},
+        {"heading":"The Genealogy Grounds Public Mission","paragraphs":["The genealogy locates Moses and Aaron within Levi and Israel. Their authority comes with family and community location, not a claim to be historyless or unaccountable.","Exodus will later report failures by both brothers; biblical leadership never means being beyond correction."]},
+        {"heading":"Signs Expose Rival Claims to Power","paragraphs":["Egypt’s ritual experts initially reproduce some signs, but Aaron’s staff swallows theirs, later they confess “the finger of God,” and eventually they cannot stand before Moses. Spectacle alone cannot establish truth.","The signs strike Nile, land, animals, bodies, crops, sky, and light. Exodus later speaks broadly of judgment on Egypt’s gods, but popular charts that assign each plague to one precise deity often exceed the text."]},
+        {"heading":"Warnings Hold Judgment and Mercy Together","paragraphs":["Several plagues are announced beforehand, and before hail even Egyptians who fear the LORD’s word can shelter servants and animals. Not every Egyptian is portrayed as equally defiant.","Distinguishing Israel during some signs is not a timeless guarantee that believers never suffer disease, disaster, or political violence. Declaring modern catastrophes to be God’s verdict without revelation is reckless and cruel."]},
+        {"heading":"Pharaoh’s Heart and the Tension of Hardening","paragraphs":["Exodus uses multiple Hebrew terms for Pharaoh’s heart: strong, heavy, hard. At different points Pharaoh hardens his own heart, it remains hardened, and God hardens it.","Christian interpreters explain the relationship differently, emphasizing divine sovereignty, judicial hardening, or both. The shared center is that Pharaoh is never presented as morally innocent; he gives the orders, breaks promises, and keeps people enslaved."]},
+        {"heading":"Bargaining Is Not Repentance","paragraphs":["Pharaoh offers partial concessions while preserving leverage: worship nearby, go only a little way, let only men go, leave livestock behind. Moses refuses a freedom still controlled by the enslaver.","Pharaoh sometimes admits sin when consequences hurt and then reverses course after relief. Repentance releases control, changes conduct, accepts truth, and begins repair. Temporary remorse is not proof of safety."]},
+        {"heading":"The Final Warning Must Be Heard with Grief","paragraphs":["Exodus 11 announces death of firstborn throughout Egypt. The text connects this with Pharaoh’s assault on Israel, God’s “firstborn son,” yet the scope remains morally and emotionally severe.","The Bible does not ask teachers to delight in dead children or convert divine judgment into permission for collective revenge. Entrenched violence matters to God, and the coming grief is still grief."]}
       ],
-      "questions": [
-        "What detail in Exodus 5–11 first draws your attention?",
-        "What does this passage reveal about God?",
-        "What human need, danger, or responsibility does it address?",
-        "Which action is described but not given as a modern command?",
-        "Whose dignity or vulnerability needs special attention?",
-        "What harmful interpretation must be rejected?",
-        "How does this text challenge the misuse of power?",
-        "What faithful response will you practice this week?"
-      ],
-      "examination": "Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
-      "challenge": "Read Exodus 5–11 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
-      "caution": "Reject slavery apologetics, antisemitism, ethnic scapegoating, religious violence, and claims that hardship proves guilt. Ancient judgments belong to God and never authorize retaliation. Center oppressed people’s safety and pair prayer with practical, medical, legal, financial, and safeguarding support.",
-      "prayer": "Holy God, meet us in Exodus 5–11. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Exodus becomes a central biblical pattern for salvation. Jesus confronts enslaving powers, announces God’s kingdom, releases people from bondage to sin and death, and leads toward worship and covenant life.","At the cross, violent imperial and religious powers expose themselves while Jesus gives Himself and rises. Colossians presents the cross as defeat and exposure of hostile powers, so Christian witness confronts evil without imitating Pharaoh’s coercion.","The hardening theme warns against repeated resistance to truth. Jesus’ call to repentance is more than feeling bad about consequences; grace calls for changed allegiance, restitution where possible, and release of control."],
+      "guardrailParagraphs":["The plagues are not weapons for spiritual warfare against neighbors, political parties, other religions, or nations.","Exodus judges an enslaving regime; it does not teach racial hostility toward Egyptians or Africans.","Do not tell suffering people that inability to feel hopeful is rebellion. Exodus 6:9 names the effect of broken spirit and harsh labor.","Do not erase the tension in the hardening language. Scripture describes both Pharaoh’s culpable resistance and God’s action."],
+      "questions":["What does Pharaoh assume about worship and work in Exodus 5:1–9, and how does that assumption serve his economic power?","How do the foremen and Moses respond when conditions get worse? What does the passage permit people to say during a failed-looking beginning?","In Exodus 6:2–9, list God’s “I will” statements. How does Israel’s broken spirit affect the way they hear them?","What progression do you see in the Egyptian experts’ response from the staff sign through the gnats and boils?","How do warnings before the hail complicate the idea that the judgments are arbitrary or that every Egyptian responds alike?","Track who hardens Pharaoh’s heart in Exodus 7–11. What can the text support, and what questions remain disputed?","Compare Pharaoh’s concessions and confessions. What evidence shows that he wants relief without relinquishing control?","How can the church speak truthfully about judgment while refusing racial hostility, disaster speculation, or delight in suffering?"],
+      "examination":"Where have I treated another person’s request for freedom, rest, worship, or dignity as laziness or disloyalty? Do I apologize only when I want consequences to stop? What control, advantage, or institutional protection would genuine repentance require me to release?",
+      "challenge":"Read Exodus 5–11 and create a four-part record for each confrontation: God’s command or warning, Pharaoh’s response, the effect on others, and what happens after relief. Then examine one apology or commitment in your own life and identify a measurable change that would demonstrate repentance rather than temporary regret.",
+      "caution":"Prepare participants before discussing the final plague. Avoid graphic description and never frame personal loss as deserved punishment. If the group debates sovereignty and freedom, present defensible readings fairly without minimizing Pharaoh’s abuse or suggesting present-day abusers were forced by God. Keep practical safety central because retaliation often follows when coercive power is challenged.",
+      "prayer":"LORD of freedom and truth, expose every way we excuse domination or bargain with obedience. Give hope and practical help to people whose spirits have been crushed. Keep us from celebrating suffering or claiming Your judgments for our grudges. Through Jesus, free us from hardened hearts and form in us repentance that releases control, repairs harm, and serves our neighbors. Amen."
     },
     {
-      "number": 4,
-      "title": "Passover, Liberation, and the Sea",
-      "scripture": "Exodus 12–15",
-      "supporting": [],
-      "question": "How do Passover and the sea shape a people rescued by God?",
-      "truth": "God delivers enslaved people, gives them a practice of remembrance, and defeats the power pursuing them.",
-      "goal": "This lesson helps participants read Exodus 12–15 within Exodus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Exodus 12–15 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
-      "teaching": [
-        {
-          "heading": "Passover Forms Memory",
-          "body": "Families prepare a meal that will teach future generations. Redemption becomes embodied memory. Christian interpretation sees Christ’s saving work here while respecting Passover’s continuing Jewish identity and rejecting antisemitism."
-        },
-        {
-          "heading": "The Vulnerable Leave Together",
-          "body": "Israel departs with children, elders, possessions, and a mixed multitude. Liberation is communal, not reserved for the strongest. Planning must account for people with differing needs and abilities."
-        },
-        {
-          "heading": "A Pursuing Empire",
-          "body": "Pharaoh again reverses his decision and sends military force. Leaving oppression can be a dangerous period. Survivors need safety planning, practical support, and freedom from pressure to return."
-        },
-        {
-          "heading": "Stand Firm and Move Forward",
-          "body": "Moses tells the people to see God’s salvation, and God tells them to move. Trust and action belong together. Faith does not require passivity in the face of danger."
-        },
-        {
-          "heading": "The Sea Opens",
-          "body": "God makes a path where none is visible and breaks Egypt’s military pursuit. This unique act of divine deliverance does not authorize religious warfare. The rescued do not win by becoming a new empire."
-        },
-        {
-          "heading": "Song, Joy, and Lament",
-          "body": "Israel sings because oppression has ended. Celebration of rescue can coexist with sobriety about death. Teaching should center God’s liberation without delighting in human destruction."
-        }
+      "number":4,
+      "title":"Passover, Liberation, and the Sea",
+      "scripture":"Exodus 12:1–15:21",
+      "supporting":["1 Corinthians 5:7","1 Corinthians 10:1–5","Luke 9:31"],
+      "question":"How do Passover, departure, the sea, and Israel’s song shape the identity of a people rescued from slavery?",
+      "truth":"The LORD judges an enslaving empire, shelters Israel through the Passover sign, brings a diverse people out of bondage, opens a way through the sea, and gives the rescued community a practice of remembrance. Deliverance is God’s gift, not permission for the liberated to become new oppressors.",
+      "goal":"This lesson reads the Passover instructions, the death of Egypt’s firstborn, Israel’s departure, Pharaoh’s pursuit, the crossing of the sea, and the songs of Moses and Miriam. It honors Passover’s Jewish identity, treats deaths and military destruction with gravity, explains disputed geography and numbers cautiously, and traces the exodus toward Jesus without turning every detail into allegory.",
+      "openingParagraphs":["Read Exodus 12:21–28 and 14:10–16. Notice what the people are told to remember, what they fear, what Moses says, and what God commands next.","These chapters include firstborn deaths, national grief, forced migration, military pursuit, and drowning. Rescue should never be taught in a way that makes another family’s grief entertainment."],
+      "contextParagraphs":["Exodus 12 establishes a new calendar before the final judgment. Time itself will now be marked by deliverance; the people are not only escaping but becoming a community of memory.","Passover and Unleavened Bread are closely joined. Household meal, blood as sign, bitter herbs, readiness to leave, and future children’s questions all make remembrance embodied and intergenerational.","The sea is called yam suf, often “Sea of Reeds,” while the Greek tradition lies behind “Red Sea.” The crossing site remains disputed; the theological claim is that the LORD opens a path and overwhelms the force attempting to re-enslave Israel."],
+      "teaching":[
+        {"heading":"Passover Makes Deliverance Shared Memory","paragraphs":["The meal involves households, neighbors, food, doors, clothing, questions, and storytelling. Biblical remembrance brings God’s past act into present identity and obedience.","The blood is a commanded sign on this night, not a magical substance humans can use to control God or guarantee safety today.","Passover remains a living Jewish holy day. Christian connections to Jesus should be expressed with humility, not by claiming the church owns the feast or caricaturing Jewish practice."]},
+        {"heading":"The Death of the Firstborn Is Judgment and Tragedy","paragraphs":["Firstborn refers to family status and not only infants, but the text still includes children and describes a great cry across Egypt.","Exodus connects the judgment with Pharaoh’s violence and judgment on Egypt’s gods, yet the deaths remain emotionally severe. Nothing here authorizes churches, nations, or individuals to target civilians or children."]},
+        {"heading":"Israel Leaves with Wealth and a Mixed Multitude","paragraphs":["The Israelites ask Egyptians for silver, gold, and clothing, and Exodus describes the transfer as plundering. The Hebrew does not require the picture of deceptive borrowing, and many understand the goods as compensation within a public reversal of exploitation.","This is not a prosperity promise or private permission to steal. A mixed multitude also leaves with Israel, undermining ethnically sealed or racist readings.","The large population number is debated in relation to ancient population, archaeology, and the Hebrew elef. The text emphasizes vast deliverance; a church lesson need not pretend the historical-number question is settled."]},
+        {"heading":"Freedom Includes New Time and Belonging","paragraphs":["Unleavened Bread remembers haste, firstborn are consecrated to God, and children are taught why the practice exists. Rescued life now belongs to the LORD.","Ancient circumcision rules for Passover participation belong to Israel’s covenant context and must not become Christian ethnic policing or medical coercion."]},
+        {"heading":"The Pursuing Empire Makes Departure Dangerous","paragraphs":["Pharaoh regrets losing the labor force and sends chariots after the people. His release was surrender under pressure, not repentance.","Leaving coercive control can be one of the most dangerous moments for an abuse survivor, trafficking victim, worker, or member of a controlling group. Exodus supports practical safety planning rather than lone confrontation."]},
+        {"heading":"Stand Firm Is Followed by Go Forward","paragraphs":["Moses says to stand firm and see the LORD’s salvation; God then says, “Tell the Israelites to go forward.” Faith rejects both self-salvation and passive refusal to use the path God provides.","“The LORD will fight for you” is not an order to remain in abuse, avoid medicine, or reject legal protection. In this story God fights while Israel travels through the escape He opens."]},
+        {"heading":"The Sea Ends Pharaoh’s Claim","paragraphs":["The chariots follow and are overwhelmed. Israel does not become free by building a better chariot army; God breaks the force attempting to restore slavery.","The bodies on the shore are a stark sign that the threat is ended. Faithful teaching can name both rescued people’s relief and the horror of death."]},
+        {"heading":"Moses and Miriam Lead the Song","paragraphs":["Exodus 15 shifts to poetry, celebrates God’s triumph, and anticipates sanctuary and divine dwelling. Warrior language answers an empire whose chariots pursued slaves; detached from that setting it can become dangerous.","Miriam is named a prophet and leads women in worship. Women are not spectators at the edge of deliverance.","Celebration after rescue is appropriate, but visible joy should never be demanded from survivors as proof of gratitude." ]}
       ],
-      "questions": [
-        "What detail in Exodus 12–15 first draws your attention?",
-        "What does this passage reveal about God?",
-        "What human need, danger, or responsibility does it address?",
-        "Which action is described but not given as a modern command?",
-        "Whose dignity or vulnerability needs special attention?",
-        "What harmful interpretation must be rejected?",
-        "How does this text challenge the misuse of power?",
-        "What faithful response will you practice this week?"
-      ],
-      "examination": "Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
-      "challenge": "Read Exodus 12–15 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
-      "caution": "Reject slavery apologetics, antisemitism, ethnic scapegoating, religious violence, and claims that hardship proves guilt. Ancient judgments belong to God and never authorize retaliation. Center oppressed people’s safety and pair prayer with practical, medical, legal, financial, and safeguarding support.",
-      "prayer": "Holy God, meet us in Exodus 12–15. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["The Synoptic Gospels place Jesus’ final meal in Passover context, and Paul calls Christ “our Passover.” Jesus’ death and resurrection become the decisive rescue from sin and death and the formation of a covenant people.","Paul reads passage under the cloud and through the sea as a baptismal pattern in 1 Corinthians 10, while warning that deliverance does not make a people immune to later idolatry.","Luke uses the Greek word exodos for Jesus’ coming departure at the transfiguration. Jesus accomplishes deliverance not by building an empire but by giving His life and rising.","These Christian connections do not cancel Israel’s story or make Jewish Passover spiritually empty. Jesus-centered reading should deepen gratitude, not antisemitism or replacement arrogance."],
+      "guardrailParagraphs":["Doorway blood is not a magic formula guaranteeing physical protection today.","The sea crossing is deliverance from an actual pursuing force, not a slogan that every obstacle will disappear.","“Stand firm” cannot be isolated from “go forward”; faith never requires passive submission to abuse.","Firstborn deaths and drowning soldiers never authorize violence against civilians, children, Egyptians, Africans, Jews, Muslims, political opponents, or any modern group."],
+      "questions":["What practices in Exodus 12 turn the exodus from a past event into a memory future generations can inhabit?","What is explicit about the blood as a sign, and what modern claims would go beyond the text?","How does the great cry in Egypt affect the way we teach divine judgment?","What do the mixed multitude, Joseph’s bones, children, elders, and livestock reveal about the community leaving Egypt?","Why does Pharaoh pursue after releasing Israel, and what does that show about the difference between surrender and repentance?","Read Exodus 14:13–16 together. How do “stand firm” and “go forward” correct opposite misuses of faith?","What does the Song of the Sea celebrate, and what keeps its warrior language from becoming a command for Christian violence?","How do the New Testament’s Passover, baptism, and exodus connections point to Jesus while preserving Israel’s original story?"],
+      "examination":"What story of deliverance am I responsible to remember truthfully? Have I used spiritual language to pressure someone to stay in danger, move before they are ready, or display joy on demand? Where might freedom in Christ require me to release control rather than merely regret its consequences?",
+      "challenge":"Read Exodus 12–15 in four movements: meal, departure, sea, and song. Under each heading write what God does, what the people do, what danger remains, and what must be remembered. Then take one practical step to support safe freedom for someone, such as giving to a shelter, learning a confidential referral process, preparing transportation, or correcting an antisemitic misuse of Passover.",
+      "caution":"Handle the death of the firstborn and drowned soldiers without graphic detail or triumphant humor. If abuse or trafficking is disclosed, do not urge an unplanned confrontation. Speak respectfully about Jewish Passover and do not stage Christian reenactments as though they reproduce or supersede Judaism.",
+      "prayer":"God of deliverance, remember those who are trapped, pursued, displaced, or grieving. Give courage for the path You open and wisdom for practical safety. Keep us from turning judgment into cruelty or Passover into contempt for Your Jewish people. Through Jesus, our Passover and risen Lord, free us from sin and teach us to use freedom for worship, justice, and neighbor love. Amen."
     },
     {
-      "number": 5,
-      "title": "Wilderness Provision and Tested Trust",
-      "scripture": "Exodus 15:22–18:27",
-      "supporting": [],
-      "question": "How does God form a newly liberated people amid hunger, thirst, conflict, and leadership strain?",
-      "truth": "God patiently provides daily bread, living water, communal protection, and shared leadership while teaching trust.",
-      "goal": "This lesson helps participants read Exodus 15:22–18:27 within Exodus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Exodus 15:22–18:27 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
-      "teaching": [
-        {
-          "heading": "Bitter Water and Honest Need",
-          "body": "The people’s thirst is real, not a trivial lack of faith. God provides and begins to teach trust. Leaders should distinguish legitimate need from destructive behavior."
-        },
-        {
-          "heading": "Manna Is Daily Dependence",
-          "body": "Manna cannot be hoarded for private security. Everyone gathers enough, and Sabbath interrupts endless production. God’s economy exposes greed and protects rest."
-        },
-        {
-          "heading": "Do Not Shame Hunger",
-          "body": "Complaints arise from memories distorted by fear, yet hunger remains material. Spiritual teaching should not replace food, clean water, housing, or medical care with slogans."
-        },
-        {
-          "heading": "Water from the Rock",
-          "body": "God provides despite contention. The scene invites dependence, but it is not a formula guaranteeing that prayer removes every scarcity. Communities still organize responsible provision."
-        },
-        {
-          "heading": "Amalek and a Difficult Battle",
-          "body": "The battle belongs to Israel’s vulnerable wilderness journey and should not be used to label modern ethnic or political enemies. Victory depends on God and communal support, not glorification of violence."
-        },
-        {
-          "heading": "Jethro Shares Wisdom",
-          "body": "Jethro sees that Moses’ workload is unsustainable and recommends delegated leadership. Burnout is not faithfulness. Clear responsibility, capable teams, accountability, and rest serve the whole community."
-        }
+      "number":5,
+      "title":"Wilderness Provision and Tested Trust",
+      "scripture":"Exodus 15:22–18:27",
+      "supporting":["John 6","1 Corinthians 10:1–4","2 Corinthians 8:13–15"],
+      "question":"How does God begin forming a newly liberated people when freedom brings them into thirst, hunger, conflict, and unsustainable leadership?",
+      "truth":"The God who brought Israel through the sea provides water and daily bread, establishes Sabbath before Sinai, protects a vulnerable community, and uses wisdom from outside Israel to share leadership. Trust grows through dependence, truthful need, communal provision, and limits.",
+      "goal":"This lesson follows Israel from the Wilderness of Shur toward Sinai. It distinguishes real need from destructive complaint, explains manna and Sabbath, separates the water-from-the-rock story from the later Numbers incident, handles Amalek without creating modern enemies, and receives Jethro’s counsel without turning it into a rigid organizational blueprint.",
+      "openingParagraphs":["Read Exodus 16:13–21. List what happens when people gather little, gather much, keep manna overnight, and gather on the sixth day. What kind of community is this daily bread forming?","Make room for people who know food insecurity, unsafe water, chronic illness, disability, war, or burnout. “Grumbling” must not become a label that silences legitimate need."],
+      "contextParagraphs":["Israel is liberated before Sinai but is not instantly free of fears and material vulnerabilities formed under slavery. The wilderness becomes a place of provision and testing.","The route moves through Shur, Marah, Elim, the Wilderness of Sin, Rephidim, and the Horeb area. Exact locations are debated; the narrative’s pattern is scarcity and provision.","God tests Israel through daily instructions, while Israel “tests” God by demanding proof of His presence on its terms. Testing here is not divine temptation to evil.","Jethro’s positive role alongside Amalek’s attack prevents a simplistic “outsiders are enemies” reading."],
+      "teaching":[
+        {"heading":"Bitter Water Reveals Real Need","paragraphs":["After three days without water, Israel reaches undrinkable water at Marah. Their underlying need is not imaginary; arid-land travelers cannot survive on slogans.","God shows Moses wood or a tree that makes water drinkable, but the mechanism is unexplained. The scene is not a recipe that prayer replaces sanitation or public health.","God’s healer title belongs to this covenant scene and cannot be turned into a guarantee that faithful people will never be ill or disabled."]},
+        {"heading":"Manna Teaches Daily Dependence and Enough","paragraphs":["Hunger causes Israel to remember Egypt as food security while forgetting slavery. Trauma can idealize a harmful past when the present feels unsafe.","God provides quail and manna. Households gather according to people, and much or little results in enough. Paul later cites this pattern in urging material generosity.","Ordinary hoarding spoils while the Sabbath portion remains. Security comes through God’s instruction and shared sufficiency, not anxious accumulation."]},
+        {"heading":"Sabbath Interrupts Endless Production","paragraphs":["The Sabbath pattern appears before the Ten Commandments. Former slaves learn that survival does not require seven-day production.","Rest is not merely personal time management. Communities, employers, and ministries must structure staffing, wages, schedules, and caregiving so that people with less power can rest too."]},
+        {"heading":"Water from the Rock Answers the Presence Question","paragraphs":["At Rephidim the people ask, “Is the LORD among us or not?” God tells Moses to strike the rock at Horeb before elders, and water comes for the community.","This is not Numbers 20. Here Moses is told to strike; in Numbers he is told to speak and later strikes twice. Combining the episodes creates false accusations.","The story does not eliminate ordinary provision through wells, pipes, filtration, conservation, public policy, and emergency relief."]},
+        {"heading":"Amalek Attacks the Vulnerable","paragraphs":["Amalek attacks an exhausted community; Deuteronomy later remembers those lagging behind being targeted. Joshua fights while Aaron and Hur literally support Moses when he tires.","The raised hands and staff are not magic. The scene exposes a leader’s dependence on others.","No modern ethnicity, religion, nation, or political party should be labeled “Amalek.” The church receives no command to destroy human enemies."]},
+        {"heading":"Jethro Recognizes God’s Deliverance","paragraphs":["Jethro hears, rejoices, blesses the LORD, offers sacrifice, and shares a meal with Israel’s elders. A Midianite priest responds to Israel’s God with insight and worship.","Israel’s leader receives truth from an outsider relative. God’s people should test counsel without assuming ethnicity, nationality, age, or institutional position determines who can see a problem."]},
+        {"heading":"Shared Leadership Protects Moses and the People","paragraphs":["Jethro says Moses’ one-person judging system is “not good” because it will wear out leader and people. Burnout delays justice and concentrates access.","He recommends capable, God-fearing, trustworthy people who reject dishonest gain and gives them defined responsibility. Character matters more than charisma.","The numeric tiers are not a mandatory church org chart. The enduring wisdom is shared work, qualified leaders, accessible justice, clear escalation, and humility to listen." ]}
       ],
-      "questions": [
-        "What detail in Exodus 15:22–18:27 first draws your attention?",
-        "What does this passage reveal about God?",
-        "What human need, danger, or responsibility does it address?",
-        "Which action is described but not given as a modern command?",
-        "Whose dignity or vulnerability needs special attention?",
-        "What harmful interpretation must be rejected?",
-        "How does this text challenge the misuse of power?",
-        "What faithful response will you practice this week?"
-      ],
-      "examination": "Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
-      "challenge": "Read Exodus 15:22–18:27 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
-      "caution": "Reject slavery apologetics, antisemitism, ethnic scapegoating, religious violence, and claims that hardship proves guilt. Ancient judgments belong to God and never authorize retaliation. Center oppressed people’s safety and pair prayer with practical, medical, legal, financial, and safeguarding support.",
-      "prayer": "Holy God, meet us in Exodus 15:22–18:27. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["In John 6 Jesus corrects the idea that Moses was the ultimate manna giver and identifies Himself as the bread of life. He offers life deeper than temporary hunger without treating hungry bodies as irrelevant.","Paul says Israel drank from a spiritual rock and that the rock was Christ. This apostolic reading does not require hidden Jesus-symbols in every wilderness object.","Jesus teaches prayer for daily bread, gives living water, shares ministry with disciples, and defines greatness through service rather than domination."],
+      "guardrailParagraphs":["Hunger and thirst are not character flaws. Do not use “complainer” to silence real need for food, water, safety, fair wages, or responsible leadership.","“I am the LORD who heals you” is not a guarantee every faithful person will be cured in this life.","Manna is not a prosperity slogan; it teaches enough, dependence, limits on hoarding, and rest.","Amalek is not a code name for modern enemies, and Jethro is not proof every outside idea is wise."],
+      "questions":["Compare Marah and Elim in Exodus 15:22–27. What does each place reveal about need, provision, and the limits of human control?","What instructions govern the gathering, measuring, storing, and Sabbath use of manna? What kind of economy do they create?","Why might former slaves find Sabbath trust difficult? Who needs communal or institutional change before rest becomes possible?","How is Exodus 17:1–7 different from the rock incident in Numbers 20, and why does the distinction matter?","What role do Joshua, Aaron, and Hur play during the battle? How does the scene challenge solitary-hero leadership?","What does Jethro confess about God, and what does Israel receive from this Midianite priest?","Which qualifications does Jethro name for judges, and what problems does delegated authority solve or create?","How do Jesus’ bread and living-water teachings deepen Christian application without dismissing physical hunger and thirst?"],
+      "examination":"Where has fear tempted me to hoard, overwork, or romanticize a harmful past? Do I dismiss real need as complaining? What work am I holding because I do not trust others, and what responsibility should be shared with clear authority and accountability?",
+      "challenge":"For seven days, pray “Give us today our daily bread” and record one provision received, one need still present, and one resource you can share. Also review one area of work or ministry: name a task to stop, delegate, or redesign so that rest, access, and timely care do not depend on one exhausted person.",
+      "caution":"Do not shame people using public assistance or living with scarcity. Do not promise healing or imply treatment shows weak faith. Welcome medicine, therapy, disability supports, mobility aids, and professional expertise as compatible with trust in God. Reject any modern Amalek identification. Do not praise overwork as sacrifice; delegation without training, authority, compensation, or safeguarding can simply transfer exploitation downward.",
+      "prayer":"God of daily bread and living water, meet people who are hungry, thirsty, ill, displaced, or exhausted. Free us from hoarding and from shaming honest need. Teach us to rest, share, and build structures that serve people well. Through Jesus, the bread of life, sustain us in the wilderness and make our leadership humble, accountable, and shared. Amen."
     },
     {
-      "number": 6,
-      "title": "Covenant Law and Neighbor Love",
-      "scripture": "Exodus 19–24",
-      "supporting": [],
-      "question": "How does a liberated people learn to live under God rather than reproduce Egypt?",
-      "truth": "God’s covenant forms worship, justice, truth, rest, and protection for neighbors, workers, immigrants, and vulnerable people.",
-      "goal": "This lesson helps participants read Exodus 19–24 within Exodus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Exodus 19–24 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
-      "teaching": [
-        {
-          "heading": "Grace Before Command",
-          "body": "God first carries Israel out of Egypt, then gives covenant instruction. Obedience responds to rescue; it does not purchase belonging."
-        },
-        {
-          "heading": "A Kingdom of Priests",
-          "body": "Israel is called to represent God among the nations. Election is service, not ethnic superiority. The church must reject antisemitism and triumphalism."
-        },
-        {
-          "heading": "The Ten Words Protect Relationship",
-          "body": "The commands order love for God, family, life, marriage, property, truth, and contentment. They confront both private sin and communal harm."
-        },
-        {
-          "heading": "Ancient Servitude Requires Moral Clarity",
-          "body": "Exodus regulates forms of servitude in an ancient economy; regulation is not the final biblical endorsement of owning people. Kidnapping is condemned. These texts must never defend racial chattel slavery, trafficking, or modern forced labor."
-        },
-        {
-          "heading": "Justice for the Vulnerable",
-          "body": "Laws protect immigrants, widows, orphans, poor borrowers, and workers. Israel must remember its own oppression. God’s people cannot claim holiness while exploiting those with less power."
-        },
-        {
-          "heading": "Covenant Is Public and Accountable",
-          "body": "The covenant is read aloud and accepted by the community. Leadership and law are not secret possessions. Public commitments require truthful procedures and accountability."
-        }
+      "number":6,
+      "title":"Covenant Law and Neighbor Love",
+      "scripture":"Exodus 19:1–24:18",
+      "supporting":["Matthew 5–7","Matthew 22:34–40","Hebrews 9–10"],
+      "question":"How does the God who liberated Israel from Pharaoh form the people into a holy covenant community that worships Him and protects neighbors from renewed domination?",
+      "truth":"God gives covenant commands after rescue, not as the price of rescue. The law orders worship, truth, rest, property, bodily safety, and care for people with less power, yet it also addresses an ancient patriarchal and slaveholding society in ways Christians must read honestly through Jesus and the wider biblical witness.",
+      "goal":"This lesson follows Israel’s arrival at Sinai, the Ten Words, the Book of the Covenant, and the covenant ceremony. It explains literary and covenant context, distinguishes ancient case law from direct modern legislation, confronts slavery and unequal power without apologetics, addresses land and conquest language, and shows how Jesus receives and fulfills Israel’s covenant story.",
+      "openingParagraphs":["Read Exodus 19:3–6 and 20:1–3. Which divine action comes before the commands? What does that order tell us about grace, identity, and obedience?","Chapters 21–23 include slavery, bodily injury, sexual vulnerability, capital penalties, and land conflict. Participants may pass; the goal is not to defend every ancient social arrangement."],
+      "contextParagraphs":["Israel arrives at Sinai after God has carried the people out of Egypt. The covenant invitation follows rescue: treasured possession, kingdom of priests, and holy nation among nations that already belong to God.","The covenant has gift and obligation. Israel did not earn liberation by laws not yet given, but grace does not leave rescued people morally unformed.","Exodus 20 contains the Ten Words, while 20:22–23:33 applies covenant principles through case laws. Ancient Near Eastern law collections also used case forms; similarity and difference both require historical context.","Exodus 24 seals covenant with sacrifice, blood, public reading, assent, and a meal before God."],
+      "teaching":[
+        {"heading":"Grace Comes Before Command","paragraphs":["The Ten Words begin with the LORD who brought Israel out of slavery. Obedience responds to belonging; it does not purchase rescue.","This protects against legalism and lawlessness. Grace neither makes God indebted to us nor permits harm.","A kingdom of priests is vocation, not racial superiority. Election cannot support antisemitism or contempt for outsiders."]},
+        {"heading":"Holy Presence Requires Boundaries and Mediation","paragraphs":["Thunder, cloud, trumpet, smoke, and trembling show that the liberating God is not manageable. The mountain boundary protects people; it is not a model for leaders to hide truth, finances, or decisions.","Exodus distinguishes terrified panic from reverent fear that restrains sin. Human leaders must not weaponize sacred fear to manipulate obedience."]},
+        {"heading":"The Ten Words Order Love for God and Neighbor","paragraphs":["The commands join worship and social conduct: rival gods, images, God’s name, Sabbath, parents, life, marriage, property, truthful testimony, and coveting.","The image prohibition cannot mean all visual art is forbidden because the tabernacle soon contains crafted cherubim and other forms. It forbids representing or controlling Israel’s God as an idol.","Misusing God’s name includes attaching divine authority to lies and exploitation, not only careless speech."]},
+        {"heading":"Sabbath Gives Rest to People with Less Power","paragraphs":["Sabbath reaches children, servants, resident foreigners, and animals. A household head cannot claim holy rest while forcing everyone below him to produce.","Christians disagree about Sabbath continuity, Sunday, and freedom concerning sacred days, but no view should justify exploitation or neglect worship and rest."]},
+        {"heading":"Ancient Servitude Must Be Read Without Apologetics","paragraphs":["Exodus 21 regulates Hebrew debt service, female servitude in patriarchal marriage arrangements, and abuse of enslaved people. Some laws restrain violence, but the system still includes ownership, unequal status, family vulnerability, and the language of people as property.","Ancient Israelite slavery was not identical to Atlantic race-based chattel slavery, but it was not merely a harmless employment contract. Differences must not sanitize coercion.","Exodus condemns kidnapping a person for sale, yet the Bible’s social world still contains regulated slavery. Christian abolition must tell that truth while drawing on image-bearing dignity, exodus, neighbor love, human unity, and the gospel to reject owning people."]},
+        {"heading":"Proportional Justice Limits Vengeance","paragraphs":["“Eye for eye” belongs to bodily-injury law and limits retaliation to proportionate justice. Many interpreters understand its application largely through compensation rather than literal mutilation in every case.","Jesus cites it when rejecting personal retaliation, not to abolish truthful public justice or force victims to remain exposed.","The case laws also distinguish intention, accident, negligence, theft, restitution, and foreseeable danger. Good intentions do not excuse preventable harm."]},
+        {"heading":"God Defends the Stranger, Widow, Orphan, and Poor","paragraphs":["Israel must not oppress resident foreigners because Israel knows the experience of being foreigners in Egypt. Memory of suffering should produce solidarity, not entitlement.","Loans to poor people must not become predatory, courts must reject false reports and partiality, and even an enemy’s overburdened animal must be helped. Justice is truthful, impartial, and concrete."]},
+        {"heading":"Sexual and Family Laws Require Careful Reading","paragraphs":["Some case laws assume patriarchal authority over a daughter’s sexual and economic future. Exodus 22:16–17 may restrain abandonment in its world, but it does not supply a complete theology of consent, trauma, or a woman’s voice.","The passage must never require a survivor to marry an offender, remain with an abuser, or treat money as erasing harm. Regulation within an ancient society is not endorsement of every power arrangement."]},
+        {"heading":"The Land Promise Does Not Authorize Modern Conquest","paragraphs":["Exodus 23 speaks of God leading Israel into inhabited land and driving out peoples in the covenant story. Joshua will require fuller treatment of conquest language and moral questions.","No church or modern nation can appoint itself ancient Israel and use these verses as a blank check for invasion, forced removal, or land seizure. New Testament mission is witness, baptism, teaching, enemy love, and spiritual resistance rather than territorial conquest."]},
+        {"heading":"Covenant Is Publicly Read and Shared","paragraphs":["Moses writes and publicly reads God’s words; covenant teaching is not private leader property. Blood marks the solemn bond of life, sacrifice, promise, and obligation.","Moses, Aaron, Nadab, Abihu, and elders ascend and eat before God. Covenant reaches toward communion in holy presence." ]}
       ],
-      "questions": [
-        "What detail in Exodus 19–24 first draws your attention?",
-        "What does this passage reveal about God?",
-        "What human need, danger, or responsibility does it address?",
-        "Which action is described but not given as a modern command?",
-        "Whose dignity or vulnerability needs special attention?",
-        "What harmful interpretation must be rejected?",
-        "How does this text challenge the misuse of power?",
-        "What faithful response will you practice this week?"
-      ],
-      "examination": "Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
-      "challenge": "Read Exodus 19–24 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
-      "caution": "Reject slavery apologetics, antisemitism, ethnic scapegoating, religious violence, and claims that hardship proves guilt. Ancient judgments belong to God and never authorize retaliation. Center oppressed people’s safety and pair prayer with practical, medical, legal, financial, and safeguarding support.",
-      "prayer": "Holy God, meet us in Exodus 19–24. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Jesus says He came to fulfill the Law and Prophets and identifies love for God and neighbor as the great commands. His teaching reaches anger, lust, truthfulness, retaliation, enemy love, and hidden motives.","At the Last Supper Jesus uses Exodus 24’s covenant language concerning His blood. Hebrews presents Him as the greater mediator whose self-offering establishes new-covenant access.","Christians differ on moral, civil, ceremonial categories and covenant continuity, but they do not simply enforce ancient Israel’s full legal code. Followers of Jesus read Sinai through His teaching, death, resurrection, and apostolic witness.","Fulfillment never excuses exploitation; Jesus centers justice, mercy, faithfulness, truth, love, and servant leadership."],
+      "guardrailParagraphs":["Law comes after deliverance; obedience is response, not the ladder by which enslaved people earn rescue.","Regulation is not moral approval. Slavery laws can restrain harm while accommodating ownership and unequal power, and they cannot defend slavery now.","Israel’s case laws are not a ready-made criminal code for a modern pluralistic nation.","Neither holiness nor forgiveness cancels consent, safety, due process, restitution, or protection from abuse."],
+      "questions":["How does Exodus 19:3–6 define Israel’s identity and vocation before any command is given?","Which features of the Sinai scene communicate holy presence, and which would be misused if transferred to human leaders?","Read the Ten Words as protections for relationships. Who or what is guarded by each command?","What does the Sabbath command require from people who control another person’s labor?","Which slavery laws restrain harm, and which details still expose unequal status? Why must both observations be stated?","How do the laws concerning foreigners, poor borrowers, widows, orphans, enemies, and courts apply Israel’s memory of Egypt?","What is the difference between proportional public justice and personal revenge in the “eye for eye” command?","How does the covenant ceremony in Exodus 24 prepare Christian readers to understand Jesus’ words about His blood and mediation?"],
+      "examination":"Do I celebrate grace while resisting the limits that protect my neighbor? Where do my money, schedule, speech, sexuality, authority, or political loyalties risk reproducing Pharaoh’s logic? Whose rest or safety depends on choices I control?",
+      "challenge":"Choose one section of Exodus 20–23 and make three columns: original covenant concern, harm the command restrains, and a Christ-shaped practice today. Then change one policy, habit, budget choice, or schedule so that a worker, immigrant, borrower, caregiver, child, disabled person, or other neighbor receives greater dignity or protection.",
+      "caution":"Do not ask people to debate whether slavery “was really bad” while Black participants or trafficking survivors bear the cost. State plainly that ancient forms varied, laws include both restraints and accommodation, and owning people is incompatible with Christian neighbor love. Avoid graphic examples involving sexual vulnerability or bodily injury. Keep political application disciplined: no party, nation, or leader becomes ancient Israel.",
+      "prayer":"Holy God who brought Your people out of slavery, write love for You and neighbor into our common life. Expose every use of Scripture that excuses ownership, coercion, abuse, or conquest. Teach us truthful justice, shared rest, responsible power, and mercy that protects the vulnerable. Through Jesus, the mediator of the new covenant, make us a holy people who do not rebuild Pharaoh’s house. Amen."
     },
     {
-      "number": 7,
-      "title": "The Golden Calf, Intercession, and Renewal",
-      "scripture": "Exodus 32–34",
-      "supporting": [],
-      "question": "What happens when fear turns worship into control, and how does covenant renewal become possible?",
-      "truth": "Idolatry destroys trust, yet God receives intercession, reveals merciful character, and renews covenant after judgment.",
-      "goal": "This lesson helps participants read Exodus 32–34 within Exodus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Exodus 32–34 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
-      "teaching": [
-        {
-          "heading": "Anxious Waiting Becomes Idolatry",
-          "body": "When Moses delays, the people demand a visible god. Anxiety seeks something controllable. Faith learns to wait without manufacturing substitutes for God."
-        },
-        {
-          "heading": "Aaron Misuses Leadership",
-          "body": "Aaron gathers gold, creates the calf, and later minimizes responsibility. Leaders must not blame the crowd for choices they enabled. Confession names actions truthfully."
-        },
-        {
-          "heading": "Intercession Appeals to God’s Character",
-          "body": "Moses pleads for the people by recalling God’s promises and reputation. Intercession is not manipulation; it is covenant prayer that refuses indifference."
-        },
-        {
-          "heading": "Violence in the Camp",
-          "body": "The judgment scene involving the Levites is severe and tied to Israel’s unique covenant crisis. It must never authorize churches, families, or governments to kill people for religious disagreement."
-        },
-        {
-          "heading": "Moses Refuses Presence-Less Success",
-          "body": "Moses says the journey cannot continue without God’s presence. Achievement, territory, or institutional growth is empty if God’s character is absent."
-        },
-        {
-          "heading": "Merciful and Just",
-          "body": "God reveals himself as compassionate, gracious, patient, loving, faithful, and just. Mercy does not ignore harm, and justice does not cancel covenant love. Renewal rests in God’s character."
-        }
+      "number":7,
+      "title":"The Golden Calf, Intercession, and Renewal",
+      "scripture":"Exodus 32:1–34:35",
+      "supporting":["John 1:14–18","2 Corinthians 3"],
+      "question":"How does Israel’s attempt to make God visible and manageable shatter the covenant, and how can judgment, intercession, presence, and renewal remain in the same story?",
+      "truth":"Israel’s idolatry corrupts worship and exposes failed leadership. Moses intercedes, but he cannot erase guilt. God judges, remains free in mercy, reveals His compassionate and just character, and renews the covenant without pretending the rupture never happened.",
+      "goal":"This lesson reads the golden calf between the tabernacle instructions and construction. It examines anxious idolatry, Aaron’s responsibility, Moses’ intercession, Levite violence, God’s response to prayer, the tent outside the camp, the request to see God’s glory, the divine self-proclamation of Exodus 34, covenant renewal, and Moses’ radiant face while naming ambiguity and violence rather than using them to defend coercion.",
+      "openingParagraphs":["Read Exodus 32:1–8 and 34:5–9. Compare the god the people try to manufacture with the character God proclaims about Himself. What does the contrast reveal about idolatry?","The passage includes religious betrayal, mass killing, divine threat, plague, and generational consequences. Participants may pass, and no one should identify modern people as idolaters deserving violence."],
+      "contextParagraphs":["Exodus 25–31 gives sanctuary instructions, then chapters 32–34 interrupt the plan with the golden calf before construction begins. The placement is theological: Israel violates covenant while Moses receives instructions for worship and divine presence.","The people experience Moses’ long absence as crisis and ask Aaron for elohim to go before them. Because Aaron later announces a festival “to the LORD,” the calf may be intended as a forbidden representation of Israel’s God rather than a wholly unrelated deity.","After judgment and intercession, the central question becomes whether God’s presence will continue. Chapters 33–34 move from threatened absence to mediated presence, revelation of God’s character, and covenant renewal."],
+      "teaching":[
+        {"heading":"Anxious Waiting Produces a Controllable God","paragraphs":["The people demand visible, carryable divinity. The calf supplies immediacy and predictability while Moses and the invisible God seem unavailable.","“Rise up to play” has sometimes been read as explicit sexual excess, but the wording does not justify certainty about an orgy. The stated offenses are already serious: forbidden image-making, false attribution of the exodus, and worship reshaped by human control.","Idolatry can attach God’s name to nationalism, money, celebrity, race, ideology, or institution and then worship a manageable image of God." ]},
+        {"heading":"Aaron Uses Authority and Evades Responsibility","paragraphs":["Aaron requests gold, receives it, fashions the object, builds the altar, and schedules the festival. He is not merely a passive victim of the crowd.","When confronted, he blames the people and says he threw gold into the fire and the calf came out. Institutional confession fails when leaders hide deliberate decisions behind pressure, process, or inevitability."]},
+        {"heading":"Moses Intercedes from Covenant Promise","paragraphs":["God threatens destruction and offers Moses a future as a new great nation. Moses refuses a future built on the annihilation of the people he was sent to lead and appeals to relationship, God’s reputation, and promises to Abraham, Isaac, and Israel.","Exodus says the LORD relented regarding announced disaster. Christians explain this language differently, but the text clearly presents intercession as meaningful rather than theater."]},
+        {"heading":"Broken Tablets Make Broken Covenant Visible","paragraphs":["Moses smashes the tablets, destroys the calf, and imposes a symbolic judgment. None of this authorizes religious leaders to destroy property, force ingestion, haze, or physically punish people.","Levites then kill about three thousand. Whatever its role in ancient covenant judgment, it is not a standing Christian mandate to kill apostates, family members, or religious opponents. The church follows a crucified Messiah, not a holy-war reenactment."]},
+        {"heading":"Moses Offers Himself but Cannot Erase Another’s Guilt","paragraphs":["Moses confesses Israel’s sin and offers to be blotted out if forgiveness is not given. God does not accept him as a substitute who simply removes others’ responsibility.","Intercession can be loving without falsifying records, silencing victims, obstructing justice, or absorbing consequences so harm continues."]},
+        {"heading":"God’s Presence Matters More Than Arrival","paragraphs":["God initially proposes sending an angel rather than going in Israel’s midst. Moses refuses to treat arrival in the promised land without God’s presence as success.","A ministry may reach visible goals yet betray God’s character through coercion, dishonesty, or contempt for vulnerable people. Institutional survival is not the same as divine presence."]},
+        {"heading":"Face to Face and the Limits of Sight","paragraphs":["Exodus says God speaks with Moses “face to face” like a friend and later says no one can see God’s face and live. The first phrase describes directness of relationship, not exhaustive visual comprehension.","Moses receives a limited encounter with glory. The language affirms real revelation while refusing human possession of God."]},
+        {"heading":"God Proclaims Compassion, Faithfulness, and Justice","paragraphs":["Exodus 34:6–7 becomes one of Scripture’s most echoed descriptions of God: compassionate, gracious, slow to anger, rich in steadfast love and faithfulness, forgiving, yet not simply clearing guilt.","Generational consequence language must not become automatic “generational curse” diagnosis. Scripture recognizes inherited consequences while rejecting personal guilt assigned to children for parents’ sins. Illness, disability, poverty, infertility, or trauma must never be labeled a curse on this basis."]},
+        {"heading":"Renewal Restores Covenant Without Erasing History","paragraphs":["New tablets are cut and covenant commands repeated. Mercy makes continued relationship possible without pretending the first breach never occurred.","Moses’ face radiates after meeting God. The Hebrew word’s relation to “horn” contributed to later horned art, but the context means radiant skin.","Paul later reflects on Moses’ veil in 2 Corinthians 3. Christian interpretation must never become contempt for Jews or claims that Jewish people are uniquely incapable of reading Scripture." ]}
       ],
-      "questions": [
-        "What detail in Exodus 32–34 first draws your attention?",
-        "What does this passage reveal about God?",
-        "What human need, danger, or responsibility does it address?",
-        "Which action is described but not given as a modern command?",
-        "Whose dignity or vulnerability needs special attention?",
-        "What harmful interpretation must be rejected?",
-        "How does this text challenge the misuse of power?",
-        "What faithful response will you practice this week?"
-      ],
-      "examination": "Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
-      "challenge": "Read Exodus 32–34 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
-      "caution": "Reject slavery apologetics, antisemitism, ethnic scapegoating, religious violence, and claims that hardship proves guilt. Ancient judgments belong to God and never authorize retaliation. Center oppressed people’s safety and pair prayer with practical, medical, legal, financial, and safeguarding support.",
-      "prayer": "Holy God, meet us in Exodus 32–34. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Moses is willing to be lost with the people but cannot finally carry their guilt. Jesus, the sinless mediator, gives Himself for sinners, bears judgment, rises, and lives to intercede.","John says the Word became flesh and “tabernacled” among us, full of grace and truth. Many hear an echo of Exodus 34’s steadfast love and faithfulness. Jesus reveals the same compassionate God rather than replacing a supposedly harsher Old Testament deity.","Paul’s use of Moses’ veil centers confidence in Christ and the Spirit’s transforming work and must be taught without Christian superiority or antisemitism.","Jesus rejects self-protective authority, spectacle, and domination. Presence with Christ can never be separated from Christlike character."],
+      "guardrailParagraphs":["The golden calf may be worship conducted in the LORD’s name through a forbidden image; idolatry can remain religious while remaking God for human control.","Allow God’s relenting language to stand; interpretations differ, but Moses’ prayer is not meaningless theater.","The Levite killing and plague are not church discipline procedures or precedents for violence against apostasy or disagreement.","Covenant renewal does not bypass truth or consequence. Forgiveness must never restore unsafe leaders instantly, silence victims, or avoid restitution and outside accountability."],
+      "questions":["What does Aaron’s announcement of a festival to the LORD suggest about the kind of idolatry taking place?","Trace Aaron’s actions before the calf is made and his explanation afterward. What marks responsibility, and what marks blame-shifting?","Which parts of God’s character and covenant does Moses appeal to in 32:11–14?","What can the text support about God’s response to intercession, and where do Christian explanations differ?","How do the broken tablets, destroyed calf, Levite violence, and plague communicate different dimensions of covenant rupture?","Why does Moses refuse the idea of reaching the land without God’s presence? What would presence-less success look like today?","How do 33:11 and 33:20 together clarify what “face to face” means?","In 34:6–7, how are compassion, patience, forgiveness, faithfulness, and justice held together rather than played against one another?"],
+      "examination":"What visible or controllable substitute do I reach for when God seems slow? Where have I used God’s name to protect an institution, ideology, image, or leader? If I have harmed trust, what truth, accountability, and patient evidence of change must accompany my request for forgiveness?",
+      "challenge":"Read Exodus 32–34 and mark every request Moses makes and every response God gives. Then memorize or slowly pray Exodus 34:6–7. Choose one inherited pattern of harm, blame-shifting, or control that you will interrupt through confession, a boundary, restitution, counseling, or accountable change.",
+      "caution":"Do not reenact the Levite scene, invite participants to name modern idolaters, or use violent imagery to intensify worship. Participants affected by abusive clergy may recognize Aaron’s enabling and evasion; do not rush restoration of leaders. Center truth, safety, reporting, independent investigation where appropriate, restitution, and demonstrated change. Avoid generational-curse speculation.",
+      "prayer":"Compassionate and gracious LORD, slow to anger and rich in steadfast love, expose every image of You we manufacture for control. Give leaders honest confession, protect people harmed by spiritual power, and teach us to seek mercy without hiding guilt. Keep us from religious violence and inherited shame. Through Jesus, our faithful mediator, renew us in Your presence and shape us by Your true character. Amen."
     },
     {
-      "number": 8,
-      "title": "The Tabernacle and God’s Dwelling Presence",
-      "scripture": "Exodus 25–31; 35–40",
-      "supporting": [],
-      "question": "How do worship, craftsmanship, generosity, and Sabbath prepare a dwelling for God’s presence?",
-      "truth": "God chooses to dwell among his people and calls diverse gifts into holy, accountable, life-giving service.",
-      "goal": "This lesson helps participants read Exodus 25–31; 35–40 within Exodus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Exodus 25–31; 35–40 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
-      "teaching": [
-        {
-          "heading": "A Voluntary Offering",
-          "body": "Materials come from hearts moved to give. Worship funding should never rely on coercion, shame, or promises of guaranteed wealth. Generosity remains voluntary and transparent."
-        },
-        {
-          "heading": "Beauty Serves Presence",
-          "body": "Color, fabric, metal, wood, oil, light, and fragrance honor God. Beauty is not vanity when it directs attention toward God and serves communal worship."
-        },
-        {
-          "heading": "Bezalel and Oholiab",
-          "body": "The Spirit empowers artistic and technical skill. Craftsmanship, design, organization, and manual work are spiritual gifts, not lesser forms of ministry."
-        },
-        {
-          "heading": "Many Hands Build Together",
-          "body": "The tabernacle requires a community of makers and givers. Healthy ministry values visible and hidden contributions and does not center one personality."
-        },
-        {
-          "heading": "Sabbath Guards the Work",
-          "body": "Even sacred construction pauses for Sabbath. Urgency in ministry does not cancel human limits. Rest resists exploitation and acknowledges that God, not constant labor, sustains the mission."
-        },
-        {
-          "heading": "Glory Fills the Dwelling",
-          "body": "When the work is completed as commanded, God’s glory fills the tabernacle. The journey will proceed by God’s presence. Structures matter only as places of faithful encounter, never as containers leaders control."
-        }
+      "number":8,
+      "title":"The Tabernacle and God’s Dwelling Presence",
+      "scripture":"Exodus 25:1–31:18; 35:1–40:38",
+      "supporting":["John 1:14","John 2:19–21","Hebrews 8–10","Revelation 21:1–3,22"],
+      "question":"What kind of worshiping community is formed when the holy God chooses to dwell among a people who cannot manufacture, contain, or control His presence?",
+      "truth":"God gives Israel a patterned, portable sanctuary and invites willing gifts, Spirit-enabled craftsmanship, priestly service, and Sabbath rest. When the work is completed as commanded, God’s glory fills the dwelling and leads the journey, showing that the goal of exodus is communion with God.",
+      "goal":"This lesson reads the tabernacle instructions and construction around the interruption of the golden calf. It explains the sanctuary’s literary role, voluntary giving, sacred art, priesthood, Sabbath, creation echoes, and the final cloud of glory while resisting speculative symbolism, coercive fundraising, ministry overwork, and the idea that a building can contain God.",
+      "openingParagraphs":["Read Exodus 25:1–9, 31:1–11, and 40:33–38. List what the people give, what God gives, what workers do, and what only God can do.","Some participants may carry church hurt related to building campaigns, pressured giving, unpaid labor, exclusion, or leaders who called burnout sacrifice. Invite honest observation without demanding disclosure."],
+      "contextParagraphs":["The mishkan, “dwelling,” is a portable sanctuary related to the tent of meeting. God states the purpose: “Let them make me a sanctuary, so that I may dwell among them.” Architecture serves covenant presence.","Chapters 25–31 give instructions; chapters 35–40 carry them out; the golden calf and covenant renewal stand between. The contrast is deliberate: both calf and tabernacle use gold, craftsmanship, leadership, and worship, but one manufactures a controllable god while the other responds to God’s command.","Repeated “as the LORD commanded Moses” language emphasizes faithful execution. Creation echoes appear in ordered divine speeches, Sabbath, finished work, inspection, and blessing.","The tabernacle reflects ancient sanctuary forms but rejects the notion that God needs feeding, housing, or sustaining. The Creator freely places His glory among the people."],
+      "teaching":[
+        {"heading":"God Desires to Dwell Among the People","paragraphs":["The tabernacle stands at Exodus’s center because deliverance has a destination: Israel is brought to God. Increasing sacred zones hold nearness and holiness together.","The ark’s cover, often “mercy seat” or “atonement cover,” is overshadowed by cherubim, throne and guardian figures rather than winged babies. No image of God is placed there.","Sacred boundaries cannot justify social exclusion or inaccessible church design; Christian access to God through Christ changes how the church welcomes people." ]},
+        {"heading":"The Offering Comes from Willing Hearts","paragraphs":["Men and women bring jewelry, fabric, wood, oil, spices, stones, and skilled work as their hearts move them. Eventually the people bring more than enough and Moses tells them to stop.","The text is a direct challenge to pressure, public shaming, guaranteed-return promises, and endless fundraising. Defined purpose includes the ability to say “enough.”
+","Equal census money also prevents wealth from purchasing greater covenant worth." ]},
+        {"heading":"Beauty and Symbol Serve Worship Without Becoming an Idol","paragraphs":["Color, fabric, metal, wood, light, fragrance, embroidery, stonework, and designed space are treated as worthy parts of worship. The image prohibition does not ban all religious art.","Exodus does not assign a separate Christian meaning to every color, loop, board, socket, or measurement. New Testament connections are real, but speculative symbol charts should not be treated as Scripture.","Reserved oil and incense formulas are not business opportunities for “biblical” products with guaranteed spiritual effects." ]},
+        {"heading":"The Spirit Empowers Technical and Artistic Wisdom","paragraphs":["Bezalel is filled with God’s Spirit, wisdom, understanding, knowledge, and craft skill; Oholiab and others are equipped to work and teach. Spirit-enabled service includes design, engineering, sewing, carving, accounting, logistics, maintenance, and teaching.","Skilled women also contribute. Moses receives the pattern but does not take credit for every object. Healthy ministry names contributors, respects expertise, and does not treat workers as disposable hands." ]},
+        {"heading":"Priesthood Represents the People Before God","paragraphs":["Aaron and his sons wear garments bearing Israel’s tribal names. Priesthood symbolically carries the people before God rather than turning sacred office into self-display.","Aaron’s golden-calf failure makes continued priestly service sobering. Mercy allows continuation in Israel’s history, but churches must not turn restoration into immediate return to authority after serious harm.","Sacrifice and priestly mediation prepare biblical vocabulary for atonement and access that Leviticus develops more fully." ]},
+        {"heading":"Sabbath Limits Even Sacred Work","paragraphs":["Sabbath closes the instruction section and opens the construction section. Israel may not build the sanctuary seven days a week. A holy project does not make bodies limitless.","Ancient covenant penalties for Sabbath profanation are not authority for churches or states to physically punish Sabbath violations.","Budgets, staffing, deadlines, expectations, and emergency coverage must be arranged so rest is actually possible, not merely preached to exhausted people." ]},
+        {"heading":"The People Build, Count, Inspect, and Complete","paragraphs":["The detailed construction repetition emphasizes that Israel does not improvise another calf. Faithfulness includes dimensions, joinery, fabric, tools, accounting, assembly, inspection, and completion.","Exodus 38 inventories metals. It is not a modern audit code, but it supports transparent accounting of sacred resources. Moses inspects the work and blesses the workers after accountable review." ]},
+        {"heading":"The Glory Fills the Dwelling and Leads the Journey","paragraphs":["When Moses finishes, cloud covers the tent and the LORD’s glory fills it. The climax is not architectural beauty but God’s arrival.","The glory is so overwhelming Moses cannot enter, leaving a tension that prepares for Leviticus’s explanation of approach to holy presence.","The cloud lifts when Israel travels and remains when they stay. God accompanies a pilgrim people; no building becomes a container leaders can control." ]}
       ],
-      "questions": [
-        "What detail in Exodus 25–31; 35–40 first draws your attention?",
-        "What does this passage reveal about God?",
-        "What human need, danger, or responsibility does it address?",
-        "Which action is described but not given as a modern command?",
-        "Whose dignity or vulnerability needs special attention?",
-        "What harmful interpretation must be rejected?",
-        "How does this text challenge the misuse of power?",
-        "What faithful response will you practice this week?"
-      ],
-      "examination": "Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
-      "challenge": "Read Exodus 25–31; 35–40 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
-      "caution": "Reject slavery apologetics, antisemitism, ethnic scapegoating, religious violence, and claims that hardship proves guilt. Ancient judgments belong to God and never authorize retaliation. Center oppressed people’s safety and pair prayer with practical, medical, legal, financial, and safeguarding support.",
-      "prayer": "Holy God, meet us in Exodus 25–31; 35–40. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["John says the Word became flesh and literally “tabernacled” among us, and His glory was seen. Jesus is not an object inside sacred space; in Him God’s presence comes personally among humanity.","Jesus speaks of His body as the temple, and Hebrews reads tabernacle, priesthood, sacrifice, and covenant as patterns finding decisive fulfillment in Christ’s priestly self-offering and access to God.","The New Testament calls the gathered church God’s temple because the Spirit dwells among and within believers. A community cannot honor a sanctuary while exploiting the people in whom the Spirit dwells.","Revelation ends with God dwelling among humanity and no temple building in the city because God and the Lamb are its temple. The biblical movement is toward unbroken communion."],
+      "guardrailParagraphs":["“Let them make me a sanctuary” is not a blank check for expensive church buildings. The gifts are willing, purposeful, accountable, and eventually stopped.","Spirit-enabled skill never removes the need for fair pay, rest, credit, safety, and consent. Volunteers are not labor to consume in God’s name.","The New Testament uses dwelling, glory, priesthood, sacrifice, covenant, and access to connect tabernacle and Jesus. Avoid hidden meanings for every color, hook, measurement, or material.","God’s glory fills the dwelling, but God is not contained by it. Building beauty, age, denomination, or atmosphere cannot guarantee faithful presence when truth and neighbor love are rejected."],
+      "questions":["How does Exodus 25:8 state the purpose of the sanctuary, and how is that purpose different from merely constructing an impressive building?","Compare the collection of gold for the calf with the willing offerings for the tabernacle. What makes the two acts of giving morally different?","Which forms of skill and knowledge are associated with the Spirit in Exodus 31 and 35? Whose work might a church overlook?","What do the priestly stones bearing Israel’s names suggest about representation and responsibility?","Why does Sabbath frame the tabernacle work, and what would honoring that limit require from ministry leaders today?","What purpose does the repeated phrase “as the LORD commanded Moses” serve in the construction chapters?","Why is Moses unable to enter at the end, and how does that ending prepare for Leviticus and later Christian teaching about access to God?","Which tabernacle connections to Jesus are made explicitly by the New Testament, and which popular connections remain speculative?"],
+      "examination":"Do I value visible ministry more than hidden skill? Have I pressured giving, accepted uncredited labor, or treated urgency as permission to ignore rest? What gift can I offer freely, and what limit must I honor so worship does not become exploitation?",
+      "challenge":"Read Exodus 35:4–36:7 and list every kind of giver, material, skill, and leader. Thank one person whose practical or creative service usually goes unnoticed. Then review one church or household project for four safeguards: willing participation, clear purpose, transparent accounting, and a real stopping point.",
+      "caution":"Do not turn this lesson into a fundraising appeal. Never imply giving guarantees wealth, healing, or protection. Do not spiritualize overwork; encourage written roles, budgets, safety procedures, accessibility, fair compensation where appropriate, credit for creators, and permission to say no. Avoid anti-Jewish language when discussing fulfillment; the tabernacle belongs to Israel’s living scriptural heritage.",
+      "prayer":"God who chooses to dwell among Your people, receive the gifts we offer freely and purify every form of worship that depends on pressure or exploitation. Fill artists, technicians, teachers, organizers, and caregivers with wisdom. Teach us to honor Sabbath, account for resources, and welcome people with dignity. Through Jesus, the true dwelling of Your glory, make us a Spirit-filled community that follows Your presence. Amen."
     }
   ]
 };
-

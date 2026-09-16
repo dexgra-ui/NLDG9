@@ -1,421 +1,173 @@
 window.NLDG_BOOK_STUDY={
-  "slug": "leviticus-study",
-  "book": "Leviticus",
-  "title": "Leviticus: Holiness, Atonement, Justice, and Neighbor Love",
-  "description": "Leviticus teaches how a holy God dwells among a covenant people through sacrifice, priesthood, purity, atonement, ethics, sacred time, and neighbor love. Ritual categories organize worship; they never erase anyone’s human dignity.",
-  "theme": "Distinguish ritual uncleanness from moral guilt and ancient Israel’s covenant law from direct modern civil policy. Reject body shame, disability stigma, racism, antisemitism, sexual coercion, forced labor, and every use of holiness language to dehumanize people.",
-  "audience": "Adults, groups, classes, and ministry teams",
-  "purpose": "This eight-lesson series helps groups read Leviticus in context, encounter God’s holiness and mercy, and practice worship, justice, compassion, accountability, and faithful community.",
-  "background": "Leviticus teaches how a holy God dwells among a covenant people through sacrifice, priesthood, purity, atonement, ethics, sacred time, and neighbor love. Ritual categories organize worship; they never erase anyone’s human dignity.",
-  "lessons": [
+  "slug":"leviticus-study",
+  "book":"Leviticus",
+  "title":"Leviticus: Holiness, Atonement, Justice, and Neighbor Love",
+  "description":"Leviticus teaches how a holy God dwells among a covenant people through sacrifice, priesthood, purity, atonement, ethics, sacred time, and neighbor love. Ritual categories organize worship; they never erase anyone’s human dignity.",
+  "theme":"Distinguish ritual uncleanness from moral guilt and ancient Israel’s covenant law from direct modern civil policy. Reject body shame, disability stigma, racism, antisemitism, sexual coercion, forced labor, and every use of holiness language to dehumanize people.",
+  "audience":"Adults, groups, classes, and ministry teams",
+  "purpose":"This eight-lesson series helps groups read Leviticus in context, encounter God’s holiness and mercy, and practice worship, justice, compassion, accountability, and faithful community.",
+  "background":"Leviticus teaches how a holy God dwells among a covenant people through sacrifice, priesthood, purity, atonement, ethics, sacred time, and neighbor love. Ritual categories organize worship; they never erase anyone’s human dignity.",
+  "lessons":[
     {
-      "number": 1,
-      "title": "Drawing Near Through Sacrifice",
-      "scripture": "Leviticus 1–7",
-      "supporting": [],
-      "question": "What do Israel’s offerings teach about worship, reconciliation, gratitude, and access to God?",
-      "truth": "God graciously provides ordered ways for people of differing means to draw near, confess, give thanks, and restore fellowship.",
-      "goal": "This lesson helps participants read Leviticus 1–7 within Leviticus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Leviticus 1–7 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
-      "teaching": [
-        {
-          "heading": "God Invites Israel Near",
-          "body": "Leviticus begins with God speaking from the tent. Sacrifice is covenant access, not a way to feed or manipulate God. Worship responds to divine grace."
-        },
-        {
-          "heading": "Offerings Have Distinct Purposes",
-          "body": "Burnt, grain, peace, purification, and reparation offerings address dedication, gratitude, fellowship, cleansing, and repair. Flattening them into one idea misses their pastoral richness."
-        },
-        {
-          "heading": "Provision for Different Means",
-          "body": "People may bring livestock, birds, or grain according to ability. Access to worship is not purchased by wealth. Communities should never shame those with limited resources."
-        },
-        {
-          "heading": "Blood Represents Life",
-          "body": "Blood is treated as life belonging to God. The ritual language is serious, not an invitation to fascination with violence. Christian readers see fulfillment in Christ’s self-giving sacrifice, never permission to harm others."
-        },
-        {
-          "heading": "Confession and Restitution",
-          "body": "The reparation offering includes returning what was taken and adding compensation. Forgiveness does not eliminate accountability or material repair."
-        },
-        {
-          "heading": "Priests Handle Holy Gifts Responsibly",
-          "body": "Detailed instructions limit improvisation and misuse. Leaders entrusted with offerings require clear boundaries, training, and transparent accountability."
-        }
+      "number":1,
+      "title":"Drawing Near Through Sacrifice",
+      "scripture":"Leviticus 1–7",
+      "supporting":["Exodus 40:34–35","Psalm 50:8–15","Hebrews 8–10","Romans 12:1","Hebrews 13:15–16"],
+      "question":"How do Israel’s five offerings make nearness to the holy God possible, and what do they teach about dedication, gratitude, cleansing, forgiveness, and repair?",
+      "truth":"God graciously orders Israel’s approach to his presence. The offerings do not purchase divine favor; they give a covenant people concrete ways to dedicate themselves, share fellowship, seek cleansing, confess wrong, and make restitution.",
+      "goal":"This lesson reads the sacrificial instructions as a carefully arranged system rather than a single idea. Participants distinguish the five offerings, notice provision for households of different means, connect forgiveness with repair, and receive the New Testament’s witness to Jesus without turning every ritual detail into a secret prediction.",
+      "openingParagraphs":["Read Leviticus 1:1–9; 3:1–5; 4:1–12; 5:1–13; 6:1–7; and 7:11–18. List what is brought, who acts, what is burned or eaten, and what result the text names. Let the differences remain visible before summarizing them.","Some participants may find animal death disturbing or may carry teaching that tied forgiveness to fear, punishment, or coerced giving. Invite questions without pressuring anyone to disclose trauma or defend a particular atonement theory."],
+      "contextParagraphs":["Exodus ends with the glory of the LORD filling the tabernacle so fully that Moses cannot enter. Leviticus opens with the LORD calling to Moses from the tent. God has already chosen to dwell with Israel; Leviticus addresses how a finite and sinful people can live safely and faithfully with the Holy One in their midst.","The Hebrew name of the book is Wayyiqra, “And he called.” The later Greek title gives us “Leviticus.” The book speaks first to Israel at Sinai within the covenant established in Exodus, not as a free-standing worship manual for every society.","Leviticus 1:1–6:7 largely addresses what worshipers bring and do, while 6:8–7:38 largely addresses priestly handling of the same five offerings. Repetition is purposeful: holy worship involves both sincere participation and accountable administration.","Animal and grain offerings were known across the ancient Near East, but Leviticus gives them a distinct covenant setting. The LORD initiates the relationship and specifies the approach; later Scripture explicitly rejects the idea that God is hungry or dependent on human food."],
+      "teaching":[
+        {"heading":"God Calls Before Israel Brings","paragraphs":["The first action in Leviticus is God’s call. The noun qorban names a gift brought near to God, not a fee that forces God to respond. Grace creates the possibility of approach; the worshiper answers with obedient trust.","Repeated phrases such as “before the LORD” and “at the entrance of the tent of meeting” locate worship around God’s presence and word. Sacrifice is not private magic or a technique for manipulating God."]},
+        {"heading":"The Burnt Offering Expresses Wholehearted Dedication","paragraphs":["In the burnt offering, or olah, the animal ascends in smoke almost entirely to God. It is accepted “to make atonement,” and its complete burning gives the rite an emphasis on total dedication.","The worshiper lays a hand on the animal, but the text does not explain that gesture with one universal formula. Identification, ownership, designation, and representation are possible senses; it should not automatically be described as guilt transfer in every offering.","The verb kipper, often translated “make atonement,” carries related ideas such as purging, cleansing, ransoming, and restoring damaged relationship. Leviticus shows what the rites accomplish without reducing atonement to one later theory."]},
+        {"heading":"The Grain Offering Is a Genuine Gift of Worship","paragraphs":["The grain offering, minḥah, includes flour, oil, frankincense, baked cakes, or first grain. A memorial portion is burned and the remainder supports the priests. Salt accompanies the offering as “the salt of the covenant.”","Sacrifice is therefore not synonymous with killing. Leviticus 5 even allows flour for a person too poor to bring an animal in a purification context, preventing the claim that forgiveness is mechanically unavailable whenever no animal blood is presented.","The bans on leaven and honey in altar offerings are explicit; the reason is not. Explanations involving fermentation, symbolism, or surrounding cults should be labeled as proposals rather than statements made by the passage."]},
+        {"heading":"The Well-Being Offering Creates Fellowship","paragraphs":["The well-being offering, šelamim, may express thanksgiving, fulfillment of a vow, or a freewill gift. Only designated portions are burned; priests and worshipers share the remaining meat as a sacred meal.","The word is related to shalom. Worship here includes joy, gratitude, table fellowship, and generous sharing. Holiness is not only distance from danger; it also makes grateful communion possible."]},
+        {"heading":"The Purification Offering Addresses Sin and Defilement","paragraphs":["The offering traditionally called the “sin offering” is often called a purification offering because its blood cleanses sacred space as well as addressing the offender. The required offering varies with public responsibility: priest, congregation, leader, or ordinary person.","Leviticus 4 focuses on sins committed unintentionally or without full awareness. Leviticus 5 adds failures such as withholding testimony, touching impurity, or making a rash oath, and requires confession when guilt becomes known. Unintentional does not mean harmless.","The offerings are scaled from herd animal to sheep or goat, then birds, and finally flour. The system does not erase economic inequality, but it deliberately prevents wealth from becoming the price of access to forgiveness."]},
+        {"heading":"The Reparation Offering Joins Forgiveness to Restitution","paragraphs":["The reparation offering, ʾasham, addresses misuse of holy property and wrongs such as deception, robbery, extortion, keeping lost property, or false swearing. The offender must return what was taken and add one-fifth.","Worship does not replace repair. A person cannot keep the profit of exploitation and use a religious act to declare the matter closed. Forgiveness travels with confession, restitution, and accountability.","Restitution must not become another tool of control. Abuse, trafficking, financial exploitation, or criminal conduct may require safety planning, reporting, professional care, and public accountability rather than private access to the harmed person."]},
+        {"heading":"A Pleasing Aroma Names Acceptance, Not Divine Appetite","paragraphs":["The phrase “a pleasing aroma to the LORD” names covenant acceptance, not divine hunger or pleasure in violence. Later prophets reject ritual used to conceal injustice.","Leviticus assumes outward worship and covenant obedience belong together. The God who receives offerings also commands honest restitution and care for neighbors."]},
+        {"heading":"Priestly Procedures Guard Holy Gifts","paragraphs":["Leviticus 6:8–7:38 regulates altar fire, priestly portions, clothing, disposal, eating, and time limits. “The fire must be kept burning” concerns Israel’s altar service, not a command to maintain nonstop emotional intensity or church programming.","Because priestly livelihood and holy gifts are intertwined, detailed boundaries matter. Modern ministry differs, but those who handle offerings still need transparent systems, clear limits, and accountability."]}
       ],
-      "questions": [
-        "What detail in Leviticus 1–7 first draws your attention?",
-        "What does this passage reveal about God?",
-        "What human need, danger, or responsibility does it address?",
-        "Which action is described but not given as a modern command?",
-        "Whose dignity or vulnerability needs special attention?",
-        "What harmful interpretation must be rejected?",
-        "How does this text challenge the misuse of power?",
-        "What faithful response will you practice this week?"
-      ],
-      "examination": "Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
-      "challenge": "Read Leviticus 1–7 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
-      "caution": "Distinguish ritual status from moral worth. Do not shame bodies, illness, disability, menstruation, childbirth, sexuality, poverty, or dietary practice. Ancient penalties are not commands for private or church punishment. Protect consent, safety, medical care, financial transparency, and freedom from coerced disclosure.",
-      "prayer": "Holy God, meet us in Leviticus 1–7. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Hebrews 8–10 explicitly reads Israel’s priesthood and sacrifices in light of Jesus. He offers himself willingly, enters God’s presence as faithful high priest, and accomplishes a decisive cleansing described as “once for all.”","The five offerings should not be collapsed into a one-to-one secret code. Together they supply biblical language for dedication, thanksgiving, fellowship, purification, forgiveness, and reconciliation, which the apostles draw on to explain the one saving work of Christ.","Christian teaching should not portray the Father as a cruel deity appeased by an unwilling victim. The New Testament presents Father, Son, and Spirit acting in unified love, with Jesus freely giving his life.","Because Christ’s sacrifice is sufficient, Christians respond rather than repay. Romans 12 calls believers living sacrifices, and Hebrews 13 names praise and generous sharing as sacrifices pleasing to God."],
+      "cautions":["Not every offering is an offering for sin. Grain and well-being offerings prevent reducing sacrifice to punishment.","Blood represents life given by God. Scripture does not glorify gore, pain, or abused people enduring more harm.","Hebrews 9:22 says “almost everything” is purified with blood; Leviticus itself provides grain for the poor in a purification rite. Do not make the rule stricter than Torah.","Do not caricature Judaism as a failed religion of blood and fear. Israel’s Scriptures join sacrifice with repentance, mercy, prayer, and justice.","Less costly offerings protect access for people of limited means; they do not authorize pressuring poor people to enrich religious institutions."],
+      "questions":["Compare Leviticus 1:3–9, 2:1–3, and 3:1–5. What is shared and what is distinct?","How does the movement from Exodus 40:34–35 to Leviticus 1:1 frame the problem these chapters address?","How do offerings differ for priest, congregation, leader, and ordinary person in Leviticus 4, and what does that suggest about responsibility?","What failures are named in Leviticus 5:1–13, when is confession required, and how does the sliding scale protect access for the poor?","Which wrongs in Leviticus 6:1–7 require repayment? What is missing if worship occurs while the benefit of wrongdoing is retained?","What do thanksgiving, vow, and freewill forms of the well-being offering add to an understanding of worship?","Which explanations about hand-laying, salt, leaven, and “pleasing aroma” are explicit, and which are inference?","How do Hebrews 9:11–14 and 10:11–18 use sacrificial language for Jesus without forcing every detail?","Where do these chapters connect forgiveness to material repair rather than remorse alone?","What practice in your church’s handling of money, confession, or reconciliation would better reflect this accountability?"],
+      "examination":"Have I tried to substitute religious words, giving, or visible service for returning what I took, correcting a lie, paying what I owe, or facing consequences? Do I approach worship to control God, impress others, or escape responsibility? Receive the grace in God’s call, then name one fitting response: dedication, gratitude, confession, restitution, or fellowship.",
+      "weeklyPractice":"Choose one offering and trace it through both panels of the text: its presentation in Leviticus 1–5 and its priestly instructions in 6–7. Make two columns, “What the text says” and “What I have assumed,” and correct at least one assumption. If you owe a safe and lawful form of restitution, take one accountable step this week.",
+      "leaderGuidance":["Prepare participants for descriptions of slaughter and blood. Permit anyone to step out or use an abbreviated reading; do not use graphic detail for emotional effect.","Watch for scrupulosity. Emphasize God’s initiated provision and Christ’s sufficient work, and encourage clinical or pastoral support when religious anxiety is persistent or disabling.","When discussing restitution, distinguish responsibility from forced reconciliation. Do not conceal crime, replace required reporting with internal discipline, or compel victims to meet offenders.","Avoid anti-Jewish contrasts between a supposedly legalistic Old Testament and loving Christianity.","If atonement models are debated, state what the passages explicitly affirm and allow faithful models to remain distinguishable."],
+      "closingTakeaway":"Leviticus 1–7 begins with God calling from the sanctuary and ends with a community taught how to bring gifts, receive cleansing, share fellowship, and repair wrong. In Jesus, Christians receive decisive access to God and are freed to offer lives of gratitude, truth, justice, and generous love.",
+      "prayer":"Holy God, you call before we can earn our way near. Thank you for receiving worshipers, providing cleansing, and refusing to separate forgiveness from truth. Through Jesus, form in us wholehearted devotion, grateful fellowship, honest confession, and courageous repair. Protect those who have been harmed, correct every misuse of sacred power, and make our shared life a pleasing offering of justice and love. Amen."
     },
     {
-      "number": 2,
-      "title": "Priests, Holy Service, and Accountability",
-      "scripture": "Leviticus 8–10",
-      "supporting": [],
-      "question": "What does priestly consecration reveal about calling, responsibility, grief, and accountability?",
-      "truth": "Holy service is a gift bounded by God’s instruction; leadership carries responsibility and never places a person above accountability.",
-      "goal": "This lesson helps participants read Leviticus 8–10 within Leviticus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Leviticus 8–10 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
-      "teaching": [
-        {
-          "heading": "Consecration Is Public",
-          "body": "Aaron and his sons are washed, clothed, anointed, and commissioned before the community. Authority is not self-appointed or hidden. Public trust requires public responsibility."
-        },
-        {
-          "heading": "The Community Participates",
-          "body": "The congregation gathers to witness the process. Spiritual leadership belongs within covenant community, not above it."
-        },
-        {
-          "heading": "God’s Glory and Human Response",
-          "body": "Fire confirms God’s acceptance, and the people bow. Worship centers God’s holiness rather than a leader’s charisma."
-        },
-        {
-          "heading": "Nadab and Abihu",
-          "body": "Their unauthorized fire results in severe judgment within the founding moment of priesthood. The passage is not permission for leaders to threaten people over worship preferences or mistakes. Judgment belongs to God."
-        },
-        {
-          "heading": "Grief Under Role Pressure",
-          "body": "Aaron and his surviving sons face devastating loss while carrying public duties. The chapter is difficult and should not be used to suppress grief. Leaders need space, care, and humane support."
-        },
-        {
-          "heading": "Accountability Includes Listening",
-          "body": "Moses challenges Eleazar and Ithamar, but accepts Aaron’s explanation. Even authoritative leaders must listen, reconsider, and distinguish faithful judgment from rigid control."
-        }
+      "number":2,
+      "title":"Priests, Holy Service, and Accountability",
+      "scripture":"Leviticus 8–10",
+      "supporting":["Exodus 28–29","Hebrews 4:14–16","Hebrews 7:23–28","1 Peter 2:9"],
+      "question":"What do the consecration and first service of Israel’s priests reveal about holy leadership, public responsibility, grief, and accountable obedience?",
+      "truth":"Priestly service is God’s gift to the covenant community, not personal status. Those who approach holy things are publicly commissioned, carefully bounded, responsible to teach truth, and never placed above correction.",
+      "goal":"This lesson follows the movement from ordination to joyful worship, sudden judgment, grief, and a final disagreement that Moses is willing to reconsider. It distinguishes what the text states from guesses about Nadab and Abihu, examines the weight of spiritual authority, and refuses uses of this passage that excuse coercive leadership.",
+      "openingParagraphs":["Read Leviticus 8:1–13; 9:22–24; 10:1–11; and 10:16–20. Track every command, response, blessing, appearance of fire, and change in emotion. The section contains public celebration, catastrophic loss, teaching, anger, explanation, and acceptance.","The passage involves sudden death, bereavement, and restrictions on public mourning. Participants may pass, step out, or read a shorter portion. Do not ask anyone to compare personal loss with divine judgment."],
+      "contextParagraphs":["Leviticus 1–7 explains the offerings worshipers and priests handle. Chapters 8–10 narrate installation of the priesthood that administers those offerings. The movement from instruction to narrative tests whether holy service will be practiced “as the LORD commanded.”","Leviticus 8 carries out the ordination pattern from Exodus 28–29. Moses assembles the congregation, washes and clothes Aaron and his sons, anoints the sanctuary and Aaron, presents sacrifices, and applies blood and oil. The seven-day process is public and prolonged.","Chapter 9 describes the priests’ first service. Aaron offers for himself and for the people, blesses the congregation, and joins Moses in blessing. The glory of the LORD appears, divine fire consumes the altar offering, and the people shout and fall facedown.","Chapter 10 deliberately echoes that fire. Nadab and Abihu bring “unauthorized fire,” fire comes from the LORD, and they die. The chapter then moves through removal of bodies, mourning restrictions, wine and discernment instructions, and a dispute over a purification offering."],
+      "teaching":[
+        {"heading":"Holy Authority Is Publicly Received","paragraphs":["The whole congregation witnesses the washing, clothing, anointing, sacrifices, and seven days at the sanctuary entrance. Aaron does not appoint himself and Moses does not install him in secret.","Ancient priesthood is not identical to modern church governance, but it provides a moral contrast with self-authorized spiritual power. Calling that cannot be examined, bounded, or held accountable is vulnerable to abuse."]},
+        {"heading":"Consecration Encompasses the Whole Person","paragraphs":["Priestly garments mark an office defined by God’s command, not superior human worth.","Blood is placed on right ear, thumb, and big toe. Hearing, work, and walking as a picture of dedication is a reasonable inference, but the narrator does not explicitly explain the body parts that way.","No modern leader should imitate these rites to claim Aaronic authority; they belong to Israel’s tabernacle consecration."]},
+        {"heading":"Priests Need Atonement Before They Serve Others","paragraphs":["Aaron offers for his own sin before serving the people. Office does not erase moral vulnerability; the mediator also needs God’s provision.","Some connect Aaron’s calf offering with the golden calf, but Leviticus does not state that connection. The secure point is that Aaron cannot minister as though he has no need of cleansing."]},
+        {"heading":"God’s Glory, Not a Leader’s Charisma, Is the Goal","paragraphs":["Aaron and Moses bless the people, but the climax is the LORD’s appearing. When fire consumes the offering, the people respond to God, not to priestly personality.","Healthy ministry does not train people to depend on a leader’s secrets, charisma, or privileged access. Leaders serve so the community attends to God."]},
+        {"heading":"Nadab and Abihu Cross a Boundary the Text Does Not Fully Explain","paragraphs":["Nadab and Abihu offer “unauthorized” or “strange” fire that the LORD had not commanded. The core offense is an approach God did not authorize.","The exact procedural violation is disputed. Wrong fire source, wrong place or time, self-initiated incense, seeking prominence, and intoxication have all been proposed. The wine prohibition that follows may be relevant, but the text never says they were drunk.","The severity belongs to a founding moment beside God’s dwelling. It does not give leaders permission to pronounce death, illness, or disaster as God’s verdict on people today."]},
+        {"heading":"Holy Fire Can Signal Acceptance or Judgment","paragraphs":["Leviticus 9:24 and 10:2 use deliberately similar language: fire comes from before the LORD and consumes. In one scene it consumes the offering; in the next it consumes priests who violated the holy boundary.","The contrast makes holiness serious without making human leaders the source of holy danger. The passage is not a threat formula for enforcing preferences about music, clothing, or ministry style."]},
+        {"heading":"Grief Is Present Even When Public Mourning Is Restricted","paragraphs":["Aaron is silent after the deaths. Shock, grief, submission, or several things together are possible, but the narrator does not explain his silence.","The wider community may mourn while anointed priests face exceptional restrictions. These restrictions must not be used to silence bereaved people, force immediate return to work, or suppress emotion.","Faithful communities should provide time, care, professional support, and freedom from performance for grieving leaders and families."]},
+        {"heading":"Priests Must Distinguish and Teach","paragraphs":["The LORD instructs Aaron and his sons to avoid wine or strong drink when entering the tent so they can distinguish holy from common, clean from unclean, and teach Israel accurately.","Clean and unclean are ritual categories; they never mean valuable versus worthless people. The alcohol instruction is specific to priestly service and does not by itself settle every Christian debate about alcohol."]},
+        {"heading":"The Chapter Ends with Explanation, Not Mere Compliance","paragraphs":["Moses becomes angry when the surviving sons burn rather than eat the purification offering. Aaron explains the day’s tragedy and why eating would not have seemed right. Moses hears him and approves.","This ending matters. Moses has authority and a legitimate concern, yet he listens and revises his judgment. Accountability is not rigid control; a leader who can never be questioned has learned less than Moses did here."]}
       ],
-      "questions": [
-        "What detail in Leviticus 8–10 first draws your attention?",
-        "What does this passage reveal about God?",
-        "What human need, danger, or responsibility does it address?",
-        "Which action is described but not given as a modern command?",
-        "Whose dignity or vulnerability needs special attention?",
-        "What harmful interpretation must be rejected?",
-        "How does this text challenge the misuse of power?",
-        "What faithful response will you practice this week?"
-      ],
-      "examination": "Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
-      "challenge": "Read Leviticus 8–10 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
-      "caution": "Distinguish ritual status from moral worth. Do not shame bodies, illness, disability, menstruation, childbirth, sexuality, poverty, or dietary practice. Ancient penalties are not commands for private or church punishment. Protect consent, safety, medical care, financial transparency, and freedom from coerced disclosure.",
-      "prayer": "Holy God, meet us in Leviticus 8–10. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Hebrews presents Jesus as the faithful high priest who does not need sacrifice for his own sin and who enters God’s presence on behalf of his people. The contrast with Aaron magnifies Jesus’ sinlessness and sufficient mediation.","Jesus does not use holiness to keep wounded people at a distance. He confronts hypocrisy, receives outsiders, washes disciples’ feet, and lays down his life. Christian leadership therefore takes a cruciform shape: truthful, self-giving, accountable, and protective.","The New Testament calls the church a “royal priesthood” and describes praise, generosity, and witness as spiritual sacrifices. This does not grant pastors or believers unchecked Aaronic power; it calls the whole community to mediate God’s praise and mercy under Christ."],
+      "cautions":["“Unauthorized fire” is not a label for every worship practice a leader dislikes.","The passage never says intoxication caused Nadab and Abihu’s offense; that remains an inference.","Divine judgment in the narrative does not authorize churches, families, or governments to kill, threaten, exile, or humiliate people in God’s name.","Aaron’s silence is not a universal model for grief.","Consecration does not place leaders beyond scrutiny. Sacred office increases responsibility.","Do not use “touch not the LORD’s anointed” to block reports of abuse or financial misconduct."],
+      "questions":["How does the repetition of “as the LORD commanded” shape Leviticus 8’s picture of authority?","What parts of ordination occur before the congregation, and why might public witness matter?","Compare Leviticus 9:24 with 10:2. What is the same about the fire and what is different about the human action it meets?","What does 10:1 explicitly identify as Nadab and Abihu’s offense, and which explanations remain unconfirmed?","What grief-related details appear in 10:3–7 and 10:16–20, and where does the narrator leave emotion unstated?","According to 10:8–11, what responsibilities require priestly sobriety and discernment?","Why is Moses angry in 10:16–18, what explanation does Aaron give, and how does Moses respond?","How do these chapters challenge both careless improvisation and authoritarian leadership?","Compare Aaron’s need for sacrifice with Hebrews 7:23–28. What continuity and contrast does Hebrews make explicit?","Which accountability practice would help a present-day ministry be public, teachable, and safe?"],
+      "examination":"If I lead, do I treat calling as a trust to be witnessed and tested, or as a status that protects me from questions? Identify one person or process with genuine permission to correct you. When grief, fatigue, or fear affects another person’s service, do I listen as Moses finally listened, or insist on performance?",
+      "weeklyPractice":"Read Leviticus 8–10 and mark four categories: public commissioning, commanded boundaries, grief, and correction. Write one sentence explaining how each should shape healthy ministry. Review one responsibility you hold and confirm the expectations, reviewer, reporting path, and plan for stepping back during crisis.",
+      "leaderGuidance":["State plainly that ancient divine judgment is not a template for leaders to predict catastrophe or punish dissent.","Do not require public testimony about bereavement, substance use, church harm, or misconduct. Follow safeguarding law and policy if current abuse or danger is disclosed.","Make room for anger and sorrow about the deaths. Do not solve the tension by inventing a worse offense than the narrator names.","Keep alcohol claims proportionate to 10:8–11. Participants in recovery should never be pressured to disclose or defend abstinence.","Apply accountability first to those with greater power."],
+      "closingTakeaway":"Leviticus 8–10 honors holy service while stripping it of entitlement. God commissions priests publicly, provides atonement for them, defines their work, confronts presumption, and closes the crisis with a leader who listens. Under Jesus the faithful high priest, Christian leadership must be reverent, teachable, transparent, and safe.",
+      "prayer":"Holy God, all authority belongs to you. Consecrate our hearing, our work, and our way of life. Deliver leaders from entitlement and communities from fear. Meet those who grieve with tenderness, expose every abuse of sacred power, and teach us to listen when correction comes. Through Jesus, our faithful high priest, make our service humble, truthful, and full of mercy. Amen."
     },
     {
-      "number": 3,
-      "title": "Clean, Unclean, and Human Dignity",
-      "scripture": "Leviticus 11–15",
-      "supporting": [],
-      "question": "How should ritual purity laws be understood without shaming bodies or confusing uncleanness with moral guilt?",
-      "truth": "Clean and unclean categories organize Israel’s worship and communal life; they do not rank anyone’s human worth.",
-      "goal": "This lesson helps participants read Leviticus 11–15 within Leviticus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Leviticus 11–15 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
-      "teaching": [
-        {
-          "heading": "Ritual Is Not the Same as Moral",
-          "body": "Many conditions causing uncleanness are normal, involuntary, or morally neutral. Uncleanness temporarily affects sanctuary access; it does not mean a person is sinful, cursed, or less loved by God."
-        },
-        {
-          "heading": "Food and Covenant Identity",
-          "body": "Food distinctions form Israel as a particular covenant people. Christians interpret their ongoing application through the New Testament, but must respect Jewish practice rather than mock it."
-        },
-        {
-          "heading": "Childbirth Does Not Make Mothers Inferior",
-          "body": "Postpartum impurity concerns ritual status, not the worth of women or babies. The text must never support shame around childbirth, menstruation, fertility, or bodies."
-        },
-        {
-          "heading": "Skin Conditions Require Careful Language",
-          "body": "The Hebrew category often translated “leprosy” covers varied surface conditions and is not simply modern Hansen’s disease. Illness and disability are not proof of sin. Avoid stigmatizing language."
-        },
-        {
-          "heading": "Examination and Community Protection",
-          "body": "Priests observe, wait, and reexamine rather than making instant conclusions. The process suggests caution and communal care, though modern diagnosis belongs to qualified medical professionals."
-        },
-        {
-          "heading": "Restoration to Community",
-          "body": "Rituals mark return and reintegration. Faithful communities reduce stigma, make reasonable accommodations, protect health, and welcome people rather than defining them by a condition."
-        }
-      ],
-      "questions": [
-        "What detail in Leviticus 11–15 first draws your attention?",
-        "What does this passage reveal about God?",
-        "What human need, danger, or responsibility does it address?",
-        "Which action is described but not given as a modern command?",
-        "Whose dignity or vulnerability needs special attention?",
-        "What harmful interpretation must be rejected?",
-        "How does this text challenge the misuse of power?",
-        "What faithful response will you practice this week?"
-      ],
-      "examination": "Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
-      "challenge": "Read Leviticus 11–15 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
-      "caution": "Distinguish ritual status from moral worth. Do not shame bodies, illness, disability, menstruation, childbirth, sexuality, poverty, or dietary practice. Ancient penalties are not commands for private or church punishment. Protect consent, safety, medical care, financial transparency, and freedom from coerced disclosure.",
-      "prayer": "Holy God, meet us in Leviticus 11–15. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "number":3,
+      "title":"Clean, Unclean, and Human Dignity",
+      "scripture":"Leviticus 11–15",
+      "supporting":[],
+      "question":"How should ritual purity laws be understood without shaming bodies or confusing uncleanness with moral guilt?",
+      "truth":"Clean and unclean categories organize Israel’s worship and communal life; they do not rank anyone’s human worth.",
+      "goal":"This lesson helps participants read Leviticus 11–15 within Leviticus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
+      "opening":"Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
+      "context":"Read Leviticus 11–15 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
+      "teaching":[{"heading":"Ritual Is Not the Same as Moral","body":"Many conditions causing uncleanness are normal, involuntary, or morally neutral. Uncleanness temporarily affects sanctuary access; it does not mean a person is sinful, cursed, or less loved by God."},{"heading":"Food and Covenant Identity","body":"Food distinctions form Israel as a particular covenant people. Christians interpret their ongoing application through the New Testament, but must respect Jewish practice rather than mock it."},{"heading":"Childbirth Does Not Make Mothers Inferior","body":"Postpartum impurity concerns ritual status, not the worth of women or babies. The text must never support shame around childbirth, menstruation, fertility, or bodies."},{"heading":"Skin Conditions Require Careful Language","body":"The Hebrew category often translated “leprosy” covers varied surface conditions and is not simply modern Hansen’s disease. Illness and disability are not proof of sin. Avoid stigmatizing language."},{"heading":"Examination and Community Protection","body":"Priests observe, wait, and reexamine rather than making instant conclusions. The process suggests caution and communal care, though modern diagnosis belongs to qualified medical professionals."},{"heading":"Restoration to Community","body":"Rituals mark return and reintegration. Faithful communities reduce stigma, make reasonable accommodations, protect health, and welcome people rather than defining them by a condition."}],
+      "questions":["What detail in Leviticus 11–15 first draws your attention?","What does this passage reveal about God?","What human need, danger, or responsibility does it address?","Which action is described but not given as a modern command?","Whose dignity or vulnerability needs special attention?","What harmful interpretation must be rejected?","How does this text challenge the misuse of power?","What faithful response will you practice this week?"],
+      "examination":"Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
+      "challenge":"Read Leviticus 11–15 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
+      "caution":"Distinguish ritual status from moral worth. Do not shame bodies, illness, disability, menstruation, childbirth, sexuality, poverty, or dietary practice. Ancient penalties are not commands for private or church punishment. Protect consent, safety, medical care, financial transparency, and freedom from coerced disclosure.",
+      "prayer":"Holy God, meet us in Leviticus 11–15. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
     },
     {
-      "number": 4,
-      "title": "The Day of Atonement",
-      "scripture": "Leviticus 16–17",
-      "supporting": [],
-      "question": "How does the Day of Atonement address sin, cleansing, access, and God’s holy presence?",
-      "truth": "God provides cleansing for priests, people, and sanctuary so that a sinful community may continue dwelling near him.",
-      "goal": "This lesson helps participants read Leviticus 16–17 within Leviticus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Leviticus 16–17 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
-      "teaching": [
-        {
-          "heading": "Even the High Priest Needs Atonement",
-          "body": "Aaron offers first for himself. Spiritual office does not remove human fallibility. Leaders require repentance, safeguards, and accountability."
-        },
-        {
-          "heading": "Holy Access Is Gift and Boundary",
-          "body": "The inner sanctuary is approached only as God directs. Boundaries protect holiness and life. Religious leaders must not use “access to God” to control or exploit people."
-        },
-        {
-          "heading": "Two Goats, One Ritual",
-          "body": "One goat is offered and the other symbolically carries sins into the wilderness. The ritual dramatizes both cleansing and removal. The scapegoat must not become a model for blaming a vulnerable person or group."
-        },
-        {
-          "heading": "Confession Names Communal Sin",
-          "body": "Atonement includes Israel’s collective failures, not only isolated private acts. Communities should confess systemic patterns that harm people."
-        },
-        {
-          "heading": "Afflicting Oneself",
-          "body": "The day’s self-denial expresses repentance and dependence. It does not authorize self-harm, eating-disorder behavior, or punishing the body. Medical needs require wise care."
-        },
-        {
-          "heading": "Life Belongs to God",
-          "body": "Blood is reserved because life belongs to God and is given for atonement. Christian readers see Christ’s sufficient self-offering; no human sacrifice, violence, or repeated abuse can be made holy."
-        }
-      ],
-      "questions": [
-        "What detail in Leviticus 16–17 first draws your attention?",
-        "What does this passage reveal about God?",
-        "What human need, danger, or responsibility does it address?",
-        "Which action is described but not given as a modern command?",
-        "Whose dignity or vulnerability needs special attention?",
-        "What harmful interpretation must be rejected?",
-        "How does this text challenge the misuse of power?",
-        "What faithful response will you practice this week?"
-      ],
-      "examination": "Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
-      "challenge": "Read Leviticus 16–17 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
-      "caution": "Distinguish ritual status from moral worth. Do not shame bodies, illness, disability, menstruation, childbirth, sexuality, poverty, or dietary practice. Ancient penalties are not commands for private or church punishment. Protect consent, safety, medical care, financial transparency, and freedom from coerced disclosure.",
-      "prayer": "Holy God, meet us in Leviticus 16–17. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "number":4,
+      "title":"The Day of Atonement",
+      "scripture":"Leviticus 16–17",
+      "supporting":[],
+      "question":"How does the Day of Atonement address sin, cleansing, access, and God’s holy presence?",
+      "truth":"God provides cleansing for priests, people, and sanctuary so that a sinful community may continue dwelling near him.",
+      "goal":"This lesson helps participants read Leviticus 16–17 within Leviticus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
+      "opening":"Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
+      "context":"Read Leviticus 16–17 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
+      "teaching":[{"heading":"Even the High Priest Needs Atonement","body":"Aaron offers first for himself. Spiritual office does not remove human fallibility. Leaders require repentance, safeguards, and accountability."},{"heading":"Holy Access Is Gift and Boundary","body":"The inner sanctuary is approached only as God directs. Boundaries protect holiness and life. Religious leaders must not use “access to God” to control or exploit people."},{"heading":"Two Goats, One Ritual","body":"One goat is offered and the other symbolically carries sins into the wilderness. The ritual dramatizes both cleansing and removal. The scapegoat must not become a model for blaming a vulnerable person or group."},{"heading":"Confession Names Communal Sin","body":"Atonement includes Israel’s collective failures, not only isolated private acts. Communities should confess systemic patterns that harm people."},{"heading":"Afflicting Oneself","body":"The day’s self-denial expresses repentance and dependence. It does not authorize self-harm, eating-disorder behavior, or punishing the body. Medical needs require wise care."},{"heading":"Life Belongs to God","body":"Blood is reserved because life belongs to God and is given for atonement. Christian readers see Christ’s sufficient self-offering; no human sacrifice, violence, or repeated abuse can be made holy."}],
+      "questions":["What detail in Leviticus 16–17 first draws your attention?","What does this passage reveal about God?","What human need, danger, or responsibility does it address?","Which action is described but not given as a modern command?","Whose dignity or vulnerability needs special attention?","What harmful interpretation must be rejected?","How does this text challenge the misuse of power?","What faithful response will you practice this week?"],
+      "examination":"Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
+      "challenge":"Read Leviticus 16–17 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
+      "caution":"Distinguish ritual status from moral worth. Do not shame bodies, illness, disability, menstruation, childbirth, sexuality, poverty, or dietary practice. Ancient penalties are not commands for private or church punishment. Protect consent, safety, medical care, financial transparency, and freedom from coerced disclosure.",
+      "prayer":"Holy God, meet us in Leviticus 16–17. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
     },
     {
-      "number": 5,
-      "title": "Holiness in Body, Sexuality, and Relationships",
-      "scripture": "Leviticus 18; 20",
-      "supporting": [],
-      "question": "How can holiness shape sexuality and relationships without shame, coercion, or selective condemnation?",
-      "truth": "God calls his people away from exploitative and forbidden sexual practices toward covenant faithfulness, truth, and protection of vulnerable bodies.",
-      "goal": "This lesson helps participants read Leviticus 18; 20 within Leviticus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Leviticus 18; 20 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
-      "teaching": [
-        {
-          "heading": "Israel Must Not Copy Exploitative Cultures",
-          "body": "The laws distinguish Israel from surrounding patterns. Holiness concerns allegiance and embodied conduct, not disgust toward people."
-        },
-        {
-          "heading": "Power and Consent Matter",
-          "body": "Several prohibitions address kinship boundaries, exploitation, and relationships where power compromises freedom. Churches must condemn rape, incest, coercion, grooming, trafficking, and abuse without blaming victims."
-        },
-        {
-          "heading": "Marriage Requires Covenant Faithfulness",
-          "body": "Sexual holiness protects trust and refuses using another person as an object. Marriage never grants permission for coercion; consent, care, honesty, and mutual dignity remain essential."
-        },
-        {
-          "heading": "Read Disputed Questions with Humility",
-          "body": "Christians differ in how they relate particular Levitical commands to New Testament ethics. Discussion must remain truthful and compassionate, never using Scripture for slurs, bullying, violence, or denying anyone’s image-bearing worth."
-        },
-        {
-          "heading": "Penalties Belong to Ancient Israel’s Covenant Order",
-          "body": "Leviticus includes civil penalties in Israel’s theocratic setting. They are not commands for churches or private citizens to punish, harm, or execute people today."
-        },
-        {
-          "heading": "Holiness Rejects Selective Targeting",
-          "body": "Readers must not isolate sexual sins while ignoring greed, dishonesty, abuse, racism, and neglect of neighbors. All people need grace, repentance, and communities committed to safety."
-        }
-      ],
-      "questions": [
-        "What detail in Leviticus 18; 20 first draws your attention?",
-        "What does this passage reveal about God?",
-        "What human need, danger, or responsibility does it address?",
-        "Which action is described but not given as a modern command?",
-        "Whose dignity or vulnerability needs special attention?",
-        "What harmful interpretation must be rejected?",
-        "How does this text challenge the misuse of power?",
-        "What faithful response will you practice this week?"
-      ],
-      "examination": "Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
-      "challenge": "Read Leviticus 18; 20 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
-      "caution": "Distinguish ritual status from moral worth. Do not shame bodies, illness, disability, menstruation, childbirth, sexuality, poverty, or dietary practice. Ancient penalties are not commands for private or church punishment. Protect consent, safety, medical care, financial transparency, and freedom from coerced disclosure.",
-      "prayer": "Holy God, meet us in Leviticus 18; 20. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "number":5,
+      "title":"Holiness in Body, Sexuality, and Relationships",
+      "scripture":"Leviticus 18; 20",
+      "supporting":[],
+      "question":"How can holiness shape sexuality and relationships without shame, coercion, or selective condemnation?",
+      "truth":"God calls his people away from exploitative and forbidden sexual practices toward covenant faithfulness, truth, and protection of vulnerable bodies.",
+      "goal":"This lesson helps participants read Leviticus 18; 20 within Leviticus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
+      "opening":"Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
+      "context":"Read Leviticus 18; 20 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
+      "teaching":[{"heading":"Israel Must Not Copy Exploitative Cultures","body":"The laws distinguish Israel from surrounding patterns. Holiness concerns allegiance and embodied conduct, not disgust toward people."},{"heading":"Power and Consent Matter","body":"Several prohibitions address kinship boundaries, exploitation, and relationships where power compromises freedom. Churches must condemn rape, incest, coercion, grooming, trafficking, and abuse without blaming victims."},{"heading":"Marriage Requires Covenant Faithfulness","body":"Sexual holiness protects trust and refuses using another person as an object. Marriage never grants permission for coercion; consent, care, honesty, and mutual dignity remain essential."},{"heading":"Read Disputed Questions with Humility","body":"Christians differ in how they relate particular Levitical commands to New Testament ethics. Discussion must remain truthful and compassionate, never using Scripture for slurs, bullying, violence, or denying anyone’s image-bearing worth."},{"heading":"Penalties Belong to Ancient Israel’s Covenant Order","body":"Leviticus includes civil penalties in Israel’s theocratic setting. They are not commands for churches or private citizens to punish, harm, or execute people today."},{"heading":"Holiness Rejects Selective Targeting","body":"Readers must not isolate sexual sins while ignoring greed, dishonesty, abuse, racism, and neglect of neighbors. All people need grace, repentance, and communities committed to safety."}],
+      "questions":["What detail in Leviticus 18; 20 first draws your attention?","What does this passage reveal about God?","What human need, danger, or responsibility does it address?","Which action is described but not given as a modern command?","Whose dignity or vulnerability needs special attention?","What harmful interpretation must be rejected?","How does this text challenge the misuse of power?","What faithful response will you practice this week?"],
+      "examination":"Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
+      "challenge":"Read Leviticus 18; 20 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
+      "caution":"Distinguish ritual status from moral worth. Do not shame bodies, illness, disability, menstruation, childbirth, sexuality, poverty, or dietary practice. Ancient penalties are not commands for private or church punishment. Protect consent, safety, medical care, financial transparency, and freedom from coerced disclosure.",
+      "prayer":"Holy God, meet us in Leviticus 18; 20. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
     },
     {
-      "number": 6,
-      "title": "Love Your Neighbor and Protect the Vulnerable",
-      "scripture": "Leviticus 19",
-      "supporting": [],
-      "question": "What does everyday holiness look like in relationships, economics, speech, justice, and care for neighbors?",
-      "truth": "God’s holiness takes social form through truthful, generous, impartial, compassionate love.",
-      "goal": "This lesson helps participants read Leviticus 19 within Leviticus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Leviticus 19 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
-      "teaching": [
-        {
-          "heading": "Holiness Begins in Ordinary Life",
-          "body": "Leviticus joins worship with family honor, Sabbath, work, speech, and economics. Holiness is not separation from responsibility; it is faithful life before God."
-        },
-        {
-          "heading": "Leave the Edges",
-          "body": "Landowners must leave produce for poor people and immigrants. Provision preserves dignity by creating access rather than demanding humiliation. Generosity can be structured into economic practice."
-        },
-        {
-          "heading": "Do Not Exploit Workers",
-          "body": "Wages must not be withheld. God cares about payment timing and power imbalances. Employers and ministries should provide clear terms, fair compensation, and safe reporting."
-        },
-        {
-          "heading": "Protect People with Disabilities",
-          "body": "Israel must not curse a deaf person or place an obstacle before someone who is blind. Disability is never entertainment or evidence of weak faith. Accessibility and respect are holiness practices."
-        },
-        {
-          "heading": "Justice Without Partiality",
-          "body": "Courts must neither favor the poor sentimentally nor defer to the powerful. Justice seeks truth and resists status-based outcomes."
-        },
-        {
-          "heading": "Love Your Neighbor as Yourself",
-          "body": "The famous command grows among instructions against hatred, revenge, slander, and indifference. Love tells truth, protects life, seeks repair, and refuses retaliation."
-        }
-      ],
-      "questions": [
-        "What detail in Leviticus 19 first draws your attention?",
-        "What does this passage reveal about God?",
-        "What human need, danger, or responsibility does it address?",
-        "Which action is described but not given as a modern command?",
-        "Whose dignity or vulnerability needs special attention?",
-        "What harmful interpretation must be rejected?",
-        "How does this text challenge the misuse of power?",
-        "What faithful response will you practice this week?"
-      ],
-      "examination": "Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
-      "challenge": "Read Leviticus 19 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
-      "caution": "Distinguish ritual status from moral worth. Do not shame bodies, illness, disability, menstruation, childbirth, sexuality, poverty, or dietary practice. Ancient penalties are not commands for private or church punishment. Protect consent, safety, medical care, financial transparency, and freedom from coerced disclosure.",
-      "prayer": "Holy God, meet us in Leviticus 19. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "number":6,
+      "title":"Love Your Neighbor and Protect the Vulnerable",
+      "scripture":"Leviticus 19",
+      "supporting":[],
+      "question":"What does everyday holiness look like in relationships, economics, speech, justice, and care for neighbors?",
+      "truth":"God’s holiness takes social form through truthful, generous, impartial, compassionate love.",
+      "goal":"This lesson helps participants read Leviticus 19 within Leviticus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
+      "opening":"Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
+      "context":"Read Leviticus 19 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
+      "teaching":[{"heading":"Holiness Begins in Ordinary Life","body":"Leviticus joins worship with family honor, Sabbath, work, speech, and economics. Holiness is not separation from responsibility; it is faithful life before God."},{"heading":"Leave the Edges","body":"Landowners must leave produce for poor people and immigrants. Provision preserves dignity by creating access rather than demanding humiliation. Generosity can be structured into economic practice."},{"heading":"Do Not Exploit Workers","body":"Wages must not be withheld. God cares about payment timing and power imbalances. Employers and ministries should provide clear terms, fair compensation, and safe reporting."},{"heading":"Protect People with Disabilities","body":"Israel must not curse a deaf person or place an obstacle before someone who is blind. Disability is never entertainment or evidence of weak faith. Accessibility and respect are holiness practices."},{"heading":"Justice Without Partiality","body":"Courts must neither favor the poor sentimentally nor defer to the powerful. Justice seeks truth and resists status-based outcomes."},{"heading":"Love Your Neighbor as Yourself","body":"The famous command grows among instructions against hatred, revenge, slander, and indifference. Love tells truth, protects life, seeks repair, and refuses retaliation."}],
+      "questions":["What detail in Leviticus 19 first draws your attention?","What does this passage reveal about God?","What human need, danger, or responsibility does it address?","Which action is described but not given as a modern command?","Whose dignity or vulnerability needs special attention?","What harmful interpretation must be rejected?","How does this text challenge the misuse of power?","What faithful response will you practice this week?"],
+      "examination":"Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
+      "challenge":"Read Leviticus 19 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
+      "caution":"Distinguish ritual status from moral worth. Do not shame bodies, illness, disability, menstruation, childbirth, sexuality, poverty, or dietary practice. Ancient penalties are not commands for private or church punishment. Protect consent, safety, medical care, financial transparency, and freedom from coerced disclosure.",
+      "prayer":"Holy God, meet us in Leviticus 19. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
     },
     {
-      "number": 7,
-      "title": "Sabbath, Jubilee, Land, and Economic Justice",
-      "scripture": "Leviticus 23; 25",
-      "supporting": [],
-      "question": "How do sacred time, Sabbath years, and Jubilee challenge endless accumulation and exploitation?",
-      "truth": "The land belongs to God, people need rest, and covenant economics create pathways away from permanent poverty and bondage.",
-      "goal": "This lesson helps participants read Leviticus 23; 25 within Leviticus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Leviticus 23; 25 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
-      "teaching": [
-        {
-          "heading": "Time Belongs to God",
-          "body": "Festivals shape communal memory around God’s provision and saving acts. Worship interrupts ordinary production and forms shared identity."
-        },
-        {
-          "heading": "The Land Receives Sabbath",
-          "body": "Agricultural land rests every seventh year. Creation is not merely raw material. Stewardship respects limits and future generations."
-        },
-        {
-          "heading": "Jubilee Announces Release",
-          "body": "Property returns and Israelite debt-servants are released. The vision prevents permanent concentration of land and labor, even though Israel’s practice was imperfect."
-        },
-        {
-          "heading": "The Land Is Mine",
-          "body": "God identifies the people as tenants and sojourners. Ownership is stewardship, not absolute control. Economic power remains accountable to God."
-        },
-        {
-          "heading": "No Profit from Another’s Desperation",
-          "body": "Loans to an impoverished neighbor must not become predatory. Help should restore stability rather than trap people through interest, fees, or dependence."
-        },
-        {
-          "heading": "Ancient Slavery Texts Need Honest Reading",
-          "body": "Leviticus distinguishes Israelite debt-service and permits practices Christians must not use to justify human ownership. The gospel’s trajectory of equal dignity and liberation condemns racial chattel slavery, trafficking, and forced labor."
-        }
-      ],
-      "questions": [
-        "What detail in Leviticus 23; 25 first draws your attention?",
-        "What does this passage reveal about God?",
-        "What human need, danger, or responsibility does it address?",
-        "Which action is described but not given as a modern command?",
-        "Whose dignity or vulnerability needs special attention?",
-        "What harmful interpretation must be rejected?",
-        "How does this text challenge the misuse of power?",
-        "What faithful response will you practice this week?"
-      ],
-      "examination": "Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
-      "challenge": "Read Leviticus 23; 25 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
-      "caution": "Distinguish ritual status from moral worth. Do not shame bodies, illness, disability, menstruation, childbirth, sexuality, poverty, or dietary practice. Ancient penalties are not commands for private or church punishment. Protect consent, safety, medical care, financial transparency, and freedom from coerced disclosure.",
-      "prayer": "Holy God, meet us in Leviticus 23; 25. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "number":7,
+      "title":"Sabbath, Jubilee, Land, and Economic Justice",
+      "scripture":"Leviticus 23; 25",
+      "supporting":[],
+      "question":"How do sacred time, Sabbath years, and Jubilee challenge endless accumulation and exploitation?",
+      "truth":"The land belongs to God, people need rest, and covenant economics create pathways away from permanent poverty and bondage.",
+      "goal":"This lesson helps participants read Leviticus 23; 25 within Leviticus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
+      "opening":"Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
+      "context":"Read Leviticus 23; 25 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
+      "teaching":[{"heading":"Time Belongs to God","body":"Festivals shape communal memory around God’s provision and saving acts. Worship interrupts ordinary production and forms shared identity."},{"heading":"The Land Receives Sabbath","body":"Agricultural land rests every seventh year. Creation is not merely raw material. Stewardship respects limits and future generations."},{"heading":"Jubilee Announces Release","body":"Property returns and Israelite debt-servants are released. The vision prevents permanent concentration of land and labor, even though Israel’s practice was imperfect."},{"heading":"The Land Is Mine","body":"God identifies the people as tenants and sojourners. Ownership is stewardship, not absolute control. Economic power remains accountable to God."},{"heading":"No Profit from Another’s Desperation","body":"Loans to an impoverished neighbor must not become predatory. Help should restore stability rather than trap people through interest, fees, or dependence."},{"heading":"Ancient Slavery Texts Need Honest Reading","body":"Leviticus distinguishes Israelite debt-service and permits practices Christians must not use to justify human ownership. The gospel’s trajectory of equal dignity and liberation condemns racial chattel slavery, trafficking, and forced labor."}],
+      "questions":["What detail in Leviticus 23; 25 first draws your attention?","What does this passage reveal about God?","What human need, danger, or responsibility does it address?","Which action is described but not given as a modern command?","Whose dignity or vulnerability needs special attention?","What harmful interpretation must be rejected?","How does this text challenge the misuse of power?","What faithful response will you practice this week?"],
+      "examination":"Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
+      "challenge":"Read Leviticus 23; 25 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
+      "caution":"Distinguish ritual status from moral worth. Do not shame bodies, illness, disability, menstruation, childbirth, sexuality, poverty, or dietary practice. Ancient penalties are not commands for private or church punishment. Protect consent, safety, medical care, financial transparency, and freedom from coerced disclosure.",
+      "prayer":"Holy God, meet us in Leviticus 23; 25. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
     },
     {
-      "number": 8,
-      "title": "Covenant Faithfulness, Blessing, and Hope",
-      "scripture": "Leviticus 26–27",
-      "supporting": [],
-      "question": "How do covenant blessing, warning, repentance, and dedication call Israel to faithful trust?",
-      "truth": "God takes covenant obedience seriously, disciplines persistent rebellion, remembers his promises, and provides a way back through confession.",
-      "goal": "This lesson helps participants read Leviticus 26–27 within Leviticus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Leviticus 26–27 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
-      "teaching": [
-        {
-          "heading": "Blessing Describes Covenantal Wholeness",
-          "body": "Peace, provision, security, and God’s dwelling presence portray life ordered under covenant. These promises are not a prosperity formula guaranteeing wealth or health to every faithful individual."
-        },
-        {
-          "heading": "Warnings Name the Cost of Rebellion",
-          "body": "The escalating judgments show that idolatry and injustice destroy communal life. They must not be used to claim every illness, disaster, disability, or financial hardship is direct punishment for a specific sin."
-        },
-        {
-          "heading": "Exile Is Not the End",
-          "body": "Even after severe warning, God promises to remember covenant. Judgment serves neither divine abandonment nor ethnic rejection. The passage cannot support antisemitism."
-        },
-        {
-          "heading": "Confession Opens Toward Return",
-          "body": "The people are called to acknowledge their sin and hardened hearts. Repentance tells the truth and accepts responsibility rather than managing appearances."
-        },
-        {
-          "heading": "The Land’s Sabbaths Matter",
-          "body": "Exile is linked to neglected rest. Human rebellion damages land as well as community. Faithfulness includes ecological and economic responsibility."
-        },
-        {
-          "heading": "Vows Require Integrity",
-          "body": "Dedications and valuations are regulated rather than left to manipulation. Spiritual promises should be thoughtful, voluntary, and transparent. Leaders must not pressure people into financial commitments."
-        }
-      ],
-      "questions": [
-        "What detail in Leviticus 26–27 first draws your attention?",
-        "What does this passage reveal about God?",
-        "What human need, danger, or responsibility does it address?",
-        "Which action is described but not given as a modern command?",
-        "Whose dignity or vulnerability needs special attention?",
-        "What harmful interpretation must be rejected?",
-        "How does this text challenge the misuse of power?",
-        "What faithful response will you practice this week?"
-      ],
-      "examination": "Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
-      "challenge": "Read Leviticus 26–27 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
-      "caution": "Distinguish ritual status from moral worth. Do not shame bodies, illness, disability, menstruation, childbirth, sexuality, poverty, or dietary practice. Ancient penalties are not commands for private or church punishment. Protect consent, safety, medical care, financial transparency, and freedom from coerced disclosure.",
-      "prayer": "Holy God, meet us in Leviticus 26–27. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "number":8,
+      "title":"Covenant Faithfulness, Blessing, and Hope",
+      "scripture":"Leviticus 26–27",
+      "supporting":[],
+      "question":"How do covenant blessing, warning, repentance, and dedication call Israel to faithful trust?",
+      "truth":"God takes covenant obedience seriously, disciplines persistent rebellion, remembers his promises, and provides a way back through confession.",
+      "goal":"This lesson helps participants read Leviticus 26–27 within Leviticus, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
+      "opening":"Pray for wisdom and gentleness. Invite participants to name one word, image, or question from the passage. No one must disclose trauma, health history, sexuality, family conflict, poverty, or abuse. Listen without rushing to correct another person’s story.",
+      "context":"Read Leviticus 26–27 in manageable sections. Observe speakers, repeated words, ritual or narrative setting, and consequences. Distinguish what the text reports, regulates, symbolizes, and commends. Interpret difficult scenes within the book’s covenant purpose and the wider witness of Scripture.",
+      "teaching":[{"heading":"Blessing Describes Covenantal Wholeness","body":"Peace, provision, security, and God’s dwelling presence portray life ordered under covenant. These promises are not a prosperity formula guaranteeing wealth or health to every faithful individual."},{"heading":"Warnings Name the Cost of Rebellion","body":"The escalating judgments show that idolatry and injustice destroy communal life. They must not be used to claim every illness, disaster, disability, or financial hardship is direct punishment for a specific sin."},{"heading":"Exile Is Not the End","body":"Even after severe warning, God promises to remember covenant. Judgment serves neither divine abandonment nor ethnic rejection. The passage cannot support antisemitism."},{"heading":"Confession Opens Toward Return","body":"The people are called to acknowledge their sin and hardened hearts. Repentance tells the truth and accepts responsibility rather than managing appearances."},{"heading":"The Land’s Sabbaths Matter","body":"Exile is linked to neglected rest. Human rebellion damages land as well as community. Faithfulness includes ecological and economic responsibility."},{"heading":"Vows Require Integrity","body":"Dedications and valuations are regulated rather than left to manipulation. Spiritual promises should be thoughtful, voluntary, and transparent. Leaders must not pressure people into financial commitments."}],
+      "questions":["What detail in Leviticus 26–27 first draws your attention?","What does this passage reveal about God?","What human need, danger, or responsibility does it address?","Which action is described but not given as a modern command?","Whose dignity or vulnerability needs special attention?","What harmful interpretation must be rejected?","How does this text challenge the misuse of power?","What faithful response will you practice this week?"],
+      "examination":"Where am I tempted to control, exploit, shame, or overlook another person? What false security or hardened habit needs repentance? Ask God for one truthful conviction and one grace-filled step toward repair. Examination should lead to responsibility and hope, not self-hatred.",
+      "challenge":"Read Leviticus 26–27 again. Write one sentence about God, one warning, and one hope. Then choose a practical action: listen, repair harm, share resources, honor rest, improve accessibility, seek accountability, protect someone vulnerable, or worship without coercion.",
+      "caution":"Distinguish ritual status from moral worth. Do not shame bodies, illness, disability, menstruation, childbirth, sexuality, poverty, or dietary practice. Ancient penalties are not commands for private or church punishment. Protect consent, safety, medical care, financial transparency, and freedom from coerced disclosure.",
+      "prayer":"Holy God, meet us in Leviticus 26–27. Correct what is false in us, protect vulnerable people, and teach us to worship with truth. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
     }
   ]
 };
-

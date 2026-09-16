@@ -1,421 +1,235 @@
 window.NLDG_BOOK_STUDY={
-  "slug": "judges-study",
-  "book": "Judges",
-  "title": "Judges: An eight-lesson study of compromised faith, destructive power, deliverance, and the need for a righteous King",
-  "description": "Read within the book’s narrative movement, historical setting, literary purpose, and whole-Bible witness. Distinguish what a story describes from what Scripture commands. Notice patterns, reversals, repeated phrases, and character development. Difficult violence and disputed texts deserve honesty, careful context, and submission to Jesus.",
-  "theme": "When everyone defines right for themselves, idolatry and violence spread; yet God hears the oppressed, raises deliverance, and exposes the need for righteous kingship.",
-  "audience": "Adults, groups, classes, and ministry teams",
-  "purpose": "To read Judges as a downward spiral rather than a hero collection, face its violence and abuse honestly, and form communities that resist idolatry, domination, and moral compromise.",
-  "background": "Read within the book’s narrative movement, historical setting, literary purpose, and whole-Bible witness. Distinguish what a story describes from what Scripture commands. Notice patterns, reversals, repeated phrases, and character development. Difficult violence and disputed texts deserve honesty, careful context, and submission to Jesus.",
-  "lessons": [
+  "slug":"judges-study",
+  "book":"Judges",
+  "title":"Judges: Compromised Faith, Destructive Power, Deliverance, and the Need for a Righteous King",
+  "description":"Judges traces a downward spiral from incomplete faithfulness through increasingly compromised deliverers to social and religious collapse. The book is diagnosis, not a hero collection or behavior manual.",
+  "theme":"When everyone defines right for themselves, idolatry and violence spread; yet God hears the oppressed, raises deliverance, and exposes the need for righteous kingship. Giftedness, victory, and charisma never excuse domination, exploitation, sexual misconduct, vengeance, or abuse.",
+  "audience":"Adults, groups, classes, and ministry teams",
+  "purpose":"This eight-lesson series reads Judges as a downward spiral, faces its violence and abuse honestly, distinguishes divine use from blanket moral approval, and forms communities that resist idolatry, domination, coercion, and moral compromise under the servant rule of Jesus.",
+  "background":"Judges stands between Joshua and Samuel. Rebellion, oppression, crying out, and deliverance recur, but the cycles deteriorate and the final chapters depict social collapse. The judges are primarily regional deliverers rather than modern courtroom officials. Women appear as prophets, leaders, negotiators, victims, and witnesses; their stories must be taught without stereotypes or victim-blaming. Ancient conflict is not a mandate for Christian holy war, and the refrain about no king in Israel points toward the need for righteous rule rather than automatic endorsement of any human ruler.",
+  "lessons":[
     {
-      "number": 1,
-      "title": "The Cost of Incomplete Faithfulness",
-      "scripture": "Judges 1:1–3:6; Deuteronomy 7:1–11; Psalm 78:1–11",
-      "supporting": [],
-      "question": "How do forgotten grace, compromised obedience, and cultural assimilation reshape a community over time?",
-      "truth": "Small accommodations to idolatry can form deep patterns of unfaithfulness, while remembrance and covenant teaching sustain obedience.",
-      "goal": "To understand the opening decline, distinguish coexistence from idolatrous assimilation, and build practices of faithful remembrance.",
-      "opening": "Begin with prayer for humility, courage, and compassion. Read the main passage aloud and allow a quiet moment before discussion. Invite observations first. Participants may pass on any question. Do not request personal accounts of abuse, violence, sexuality, grief, or trauma. The goal is faithful formation, not shock, debate, or exposure.",
-      "context": "Read within the book’s narrative movement, historical setting, literary purpose, and whole-Bible witness. Distinguish what a story describes from what Scripture commands. Notice patterns, reversals, repeated phrases, and character development. Difficult violence and disputed texts deserve honesty, careful context, and submission to Jesus.",
-      "teaching": [
-        {
-          "heading": "After Joshua",
-          "body": "Israel asks who will lead after Joshua’s death. Transition exposes whether faith has become communal conviction or dependence on one generation of leaders."
-        },
-        {
-          "heading": "Partial Success and Accommodation",
-          "body": "Some tribes fail to remove entrenched peoples and instead subject them to forced labor. The narrative joins incomplete obedience with exploitation. Pragmatic gain can disguise spiritual compromise."
-        },
-        {
-          "heading": "The Angel’s Rebuke",
-          "body": "God recalls His covenant faithfulness and confronts Israel’s disobedience. Tears at Bochim are significant, but emotion alone does not replace changed practice."
-        },
-        {
-          "heading": "A Generation That Did Not Know",
-          "body": "The next generation lacks experiential covenant knowledge. This does not simply blame young people. Older generations carry responsibility to teach God’s acts and model faithful worship."
-        },
-        {
-          "heading": "The Cycle Begins",
-          "body": "Israel serves the Baals, experiences oppression, cries out, and receives judges. Sin is both personal and communal, shaping institutions and vulnerability."
-        },
-        {
-          "heading": "Living Among Neighbors",
-          "body": "The problem is not mere proximity to different peoples. Jeremiah later commands faithful presence in exile. The danger is adopting rival worship, exploitation, and practices contrary to God’s covenant."
-        }
+      "number":1,
+      "title":"The Cost of Incomplete Faithfulness",
+      "scripture":"Judges 1:1–3:6",
+      "supporting":["Deuteronomy 7:1–11","Psalm 78:1–11"],
+      "question":"How do partial obedience, exploitation, forgotten grace, and rival worship form a community’s downward trajectory across generations?",
+      "truth":"Judges begins with real victories but steadily exposes accommodation and amnesia: covenant identity cannot be sustained by inherited stories, emotional regret, or pragmatic power without faithful remembrance and worship.",
+      "goal":"Understand Judges’ two-part introduction, distinguish coexistence from idolatrous assimilation, refuse approval of mutilation and forced labor, and trace the cycle that interprets the book’s increasingly compromised deliverers.",
+      "openingParagraphs":["Mark every phrase of success, failure, compromise, and memory. The unit includes conquest, mutilation, forced labor, oppression, and divine judgment. Participants may pass, and modern ethnic or religious neighbors must never be labeled as Canaanites."],
+      "contextParagraphs":["Judges 1:1–2:5 and 2:6–3:6 function as complementary introductions: the first emphasizes geography and incomplete occupation, while the second interprets Israel’s condition through covenant forgetfulness.","The repeated pattern is a downward spiral rather than a neat circle. Israel serves other gods, experiences oppression, groans, receives a deliverer, and then deteriorates further after that judge dies."],
+      "teaching":[
+        {"heading":"Israel Seeks Direction but Enters a Violent World","paragraphs":["After Joshua’s death Judah goes first with Simeon. At Bezek the Israelites mutilate Adoni-bezek. He interprets the act as repayment for his own cruelty, but the narrator reports that interpretation without commanding or praising torture." ]},
+        {"heading":"Achsah Has Agency Within an Unequal Arrangement","paragraphs":["Caleb offers Achsah in marriage as a reward for conquest, a patriarchal arrangement that should not be idealized. Achsah nevertheless acts decisively and secures springs that make the land viable." ]},
+        {"heading":"God’s Presence Does Not Erase Human Limitation","paragraphs":["The Lord is with Judah, yet the people of the plain remain because of iron chariots. The text does not say iron defeated God. Divine presence is not a promise that faithful people will encounter no unresolved obstacle." ]},
+        {"heading":"Negotiated Survival Is More Complex Than Hero or Traitor","paragraphs":["A Bethel man reveals the city entrance in exchange for safety and later builds another Luz. The story records intelligence, negotiated survival, and cultural continuity without giving a full moral biography." ]},
+        {"heading":"Incomplete Occupation Becomes Exploitation","paragraphs":["When Israel grows stronger, several tribes impose forced labor instead of driving inhabitants out. The narrative does not praise peaceful coexistence or enslavement; it exposes economic advantage joined to covenant compromise." ]},
+        {"heading":"Tears at Bochim Do Not Equal Reformation","paragraphs":["The messenger recalls exodus grace and covenant faithfulness, Israel weeps and sacrifices, yet the narrative soon shows no durable change. Religious emotion is not the same as altered allegiance." ]},
+        {"heading":"A Generation Can Possess Stories Without Knowing the Lord","paragraphs":["The generation after Joshua does not know the Lord or the work God had done. This concerns relational covenant knowledge, not mere information, and indicts both those who turn away and a community that failed to embody and transmit living memory." ]},
+        {"heading":"The Cycle Reveals Mercy Without Heart Renewal","paragraphs":["God raises judges because of Israel’s groaning, yet after each judge the people become more corrupt. Remaining nations are described as testing Israel and teaching warfare; this theological explanation cannot authorize leaders to manufacture suffering, romanticize war, or make intermarriage a racial-purity issue." ]}
       ],
-      "questions": [
-        "What part of the passage is most troubling, surprising, or hopeful?",
-        "What does the text reveal about God, Jesus, leadership, or human need?",
-        "Where do power, fear, idolatry, or misunderstanding shape the story?",
-        "Which distinction prevents this passage from being used harmfully?",
-        "How does the passage honor people who are vulnerable, overlooked, or afraid?",
-        "Where is repentance, courage, truth, or patient faith needed?",
-        "What concrete practice can embody this teaching this week?",
-        "How can the group support faithfulness without pressure or forced disclosure?"
-      ],
-      "examination": "Come honestly before God. Where am I tempted by control, retaliation, status, appetite, fear, religious performance, or silence in the face of harm? What truth about God or Jesus must reshape my response? Name one place for repentance, a boundary, courageous service, patient prayer, or renewed hope.",
-      "challenge": "Choose one concrete practice: reread the passage three times; establish a prayer rhythm; examine how you use influence; encourage someone overlooked; learn a safeguarding or reporting procedure; repair a truthful conversation; strengthen a wise boundary; or serve without recognition. Keep it safe, specific, and measurable.",
-      "caution": "Teach calmly and without sensational detail. Do not joke about bodies or victims, identify modern enemies as biblical targets, romanticize abusive leaders, demand secrecy, or use submission, forgiveness, vows, suffering, unity, or spiritual authority to pressure unsafe access. Do not promise confidentiality. Follow approved safeguarding procedures and applicable reporting duties when harm or danger is disclosed.",
-      "prayer": "Holy and compassionate God, Small accommodations to idolatry can form deep patterns of unfaithfulness, while remembrance and covenant teaching sustain obedience. Expose our idols, restrain destructive power, and form the servant life of Jesus in us. Give protection to the vulnerable, repentance to those who harm, courage to tell truth, and hope rooted in Christ’s cross and resurrection. Amen."
+      "jesusParagraphs":["Judges creates longing for a deliverer whose character does not deteriorate and whose rescue changes hearts rather than merely interrupting oppression.","Jesus is the faithful King who serves rather than exploits and gives himself rather than sacrificing vulnerable people for power. Christians resist idolatry through truthful love and holy witness, not conquest or coercion."],
+      "guardrailParagraphs":["Judges is diagnosis, not a hero manual.","Adoni-bezek’s mutilation is reported, not commanded.","Forced labor is exploitation, not faithful compromise.","“Did not know the Lord” must not become a slogan blaming young people alone.","Intermarriage warnings concern idolatrous allegiance, not race.","God’s use of conflict does not authorize manufactured suffering or modern enemies."],
+      "questions":["Why might Judges use two introductions, and what does each contribute?","Who interprets Adoni-bezek’s mutilation, and what does the narrator not say?","What agency does Achsah exercise, and what inequality remains?","Where does pragmatic exploitation replace obedience?","How do grace and accountability meet at Bochim?","What distinguishes remorse from changed practice?","What is forgotten in 2:10–19, and what moves God to raise judges?","Which racial or militaristic inference must be rejected in 3:1–6?"],
+      "examination":"Where have I renamed compromise as practicality because it benefits me? Is my sorrow producing changed worship or only emotion? What story of God’s grace must become practiced memory rather than information I assume another generation already knows?",
+      "challenge":"Read Judges 2:6–23 twice and draw the cycle using the passage’s own verbs. Then tell one concrete story of God’s grace across generations, name a failure honestly, and connect both to a present practice of faithfulness.",
+      "caution":"Do not target interracial or interfaith families, immigrants, cultural minorities, or younger generations. Keep forced labor named as exploitation and mutilation as violence. Do not equate present hardship with proof of covenant punishment.",
+      "prayer":"Faithful God, keep us from calling exploitation practical or emotion repentance. Teach us to remember your grace, reject idols, tell the truth about violence, and pass living faith rather than slogans. Form us under Jesus, the King who serves and remains faithful. Amen."
     },
     {
-      "number": 2,
-      "title": "Deliverance Through Unexpected People",
-      "scripture": "Judges 3:7–31; 1 Corinthians 1:26–31; Psalm 146:3–9",
-      "supporting": [],
-      "question": "What do Othniel, Ehud, and Shamgar reveal about God’s deliverance and the limits of human heroes?",
-      "truth": "God can bring relief through unexpected people, but every human deliverer remains limited and points beyond himself.",
-      "goal": "To recognize God’s surprising instruments without romanticizing violence, deception, or physical stereotypes.",
-      "opening": "Begin with prayer for humility, courage, and compassion. Read the main passage aloud and allow a quiet moment before discussion. Invite observations first. Participants may pass on any question. Do not request personal accounts of abuse, violence, sexuality, grief, or trauma. The goal is faithful formation, not shock, debate, or exposure.",
-      "context": "Read within the book’s narrative movement, historical setting, literary purpose, and whole-Bible witness. Distinguish what a story describes from what Scripture commands. Notice patterns, reversals, repeated phrases, and character development. Difficult violence and disputed texts deserve honesty, careful context, and submission to Jesus.",
-      "teaching": [
-        {
-          "heading": "Othniel and the Spirit",
-          "body": "The Spirit empowers Othniel and the land rests. The brief account centers God’s response more than the leader’s personality. Effective service should return attention to God."
-        },
-        {
-          "heading": "Ehud’s Difference",
-          "body": "Ehud is described as left-handed, a trait that becomes strategically significant. The text does not present bodily difference as defect. God’s work is not limited by cultural expectations."
-        },
-        {
-          "heading": "A Disturbing Assassination",
-          "body": "Ehud kills Eglon through deception and escape. The story belongs to ancient national deliverance under oppression; it is not a model for private vengeance, political assassination, or jokes about bodies."
-        },
-        {
-          "heading": "Humor and Reversal",
-          "body": "The narrative uses irony to humiliate oppressive power. Readers can recognize literary reversal without turning violence into entertainment or dehumanizing real people."
-        },
-        {
-          "heading": "Shamgar’s Single Verse",
-          "body": "A brief note credits another deliverer outside the expected pattern. Visibility and length of record do not determine a person’s faithfulness or worth."
-        },
-        {
-          "heading": "Temporary Rest",
-          "body": "Each deliverance provides relief but does not heal Israel’s heart. We should value practical rescue while refusing to place messianic expectations on any leader, movement, or political victory."
-        }
+      "number":2,
+      "title":"Deliverance Through Unexpected People",
+      "scripture":"Judges 3:7–31",
+      "supporting":["1 Corinthians 1:26–31","Psalm 146:3–9"],
+      "question":"What do Othniel, Ehud, and Shamgar reveal about God’s mercy, surprising instruments, violent deliverance, and the limits of every human rescuer?",
+      "truth":"God hears an oppressed people and brings real relief through unexpected deliverers, yet the narrative’s violence and irony are not private commands, and no judge heals Israel’s covenant heart.",
+      "goal":"Establish the first judge cycle, read Ehud’s bodily description and assassination without stereotypes or imitation, recognize Shamgar’s outsider-like profile, and direct hope beyond charismatic human rescuers.",
+      "openingParagraphs":["This passage contains assassination, graphic bodily detail, deception, and mass killing. Invite observation without reenactment or jokes. No one should be asked to discuss disability, body size, military experience, or violence personally."],
+      "contextParagraphs":["Judges 3:7–31 gives three deliverers in descending narrative length. Othniel receives a compact cycle, Ehud a long ironic and violent story, and Shamgar a single verse. Together they display mercy while moving away from uncomplicated hero stories.","A judge here is primarily a regional deliverer. Covenant claims that God gives Israel into oppression and raises rescuers do not authorize private assassination or claims of personal divine commission today."],
+      "teaching":[
+        {"heading":"Othniel Establishes the Cycle","paragraphs":["Israel forgets, serves Baals and Asherahs, suffers, cries out, and receives Othniel. The Spirit comes on him and the land rests forty years. The brief account centers God’s anger, mercy, Spirit, and gift of rest." ]},
+        {"heading":"Repeated Evil Deepens Bondage","paragraphs":["After Othniel, Israel again does evil and Moabite power dominates for eighteen years. Judges interprets the oppression within broken covenant while still treating foreign domination as suffering from which God delivers." ]},
+        {"heading":"Ehud’s Left-Handedness Is Strategic, Not Defective","paragraphs":["The Hebrew can mean left-handed or restricted in the right hand, creating irony for a Benjaminite, a “son of the right hand.” The bodily difference enables concealed access; the text does not call him defective." ]},
+        {"heading":"The Assassination Uses Deception and Dark Humor","paragraphs":["Ehud kills Eglon in private, and the story uses bodily detail and servant delay to humiliate oppressive royal power. Readers may recognize satire without mocking fat bodies, disability, digestion, or death. The story is not a template for political assassination." ]},
+        {"heading":"Deliverance Becomes Communal Action","paragraphs":["Ehud summons Israel, credits God, and the people seize the Jordan fords. Eighty years of rest is real but temporary and achieved through bloodshed." ]},
+        {"heading":"Shamgar Disrupts Expected Categories","paragraphs":["Shamgar son of Anath kills six hundred Philistines with an oxgoad and delivers Israel. His name may suggest non-Israelite associations, but certainty is impossible. His one-verse notice leaves tribe, motives, Spirit formula, and period of rest unstated." ]},
+        {"heading":"Divine Use Is Not Blanket Moral Approval","paragraphs":["God is credited with raising deliverers, but the book increasingly separates effective rescue from exemplary character. Results alone cannot certify a leader’s holiness." ]},
+        {"heading":"Rest Without Renewal Cannot Save Israel","paragraphs":["Political or military rescue can protect life without curing idolatry. Judges allows gratitude for limited goods while refusing messianic trust in a strong leader." ]}
       ],
-      "questions": [
-        "What part of the passage is most troubling, surprising, or hopeful?",
-        "What does the text reveal about God, Jesus, leadership, or human need?",
-        "Where do power, fear, idolatry, or misunderstanding shape the story?",
-        "Which distinction prevents this passage from being used harmfully?",
-        "How does the passage honor people who are vulnerable, overlooked, or afraid?",
-        "Where is repentance, courage, truth, or patient faith needed?",
-        "What concrete practice can embody this teaching this week?",
-        "How can the group support faithfulness without pressure or forced disclosure?"
-      ],
-      "examination": "Come honestly before God. Where am I tempted by control, retaliation, status, appetite, fear, religious performance, or silence in the face of harm? What truth about God or Jesus must reshape my response? Name one place for repentance, a boundary, courageous service, patient prayer, or renewed hope.",
-      "challenge": "Choose one concrete practice: reread the passage three times; establish a prayer rhythm; examine how you use influence; encourage someone overlooked; learn a safeguarding or reporting procedure; repair a truthful conversation; strengthen a wise boundary; or serve without recognition. Keep it safe, specific, and measurable.",
-      "caution": "Teach calmly and without sensational detail. Do not joke about bodies or victims, identify modern enemies as biblical targets, romanticize abusive leaders, demand secrecy, or use submission, forgiveness, vows, suffering, unity, or spiritual authority to pressure unsafe access. Do not promise confidentiality. Follow approved safeguarding procedures and applicable reporting duties when harm or danger is disclosed.",
-      "prayer": "Holy and compassionate God, God can bring relief through unexpected people, but every human deliverer remains limited and points beyond himself. Expose our idols, restrain destructive power, and form the servant life of Jesus in us. Give protection to the vulnerable, repentance to those who harm, courage to tell truth, and hope rooted in Christ’s cross and resurrection. Amen."
+      "jesusParagraphs":["First Corinthians says God chooses what appears weak so no one may boast, culminating in Christ as wisdom and redemption.","Jesus delivers by giving his own life rather than secretly taking an enemy’s life, and Psalm 146 warns against ultimate trust in princes."],
+      "guardrailParagraphs":["Ehud’s bodily difference is strategic, not defective.","Eglon’s body is part of satire, not permission for body-shaming.","Assassination and deception are not instructions for private revenge or modern resistance violence.","Shamgar’s sparse notice cannot support confident claims about ethnicity or maturity.","Divine use and moral endorsement are not identical."],
+      "questions":["What stages of the judge cycle appear with Othniel?","What changes and what repeats under Eglon?","What does the Hebrew description of Ehud allow and not allow?","How can the story’s irony be discussed without dehumanizing bodies?","What role does the community take after Ehud’s individual act?","What does Judges 3:31 say and not say about Shamgar?","What real good do these deliverers bring, and what deeper problem remains?","How does Jesus correct the temptation to make a violent or charismatic leader a savior?"],
+      "examination":"Do I confuse surprising effectiveness with mature character? Have I laughed at a body or difference the text treats as strategically significant? Where do I need to value a limited rescue while refusing to give a leader ultimate trust?",
+      "challenge":"Read Judges 3:7–31 and mark statements about God separately from acts of deliverers. For one leader you admire, name a genuine good, a necessary limit, and one accountability that keeps gratitude from becoming hero worship.",
+      "caution":"Do not mime the assassination or make jokes about weight, disability, digestion, or death. Never frame political violence as faithful Ehud-like action. In present oppression emphasize lawful protection, nonviolent resistance where possible, evidence, and preservation of life.",
+      "prayer":"Merciful God, thank you for hearing the oppressed and working beyond our expectations. Keep us from mocking bodies, glorifying violence, or trusting human strength as salvation. Give us discernment, accountable courage, and hope in Jesus, the Deliverer who gives himself for his enemies. Amen."
     },
     {
-      "number": 3,
-      "title": "Deborah, Barak, and Jael",
-      "scripture": "Judges 4:1–5:31; Hebrews 11:32–34; Galatians 3:26–29",
-      "supporting": [],
-      "question": "How does God work through Deborah, Barak, and Jael to confront oppression and overturn expectations?",
-      "truth": "God raises diverse servants, honors courageous faith, and brings down oppressive power while receiving the praise for deliverance.",
-      "goal": "To recognize women’s leadership and agency, examine shared courage, and avoid weaponizing the narrative in gender debates.",
-      "opening": "Begin with prayer for humility, courage, and compassion. Read the main passage aloud and allow a quiet moment before discussion. Invite observations first. Participants may pass on any question. Do not request personal accounts of abuse, violence, sexuality, grief, or trauma. The goal is faithful formation, not shock, debate, or exposure.",
-      "context": "Read within the book’s narrative movement, historical setting, literary purpose, and whole-Bible witness. Distinguish what a story describes from what Scripture commands. Notice patterns, reversals, repeated phrases, and character development. Difficult violence and disputed texts deserve honesty, careful context, and submission to Jesus.",
-      "teaching": [
-        {
-          "heading": "Deborah the Prophet and Judge",
-          "body": "Deborah speaks God’s word, settles disputes, and summons Barak. Her leadership is presented as real and authoritative, not as a joke or merely a punishment for men."
-        },
-        {
-          "heading": "Barak’s Response",
-          "body": "Barak asks Deborah to accompany him. Interpreters debate whether this reflects weakness or wise dependence. Hebrews later includes Barak among the faithful. Avoid conclusions the text does not require."
-        },
-        {
-          "heading": "Honor Goes to a Woman",
-          "body": "Deborah announces that Sisera will fall by a woman’s hand. The reversal confronts military pride and cultural status. It should not become a slogan for contempt between genders."
-        },
-        {
-          "heading": "Jael’s Violent Act",
-          "body": "Jael kills Sisera after receiving him into her tent. The scene is wartime deliverance from an oppressor, not a model for hospitality, deception, or personal retaliation."
-        },
-        {
-          "heading": "The Song Remembers",
-          "body": "Judges 5 celebrates volunteers and recounts the victory poetically. Songs shape communal memory. Worship should tell truth about God’s deliverance without glorifying human cruelty."
-        },
-        {
-          "heading": "A Mother Waiting",
-          "body": "The poem ends with Sisera’s mother imagining plunder, including women treated as spoil. The disturbing image exposes the violent system he served and the human cost of empire."
-        }
+      "number":3,
+      "title":"Deborah, Barak, and Jael",
+      "scripture":"Judges 4:1–5:31",
+      "supporting":["Hebrews 11:32–34","Galatians 3:26–29"],
+      "question":"How do Deborah, Barak, and Jael participate in God’s defeat of oppression, and how can their courage be honored without turning violent reversal into a gender weapon or personal model?",
+      "truth":"God speaks and leads through Deborah, strengthens shared courage through Barak, and overturns Sisera through Jael; the victory exposes oppressive power while giving the Lord—not gender rivalry or military pride—the final praise.",
+      "goal":"Recognize Deborah’s authoritative prophetic leadership, treat Barak’s request fairly, face Jael’s killing and the song’s warfare imagery honestly, and center the women endangered by Sisera’s violent system.",
+      "openingParagraphs":["The passage includes military oppression, a violent death, a curse, and poetry imagining women as war spoil. Participants may pass. Note what each character says and does before importing gender assumptions."],
+      "contextParagraphs":["Jabin’s commander Sisera has nine hundred iron chariots and oppresses Israel for twenty years. Judges 4 tells the deliverance in prose; Judges 5 recounts it in victory poetry.","The song praises willing participation, rebukes tribes that stayed away, and contrasts Jael’s act with Sisera’s household expectation that captive women would be divided as spoil."],
+      "teaching":[
+        {"heading":"Deborah Exercises Recognized Authority","paragraphs":["Deborah is prophet, judge, and one to whom Israelites come for decisions. The narrative neither apologizes for her authority nor describes it as punishment for male failure." ]},
+        {"heading":"Barak Requests Deborah’s Presence","paragraphs":["Barak says he will go if Deborah goes. Interpreters debate cowardice, reliance on a prophet, or both; Hebrews later names Barak among people of faith. Deborah’s statement that the honor will go to a woman overturns military glory rather than shaming all men." ]},
+        {"heading":"The Kenite Household Sits Between Alliances","paragraphs":["Heber has peace with Jabin, which explains why Sisera seeks Jael’s tent. The political setting is more complex than stranger and hostess." ]},
+        {"heading":"The Lord Routes Chariot Power","paragraphs":["The prose credits God with panic; the song adds cosmic imagery and the Kishon torrent. A storm neutralizing the chariots is a reasonable inference, not a prose weather report." ]},
+        {"heading":"Jael’s Killing Is Praised in War Poetry, Not Given as a Private Pattern","paragraphs":["Jael’s tent-peg killing ends the threat and fulfills Deborah’s word, but it includes deception and graphic violence. Present danger should be handled through escape, safeguarding, lawful protection, and trained authorities rather than imitation." ]},
+        {"heading":"The Song Honors Volunteers and Names Absence","paragraphs":["Several tribes are praised for participating and others questioned for staying away. Shared responsibility matters, but churches cannot curse people for refusing unsafe demands." ]},
+        {"heading":"Sisera’s Mother Exposes Sexual Violence","paragraphs":["Her attendants imagine warriors dividing spoil and “a womb or two” for each man, treating captive women as sexual property. The poem exposes the predatory military order; it does not celebrate it." ]}
       ],
-      "questions": [
-        "What part of the passage is most troubling, surprising, or hopeful?",
-        "What does the text reveal about God, Jesus, leadership, or human need?",
-        "Where do power, fear, idolatry, or misunderstanding shape the story?",
-        "Which distinction prevents this passage from being used harmfully?",
-        "How does the passage honor people who are vulnerable, overlooked, or afraid?",
-        "Where is repentance, courage, truth, or patient faith needed?",
-        "What concrete practice can embody this teaching this week?",
-        "How can the group support faithfulness without pressure or forced disclosure?"
-      ],
-      "examination": "Come honestly before God. Where am I tempted by control, retaliation, status, appetite, fear, religious performance, or silence in the face of harm? What truth about God or Jesus must reshape my response? Name one place for repentance, a boundary, courageous service, patient prayer, or renewed hope.",
-      "challenge": "Choose one concrete practice: reread the passage three times; establish a prayer rhythm; examine how you use influence; encourage someone overlooked; learn a safeguarding or reporting procedure; repair a truthful conversation; strengthen a wise boundary; or serve without recognition. Keep it safe, specific, and measurable.",
-      "caution": "Teach calmly and without sensational detail. Do not joke about bodies or victims, identify modern enemies as biblical targets, romanticize abusive leaders, demand secrecy, or use submission, forgiveness, vows, suffering, unity, or spiritual authority to pressure unsafe access. Do not promise confidentiality. Follow approved safeguarding procedures and applicable reporting duties when harm or danger is disclosed.",
-      "prayer": "Holy and compassionate God, God raises diverse servants, honors courageous faith, and brings down oppressive power while receiving the praise for deliverance. Expose our idols, restrain destructive power, and form the servant life of Jesus in us. Give protection to the vulnerable, repentance to those who harm, courage to tell truth, and hope rooted in Christ’s cross and resurrection. Amen."
+      "jesusParagraphs":["Jesus receives and commissions women as disciples and witnesses while rejecting domination. In Christ inherited status does not determine worth or access to God.","The cross defeats hostile powers through self-giving rather than exploitation, so Christian application honors women’s gifts, shared courage, and protection of those targeted by violence."],
+      "guardrailParagraphs":["Deborah’s authority is explicit.","Barak’s request has more than one responsible reading, and Hebrews includes him among the faithful.","Jael’s deed is praised within wartime poetry but is not a modern command.","Sisera’s household expectation exposes sexual exploitation and must not be joked about.","The story celebrates deliverance from oppression, not contempt between genders."],
+      "questions":["What roles and actions are explicit for Deborah?","What does Barak request, and how does Deborah respond?","What do chapters 4 and 5 each say about Sisera’s defeat?","How does Heber’s alliance complicate Jael’s setting?","What does prose emphasize compared with the poem about Jael?","Which tribes participate or stay away?","What does Sisera’s mother expect, and what human cost does that expose?","How can a church honor women’s leadership without weaponizing the passage in gender conflict?"],
+      "examination":"Do I discount authority because it comes through someone outside my expectations? Am I willing to seek wise presence without avoiding my responsibility? When violence ends, do I center the powerful victor or those no longer being oppressed and treated as spoil?",
+      "challenge":"Read Judges 4 and 5 on separate days. Make three lists: what God does, what each human participant does, and what the song remembers. Encourage one overlooked leader with a specific acknowledgment of faithful work without using them as a symbol in a debate.",
+      "caution":"Give advance notice of graphic violence and sexual-war-spoil language. Do not reenact the tent scene, joke about Sisera’s body, or frame the lesson as women versus men. If violence is disclosed, use safety planning, reporting requirements, and qualified support rather than private confrontation.",
+      "prayer":"God of justice, thank you for hearing those crushed by violent power. Teach us to receive your word through unexpected leaders, share courage without rivalry, protect those treated as objects, and refuse revenge. Form us in the servant authority and peace of Jesus. Amen."
     },
     {
-      "number": 4,
-      "title": "Gideon’s Calling and Compromise",
-      "scripture": "Judges 6:1–8:35; 2 Corinthians 12:7–10; Zechariah 4:6",
-      "supporting": [],
-      "question": "How can a person begin in fearful dependence and end in prideful compromise?",
-      "truth": "God patiently calls weak people and gives victory by His power, but success must be guarded by humility, obedience, and accountable character.",
-      "goal": "To receive God’s patience with weakness while recognizing how achievement, vengeance, wealth, and influence can corrupt a leader.",
-      "opening": "Begin with prayer for humility, courage, and compassion. Read the main passage aloud and allow a quiet moment before discussion. Invite observations first. Participants may pass on any question. Do not request personal accounts of abuse, violence, sexuality, grief, or trauma. The goal is faithful formation, not shock, debate, or exposure.",
-      "context": "Read within the book’s narrative movement, historical setting, literary purpose, and whole-Bible witness. Distinguish what a story describes from what Scripture commands. Notice patterns, reversals, repeated phrases, and character development. Difficult violence and disputed texts deserve honesty, careful context, and submission to Jesus.",
-      "teaching": [
-        {
-          "heading": "God Hears Oppression",
-          "body": "Midian’s raids devastate crops and force hiding. God first sends a prophet to name Israel’s forgotten deliverance and disobedience. Material crisis and spiritual diagnosis are both present."
-        },
-        {
-          "heading": "The Lord With You",
-          "body": "Gideon questions God from a winepress. God does not shame his fear. He calls Gideon and patiently provides signs, though repeated sign-seeking should not replace clear obedience."
-        },
-        {
-          "heading": "Tearing Down the Altar",
-          "body": "Gideon begins at home by confronting Baal worship. His nighttime action reflects fear and obedience together. Courage can grow through faithful steps."
-        },
-        {
-          "heading": "Too Many Soldiers",
-          "body": "God reduces the army so Israel cannot boast. The selection method is described, not presented as a timeless leadership test. The lesson is dependence, not technique."
-        },
-        {
-          "heading": "Vengeance After Victory",
-          "body": "Gideon’s pursuit turns toward retaliation against Israelite towns and personal revenge for his brothers. A leader can move from serving deliverance to using power harshly."
-        },
-        {
-          "heading": "An Ephod Becomes a Snare",
-          "body": "Gideon refuses the title of king yet lives with royal wealth and creates an object that draws Israel into unfaithfulness. Denying ambition verbally does not prevent functional self-exaltation."
-        }
+      "number":4,
+      "title":"Gideon’s Calling and Compromise",
+      "scripture":"Judges 6:1–8:35",
+      "supporting":["2 Corinthians 12:7–10","Zechariah 4:6"],
+      "question":"How does Gideon move from fearful dependence to celebrated deliverance and then into revenge, wealth, family excess, and idolatrous legacy?",
+      "truth":"God patiently calls a fearful person and removes every ground for boasting, but divine empowerment and public success do not protect a leader from later vengeance, self-exaltation, or spiritual compromise.",
+      "goal":"Receive God’s patience with fear, correct formulaic uses of signs and army selection, trace Gideon’s moral deterioration, and build accountability that continues after visible success.",
+      "openingParagraphs":["Draw two columns—Gideon dependent on God and Gideon using power for himself—and add evidence. The lesson includes starvation tactics, threats, torture, execution, and family exploitation."],
+      "contextParagraphs":["Midianite raiders devastate crops and livestock, driving people into caves. Israel’s cry receives first a prophetic reminder of exodus grace and covenant failure, then Gideon’s commission.","The story deliberately continues beyond Gideon’s victory into decline. A person may be genuinely called and still become seriously compromised."],
+      "teaching":[
+        {"heading":"Oppression Is Material and Spiritual Amnesia Is Named","paragraphs":["Midian leaves Israel impoverished. God does not dismiss hunger as merely spiritual, and the covenant diagnosis does not blame each sufferer for individual pain." ]},
+        {"heading":"God Meets Fear Patiently","paragraphs":["Gideon hides wheat and asks why oppression exists if God is with Israel. God commissions him and promises presence without shaming the question, yet Gideon still has responsibility to act." ]},
+        {"heading":"Reform Begins at Home","paragraphs":["Gideon tears down his father’s Baal altar at night because he is afraid. Courage and fear coexist. Joash’s reply exposes an idol that needs violent human defense." ]},
+        {"heading":"The Fleece Is Accommodation, Not a Formula","paragraphs":["The Spirit has already clothed Gideon and the command is already clear before the fleece tests. God accommodates him; Christians are not told to manipulate circumstances through arbitrary signs." ]},
+        {"heading":"The Reduced Army Removes Boasting","paragraphs":["God explicitly says the army is reduced so Israel cannot claim self-salvation. The text never says the chosen drinking posture showed superior alertness or leadership quality." ]},
+        {"heading":"God Strengthens Gideon Through an Enemy’s Dream","paragraphs":["Still afraid, Gideon is sent with Purah to hear a Midianite dream, then worships. Trumpets, jars, torches, and enemy panic again leave no room for boasting." ]},
+        {"heading":"After Victory Gideon Turns Power Against Israelites","paragraphs":["He threatens and later tortures Succoth’s elders, destroys Penuel’s tower, kills men there, and executes Midianite kings partly over personal family vengeance. The narrator does not say God commanded these acts. Earlier victory cannot sanctify later cruelty." ]},
+        {"heading":"Gideon Rejects a Crown but Lives Like a King","paragraphs":["He says the Lord will rule yet accumulates gold, creates an ephod that becomes a snare, has many wives and seventy sons, and names a son Abimelech, “my father is king.” His verbal theology and practical life diverge." ]}
       ],
-      "questions": [
-        "What part of the passage is most troubling, surprising, or hopeful?",
-        "What does the text reveal about God, Jesus, leadership, or human need?",
-        "Where do power, fear, idolatry, or misunderstanding shape the story?",
-        "Which distinction prevents this passage from being used harmfully?",
-        "How does the passage honor people who are vulnerable, overlooked, or afraid?",
-        "Where is repentance, courage, truth, or patient faith needed?",
-        "What concrete practice can embody this teaching this week?",
-        "How can the group support faithfulness without pressure or forced disclosure?"
-      ],
-      "examination": "Come honestly before God. Where am I tempted by control, retaliation, status, appetite, fear, religious performance, or silence in the face of harm? What truth about God or Jesus must reshape my response? Name one place for repentance, a boundary, courageous service, patient prayer, or renewed hope.",
-      "challenge": "Choose one concrete practice: reread the passage three times; establish a prayer rhythm; examine how you use influence; encourage someone overlooked; learn a safeguarding or reporting procedure; repair a truthful conversation; strengthen a wise boundary; or serve without recognition. Keep it safe, specific, and measurable.",
-      "caution": "Teach calmly and without sensational detail. Do not joke about bodies or victims, identify modern enemies as biblical targets, romanticize abusive leaders, demand secrecy, or use submission, forgiveness, vows, suffering, unity, or spiritual authority to pressure unsafe access. Do not promise confidentiality. Follow approved safeguarding procedures and applicable reporting duties when harm or danger is disclosed.",
-      "prayer": "Holy and compassionate God, God patiently calls weak people and gives victory by His power, but success must be guarded by humility, obedience, and accountable character. Expose our idols, restrain destructive power, and form the servant life of Jesus in us. Give protection to the vulnerable, repentance to those who harm, courage to tell truth, and hope rooted in Christ’s cross and resurrection. Amen."
+      "jesusParagraphs":["Christ’s power is made complete in weakness, excluding boasting without glorifying avoidable harm.","Jesus is the King Gideon was not: he refuses domination, does not avenge personal insult, and gives his life for the people rather than using them to secure status."],
+      "guardrailParagraphs":["God’s patience with fear is not permission to remain permanently paralyzed.","The fleece is not a required decision method.","The water test is not an elite leadership-selection technique.","Spirit empowerment and victory do not approve torture, execution, wealth accumulation, polygyny, or idolatrous legacy.","Saying “the Lord will rule” cannot substitute for living beneath that rule."],
+      "questions":["What material damage does Midian cause, and what history does the prophet recall?","Where is God patient with Gideon, and what responsibility remains?","How do fear and obedience coexist in Gideon’s household reform?","What had God already said before the fleece?","What reason is explicitly given for reducing the army?","Where does Gideon’s leadership change into revenge?","What contradiction appears between 8:23 and Gideon’s later household, wealth, and ephod?","Which accountability should remain after a leader’s greatest success?"],
+      "examination":"Do I seek signs because I fear obeying what is already clear? Has success made me less teachable or more entitled to retaliate? Where do my stated beliefs about service conflict with money, family power, image, or access I accumulate?",
+      "challenge":"Read Judges 6:11–24 and 8:22–35. Compare Gideon’s beginning and ending, then choose one post-success safeguard such as financial disclosure, independent feedback, shared authority, documented decisions, or repair of retaliatory harm.",
+      "caution":"Do not use Gideon to shame anxiety or imply fear instantly disappears. Never excuse later torture because he was tired, wounded, or previously used by God. Reports of abusive leadership require independent safeguarding and reporting, not private mediation that increases danger.",
+      "prayer":"Patient God, meet us in fear and remove our boasting. Give us courage to obey without manipulating signs, humility after success, and restraint when wounded. Expose the ways we deny ambition while living like rulers, and form in us the servant character of Jesus. Amen."
     },
     {
-      "number": 5,
-      "title": "Abimelech and the Hunger for Power",
-      "scripture": "Judges 9:1–57; Mark 10:42–45; James 3:13–18",
-      "supporting": [],
-      "question": "What happens when ambition, money, violence, and public fear replace servant leadership?",
-      "truth": "Power seized through manipulation and violence consumes both leader and community, while God holds destructive ambition accountable.",
-      "goal": "To expose abusive leadership patterns and develop transparent, accountable, servant-shaped approaches to authority.",
-      "opening": "Begin with prayer for humility, courage, and compassion. Read the main passage aloud and allow a quiet moment before discussion. Invite observations first. Participants may pass on any question. Do not request personal accounts of abuse, violence, sexuality, grief, or trauma. The goal is faithful formation, not shock, debate, or exposure.",
-      "context": "Read within the book’s narrative movement, historical setting, literary purpose, and whole-Bible witness. Distinguish what a story describes from what Scripture commands. Notice patterns, reversals, repeated phrases, and character development. Difficult violence and disputed texts deserve honesty, careful context, and submission to Jesus.",
-      "teaching": [
-        {
-          "heading": "A Self-Appointed King",
-          "body": "Abimelech uses family connection and local identity to campaign for rule. He does not receive a call from God. Popular support and confident messaging do not establish righteous authority."
-        },
-        {
-          "heading": "Financed by an Idol’s Treasury",
-          "body": "Temple money funds hired men and violence. Financial sources shape ministry and politics. Communities need transparency about who benefits, who pays, and what loyalties money creates."
-        },
-        {
-          "heading": "Murdering the Brothers",
-          "body": "Abimelech eliminates rivals on one stone. Consolidating power through fear is the opposite of biblical service. Organizations must protect dissent, reporting, and due process."
-        },
-        {
-          "heading": "Jotham’s Fable",
-          "body": "Productive trees refuse kingship while the bramble offers dangerous shade. The fable exposes how worthy people may avoid domination while the least qualified crave control."
-        },
-        {
-          "heading": "Violence Turns Inward",
-          "body": "The alliance between Abimelech and Shechem fractures, and each side destroys the other. Systems built on betrayal cannot produce stable trust."
-        },
-        {
-          "heading": "Accountability Without Mockery",
-          "body": "Abimelech dies after a woman drops a millstone, and his concern remains reputation. The narrative’s reversal exposes pride. Do not use it to shame women or mock injury; focus on the collapse of violent ambition."
-        }
+      "number":5,
+      "title":"Abimelech and the Hunger for Power",
+      "scripture":"Judges 9:1–57",
+      "supporting":["Mark 10:42–45","James 3:13–18"],
+      "question":"What happens when family grievance, identity politics, religious money, propaganda, and violence are organized around one person’s hunger to rule?",
+      "truth":"Abimelech seizes kingship without divine call and builds it on fratricide; the same treachery that enthrones him consumes Shechem and finally destroys him under God’s judgment.",
+      "goal":"Read Jotham’s fable as the chapter’s moral interpretation, trace the finances and alliances behind abusive power, recognize reciprocal violence, and form servant leadership with transparency, dissent protection, and accountability.",
+      "openingParagraphs":["The chapter contains family massacre, political terror, a city destroyed, mass burning, and a fatal head injury. Track who funds, legitimizes, warns about, benefits from, and finally suffers under Abimelech’s rule."],
+      "contextParagraphs":["Abimelech is Gideon’s son by a concubine in Shechem. Unlike earlier judges, he is not raised by God, empowered by the Spirit, or said to deliver Israel; he campaigns for kingship and rules violently for three years.","Judges 9 is an anti-kingship warning before Israel formally asks for a monarch. It does not say all government is evil; it exposes rule seized through kinship manipulation, idolatrous financing, murder, fear, and self-interest."],
+      "teaching":[
+        {"heading":"Kinship Becomes Propaganda","paragraphs":["Abimelech creates a false choice between himself and Gideon’s seventy sons, even though the brothers are not described as a ruling council. He turns local identity into a claim of personal necessity." ]},
+        {"heading":"An Idol’s Treasury Funds Political Violence","paragraphs":["Shechem supplies seventy silver pieces from Baal-berith’s temple; Abimelech hires reckless men and murders his brothers. Religious money, civic legitimacy, and bloodshed reinforce one another, making funding sources ethical facts rather than administrative trivia." ]},
+        {"heading":"Jotham’s Fable Exposes the Bramble King","paragraphs":["Fruitful trees refuse to abandon their productive callings merely to wave over others. The bramble promises shade it cannot safely give and threatens fire. The fable contrasts fruitful service with destructive domination, not productive cowardice with courageous ambition." ]},
+        {"heading":"A Violent Alliance Collapses into Treachery","paragraphs":["God sends a harmful or “evil” spirit between Abimelech and Shechem, and their alliance fractures. The narrator interprets this as judgment for fratricide. The phrase is theological language and must not become a diagnosis of mental illness or ordinary conflict." ]},
+        {"heading":"Rival Ambition Repeats the Same Pattern","paragraphs":["Gaal’s challenge does not bring reform; it reproduces intoxication, boasting, intrigue, and force." ]},
+        {"heading":"Abimelech Consumes the Community That Crowned Him","paragraphs":["He destroys Shechem, kills its people, and burns about a thousand people in the stronghold. Power built on expendable lives eventually treats its supporters as expendable too." ]},
+        {"heading":"An Unnamed Woman Breaks His Reputation Management","paragraphs":["At Thebez a woman drops a millstone on his head. Dying, Abimelech tries to avoid being remembered as killed by a woman, but the narrator preserves exactly that memory." ]},
+        {"heading":"The Chapter Names Divine Accountability","paragraphs":["Judges says God repaid Abimelech and Shechem for their wickedness. This is narrative judgment, not permission for private retaliation, and it leaves a devastated community rather than a tidy victory." ]}
       ],
-      "questions": [
-        "What part of the passage is most troubling, surprising, or hopeful?",
-        "What does the text reveal about God, Jesus, leadership, or human need?",
-        "Where do power, fear, idolatry, or misunderstanding shape the story?",
-        "Which distinction prevents this passage from being used harmfully?",
-        "How does the passage honor people who are vulnerable, overlooked, or afraid?",
-        "Where is repentance, courage, truth, or patient faith needed?",
-        "What concrete practice can embody this teaching this week?",
-        "How can the group support faithfulness without pressure or forced disclosure?"
-      ],
-      "examination": "Come honestly before God. Where am I tempted by control, retaliation, status, appetite, fear, religious performance, or silence in the face of harm? What truth about God or Jesus must reshape my response? Name one place for repentance, a boundary, courageous service, patient prayer, or renewed hope.",
-      "challenge": "Choose one concrete practice: reread the passage three times; establish a prayer rhythm; examine how you use influence; encourage someone overlooked; learn a safeguarding or reporting procedure; repair a truthful conversation; strengthen a wise boundary; or serve without recognition. Keep it safe, specific, and measurable.",
-      "caution": "Teach calmly and without sensational detail. Do not joke about bodies or victims, identify modern enemies as biblical targets, romanticize abusive leaders, demand secrecy, or use submission, forgiveness, vows, suffering, unity, or spiritual authority to pressure unsafe access. Do not promise confidentiality. Follow approved safeguarding procedures and applicable reporting duties when harm or danger is disclosed.",
-      "prayer": "Holy and compassionate God, Power seized through manipulation and violence consumes both leader and community, while God holds destructive ambition accountable. Expose our idols, restrain destructive power, and form the servant life of Jesus in us. Give protection to the vulnerable, repentance to those who harm, courage to tell truth, and hope rooted in Christ’s cross and resurrection. Amen."
+      "jesusParagraphs":["Jesus contrasts rulers who lord power over others with servants and gives his own life instead of killing rivals to secure a throne.","James contrasts selfish ambition and disorder with wisdom that is peaceable, gentle, open to reason, impartial, and sincere."],
+      "guardrailParagraphs":["Abimelech receives no divine commission and is not called a deliverer.","Local identity, popularity, and temple funding do not legitimate violent rule.","Jotham’s fruitful trees are not simply cowardly.","Harmful-spirit language is not a mental-health diagnosis.","The unnamed woman’s role should not be turned into gender mockery."],
+      "questions":["What false choice does Abimelech present?","How does temple money move toward murder and kingship?","What do the productive trees and bramble represent?","How does Jotham apply the fable without endorsing hereditary rule?","What human actions carry the judgment in 9:22–25?","How does Gaal reproduce abusive power rather than reform it?","What happens to Shechem’s supporters?","Why does the narrator preserve the unnamed woman’s role?"],
+      "examination":"Do I create false choices to make my preferred leader seem necessary? What funding, loyalty, or fear shapes authority structures I support? Am I producing lasting fruit or seeking the status of waving over others?",
+      "challenge":"Read Judges 9:1–21 and Mark 10:42–45. Audit one leadership structure for money flow, dissent, conflicts of interest, retaliation safeguards, and whether service or personality is centered. Strengthen one missing safeguard.",
+      "caution":"This chapter can echo political violence, church abuse, family murder, and institutional retaliation. Keep allegations, evidence, and findings distinct. Protect reporters, preserve documentation, follow reporting law, and seek independent review rather than an internal loyalty test.",
+      "prayer":"Servant King, expose selfish ambition, corrupt money, and fear-based loyalty. Protect communities from leaders who manufacture necessity and punish dissent. Give us wisdom that is peaceable and sincere, and form authority among us in the self-giving pattern of Jesus. Amen."
     },
     {
-      "number": 6,
-      "title": "Jephthah’s Vow and Tragic Leadership",
-      "scripture": "Judges 10:6–12:15; Leviticus 27:1–8; Matthew 5:33–37",
-      "supporting": [],
-      "question": "What do Jephthah’s rejection, negotiation, vow, and violence teach about wounded leaders and reckless religion?",
-      "truth": "Past wounds do not excuse destructive leadership, and zeal without knowledge can turn vows, victory, and identity into tragedy.",
-      "goal": "To reject reckless promises and victim-blaming, recognize unhealed wounds, and value truth, restraint, and responsible leadership.",
-      "opening": "Begin with prayer for humility, courage, and compassion. Read the main passage aloud and allow a quiet moment before discussion. Invite observations first. Participants may pass on any question. Do not request personal accounts of abuse, violence, sexuality, grief, or trauma. The goal is faithful formation, not shock, debate, or exposure.",
-      "context": "Read within the book’s narrative movement, historical setting, literary purpose, and whole-Bible witness. Distinguish what a story describes from what Scripture commands. Notice patterns, reversals, repeated phrases, and character development. Difficult violence and disputed texts deserve honesty, careful context, and submission to Jesus.",
-      "teaching": [
-        {
-          "heading": "Rejected and Recruited",
-          "body": "Jephthah is expelled because of his birth and later recruited when his military skill is needed. Communities can exploit people they previously marginalized. His history deserves compassion but does not excuse later harm."
-        },
-        {
-          "heading": "A Skilled Negotiator",
-          "body": "Jephthah knows Israel’s history and argues with Ammon’s king. Biblical knowledge and rhetorical skill can coexist with spiritual misunderstanding."
-        },
-        {
-          "heading": "The Spirit and the Vow",
-          "body": "The Spirit comes upon Jephthah before he makes his vow, showing the vow was unnecessary. God’s gift does not validate every later word."
-        },
-        {
-          "heading": "His Daughter Bears the Cost",
-          "body": "Jephthah’s only child meets him. Interpretations differ on whether she was killed or permanently dedicated, but the narrative is tragic. She is not to blame and should not be treated as a lesson about obeying harmful fathers."
-        },
-        {
-          "heading": "God Does Not Require Recklessness",
-          "body": "Israel’s law provided ways to value vowed persons, and God condemns child sacrifice. Promises that require sin should be repented of, not fulfilled. Spiritual leaders must never bind others through impulsive vows."
-        },
-        {
-          "heading": "Civil Conflict and Shibboleth",
-          "body": "Conflict with Ephraim ends in identity testing and mass killing. Language becomes a weapon. Communities must resist using cultural markers, accents, or labels to dehumanize and exclude."
-        }
+      "number":6,
+      "title":"Jephthah’s Vow and Tragic Leadership",
+      "scripture":"Judges 10:6–12:15",
+      "supporting":["Leviticus 27:1–8","Deuteronomy 12:29–31","Matthew 5:33–37"],
+      "question":"How do communal rejection, gifted leadership, reckless vows, family power, and identity-based violence turn deliverance into tragedy?",
+      "truth":"Jephthah knows Israel’s history and is empowered for victory, yet neither wounds nor gifting excuse a vow that makes his daughter bear the cost or a civil war that turns pronunciation into a death sentence.",
+      "goal":"Read the vow debate fairly, state the daughter’s innocence unequivocally, reject fulfillment of sinful promises, and trace how marginalized leaders can reproduce exclusion and violence when power is not healed or accountable.",
+      "openingParagraphs":["Give advance notice of child sacrifice or permanent loss, parental betrayal, civil war, and identity-based execution. Do not require the daughter’s fate or Shibboleth killings to be read aloud. Participants may pass or leave."],
+      "contextParagraphs":["After Abimelech and two brief judges, Israel serves many deities and suffers under Philistine and Ammonite pressure. God initially rejects superficial appeal, but when Israel removes foreign gods and serves the Lord, God can no longer bear their misery.","Jephthah’s story sits deep in the book’s decline: Spirit empowerment precedes his vow, his unnamed daughter bears its cost, and victory gives way to family tragedy and intertribal slaughter."],
+      "teaching":[
+        {"heading":"Repentance Moves Beyond Words","paragraphs":["Israel confesses and then puts away foreign gods. The narrative distinguishes crisis language from changed allegiance while grounding rescue in God’s compassion rather than Israel’s merit." ]},
+        {"heading":"A Rejected Man Is Recruited Without Repair","paragraphs":["Jephthah, son of a prostitute, is driven from inheritance by his half-brothers. When Ammon threatens, Gilead’s elders recruit the man the community expelled. They want his ability without first repairing the injustice." ]},
+        {"heading":"Historical Knowledge Does Not Guarantee Wise Character","paragraphs":["Jephthah argues Israel’s route and land history in ways broadly echoing Numbers, yet his reference to Chemosh adds interpretive difficulty. Skill with Scripture and history can coexist with grave spiritual error." ]},
+        {"heading":"The Spirit Comes Before the Vow","paragraphs":["God’s Spirit empowers Jephthah before he vows to offer whatever or whoever comes from his doors after victory. The vow does not obtain the Spirit or cause victory, and God never requests it." ]},
+        {"heading":"The Daughter Bears the Cost of Her Father’s Religion","paragraphs":["Jephthah’s only child comes out celebrating, and he blames her for bringing him low even though the vow was his. She is innocent of the promise and asks only for time with companions.","Interpreters dispute whether she is literally sacrificed or permanently dedicated to virginity. The text says he did according to his vow without narrating the act itself. Either reading entails irreversible loss imposed on an innocent daughter." ]},
+        {"heading":"A Sinful Vow Should Not Be Kept","paragraphs":["Israel’s law condemns child sacrifice, and Leviticus provides valuations for vowed persons though the precise relation is debated. A vow cannot make forbidden harm righteous. “Keeping my word” never excuses abuse, illegal conduct, self-harm, or sacrificing another person’s safety." ]},
+        {"heading":"Wounded Honor Turns Israelites into Enemies","paragraphs":["Ephraim threatens Jephthah, then conflict escalates into civil war. At Jordan crossings, pronunciation of Shibboleth identifies Ephraimites and forty-two thousand are killed. Accent becomes a tool of execution rather than harmless wordplay." ]},
+        {"heading":"Brief Judges Preserve Stability Without Saving the Story","paragraphs":["Ibzan, Elon, and Abdon receive short notices. Their periods may provide stability, but the text does not claim they heal Israel’s core covenant problem." ]}
       ],
-      "questions": [
-        "What part of the passage is most troubling, surprising, or hopeful?",
-        "What does the text reveal about God, Jesus, leadership, or human need?",
-        "Where do power, fear, idolatry, or misunderstanding shape the story?",
-        "Which distinction prevents this passage from being used harmfully?",
-        "How does the passage honor people who are vulnerable, overlooked, or afraid?",
-        "Where is repentance, courage, truth, or patient faith needed?",
-        "What concrete practice can embody this teaching this week?",
-        "How can the group support faithfulness without pressure or forced disclosure?"
-      ],
-      "examination": "Come honestly before God. Where am I tempted by control, retaliation, status, appetite, fear, religious performance, or silence in the face of harm? What truth about God or Jesus must reshape my response? Name one place for repentance, a boundary, courageous service, patient prayer, or renewed hope.",
-      "challenge": "Choose one concrete practice: reread the passage three times; establish a prayer rhythm; examine how you use influence; encourage someone overlooked; learn a safeguarding or reporting procedure; repair a truthful conversation; strengthen a wise boundary; or serve without recognition. Keep it safe, specific, and measurable.",
-      "caution": "Teach calmly and without sensational detail. Do not joke about bodies or victims, identify modern enemies as biblical targets, romanticize abusive leaders, demand secrecy, or use submission, forgiveness, vows, suffering, unity, or spiritual authority to pressure unsafe access. Do not promise confidentiality. Follow approved safeguarding procedures and applicable reporting duties when harm or danger is disclosed.",
-      "prayer": "Holy and compassionate God, Past wounds do not excuse destructive leadership, and zeal without knowledge can turn vows, victory, and identity into tragedy. Expose our idols, restrain destructive power, and form the servant life of Jesus in us. Give protection to the vulnerable, repentance to those who harm, courage to tell truth, and hope rooted in Christ’s cross and resurrection. Amen."
+      "jesusParagraphs":["Jesus tells truthful people not to manufacture credibility through dramatic vows: let yes be yes and no be no.","At the cross the true Deliverer bears the cost himself rather than making a vulnerable child pay for the mission. Christian leadership repents of harmful promises, protects dependents, and refuses retaliation rooted in wounded identity."],
+      "guardrailParagraphs":["Jephthah’s rejection deserves compassion but does not excuse later harm.","His knowledge and Spirit empowerment do not validate the vow.","His daughter is innocent and must never be blamed.","The sacrifice-versus-dedication question is genuinely disputed, and both readings are tragic.","A promise requiring sin must be renounced.","Shibboleth warns against identity-based killing; it is not a clever password lesson."],
+      "questions":["What moves Israel from words to changed allegiance in chapter 10?","What injustice is done to Jephthah before his recruitment, and what repair is absent?","Where does Jephthah show knowledge and where do interpretive questions remain?","What is the sequence of Spirit, vow, and victory?","What agency does the daughter have and what power does she lack?","What supports the sacrifice and dedication readings, and what moral conclusion remains?","How does grievance become mass killing in chapter 12?","Which modern identity markers are used to sort belonging, and what safeguards resist that?"],
+      "examination":"Have I made a promise that transfers its cost to someone with less power? Do I use past rejection to justify control or retaliation? Where must I admit a promise was wrong, seek repair, and protect the person I expected to absorb the consequences?",
+      "challenge":"Read Judges 11:29–40 with Deuteronomy 12:29–31 and Matthew 5:33–37. Review one promise, policy, or ministry expectation you influence. If it endangers, coerces, or unfairly burdens another person, pause it and seek qualified guidance for safe correction.",
+      "caution":"Do not dramatize the daughter’s fate or require a public vote on the interpretation. No parent, spouse, pastor, or institution may invoke a promise to require abuse, sexual access, self-harm, silence, or illegal action. Danger or coercion requires reporting duties and trauma-informed professional support, not private mediation.",
+      "prayer":"Compassionate God, heal rejection without letting wounds become weapons. Free us from reckless religion, vows that endanger others, and identities built through exclusion. Give us truthful speech, repentant courage, and the self-giving leadership of Jesus. Protect every vulnerable child and family. Amen."
     },
     {
-      "number": 7,
-      "title": "Samson’s Strength and Weakness",
-      "scripture": "Judges 13:1–16:31; Hebrews 11:32–34; Proverbs 16:32",
-      "supporting": [],
-      "question": "How can divine gifting coexist with impulsiveness, entitlement, and moral weakness?",
-      "truth": "God may work through a gifted person, but strength without self-control and accountable character produces harm and loss.",
-      "goal": "To separate gifting from maturity, confront entitlement and exploitation, and place hope in God rather than charismatic personalities.",
-      "opening": "Begin with prayer for humility, courage, and compassion. Read the main passage aloud and allow a quiet moment before discussion. Invite observations first. Participants may pass on any question. Do not request personal accounts of abuse, violence, sexuality, grief, or trauma. The goal is faithful formation, not shock, debate, or exposure.",
-      "context": "Read within the book’s narrative movement, historical setting, literary purpose, and whole-Bible witness. Distinguish what a story describes from what Scripture commands. Notice patterns, reversals, repeated phrases, and character development. Difficult violence and disputed texts deserve honesty, careful context, and submission to Jesus.",
-      "teaching": [
-        {
-          "heading": "A Promised Birth",
-          "body": "Samson’s calling begins with God’s word to his mother, whose careful questions and obedience contrast with later impulsiveness. God initiates deliverance before Samson acts."
-        },
-        {
-          "heading": "Desire and Entitlement",
-          "body": "Samson repeatedly demands what he sees and treats relationships as extensions of appetite. Attraction does not justify possession. Healthy love requires dignity, consent, truth, and self-control."
-        },
-        {
-          "heading": "Gifts Without Character",
-          "body": "The Spirit empowers remarkable strength, yet Samson’s decisions often arise from anger and revenge. Spiritual gifting is not evidence that every motive or relationship is approved."
-        },
-        {
-          "heading": "Cycles of Retaliation",
-          "body": "Personal grievances escalate into widespread destruction. Each act answers prior harm with greater harm. Revenge multiplies suffering and obscures the original wrong."
-        },
-        {
-          "heading": "Delilah and Responsibility",
-          "body": "Philistine leaders pressure Delilah, and she persistently seeks Samson’s secret. Her manipulation is real, but Samson remains responsible for his choices. Teaching must avoid reducing the story to blaming a seductive woman."
-        },
-        {
-          "heading": "Final Prayer and Ambiguous Victory",
-          "body": "Blinded and humiliated, Samson prays and destroys the temple with himself. God advances deliverance through a deeply tragic servant. The ending should evoke sobriety, not celebration of suicide or mass violence."
-        }
+      "number":7,
+      "title":"Samson’s Strength and Weakness",
+      "scripture":"Judges 13:1–16:31",
+      "supporting":["Hebrews 11:32–34","Proverbs 16:32"],
+      "question":"How can a person set apart by God and empowered by the Spirit repeatedly use desire, strength, secrecy, and revenge in ways that harm himself and others?",
+      "truth":"Samson’s calling and strength are real, but giftedness without self-control produces escalating harm; God advances deliverance through him without making his appetites, retaliation, relationships, or final violence a model.",
+      "goal":"Separate divine vocation from moral approval, honor Samson’s unnamed mother, examine the “right in my eyes” theme, reject misogynistic readings of Delilah, and handle Samson’s death without glorifying suicide or mass killing.",
+      "openingParagraphs":["Give advance notice of infertility, coerced relationships, sexual conduct, threats, burning, mutilation, imprisonment, suicide, and mass death. No one should be invited to disclose infertility, sexuality, addiction, disability, abuse, or suicidal thoughts."],
+      "contextParagraphs":["Israel does not cry out under forty years of Philistine rule. God announces deliverance through a previously barren woman before Samson is conceived, and Samson is set apart as a Nazirite who will only begin to deliver Israel.","The phrase “right in my eyes” in Samson’s marriage request anticipates the final refrain of Judges. The Spirit repeatedly empowers Samson, while the narrative exposes secrecy, appetite, anger, entitlement, and revenge."],
+      "teaching":[
+        {"heading":"God Begins Through an Unnamed, Faithful Mother","paragraphs":["The messenger first appears to Manoah’s wife, who receives and reports the message carefully and later reasons more faithfully than Manoah about God’s gracious intent. Her barrenness is not blamed on sin, and her pregnancy instructions are not a tool for policing pregnant people today." ]},
+        {"heading":"Samson Demands What Is Right in His Eyes","paragraphs":["Samson sees a Philistine woman and orders his parents to get her. The narrator says God is seeking an occasion against the Philistines, but providence through flawed desire does not make entitlement or objectification exemplary." ]},
+        {"heading":"Secret Compromise Sits Beside Spiritual Power","paragraphs":["The Spirit enables Samson to kill a lion, but he later takes honey from its carcass and hides that fact. At the wedding, a riddle wager and threats to burn his wife’s family end in coerced disclosure and Samson killing thirty men for garments. His wife acts under death threat, not as a simplistic deceitful-woman stereotype." ]},
+        {"heading":"Retaliation Expands Beyond the Original Harm","paragraphs":["Samson burns crops, Philistines kill his wife and her father, and Samson answers with more killing. Each party calls retaliation justified while less powerful people absorb the consequences." ]},
+        {"heading":"Victory Does Not Produce Self-Control","paragraphs":["After Judah surrenders him, Samson breaks bonds and kills a thousand men with a jawbone. His first victory song magnifies himself; thirst eventually brings him to acknowledge God’s deliverance." ]},
+        {"heading":"Sexual Access and Dramatic Escape Do Not Equal Health","paragraphs":["Samson visits a prostitute in Gaza and tears out the city gates when surrounded. The strength is extraordinary, but appetite and danger continue." ]},
+        {"heading":"Delilah Is Paid and Manipulative, but Samson Owns His Choices","paragraphs":["Philistine rulers offer Delilah large payment. She pressures Samson, but he knowingly remains, repeatedly deceives, tests the danger, and finally discloses the Nazirite sign. The story must not become a misogynistic warning that women cause powerful men to fall.","Samson’s hair is covenant sign, not magic. His eyes are gouged out after capture; blindness is inflicted violence, not moral inferiority or a metaphor for blind people’s spirituality." ]},
+        {"heading":"The Final Act Is Deliverance and Tragedy","paragraphs":["At Dagon’s festival Samson prays for strength to avenge his eyes and pulls the temple down on himself and thousands. God answers, but personal revenge remains in his stated motive. The scene should evoke grief and must never validate suicide attacks or mass killing." ]}
       ],
-      "questions": [
-        "What part of the passage is most troubling, surprising, or hopeful?",
-        "What does the text reveal about God, Jesus, leadership, or human need?",
-        "Where do power, fear, idolatry, or misunderstanding shape the story?",
-        "Which distinction prevents this passage from being used harmfully?",
-        "How does the passage honor people who are vulnerable, overlooked, or afraid?",
-        "Where is repentance, courage, truth, or patient faith needed?",
-        "What concrete practice can embody this teaching this week?",
-        "How can the group support faithfulness without pressure or forced disclosure?"
-      ],
-      "examination": "Come honestly before God. Where am I tempted by control, retaliation, status, appetite, fear, religious performance, or silence in the face of harm? What truth about God or Jesus must reshape my response? Name one place for repentance, a boundary, courageous service, patient prayer, or renewed hope.",
-      "challenge": "Choose one concrete practice: reread the passage three times; establish a prayer rhythm; examine how you use influence; encourage someone overlooked; learn a safeguarding or reporting procedure; repair a truthful conversation; strengthen a wise boundary; or serve without recognition. Keep it safe, specific, and measurable.",
-      "caution": "Teach calmly and without sensational detail. Do not joke about bodies or victims, identify modern enemies as biblical targets, romanticize abusive leaders, demand secrecy, or use submission, forgiveness, vows, suffering, unity, or spiritual authority to pressure unsafe access. Do not promise confidentiality. Follow approved safeguarding procedures and applicable reporting duties when harm or danger is disclosed.",
-      "prayer": "Holy and compassionate God, God may work through a gifted person, but strength without self-control and accountable character produces harm and loss. Expose our idols, restrain destructive power, and form the servant life of Jesus in us. Give protection to the vulnerable, repentance to those who harm, courage to tell truth, and hope rooted in Christ’s cross and resurrection. Amen."
+      "jesusParagraphs":["Hebrews names Samson among people whose weakness was turned to strength, honoring real faith without canonizing every action.","Jesus embodies a different strength: he resists temptation, honors others’ dignity, refuses retaliatory spectacle, and lays down his life in love. Proverbs says ruling one’s spirit is greater than conquering a city."],
+      "guardrailParagraphs":["Samson’s unnamed mother is a central faithful voice.","Providence through Samson’s marriage does not approve entitlement.","Spirit power does not endorse secrecy, sex, wagers, revenge, or cruelty.","Women are threatened and traded as well as deceptive; do not blame them for Samson’s choices.","Blindness is inflicted harm, not moral inferiority.","The final act must never validate suicide or mass violence."],
+      "questions":["Who receives, reports, questions, and interprets God’s message wisely in chapter 13?","How does “right in my eyes” differ from divine moral approval?","Who holds power and who is endangered in the wedding story?","How does retaliation expand in chapter 15?","What does Samson’s thirst force him to acknowledge?","What roles do the rulers, Delilah, Samson, and narrator play in his capture?","How do Nazirite sign, hair, Spirit, and God’s departure relate without magical thinking?","Why is the temple collapse both defeat of Philistine power and tragedy?"],
+      "examination":"Where do I mistake gifting, productivity, or escape from consequences for mature character? Do I treat another person as an answer to my appetite or image? What pattern of retaliation, secrecy, or self-testing needs accountability before it harms more people?",
+      "challenge":"Read Judges 13:1–25 and 16:15–31. List the safeguards Samson lacks—truthful relationships, boundaries, counsel, self-control, accountable power—and establish one concretely with a trustworthy person or appropriate professional.",
+      "caution":"Avoid sexualized jokes, blaming Delilah, or using blindness as a spiritual insult. Do not frame Samson’s death as heroic suicide. Any expression of suicidal intent or danger must be treated as immediate and real through emergency, safeguarding, and clinical support; prayer does not replace urgent care.",
+      "prayer":"God of holy strength, thank you for gifts we did not create. Give us self-control, truthful relationships, respect for every body, and courage to interrupt revenge. Protect those endangered by powerful people, and form us after Jesus, whose strength serves and saves. Amen."
     },
     {
-      "number": 8,
-      "title": "When Everyone Does What Is Right in Their Own Eyes",
-      "scripture": "Judges 17:1–21:25; Hosea 10:12–13; Matthew 9:35–38",
-      "supporting": [],
-      "question": "What does Israel’s final collapse reveal about idolatry, religious corruption, abuse, and the need for righteous rule?",
-      "truth": "When worship, leadership, and justice are defined by self-interest, vulnerable people suffer and society unravels; God’s people need the righteous reign of Christ.",
-      "goal": "To face the book’s darkest narratives without sensationalism, center victims’ dignity, and build communities that refuse silence, tribal loyalty, and religious corruption.",
-      "opening": "Begin with prayer for humility, courage, and compassion. Read the main passage aloud and allow a quiet moment before discussion. Invite observations first. Participants may pass on any question. Do not request personal accounts of abuse, violence, sexuality, grief, or trauma. The goal is faithful formation, not shock, debate, or exposure.",
-      "context": "Read within the book’s narrative movement, historical setting, literary purpose, and whole-Bible witness. Distinguish what a story describes from what Scripture commands. Notice patterns, reversals, repeated phrases, and character development. Difficult violence and disputed texts deserve honesty, careful context, and submission to Jesus.",
-      "teaching": [
-        {
-          "heading": "Homemade Religion",
-          "body": "Micah steals, returns silver, builds a shrine, and hires a Levite. Religious language covers self-designed worship and financial interest. Sincerity does not make corruption holy."
-        },
-        {
-          "heading": "A Levite for Hire",
-          "body": "The Levite moves toward status and better pay, then joins Dan’s theft. Clergy can become tools of ambition when calling is detached from truth and accountability."
-        },
-        {
-          "heading": "Violence Against Laish",
-          "body": "The Danites attack an unsuspecting people and seize land and idols. This is not celebrated as faithful conquest; it shows a tribe creating security through opportunistic violence."
-        },
-        {
-          "heading": "The Concubine Is a Victim",
-          "body": "Judges 19 depicts abandonment, sexual violence, death, and dehumanization. Do not blame her, speculate about her morality, reenact the scene, or invite personal disclosures. Name the men’s failures and center the horror."
-        },
-        {
-          "heading": "Outrage Without Righteousness",
-          "body": "Israel responds to atrocity with escalating civil war, rash oaths, and further violence against women. Moral outrage without wisdom and restraint can reproduce the evil it condemns."
-        },
-        {
-          "heading": "The Need for a Righteous King",
-          "body": "Everyone doing right in their own eyes produces spiritual and social disaster. Human kings alone will not solve it. The book creates longing for Jesus, whose authority protects, serves, tells truth, and gives Himself rather than sacrificing others."
-        }
+      "number":8,
+      "title":"When Everyone Does What Is Right in Their Own Eyes",
+      "scripture":"Judges 17:1–21:25",
+      "supporting":["Hosea 10:12–13","Matthew 9:35–38"],
+      "question":"What does Israel’s final collapse reveal when worship, clergy, migration, masculinity, tribal loyalty, outrage, and vows are organized around self-interest rather than covenant justice?",
+      "truth":"Judges ends without a delivering judge: self-made religion legitimizes theft, leaders abandon a woman to sexual violence, public outrage becomes civil war, and rash oaths generate further abduction. The refrain exposes the need for righteous rule, not approval of what occurs.",
+      "goal":"Read the final chapters as intentional moral horror, center unnamed victims without sensationalizing them, expose clerical and tribal corruption, and direct Christian hope toward Jesus’ servant kingship and concrete safeguarding.",
+      "openingParagraphs":["Do not read Judges 19–21 aloud in full. Give advance notice of idolatry, theft, massacre, sexual assault, intimate betrayal, dismemberment, child killing, and abduction. Participants may leave or pass without explanation; private safeguarding and crisis resources should be available."],
+      "contextParagraphs":["Judges 17–21 is a double conclusion. The stories may describe earlier events, but their final placement shows where the downward spiral leads. Four times there is “no king in Israel,” and twice everyone does what is right in their own eyes.","Chapters 17–18 trace corrupted worship into Dan; chapters 19–21 echo Sodom and then turn outrage into civil war and new atrocities. Religious language, consultation with God, vows, and communal assembly persist while vulnerable people remain unprotected."],
+      "teaching":[
+        {"heading":"Micah Builds Religion from Theft, Silver, and Convenience","paragraphs":["Micah’s stolen silver becomes forbidden images, a household shrine, an ephod, and private priesthood. Covenant vocabulary does not make self-made worship faithful. A vulnerable Levite is then hired, and Micah treats religious credentials as a charm for prosperity." ]},
+        {"heading":"Clergy for Hire Moves Toward the Larger Platform","paragraphs":["Danite spies seek guidance from the Levite, and later armed Danites steal Micah’s religious objects and offer the Levite a higher-status tribal role. His heart is glad. The story exposes ministry shaped by salary, status, stolen property, and confident spiritual claims." ]},
+        {"heading":"Dan Calls Opportunistic Violence an Inheritance","paragraphs":["Dan attacks quiet, unsuspecting Laish, burns it, rebuilds it, and installs the stolen cult. This is not celebrated continuation of Joshua but a tribe abandoning its assigned struggle for an easier target. The priestly genealogy contains a textual issue involving Moses or Manasseh; pedigree cannot make idolatry holy." ]},
+        {"heading":"A Woman Is Repeatedly Denied Voice and Protection","paragraphs":["Judges 19:2 has a textual difference: some traditions say the concubine was unfaithful, others that she became angry and left. Neither reading can blame her for later assault. The Levite chooses Israelite Gibeah because he expects covenant kin to be safer." ]},
+        {"heading":"Gibeah Repeats Sodom and Men Sacrifice Women","paragraphs":["Men demand the male guest; the host offers his daughter and the concubine, and the Levite sends his concubine outside where she is sexually assaulted through the night. The text does not clearly locate the precise moment of death, but the Levite later dismembers her body. The narrator’s horror is not approval, and she must never be called a willing sacrifice or sermon prop." ]},
+        {"heading":"The Levite’s Testimony Omits His Own Betrayal","paragraphs":["When Israel gathers, the Levite reports the outrage but omits that he handed the woman over. Moral outrage can be manipulated when a narrator centers danger to himself and hides his own role." ]},
+        {"heading":"Civil War Is Not Automatically Righteous Because Israel Consults God","paragraphs":["Benjamin protects Gibeah’s offenders, while Israel escalates toward near-annihilation of a brother tribe. Worship and divine consultation are present, but accountability has become collective vengeance. Justice should identify perpetrators, protect victims, hear evidence, and limit force." ]},
+        {"heading":"Rash Oaths Produce New Violence Against Women","paragraphs":["Israel’s refusal to repent of destructive vows leads to massacre at Jabesh-gilead, forced marriages, and arranged abduction of women at Shiloh. Tribal survival and vow-keeping never justify massacre, forced marriage, or kidnapping. The final refrain indicts these acts rather than approving them." ]}
       ],
-      "questions": [
-        "What part of the passage is most troubling, surprising, or hopeful?",
-        "What does the text reveal about God, Jesus, leadership, or human need?",
-        "Where do power, fear, idolatry, or misunderstanding shape the story?",
-        "Which distinction prevents this passage from being used harmfully?",
-        "How does the passage honor people who are vulnerable, overlooked, or afraid?",
-        "Where is repentance, courage, truth, or patient faith needed?",
-        "What concrete practice can embody this teaching this week?",
-        "How can the group support faithfulness without pressure or forced disclosure?"
-      ],
-      "examination": "Come honestly before God. Where am I tempted by control, retaliation, status, appetite, fear, religious performance, or silence in the face of harm? What truth about God or Jesus must reshape my response? Name one place for repentance, a boundary, courageous service, patient prayer, or renewed hope.",
-      "challenge": "Choose one concrete practice: reread the passage three times; establish a prayer rhythm; examine how you use influence; encourage someone overlooked; learn a safeguarding or reporting procedure; repair a truthful conversation; strengthen a wise boundary; or serve without recognition. Keep it safe, specific, and measurable.",
-      "caution": "Teach calmly and without sensational detail. Do not joke about bodies or victims, identify modern enemies as biblical targets, romanticize abusive leaders, demand secrecy, or use submission, forgiveness, vows, suffering, unity, or spiritual authority to pressure unsafe access. Do not promise confidentiality. Follow approved safeguarding procedures and applicable reporting duties when harm or danger is disclosed.",
-      "prayer": "Holy and compassionate God, When worship, leadership, and justice are defined by self-interest, vulnerable people suffer and society unravels; God’s people need the righteous reign of Christ. Expose our idols, restrain destructive power, and form the servant life of Jesus in us. Give protection to the vulnerable, repentance to those who harm, courage to tell truth, and hope rooted in Christ’s cross and resurrection. Amen."
+      "jesusParagraphs":["“No king in Israel” creates longing but does not mean any monarch will fix the crisis; Israel’s later kings will also exploit bodies, money, and worship.","Jesus is the righteous King who sees harassed and helpless people with compassion, confronts corrupt shepherds, receives the vulnerable, and gives his own body rather than handing over another’s. His reign establishes truth, justice, and servant power."],
+      "guardrailParagraphs":["These chapters are diagnosis, not divine instruction.","Religious sincerity, clergy office, inheritance language, assembly, divine consultation, and vows do not sanctify theft, idolatry, sexual violence, collective punishment, or abduction.","The concubine is a victim, and the Levite is not a reliable innocent narrator.","“No king” points toward righteous rule, not authoritarianism or automatic endorsement of monarchy."],
+      "questions":["How does money shape the religious system of chapters 17–18?","What does the Levite gain by moving from Micah to Dan?","How is Laish described, and why does that resist heroic framing?","What translation difference appears in 19:2, and why can neither reading blame the woman?","Which men could have protected the concubine, and what do they do?","What crucial fact does the Levite omit from his report?","How do Benjamin’s protection of offenders and Israel’s collective retaliation each corrupt justice?","Who pays the price for the oaths and proposed solutions of chapter 21?"],
+      "examination":"Where does religious language cover self-interest in my community? Whose voice or body disappears when leaders tell the story? Do I protect an institution, tribe, or vow at the expense of a harmed person? What safeguarding action must replace outrage alone?",
+      "challenge":"Do not reread graphic sections if doing so would be harmful. Review your church or organization’s abuse-reporting policy: identify reporting contacts, mandatory-reporting duties, survivor-support resources, conflict-of-interest protections, and emergency process. Correct one gap with appropriate leadership.",
+      "caution":"Use a trauma-informed plan and never display reconstructions of assault or dismemberment. Do not ask why the woman left or failed to escape. Do not promise confidentiality. If abuse or danger is disclosed, listen without interrogating, preserve safety, follow reporting law and policy, and connect the person with specialized medical, legal, advocacy, and crisis services. Forgiveness and unity never require unsafe access.",
+      "prayer":"Righteous King, grieve with every person betrayed, assaulted, silenced, or used by religious power. Expose corrupted worship and tribal loyalty. Give us courage to protect, report, listen, and pursue justice without revenge. Form your church under the compassionate rule of Jesus. Amen."
     }
   ]
 };
-

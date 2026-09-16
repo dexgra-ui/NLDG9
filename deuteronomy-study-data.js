@@ -1,421 +1,223 @@
 window.NLDG_BOOK_STUDY={
-  "slug": "deuteronomy-study",
-  "book": "Deuteronomy",
-  "title": "Deuteronomy: Covenant Memory, Wholehearted Love, Justice, and Life",
-  "description": "Deuteronomy records Moses’ covenant preaching to a new generation. It joins memory, worship, law, justice, leadership limits, care for vulnerable people, repentance, and the call to choose life.",
-  "theme": "Read Israel’s covenant law in its ancient setting and through the wider biblical witness. Reject antisemitism, Christian nationalism, colonial conquest, slavery apologetics, fear-based prosperity teaching, sexual coercion, and every use of law to deny image-bearing dignity.",
-  "audience": "Adults, groups, classes, and ministry teams",
-  "purpose": "This eight-lesson series helps groups read Deuteronomy in context, face difficult passages honestly, and practice faithful worship, accountable leadership, neighbor love, justice, and hope.",
-  "background": "Deuteronomy records Moses’ covenant preaching to a new generation. It joins memory, worship, law, justice, leadership limits, care for vulnerable people, repentance, and the call to choose life.",
-  "lessons": [
+  "slug":"deuteronomy-study",
+  "book":"Deuteronomy",
+  "title":"Deuteronomy: Covenant Memory, Wholehearted Love, Justice, and Life",
+  "description":"Deuteronomy records Moses’ covenant preaching to a new generation. It joins memory, worship, law, justice, leadership limits, care for vulnerable people, repentance, and the call to choose life.",
+  "theme":"Read Israel’s covenant law in its ancient setting and through the wider biblical witness. Reject antisemitism, Christian nationalism, colonial conquest, slavery apologetics, fear-based prosperity teaching, sexual coercion, and every use of law to deny image-bearing dignity.",
+  "audience":"Adults, groups, classes, and ministry teams",
+  "purpose":"This eight-lesson series helps groups read Deuteronomy in context, face difficult passages honestly, and practice faithful worship, accountable leadership, neighbor love, justice, and hope.",
+  "background":"Deuteronomy records Moses’ covenant preaching to a new generation on the plains of Moab. Through remembered history, law, exhortation, poetry, blessing, and final narration, the book calls Israel to truthful memory, wholehearted love, public justice, and life with God.",
+  "lessons":[
     {
-      "number": 1,
-      "title": "Remembering the Wilderness Honestly",
-      "scripture": "Deuteronomy 1–4",
-      "supporting": [],
-      "question": "Why does Moses retell Israel’s journey before the next generation enters the land?",
-      "truth": "Faithful memory names God’s grace, human failure, consequences, and lessons so a new generation can choose wisdom.",
-      "goal": "This lesson helps participants read Deuteronomy 1–4 within Deuteronomy, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question. No one must disclose trauma, illness, disability, family conflict, financial hardship, sexuality, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Deuteronomy 1–4 in manageable sections. Observe speakers, repeated words, covenant setting, and consequences. Distinguish what the text describes, regulates, uniquely commands, and commends. Interpret severe scenes through the whole book and wider biblical witness.",
-      "teaching": [
-        {
-          "heading": "Memory Forms Identity",
-          "body": "Moses does more than list events; he interprets them. Communities need truthful memory that celebrates grace without hiding failure or trauma."
-        },
-        {
-          "heading": "Leadership Was Shared",
-          "body": "Moses recalls appointing wise, respected judges because the burden was too heavy. Healthy leadership distributes responsibility and requires impartial justice."
-        },
-        {
-          "heading": "Fear at the Border",
-          "body": "Israel’s refusal grew from fear and distrust. Moses does not erase the real obstacles, but he reminds them that God had carried them like a parent carries a child."
-        },
-        {
-          "heading": "Consequences Are Not Abandonment",
-          "body": "The wilderness years were costly, and Moses himself will not enter. Yet God remains faithful to the next generation. Discipline does not make covenant promise meaningless."
-        },
-        {
-          "heading": "Do Not Add or Subtract",
-          "body": "Israel must receive God’s commands rather than manipulate them. Leaders should not present personal preferences as divine law or remove protections that inconvenience the powerful."
-        },
-        {
-          "heading": "Remember Without Idolatry",
-          "body": "Israel heard God’s voice but saw no form. Moses warns against turning creation or religious images into controllable substitutes. Memory should lead to worship, not nostalgia."
-        }
+      "number":1,
+      "title":"Remembering the Wilderness Honestly",
+      "scripture":"Deuteronomy 1–4",
+      "supporting":["Numbers 13–14","Numbers 20:1–13","Acts 3:22–26","Hebrews 3:1–6"],
+      "question":"How does Moses’ truthful retelling of Israel’s past prepare a new generation to trust God without hiding failure, consequence, or mercy?",
+      "truth":"Covenant memory is not nostalgia. It names God’s faithfulness, human fear, leadership limits, judgment, and mercy so God’s people can live wisely in the future.",
+      "goal":"Read Moses’ opening address as covenant formation on the plains of Moab, trace how geography and remembered events serve his appeal, face conquest without turning it into a modern mandate, and practice honest communal memory under God’s mercy.",
+      "openingParagraphs":["Consider why communities retell history before a major transition. Faithful memory can hold gratitude, grief, responsibility, and contested recollection at once. No participant should be pressured to narrate personal trauma or family failure."],
+      "contextParagraphs":["Deuteronomy opens east of the Jordan in Moab as Israel prepares to enter the land without the wilderness generation and soon without Moses. The Hebrew title Devarim means “words”; the book renews covenant identity through speeches, recollection, exhortation, and later narration.","Chapters 1–3 selectively retell the journey from Horeb to Moab, and chapter 4 turns memory into exhortation. The retelling is theological interpretation rather than a detached travel diary; parallel accounts should be compared without forcing every difference into artificial sameness."],
+      "teaching":[
+        {"heading":"The Long Delay Makes Memory Urgent","paragraphs":["The eleven-day note from Horeb to Kadesh-barnea sharpens the tragedy of the long wilderness delay. Ancestral promise frames the next step, but promise never makes mistrust harmless."]},
+        {"heading":"Shared Leadership Requires Impartial Justice","paragraphs":["Moses recalls appointing wise, discerning, respected leaders because one person could not carry the community alone. They must hear small and great alike, show no partiality, and refuse intimidation. Shared office does not make any judge or leader immune from scrutiny."]},
+        {"heading":"Fear Can Rewrite Grace as Threat","paragraphs":["At Kadesh the land’s fruit confirms goodness, yet the people interpret God as hateful and the future as destruction. Deuteronomy emphasizes unbelief while Numbers supplies additional details. Reading them together resists simplistic blame.","Israel’s later attempt to enter after God says not to go is presumption, not courageous repentance. Regret over consequence is not the same as renewed trust." ]},
+        {"heading":"Geography Places Limits on Israel’s Advance","paragraphs":["Israel is forbidden to seize Edom, Moab, and Ammon. Election is not permission to take every territory. Sihon and Og are narrated within Israel’s land story, but the warfare language cannot authorize colonialism, racial violence, forced conversion, or present territorial aggression.","God’s hardening of Sihon and Sihon’s own refusal are placed side by side without a full explanation. Divine sovereignty must not be used to erase human responsibility." ]},
+        {"heading":"Moses Is Honored but Not Exempt","paragraphs":["Moses prepares eastern tribes for shared duty, publicly commissions Joshua, and is refused entry into the land. Deuteronomy emphasizes communal rebellion while Numbers 20 highlights Moses’ own failure. Both communal and personal responsibility can be real." ]},
+        {"heading":"Hearing, Remembering, and Returning","paragraphs":["At Horeb Israel hears God but sees no form, grounding the warning against idolatry. “Do not add or subtract” protects covenant instruction; it is not a weapon for leaders to label preferences divine law.","Chapter 4 anticipates idolatry, scattering, seeking, and mercy. Judgment does not end the possibility of return, and Israel’s judgment never licenses antisemitism. Cities of refuge close the section with restraint and due process rather than immediate retaliation." ]}
       ],
-      "questions": [
-        "What stands out in Deuteronomy 1–4?",
-        "What does this passage reveal about God?",
-        "What fear, desire, or failure shapes the people?",
-        "Which detail requires ancient covenant context?",
-        "Whose dignity or safety needs attention?",
-        "What harmful interpretation must be rejected?",
-        "How does the text shape accountable leadership or justice?",
-        "What faithful response will you practice?"
-      ],
-      "examination": "Where am I driven by fear, craving, certainty, pride, or control? Have I overlooked someone’s voice or protected a leader from fair accountability? Ask God for one truthful conviction and one step toward repair, courage, generosity, or trust.",
-      "challenge": "Read Deuteronomy 1–4 again. Write one sentence about God, one warning, and one hope. Choose a practical action: listen, share responsibility, repair harm, honor a boundary, support due process, provide material help, improve accessibility, or remember God’s faithfulness with someone younger.",
-      "caution": "Do not apply ancient Israel’s civil or conquest laws as private commands. Reject antisemitism, racism, slavery apologetics, prosperity formulas, victim-blaming, coerced sexuality, and nationalism that claims divine superiority. Prioritize evidence, due process, safety, and material care.",
-      "prayer": "Holy God, meet us in Deuteronomy 1–4. Correct our fear and pride, protect vulnerable people, and form us in truthful worship. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Jesus answers wilderness testing with Deuteronomy and embodies the faithful trust Israel was called to practice. He enters Israel’s story rather than erasing it.","Acts 3 identifies Jesus with the promised prophet like Moses, while Hebrews honors Moses as a servant and Jesus as the Son over God’s house. Christian memory centers on salvation, confession, and mercy rather than a claim to become a conquering nation."],
+      "guardrailParagraphs":["Moses’ retelling is theological interpretation, not a detached travel diary.","Deuteronomy’s warfare does not give churches, nations, or individuals a timeless right to identify enemies as Canaanites.","Moses’ exclusion cannot be used to erase leadership accountability.","“Do not add or subtract” must not be used to shut down careful interpretation or questions."],
+      "questions":["What details in 1:1–8 create urgency, and how does ancestral promise frame the next step?","What qualifications and duties are given to judges in 1:9–18?","How does fear change Israel’s reading of God and the land in 1:19–46?","What geographic limits does God place around Israel’s movement?","How do Deuteronomy 3 and Numbers 20 together describe Moses’ exclusion?","How do hear, see, and remember shape worship in chapter 4?","What sequence of sin, scattering, seeking, and mercy appears in 4:25–31?"],
+      "examination":"When fear governs my interpretation, do I exaggerate threats, distrust God’s goodness, or rush into action after refusing to listen? Where do I need to name both grace received and harm done without transferring my responsibility to others?",
+      "challenge":"Read Deuteronomy 1–4 and make four columns: God’s action, Israel’s response, consequence, and mercy. Then write a brief truthful memory of one community decision that names gift, failure, impact, and one needed repair while protecting private details.",
+      "caution":"Conquest, displacement, death, and failed leadership may touch lived trauma. Allow silence or stepping out, never identify modern ethnic or political enemies with Canaanites, and keep civilian dignity, lawful safeguarding, and professional help explicit when present violence is discussed.",
+      "prayer":"Faithful God, teach us to remember truthfully. Free us from fear that distorts your goodness, from power that refuses limits, and from nostalgia that hides harm. Give us courage to listen, confess, repair, and walk forward in your mercy. Through Jesus, the faithful Son, amen."
     },
     {
-      "number": 2,
-      "title": "Love the Lord with All Your Heart",
-      "scripture": "Deuteronomy 5–6",
-      "supporting": [],
-      "question": "How does covenant love shape worship, family formation, work, rest, and daily life?",
-      "truth": "Because God rescued Israel, his people are called to wholehearted love that fills ordinary life and teaches the next generation.",
-      "goal": "This lesson helps participants read Deuteronomy 5–6 within Deuteronomy, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question. No one must disclose trauma, illness, disability, family conflict, financial hardship, sexuality, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Deuteronomy 5–6 in manageable sections. Observe speakers, repeated words, covenant setting, and consequences. Distinguish what the text describes, regulates, uniquely commands, and commends. Interpret severe scenes through the whole book and wider biblical witness.",
-      "teaching": [
-        {
-          "heading": "The Ten Words Begin with Rescue",
-          "body": "God identifies himself as the one who brought Israel out of slavery. Command follows grace. Obedience responds to relationship rather than earning liberation."
-        },
-        {
-          "heading": "Sabbath Includes Workers and Animals",
-          "body": "Rest is extended to sons, daughters, servants, immigrants, and livestock. Sabbath resists systems that reserve rest for the powerful while exhausting others."
-        },
-        {
-          "heading": "Hear, O Israel",
-          "body": "The Shema declares that the Lord alone deserves Israel’s allegiance. Love involves heart, life, and strength. Faith is more than public ritual."
-        },
-        {
-          "heading": "Teach Through Daily Life",
-          "body": "God’s words are discussed at home, on the road, at bedtime, and upon rising. Formation is relational and repeated, not limited to a weekly church hour."
-        },
-        {
-          "heading": "Children Ask Why",
-          "body": "The next generation is invited to question. The answer begins with the story of slavery and rescue, not “because I said so.” Faithful teaching explains grace and purpose."
-        },
-        {
-          "heading": "Do Not Forget in Prosperity",
-          "body": "Full houses and abundant food can produce spiritual amnesia. Gratitude, generosity, and truthful memory guard against self-sufficiency."
-        }
+      "number":2,
+      "title":"Love the Lord with All Your Heart",
+      "scripture":"Deuteronomy 5–6",
+      "supporting":["Exodus 20","Mark 12:28–34","Matthew 4:1–11"],
+      "question":"How does God’s rescue call Israel to an undivided love that reshapes worship, work, rest, family formation, and prosperity?",
+      "truth":"The God who delivered Israel from slavery calls the whole community to hear, love, remember, teach, and obey with every dimension of life.",
+      "goal":"Read the Ten Commandments and the Shema within covenant renewal, understand repeated words and ancient practices, honor their continuing Jewish significance, and receive Jesus’ use of these texts without erasing Israel’s story.",
+      "openingParagraphs":["Notice where repeated words and routines have formed love over time. Keep discussion general; no one must disclose family wounds or religious coercion. Hearing God’s word should lead to faithful love rather than performance or control."],
+      "contextParagraphs":["Moses addresses the Moab generation as participants in the Horeb covenant even though many were children or not yet born at Sinai. Covenant memory makes the saving event present to communal identity rather than claiming every listener was an adult eyewitness.","Deuteronomy 5 restates the Ten Words but is not identical to Exodus 20. Most notably, Exodus grounds Sabbath in creation while Deuteronomy grounds it in deliverance from slavery. Chapter 6 then carries covenant allegiance into daily formation."],
+      "teaching":[
+        {"heading":"Command Begins with Deliverance","paragraphs":["God identifies himself first as the one who brought Israel from slavery. Obedience answers grace; it does not purchase liberation. Generational consequences describe sin’s communal reach, not automatic guilt placed on abused children." ]},
+        {"heading":"God’s Name Cannot Serve False Power","paragraphs":["Bearing God’s name falsely reaches beyond careless speech to deceptive or wrongful use of divine identity. Religious language cannot sanctify manipulation, perjury, abuse, commerce, or political ambition." ]},
+        {"heading":"Sabbath Remembers Freedom","paragraphs":["Rest extends to sons, daughters, servants, resident immigrants, and animals. Household power may not secure rest by making others labor. Christians differ over new-covenant Sabbath practice, but its witness to worship, humane limits, and shared rest remains visible." ]},
+        {"heading":"Neighbor Commands Protect Life and Truth","paragraphs":["The commands concerning parents, murder, adultery, theft, false testimony, and coveting protect relationships from outward harm and inward grasping. Honoring parents never means concealing crime, accepting abuse, or remaining in danger." ]},
+        {"heading":"The Shema Calls for Undivided Allegiance","paragraphs":["Shema means hearing that responds. Deuteronomy 6:4 can be rendered “the LORD is one” or “the LORD alone”; the syntax is debated, while the demand for undivided allegiance is clear.","Heart, soul, and might summon the whole self. Tefillin and mezuzot represent living Jewish embodied practice; Christian interpretation must not mock or erase it." ]},
+        {"heading":"Formation Lives in Ordinary Time","paragraphs":["God’s words are rehearsed at home and on the road, lying down and rising. When children ask what the commands mean, the answer begins with rescue: “We were Pharaoh’s slaves.” Faithful formation welcomes questions.","Prosperity creates the danger of forgetting cities, wells, vineyards, and olive groves received rather than self-made. Gratitude should produce humility and justice, not prosperity theology." ]}
       ],
-      "questions": [
-        "What stands out in Deuteronomy 5–6?",
-        "What does this passage reveal about God?",
-        "What fear, desire, or failure shapes the people?",
-        "Which detail requires ancient covenant context?",
-        "Whose dignity or safety needs attention?",
-        "What harmful interpretation must be rejected?",
-        "How does the text shape accountable leadership or justice?",
-        "What faithful response will you practice?"
-      ],
-      "examination": "Where am I driven by fear, craving, certainty, pride, or control? Have I overlooked someone’s voice or protected a leader from fair accountability? Ask God for one truthful conviction and one step toward repair, courage, generosity, or trust.",
-      "challenge": "Read Deuteronomy 5–6 again. Write one sentence about God, one warning, and one hope. Choose a practical action: listen, share responsibility, repair harm, honor a boundary, support due process, provide material help, improve accessibility, or remember God’s faithfulness with someone younger.",
-      "caution": "Do not apply ancient Israel’s civil or conquest laws as private commands. Reject antisemitism, racism, slavery apologetics, prosperity formulas, victim-blaming, coerced sexuality, and nationalism that claims divine superiority. Prioritize evidence, due process, safety, and material care.",
-      "prayer": "Holy God, meet us in Deuteronomy 5–6. Correct our fear and pride, protect vulnerable people, and form us in truthful worship. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Jesus names Deuteronomy 6:4–5 as the first command and joins it to neighbor love from Leviticus 19. In the wilderness he uses Deuteronomy 6 to refuse rival allegiance and spectacular testing of God.","Jesus’ use confirms the Shema’s theological center without authorizing Christians to detach it from Israel or disparage Jewish worship."],
+      "guardrailParagraphs":["The Decalogue addresses a rescued covenant people, not isolated moral consumers.","Sabbath includes people with less household power.","Honor for parents never requires submission to abuse.","The Shema has a legitimate translation discussion; no one English rendering exhausts it.","Teaching children diligently cannot justify coercion, humiliation, or suppressing honest questions."],
+      "questions":["What identity statement precedes the commandments, and how does that shape grace and obedience?","How does Deuteronomy’s reason for Sabbath differ from Exodus 20, and who shares the rest?","Which relationships are protected in 5:16–21?","What limits remain on human mediators in 5:22–33?","What does shema require in 6:4–9?","What remains clear under the main renderings of 6:4?","Why is abundance spiritually dangerous in 6:10–19?","How does the answer to a child in 6:20–25 connect rescue, command, well-being, and righteousness?"],
+      "examination":"What repeated practice currently forms my deepest allegiance? Does my worship create rest and dignity for others or depend on hidden exhaustion? Where has gratitude weakened into entitlement or God-language become a tool for control?",
+      "challenge":"Read Deuteronomy 5 aloud once and chapter 6 twice. Pray 6:4–5 morning and evening, then make one concrete change that extends rest or dignity to someone whose labor benefits you.",
+      "caution":"Parents, marriage, coveting, and household authority can surface abuse or coercion. State clearly that honoring family never requires remaining unsafe or concealing wrongdoing. Acknowledge the Shema’s living Jewish use; disclosures of harm require listening, safeguarding, and qualified help rather than public investigation.",
+      "prayer":"One Lord and faithful Deliverer, write your words upon our hearts. Teach us to love you with our whole lives, to use your name truthfully, to extend rest and dignity, and to tell the story of grace to the next generation. Form us in the faithful love of Jesus. Amen."
     },
     {
-      "number": 3,
-      "title": "Grace, Covenant, and a Distinct People",
-      "scripture": "Deuteronomy 7–11",
-      "supporting": [],
-      "question": "What does election mean, and how should covenant distinction be understood without superiority?",
-      "truth": "God chooses Israel by love and promise, not size or merit, calling the people to faithful allegiance and justice.",
-      "goal": "This lesson helps participants read Deuteronomy 7–11 within Deuteronomy, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question. No one must disclose trauma, illness, disability, family conflict, financial hardship, sexuality, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Deuteronomy 7–11 in manageable sections. Observe speakers, repeated words, covenant setting, and consequences. Distinguish what the text describes, regulates, uniquely commands, and commends. Interpret severe scenes through the whole book and wider biblical witness.",
-      "teaching": [
-        {
-          "heading": "Chosen by Grace, Not Greatness",
-          "body": "Israel is chosen despite being few, not because of superiority. Election creates responsibility and mission. It never licenses racism, antisemitism, nationalism, or contempt."
-        },
-        {
-          "heading": "Difficult Conquest Language",
-          "body": "Commands concerning the nations belong to Israel’s unique ancient judgment and land setting. They must not authorize genocide, colonialism, forced conversion, or violence against modern peoples."
-        },
-        {
-          "heading": "Remember the Wilderness",
-          "body": "Hunger and provision teach that life depends on God’s word. The lesson is not that suffering is good in itself or that leaders may create deprivation to teach faith."
-        },
-        {
-          "heading": "Beware My Power and Strength",
-          "body": "Prosperity tempts Israel to claim self-made success. Wealth depends on gifts, land, labor, community, and God’s provision. Gratitude should produce justice and generosity."
-        },
-        {
-          "heading": "Not Because of Your Righteousness",
-          "body": "Moses bluntly recalls the golden calf and Israel’s stubbornness. Grace removes boasting. Communities can acknowledge calling while practicing repentance."
-        },
-        {
-          "heading": "Love the Immigrant",
-          "body": "God executes justice for orphans and widows and loves immigrants, giving food and clothing. Israel must love immigrants because it remembers being foreign in Egypt."
-        }
+      "number":3,
+      "title":"Grace, Covenant, and a Distinct People",
+      "scripture":"Deuteronomy 7–11",
+      "supporting":["Matthew 4:4","Ephesians 2:11–22"],
+      "question":"What does God’s gracious choice of Israel require, and how can covenant distinction be taught without superiority, violence, or contempt?",
+      "truth":"God chooses Israel because of divine love and ancestral promise—not size, strength, or moral superiority—and calls the people to remember grace, reject idols, love the vulnerable, and obey wholeheartedly.",
+      "goal":"Place election, conquest, wilderness testing, prosperity, rebellion, and immigrant love within Moses’ covenant appeal; distinguish Israel’s unique land commission from modern political claims; and let grace remove boasting while deepening responsibility.",
+      "openingParagraphs":["Listen for every reason Moses gives for Israel’s election and possession of the land. Do not invite ethnic minorities or Jewish participants to defend their dignity or educate the room. Approach conquest language with humility and moral seriousness."],
+      "contextParagraphs":["Deuteronomy 7–11 follows the Shema and repeatedly calls Israel to remember, not forget, love, fear, serve, and keep covenant. Covenant identity is formed through truthful memory and responsive loyalty.","The herem language of chapter 7 belongs to the ancient Canaan setting. Its scope and relationship to Joshua are debated, but it is not a transferable command for churches or modern states."],
+      "teaching":[
+        {"heading":"Election Begins in Love, Not Greatness","paragraphs":["Israel is treasured, yet Moses immediately denies superiority: it was the fewest of peoples. God’s love and ancestral oath explain the choice. Election cannot support racism, antisemitism, Christian nationalism, or the idea that power proves divine favor." ]},
+        {"heading":"Conquest Is Severe and Nontransferable","paragraphs":["Chapter 7 uses totalizing destruction language and opposes intermarriage because it threatens covenant allegiance, not because of racial purity. Rahab and Ruth show that ethnicity itself is not contamination. Christian use of these texts for colonization or genocide contradicts their bounded setting and Jesus’ enemy-love." ]},
+        {"heading":"Wilderness Testing Exposes Dependence","paragraphs":["Hunger and manna teach dependence on God’s word in a unique wilderness history. Parents, pastors, or institutions may not manufacture deprivation, withhold care, or name another person’s suffering a lesson God assigned." ]},
+        {"heading":"Abundance Can Produce Amnesia","paragraphs":["The land’s resources are gifts, and Moses targets the self-made boast. Human labor is not denied; rather, capacity and provision are received. Gratitude that erases workers, inherited advantage, land, or unequal access remains incomplete." ]},
+        {"heading":"Israel Has No Ground for Moral Boasting","paragraphs":["Moses repeats that Israel does not possess the land because of its righteousness and immediately retells the golden calf. Renewed tablets hold judgment and mercy together; covenant continuation is grace." ]},
+        {"heading":"Circumcised Hearts Produce Concrete Justice","paragraphs":["God is impartial, executes justice for orphan and widow, and loves the resident immigrant by providing food and clothing. Israel must love the immigrant because it remembers life as immigrants in Egypt. Covenant greatness is visible in impartial justice, not superiority." ]}
       ],
-      "questions": [
-        "What stands out in Deuteronomy 7–11?",
-        "What does this passage reveal about God?",
-        "What fear, desire, or failure shapes the people?",
-        "Which detail requires ancient covenant context?",
-        "Whose dignity or safety needs attention?",
-        "What harmful interpretation must be rejected?",
-        "How does the text shape accountable leadership or justice?",
-        "What faithful response will you practice?"
-      ],
-      "examination": "Where am I driven by fear, craving, certainty, pride, or control? Have I overlooked someone’s voice or protected a leader from fair accountability? Ask God for one truthful conviction and one step toward repair, courage, generosity, or trust.",
-      "challenge": "Read Deuteronomy 7–11 again. Write one sentence about God, one warning, and one hope. Choose a practical action: listen, share responsibility, repair harm, honor a boundary, support due process, provide material help, improve accessibility, or remember God’s faithfulness with someone younger.",
-      "caution": "Do not apply ancient Israel’s civil or conquest laws as private commands. Reject antisemitism, racism, slavery apologetics, prosperity formulas, victim-blaming, coerced sexuality, and nationalism that claims divine superiority. Prioritize evidence, due process, safety, and material care.",
-      "prayer": "Holy God, meet us in Deuteronomy 7–11. Correct our fear and pride, protect vulnerable people, and form us in truthful worship. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Jesus quotes Deuteronomy 8:3 in the wilderness and trusts the Father rather than grasping for power. He fulfills Israel’s vocation without converting election into contempt.","Ephesians 2 describes Gentiles brought near to Israel’s covenants by grace, not licensed to replace, despise, or dominate Jewish people. Grace removes ethnic and spiritual boasting."],
+      "guardrailParagraphs":["Do not turn conquest language into a code for modern enemies.","Deuteronomy 7 is not a ban on interracial marriage.","Wilderness hunger does not permit engineered suffering.","Deuteronomy 8 is neither a prosperity formula nor a denial of human labor.","The clearest covenant greatness in this unit includes impartial justice and love for the immigrant."],
+      "questions":["What reasons for election appear in 7:6–11, and which reasons are ruled out?","What danger does 7:1–5 attach to intermarriage, and what prevents racial-purity readings?","What does 8:1–6 explicitly say the wilderness taught Israel?","What does the self-made story in 8:7–20 erase?","Why does Moses retell the golden calf after denying Israel’s righteousness?","How are love of God, impartiality, and love of the immigrant connected in 10:12–22?"],
+      "examination":"Where do I treat belonging, doctrine, nationality, wealth, or ministry success as evidence of superiority? Whose labor or vulnerability disappears from my achievement story? Does claimed love for God become visible in impartiality and care for people with less power?",
+      "challenge":"Read Deuteronomy 7:6–11, 8:7–20, 9:4–6, and 10:12–22. Build two columns titled Gift and Responsibility, then support one concrete practice that protects or welcomes immigrants through a reputable local channel without demanding personal stories.",
+      "caution":"Name conquest before the session, reject racialized, colonial, and antisemitic readings explicitly, and never stage a debate over anyone’s human dignity. Protect people carrying displacement, war, or migration trauma and never expose immigration status or identifying information.",
+      "prayer":"Covenant-keeping God, strip away our boasting and forgetfulness. Teach us to receive grace with humility, to reject idols of nation and power, to love those who are vulnerable, and to trust your word in scarcity and abundance. Make us faithful through Jesus. Amen."
     },
     {
-      "number": 4,
-      "title": "Worship, Sabbath, and Neighbor Justice",
-      "scripture": "Deuteronomy 12–16",
-      "supporting": [],
-      "question": "How do worship, celebration, debt release, and shared provision form a covenant community?",
-      "truth": "Wholehearted worship rejects idolatry and creates rhythms in which joy, generosity, rest, and justice reach the whole community.",
-      "goal": "This lesson helps participants read Deuteronomy 12–16 within Deuteronomy, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question. No one must disclose trauma, illness, disability, family conflict, financial hardship, sexuality, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Deuteronomy 12–16 in manageable sections. Observe speakers, repeated words, covenant setting, and consequences. Distinguish what the text describes, regulates, uniquely commands, and commends. Interpret severe scenes through the whole book and wider biblical witness.",
-      "teaching": [
-        {
-          "heading": "Worship Is Not Self-Designed Control",
-          "body": "Israel is directed toward the place God chooses. Worship resists local systems that mix devotion with exploitation. God, not convenience or profit, sets its center."
-        },
-        {
-          "heading": "Reject Child Sacrifice",
-          "body": "Israel must not imitate practices that burn children. No ministry, ideology, or ambition may consume children for adult goals. Safety and dignity are nonnegotiable."
-        },
-        {
-          "heading": "Food and Holiness",
-          "body": "Dietary practices form Israel’s distinct identity. Christians interpret their application through the New Testament while respecting Jewish observance and refusing ridicule."
-        },
-        {
-          "heading": "Tithes Become Shared Joy",
-          "body": "Celebration includes households, Levites, immigrants, orphans, and widows. Worship resources are not for leaders alone. Sacred abundance should widen the table."
-        },
-        {
-          "heading": "Release Debt",
-          "body": "Regular debt release prevents permanent bondage. The command challenges hard-hearted calculations that refuse help as the release year approaches."
-        },
-        {
-          "heading": "Justice at the Festivals",
-          "body": "Passover, Weeks, and Booths remember rescue and provision. Celebration includes servants and vulnerable neighbors, joining worship to social responsibility."
-        }
+      "number":4,
+      "title":"Worship, Sabbath, and Neighbor Justice",
+      "scripture":"Deuteronomy 12–16",
+      "supporting":["Mark 7","Acts 10","Luke 22:14–20"],
+      "question":"How do ordered worship, shared celebration, debt release, and care for vulnerable neighbors form covenant faithfulness in the land?",
+      "truth":"Deuteronomy refuses to separate worship from economics: allegiance to the Lord reshapes food, money, labor, festivals, and the community’s treatment of people with less power.",
+      "goal":"Read worship and community laws within Israel’s covenant, face severe penalties and regulated servitude honestly, and discern allegiance, generosity, rest, and shared joy without treating ancient civil law as a direct modern code.",
+      "openingParagraphs":["Place two headings before the group: worship and economics. Note how often Deuteronomy joins them. No one should be asked to reveal debt, poverty, food insecurity, or labor exploitation."],
+      "contextParagraphs":["Chapters 12–26 form Deuteronomy’s large legal core. “The place the LORD will choose” anticipates a central sanctuary, later associated with Jerusalem, though Jerusalem is not named here and the history of centralization is debated.","These laws address ancient Israel rather than a complete modern economy. Some regulate harsh social realities without abolishing them; regulation must not be confused with moral approval of every institution present."],
+      "teaching":[
+        {"heading":"Worship Is Centralized Without Creating a Modern Violence Mandate","paragraphs":["Israel must destroy Canaanite worship sites and bring sacrifices to God’s chosen place. This protects covenant allegiance but cannot authorize attacks on other religions today. The blood prohibition marks reverence for life and sacrifice; it should not be turned into denial of medically necessary care." ]},
+        {"heading":"Loyalty Tests Do Not Authorize Vigilante Religion","paragraphs":["Deuteronomy 13 treats enticement to other gods with severe ancient penalties. A sign alone does not establish truth, but churches and families have no authority to punish apostasy through coercive violence." ]},
+        {"heading":"Holiness Reaches Food Without Antisemitism","paragraphs":["Deuteronomy 14’s dietary distinctions mark Israel’s holy identity. Christians commonly read Mark 7 and Acts 10 as changing food-boundary obligations, while observant Jews continue kosher practice. Christian freedom must never become ridicule of Jewish obedience." ]},
+        {"heading":"Tithes Turn Increase into Shared Joy","paragraphs":["Annual tithes fund celebratory meals before God, while the third-year store supports Levites, resident immigrants, orphans, and widows. Sacred resources support ministry and let households without land or protection eat and be satisfied." ]},
+        {"heading":"Release Interrupts Permanent Poverty","paragraphs":["Seventh-year release prevents debt from hardening indefinitely. “There will be no one in need” expresses covenant vocation while “the poor will never cease” recognizes persistent vulnerability; the latter is never an excuse for closed hands." ]},
+        {"heading":"Regulated Servitude Is Not an Ideal","paragraphs":["Hebrew debt servants receive release and generous provision because Israel remembers slavery. The law restrains economic bondage but does not validate racial chattel slavery or turn constrained poverty choices into uncomplicated freedom." ]},
+        {"heading":"Festivals and Justice Belong Together","paragraphs":["Passover, Weeks, and Booths repeatedly include children, servants, Levites, immigrants, orphans, and widows. Giving is proportionate to blessing, not a fundraising threat. The section then turns directly to judges and the command to pursue justice without partiality or bribes." ]}
       ],
-      "questions": [
-        "What stands out in Deuteronomy 12–16?",
-        "What does this passage reveal about God?",
-        "What fear, desire, or failure shapes the people?",
-        "Which detail requires ancient covenant context?",
-        "Whose dignity or safety needs attention?",
-        "What harmful interpretation must be rejected?",
-        "How does the text shape accountable leadership or justice?",
-        "What faithful response will you practice?"
-      ],
-      "examination": "Where am I driven by fear, craving, certainty, pride, or control? Have I overlooked someone’s voice or protected a leader from fair accountability? Ask God for one truthful conviction and one step toward repair, courage, generosity, or trust.",
-      "challenge": "Read Deuteronomy 12–16 again. Write one sentence about God, one warning, and one hope. Choose a practical action: listen, share responsibility, repair harm, honor a boundary, support due process, provide material help, improve accessibility, or remember God’s faithfulness with someone younger.",
-      "caution": "Do not apply ancient Israel’s civil or conquest laws as private commands. Reject antisemitism, racism, slavery apologetics, prosperity formulas, victim-blaming, coerced sexuality, and nationalism that claims divine superiority. Prioritize evidence, due process, safety, and material care.",
-      "prayer": "Holy God, meet us in Deuteronomy 12–16. Correct our fear and pride, protect vulnerable people, and form us in truthful worship. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Jesus participates in Israel’s festivals and at the last supper interprets Passover around his death and the new covenant. His self-giving gathers a people whose worship becomes generosity and table fellowship.","This Christian center does not erase Jewish festivals or make every festival detail a hidden prediction."],
+      "guardrailParagraphs":["Deuteronomy 13 cannot become religious vigilantism.","Regulated servitude must not be called harmless or used to defend slavery.","“The poor will never cease” does not excuse neglect; the command is to open the hand.","Tithing here includes feasting and vulnerable households, not only institutional finance.","Christian readings of food laws must remain free of antisemitism."],
+      "questions":["What purposes does a common worship center serve in chapter 12?","What evidence is insufficient by itself in 13:1–5?","How do the food laws mark communal identity?","Who participates in the tithe meals and third-year store?","How do 15:4 and 15:11 belong together?","What protections are given to released servants, and what limitation remains?","Who joins the festivals, and how does remembered rescue shape the guest list?","Why might public justice immediately follow the festival calendar?"],
+      "examination":"Does my worship depend on underpaid labor, concealed need, or pressure to give? Where have I treated another person’s poverty as inevitable rather than opening my hand? Which celebration, budget, or ministry decision could become more accessible?",
+      "challenge":"Read Deuteronomy 14:22–29 and 15:1–18 twice. Review one personal or ministry spending category and redirect a specific amount, meal, or resource toward debt relief, food security, worker support, or accessible communal celebration through a trustworthy channel.",
+      "caution":"Give advance notice of capital penalties, poverty, debt, and servitude. Never ask who is indebted, dependent, undocumented, or receiving assistance. Reject slavery apologetics and connect people facing exploitation or financial crisis with qualified help; prayer supports rather than replaces practical assistance.",
+      "prayer":"God of rescue and abundance, free us from divided worship and closed hands. Teach us to remember your gifts, honor workers, release burdens, welcome the vulnerable, and celebrate without exploitation. Shape our life together through Jesus, who gave himself for us. Amen."
     },
     {
-      "number": 5,
-      "title": "Leadership, Courts, Kings, and Prophets",
-      "scripture": "Deuteronomy 16:18–18:22",
-      "supporting": [],
-      "question": "How does covenant law limit judges, kings, priests, and prophets?",
-      "truth": "All leaders remain under God’s instruction; justice requires impartial courts, restrained power, truthful prophecy, and accountable service.",
-      "goal": "This lesson helps participants read Deuteronomy 16:18–18:22 within Deuteronomy, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question. No one must disclose trauma, illness, disability, family conflict, financial hardship, sexuality, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Deuteronomy 16:18–18:22 in manageable sections. Observe speakers, repeated words, covenant setting, and consequences. Distinguish what the text describes, regulates, uniquely commands, and commends. Interpret severe scenes through the whole book and wider biblical witness.",
-      "teaching": [
-        {
-          "heading": "Judges Must Pursue Justice",
-          "body": "Officials may not distort justice, show partiality, or accept bribes. Fair process is a spiritual obligation, not merely an administrative detail."
-        },
-        {
-          "heading": "The King Is Not Above the Law",
-          "body": "A future king must not multiply military power, wives, or wealth. He must copy and read the law. Public authority is limited and accountable."
-        },
-        {
-          "heading": "Power Must Not Return People to Egypt",
-          "body": "The king cannot send people back to acquire horses. Security policy must not recreate the bondage God opposed."
-        },
-        {
-          "heading": "Priestly Provision Without Exploitation",
-          "body": "Levites receive support because they lack a land inheritance. Supporting ministry does not justify luxury, coercive giving, or secret finances."
-        },
-        {
-          "heading": "Reject Manipulative Spiritual Practices",
-          "body": "Divination and occult techniques seek control apart from trusting God. Spiritual hunger should be met by truthful guidance rather than fear-based manipulation."
-        },
-        {
-          "heading": "Test Prophetic Claims",
-          "body": "A prophet’s words and allegiance are accountable to God’s revelation. Charisma, confidence, and religious language do not place anyone beyond examination."
-        }
+      "number":5,
+      "title":"Leadership, Courts, Kings, and Prophets",
+      "scripture":"Deuteronomy 16:18–18:22",
+      "supporting":["Deuteronomy 13:1–5","Acts 3:22–26","Acts 7:37"],
+      "question":"How does covenant law place judges, kings, priests, and prophets under God’s instruction rather than above accountability?",
+      "truth":"Public authority is distributed and limited: courts must pursue impartial justice, kings must resist military and economic excess, priests receive defined provision, and prophets must be tested.",
+      "goal":"Examine Deuteronomy’s institutions in their ancient setting, distinguish authority from domination, understand the prophet-like-Moses promise with interpretive humility, and develop safeguards against spiritual and political abuse.",
+      "openingParagraphs":["Identify from the passage every limit placed on a leader. Keep examples institutional rather than soliciting abuse disclosures. The section includes capital penalties and spiritual manipulation, so participants may pass or step out."],
+      "contextParagraphs":["This unit follows the festivals and applies covenant loyalty to judges, central tribunal, king, Levitical priests, and prophets. Different functions distribute authority; no single human office receives unchecked control.","Ancient Israel’s civil penalties cannot simply be imported into church discipline or modern criminal law. The enduring witness includes impartiality, evidence, bounded authority, fidelity to God’s word, and testing public claims."],
+      "teaching":[
+        {"heading":"Justice Must Be Pursued Without Distortion","paragraphs":["Judges must reject partiality and bribes. The doubled “justice, justice” intensifies the command and ties life in the land to public justice, not merely correct ritual." ]},
+        {"heading":"Evidence Matters Without Silencing Reports","paragraphs":["Idolatry charges require diligent inquiry and multiple witnesses for conviction. That threshold must not be turned into a rule that a survivor cannot be protected, believed provisionally, reported, or investigated unless another eyewitness exists." ]},
+        {"heading":"Hard Cases Need Accountable Judgment","paragraphs":["Difficult cases go to a central tribunal for consistency. This is not pastoral infallibility, and its severe ancient penalty cannot be used to threaten people who question leaders." ]},
+        {"heading":"The King Is a Brother Under Torah","paragraphs":["The king may not multiply horses, wives, silver, or gold and must read Torah throughout life. Military dependence, dynastic accumulation, luxury, and self-exaltation are restrained. Returning to Egypt for horses warns against security that recreates former bondage." ]},
+        {"heading":"Priestly Provision Has Boundaries","paragraphs":["Levites receive defined material support without territorial inheritance. Provision for ministry never authorizes luxury, coercive fundraising, financial secrecy, or hereditary entitlement beyond accountability." ]},
+        {"heading":"Spiritual Power Cannot Be Seized Through Technique","paragraphs":["Forbidden divination and occult practices concern rival spiritual control. The list must not fuel superstition, accusations against marginalized cultures, or abusive deliverance practices. Mental-health symptoms require compassionate clinical care rather than automatic demonization." ]},
+        {"heading":"Prophets Like Moses Must Still Be Tested","paragraphs":["The promise of a prophet like Moses establishes authorized prophecy and also develops a climactic expectation later identified with Jesus in Acts. A failed prediction exposes false speech, but fulfillment alone is insufficient because Deuteronomy 13 also tests allegiance. No leader is beyond examination." ]}
       ],
-      "questions": [
-        "What stands out in Deuteronomy 16:18–18:22?",
-        "What does this passage reveal about God?",
-        "What fear, desire, or failure shapes the people?",
-        "Which detail requires ancient covenant context?",
-        "Whose dignity or safety needs attention?",
-        "What harmful interpretation must be rejected?",
-        "How does the text shape accountable leadership or justice?",
-        "What faithful response will you practice?"
-      ],
-      "examination": "Where am I driven by fear, craving, certainty, pride, or control? Have I overlooked someone’s voice or protected a leader from fair accountability? Ask God for one truthful conviction and one step toward repair, courage, generosity, or trust.",
-      "challenge": "Read Deuteronomy 16:18–18:22 again. Write one sentence about God, one warning, and one hope. Choose a practical action: listen, share responsibility, repair harm, honor a boundary, support due process, provide material help, improve accessibility, or remember God’s faithfulness with someone younger.",
-      "caution": "Do not apply ancient Israel’s civil or conquest laws as private commands. Reject antisemitism, racism, slavery apologetics, prosperity formulas, victim-blaming, coerced sexuality, and nationalism that claims divine superiority. Prioritize evidence, due process, safety, and material care.",
-      "prayer": "Holy God, meet us in Deuteronomy 16:18–18:22. Correct our fear and pride, protect vulnerable people, and form us in truthful worship. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Acts proclaims Jesus as the promised prophet like Moses and calls people to hear him. Christians confess him as more than prophet: the Son whose authority is truthful, covenant-faithful, and unlike self-protecting domination.","Jesus refuses coercive spectacle, serves rather than exalts himself, and exposes rulers who burden others."],
+      "guardrailParagraphs":["Two or three witnesses governs adjudication, not whether a report may be heard, protected, or investigated.","The central court is not a template for pastoral infallibility.","The king’s covenant membership requirement is not a charter for racial nationalism.","A fulfilled prediction does not override false worship, bad fruit, manipulation, or contradiction of Scripture.","No leader is beyond testing."],
+      "questions":["What corruptions of justice are named in 16:18–20?","How do investigation and witness requirements restrain rumor without forbidding an initial report?","What does the central tribunal solve, and how could it be abused today?","What must the king refuse and practice?","How can security recreate old bondage?","What material support and boundaries are given to Levites?","Why is a prophet like Moses promised, and how does Acts use that promise?","What two tests must prophetic claims face?"],
+      "examination":"Do I excuse partiality when it favors my group? Have I treated charisma, office, prediction, or religious vocabulary as a substitute for evidence and character? Where must my own influence, money, or teaching submit to transparent review?",
+      "challenge":"Read Deuteronomy 17:14–20 daily and mark every royal limit. Review one process you can influence: who decides, what evidence is required, where appeals go, how conflicts are disclosed, and what concrete safeguard is missing?",
+      "caution":"Spiritual abuse, failed prophecy, coercive giving, and institutional betrayal may surface. Never require survivors to confront alleged offenders or produce multiple eyewitnesses. Follow reporting duties, preserve confidentiality within legal limits, use independent qualified review, and avoid amateur mental-health diagnosis or deliverance responses.",
+      "prayer":"God of justice and truth, keep us from partiality, bribery, fear, and spiritual manipulation. Give leaders humble hearts beneath your word, give communities courage to test what is spoken in your name, and form us under Jesus, your faithful Son. Amen."
     },
     {
-      "number": 6,
-      "title": "Protecting Families, Workers, Immigrants, and the Poor",
-      "scripture": "Deuteronomy 19–25",
-      "supporting": [],
-      "question": "How does covenant law restrain revenge and protect people in everyday vulnerability?",
-      "truth": "God requires evidence, proportion, truthful commerce, humane labor practices, and concrete care for neighbors with less power.",
-      "goal": "This lesson helps participants read Deuteronomy 19–25 within Deuteronomy, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question. No one must disclose trauma, illness, disability, family conflict, financial hardship, sexuality, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Deuteronomy 19–25 in manageable sections. Observe speakers, repeated words, covenant setting, and consequences. Distinguish what the text describes, regulates, uniquely commands, and commends. Interpret severe scenes through the whole book and wider biblical witness.",
-      "teaching": [
-        {
-          "heading": "Refuge Before Revenge",
-          "body": "Cities of refuge protect accidental killers from immediate retaliation while preserving trials for intentional murder. Justice needs evidence and process, not mob certainty."
-        },
-        {
-          "heading": "Witnesses and Due Process",
-          "body": "One witness is insufficient for a serious charge, and malicious testimony carries consequences. The principle protects against rumor while never demanding silence from victims or preventing proper investigation."
-        },
-        {
-          "heading": "War Laws Restrain Rather Than Glorify",
-          "body": "The laws address ancient Israel’s warfare and include disturbing material. They do not authorize Christian holy war. Even within that setting, limits expose that power is accountable."
-        },
-        {
-          "heading": "Family and Sexual Harm Require Care",
-          "body": "Several cases protect marriage, inheritance, and sexual boundaries, though some ancient procedures trouble modern readers. Never use them to force victims to marry attackers, blame survivors, or avoid contemporary safeguarding and law."
-        },
-        {
-          "heading": "Workers, Immigrants, and Debtors",
-          "body": "Wages must be paid promptly, immigrants receive justice, and pledges cannot strip a person of basic dignity. Economic holiness is measured by treatment of vulnerable people."
-        },
-        {
-          "heading": "Honest Measures",
-          "body": "Business weights must be accurate. Fraud in ordinary transactions is covenant unfaithfulness. Transparency and fair dealing belong to worship."
-        }
+      "number":6,
+      "title":"Protecting Families, Workers, Immigrants, and the Poor",
+      "scripture":"Deuteronomy 19–25",
+      "supporting":["Matthew 5:38–48","Matthew 19:3–9","Galatians 3:13","1 Corinthians 9:8–10","Isaiah 56"],
+      "question":"How do these laws restrain revenge and exploitation, and how should Christians handle provisions that remain violent, patriarchal, or morally troubling?",
+      "truth":"Covenant justice requires evidence, proportion, accountability, prompt wages, honest commerce, and concrete protection for vulnerable neighbors; regulation of an ancient practice must not be confused with approval of every practice regulated.",
+      "goal":"Read Deuteronomy’s case laws closely, preserve distinctions, acknowledge disputed translations, refuse misuse against survivors or marginalized people, and receive their neighbor-protecting witness without importing ancient penalties into church or state.",
+      "openingParagraphs":["These chapters include warfare, forced labor, captivity, family conflict, executions, sexual violence, disability-related exclusion, servitude, divorce, and bodily punishment. Participants may pass or step out; do not read every distressing case aloud when a focused selection is safer."],
+      "contextParagraphs":["Deuteronomy 19–25 addresses blood revenge, courts, warfare, households, sexuality, worship, loans, wages, harvest, and commerce within an ancient patriarchal, hierarchical, servitude- and war-marked world. Regulation can limit harm without making the underlying institution a moral ideal.","Several Hebrew phrases are uncertain. Responsible teaching separates explicit wording, likely social purpose, disputed reconstruction, and later biblical reception. Modern abuse response must follow current safeguarding and law rather than reenact ancient procedures."],
+      "teaching":[
+        {"heading":"Refuge, Evidence, and Proportion Restrain Revenge","paragraphs":["Cities of refuge distinguish accidental killing from murder; boundary stones protect livelihood; serious charges require corroboration and malicious witnesses are investigated. “Eye for eye” limits punishment proportionally rather than commanding personal revenge.","Corroboration for conviction must never become refusal to protect or investigate when one person discloses harm." ]},
+        {"heading":"Warfare Laws Restrain Some Harm and Preserve Severe Violence","paragraphs":["Battle exemptions, fear provisions, peace terms for distant cities, and protection of fruit trees are genuine restraints. Forced labor and destruction commands remain severe. They belong to Israel’s land setting and cannot authorize Christian holy war, colonial expansion, or attacks on civilians." ]},
+        {"heading":"Household Laws Limit Power Without Erasing Patriarchy","paragraphs":["The captive-woman law delays sexual possession and forbids resale, yet captivity makes genuine consent impossible. The law regulates a violent world and cannot be presented as approval of coerced marriage.","Inheritance limits favoritism, the rebellious-son case uses public elders rather than private parental violence, and same-day burial limits corpse degradation. None justifies child abuse." ]},
+        {"heading":"Neighbor Care Appears in Ordinary Details","paragraphs":["Lost property, fallen animals, roof parapets, and even the mother bird show that preventable harm is a neighbor concern. The brief clothing law is culturally situated and disputed; it must not be weaponized to police stereotypes or excuse violence against gender-nonconforming people." ]},
+        {"heading":"Sexual Case Laws Demand Exact Survivor-Protective Reading","paragraphs":["Deuteronomy 22 distinguishes different cases in an ancient marriage economy. The assaulted woman in 22:25–27 is explicitly innocent, and assault is compared to murder. The city/field distinction cannot become a modern test of consent because victims may freeze or be unable to cry out.","Verses 28–29 are heavily disputed over whether the case is seduction or rape. Whatever reconstruction is adopted, the text must never force a survivor to marry an assailant. “Virginity proof” reflects ancient assumptions and is not medically valid." ]},
+        {"heading":"Exclusion Texts Sit Beside Trajectories of Welcome","paragraphs":["Assembly terms in chapter 23 are historically debated. Later Scripture includes Ruth the Moabite and Isaiah’s promise to faithful eunuchs and foreigners. The escaped-slave law forbids returning a fugitive to a master and directly contradicts slave-catching and racial chattel slavery." ]},
+        {"heading":"Economic Justice Protects Dignity","paragraphs":["Essential tools and garments cannot be seized destructively; kidnapping for enslavement is a capital crime; poor and immigrant workers receive same-day wages; families are not judicially punished for one another’s crimes; gleanings remain for immigrants, orphans, and widows.","Limits on lashes, humane treatment of working animals, honest weights, and levirate protections restrain power while still reflecting an unequal ancient system. Amalek’s violent judgment cannot become a mandate against modern peoples." ]}
       ],
-      "questions": [
-        "What stands out in Deuteronomy 19–25?",
-        "What does this passage reveal about God?",
-        "What fear, desire, or failure shapes the people?",
-        "Which detail requires ancient covenant context?",
-        "Whose dignity or safety needs attention?",
-        "What harmful interpretation must be rejected?",
-        "How does the text shape accountable leadership or justice?",
-        "What faithful response will you practice?"
-      ],
-      "examination": "Where am I driven by fear, craving, certainty, pride, or control? Have I overlooked someone’s voice or protected a leader from fair accountability? Ask God for one truthful conviction and one step toward repair, courage, generosity, or trust.",
-      "challenge": "Read Deuteronomy 19–25 again. Write one sentence about God, one warning, and one hope. Choose a practical action: listen, share responsibility, repair harm, honor a boundary, support due process, provide material help, improve accessibility, or remember God’s faithfulness with someone younger.",
-      "caution": "Do not apply ancient Israel’s civil or conquest laws as private commands. Reject antisemitism, racism, slavery apologetics, prosperity formulas, victim-blaming, coerced sexuality, and nationalism that claims divine superiority. Prioritize evidence, due process, safety, and material care.",
-      "prayer": "Holy God, meet us in Deuteronomy 19–25. Correct our fear and pride, protect vulnerable people, and form us in truthful worship. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Jesus treats divorce law as concession to hard hearts rather than creation ideal and refuses retaliatory use of “eye for eye.” Paul applies the unmuzzled-ox command to fair support for ministry labor, modeling principled application rather than recreation of Israel’s civil code.","Jesus bears the curse of the cross to redeem, not to authorize shaming victims."],
+      "guardrailParagraphs":["Narration and regulation are not the same as moral approval.","Do not call captive marriage consensual or use two-witness language to suppress a report.","Silence is not consent; never demand virginity testing or force marriage to an assailant.","Do not return people to enslavement or import ancient penalties as church discipline.","Where translations differ, name the dispute rather than pretending certainty."],
+      "questions":["How do accident, prior hatred, testimony, and malicious accusation structure chapter 19?","What restraints and severe commands both appear in chapter 20?","What does 21:1–9 require when a killer is unknown?","What limits are placed on male and parental power in 21:10–21, and what harms remain?","What concern links lost property, parapets, and the mother bird?","What is explicit and disputed in 22:23–29, and which victim-blaming inference must be rejected?","How do 23:15–16 and 24:14–22 protect people dependent on another’s power or property?"],
+      "examination":"Where do I benefit from another person’s constrained choices, delayed wages, invisible labor, or lack of access to justice? Have I mistaken respectability for consent or innocence? What protection, payment, boundary, or repair is within my responsibility now?",
+      "challenge":"Read Deuteronomy 24:10–22 and list every protected person, object, and action. Audit one practice you control—pay timing, contractor rates, safeguarding, lending, housing safety, or food access—and correct one concrete vulnerability.",
+      "caution":"Use content warnings and survivor-centered language. Never ask whether a victim cried out, resisted, was “pure,” or had witnesses. Do not conduct group investigations or require confrontation. Follow safeguarding and reporting duties and connect people with trauma-informed medical, legal, domestic-violence, sexual-assault, child-protection, or emergency services when appropriate.",
+      "prayer":"God of truth and refuge, protect those endangered by violence, exploitation, false accusation, and poverty. Give us courage to face hard texts honestly, wisdom to distinguish restraint from approval, and resolve to build practices of safety, fair pay, truthful judgment, and mercy. Through Jesus, amen."
     },
     {
-      "number": 7,
-      "title": "Blessing, Warning, Repentance, and Life",
-      "scripture": "Deuteronomy 26–30",
-      "supporting": [],
-      "question": "How can covenant blessing and warning lead people toward gratitude, repentance, and life rather than fear manipulation?",
-      "truth": "God sets life and death before Israel, calls for wholehearted return, and promises mercy beyond failure.",
-      "goal": "This lesson helps participants read Deuteronomy 26–30 within Deuteronomy, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question. No one must disclose trauma, illness, disability, family conflict, financial hardship, sexuality, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Deuteronomy 26–30 in manageable sections. Observe speakers, repeated words, covenant setting, and consequences. Distinguish what the text describes, regulates, uniquely commands, and commends. Interpret severe scenes through the whole book and wider biblical witness.",
-      "teaching": [
-        {
-          "heading": "Firstfruits Tell a Story",
-          "body": "The worshiper remembers a wandering ancestor, oppression, deliverance, and gift. Gratitude connects possessions to God’s rescue rather than personal entitlement."
-        },
-        {
-          "heading": "Celebration Includes the Vulnerable",
-          "body": "Tithes support Levites, immigrants, orphans, and widows. Covenant faith has measurable social consequences."
-        },
-        {
-          "heading": "Blessings Are Corporate Covenant Promises",
-          "body": "The blessings describe Israel’s life in the land under covenant. They are not a formula guaranteeing every faithful individual wealth, fertility, safety, or health."
-        },
-        {
-          "heading": "Curses Must Not Become Weapons",
-          "body": "Warnings reveal the destructive seriousness of rebellion. They must never be used to claim a person’s illness, disability, infertility, poverty, or disaster proves secret sin."
-        },
-        {
-          "heading": "Return Is Possible",
-          "body": "Moses anticipates exile and return. God receives repentance and gathers the scattered. Judgment does not erase covenant mercy or justify antisemitism."
-        },
-        {
-          "heading": "Choose Life",
-          "body": "God’s command is not impossibly distant. Choosing life means loving God, listening, and holding fast. Leaders must not use fear of curses to control people; covenant response remains relational and truthful."
-        }
+      "number":7,
+      "title":"Blessing, Warning, Repentance, and Life",
+      "scripture":"Deuteronomy 26–30",
+      "supporting":["John 9","Luke 13","Romans 2:28–29","Romans 9–11","Romans 10:6–13"],
+      "question":"How do gratitude, covenant warning, repentance, and God’s promise of heart-renewal call Israel to choose life without turning suffering into a measure of personal faith?",
+      "truth":"Israel is called to remember rescue, share the land’s produce, take covenant rebellion seriously, and return to the merciful God who promises renewed hearts and sets life before the people.",
+      "goal":"Read blessings and curses as corporate covenant language tied to Israel’s life in the land, reject prosperity formulas and victim-blaming, trace the movement from firstfruits to exile and return, and follow hope toward heart-renewal received in Christ.",
+      "openingParagraphs":["Deuteronomy 28 includes disease, infertility, defeat, displacement, siege, family separation, and graphic degradation. Select representative verses when a full public reading would overwhelm participants. Never ask whether present suffering is punishment."],
+      "contextParagraphs":["Chapters 26–30 conclude covenant instruction. Firstfruits and the third-year tithe turn memory into confession and provision; Ebal and Gerizim give covenant public form; blessings and curses resemble ancient treaty sanctions and describe communal stakes in the land.","The sequence matters: Moses anticipates exile and then promises return and heart-circumcision. Deuteronomy does not end with catastrophe or human willpower but with mercy, divine renewal, and a summons to choose life."],
+      "teaching":[
+        {"heading":"Firstfruits Confess a Received Story","paragraphs":["The worshiper retells vulnerability, Egypt, oppression, cry, deliverance, and land. The “wandering Aramean” phrase has a translation discussion, but either way possession begins with rescue rather than self-made entitlement. Levites and immigrants join the celebration." ]},
+        {"heading":"The Tithe Makes Care Accountable","paragraphs":["The third-year confession names actual recipients—Levites, immigrants, orphans, and widows. Covenant distinction carries responsibility rather than vague benevolence." ]},
+        {"heading":"Public Covenant Names Hidden Exploitation","paragraphs":["Chapter 27’s curses include secret idolatry, boundary theft, misleading a blind person, distorted justice, sexual violations, secret murder, bribery, and rejection of instruction. Disability is not itself a curse; exploiting a blind person is what the text condemns." ]},
+        {"heading":"Blessing Is Corporate Covenant Flourishing","paragraphs":["Deuteronomy 28’s blessing spans city, field, children, livestock, food, movement, and security. It is agricultural, corporate, and land-centered, not a contract guaranteeing every faithful person wealth, fertility, health, or political dominance." ]},
+        {"heading":"The Curses Portray Covenant Collapse","paragraphs":["The curses intensify toward siege, exile, and Egypt-like bondage. They do not celebrate suffering and cannot diagnose an individual’s illness, disability, infertility, miscarriage, poverty, or disaster as proof of hidden sin. Job, wisdom, the prophets, and Jesus resist that equation.","Exile language must never become antisemitic theology; the next chapters insist on covenant mercy." ]},
+        {"heading":"Return Depends on Mercy and Renewed Hearts","paragraphs":["The whole assembly stands in covenant, including leaders, women, children, immigrants, and low-status laborers. “Secret things” calls for humility, not suppression of study or questions.","God gathers the scattered and promises to circumcise hearts so the people may love God. Repentance is genuinely commanded, yet restoration depends on compassionate covenant action. The word is near and life is set before the community." ]}
       ],
-      "questions": [
-        "What stands out in Deuteronomy 26–30?",
-        "What does this passage reveal about God?",
-        "What fear, desire, or failure shapes the people?",
-        "Which detail requires ancient covenant context?",
-        "Whose dignity or safety needs attention?",
-        "What harmful interpretation must be rejected?",
-        "How does the text shape accountable leadership or justice?",
-        "What faithful response will you practice?"
-      ],
-      "examination": "Where am I driven by fear, craving, certainty, pride, or control? Have I overlooked someone’s voice or protected a leader from fair accountability? Ask God for one truthful conviction and one step toward repair, courage, generosity, or trust.",
-      "challenge": "Read Deuteronomy 26–30 again. Write one sentence about God, one warning, and one hope. Choose a practical action: listen, share responsibility, repair harm, honor a boundary, support due process, provide material help, improve accessibility, or remember God’s faithfulness with someone younger.",
-      "caution": "Do not apply ancient Israel’s civil or conquest laws as private commands. Reject antisemitism, racism, slavery apologetics, prosperity formulas, victim-blaming, coerced sexuality, and nationalism that claims divine superiority. Prioritize evidence, due process, safety, and material care.",
-      "prayer": "Holy God, meet us in Deuteronomy 26–30. Correct our fear and pride, protect vulnerable people, and form us in truthful worship. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["Romans 10 draws on Deuteronomy 30 to proclaim the nearness of the word of faith in the risen Jesus. Paul does not mock Moses or reduce salvation to magic words; he rereads the near word through Christ’s completed work.","The promised circumcision of heart anticipates the Spirit’s renewing work, while Romans 9–11 keeps God’s faithfulness to Israel central."],
+      "guardrailParagraphs":["Deuteronomy 28 is not a universal prosperity formula or diagnostic chart for suffering.","Do not shame people experiencing infertility, disability, poverty, violence, illness, grief, or disaster.","“Choose life” belongs with grace, communal responsibility, and God’s heart-renewing promise.","“Secret things” must not shut down careful study or protect leaders from questions."],
+      "questions":["What story does the firstfruits confession tell, and who joins the celebration?","How does the third-year tithe turn confession into accountable stewardship?","Which chapter 27 curses target hidden exploitation?","What makes 28:1–14 a land-covenant picture rather than an individual wealth promise?","How do the curses reverse Exodus and the blessings?","Who stands in the covenant assembly of chapter 29?","What does Israel do and what does God do in 30:1–10?","How does Romans 10 reuse Deuteronomy 30?"],
+      "examination":"Do I interpret comfort as evidence of virtue or suffering as evidence of failure? What gift do I narrate as achievement rather than rescue and provision? Where is repentance—not fear manipulation—calling me to return, repair, and choose practices that sustain another person’s life?",
+      "challenge":"Pray through Deuteronomy 30:1–20 in four sections. Write a short firstfruits confession naming where you came from, what God has given, and who should share the resulting joy, then pair it with one concrete gift to a trustworthy ministry serving vulnerable households.",
+      "caution":"Use a content warning and avoid requiring a full public reading of graphic siege material. Intervene immediately if anyone links another participant’s illness, disability, infertility, poverty, abuse, or grief to divine punishment. Do not allow covenant curse language to become antisemitic or promise that repentance or giving guarantees healing or wealth.",
+      "prayer":"Merciful God, free us from entitlement, fear, and cruel explanations of suffering. Teach us to remember rescue, share your gifts, heed your warnings, and return with honest hearts. By your Spirit make your word near to us, and lead us in the life revealed through Jesus Christ. Amen."
     },
     {
-      "number": 8,
-      "title": "Moses’ Final Witness and Faithful Succession",
-      "scripture": "Deuteronomy 31–34",
-      "supporting": [],
-      "question": "How does Moses prepare Israel to continue after his death?",
-      "truth": "Faithful leaders tell the truth, entrust Scripture to the community, commission successors, bless the next generation, and release the future to God.",
-      "goal": "This lesson helps participants read Deuteronomy 31–34 within Deuteronomy, receive its truth without flattening difficult details, and respond through worship, justice, compassion, humility, and faithful action.",
-      "opening": "Pray for wisdom and gentleness. Invite participants to name one word, image, or question. No one must disclose trauma, illness, disability, family conflict, financial hardship, sexuality, or abuse. Listen without rushing to correct another person’s story.",
-      "context": "Read Deuteronomy 31–34 in manageable sections. Observe speakers, repeated words, covenant setting, and consequences. Distinguish what the text describes, regulates, uniquely commands, and commends. Interpret severe scenes through the whole book and wider biblical witness.",
-      "teaching": [
-        {
-          "heading": "Joshua Is Commissioned",
-          "body": "Moses publicly encourages Joshua to be strong and courageous. Succession is not a private transfer of ownership. God’s presence, not imitation of Moses’ personality, will sustain the work."
-        },
-        {
-          "heading": "The Law Is Read Regularly",
-          "body": "Men, women, children, and immigrants gather to hear. Scripture belongs to the whole community. Leaders should not control access to biblical truth."
-        },
-        {
-          "heading": "A Song Preserves Difficult Memory",
-          "body": "Moses teaches a song that will witness to both God’s faithfulness and Israel’s failure. Art can carry truth across generations without hiding painful history."
-        },
-        {
-          "heading": "Moses Blesses the Tribes",
-          "body": "His final blessing honors distinct tribes within one people. Difference can serve communal flourishing without competition for worth."
-        },
-        {
-          "heading": "Moses Dies Outside the Land",
-          "body": "The great leader’s life ends with an unfulfilled desire. Deuteronomy grieves him and honors him without pretending leadership makes anyone indispensable."
-        },
-        {
-          "heading": "God’s Mission Continues",
-          "body": "Joshua is filled with wisdom, and the people listen. The closing tribute to Moses does not stop the story. Healthy ministry prepares a future it will not personally control."
-        }
+      "number":8,
+      "title":"Moses’ Final Witness and Faithful Succession",
+      "scripture":"Deuteronomy 31–34",
+      "supporting":["Luke 9:28–36","Hebrews 1:6","Hebrews 3:1–6","Romans 15:10"],
+      "question":"How does Moses prepare Israel to continue under God’s presence, written instruction, truthful witness, and new leadership after his death?",
+      "truth":"Faithful succession does not preserve a leader’s control. It entrusts the community to God, makes Scripture publicly accessible, tells the truth about future failure, blesses the next generation, and releases unfinished work.",
+      "goal":"Follow the final movement from Joshua’s commission to Moses’ song, blessing, death, and epitaph; examine healthy transition; acknowledge the literary perspective after Moses; and see how the New Testament honors Moses while directing Christians to Jesus.",
+      "openingParagraphs":["Ask what a community needs when a founding leader can no longer continue. Keep discussion general; transition may involve grief, betrayal, retirement, illness, or death, and no one must disclose a painful leadership experience."],
+      "contextParagraphs":["Deuteronomy ends in Moab and on Mount Nebo outside the land. Prose commissions Joshua and deposits instruction; Moses’ song interprets future rebellion and divine justice; Moses blesses the tribes; a final narrator records his death and evaluates his ministry.","The narrator who reports Moses’ burial speaks after the event. Jewish and Christian readers differ over composition and editorial completion, but the text itself distinguishes Moses’ speeches from the narration of his death. Faith does not require pretending Moses narrated his own burial."],
+      "teaching":[
+        {"heading":"Courage Rests on God’s Presence","paragraphs":["Moses tells Israel and Joshua to be strong because God goes with them. Joshua is not asked to become a replica of Moses or secure the future through personality. Succession must resist a cult of the successor." ]},
+        {"heading":"Scripture Belongs Before the Whole Assembly","paragraphs":["Moses writes the instruction, entrusts it to priests and elders, and commands a seventh-year public reading for men, women, children, and resident immigrants. Leaders are custodians rather than owners of the word; access should not be restricted to an elite." ]},
+        {"heading":"Succession Does Not Deny Future Failure","paragraphs":["God tells Moses Israel will turn away and gives the song as witness. Healthy transition prepares for accountability and repentance rather than advertising guaranteed success or assuming every future generation is faithless." ]},
+        {"heading":"The Song Names God’s Justice and Israel’s Forgetfulness","paragraphs":["God is called the Rock whose ways are justice, while Israel’s corruption and later abundance-driven forgetfulness are exposed. Deuteronomy 32:8 and 32:43 preserve important textual variants across the Masoretic Text, Dead Sea Scrolls, and Greek tradition; responsible teaching names rather than hides them." ]},
+        {"heading":"Vengeance Belongs to God, Who Also Has Compassion","paragraphs":["“Vengeance is mine” removes final retribution from private hands. The song moves toward vindication and compassion when Israel’s strength is gone. Severe poetic rhetoric must not become a leadership threat or a diagnostic rule for calamity." ]},
+        {"heading":"Moses Blesses and Releases the Future","paragraphs":["Chapter 33 blesses distinct tribes through compressed poetry without creating a hierarchy of human worth. Chapter 34 honors Moses, allows thirty days of grief, names Joshua’s wisdom, and still declares Moses unique.","Moses’ undimmed eye and vigor honor his condition at death; they are not a promise that faithful people avoid disability, dementia, frailty, or decline. His greatness does not make him indispensable." ]}
       ],
-      "questions": [
-        "What stands out in Deuteronomy 31–34?",
-        "What does this passage reveal about God?",
-        "What fear, desire, or failure shapes the people?",
-        "Which detail requires ancient covenant context?",
-        "Whose dignity or safety needs attention?",
-        "What harmful interpretation must be rejected?",
-        "How does the text shape accountable leadership or justice?",
-        "What faithful response will you practice?"
-      ],
-      "examination": "Where am I driven by fear, craving, certainty, pride, or control? Have I overlooked someone’s voice or protected a leader from fair accountability? Ask God for one truthful conviction and one step toward repair, courage, generosity, or trust.",
-      "challenge": "Read Deuteronomy 31–34 again. Write one sentence about God, one warning, and one hope. Choose a practical action: listen, share responsibility, repair harm, honor a boundary, support due process, provide material help, improve accessibility, or remember God’s faithfulness with someone younger.",
-      "caution": "Do not apply ancient Israel’s civil or conquest laws as private commands. Reject antisemitism, racism, slavery apologetics, prosperity formulas, victim-blaming, coerced sexuality, and nationalism that claims divine superiority. Prioritize evidence, due process, safety, and material care.",
-      "prayer": "Holy God, meet us in Deuteronomy 31–34. Correct our fear and pride, protect vulnerable people, and form us in truthful worship. Give us courage to practice justice, mercy, humility, and faithful love. Amen."
+      "jesusParagraphs":["At the Transfiguration, Moses and Elijah speak with Jesus about his coming “departure” or exodus, and the divine voice says, “Listen to him,” echoing the promised prophet.","Hebrews honors Moses as a faithful servant while confessing Jesus as the Son over the house. Jesus does not diminish Moses; he brings covenant, exodus, and faithful mediation to their Christian climax."],
+      "guardrailParagraphs":["Succession is not private ownership transferred from one powerful personality to another.","Predictions of future rebellion do not justify presuming guilt or suppressing questions.","Poetic violence is not permission for private vengeance.","Moses’ vigor at death is not a measure of faith.","The account of Moses’ death openly reflects narration after the event."],
+      "questions":["What grounds courage in 31:1–8, and what remains God’s work after Moses transfers responsibility?","Who gathers for public reading in 31:9–13, and what barriers to Scripture access would this challenge?","Why is the song given, and how can truthful warning avoid fatalism?","What images for God appear in 32:1–14?","How does abundance become forgetfulness in 32:15–18?","How are judgment, compassion, and vindication held together in 32:36–43?","What images of refuge close chapter 33?","How does chapter 34 honor Moses, allow grief, and still show the mission continuing?"],
+      "examination":"Do I confuse faithful leadership with being indispensable? Have I withheld information, access, or responsibility in order to remain needed? What blessing, documentation, public commission, or honest warning would help others continue without my control?",
+      "challenge":"Read Deuteronomy 31:1–13 and 34:1–12. Choose one responsibility you hold and make it less dependent on you: document a process, share appropriate access, train another person, clarify accountability, or speak a specific blessing over someone’s gifts.",
+      "caution":"Transitions can activate grief, abandonment, institutional betrayal, ageism, and disability stigma. Never imply illness or reduced capacity signals spiritual failure, or that successors must protect predecessors’ reputations at truth’s expense. Where misconduct exists, preserve independent investigation and survivor safety rather than rushing closure through reconciliation language.",
+      "prayer":"Everlasting God, you remain faithful when leaders change and generations pass. Give us courage grounded in your presence, truth that does not hide failure, grief without despair, and humility to release what we cannot finish. Teach us to listen to Jesus, your faithful Son. Amen."
     }
   ]
 };
-

@@ -18,13 +18,16 @@ if(!errors.length){
  if(es?.book!=='2 Samuel')fail('Spanish book name must be 2 Samuel.');
  if(es?.scriptureStandard!=='Nueva Traducción Viviente (NTV)')fail('Spanish 2 Samuel must declare Nueva Traducción Viviente (NTV).');
  if(en?.lessons?.length!==8||es?.lessons?.length!==8)fail('2 Samuel must retain eight lessons in both languages.');
- const fields=['title','scripture','question','truth','goal','opening','context','examination','challenge','caution','prayer'];
+ const fields=['title','scripture','question','truth','goal','opening','context','examination','challenge','caution','closingTakeaway','prayer'];
  for(let i=0;i<8;i++){
   const a=en.lessons[i],b=es.lessons[i],label=`2 Samuel lesson ${i+1}`;
   if(a?.number!==b?.number)fail(`${label}: lesson number mismatch.`);
   for(const field of fields)if(!String(b?.[field]||'').trim())fail(`${label}: missing ${field}.`);
-  for(const field of ['supporting','teaching','questions'])if((b?.[field]?.length??-1)!==(a?.[field]?.length??0))fail(`${label}: ${field} count must match English.`);
-  for(const move of b?.teaching||[])if(!move?.heading?.trim()||!move?.body?.trim())fail(`${label}: incomplete teaching movement.`);
+  for(const field of ['supporting','teaching','questions','jesusParagraphs','guardrailParagraphs'])if((b?.[field]?.length??-1)!==(a?.[field]?.length??0))fail(`${label}: ${field} count must match English.`);
+  if((b?.supporting?.length??0)<4)fail(`${label}: needs at least four supporting passages.`);
+  if((b?.teaching?.length??0)!==8)fail(`${label}: must retain eight text-grounded teaching movements.`);
+  if((b?.questions?.length??0)!==8)fail(`${label}: must retain eight passage-based questions.`);
+  for(const move of b?.teaching||[])if(!move?.heading?.trim()||!move?.body?.trim()||!(move?.paragraphs?.length))fail(`${label}: incomplete teaching movement.`);
   if(!String(b?.scripture||'').startsWith('2 Samuel '))fail(`${label}: Scripture reference must begin with 2 Samuel.`);
  }
  for(const field of ['seriesMainScripture','seriesQuestion','seriesOpening','seriesContext','seriesExamination','seriesPractice','seriesLeaderGuidance','seriesPrayer'])if(!String(es?.[field]||'').trim())fail(`2 Samuel series foundation missing ${field}.`);
@@ -33,28 +36,28 @@ if(!errors.length){
  const raw=read(esData),all=JSON.stringify(es);
  for(const version of ['RVR60','NVI','NBLA'])if(new RegExp(`\\b${version}\\b`).test(raw))fail(`Spanish 2 Samuel contains disallowed Bible version ${version}.`);
  const safeguards=[
-  ['survivor-centered lament and anti-summary violence',['no es modelo moderno para castigos sumarios','sin borrar la historia ni obligar a sobrevivientes']],
-  ['clergy authority and infertility dignity',['obediencia incuestionable al clero','ni para culpar a alguien por infertilidad']],
-  ['disability dignity and anti-nationalism',['La discapacidad no reduce la dignidad','no autoriza expansión moderna ni nacionalismo religioso']],
-  ['Bathsheba power imbalance and victim blaming',['La diferencia de poder hace indefendible culpar a Betsabé','No especules sobre ropa, motivos o consentimiento']],
-  ['crime reporting and consequences',['reporta delitos y exige cambio responsable','no debe usarse para afirmar que los niños son castigados mecánicamente']],
-  ['Tamar consent and survivor care',['Tamar dice no con claridad','La culpa es completamente de él','merecen ser creídas, seguridad, capacidad de decisión y apoyo competente']],
-  ['institutional abuse response',['denuncia, investigación independiente, restricciones protectoras y rendición de cuentas legal','no secretos manejados por la familia']],
-  ['political sexual violence',['víctimas de violencia sexual política','no convierte el abuso en algo moralmente bueno']],
-  ['grief without coercion',['nunca obliga a sobrevivientes a sentir lo mismo','El duelo todavía merece apoyo']],
-  ['disability exploitation and peacemaking',['dependencia relacionada con discapacidad pueden ser explotadas','una mujer sabia negocia para salvar su ciudad']],
-  ['collective punishment and Rizpah dignity',['no debe convertirse en modelo de castigo colectivo','Rizpa protege los cuerpos durante meses']],
-  ['leadership limits and accountable repentance',['Aceptar límites protege a la comunidad','arrepentimiento costoso y misericordia']]
+  ['Saul death accounts and lament',['El texto no armoniza los relatos','obligar a sobrevivientes a elogiar']],
+  ['Uzzah and Michal safeguards',['sistemas inseguros','no dice que Dios hizo estéril a Mical']],
+  ['conquest and disability dignity',['no inventar justificación','Mefiboset no simboliza que discapacidad']],
+  ['Bathsheba power imbalance',['silencio bajo orden real no prueba consentimiento','no culpa a Betsabé']],
+  ['abuse accountability',['Perdón no cancela denuncia','investigación independiente']],
+  ['Tamar survivor care',['toda culpa pertenece al agresor','No pidas testimonios']],
+  ['political sexual violence',['no vuelve moralmente bueno el abuso','concubinas en objetos de cumplimiento']],
+  ['suicide crisis care',['no ofrece diagnóstico clínico','activa emergencias y atención de crisis calificada']],
+  ['disability evidence safeguards',['No resuelvas la disputa Siba-Mefiboset','discapacidad como prueba']],
+  ['reconciliation and access',['Regreso, perdón, reconciliación, confianza y acceso son distintos','seguridad y rendición de cuentas preceden acceso']],
+  ['collective punishment and Rizpah',['nunca autoriza castigar hijos','Honra a Rizpa como agente de protesta']],
+  ['census interpretive honesty',['Reconoce 2 Samuel 24:1 y 1 Crónicas 21:1','no afirmes certeza sobre el pecado del censo']]
  ];
  for(const [label,phrases] of safeguards)for(const phrase of phrases)if(!all.includes(phrase))fail(`2 Samuel safeguard missing ${label}: ${phrase}.`);
- for(const phrase of ['No prometas confidencialidad absoluta','procedimientos aprobados de protección','rendición de cuentas independiente','obligaciones legales de denuncia','proteger a ofensores poderosos','promover antisemitismo','forzar acceso inseguro'])if(!all.includes(phrase))fail(`2 Samuel leader safeguard missing ${phrase}.`);
+ for(const phrase of ['No prometas confidencialidad absoluta','procedimientos aprobados de protección','obligaciones legales de denuncia','investigación independiente','acceso inseguro'])if(!all.includes(phrase))fail(`2 Samuel leader safeguard missing ${phrase}.`);
  const english=read(enPage),spanish=read(esPage),hub=read(hubPath),i18n=read(i18nPath);
  if(!english.includes('hreflang="es" href="https://nolabelsdesignedbygod.org/es/segunda-samuel-estudio'+html+'"'))fail('English 2 Samuel page must link Spanish alternate.');
- if(!english.includes('nldg-i18n'+js+'?v=1.47.0'))fail('English 2 Samuel page must load current language switcher.');
- for(const marker of ['<html lang="es"','https://nolabelsdesignedbygod.org/es/segunda-samuel-estudio'+html,'hreflang="en" href="https://nolabelsdesignedbygod.org/second-samuel-study'+html+'"','../second-samuel-study-data-es'+js+'?v=1.0.0','../book-study-series-es'+js+'?v=1.1.0','../nldg-i18n'+js+'?v=1.47.0'])if(!spanish.includes(marker))fail(`Spanish 2 Samuel page missing ${marker}.`);
+ if(!english.includes('second-samuel-study-data'+js+'?v=1.1.0')||!english.includes('second-samuel-study-guide'+js+'?v=1.1.0')||!english.includes('book-study-series'+js+'?v=0.2.0'))fail('English 2 Samuel page must load corrected study assets.');
+ for(const marker of ['<html lang="es"','https://nolabelsdesignedbygod.org/es/segunda-samuel-estudio'+html,'hreflang="en" href="https://nolabelsdesignedbygod.org/second-samuel-study'+html+'"','../second-samuel-study-data-es'+js+'?v=1.1.0','../book-study-series'+js+'?v=0.2.0','../book-study-series-es'+js+'?v=1.2.0','../nldg-i18n'+js+'?v=1.47.0'])if(!spanish.includes(marker))fail(`Spanish 2 Samuel page missing ${marker}.`);
  if(!i18n.includes("'second-samuel-study"+html+"':'es/segunda-samuel-estudio"+html+"'"))fail('2 Samuel bilingual route is missing.');
- if(!hub.includes('href="segunda-samuel-estudio'+html+'"'))fail('Spanish 2 Samuel library card is missing.');
- if(!hub.includes('treinta y siete series completas y revisadas'))fail('Spanish library count must be thirty-seven series.');
+ if(!hub.includes('href="libro-por-libro'+html+'"'))fail('Spanish Book-by-Book library link is missing.');
+ if(!hub.includes('Sesenta y seis series completas y revisadas'))fail('Spanish library must describe all sixty-six series.');
 }
 if(errors.length){console.error('Spanish 2 Samuel study audit failed:');for(const error of errors)console.error(`- ${error}`);process.exit(1);}
 console.log('Spanish 2 Samuel study audit passed.');

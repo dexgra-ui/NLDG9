@@ -15,7 +15,26 @@
   'Recommended Rhythm':'Ritmo recomendado',
   'Facilitator Safeguards':'Salvaguardas para facilitadores',
   'How to Read Together':'Cómo leer juntos',
-  'Discuss':'Conversar'
+  'Series purpose':'Propósito de la serie',
+  'Series closing prayer':'Oración final de la serie',
+  'Key Truth':'Verdad clave',
+  'Purpose':'Propósito',
+  'Opening':'Apertura',
+  'Main Scripture':'Pasaje principal',
+  'Supporting Scripture':'Escrituras de apoyo',
+  'Scripture Context':'Contexto bíblico',
+  'Teaching Movements':'Movimientos de enseñanza',
+  'Jesus Connection':'Conexión con Jesús',
+  'Do Not Miss This':'No pases esto por alto',
+  'Discuss':'Conversar',
+  'Discussion Questions':'Preguntas para conversar',
+  'Personal Examination':'Examen personal',
+  'Bring the lesson home':'Lleva la lección a tu vida',
+  'Weekly Practice':'Práctica semanal',
+  'Live the Word':'Vive la Palabra',
+  'Leader Guidance:':'Guía para líderes:',
+  'Closing Takeaway':'Conclusión principal',
+  'Closing Prayer':'Oración final'
  };
  replaceExact(document.body,fixed);
  const back=hero.querySelector('.series-back');

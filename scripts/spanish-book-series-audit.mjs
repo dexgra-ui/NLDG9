@@ -24,7 +24,7 @@ const loadJamesSeries=file=>{
 
 const commonRequired=['book-study-series.js','book-study-series-es.js','es/biblical-study-map-links.js','nldg-i18n.js','es/estudios-biblicos.html'];
 const standardSeries=[
-  {label:'Ruth',expected:5,bookPrefix:'Rut ',enData:'ruth-study-data.js',enGuide:'ruth-study-guide.js',esData:'ruth-study-data-es.js',enPage:'ruth-study.html',esPage:'es/rut-estudio.html',esRoute:'rut-estudio',canonical:'https://nolabelsdesignedbygod.org/es/rut-estudio.html',completion:'5 lecciones completas',i18nVersion:'1.12.0'},
+  {label:'Ruth',expected:5,bookPrefix:'Rut ',enData:'ruth-study-data.js',enGuide:'ruth-study-guide.js',esData:'ruth-study-data-es.js',enPage:'ruth-study.html',esPage:'es/rut-estudio.html',esRoute:'rut-estudio',canonical:'https://nolabelsdesignedbygod.org/es/rut-estudio.html',completion:'5 lecciones completas',i18nVersion:'1.45.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'Philippians',expected:6,bookPrefix:'Filipenses ',enData:'philippians-study-data.js',enGuide:'philippians-study-guide.js',esData:'philippians-study-data-es.js',enPage:'philippians-study.html',esPage:'es/filipenses-estudio.html',esRoute:'filipenses-estudio',canonical:'https://nolabelsdesignedbygod.org/es/filipenses-estudio.html',completion:'6 lecciones completas',i18nVersion:'1.12.0'},
   {label:'Hebrews',expected:8,bookPrefix:'Hebreos ',enData:'hebrews-study-data.js',enGuide:'hebrews-study-guide.js',esData:'hebrews-study-data-es.js',enPage:'hebrews-study.html',esPage:'es/hebreos-estudio.html',esRoute:'hebreos-estudio',canonical:'https://nolabelsdesignedbygod.org/es/hebreos-estudio.html',completion:'8 lecciones completas',i18nVersion:'1.21.0'},
   {label:'1 Peter',expected:8,bookPrefix:'1 Pedro ',enData:'first-peter-study-data.js',enGuide:'first-peter-study-guide.js',esData:'first-peter-study-data-es.js',enPage:'first-peter-study.html',esPage:'es/primera-pedro-estudio.html',esRoute:'primera-pedro-estudio',canonical:'https://nolabelsdesignedbygod.org/es/primera-pedro-estudio.html',completion:'8 lecciones completas',i18nVersion:'1.14.0'},
@@ -79,9 +79,9 @@ for(const config of standardSeries){
   expect(`${config.label} Spanish page`,page,'<html lang="es"');
   expect(`${config.label} Spanish page`,page,config.canonical);
   expect(`${config.label} Spanish page`,page,`hreflang="en" href="https://nolabelsdesignedbygod.org/${config.enPage}"`);
-  expect(`${config.label} Spanish page`,page,`../${config.esData}?v=1.0.0`);
-  expect(`${config.label} Spanish page`,page,'../book-study-series.js?v=0.1.0');
-  expect(`${config.label} Spanish page`,page,'../book-study-series-es.js?v=1.1.0');
+  expect(`${config.label} Spanish page`,page,`../${config.esData}?v=${config.dataVersion||'1.0.0'}`);
+  expect(`${config.label} Spanish page`,page,`../book-study-series.js?v=${config.rendererVersion||'0.1.0'}`);
+  expect(`${config.label} Spanish page`,page,`../book-study-series-es.js?v=${config.adapterVersion||'1.1.0'}`);
   expect(`${config.label} Spanish page`,page,`../nldg-i18n.js?v=${config.i18nVersion}`);
 
   const englishPage=read(config.enPage);

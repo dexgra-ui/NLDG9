@@ -1,33 +1,52 @@
 (function(){
-  const s=window.NLDG_BOOK_STUDY;
-  if(!s)return;
-  Object.assign(s,{
-    themeLabel:"Key Truth",
-    seriesMainScripture:"1 Kings 1–22; Deuteronomy 17:14–20; Matthew 6:24",
-    seriesQuestion:"How can wisdom, worship, and leadership begin well yet collapse when wealth, power, idolatry, and self-protection divide the heart?",
-    seriesOpening:"Begin with prayer for humility, wisdom, and compassionate attention. Read the main passage aloud and allow silence before discussion. Invite observation first. Participants may pass on any question. Do not require disclosure about mental health, finances, discrimination, disability, trauma, or leadership conflict. The goal is faithful formation under Scripture.",
-    seriesContext:"Read within the book’s historical setting, narrative movement, covenant context, and whole-Bible witness. Notice repeated evaluations, speeches, geographic movement, economic pressures, and the difference between description and command. Internal Jewish debates must never be turned into antisemitism, and extraordinary events should not be made universal formulas.",
-    seriesTeaching:[
-      {heading:"Wisdom Must Become Obedience",body:"Solomon receives extraordinary wisdom and builds the temple, yet later multiplies wealth, political marriages, forced labor, and rival worship. Knowledge does not substitute for a faithful heart."},
-      {heading:"The Temple and God’s Freedom",body:"God places His name at the temple and fills it with glory, yet heaven cannot contain Him. Sacred buildings support worship but never contain, control, or protect a corrupt institution from judgment."},
-      {heading:"A Divided Kingdom",body:"Rehoboam’s harshness and Jeroboam’s political religion fracture the nation. Leadership decisions, economic burdens, and manipulated worship can create lasting division."},
-      {heading:"Prophets and Kings",body:"Prophets confront rulers, announce judgment, perform signs, and sometimes struggle themselves. Spiritual authority must speak truth without becoming self-important or violent in ways Christians are called to imitate."},
-      {heading:"Elijah’s Humanity",body:"Elijah shows courage at Carmel and despair under the broom tree. God gives food, rest, presence, and renewed assignment. Depression and exhaustion deserve compassionate, professional, medical, and pastoral care."},
-      {heading:"Pastoral Safeguards",body:"Do not use temple holiness, prophetic authority, anointing, sacrifice, or judgment to demand money, shame illness, excuse violence, or silence reports. Do not copy ancient executions. Protect workers, landowners, widows, and vulnerable people from powerful leaders."}
-    ],
-    seriesQuestions:[
-      "What detail or conflict in the passage needs the closest attention?",
-      "What does the text reveal about God, the Spirit, leadership, or mission?",
-      "Where do wealth, fear, power, ethnicity, or reputation distort faithfulness?",
-      "Which distinction prevents harmful or coercive application?",
-      "How does the passage honor workers, widows, outsiders, disabled people, or the exhausted?",
-      "Where are repentance, courage, discernment, or generosity needed?",
-      "What concrete practice can embody this teaching this week?",
-      "How can the group support witness without pressure or unsafe disclosure?"
-    ],
-    seriesExamination:"Come honestly before God. Where am I tempted by pride, fear, wealth, control, cultural superiority, image protection, or spiritual performance? What truth must reshape me? Name one place for repentance, rest, courageous witness, financial integrity, shared leadership, or renewed dependence on God.",
-    seriesPractice:"Choose one concrete practice: reread the passage three times; examine a financial or leadership system; encourage an exhausted person; listen across a cultural boundary; verify a claim before repeating it; repair a truthful conversation; strengthen accountability; or serve without recognition. Keep it safe, specific, and measurable.",
-    seriesLeaderGuidance:"Do not use prophetic authority, temple holiness, Spirit guidance, church unity, discipline, generosity, healing, or mission to demand money, shame illness, promote violence, silence discrimination or abuse reports, or bypass fair process. Do not promise confidentiality. Follow safeguarding and reporting duties, and refer crisis or mental-health concerns to qualified help.",
-    seriesPrayer:"Living God, The Lord gives wisdom and keeps covenant, but leaders and nations remain accountable when success becomes idolatry and power abandons justice. Purify our worship, make our leadership just, and fill us with the courage and humility of Your Spirit. Protect the vulnerable, sustain the weary, expose corruption, and send us as truthful witnesses to Jesus. Amen."
-  });
+ const s=window.NLDG_BOOK_STUDY;if(!s)return;Object.assign(s,{
+  "themeLabel": "Key Truth",
+  "seriesMainScripture": "1 Kings 1–22; Deuteronomy 17:14–20; Matthew 6:24",
+  "seriesQuestion": "How can wisdom, worship, and leadership begin well yet collapse when wealth, power, idolatry, and self-protection divide the heart?",
+  "seriesOpening": "Ask participants to track what each king loves, builds, fears, takes, hears, and worships. Give advance warning for executions, forced labor, child death, religious violence, suicidal despair, property theft, and institutional abuse. Participants may pass or step out without explanation.",
+  "seriesContext": "First Kings continues the royal history from David’s final days to Ahab’s death. Solomon receives wisdom, builds the temple, and gains international renown, but his forced labor, accumulated wealth, political marriages, and divided worship expose the limits of even a gifted king. After the kingdom divides, the narrator evaluates rulers by covenant faithfulness rather than prosperity or military success. Prophets confront royal power, while widows, workers, children, foreign nations, landowners, and exhausted servants reveal who bears the cost of leadership. The book prepares for 2 Kings rather than supplying a tidy ending.\n\nDistinguish narrator, character speech, prophetic word, divine evaluation, reasonable inference, textual difficulty, and later canonical connection. Repeated formulas such as “did what was right/evil” interpret kingship. Success never proves moral approval. Ancient covenant executions are not Christian models, and internal Israelite disputes must never fuel antisemitism or ethnic superiority.",
+  "seriesTeaching": [
+    {
+      "heading": "Wisdom Must Become Obedience",
+      "body": "Solomon receives a listening heart and builds the temple, yet later multiplies royal power, wealth, horses, wives, labor, and rival worship. Gift and knowledge do not replace an undivided heart."
+    },
+    {
+      "heading": "God Meets Worshipers but Cannot Be Contained",
+      "body": "The temple gathers covenant memory, beauty, prayer, sacrifice, and mission to the nations. Yet heaven cannot contain God, and no building or institution is protected from judgment when worship separates from justice."
+    },
+    {
+      "heading": "Economic Burden and Fear Divide the Kingdom",
+      "body": "Solomon’s systems create splendor and strain. Rehoboam answers a request for relief with dominance; Jeroboam redesigns worship from political fear. Leaders can create the division they claim to prevent."
+    },
+    {
+      "heading": "Prophetic Truth Confronts Royal Power",
+      "body": "Ahijah, Shemaiah, Elijah, Micaiah, and other prophets interpret events and confront rulers. Prophetic titles do not guarantee truth, and genuine words must not become excuses for violence, coercion, or unaccountable claims."
+    },
+    {
+      "heading": "God Sustains Life and Cares for the Exhausted",
+      "body": "The Zarephath widow, her child, Obadiah, Elijah, and the faithful remnant show provision, grief, risk, despair, and shared work. Extraordinary signs reveal God but are not universal formulas for giving, healing, or guidance."
+    },
+    {
+      "heading": "Land, Testimony, and Power Belong Under Justice",
+      "body": "Naboth’s vineyard exposes entitlement and institutional murder. God hears truth that rulers suppress. Repentance matters but must not be confused with delayed consequences, restored trust, or restitution."
+    }
+  ],
+  "seriesQuestions": [
+    "How does the movement from Solomon’s wisdom to his divided heart interpret the whole book?",
+    "Which repeated royal evaluations matter more than military or economic success?",
+    "How do temple, labor, wealth, land, and worship connect leadership with justice?",
+    "Where does the narrator report violence without giving Christians a model to imitate?",
+    "How do foreign women, a foreign widow, the Queen of Sheba, and foreign nations challenge ethnic superiority?",
+    "What distinguishes true prophetic witness from a title, consensus, spectacle, or desired outcome?",
+    "How does God care for Elijah without reducing despair to a simple spiritual problem?",
+    "What practices help communities hear unwelcome truth and protect people with less power?"
+  ],
+  "seriesExamination": "Where have wisdom, success, institutional loyalty, wealth, fear, or image divided my heart? Do I test claims fairly, hear burdens, protect ownership, and accept correction? Name one place for repentance, rest, restitution, shared leadership, or courageous truth.",
+  "seriesPractice": "Read one major section twice, first following the ruler or prophet and then following workers, widows, outsiders, children, landowners, or exhausted people. Review one leadership, financial, safeguarding, or truth-testing process and make one specific correction.",
+  "seriesLeaderGuidance": "Prepare for executions, forced labor, poverty, child death, drought, religious violence, self-harm imagery, suicidal despair, property theft, false testimony, and institutional abuse. Participants may pass or step out. Do not promise confidentiality. Follow approved safeguarding and reporting duties, and connect present danger or mental-health crisis with qualified help.",
+  "seriesPrayer": "Living God, give us listening hearts that become obedient lives. Free our worship from control, our leadership from exploitation, and our communities from flattering lies. Protect the poor, the weary, the outsider, and those whose land or voice powerful people take. Lead us to Jesus, the wiser Son of David and truthful King. Amen.",
+  "seriesJesusConnection": "Jesus is the greater Solomon and faithful Son of David: wise without divided loyalty, holy without institutional control, truthful before kings, compassionate toward the exhausted, and just toward those whose land and voice power takes.",
+  "seriesGuardrail": "Success is not proof of divine approval, extraordinary signs are not formulas, prophetic titles do not bypass testing, and ancient executions are never Christian models.",
+  "seriesClosingTakeaway": "First Kings directs hope beyond gifted but divided rulers to Jesus, the wise and truthful King whose power serves and whose worship remains undivided."
+});
 })();

@@ -14,6 +14,8 @@ if(book?.status!=='published')fail('2 Chronicles must be marked published in the
 
 if(!errors.length){
  const en=load(enData,enGuide),es=load(esData);
+ const referenceNames={'Deuteronomio':'Deuteronomy','1 Reyes':'1 Kings','2 Reyes':'2 Kings','Juan':'John','Hebreos':'Hebrews','Marcos':'Mark','Filipenses':'Philippians','Salmo':'Psalm','Mateo':'Matthew','Miqueas':'Micah','Santiago':'James','Isaías':'Isaiah','Lucas':'Luke','Efesios':'Ephesians','Jeremías':'Jeremiah','Esdras':'Ezra','2 Crónicas':'2 Chronicles'};
+ const normalizeReference=r=>{for(const [spanish,english] of Object.entries(referenceNames))if(r.startsWith(spanish+' '))return english+r.slice(spanish.length);return r;};
  if(es?.slug!=='segunda-cronicas-estudio')fail('Spanish 2 Chronicles slug must be segunda-cronicas-estudio.');
  if(es?.book!=='2 Crónicas')fail('Spanish book name must be 2 Crónicas.');
  if(es?.scriptureStandard!=='Nueva Traducción Viviente (NTV)')fail('Spanish 2 Chronicles must declare Nueva Traducción Viviente (NTV).');
@@ -22,6 +24,8 @@ if(!errors.length){
  for(let i=0;i<8;i++){
   const a=en.lessons[i],b=es.lessons[i],label=`2 Chronicles lesson ${i+1}`;
   if(a?.number!==b?.number)fail(`${label}: lesson number mismatch.`);
+  if(normalizeReference(b.scripture)!==a.scripture)fail(`${label}: main Scripture range must match English.`);
+  if(JSON.stringify(b.supporting.map(normalizeReference))!==JSON.stringify(a.supporting))fail(`${label}: supporting passages must match English, not merely their count.`);
   for(const field of fields)if(!String(b?.[field]||'').trim())fail(`${label}: missing ${field}.`);
   for(const field of ['supporting','teaching','questions','jesusParagraphs','guardrailParagraphs'])if((b?.[field]?.length??-1)!==(a?.[field]?.length??0))fail(`${label}: ${field} count must match English.`);
   if((b?.supporting?.length??0)<4)fail(`${label}: needs at least four supporting passages.`);

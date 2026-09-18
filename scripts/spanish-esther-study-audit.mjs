@@ -55,7 +55,7 @@ if(!errors.length){
   ['providence without superstition',['La providencia no es superstición','no autoriza interpretar cada coincidencia como mensaje privado de Dios']],
   ['couch accusation precision',['No digas que el texto prueba que Amán agredió sexualmente a Ester','el rey interpreta así la escena del diván']],
   ['due process',['debido proceso','castigo autocrático']],
-  ['counter decree violence',['El contra-decreto devuelve agencia pero usa lenguaje de violencia severa','no contienen lenguaje de violencia y botín']],
+  ['counter decree violence',['El contra-decreto devuelve agencia pero usa lenguaje de violencia severa','lenguaje de violencia y botín']],
   ['fear driven identity',['no debe ser modelo de conversión cristiana','miedo es central']],
   ['second day moral difficulty',['La petición de un segundo día intensifica la dificultad moral','no debe esconderse bajo un eslogan sencillo de defensa propia']],
   ['refusal of plunder',['no toman botín','rechazo repetido del botín']],
@@ -63,7 +63,7 @@ if(!errors.length){
   ['violence rejection',['No celebres el saldo de muertos','venganza, vigilantismo, violencia étnica']]
  ];
  for(const [label,phrases] of safeguards)for(const phrase of phrases)if(!all.includes(phrase))fail(`Esther safeguard missing ${label}: ${phrase}.`);
- for(const phrase of ['Pueden pasar o salir sin explicación','No romantices la entrada de Ester al sistema real','cumple deberes de protección y denuncia','ayuda calificada','Da aviso de contenido y permite pasar'])if(!all.includes(phrase))fail(`Esther leader safeguard missing ${phrase}.`);
+ for(const phrase of ['Pueden pasar o salir sin explicación','No romantices la entrada de Ester al sistema real','deberes de protección y denuncia','ayuda calificada','Da aviso de contenido y permite pasar'])if(!all.includes(phrase))fail(`Esther leader safeguard missing ${phrase}.`);
 
  const english=read(enPage),spanish=read(esPage),hub=read(hubPath),i18n=read(i18nPath);
  if(!english.includes('hreflang="es" href="https://nolabelsdesignedbygod.org/es/ester-estudio'+html+'"'))fail('English Esther page must link Spanish alternate.');

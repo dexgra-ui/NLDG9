@@ -14,53 +14,55 @@ if(book?.status!=='published')fail('2 Chronicles must be marked published in the
 
 if(!errors.length){
  const en=load(enData,enGuide),es=load(esData);
+ const referenceNames={'Deuteronomio':'Deuteronomy','1 Reyes':'1 Kings','2 Reyes':'2 Kings','Juan':'John','Hebreos':'Hebrews','Marcos':'Mark','Filipenses':'Philippians','Salmo':'Psalm','Mateo':'Matthew','Miqueas':'Micah','Santiago':'James','Isaías':'Isaiah','Lucas':'Luke','Efesios':'Ephesians','Jeremías':'Jeremiah','Esdras':'Ezra','2 Crónicas':'2 Chronicles'};
+ const normalizeReference=r=>{for(const [spanish,english] of Object.entries(referenceNames))if(r.startsWith(spanish+' '))return english+r.slice(spanish.length);return r;};
  if(es?.slug!=='segunda-cronicas-estudio')fail('Spanish 2 Chronicles slug must be segunda-cronicas-estudio.');
  if(es?.book!=='2 Crónicas')fail('Spanish book name must be 2 Crónicas.');
  if(es?.scriptureStandard!=='Nueva Traducción Viviente (NTV)')fail('Spanish 2 Chronicles must declare Nueva Traducción Viviente (NTV).');
  if(en?.lessons?.length!==8||es?.lessons?.length!==8)fail('2 Chronicles must retain eight lessons in both languages.');
- const fields=['title','subtitle','scripture','question','truth','goal','opening','context','examination','challenge','caution','prayer'];
+ const fields=['title','subtitle','scripture','question','truth','goal','opening','context','examination','challenge','caution','closingTakeaway','prayer'];
  for(let i=0;i<8;i++){
   const a=en.lessons[i],b=es.lessons[i],label=`2 Chronicles lesson ${i+1}`;
   if(a?.number!==b?.number)fail(`${label}: lesson number mismatch.`);
+  if(normalizeReference(b.scripture)!==a.scripture)fail(`${label}: main Scripture range must match English.`);
+  if(JSON.stringify(b.supporting.map(normalizeReference))!==JSON.stringify(a.supporting))fail(`${label}: supporting passages must match English, not merely their count.`);
   for(const field of fields)if(!String(b?.[field]||'').trim())fail(`${label}: missing ${field}.`);
-  for(const field of ['supporting','teaching','questions'])if((b?.[field]?.length??-1)!==(a?.[field]?.length??0))fail(`${label}: ${field} count must match English.`);
-  for(const move of b?.teaching||[])if(!move?.heading?.trim()||!move?.body?.trim())fail(`${label}: incomplete teaching movement.`);
+  for(const field of ['supporting','teaching','questions','jesusParagraphs','guardrailParagraphs'])if((b?.[field]?.length??-1)!==(a?.[field]?.length??0))fail(`${label}: ${field} count must match English.`);
+  if((b?.supporting?.length??0)<4)fail(`${label}: needs at least four supporting passages.`);
+  if((b?.teaching?.length??0)!==8)fail(`${label}: must retain eight text-grounded teaching movements.`);
+  if((b?.questions?.length??0)!==8)fail(`${label}: must retain eight passage-based questions.`);
+  for(const move of b?.teaching||[])if(!move?.heading?.trim()||!move?.body?.trim()||!(move?.paragraphs?.length))fail(`${label}: incomplete teaching movement.`);
   if(!String(b?.scripture||'').startsWith('2 Crónicas '))fail(`${label}: Scripture reference must begin with 2 Crónicas.`);
-  if(!b?.teaching?.some(move=>move.heading==='Jesús en el centro'))fail(`${label}: Jesus-at-the-center movement is missing.`);
  }
- if(es?.themeLabel!=='Compromisos interpretativos')fail('2 Chronicles must retain interpretive commitments.');
- if((es?.seriesGuideBlocks?.length??0)!==(en?.seriesGuideBlocks?.length??0))fail('2 Chronicles series guide block count must match English.');
+ for(const field of ['seriesMainScripture','seriesQuestion','seriesOpening','seriesContext','seriesExamination','seriesPractice','seriesLeaderGuidance','seriesPrayer','seriesJesusConnection','seriesGuardrail','seriesClosingTakeaway'])if(!String(es?.[field]||'').trim())fail(`2 Chronicles series foundation missing ${field}.`);
+ if((es?.seriesTeaching?.length??0)!==6)fail('2 Chronicles series foundation must retain six teaching movements.');
+ if((es?.seriesQuestions?.length??0)!==8)fail('2 Chronicles series foundation must retain eight discussion questions.');
+ for(const field of ['seriesTeaching','seriesQuestions'])if(es[field]?.length!==en[field]?.length)fail(`2 Chronicles ${field} must match English.`);
  if(es?.lessonSubtitleMode!==true)fail('2 Chronicles must retain lesson subtitle mode.');
- if(!String(es?.seriesQuestion||'').trim()||!String(es?.seriesPrayer||'').trim())fail('2 Chronicles series question or prayer is missing.');
  const raw=read(esData),all=JSON.stringify(es);
  for(const version of ['RVR60','NVI','NBLA'])if(new RegExp(`\\b${version}\\b`).test(raw))fail(`Spanish 2 Chronicles contains disallowed Bible version ${version}.`);
  const safeguards=[
-  ['temple and institutional humility',['no contienen a Dios ni garantizan fidelidad institucional']],
-  ['foreigners and spiritual superiority',['extranjeros que buscan a Dios','no producir superioridad espiritual']],
-  ['2 Chronicles 7:14 misuse',['pertenece al pacto de Dios con Israel y al contexto del templo','nunca debe convertirse en una promesa de poder político o prosperidad nacional para una nación moderna']],
-  ['success and unjust systems',['no prueban que cada sistema sea justo ni que todo líder esté espiritualmente sano']],
-  ['harsh leadership',['escoge la intimidación','los lemas sobre unidad no pueden sanar']],
-  ['religious claims and conflict',['El lenguaje correcto puede usarse con fines egoístas']],
-  ['prophetic retaliation',['encarcela al profeta y oprime a otros','Las represalias contra quienes dicen la verdad']],
-  ['justice and bribery',['contra favoritismo y soborno','trato justo y sistemas responsables']],
-  ['child protection',['proteger a un niño vulnerable','La protección infantil nunca debe sacrificarse por estabilidad institucional o conveniencia política']],
-  ['financial transparency',['El dinero religioso exige transparencia, trabajo competente y rendición de cuentas']],
-  ['religious violence',['silencia a Zacarías mediante asesinato','Proteger el poder a costa de la verdad y la vida']],
-  ['safe correction',['preocupaciones puedan expresarse con seguridad y sin represalias']],
-  ['restoration without exclusion',['las reglas deben servir a la restauración y no convertirse en armas contra buscadores sinceros']],
-  ['victim dignity and accountability',['El perdón no borra el dolor de las víctimas ni elimina la necesidad de rendición de cuentas']],
-  ['antisemitism and disaster blame',['nunca debe usarse para justificar antisemitismo','culpar simplistamente a personas modernas por desastre, enfermedad, pobreza o muerte']],
-  ['covenant suffering safeguard',['No afirmes que toda enfermedad, desastre, derrota, pobreza o muerte demuestra pecado personal']]
+  ['forced labor',['trabajo coercitivo','153.600 extranjeros residentes']],
+  ['temple and national misuse',['no pueden contener a Dios','una nación moderna en Israel']],
+  ['royal burden',['yugo pesado','no convierte el pecado humano en virtud']],
+  ['war and medicine',['no autoriza coerción religiosa','La medicina no es enemiga de la fe']],
+  ['truth and alliances',['Micaías','La alabanza no es un arma manipulable']],
+  ['child protection and finance',['seguridad infantil','El dinero sagrado necesita sistemas transparentes']],
+  ['illness and disability',['enfermedad de Hansen','personas discapacitadas']],
+  ['child sacrifice and restitution',['sacrifica hijos','liberar, vestir, alimentar, curar y devolver']],
+  ['grace and safeguards',['consentimiento, protección infantil o denuncia','presión financiera']],
+  ['victims and repentance',['víctimas y consecuencias nacionales no desaparecen','Hulda interpreta las Escrituras con autoridad']],
+  ['antisemitism and exile',['Corrige de inmediato el antisemitismo','brutalidad imperial']]
  ];
  for(const [label,phrases] of safeguards)for(const phrase of phrases)if(!all.includes(phrase))fail(`2 Chronicles safeguard missing ${label}: ${phrase}.`);
- for(const phrase of ['presionar revelaciones personales','silenciar preocupaciones','exigir dinero','encubrir abuso','promover nacionalismo o violencia','responsabilidades de protección y denuncia','apoyo pastoral, médico, legal o profesional calificado'])if(!all.includes(phrase))fail(`2 Chronicles leader safeguard missing ${phrase}.`);
+ for(const phrase of ['No prometas confidencialidad absoluta','responsabilidades de protección y denuncia','apoyo pastoral, médico, legal o profesional calificado','presionar revelaciones personales','silenciar preocupaciones','exigir dinero','encubrir abuso','promover nacionalismo o violencia'])if(!all.includes(phrase))fail(`2 Chronicles leader safeguard missing ${phrase}.`);
  const english=read(enPage),spanish=read(esPage),hub=read(hubPath),i18n=read(i18nPath);
  if(!english.includes('hreflang="es" href="https://nolabelsdesignedbygod.org/es/segunda-cronicas-estudio'+html+'"'))fail('English 2 Chronicles page must link Spanish alternate.');
- if(!english.includes('nldg-i18n'+js+'?v=1.51.0'))fail('English 2 Chronicles page must load current language switcher.');
- for(const marker of ['<html lang="es"','https://nolabelsdesignedbygod.org/es/segunda-cronicas-estudio'+html,'hreflang="en" href="https://nolabelsdesignedbygod.org/second-chronicles-study'+html+'"','../second-chronicles-study-data-es'+js+'?v=1.0.0','../book-study-series-es'+js+'?v=1.1.0','../nldg-i18n'+js+'?v=1.51.0'])if(!spanish.includes(marker))fail(`Spanish 2 Chronicles page missing ${marker}.`);
+ if(!english.includes('second-chronicles-study-data'+js+'?v=1.1.0')||!english.includes('second-chronicles-study-guide'+js+'?v=1.1.0')||!english.includes('book-study-series'+js+'?v=0.2.0'))fail('English 2 Chronicles page must load corrected study assets.');
+ for(const marker of ['<html lang="es"','https://nolabelsdesignedbygod.org/es/segunda-cronicas-estudio'+html,'hreflang="en" href="https://nolabelsdesignedbygod.org/second-chronicles-study'+html+'"','../second-chronicles-study-data-es'+js+'?v=1.1.0','../book-study-series'+js+'?v=0.2.0','../book-study-series-es'+js+'?v=1.2.0','../nldg-i18n'+js+'?v=1.51.0'])if(!spanish.includes(marker))fail(`Spanish 2 Chronicles page missing ${marker}.`);
  if(!i18n.includes("'second-chronicles-study"+html+"':'es/segunda-cronicas-estudio"+html+"'"))fail('2 Chronicles bilingual route is missing.');
- if(!hub.includes('href="segunda-cronicas-estudio'+html+'"'))fail('Spanish 2 Chronicles library card is missing.');
- if(!hub.includes('cuarenta y una series completas y revisadas'))fail('Spanish library count must be forty-one series.');
+ if(!hub.includes('href="libro-por-libro'+html+'"'))fail('Spanish Book-by-Book library link is missing.');
+ if(!hub.includes('Sesenta y seis series completas y revisadas'))fail('Spanish library must describe all sixty-six series.');
 }
 if(errors.length){console.error('Spanish 2 Chronicles study audit failed:');for(const error of errors)console.error(`- ${error}`);process.exit(1);}
 console.log('Spanish 2 Chronicles study audit passed.');

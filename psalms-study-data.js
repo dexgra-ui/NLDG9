@@ -95,7 +95,7 @@ window.NLDG_BOOK_STUDY={
         "Why does the psalm end by examining the speaker’s hidden faults, presumptuous sins, words, and meditation?"
       ],
       "examination": "Which voices are forming me most deeply? Have I treated outward success as proof of faithfulness or used Christ’s authority to strengthen my preferred earthly power? What hidden fault, proud assumption, or careless word needs to come under God’s searching instruction?",
-      "challenge": "Meditate on one short section of Psalm 1, 2, or 19 each day. Write what the passage says about God, what it exposes in you, and one concrete act of obedience. Avoid turning the exercise into a prediction about success or a judgment on someone else.",
+      "challenge": "Meditate each day on a short section from Psalm 1, Psalm 2, or Psalm 19. Write what the passage says about God, what it exposes in you, and one concrete act of obedience. Avoid turning the exercise into a prediction about success or a judgment on someone else.",
       "caution": "Political references in Psalm 2 can become partisan quickly. Keep the discussion on the text’s claims about God’s kingship, the Davidic context, and the New Testament’s identification of Jesus as Messiah; do not use the study to rank parties, candidates, or nations. Also reject prosperity readings that shame people facing poverty, illness, disability, unemployment, or grief.",
       "prayer": "God of wisdom and truth, root us in Your instruction, free us from shallow measures of success, place every human power beneath Christ, awaken wonder through creation, and search our hidden faults. May our words and thoughts become faithful before You. Amen.",
       "openingParagraphs": [

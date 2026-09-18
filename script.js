@@ -10,6 +10,14 @@ const scriptureLinksScript=document.createElement('script');
 scriptureLinksScript.src=new URL('scripture-links.js?v=1.0.0',document.currentScript?.src||location.href).href;
 scriptureLinksScript.async=false;
 document.head.appendChild(scriptureLinksScript);
+const currentScriptUrl=document.currentScript?.src||location.href;
+const currentPageName=location.pathname.split('/').pop()||'';
+if(/^biblical-map-[^/]+\.html$/i.test(currentPageName)){
+  const biblicalMapReturnScript=document.createElement('script');
+  biblicalMapReturnScript.src=new URL('biblical-map-return.js?v=1.0.0',currentScriptUrl).href;
+  biblicalMapReturnScript.async=false;
+  document.head.appendChild(biblicalMapReturnScript);
+}
 const navigationScopeFix=document.createElement('style');
 navigationScopeFix.textContent='@media(max-width:850px){.section-navigation{position:relative!important;top:auto!important;left:auto!important;right:auto!important}.breadcrumbs,.content-sequence{position:static;top:auto;left:auto;right:auto;padding:0;background:transparent;border:0;border-radius:0}.breadcrumbs{display:flex}.content-sequence{display:grid}.nav-open .breadcrumbs{display:flex}.nav-open .content-sequence{display:grid}.lesson-layout>.lesson-sidebar{display:none!important}}';
 document.head.appendChild(navigationScopeFix);

@@ -8,11 +8,11 @@
     if(raw===null)return;
     current.searchParams.delete(RESTORE_PARAM);
     history.replaceState(history.state,'',`${current.pathname}${current.search}${current.hash}`);
-    if(location.hash)return;
     const y=Number(raw);if(!Number.isFinite(y)||y<0||y>10000000)return;
+    const anchorId=location.hash?decodeURIComponent(location.hash.slice(1)):'';
     let cancelled=false;const cancel=()=>{cancelled=true};
     ['wheel','touchmove','pointerdown','keydown'].forEach(type=>window.addEventListener(type,cancel,{once:true,passive:true}));
-    const restore=()=>{if(!cancelled)window.scrollTo({top:y,left:0,behavior:'auto'})};
+    const restore=()=>{if(cancelled)return;const anchor=anchorId?document.getElementById(anchorId):null;if(anchor)anchor.scrollIntoView({block:'start'});else window.scrollTo({top:y,left:0,behavior:'auto'})};
     requestAnimationFrame(()=>requestAnimationFrame(restore));
     [350,800,1300].forEach(delay=>setTimeout(restore,delay));
     window.addEventListener('load',restore,{once:true});

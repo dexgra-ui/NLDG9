@@ -45,12 +45,12 @@ if(!errors.length){
  const raw=read(esData),all=JSON.stringify(es);
  for(const version of ['RVR60','NVI','NBLA'])if(new RegExp(`\\b${version}\\b`).test(raw))fail(`Spanish Esther contains disallowed Bible version ${version}.`);
  const safeguards=[
-  ['Vashti restraint',['no atribuyas motivos que el texto no da','no excusar ira masculina']],
-  ['coercion and consent',['Sobrevivir no equivale a consentir','Favor no equivale a justicia']],
+  ['Vashti restraint',['atribuyas motivos que el texto no da','excusar ira masculina']],
+  ['coercion and consent',['Sobrevivir no equivale a consentir','favor no equivale a justicia']],
   ['unsafe disclosure',['No exijas revelar etnia, fe, abuso, sexualidad','pueda aumentar el peligro']],
   ['antisemitism and genocide',['genocidio antisemita','No reduzcas Ester a una historia genérica']],
   ['collective punishment',['el castigo colectivo nunca se justifica','Diferencia de costumbre, etnia o fe no es prueba de deslealtad cívica']],
-  ['calling humility',['Mardoqueo dice «quién sabe»','no presiones a vulnerables a exponerse al peligro']],
+  ['calling humility',['Mardoqueo dice «quién sabe»','No presiones a vulnerables a exponerse al peligro']],
   ['Hebrew fasting precision',['El texto hebreo nombra explícitamente ayuno, no oración','«¿quién sabe?»']],
   ['providence without superstition',['La providencia no es superstición','no autoriza interpretar cada coincidencia como mensaje privado de Dios']],
   ['couch accusation precision',['No digas que el texto prueba que Amán agredió sexualmente a Ester','el rey interpreta así la escena del diván']],

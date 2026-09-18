@@ -40,7 +40,7 @@
 
   if(returnUrl){
     returnUrl.searchParams.delete(RESTORE_PARAM);
-    if(!returnUrl.hash&&hasReturnY)returnUrl.searchParams.set(RESTORE_PARAM,String(Math.round(returnY)));
+    if(hasReturnY)returnUrl.searchParams.set(RESTORE_PARAM,String(Math.round(returnY)));
     href=`${returnUrl.pathname}${returnUrl.search}${returnUrl.hash}`;
     const destination=label||'Bible Study';
     text=`← Back to ${destination}`;

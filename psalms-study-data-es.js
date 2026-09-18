@@ -144,7 +144,7 @@ window.NLDG_BOOK_STUDY={
         "¿Por qué termina el salmo examinando faltas ocultas, pecados deliberados, palabras y meditación del mismo orante?"
       ],
       "examination": "¿Qué voces me están formando más profundamente? ¿He tratado el éxito visible como prueba de fidelidad o usado la autoridad de Cristo para fortalecer mi poder terrenal preferido? ¿Qué falta oculta, suposición orgullosa o palabra descuidada necesita quedar bajo la instrucción examinadora de Dios?",
-      "challenge": "Medita cada día en una sección breve de Salmo 1, 2 o 19. Escribe qué dice sobre Dios, qué expone en ti y una acción concreta de obediencia. Evita convertir el ejercicio en predicción de éxito o juicio sobre otra persona.",
+      "challenge": "Medita cada día en una sección breve de Salmo 1, Salmo 2 o Salmo 19. Escribe qué dice sobre Dios, qué expone en ti y una acción concreta de obediencia. Evita convertir el ejercicio en predicción de éxito o juicio sobre otra persona.",
       "caution": "Las referencias políticas de Salmo 2 pueden volverse partidistas rápidamente. Mantén la conversación en lo que el texto afirma sobre la realeza de Dios, el contexto davídico y la identificación de Jesús como Mesías en el Nuevo Testamento; no uses el estudio para clasificar partidos, candidatos o naciones. Rechaza también lecturas de prosperidad que avergüencen a personas en pobreza, enfermedad, discapacidad, desempleo o duelo.",
       "prayer": "Dios de sabiduría y verdad, arráiganos en tu instrucción, líbranos de medidas superficiales de éxito, coloca todo poder humano bajo Cristo, despierta asombro por medio de la creación y examina nuestras faltas ocultas. Que nuestras palabras y pensamientos sean fieles delante de ti. Amén.",
       "openingParagraphs": [

@@ -14,47 +14,64 @@ if(book?.status!=='published')fail('Esther must be marked published in the Spani
 
 if(!errors.length){
  const en=load(enData,enGuide),es=load(esData);
+ const names={'Ester':'Esther','Proverbios':'Proverbs','Eclesiastés':'Ecclesiastes','Marcos':'Mark','Santiago':'James','Génesis':'Genesis','Salmo':'Psalm','Daniel':'Daniel','1 Pedro':'1 Peter','Isaías':'Isaiah','Efesios':'Ephesians','Nehemías':'Nehemiah','Miqueas':'Micah','Lucas':'Luke','Hebreos':'Hebrews','Mateo':'Matthew','Romanos':'Romans','Deuteronomio':'Deuteronomy','Apocalipsis':'Revelation'};
+ const norm=r=>{for(const [a,b] of Object.entries(names))if(r.startsWith(a+' '))return b+r.slice(a.length);return r;};
  if(es?.slug!=='ester-estudio')fail('Spanish Esther slug must be ester-estudio.');
  if(es?.book!=='Ester')fail('Spanish book name must be Ester.');
  if(es?.scriptureStandard!=='Nueva Traducción Viviente (NTV)')fail('Spanish Esther must declare Nueva Traducción Viviente (NTV).');
  if(en?.lessons?.length!==9||es?.lessons?.length!==9)fail('Esther must retain nine lessons in both languages.');
- const fields=['title','scripture','question','truth','goal','opening','context','examination','challenge','caution','prayer'];
+ const fields=['title','subtitle','scripture','question','truth','goal','opening','context','examination','challenge','caution','closingTakeaway','prayer'];
  for(let i=0;i<9;i++){
   const a=en.lessons[i],b=es.lessons[i],label=`Esther lesson ${i+1}`;
   if(a?.number!==b?.number)fail(`${label}: lesson number mismatch.`);
+  if(norm(b.scripture)!==a.scripture)fail(`${label}: main Scripture range must match English.`);
+  if(JSON.stringify((b.supporting||[]).map(norm))!==JSON.stringify(a.supporting||[]))fail(`${label}: supporting passages must match English exactly.`);
   for(const field of fields)if(!String(b?.[field]||'').trim())fail(`${label}: missing ${field}.`);
-  for(const field of ['supporting','teaching','questions'])if((b?.[field]?.length??-1)!==(a?.[field]?.length??0))fail(`${label}: ${field} count must match English.`);
-  for(const move of b?.teaching||[])if(!move?.heading?.trim()||!move?.body?.trim())fail(`${label}: incomplete teaching movement.`);
+  for(const field of ['supporting','teaching','questions','jesusParagraphs','guardrailParagraphs'])if((b?.[field]?.length??-1)!==(a?.[field]?.length??0))fail(`${label}: ${field} count must match English.`);
+  if((b?.supporting?.length??0)<5)fail(`${label}: needs at least five supporting passages.`);
+  if((b?.teaching?.length??0)!==8)fail(`${label}: must retain eight text-grounded teaching movements.`);
+  if((b?.questions?.length??0)!==8)fail(`${label}: must retain eight passage-based questions.`);
+  if((b?.contextParagraphs?.length??0)!==2)fail(`${label}: must retain two Scripture-context paragraphs.`);
+  for(const move of b?.teaching||[])if(!move?.heading?.trim()||!move?.body?.trim()||!(move?.paragraphs?.length))fail(`${label}: incomplete teaching movement.`);
   if(!String(b?.scripture||'').startsWith('Ester '))fail(`${label}: Scripture reference must begin with Ester.`);
  }
- if(es?.themeLabel!=='Tema central')fail('Esther theme label must be Tema central.');
- if((es?.seriesGuideBlocks?.length??0)!==(en?.seriesGuideBlocks?.length??0))fail('Esther series guide block count must match English.');
- if((es?.postLessonMapGuideBlocks?.length??0)!==(en?.postLessonMapGuideBlocks?.length??0))fail('Esther post-lesson guide block count must match English.');
+ if(es?.themeLabel!=='Verdad clave')fail('Esther theme label must be Verdad clave.');
+ if(es?.lessonSubtitleMode!==true)fail('Esther must retain lesson subtitle mode.');
+ for(const field of ['seriesMainScripture','seriesQuestion','seriesOpening','seriesContext','seriesExamination','seriesPractice','seriesLeaderGuidance','seriesPrayer','seriesJesusConnection','seriesGuardrail','seriesClosingTakeaway'])if(!String(es?.[field]||'').trim())fail(`Esther series foundation missing ${field}.`);
+ if((es?.seriesTeaching?.length??0)!==6||(en?.seriesTeaching?.length??0)!==6)fail('Esther series guide must retain six teaching movements.');
+ if((es?.seriesQuestions?.length??0)!==8||(en?.seriesQuestions?.length??0)!==8)fail('Esther series guide must retain eight discussion questions.');
+ if(es.seriesTeaching.length!==en.seriesTeaching.length||es.seriesQuestions.length!==en.seriesQuestions.length)fail('Esther series architecture must match across languages.');
+
  const raw=read(esData),all=JSON.stringify(es);
  for(const version of ['RVR60','NVI','NBLA'])if(new RegExp(`\\b${version}\\b`).test(raw))fail(`Spanish Esther contains disallowed Bible version ${version}.`);
  const safeguards=[
-  ['coercive authority and women dignity',['control masculino, humillación ni obediencia forzada','la agencia limitada deben permanecer visibles']],
-  ['survival is not consent',['No describas la entrada de Ester al sistema real como un romance moderno','No culpes a víctimas por la coerción']],
-  ['sexual exploitation safety',['explotación sexual','prioriza seguridad, apoyo apropiado']],
-  ['antisemitism and genocide',['nombrar claramente el antisemitismo','minimicen el genocidio']],
-  ['ethnic difference not suspicion',['conviertan diferencias étnicas en sospecha']],
-  ['unsafe disclosure',['no exijas revelaciones que puedan ponerlo en peligro','nadie debe ser avergonzado por no revelar algo inmediatamente']],
-  ['calling with boundaries',['ni presionar a alguien a exponerse a peligro','El llamado incluye sabiduría, comunidad, límites y seguridad']],
-  ['providence without overclaiming',['sin afirmar que toda coincidencia es un mensaje directo de Dios','ni una fórmula para interpretar coincidencias']],
-  ['truth with due process',['verdad, evidencia, debido proceso y seguridad','castigo sin proceso justo']],
-  ['structural repair',['LAS ESTRUCTURAS INJUSTAS REQUIEREN RESPUESTA ESTRUCTURAL','La protección no debe dejar a personas vulnerables permanentemente dependientes y sin voz']],
-  ['self-defense not revenge',['Distingue la defensa comunitaria antigua','venganza personal, el vigilantismo moderno']],
-  ['violence not Christian mandate',['La violencia antigua no es un mandato cristiano para imitación','No celebres la muerte humana']],
-  ['leader safeguards',['no conviertas una narración antigua en permiso para venganza personal, violencia étnica o vigilantismo']]
+  ['Vashti restraint',['no atribuyas motivos que el texto no da','no excusar ira masculina']],
+  ['coercion and consent',['Sobrevivir no equivale a consentir','Favor no equivale a justicia']],
+  ['unsafe disclosure',['No exijas revelar etnia, fe, abuso, sexualidad','pueda aumentar el peligro']],
+  ['antisemitism and genocide',['genocidio antisemita','No reduzcas Ester a una historia genérica']],
+  ['collective punishment',['el castigo colectivo nunca se justifica','Diferencia de costumbre, etnia o fe no es prueba de deslealtad cívica']],
+  ['calling humility',['Mardoqueo dice «quién sabe»','no presiones a vulnerables a exponerse al peligro']],
+  ['Hebrew fasting precision',['El texto hebreo nombra explícitamente ayuno, no oración','«¿quién sabe?»']],
+  ['providence without superstition',['La providencia no es superstición','no autoriza interpretar cada coincidencia como mensaje privado de Dios']],
+  ['couch accusation precision',['No digas que el texto prueba que Amán agredió sexualmente a Ester','el rey interpreta así la escena del diván']],
+  ['due process',['debido proceso','castigo autocrático']],
+  ['counter decree violence',['El contra-decreto devuelve agencia pero usa lenguaje de violencia severa','no contienen lenguaje de violencia y botín']],
+  ['fear driven identity',['no debe ser modelo de conversión cristiana','miedo es central']],
+  ['second day moral difficulty',['La petición de un segundo día intensifica la dificultad moral','no debe esconderse bajo un eslogan sencillo de defensa propia']],
+  ['refusal of plunder',['no toman botín','rechazo repetido del botín']],
+  ['Purim Jewish identity',['Purim sigue siendo una fiesta judía','no convertirla en ordenanza de la iglesia']],
+  ['violence rejection',['No celebres el saldo de muertos','venganza, vigilantismo, violencia étnica']]
  ];
  for(const [label,phrases] of safeguards)for(const phrase of phrases)if(!all.includes(phrase))fail(`Esther safeguard missing ${label}: ${phrase}.`);
+ for(const phrase of ['Pueden pasar o salir sin explicación','No romantices la entrada de Ester al sistema real','cumple deberes de protección y denuncia','ayuda calificada','Da aviso de contenido y permite pasar'])if(!all.includes(phrase))fail(`Esther leader safeguard missing ${phrase}.`);
+
  const english=read(enPage),spanish=read(esPage),hub=read(hubPath),i18n=read(i18nPath);
  if(!english.includes('hreflang="es" href="https://nolabelsdesignedbygod.org/es/ester-estudio'+html+'"'))fail('English Esther page must link Spanish alternate.');
- if(!english.includes('nldg-i18n'+js+'?v=1.54.0'))fail('English Esther page must load current language switcher.');
- for(const marker of ['<html lang="es"','https://nolabelsdesignedbygod.org/es/ester-estudio'+html,'hreflang="en" href="https://nolabelsdesignedbygod.org/esther-study'+html+'"','../esther-study-data-es'+js+'?v=1.0.0','../book-study-series-es'+js+'?v=1.1.0','../nldg-i18n'+js+'?v=1.54.0'])if(!spanish.includes(marker))fail(`Spanish Esther page missing ${marker}.`);
+ if(!english.includes('esther-study-data'+js+'?v=1.1.0')||!english.includes('esther-study-guide'+js+'?v=1.1.0')||!english.includes('book-study-series'+js+'?v=0.2.0'))fail('English Esther page must load corrected study assets.');
+ for(const marker of ['<html lang="es"','https://nolabelsdesignedbygod.org/es/ester-estudio'+html,'hreflang="en" href="https://nolabelsdesignedbygod.org/esther-study'+html+'"','../esther-study-data-es'+js+'?v=1.1.0','../book-study-series'+js+'?v=0.2.0','../book-study-series-es'+js+'?v=1.2.0','../nldg-i18n'+js+'?v=1.54.0'])if(!spanish.includes(marker))fail(`Spanish Esther page missing ${marker}.`);
  if(!i18n.includes("'esther-study"+html+"':'es/ester-estudio"+html+"'"))fail('Esther bilingual route is missing.');
- if(!hub.includes('href="ester-estudio'+html+'"'))fail('Spanish Esther library card is missing.');
- if(!hub.includes('cuarenta y cuatro series completas y revisadas'))fail('Spanish library count must be forty-four series.');
+ if(!hub.includes('href="libro-por-libro'+html+'"'))fail('Spanish Book-by-Book library link is missing.');
+ if(!hub.includes('Sesenta y seis series completas y revisadas'))fail('Spanish library must describe all sixty-six series.');
 }
 if(errors.length){console.error('Spanish Esther study audit failed:');for(const error of errors)console.error(`- ${error}`);process.exit(1);}
 console.log('Spanish Esther study audit passed.');

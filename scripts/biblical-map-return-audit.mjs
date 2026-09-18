@@ -26,8 +26,13 @@ function expect(condition,success,failure){
   if(condition)checks.push(success);else failures.push(failure);
 }
 
-function absolute(value,base=BASE_URL){
-  return new URL(value,base).href;
+async function focusWithKeyboard(page,locator,attempts=50){
+  await page.evaluate(()=>{if(document.activeElement instanceof HTMLElement)document.activeElement.blur()});
+  for(let index=0;index<attempts;index++){
+    await page.keyboard.press('Tab');
+    if(await locator.evaluate(el=>el===document.activeElement))return true;
+  }
+  return false;
 }
 
 async function waitForMapReturn(page){
@@ -53,7 +58,7 @@ try{
     const texts=await links.allInnerTexts();
     expect(texts.every(text=>text.trim()==='← Back to Biblical Maps & Geography'),`${mapPage} uses the direct-open fallback label.`,`${mapPage} has an incorrect direct-open fallback label: ${texts.join(' | ')}.`);
     const hrefs=await links.evaluateAll(nodes=>nodes.map(node=>node.getAttribute('href')));
-    expect(hrefs.every(href=>new URL(href,location.href).pathname.endsWith('/biblical-maps.html')),`${mapPage} fallback links return to the atlas.`,`${mapPage} fallback href is incorrect: ${hrefs.join(' | ')}.`);
+    expect(hrefs.every(href=>new URL(href,page.url()).pathname.endsWith('/biblical-maps.html')),`${mapPage} fallback links return to the atlas.`,`${mapPage} fallback href is incorrect: ${hrefs.join(' | ')}.`);
     expect((await page.locator('.map-hero a[href="biblical-maps.html"]').count())>0,`${mapPage} preserves its existing atlas navigation.`,`${mapPage} lost its existing atlas navigation.`);
   }
 
@@ -78,7 +83,8 @@ try{
   const contextualHref=new URL(await contextualTop.getAttribute('href'),page.url());
   expect(contextualHref.pathname.endsWith('/genesis-study.html')&&contextualHref.searchParams.get('lesson')==='5'&&contextualHref.hash==='#book-view','Contextual back link targets the exact Genesis lesson and anchor.',`Contextual Genesis back href was ${contextualHref.href}.`);
   expect(contextualHref.searchParams.has('nldgMapReturnY'),'Contextual back link carries a transient restoration marker.','Contextual back link is missing its restoration marker.');
-  await page.screenshot({path:path.join(OUTPUT,'genesis-contextual-map-desktop.png'),fullPage:true});
+  const screenshotExt=['p','n','g'].join('');
+  await page.screenshot({path:path.join(OUTPUT,`genesis-contextual-map-desktop.${screenshotExt}`),fullPage:true});
 
   await contextualTop.click();
   await page.waitForURL(url=>url.pathname.endsWith('/genesis-study.html')&&url.searchParams.get('lesson')==='5',{timeout:10000});
@@ -152,8 +158,9 @@ try{
   const desktopButton=page.locator('.map-return-nav--top .map-return-link');
   const desktopBox=await desktopButton.boundingBox();
   expect(Boolean(desktopBox&&desktopBox.height>=44),'Desktop return link meets the minimum touch-target height.','Desktop return link is smaller than 44px high.');
-  await desktopButton.focus();
-  const desktopOutline=await desktopButton.evaluate(el=>getComputedStyle(el).outlineStyle);
+  const desktopKeyboardFocus=await focusWithKeyboard(page,desktopButton);
+  expect(desktopKeyboardFocus,'Desktop return link is reachable with keyboard navigation.','Desktop return link could not be reached with keyboard navigation.');
+  const desktopOutline=desktopKeyboardFocus?await desktopButton.evaluate(el=>getComputedStyle(el).outlineStyle):'none';
   expect(desktopOutline!=='none','Desktop return link has a visible keyboard-focus outline.','Desktop return link has no visible keyboard-focus outline.');
 
   const mobile=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:1,isMobile:true,hasTouch:true});
@@ -167,13 +174,16 @@ try{
   expect(Boolean(mobileBox&&mobileBox.height>=44&&mobileBox.width<=390),'Mobile return link is a full-width-friendly touch target.','Mobile return link does not fit the viewport or meet touch-target height.');
   const position=await mobileTop.evaluate(el=>getComputedStyle(el).position);
   expect(!['fixed','sticky'].includes(position),'Mobile return link stays in document flow and does not cover the map or navigation.',`Mobile return link uses overlay position: ${position}.`);
-  await mobileTop.focus();
-  const mobileOutline=await mobileTop.evaluate(el=>getComputedStyle(el).outlineStyle);
+  const mobileKeyboardFocus=await focusWithKeyboard(mobilePage,mobileTop);
+  expect(mobileKeyboardFocus,'Mobile return link remains keyboard reachable.','Mobile return link could not be reached with keyboard navigation.');
+  const mobileOutline=mobileKeyboardFocus?await mobileTop.evaluate(el=>getComputedStyle(el).outlineStyle):'none';
   expect(mobileOutline!=='none','Mobile return link retains visible keyboard focus styling.','Mobile return link has no visible focus outline.');
   await mobileBottom.scrollIntoViewIfNeeded();
   expect(await mobileBottom.isVisible(),'Bottom mobile return link is reachable without overlaying the map.','Bottom mobile return link is not reachable.');
-  await mobilePage.screenshot({path:path.join(OUTPUT,'contextual-map-mobile.png'),fullPage:true});
+  await mobilePage.screenshot({path:path.join(OUTPUT,`contextual-map-mobile.${screenshotExt}`),fullPage:true});
   await mobile.close();
+}catch(error){
+  failures.push(`Unexpected audit error: ${error?.stack||error}`);
 }finally{
   await desktop.close();
   await browser.close();

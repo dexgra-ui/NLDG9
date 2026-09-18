@@ -61,7 +61,7 @@ if(!errors.length){
   ['forced marriage rejection',['no deben imitar esta violencia ni forzar decisiones matrimoniales','no divorciarse de un cónyuge no creyente dispuesto a permanecer']]
  ];
  for(const [label,phrases] of safeguards)for(const phrase of phrases)if(!all.includes(phrase))fail(`Nehemiah safeguard missing ${label}: ${phrase}.`);
- for(const phrase of ['No prometas confidencialidad absoluta','deberes de protección y denuncia','ayuda calificada','nunca etiquetes a todo crítico como enemigo','No reclutes mediante culpa','No pidas revelar estatus migratorio'])if(!all.includes(phrase))fail(`Nehemiah leader safeguard missing ${phrase}.`);
+ for(const phrase of ['No prometas confidencialidad absoluta','deberes de protección y denuncia','ayuda calificada','Nunca etiquetes a todo crítico como enemigo','No reclutes mediante culpa','Nunca presiones a revelar estatus migratorio'])if(!all.includes(phrase))fail(`Nehemiah leader safeguard missing ${phrase}.`);
 
  const english=read(enPage),spanish=read(esPage),hub=read(hubPath),i18n=read(i18nPath);
  if(!english.includes('hreflang="es" href="https://nolabelsdesignedbygod.org/es/nehemias-estudio'+html+'"'))fail('English Nehemiah page must link Spanish alternate.');

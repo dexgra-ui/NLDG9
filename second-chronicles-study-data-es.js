@@ -27,7 +27,7 @@ window.NLDG_BOOK_STUDY={
   "howToReadTogether": "Distingue evaluación del narrador, discurso real o profético citado, inferencia razonable, reconstrucción debatida, material paralelo de Reyes y cumplimiento cristiano posterior. Los juicios del pacto de Judá no son fórmulas universales para desastre, enfermedad, pobreza o muerte. La providencia nunca convierte cada método real en modelo ético. Guerra antigua, ejecuciones, cargos hereditarios, sacrificio del templo y trabajo coercitivo no son prácticas de la iglesia.",
   "seriesMainScripture": "2 Crónicas 1–36; Mateo 1:11–17; Juan 2:18–22",
   "seriesOpening": "Rastrea buscar, humillarse, corazón, casa, abandonar, volver, profeta y palabra del SEÑOR. Compara relatos paralelos donde aclaren, pregunta quién paga cada decisión real y distingue juicio del pacto de culpa moderna por desastre. Da advertencias de contenido y permite pasar o salir.",
-  "seriesContext": "Segunda de Crónicas continúa desde la asamblea final de David hasta Salomón, el templo y los reyes de Judá. Su narración selectiva habla a una comunidad posexílica. Distingue la evaluación del narrador, las voces citadas, inferencias, debates y conexiones cristianas posteriores; la providencia divina no aprueba automáticamente cada método de un rey.",
+  "seriesContext": "Segunda de Crónicas continúa directamente desde la asamblea final de David hacia el reinado de Salomón, el templo y la historia de los reyes davídicos de Judá. El reino del norte aparece sobre todo cuando se cruza con Judá; por eso el libro es una narración teológica selectiva, no una crónica política completa. Dirigido a una comunidad después del exilio babilónico, repite buscar, humillarse, abandonar, volver, corazón, casa y palabra profética para interpretar adoración, liderazgo, juicio y restauración. Los relatos paralelos de Reyes a menudo añaden material; cada testimonio debe escucharse sin borrar su énfasis propio.\n\nDistingue evaluación del narrador, discurso real o profético citado, inferencia razonable, reconstrucción debatida, material paralelo de Reyes y cumplimiento cristiano posterior. Los juicios del pacto de Judá no son fórmulas universales para desastre, enfermedad, pobreza o muerte. La providencia nunca convierte cada método real en modelo ético. Guerra antigua, ejecuciones, cargos hereditarios, sacrificio del templo y trabajo coercitivo no son prácticas de la iglesia.",
   "seriesTeaching": [
     {
       "heading": "El templo sirve a presencia, oración y justicia",
@@ -430,57 +430,57 @@ window.NLDG_BOOK_STUDY={
           ]
         },
         {
-          "heading": "La mayoría profética no controla la verdad — 2 Crónicas 18:4–27",
-          "body": "Muchos prometen éxito y Micaías contradice al rey. Acab ya prefiere mensajes favorables. La visión del espíritu engañador revela juicio sobre una mentira deseada, no permiso para que líderes llamen divina a su propaganda.",
+          "heading": "Cuatrocientas voces no garantizan verdad — 2 Crónicas 18:4–27",
+          "body": "Los profetas reales coinciden; Micaías primero imita irónicamente su respuesta y después anuncia juicio. Mayoría, acceso al rey, confianza y aprobación institucional no sustituyen el examen veraz.",
           "paragraphs": [
-            "Muchos prometen éxito y Micaías contradice al rey. Acab ya prefiere mensajes favorables. La visión del espíritu engañador revela juicio sobre una mentira deseada, no permiso para que líderes llamen divina a su propaganda."
+            "Los profetas reales coinciden; Micaías primero imita irónicamente su respuesta y después anuncia juicio. Mayoría, acceso al rey, confianza y aprobación institucional no sustituyen el examen veraz."
           ]
         },
         {
-          "heading": "Dios rescata sin aprobar la alianza — 2 Crónicas 18:28–34",
-          "body": "Josafat clama y Dios lo ayuda cuando lo confunden con Acab. El rescate es misericordia, no aprobación retrospectiva de su decisión ni garantía de que toda conducta imprudente evitará consecuencias.",
+          "heading": "La visión del espíritu engañador es juicio, no permiso — 2 Crónicas 18:18–22",
+          "body": "Micaías presenta a Dios entregando a Acab al engaño que desea. La escena difícil no santifica manipulación ni permite excusar mentiras como estrategia divina. Las afirmaciones proféticas deben examinarse a la luz de Escritura, evidencia, carácter y resultado. El rescate posterior de Josafat es misericordia, no aprobación de su alianza.",
           "paragraphs": [
-            "Josafat clama y Dios lo ayuda cuando lo confunden con Acab. El rescate es misericordia, no aprobación retrospectiva de su decisión ni garantía de que toda conducta imprudente evitará consecuencias."
+            "Micaías presenta a Dios entregando a Acab al engaño que desea. La escena difícil no santifica manipulación ni permite excusar mentiras como estrategia divina. Las afirmaciones proféticas deben examinarse a la luz de Escritura, evidencia, carácter y resultado. El rescate posterior de Josafat es misericordia, no aprobación de su alianza."
           ]
         },
         {
-          "heading": "La corrección puede producir reforma pública — 2 Crónicas 19:1–4",
-          "body": "Jehú pregunta si debe ayudarse a quien odia al SEÑOR y también reconoce lo bueno en Josafat. La corrección fiel puede ser específica, equilibrada y orientada a una respuesta concreta.",
+          "heading": "La corrección devuelve a Josafat a la justicia pública — 2 Crónicas 19",
+          "body": "Jehú pregunta si debe ayudarse a quien odia al SEÑOR y también reconoce lo bueno en Josafat. La corrección fiel puede ser específica, equilibrada y orientada a una respuesta concreta. Los jueces actúan delante de Dios y deben decidir con integridad. La adoración se vuelve falsa cuando instituciones protegen personas influyentes, castigan denunciantes o compran resultados.",
           "paragraphs": [
-            "Jehú pregunta si debe ayudarse a quien odia al SEÑOR y también reconoce lo bueno en Josafat. La corrección fiel puede ser específica, equilibrada y orientada a una respuesta concreta."
+            "Jehú pregunta si debe ayudarse a quien odia al SEÑOR y también reconoce lo bueno en Josafat. La corrección fiel puede ser específica, equilibrada y orientada a una respuesta concreta. Los jueces actúan delante de Dios y deben decidir con integridad. La adoración se vuelve falsa cuando instituciones protegen personas influyentes, castigan denunciantes o compran resultados."
           ]
         },
         {
-          "heading": "La justicia no admite favoritismo ni soborno — 2 Crónicas 19:5–11",
-          "body": "Los jueces actúan delante de Dios y deben decidir con integridad. La adoración se vuelve falsa cuando instituciones protegen personas influyentes, castigan denunciantes o compran resultados.",
+          "heading": "Judá reconoce temor e impotencia — 2 Crónicas 20:1–13",
+          "body": "La asamblea incluye familias y niños, ayuna, recuerda la promesa y reconoce que no sabe qué hacer mientras dirige su mirada a Dios. La fe dice la verdad sobre el peligro sin fabricar certeza.",
           "paragraphs": [
-            "Los jueces actúan delante de Dios y deben decidir con integridad. La adoración se vuelve falsa cuando instituciones protegen personas influyentes, castigan denunciantes o compran resultados."
+            "La asamblea incluye familias y niños, ayuna, recuerda la promesa y reconoce que no sabe qué hacer mientras dirige su mirada a Dios. La fe dice la verdad sobre el peligro sin fabricar certeza."
           ]
         },
         {
-          "heading": "La oración nombra la impotencia sin negar el peligro — 2 Crónicas 20:1–19",
-          "body": "Josafat recuerda el pacto, describe la amenaza y confiesa: «No sabemos qué hacer, pero buscamos tu ayuda». Ni la negación ni el pánico gobiernan; la comunidad lleva el temor a Dios.",
+          "heading": "La alabanza no es un arma manipulable — 2 Crónicas 20:14–30",
+          "body": "Jahaziel anuncia que Judá no tendrá que luchar; los cantores alaban y los enemigos se destruyen entre sí. Es una liberación particular, no una técnica repetible ni permiso para desear la muerte de adversarios. La acción de Dios no se convierte en violencia de la iglesia.",
           "paragraphs": [
-            "Josafat recuerda el pacto, describe la amenaza y confiesa: «No sabemos qué hacer, pero buscamos tu ayuda». Ni la negación ni el pánico gobiernan; la comunidad lleva el temor a Dios."
+            "Jahaziel anuncia que Judá no tendrá que luchar; los cantores alaban y los enemigos se destruyen entre sí. Es una liberación particular, no una técnica repetible ni permiso para desear la muerte de adversarios. La acción de Dios no se convierte en violencia de la iglesia."
           ]
         },
         {
-          "heading": "La alabanza no es un arma manipulable — 2 Crónicas 20:20–37",
-          "body": "Dios libera mientras el pueblo canta, pero el texto narra un milagro, no una fórmula para controlar resultados. La alianza naval posterior fracasa, mostrando que Josafat todavía necesita discernimiento.",
+          "heading": "Las alianzas repetidas revelan una debilidad pendiente — 2 Crónicas 20:31–37",
+          "body": "Después de reforma y liberación, Josafat se asocia con Ocozías y las naves se destruyen. Un líder sincero puede mantener puntos ciegos; sus logros no eliminan límites ni rendición de cuentas continua.",
           "paragraphs": [
-            "Dios libera mientras el pueblo canta, pero el texto narra un milagro, no una fórmula para controlar resultados. La alianza naval posterior fracasa, mostrando que Josafat todavía necesita discernimiento."
+            "Después de reforma y liberación, Josafat se asocia con Ocozías y las naves se destruyen. Un líder sincero puede mantener puntos ciegos; sus logros no eliminan límites ni rendición de cuentas continua."
           ]
         }
       ],
       "questions": [
-        "¿Qué personas y texto participan en la enseñanza de 17:7–9?",
-        "¿Qué señales de peligro acompañan la alianza con Acab?",
-        "¿Por qué Micaías queda solo y qué desea oír Acab?",
-        "¿Qué comunica la visión del espíritu engañador y qué uso no autoriza?",
-        "¿Cómo combina Jehú corrección y reconocimiento?",
-        "¿Qué reglas concretas reciben los jueces en el capítulo 19?",
-        "¿Qué elementos forman la oración y la respuesta comunitaria del capítulo 20?",
-        "¿Por qué la liberación y el canto no deben transformarse en fórmula, especialmente a la luz de 20:35–37?"
+        "¿Quién enseña en Judá y qué recurso lleva?",
+        "¿Qué hace peligrosa la alianza con Acab?",
+        "¿Cómo responden los cuatrocientos profetas, Micaías, Acab y Josafat a palabras opuestas?",
+        "¿Qué afirma la visión del consejo celestial y qué uso dañino debemos rechazar?",
+        "¿Qué normas gobiernan a los jueces del capítulo 19?",
+        "¿Qué confiesa Judá en 20:12?",
+        "¿Qué hace particular la promesa de Jahaziel y el papel de los cantores?",
+        "¿Qué debilidad reaparece en la alianza final de Josafat?"
       ],
       "examination": "¿He confundido una mayoría, una relación estratégica o un resultado favorable con la voz de Dios? ¿Hay una persona veraz que excluí por no confirmar mi plan? ¿Es justa la estructura que superviso?",
       "challenge": "Revisa una alianza o decisión usando cuatro preguntas: carácter, métodos, personas afectadas y rendición de cuentas. Añade una voz independiente con libertad real para disentir.",
@@ -519,10 +519,17 @@ window.NLDG_BOOK_STUDY={
       "context": "Joram mata a sus hermanos y gobierna con infidelidad; el relato atribuye una enfermedad intestinal a juicio en su historia concreta. No convierte enfermedades modernas en estigma moral. Después de la muerte de Ocozías, Atalía destruye a la familia real, pero Josabeat esconde al niño Joás durante seis años. La violencia patriarcal y dinástica se informa, no se aprueba como método ordinario.\n\nJoiada organiza la coronación de Joás y la muerte de Atalía. Es una crisis real dentro de Judá, no modelo para golpes cristianos. Joás repara el templo, pero el primer sistema de recolección falla hasta que se establece un cofre y contabilidad más clara. Tras morir Joiada, Joás abandona la casa, rechaza profetas y manda apedrear a Zacarías. Su buena trayectoria dependía más de influencia prestada que de raíces maduras.",
       "teaching": [
         {
-          "heading": "El abuso del poder destruye familia y pueblo — 2 Crónicas 21",
-          "body": "Joram mata hermanos para asegurar su trono y conduce a Judá a la infidelidad. Su importancia dinástica no excusa asesinato ni hace de su enfermedad una etiqueta para pacientes de hoy.",
+          "heading": "Joram usa asesinato para asegurar poder — 2 Crónicas 21:1–7",
+          "body": "Joram mata hermanos para asegurar su trono y conduce a Judá a la infidelidad. Su importancia dinástica no excusa asesinato ni hace de su enfermedad una etiqueta para pacientes de hoy. La promesa de preservar una lámpara para David no aprueba la violencia ni vuelve inmune a la dinastía.",
           "paragraphs": [
-            "Joram mata hermanos para asegurar su trono y conduce a Judá a la infidelidad. Su importancia dinástica no excusa asesinato ni hace de su enfermedad una etiqueta para pacientes de hoy."
+            "Joram mata hermanos para asegurar su trono y conduce a Judá a la infidelidad. Su importancia dinástica no excusa asesinato ni hace de su enfermedad una etiqueta para pacientes de hoy. La promesa de preservar una lámpara para David no aprueba la violencia ni vuelve inmune a la dinastía."
+          ]
+        },
+        {
+          "heading": "Una enfermedad en un relato de juicio no es diagnóstico universal — 2 Crónicas 21:12–20",
+          "body": "La carta de Elías anuncia invasión y una enfermedad intestinal grave. El narrador relaciona esta enfermedad con juicio en la vida de este rey; no permite deducir pecado oculto a partir de enfermedad crónica, discapacidad o muerte dolorosa actuales.",
+          "paragraphs": [
+            "La carta de Elías anuncia invasión y una enfermedad intestinal grave. El narrador relaciona esta enfermedad con juicio en la vida de este rey; no permite deducir pecado oculto a partir de enfermedad crónica, discapacidad o muerte dolorosa actuales."
           ]
         },
         {
@@ -533,17 +540,10 @@ window.NLDG_BOOK_STUDY={
           ]
         },
         {
-          "heading": "Una liberación excepcional no se vuelve método de iglesia — 2 Crónicas 23",
-          "body": "Joiada coordina guardias, pacto, coronación y la ejecución de Atalía. El relato pertenece a una crisis de monarquía del pacto. No autoriza golpes, vigilantismo ni violencia religiosa cristiana.",
+          "heading": "El golpe se relata, no se entrega como método a la iglesia — 2 Crónicas 23",
+          "body": "Joiada coordina guardias, pacto, coronación y la ejecución de Atalía. El relato pertenece a una crisis de monarquía del pacto. No autoriza golpes, vigilantismo ni violencia religiosa cristiana. La multitud también destruye el templo de Baal y mata a Matán; estas acciones no autorizan violencia de masas.",
           "paragraphs": [
-            "Joiada coordina guardias, pacto, coronación y la ejecución de Atalía. El relato pertenece a una crisis de monarquía del pacto. No autoriza golpes, vigilantismo ni violencia religiosa cristiana."
-          ]
-        },
-        {
-          "heading": "La mentoría puede sostener sin formar raíces — 2 Crónicas 24:1–3",
-          "body": "Joás hace lo recto durante los días de Joiada. La frase prepara la pregunta de qué ocurrirá después. Los buenos mentores forman acceso a Escritura, discernimiento y responsabilidad más allá de su propia presencia.",
-          "paragraphs": [
-            "Joás hace lo recto durante los días de Joiada. La frase prepara la pregunta de qué ocurrirá después. Los buenos mentores forman acceso a Escritura, discernimiento y responsabilidad más allá de su propia presencia."
+            "Joiada coordina guardias, pacto, coronación y la ejecución de Atalía. El relato pertenece a una crisis de monarquía del pacto. No autoriza golpes, vigilantismo ni violencia religiosa cristiana. La multitud también destruye el templo de Baal y mata a Matán; estas acciones no autorizan violencia de masas."
           ]
         },
         {
@@ -554,10 +554,10 @@ window.NLDG_BOOK_STUDY={
           ]
         },
         {
-          "heading": "La influencia puede cambiar de dirección — 2 Crónicas 24:15–19",
-          "body": "Después de Joiada, funcionarios se inclinan ante Joás y él escucha. Abandona la casa y sirve ídolos pese a mensajeros de advertencia. Que otros busquen acceso a un líder no significa que ofrezcan sabiduría.",
+          "heading": "La fe de Joás depende demasiado de Joiada — 2 Crónicas 24:2, 15–18",
+          "body": "Joás hace lo recto durante los días de Joiada. La frase prepara la pregunta de qué ocurrirá después. Los buenos mentores forman acceso a Escritura, discernimiento y responsabilidad más allá de su propia presencia. Después de Joiada, funcionarios se inclinan ante Joás y él escucha. Abandona la casa y sirve ídolos pese a mensajeros de advertencia. Que otros busquen acceso a un líder no significa que ofrezcan sabiduría.",
           "paragraphs": [
-            "Después de Joiada, funcionarios se inclinan ante Joás y él escucha. Abandona la casa y sirve ídolos pese a mensajeros de advertencia. Que otros busquen acceso a un líder no significa que ofrezcan sabiduría."
+            "Joás hace lo recto durante los días de Joiada. La frase prepara la pregunta de qué ocurrirá después. Los buenos mentores forman acceso a Escritura, discernimiento y responsabilidad más allá de su propia presencia. Después de Joiada, funcionarios se inclinan ante Joás y él escucha. Abandona la casa y sirve ídolos pese a mensajeros de advertencia. Que otros busquen acceso a un líder no significa que ofrezcan sabiduría."
           ]
         },
         {
@@ -576,14 +576,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "¿Qué hace Joram a su familia y qué uso de su enfermedad debe evitarse?",
-        "¿Cómo protege Josabeat a Joás y qué riesgos asume?",
-        "¿Por qué la acción de Joiada no es modelo de golpe cristiano?",
-        "¿Qué revela “durante toda la vida del sacerdote Joiada” acerca de la formación de Joás?",
-        "¿Por qué falla el primer sistema de reparación y qué mejora después?",
-        "¿Qué nuevas voces escucha Joás tras la muerte de Joiada?",
-        "¿Dónde ocurre el asesinato de Zacarías y qué memoria traiciona?",
-        "¿Cómo narra el capítulo la caída de Joás sin autorizar represalias actuales?"
+        "¿Cómo asegura Joram el poder y por qué la lámpara davídica no lo excusa?",
+        "¿Qué conecta la carta de Elías y qué conclusión sobre enfermedad moderna no permite?",
+        "¿Quién protege a Joás y qué riesgos asume?",
+        "¿Qué acciones violentas del capítulo 23 pertenecen a historia real antigua y no a práctica cristiana?",
+        "¿Por qué se demora la primera reparación y qué cambia el proceso?",
+        "¿Qué frase limita la fidelidad temprana de Joás?",
+        "¿Cómo participan funcionarios, profetas, Espíritu, rey y multitud en la muerte de Zacarías?",
+        "¿Qué consecuencias siguen y por qué no autorizan venganza?"
       ],
       "examination": "¿Depende mi fidelidad de la presencia de una persona? ¿Son transparentes nuestros procesos financieros y de protección? ¿Cómo tratamos a quien dice una verdad que amenaza al liderazgo?",
       "challenge": "Revisa un proceso de protección infantil, finanzas o denuncias con una persona independiente. Documenta responsables, controles, ruta de escalamiento y protección contra represalias.",
@@ -619,8 +619,15 @@ window.NLDG_BOOK_STUDY={
       ],
       "goal": "Examinar obediencia parcial, víctimas de decisiones militares, límites de autoridad, estigma de enfermedad, sacrificio infantil y la corrección que produce cuidado concreto.",
       "opening": "Lee 2 Crónicas 25–28 y marca corazón, escuchar, abandonar, fuerte, orgulloso, confrontar, impuro, quemar, cautivos y devolver. Observa quién sufre por las decisiones de reyes y cómo Oded convierte palabra profética en liberación y cuidado.",
-      "context": "Amasías obedece parcialmente, contrata soldados de Israel y luego los despide por palabra profética. Ellos saquean ciudades de Judá. El rey después adora dioses de Edom y rechaza corrección. Uzías prospera hasta que invade una tarea sacerdotal; sacerdotes lo confrontan y aparece tsara‘at en su frente. El término abarca varias afecciones cutáneas o rituales y no debe equipararse automáticamente con la enfermedad de Hansen ni usarse para estigmatizar discapacidad.\n\nJotam se ordena delante de Dios, pero el pueblo continúa corrompido. Acaz practica idolatría, quema a sus hijos y busca auxilio asirio. Israel toma cautivos de Judá, pero el profeta Oded denuncia su furor y culpa; líderes liberan, visten, alimentan, curan y transportan a personas vulnerables. El relato enfrenta atrocidad y demuestra arrepentimiento público concreto.",
+      "context": "Amasías obedece parcialmente, contrata soldados de Israel y luego los despide por palabra profética. Ellos saquean ciudades de Judá. El rey después adora dioses de Edom y rechaza corrección. Uzías prospera hasta que invade una tarea sacerdotal; sacerdotes lo confrontan y aparece tsara‘at en su frente. El término abarca varias afecciones cutáneas o rituales y no debe equipararse automáticamente con la enfermedad de Hansen ni usarse para estigmatizar discapacidad.\n\nJotam se ordena delante de Dios, pero el pueblo continúa corrompido. Acaz practica idolatría, quema a sus hijos y busca auxilio asirio. Israel toma cautivos de Judá, pero el profeta Oded denuncia su furor y culpa; líderes liberan, visten, alimentan, curan y transportan a personas vulnerables. El relato enfrenta atrocidad y demuestra arrepentimiento público concreto. La desesperación de Acaz multiplica daño: sacrifica hijos y busca una alianza que termina afligiéndolo. Nada de esto se justifica por crisis política o lenguaje religioso.",
       "teaching": [
+        {
+          "heading": "Amasías respeta un límite sin ser fiel de todo corazón — 2 Crónicas 25:1–4",
+          "body": "Castiga a los asesinos de su padre sin matar a sus hijos, conforme a Deuteronomio. El narrador todavía dice que su corazón no es íntegro. Una decisión justa no demuestra por sí sola fidelidad madura.",
+          "paragraphs": [
+            "Castiga a los asesinos de su padre sin matar a sus hijos, conforme a Deuteronomio. El narrador todavía dice que su corazón no es íntegro. Una decisión justa no demuestra por sí sola fidelidad madura."
+          ]
+        },
         {
           "heading": "La obediencia parcial todavía produce víctimas — 2 Crónicas 25:1–13",
           "body": "Amasías obedece al profeta y despide mercenarios, pero ellos atacan ciudades de Judá. Una decisión correcta puede dejar costos previsibles sin atender. El liderazgo responsable pregunta quién queda expuesto y planifica protección y reparación.",
@@ -643,17 +650,17 @@ window.NLDG_BOOK_STUDY={
           ]
         },
         {
-          "heading": "La ayuda de Dios no elimina límites — 2 Crónicas 26:1–15",
-          "body": "Uzías organiza, construye e innova, y recibe ayuda extraordinaria. Precisamente por eso la frase “cuando llegó a ser poderoso, también se volvió orgulloso” advierte que los dones requieren límites y rendición de cuentas.",
+          "heading": "La fuerza de Uzías cruza un límite sagrado — 2 Crónicas 26:1–20",
+          "body": "Uzías organiza, construye e innova, y recibe ayuda extraordinaria. Precisamente por eso la frase “cuando llegó a ser poderoso, también se volvió orgulloso” advierte que los dones requieren límites y rendición de cuentas. Ochenta sacerdotes lo confrontan al invadir el altar. Los líderes dotados necesitan límites que puedan hacerse cumplir; resistir un límite no convierte al líder en perseguido.",
           "paragraphs": [
-            "Uzías organiza, construye e innova, y recibe ayuda extraordinaria. Precisamente por eso la frase “cuando llegó a ser poderoso, también se volvió orgulloso” advierte que los dones requieren límites y rendición de cuentas."
+            "Uzías organiza, construye e innova, y recibe ayuda extraordinaria. Precisamente por eso la frase “cuando llegó a ser poderoso, también se volvió orgulloso” advierte que los dones requieren límites y rendición de cuentas. Ochenta sacerdotes lo confrontan al invadir el altar. Los líderes dotados necesitan límites que puedan hacerse cumplir; resistir un límite no convierte al líder en perseguido."
           ]
         },
         {
-          "heading": "La confrontación sacerdotal protege una frontera — 2 Crónicas 26:16–21",
-          "body": "Ochenta sacerdotes resisten al rey cuando invade el altar. Su tsara‘at lo aparta del templo; no es base para llamar impuras a personas con enfermedad cutánea, discapacidad o desfiguración, ni para negarles participación cristiana.",
+          "heading": "La enfermedad cutánea no debe volverse etiqueta moral — 2 Crónicas 26:19–23",
+          "body": "Ochenta sacerdotes resisten al rey cuando invade el altar. Su tsara‘at lo aparta del templo; no es base para llamar impuras a personas con enfermedad cutánea, discapacidad o desfiguración, ni para negarles participación cristiana. Este juicio particular no justifica estigma, aislamiento más allá de necesidades sanitarias ni negación de dignidad.",
           "paragraphs": [
-            "Ochenta sacerdotes resisten al rey cuando invade el altar. Su tsara‘at lo aparta del templo; no es base para llamar impuras a personas con enfermedad cutánea, discapacidad o desfiguración, ni para negarles participación cristiana."
+            "Ochenta sacerdotes resisten al rey cuando invade el altar. Su tsara‘at lo aparta del templo; no es base para llamar impuras a personas con enfermedad cutánea, discapacidad o desfiguración, ni para negarles participación cristiana. Este juicio particular no justifica estigma, aislamiento más allá de necesidades sanitarias ni negación de dignidad."
           ]
         },
         {
@@ -661,13 +668,6 @@ window.NLDG_BOOK_STUDY={
           "body": "Jotam ordena sus caminos, pero la corrupción comunitaria permanece. La integridad personal importa y también importan formación, estructuras, justicia y sucesión.",
           "paragraphs": [
             "Jotam ordena sus caminos, pero la corrupción comunitaria permanece. La integridad personal importa y también importan formación, estructuras, justicia y sucesión."
-          ]
-        },
-        {
-          "heading": "La desesperación de Acaz multiplica daño — 2 Crónicas 28:1–27",
-          "body": "Acaz sacrifica hijos, adopta idolatría y confía en Asiria, que lo aflige. La crisis no santifica cualquier alianza ni vuelve aceptable dañar a niños. La violencia espiritual debe nombrarse sin eufemismo.",
-          "paragraphs": [
-            "Acaz sacrifica hijos, adopta idolatría y confía en Asiria, que lo aflige. La crisis no santifica cualquier alianza ni vuelve aceptable dañar a niños. La violencia espiritual debe nombrarse sin eufemismo."
           ]
         },
         {
@@ -679,14 +679,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "¿Qué hace bien Amasías con los mercenarios y qué daño posterior queda sin resolver?",
-        "¿Cómo responde Amasías a la corrección después de su victoria?",
-        "¿Qué distingue valentía de provocación orgullosa en 25:17–24?",
-        "¿Qué logros preceden el orgullo de Uzías?",
-        "¿Qué límite cruza y qué no significa tsara‘at para pacientes o personas discapacitadas de hoy?",
-        "¿Qué logra y qué no logra la fidelidad de Jotam?",
-        "¿Qué daños inflige Acaz a niños, pueblo y adoración?",
-        "¿Qué pasos específicos transforman la palabra de Oded en liberación y restitución?"
+        "¿Qué límite respeta Amasías en 25:4 y qué evaluación todavía califica su reinado?",
+        "¿Por qué despide a las tropas del norte y a quiénes dañan después?",
+        "¿Cómo responde Amasías a victoria y corrección profética?",
+        "¿Qué advierte la parábola del cardo y el cedro?",
+        "¿Qué límite cruza Uzías y quién lo confronta?",
+        "¿Qué dice y qué no dice el texto sobre su afección cutánea?",
+        "¿Qué no puede lograr Jotam para otros mediante su propia fidelidad?",
+        "¿Qué acciones convierten la protesta de Oded en restauración concreta para cautivos?"
       ],
       "examination": "¿He permitido que el éxito me haga menos corregible? ¿Quién puede detenerme cuando cruzo un límite? ¿Mi arrepentimiento produce cuidado verificable para quienes cargaron el daño?",
       "challenge": "Identifica un límite de autoridad y una voz con poder real para hacerlo cumplir. Si una decisión causó daño, formula una respuesta que incluya seguridad, recursos, restitución y seguimiento, no solo disculpa.",
@@ -697,7 +697,7 @@ window.NLDG_BOOK_STUDY={
       ],
       "contextParagraphs": [
         "Amasías obedece parcialmente, contrata soldados de Israel y luego los despide por palabra profética. Ellos saquean ciudades de Judá. El rey después adora dioses de Edom y rechaza corrección. Uzías prospera hasta que invade una tarea sacerdotal; sacerdotes lo confrontan y aparece tsara‘at en su frente. El término abarca varias afecciones cutáneas o rituales y no debe equipararse automáticamente con la enfermedad de Hansen ni usarse para estigmatizar discapacidad.",
-        "Jotam se ordena delante de Dios, pero el pueblo continúa corrompido. Acaz practica idolatría, quema a sus hijos y busca auxilio asirio. Israel toma cautivos de Judá, pero el profeta Oded denuncia su furor y culpa; líderes liberan, visten, alimentan, curan y transportan a personas vulnerables. El relato enfrenta atrocidad y demuestra arrepentimiento público concreto."
+        "Jotam se ordena delante de Dios, pero el pueblo continúa corrompido. Acaz practica idolatría, quema a sus hijos y busca auxilio asirio. Israel toma cautivos de Judá, pero el profeta Oded denuncia su furor y culpa; líderes liberan, visten, alimentan, curan y transportan a personas vulnerables. El relato enfrenta atrocidad y demuestra arrepentimiento público concreto. La desesperación de Acaz multiplica daño: sacrifica hijos y busca una alianza que termina afligiéndolo. Nada de esto se justifica por crisis política o lenguaje religioso."
       ],
       "jesusParagraphs": [
         "Jesús recibe la unción del Espíritu sin usurpar poder, toca a personas con afecciones cutáneas sin estigmatizarlas, recibe a niños y proclama libertad a cautivos. También enfrenta rechazo cuando dice verdad. Su autoridad no cruza límites para engrandecerse; sirve, sana y libera."
@@ -732,10 +732,10 @@ window.NLDG_BOOK_STUDY={
           ]
         },
         {
-          "heading": "La adoración restaurada incluye orden y alegría — 2 Crónicas 29:20–36",
-          "body": "Ofrendas, música, canto e inclinación forman una respuesta comunitaria. El sacrificio pertenece al templo antiguo; los cristianos no deben alegorizar cada animal ni usar intensidad emocional como prueba de aprobación divina.",
+          "heading": "La adoración restaurada requiere trabajo compartido — 2 Crónicas 29:20–36",
+          "body": "Ofrendas, música, canto e inclinación forman una respuesta comunitaria. El sacrificio pertenece al templo antiguo; los cristianos no deben alegorizar cada animal ni usar intensidad emocional como prueba de aprobación divina. Gobernantes, sacerdotes, levitas, músicos y asamblea participan; al principio faltan sacerdotes. El relato valora cooperación ordenada, no espectáculo centrado en un líder ni voluntariado coercitivo.",
           "paragraphs": [
-            "Ofrendas, música, canto e inclinación forman una respuesta comunitaria. El sacrificio pertenece al templo antiguo; los cristianos no deben alegorizar cada animal ni usar intensidad emocional como prueba de aprobación divina."
+            "Ofrendas, música, canto e inclinación forman una respuesta comunitaria. El sacrificio pertenece al templo antiguo; los cristianos no deben alegorizar cada animal ni usar intensidad emocional como prueba de aprobación divina. Gobernantes, sacerdotes, levitas, músicos y asamblea participan; al principio faltan sacerdotes. El relato valora cooperación ordenada, no espectáculo centrado en un líder ni voluntariado coercitivo."
           ]
         },
         {
@@ -753,24 +753,24 @@ window.NLDG_BOOK_STUDY={
           ]
         },
         {
-          "heading": "La reforma continúa más allá de un evento — 2 Crónicas 31:1–10",
-          "body": "Después de la fiesta se retira idolatría y se organizan contribuciones. Un encuentro poderoso necesita prácticas duraderas; también debe vigilar que el entusiasmo no se convierta en presión financiera.",
+          "heading": "La generosidad necesita administración y equidad — 2 Crónicas 31",
+          "body": "Después de la fiesta se retira idolatría y se organizan contribuciones. Un encuentro poderoso necesita prácticas duraderas; también debe vigilar que el entusiasmo no se convierta en presión financiera. Depósitos, encargados y listas sostienen a quienes sirven. La generosidad requiere contabilidad, criterios claros, controles y acceso justo, no confianza ciega en figuras espirituales.",
           "paragraphs": [
-            "Después de la fiesta se retira idolatría y se organizan contribuciones. Un encuentro poderoso necesita prácticas duraderas; también debe vigilar que el entusiasmo no se convierta en presión financiera."
+            "Después de la fiesta se retira idolatría y se organizan contribuciones. Un encuentro poderoso necesita prácticas duraderas; también debe vigilar que el entusiasmo no se convierta en presión financiera. Depósitos, encargados y listas sostienen a quienes sirven. La generosidad requiere contabilidad, criterios claros, controles y acceso justo, no confianza ciega en figuras espirituales."
           ]
         },
         {
-          "heading": "La administración fiel cuenta y distribuye — 2 Crónicas 31:11–21",
-          "body": "Depósitos, encargados y listas sostienen a quienes sirven. La generosidad requiere contabilidad, criterios claros, controles y acceso justo, no confianza ciega en figuras espirituales.",
-          "paragraphs": [
-            "Depósitos, encargados y listas sostienen a quienes sirven. La generosidad requiere contabilidad, criterios claros, controles y acceso justo, no confianza ciega en figuras espirituales."
-          ]
-        },
-        {
-          "heading": "La confianza prepara y después descansa en Dios — 2 Crónicas 32:1–23",
+          "heading": "La confianza incluye preparación responsable — 2 Crónicas 32:1–8",
           "body": "Ezequías protege el agua, repara murallas y anima al pueblo. La oración y la preparación prudente trabajan juntas. La liberación particular de Jerusalén no garantiza que toda ciudad fiel evite invasión o trauma.",
           "paragraphs": [
             "Ezequías protege el agua, repara murallas y anima al pueblo. La oración y la preparación prudente trabajan juntas. La liberación particular de Jerusalén no garantiza que toda ciudad fiel evite invasión o trauma."
+          ]
+        },
+        {
+          "heading": "La propaganda asiria ataca la confianza — 2 Crónicas 32:9–23",
+          "body": "Los enviados de Senaquerib ridiculizan la reforma y comparan al SEÑOR con dioses de pueblos conquistados. Ezequías e Isaías oran y Dios libera. Este juicio particular no garantiza protección nacional ni autoriza celebrar la muerte de enemigos.",
+          "paragraphs": [
+            "Los enviados de Senaquerib ridiculizan la reforma y comparan al SEÑOR con dioses de pueblos conquistados. Ezequías e Isaías oran y Dios libera. Este juicio particular no garantiza protección nacional ni autoriza celebrar la muerte de enemigos."
           ]
         },
         {
@@ -782,14 +782,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "¿Qué puertas, personas y tareas forman la limpieza del capítulo 29?",
-        "¿Cómo distingue el texto sacrificio del templo y respuesta comunitaria?",
-        "¿Quién recibe la invitación a la Pascua y cómo responden distintos grupos?",
-        "¿Qué irregularidad existe y sobre qué base ora Ezequías?",
-        "¿Cómo continúa la reforma después de la fiesta?",
-        "¿Qué controles y responsables aparecen en el capítulo 31?",
-        "¿Qué preparativos humanos acompañan la confianza durante la invasión?",
-        "¿Qué añaden Reyes e Isaías a la enfermedad, sanidad y orgullo de Ezequías?"
+        "¿Qué fallas nombra Ezequías y qué pasos reabren el templo?",
+        "¿Qué grupos comparten el trabajo y dónde faltan sacerdotes?",
+        "¿Quién recibe la invitación a la Pascua y cómo responde?",
+        "¿Qué es irregular en algunos participantes y qué pide Ezequías?",
+        "¿Qué controles administrativos aparecen en las porciones y distribuciones?",
+        "¿Qué preparativos acompañan la confianza ante Senaquerib?",
+        "¿Cómo trata el discurso asirio de reinterpretar la reforma de Ezequías?",
+        "¿Qué aportan Crónicas, Reyes e Isaías a la enfermedad y el orgullo posterior del rey?"
       ],
       "examination": "¿Busco un momento de renovación sin las estructuras que lo sostienen? ¿Uso reglas para excluir o gracia para ignorar seguridad? ¿Puedo hablar honestamente del orgullo después de una experiencia poderosa?",
       "challenge": "Revisa una invitación, práctica financiera o plan de crisis. Hazlo más accesible, documentado y seguro. Añade un control independiente o una adaptación pastoral que sirva a las personas sin ocultar responsabilidad.",

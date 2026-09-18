@@ -1,6 +1,40 @@
 (()=>{
  const s=window.NLDG_BOOK_STUDY,hero=document.getElementById('book-hero');
  if(!s||!hero||document.querySelector('.book-geography-resource'))return;
+ const RESTORE_PARAM='nldgMapReturnY';
+ const cleanReturnPath=()=>{const current=new URL(location.href);current.searchParams.delete(RESTORE_PARAM);return `${current.pathname}${current.search}${current.hash}`;};
+ const restoreMapPosition=()=>{
+  const current=new URL(location.href),raw=current.searchParams.get(RESTORE_PARAM);
+  if(raw===null)return;
+  current.searchParams.delete(RESTORE_PARAM);
+  history.replaceState(history.state,'',`${current.pathname}${current.search}${current.hash}`);
+  const y=Number(raw);if(!Number.isFinite(y)||y<0||y>10000000)return;
+  const anchorId=location.hash?decodeURIComponent(location.hash.slice(1)):'';
+  let cancelled=false;const cancel=()=>{cancelled=true};
+  ['wheel','touchmove','pointerdown','keydown'].forEach(type=>window.addEventListener(type,cancel,{once:true,passive:true}));
+  const restore=()=>{if(cancelled)return;const anchor=anchorId?document.getElementById(anchorId):null;if(anchor)anchor.scrollIntoView({block:'start'});else window.scrollTo({top:y,left:0,behavior:'auto'})};
+  requestAnimationFrame(()=>requestAnimationFrame(restore));
+  [350,800,1300].forEach(delay=>setTimeout(restore,delay));
+  window.addEventListener('load',restore,{once:true});
+ };
+ const mapHref=(href,label)=>{
+  const target=new URL(href,location.href);
+  if(target.origin!==location.origin)return href;
+  target.searchParams.set('return',cleanReturnPath());
+  target.searchParams.set('returnLabel',label);
+  target.searchParams.set('returnY',String(Math.max(0,Math.round(window.scrollY))));
+  return `${target.pathname}${target.search}${target.hash}`;
+ };
+ const wireMapLink=(link,label)=>{
+  const base=link.dataset.mapReturnBase||link.getAttribute('href');
+  if(!base||!/biblical-map-[^/]+\.html/i.test(new URL(base,location.href).pathname))return;
+  link.dataset.mapReturnBase=base;
+  const update=()=>link.setAttribute('href',mapHref(base,label));
+  update();
+  ['pointerdown','contextmenu','auxclick','click'].forEach(type=>link.addEventListener(type,update));
+  link.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' ')update()});
+ };
+ restoreMapPosition();
  const book=String(s.book||'').trim().toLocaleLowerCase('es');
  const configs={
   rut:{
@@ -22,4 +56,6 @@
  section.className='book-geography-resource';section.setAttribute('aria-label','Recursos de geografía bíblica');
  section.innerHTML=`<p class="kicker">Explora la geografía</p><h2>${config.title}</h2><p>${config.note}</p><div class="book-geography-links">${config.links.map(([href,label])=>`<a href="${href}" lang="en">${label}</a>`).join('')}</div>`;
  hero.insertAdjacentElement('afterend',section);
+ const studyLabel=`Estudio de ${String(s.book||'la Biblia').trim()}`;
+ section.querySelectorAll('.book-geography-links a').forEach(link=>wireMapLink(link,studyLabel));
 })();

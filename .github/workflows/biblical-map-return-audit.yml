@@ -1,0 +1,77 @@
+name: Biblical Map Return Navigation Audit
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'biblical-map-*.html'
+      - 'biblical-map-return.js'
+      - 'biblical-study-map-links.js'
+      - 'walking-with-jesus-map-links.js'
+      - 'es/biblical-study-map-links.js'
+      - 'script.js'
+      - 'genesis-study.html'
+      - 'walking-with-jesus-study.html'
+      - 'biblical-maps.html'
+      - 'scripts/biblical-map-return-audit.mjs'
+      - '.github/workflows/biblical-map-return-audit.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'biblical-map-*.html'
+      - 'biblical-map-return.js'
+      - 'biblical-study-map-links.js'
+      - 'walking-with-jesus-map-links.js'
+      - 'es/biblical-study-map-links.js'
+      - 'script.js'
+      - 'genesis-study.html'
+      - 'walking-with-jesus-study.html'
+      - 'biblical-maps.html'
+      - 'scripts/biblical-map-return-audit.mjs'
+      - '.github/workflows/biblical-map-return-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  browser-audit:
+    name: Study-to-map return paths on desktop and mobile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Start local site
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/nldg-http.log 2>&1 &
+          echo $! > /tmp/nldg-http.pid
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4173/index.html > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/nldg-http.log
+          exit 1
+
+      - name: Run biblical map return navigation audit
+        run: node scripts/biblical-map-return-audit.mjs
+
+      - name: Upload browser screenshots and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: biblical-map-return-audit
+          path: biblical-map-return-audit-results
+          if-no-files-found: error

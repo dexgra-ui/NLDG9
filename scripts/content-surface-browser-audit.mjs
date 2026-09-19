@@ -25,7 +25,8 @@ const sitemapPaths=[
   'devotionals/check-the-mirror-first.html',
   'devotionals/look-for-the-fruit.html',
   'devotionals/worship-after-sunday.html',
-  'newsletter/grace-for-the-changing-season.html'
+  'newsletter/grace-for-the-changing-season.html',
+  'other-ancient-writings.html'
 ];
 
 function expect(condition,success,failure){
@@ -56,7 +57,7 @@ try{
   await open('homepage','index.html');
   await page.waitForFunction(()=>document.querySelector('#home-latest')?.children.length>0,{timeout:5000}).catch(()=>{});
   const homeLatest=await page.locator('#home-latest').innerText().catch(()=>'');
-  expect(homeLatest.includes('Both of Them Are My Neighbor'),'Homepage Latest includes current extension-library content.','Homepage Latest did not include Both of Them Are My Neighbor after the full library loaded.');
+  expect(homeLatest.includes('Other Ancient Writings'),'Homepage Latest surfaces Other Ancient Writings for study discovery.','Homepage Latest did not surface Other Ancient Writings after the shared library loaded.');
   const featuredSeries=await page.locator('#home-featured .content-series').allInnerTexts().catch(()=>[]);
   const latestSeries=await page.locator('#home-latest .content-series').allInnerTexts().catch(()=>[]);
   const duplicateSeries=latestSeries.filter(series=>series&&featuredSeries.includes(series));
@@ -72,6 +73,38 @@ try{
   expect(!collectionText.includes('Complete Kids Series'),'Bible Studies no longer renders the retired Complete Kids Series card.','Bible Studies still rendered the retired Complete Kids Series card.');
   expect(!collectionText.includes('Complete Youth Series'),'Bible Studies no longer renders the retired Complete Youth Series card.','Bible Studies still rendered the retired Complete Youth Series card.');
   expect(JSON.stringify(firstCollectionHrefs)===JSON.stringify(['book-by-book.html','new-believers.html','growing-with-jesus.html','following-jesus-for-yourself.html']),'Bible Studies preserves the intended foundational collection order.',`Bible Studies foundational order was ${firstCollectionHrefs.join(' → ')}.`);
+  expect((await page.locator('#collection-grid a[href="other-ancient-writings.html"]').count())===1,'Bible Studies catalog includes Other Ancient Writings once.','Bible Studies catalog is missing or duplicating Other Ancient Writings.');
+  const referencePaths=await page.locator('.study-reference-paths-grid a').evaluateAll(links=>links.map(link=>link.getAttribute('href')));
+  expect(JSON.stringify(referencePaths)===JSON.stringify(['book-by-book.html','topics.html','biblical-maps.html','other-ancient-writings.html']),'Bible Studies exposes the four requested study and reference paths.',`Bible Studies reference paths were ${referencePaths.join(' → ')}.`);
+
+  await open('other-ancient-writings','other-ancient-writings.html');
+  const ancientMain=await page.locator('main').innerText();
+  const exactNotice='These writings are included for historical and biblical study. Their presence here does not erase the differences between Christian traditions or automatically identify every work as Scripture. Each resource explains how the writing has been received and why it matters for understanding the biblical world.';
+  expect(ancientMain.includes(exactNotice),'Ancient Writings includes the required canonical-status notice.','Ancient Writings is missing the required introductory notice.');
+  expect((await page.locator('.ancient-section').count())===3,'Ancient Writings has the three requested major sections.','Ancient Writings does not have exactly three major content sections.');
+  expect((await page.locator('[data-ancient-writing-id]').count())===13,'Ancient Writings renders all 13 phase-one overview cards.',`Ancient Writings rendered ${await page.locator('[data-ancient-writing-id]').count()} overview cards instead of 13.`);
+  for(const title of ['1 Enoch','Jubilees','Wisdom of Solomon','Sirach (Ben Sira / Ecclesiasticus)','1 and 2 Maccabees','Ethiopian Meqabyan','The Assumption / Testament of Moses Tradition and Jude 9','Jannes and Jambres in 2 Timothy 3:8','Book of Jashar','Book of the Wars of the Lord','Records of Nathan and Gad','Royal Chronicles and Other Named Records']){
+    expect(ancientMain.includes(title),`Ancient Writings includes ${title}.`,`Ancient Writings is missing ${title}.`);
+  }
+  const enochText=await page.locator('#1-enoch').innerText();
+  expect(enochText.includes('Jude 14–15')&&enochText.includes('Ethiopian Orthodox Tewahedo'),'1 Enoch card identifies the Jude quotation and Ethiopian canonical reception.','1 Enoch card is missing its quotation or canonical-status distinction.');
+  const meqabyanText=await page.locator('#ethiopian-meqabyan').innerText();
+  expect(meqabyanText.toLowerCase().includes('not the same')&&meqabyanText.includes('Greek 1 and 2 Maccabees'),'Meqabyan card explicitly distinguishes Ethiopian Meqabyan from Greek Maccabees.','Meqabyan card does not clearly distinguish the Ethiopian and Greek works.');
+  const jasharText=await page.locator('#book-jashar').innerText();
+  expect(jasharText.includes('Modern publications')&&jasharText.includes('unquestionably identical'),'Jashar card warns against identifying modern Jashar publications with the lost biblical source.','Jashar card is missing the modern-publication caution.');
+  const assumptionText=await page.locator('#assumption-moses').innerText();
+  expect(assumptionText.includes('surviving')&&assumptionText.includes('debated'),'Moses tradition card labels the incomplete and disputed textual relationship.','Moses tradition card overstates or omits the disputed textual relationship.');
+  const ancientNav=page.locator('.section-navigation a[href="other-ancient-writings.html"]');
+  expect((await ancientNav.count())===1&&await ancientNav.getAttribute('aria-current')==='page','Ancient Writings is integrated into Bible Studies contextual navigation.','Ancient Writings contextual navigation is missing or not active.');
+  const crossLinkLabel=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('1-enoch')?.label||'');
+  expect(crossLinkLabel==='Related Ancient Writing: Learn about 1 Enoch and its connection to Jude 14–15.','Ancient-writing cross-link API produces the requested 1 Enoch/Jude wording.',`Ancient-writing cross-link label was: ${crossLinkLabel}`);
+  await page.setViewportSize({width:390,height:844});
+  expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Ancient Writings has no horizontal overflow at 390px.','Ancient Writings overflows horizontally at 390px.');
+  const firstAncientLink=page.locator('.ancient-links a').first();
+  const firstAncientBox=await firstAncientLink.boundingBox();
+  expect(Boolean(firstAncientBox&&firstAncientBox.height>=44),'Ancient Writings mobile links meet the 44px touch-target height.','Ancient Writings mobile links are below the 44px touch-target height.');
+  await page.setViewportSize({width:1440,height:1000});
+
 
   await open('search','search.html');
   const search=page.locator('#site-search');
@@ -81,6 +114,11 @@ try{
     const results=await page.locator('#search-results').innerText().catch(()=>'');
     expect(results.includes(title),`Search finds ${title}.`,`Search did not find ${title}.`);
   }
+  await search.fill('Other Ancient Writings');
+  await page.waitForTimeout(250);
+  const ancientSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
+  expect(ancientSearchResults.includes('Other Ancient Writings'),'Search finds Other Ancient Writings.','Search did not find Other Ancient Writings.');
+
 
   await open('site-map','site-map.html');
   await page.waitForFunction(()=>document.querySelector('#site-map-content-index')?.textContent?.includes('Before You Hit Share'),{timeout:5000}).catch(()=>{});
@@ -88,6 +126,9 @@ try{
   for(const title of requiredTitles){
     expect(siteMapText.includes(title),`Site Map lists ${title}.`,`Site Map did not list ${title}.`);
   }
+  expect(siteMapText.includes('Other Ancient Writings'),'Generated Site Map index lists Other Ancient Writings.','Generated Site Map index is missing Other Ancient Writings.');
+  expect((await page.locator('.site-map-grid a[href="other-ancient-writings.html"]').count())>0,'Manual Site Map Bible Studies section links Other Ancient Writings.','Manual Site Map is missing Other Ancient Writings.');
+
 
   await open('news','news.html');
   const newsText=await page.locator('main').innerText();

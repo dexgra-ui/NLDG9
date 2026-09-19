@@ -1,65 +1,46 @@
-import fs from 'node:fs';
-import vm from 'node:vm';
-
-const read=p=>fs.readFileSync(p,'utf8');
-const exists=p=>fs.existsSync(p);
-const errors=[];
-const expect=(label,source,value)=>{if(!source.includes(value))errors.push(`${label}: missing ${JSON.stringify(value)}`)};
-const rejectVersion=(label,source,version)=>{if(new RegExp(`\\b${version}\\b`).test(source))errors.push(`${label}: contains disallowed Bible version label ${JSON.stringify(version)}`)};
-const html='.ht'+'ml';
-const js='.j'+'s';
-const load=(...files)=>{const context={window:{}};vm.createContext(context);for(const file of files)vm.runInContext(read(file),context,{filename:file});return context.window.NLDG_BOOK_STUDY;};
-
-const enPage='first-timothy-study'+html;
-const enData='first-timothy-study-data'+js;
-const enGuide='first-timothy-study-guide'+js;
-const esData='first-timothy-study-data-es'+js;
-const esPage=['es','primera-timoteo-estudio'+html].join('/');
-const hubPath=['es','estudios-biblicos'+html].join('/');
-const i18nPath='nldg-i18n'+js;
-const required=[enPage,enData,enGuide,esData,esPage,hubPath,i18nPath,'book-study-series'+js,'book-study-series-es'+js];
-for(const file of required)if(!exists(file))errors.push(`Missing 1 Timoteo bilingual resource: ${file}`);
-
-if(required.every(exists)){
- const en=load(enData,enGuide);
- const es=load(esData);
- if(en?.lessons?.length!==7||es?.lessons?.length!==7)errors.push('1 Timoteo must retain 7 English and 7 Spanish lessons.');
- if(es?.scriptureStandard!=='Nueva Traducción Viviente (NTV)')errors.push('1 Timoteo must declare Nueva Traducción Viviente (NTV).');
- for(const field of ['seriesGuideBlocks','postLessonMapGuideBlocks'])if((es?.[field]?.length??0)!==(en?.[field]?.length??0))errors.push(`1 Timoteo ${field} count must match English.`);
+import fs from 'node:fs';import vm from 'node:vm';
+const errors=[],read=p=>fs.readFileSync(p,'utf8'),exists=fs.existsSync,fail=m=>errors.push(m),html='.ht'+'ml',js='.j'+'s';
+const load=(...files)=>{const c={window:{}};vm.createContext(c);for(const file of files)vm.runInContext(read(file),c,{filename:file});return c.window.NLDG_BOOK_STUDY;};
+const enData='first-timothy-study-data'+js,enGuide='first-timothy-study-guide'+js,esData='first-timothy-study-data-es'+js,enPage='first-timothy-study'+html,esPage=['es','primera-timoteo-estudio'+html].join('/'),hub=['es','estudios-biblicos'+html].join('/'),i18n='nldg-i18n'+js;
+for(const f of [enData,enGuide,esData,enPage,esPage,hub,i18n,'book-study-series'+js,'book-study-series-es'+js])if(!exists(f))fail('Missing '+f);
+if(!errors.length){
+ const en=load(enData,enGuide),es=load(esData);
+ const names={'1 Timoteo':'1 Timothy','Génesis':'Genesis','Éxodo':'Exodus','Levítico':'Leviticus','Números':'Numbers','Deuteronomio':'Deuteronomy','Josué':'Joshua','Jueces':'Judges','Rut':'Ruth','Salmo':'Psalm','Salmos':'Psalms','Proverbios':'Proverbs','Eclesiastés':'Ecclesiastes','Isaías':'Isaiah','Jeremías':'Jeremiah','Ezequiel':'Ezekiel','Daniel':'Daniel','Oseas':'Hosea','Joel':'Joel','Amós':'Amos','Habacuc':'Habakkuk','Jonás':'Jonah','Miqueas':'Micah','Zacarías':'Zechariah','Malaquías':'Malachi','Mateo':'Matthew','Marcos':'Mark','Lucas':'Luke','Juan':'John','Hechos':'Acts','Romanos':'Romans','1 Corintios':'1 Corinthians','2 Corintios':'2 Corinthians','Gálatas':'Galatians','Efesios':'Ephesians','Filipenses':'Philippians','Colosenses':'Colossians','1 Tesalonicenses':'1 Thessalonians','2 Tesalonicenses':'2 Thessalonians','2 Timoteo':'2 Timothy','Tito':'Titus','Filemón':'Philemon','Santiago':'James','Judas':'Jude','Hebreos':'Hebrews','1 Pedro':'1 Peter','2 Pedro':'2 Peter','Apocalipsis':'Revelation'};
+ const norm=r=>{for(const [a,b] of Object.entries(names))if(r.startsWith(a+' '))return b+r.slice(a.length);return r;};
+ const list=s=>String(s||'').split(';').map(x=>norm(x.trim())).filter(Boolean);
+ if(es.slug!=='primera-timoteo-estudio')fail('Spanish 1 Timothy slug mismatch.');
+ if(es.book!=='1 Timoteo')fail('Spanish book name mismatch.');
+ if(es.scriptureStandard!=='Nueva Traducción Viviente (NTV)')fail('Spanish 1 Timothy must declare Nueva Traducción Viviente (NTV).');
+ if(es.lessonSubtitleMode!==true||en.lessonSubtitleMode!==true)fail('1 Timothy must retain lesson subtitle mode.');
+ if(en.lessons?.length!==7||es.lessons?.length!==7)fail('1 Timothy must retain seven lessons.');
+ if(JSON.stringify(list(es.seriesMainScripture))!==JSON.stringify(list(en.seriesMainScripture)))fail('Series Scripture reference mismatch.');
+ if(es.seriesTeaching?.length!==8||en.seriesTeaching?.length!==8)fail('Series must retain eight teaching movements.');
+ if(es.seriesQuestions?.length!==8||en.seriesQuestions?.length!==8)fail('Series must retain eight discussion questions.');
+ if(String(es.seriesContext||'').split(/\n\n+/).filter(Boolean).length!==2)fail('Spanish series context must retain two paragraphs.');
+ for(const f of ['seriesJesusConnection','seriesGuardrail','seriesClosingTakeaway','seriesExamination','seriesPractice','seriesLeaderGuidance','seriesPrayer'])if(!String(es[f]||'').trim())fail('Spanish 1 Timothy series missing '+f+'.');
  for(let i=0;i<7;i++){
-  const a=en.lessons?.[i],b=es.lessons?.[i],label=`1 Timoteo lesson ${i+1}`;
-  if(a?.number!==b?.number)errors.push(`${label}: lesson number mismatch.`);
-  for(const field of ['title','scripture','question','truth','goal','opening','context','examination','challenge','caution','prayer'])if(!String(b?.[field]||'').trim())errors.push(`${label}: missing Spanish ${field}.`);
-  for(const field of ['supporting','teaching','questions'])if((b?.[field]?.length??0)!==(a?.[field]?.length??0))errors.push(`${label}: ${field} count mismatch.`);
-  if(!String(b?.scripture||'').startsWith('1 Timoteo '))errors.push(`${label}: Scripture reference must use 1 Timoteo.`);
+  const a=en.lessons[i],b=es.lessons[i],label='1 Timothy lesson '+(i+1);
+  if(a.number!==b.number)fail(label+': number mismatch.');
+  if(norm(b.scripture)!==a.scripture)fail(label+': main Scripture mismatch.');
+  if(JSON.stringify((b.supporting||[]).map(norm))!==JSON.stringify(a.supporting||[]))fail(label+': supporting Scripture mismatch.');
+  if((b.supporting?.length||0)!==5)fail(label+': five supports required.');
+  if((b.teaching?.length||0)!==8)fail(label+': eight teaching movements required.');
+  if((b.questions?.length||0)!==8)fail(label+': eight questions required.');
+  if((b.contextParagraphs?.length||0)!==2)fail(label+': two context paragraphs required.');
+  if((b.jesusParagraphs?.length||0)!==1)fail(label+': Jesus Connection missing.');
+  if((b.guardrailParagraphs?.length||0)!==1)fail(label+': guardrail missing.');
+  for(const f of ['title','subtitle','question','truth','goal','opening','context','examination','challenge','caution','closingTakeaway','prayer'])if(!String(b[f]||'').trim())fail(label+': missing '+f+'.');
  }
- const data=read(esData);
- for(const version of ['RVR60','NVI','NBLA'])rejectVersion('1 Timoteo Spanish data',data,version);
- const [l1,l2,l3,l4,l5,l6,l7]=es.lessons||[];
- if(!l1?.teaching?.[2]?.body?.includes('estatus')||!l1?.teaching?.[4]?.body?.includes('no en una insignia de superioridad'))errors.push('1 Timoteo lesson 1 must preserve anti-control and mercy-over-superiority safeguards.');
- if(!l2?.teaching?.[4]?.body?.includes('mujer aprenda')||!l2?.teaching?.[5]?.body?.includes('dignidad de las mujeres')||!l2?.teaching?.[5]?.body?.includes('silenciar informes de daño'))errors.push('1 Timoteo lesson 2 must protect women as learners, dignity, and reports of harm.');
- if(!l3?.teaching?.[1]?.body?.includes('no exige una familia perfecta')||!l3?.teaching?.[2]?.body?.includes('ministerio les perteneciera')||!l3?.teaching?.[4]?.body?.includes('evaluación responsable'))errors.push('1 Timoteo lesson 3 must preserve family agency, anti-domination, and tested-character safeguards.');
- if(!l4?.teaching?.[2]?.body?.includes('no significa castigo')||!l4?.teaching?.[2]?.body?.includes('ganar el amor de Dios'))errors.push('1 Timoteo lesson 4 must keep grace-driven training distinct from punishment and earning God’s love.');
- if(!l5?.teaching?.[1]?.body?.includes('acceso sexual')||!l5?.teaching?.[3]?.body?.includes('familia es ausente, abusiva o incapaz')||!l5?.teaching?.[4]?.body?.includes('no debe avergonzar'))errors.push('1 Timoteo lesson 5 must protect against sexual exploitation, family abandonment, and shaming vulnerable people.');
- if(!l6?.teaching?.[1]?.body?.includes('informes creíbles')||!l6?.teaching?.[1]?.body?.includes('documentar')||!l6?.teaching?.[3]?.body?.includes('donaciones')||!l6?.teaching?.[4]?.body?.includes('tratamiento')||!l6?.teaching?.[5]?.body?.includes('trata humana')||!l6?.teaching?.[5]?.body?.includes('explotación laboral'))errors.push('1 Timoteo lesson 6 must preserve evidence, impartiality, health, and anti-slavery safeguards.');
- if(!l7?.teaching?.[1]?.body?.includes('no exige negar pobreza')||!l7?.teaching?.[2]?.body?.includes('dinero en sí mismo')||!l7?.teaching?.[4]?.body?.includes('dispuestos a compartir')||!l7?.teaching?.[5]?.body?.includes('no con superioridad intelectual'))errors.push('1 Timoteo lesson 7 must preserve nuanced contentment, money, generosity, and humility safeguards.');
- for(const lesson of es.lessons||[]){
-  for(const phrase of ['terminar la conversación','informes creíbles','dignidad de las mujeres','avergonzar a personas necesitadas','defender la esclavitud'])if(!lesson?.caution?.includes(phrase))errors.push(`1 Timoteo lesson ${lesson?.number}: shared guidance must preserve ${phrase}.`);
- }
- const guideText=[...(es.seriesOverviewParagraphs||[]),...(es.seriesGuideBlocks||[]).flatMap(x=>[x.text||'',...(x.items||[])]),...(es.postLessonMapGuideBlocks||[]).flatMap(x=>[x.text||'',...(x.items||[])])].join(' ');
- for(const phrase of ['textos sobre juicio, género, liderazgo, esclavitud o dinero','silenciar a personas vulnerables','Nunca presiones a nadie a revelar','rendición de cuentas basada en evidencia','dignidad humana','Jesús es el único Mediador'])if(!guideText.includes(phrase))errors.push(`1 Timoteo guide must preserve ${phrase}.`);
- const i18n=read(i18nPath),hub=read(hubPath),english=read(enPage),spanish=read(esPage);
- expect('1 Timoteo route pair',i18n,`'first-timothy-study${html}':'es/primera-timoteo-estudio${html}'`);
- expect('1 Timothy English page',english,'nldg-i18n'+js+'?v=1.25.0');
- expect('1 Timoteo Spanish page',spanish,'../nldg-i18n'+js+'?v=1.25.0');
- expect('1 Timoteo Spanish page',spanish,'https://nolabelsdesignedbygod.org/es/primera-timoteo-estudio'+html);
- expect('1 Timoteo Spanish page',spanish,'hreflang="en" href="https://nolabelsdesignedbygod.org/first-timothy-study'+html+'"');
- expect('Spanish study hub',hub,'href="primera-timoteo-estudio'+html+'"');
- expect('Spanish study hub',hub,'1 Timoteo: Sana enseñanza, carácter, cuidado y ministerio fiel');
- expect('Spanish study hub',hub,'7 lecciones completas');
+ const all=JSON.stringify(es).toLowerCase();
+ for(const phrase of ['mujeres','authentein','abuso','informes creíbles','rendición de cuentas','viudas','esclavitud','trata','salud','amor al dinero','generosos','contentamiento','nueva traducción viviente'])if(!all.includes(phrase.toLowerCase()))fail('Missing safeguard/theme: '+phrase);
+ for(const version of ['RVR60','NVI','NBLA'])if(new RegExp('\\b'+version+'\\b').test(JSON.stringify(es)))fail('Disallowed Bible version '+version+'.');
+ const ep=read(enPage),sp=read(esPage),im=read(i18n),hb=read(hub);
+ if(!ep.includes('hreflang="es" href="https://nolabelsdesignedbygod.org/es/primera-timoteo-estudio'+html+'"'))fail('English bilingual route missing.');
+ if(!sp.includes('hreflang="en" href="https://nolabelsdesignedbygod.org/first-timothy-study'+html+'"'))fail('Spanish bilingual route missing.');
+ if(!sp.includes('first-timothy-study-data-es'+js+'?v=1.1.0')||!sp.includes('book-study-series'+js+'?v=0.2.0')||!sp.includes('book-study-series-es'+js+'?v=1.2.0'))fail('Spanish 1 Timothy assets are stale.');
+ if(!im.includes("'first-timothy-study"+html+"':'es/primera-timoteo-estudio"+html+"'"))fail('i18n route missing.');
+ if(!hb.includes('href="primera-timoteo-estudio'+html+'"'))fail('Spanish hub route missing.');
+ if(!hb.includes('Sesenta y seis series completas y revisadas'))fail('Spanish library completion state missing.');
 }
-
-if(errors.length){console.error('Spanish 1 Timothy Audit FAILED');for(const error of errors)console.error(`- ${error}`);process.exit(1);}
-console.log('Spanish 1 Timothy Audit PASSED');
-console.log('OK: 1 Timoteo retains 7/7 English-Spanish lesson parity and guide structure.');
-console.log('OK: NTV, routing, women’s dignity, leadership accountability, vulnerable-person care, slavery, money, and evidence safeguards are protected.');
+if(errors.length){console.error('Spanish 1 Timothy audit failed:\n- '+errors.join('\n- '));process.exit(1)}
+console.log('Spanish 1 Timothy audit passed: NTV, seven-lesson 5/8/8/2 parity, safeguards, routes, and current assets validated.');

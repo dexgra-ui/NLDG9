@@ -26,7 +26,8 @@ const sitemapPaths=[
   'devotionals/look-for-the-fruit.html',
   'devotionals/worship-after-sunday.html',
   'newsletter/grace-for-the-changing-season.html',
-  'other-ancient-writings.html'
+  'other-ancient-writings.html',
+  'ancient-writing-1-enoch.html'
 ];
 
 function expect(condition,success,failure){
@@ -57,7 +58,7 @@ try{
   await open('homepage','index.html');
   await page.waitForFunction(()=>document.querySelector('#home-latest')?.children.length>0,{timeout:5000}).catch(()=>{});
   const homeLatest=await page.locator('#home-latest').innerText().catch(()=>'');
-  expect(homeLatest.includes('Other Ancient Writings'),'Homepage Latest surfaces Other Ancient Writings for study discovery.','Homepage Latest did not surface Other Ancient Writings after the shared library loaded.');
+  expect(homeLatest.includes('1 Enoch: Historical & Biblical Guide'),'Homepage Latest surfaces the new 1 Enoch detailed guide.','Homepage Latest did not surface the new 1 Enoch detailed guide after the shared library loaded.');
   const featuredSeries=await page.locator('#home-featured .content-series').allInnerTexts().catch(()=>[]);
   const latestSeries=await page.locator('#home-latest .content-series').allInnerTexts().catch(()=>[]);
   const duplicateSeries=latestSeries.filter(series=>series&&featuredSeries.includes(series));
@@ -122,6 +123,32 @@ try{
   expect((await ancientNav.count())===1&&await ancientNav.getAttribute('aria-current')==='page','Ancient Writings is integrated into Bible Studies contextual navigation.','Ancient Writings contextual navigation is missing or not active.');
   const crossLinkLabel=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('1-enoch')?.label||'');
   expect(crossLinkLabel==='Related Ancient Writing: Learn about 1 Enoch and its connection to Jude 14–15.','Ancient-writing cross-link API produces the requested 1 Enoch/Jude wording.',`Ancient-writing cross-link label was: ${crossLinkLabel}`);
+  const crossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('1-enoch')?.href||'');
+  expect(crossLinkHref==='ancient-writing-1-enoch.html','The 1 Enoch cross-link registry routes to the detailed guide.',`The 1 Enoch cross-link registry routed to ${crossLinkHref}.`);
+  expect((await page.locator('[id="1-enoch"] a[href="ancient-writing-1-enoch.html"]').count())===1,'The 1 Enoch overview card links to its detailed guide.','The 1 Enoch overview card is missing its detailed-guide link.');
+
+  await open('1-enoch-guide','ancient-writing-1-enoch.html');
+  const enochGuide=await page.locator('main').innerText();
+  expect(enochGuide.includes('What is 1 Enoch?'),'1 Enoch guide includes a clear orientation section.','1 Enoch guide is missing its orientation section.');
+  for(const sectionTitle of ['Book of the Watchers','Book of Parables / Similitudes','Astronomical Book / Book of Luminaries','Dream Visions','Epistle of Enoch and concluding materials']){
+    expect(enochGuide.includes(sectionTitle),`1 Enoch guide includes ${sectionTitle}.`,`1 Enoch guide is missing ${sectionTitle}.`);
+  }
+  expect(enochGuide.includes('Aramaic fragments recovered among the Dead Sea Scrolls'),'1 Enoch guide explains the Qumran Aramaic evidence.','1 Enoch guide is missing the Qumran Aramaic evidence.');
+  expect(enochGuide.includes('canonical in the Ethiopian Orthodox Tewahedo Church')||enochGuide.includes('belongs to the biblical canon of the Ethiopian Orthodox Tewahedo Church'),'1 Enoch guide accurately identifies Ethiopian Orthodox Tewahedo canonical reception.','1 Enoch guide is missing Ethiopian Orthodox Tewahedo canonical reception.');
+  expect(enochGuide.includes('Jude 14–15 and 1 Enoch 1:9'),'1 Enoch guide identifies the direct Jude quotation connection.','1 Enoch guide is missing the direct Jude quotation connection.');
+  expect(enochGuide.includes('Genesis 6:1–4 and the Watchers'),'1 Enoch guide distinguishes the Genesis 6 interpretive expansion.','1 Enoch guide is missing the Genesis 6 Watchers connection.');
+  expect(enochGuide.includes('NLDG is not reproducing a complete translation yet.'),'1 Enoch guide defers full-text reproduction pending verification.','1 Enoch guide does not clearly defer full-text reproduction.');
+  expect(enochGuide.includes('It is misleading to say simply that “the church removed Enoch from the Bible.”'),'1 Enoch guide rejects the oversimplified removed-from-the-Bible claim.','1 Enoch guide is missing the canon-history caution.');
+  expect(!enochGuide.includes('Phase 2'),'1 Enoch public guide omits internal development-phase language.','1 Enoch public guide exposes internal Phase 2 language.');
+  expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=8,'1 Enoch guide provides a substantial academic and primary source list.','1 Enoch guide does not provide enough research sources.');
+  expect((await page.locator('a[href="other-ancient-writings.html"]').count())>=2,'1 Enoch guide provides clear return paths to Other Ancient Writings.','1 Enoch guide does not provide clear return paths to Other Ancient Writings.');
+  expect((await page.locator('a[href="jude-study.html"]').count())>=1,'1 Enoch guide links back to the canonical Jude study.','1 Enoch guide is missing the Jude study return link.');
+  await page.setViewportSize({width:390,height:844});
+  expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'1 Enoch guide has no horizontal overflow at 390px.','1 Enoch guide overflows horizontally at 390px.');
+  const enochInternalLink=page.locator('.detail-connection-list a').first();
+  const enochLinkBox=await enochInternalLink.boundingBox();
+  expect(Boolean(enochLinkBox&&enochLinkBox.height>=44),'1 Enoch canonical-study links meet the 44px mobile touch target.','1 Enoch canonical-study links are below the 44px mobile touch target.');
+  await page.setViewportSize({width:1440,height:1000});
   await page.setViewportSize({width:390,height:844});
   expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Ancient Writings has no horizontal overflow at 390px.','Ancient Writings overflows horizontally at 390px.');
   const firstAncientLink=page.locator('.ancient-links a').first();
@@ -142,6 +169,10 @@ try{
   await page.waitForTimeout(250);
   const ancientSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
   expect(ancientSearchResults.includes('Other Ancient Writings'),'Search finds Other Ancient Writings.','Search did not find Other Ancient Writings.');
+  await search.fill('1 Enoch');
+  await page.waitForTimeout(250);
+  const enochSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
+  expect(enochSearchResults.includes('1 Enoch: Historical & Biblical Guide'),'Search finds the detailed 1 Enoch guide.','Search did not find the detailed 1 Enoch guide.');
 
 
   await open('site-map','site-map.html');
@@ -151,6 +182,7 @@ try{
     expect(siteMapText.includes(title),`Site Map lists ${title}.`,`Site Map did not list ${title}.`);
   }
   expect(siteMapText.includes('Other Ancient Writings'),'Generated Site Map index lists Other Ancient Writings.','Generated Site Map index is missing Other Ancient Writings.');
+  expect(siteMapText.includes('1 Enoch: Historical & Biblical Guide'),'Generated Site Map index lists the detailed 1 Enoch guide.','Generated Site Map index is missing the detailed 1 Enoch guide.');
   expect((await page.locator('.site-map-grid a[href="other-ancient-writings.html"]').count())>0,'Manual Site Map Bible Studies section links Other Ancient Writings.','Manual Site Map is missing Other Ancient Writings.');
 
 

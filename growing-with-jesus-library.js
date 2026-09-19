@@ -28,15 +28,4 @@ if(!merge()){
   const timer=setInterval(()=>{tries+=1;if(merge()||tries>=100)clearInterval(timer);},20);
 }
 
-const addHubCard=()=>{
-  const grid=document.querySelector('#collection-grid[data-static="true"]');
-  if(!grid||grid.querySelector('[data-growing-with-jesus-card]'))return;
-  const card=document.createElement('article');
-  card.className='journey-collection-card';
-  card.dataset.growingWithJesusCard='true';
-  card.innerHTML='<div class="collection-card-top"><span class="collection-icon" aria-hidden="true">🌱</span><span class="collection-status ready">Complete Kids Series</span></div><h3>Growing with Jesus</h3><p class="collection-description">Ten simple, Scripture-centered studies for children ages 7–11, each with a trusted-adult guide for home, church, or one-on-one discipleship.</p><div class="collection-card-footer"><small>10 of 10 children’s studies available</small><a class="collection-action" href="growing-with-jesus.html">Open Kids Journey <span aria-hidden="true">→</span></a></div>';
-  const first=grid.firstElementChild;
-  if(first)first.insertAdjacentElement('afterend',card);else grid.appendChild(card);
-};
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',addHubCard,{once:true});else addHubCard();
 })();

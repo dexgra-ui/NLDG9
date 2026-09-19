@@ -23,7 +23,7 @@ window.NLDG_ANCIENT_WRITINGS_API={
   },
   relatedLink:id=>{
     const item=writings.find(entry=>entry.id===id);
-    return item?{label:`Related Ancient Writing: Learn about ${item.title}.`,href:item.url,relationship:item.relationship,passages:[...item.passages]}:null;
+    return item?{label:`Related Ancient Writing: Learn about ${item.title}${item.passages[0]?` and its connection to ${item.passages[0]}`:''}.`,href:item.url,relationship:item.relationship,passages:[...item.passages]}:null;
   }
 };
 })();

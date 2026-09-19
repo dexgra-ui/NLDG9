@@ -77,6 +77,68 @@
     }
   }
 
+  const normalizeStaticCollections=()=>{
+    if(!collections?.dataset.static)return;
+    const canonicalOrder=[
+      'book-by-book.html',
+      'new-believers.html',
+      'growing-with-jesus.html',
+      'following-jesus-for-yourself.html',
+      'standalone-studies.html',
+      'after-benediction-series.html',
+      'preferences-idols-series.html',
+      'marriage-family.html',
+      'men-of-faith.html',
+      'women-of-faith.html',
+      'difficult-questions.html',
+      'leadership.html',
+      'faith-when-your-heart-is-hurting.html',
+      'technology-ai.html'
+    ];
+    const rank=new Map(canonicalOrder.map((href,index)=>[href,index]));
+    const keyFor=card=>{
+      const link=card.querySelector('.collection-action[href]');
+      if(link){
+        const href=(link.getAttribute('href')||'').split('#')[0].split('?')[0];
+        return {key:`href:${href}`,href};
+      }
+      const title=(card.querySelector('h3')?.textContent||'').trim().toLowerCase();
+      return {key:`title:${title}`,href:''};
+    };
+    const specificity=card=>{
+      const text=card.textContent||'';
+      let score=0;
+      if(text.includes('Ages 7–11'))score+=4;
+      if(text.includes('Ages 11–18'))score+=4;
+      if(text.includes('Part of Faith & Truth'))score+=3;
+      if(text.includes('10 guided steps'))score+=2;
+      return score;
+    };
+    const unique=new Map();
+    [...collections.querySelectorAll(':scope > .journey-collection-card')].forEach(card=>{
+      const identity=keyFor(card);
+      const existing=unique.get(identity.key);
+      if(!existing){unique.set(identity.key,card);return;}
+      if(specificity(card)>specificity(existing)){
+        existing.remove();
+        unique.set(identity.key,card);
+      }else{
+        card.remove();
+      }
+    });
+    [...unique.values()]
+      .sort((a,b)=>{
+        const aHref=keyFor(a).href;
+        const bHref=keyFor(b).href;
+        const aRank=rank.has(aHref)?rank.get(aHref):Number.MAX_SAFE_INTEGER;
+        const bRank=rank.has(bHref)?rank.get(bHref):Number.MAX_SAFE_INTEGER;
+        return aRank-bRank;
+      })
+      .forEach(card=>collections.appendChild(card));
+  };
+  normalizeStaticCollections();
+  requestAnimationFrame(normalizeStaticCollections);
+
   const renderGrid=()=>{
     const term=(search?.value||'').trim().toLowerCase();
     const type=filter?.value||'all';

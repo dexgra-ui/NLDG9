@@ -19,6 +19,7 @@
   const collections=document.getElementById('collection-grid');
   const featured=document.getElementById('featured-study');
   const dashboard=document.getElementById('study-dashboard');
+  const dashboardSection=document.getElementById('study-journey-section')||dashboard?.closest('.journey-section');
   const continueSection=document.getElementById('continue-study');
   const continueCard=document.getElementById('continue-study-card');
   const favoritesSection=document.getElementById('favorites-section');
@@ -37,10 +38,8 @@
     {id:'marriage-family',icon:'💍',title:'Marriage & Family',eyebrow:'Christ-centered homes',description:'Rooted in Christ. Growing in love. Blessing others through marriage, communication, parenting, family discipleship, belonging, boundaries, stewardship, and service.',meta:'10 of 10 studies available',status:'available',href:'marriage-family.html',action:'Open Complete Journey'},
     {id:'difficult-questions',icon:'❓',title:'Difficult Questions',eyebrow:'Faith under examination',description:'Honest questions. Faithful Scripture. Hope in Christ through suffering, Scripture, science, denominations, salvation, silence, judgment, other religions, doubt, and discipleship.',meta:'10 of 10 studies available',status:'available',href:'difficult-questions.html',action:'Open Complete Journey'},
     {id:'leadership',icon:'🧭',title:'Leadership',eyebrow:'Serve and equip',description:'Called by God. Formed in character. Leading through service, wisdom, healthy teams, accountability, endurance, and multiplication.',meta:'10 of 10 studies available',status:'available',href:'leadership.html',action:'Open Complete Journey'},
-    {id:'faith-hurting',icon:'🕊️',title:'Faith When Your Heart Is Hurting',eyebrow:'Grief & Christian hope',description:'An eight-week biblical journey through grief, lament, God’s presence, different grief responses, compassionate care, overlooked losses, and resurrection hope.',meta:'8 of 8 lessons available',status:'available',href:'faith-when-your-heart-is-hurting.html',action:'Open Complete Journey'},
     {id:'sunday-school',icon:'📖',title:'Sunday School',eyebrow:'Classes & small groups',description:'Prepared Bible lessons for teaching, group discussion, personal study, and weekly discipleship.',meta:`${sundaySchool.length} published ${sundaySchool.length===1?'lesson':'lessons'}`,status:sundaySchool.length?'available':'planned',filter:'Sunday School',action:sundaySchool.length?'Browse Lessons':'Coming Soon'},
-    {id:'christian-living',icon:'❤️',title:'Christian Living',eyebrow:'Everyday discipleship',description:'Practical studies about prayer, forgiveness, rest, stewardship, serving, endurance, and living faithfully.',meta:'Published studies available',status:'available',filter:'Christian Living',action:'Browse the Collection'},
-    {id:'technology-ai',icon:'💻',title:'Technology & AI',eyebrow:'Digital discipleship',description:'Follow Christ wisely through artificial intelligence, social media, online identity, misinformation, privacy, and digital habits.',meta:'7 lessons available in Current Events',status:'available',href:'current-events-series.html?week=15',action:'Start the Collection'}
+    {id:'christian-living',icon:'❤️',title:'Christian Living',eyebrow:'Everyday discipleship',description:'Practical studies about prayer, forgiveness, rest, stewardship, serving, endurance, and living faithfully.',meta:'Published studies available',status:'available',filter:'Christian Living',action:'Browse the Collection'}
   ];
 
   const journeyCard=item=>{
@@ -66,15 +65,6 @@
 
   if(collections&&!collections.dataset.static){
     collections.innerHTML=journeyCollections.map(journeyCard).join('');
-  }else if(collections&&collections.dataset.static&&!collections.querySelector('a[href="faith-when-your-heart-is-hurting.html"]')){
-    const grief=journeyCollections.find(item=>item.id==='faith-hurting');
-    if(grief){
-      const holder=document.createElement('div');
-      holder.innerHTML=journeyCard(grief);
-      const griefCard=holder.firstElementChild;
-      const leadership=collections.querySelector('a[href="leadership.html"]')?.closest('.journey-collection-card');
-      if(leadership)leadership.insertAdjacentElement('afterend',griefCard);else collections.appendChild(griefCard);
-    }
   }
 
   const renderGrid=()=>{
@@ -106,9 +96,11 @@
     const completed=studies.filter(study=>state[study.id]?.completed).length;
     const inProgress=studies.filter(study=>!state[study.id]?.completed&&(state[study.id]?.progress||0)>0).length;
     const favorites=studies.filter(study=>state[study.id]?.favorite);
-    if(dashboard)dashboard.innerHTML=`<div class="dashboard-stat"><strong>${completed}</strong><span>Completed</span></div><div class="dashboard-stat"><strong>${inProgress}</strong><span>In Progress</span></div><div class="dashboard-stat"><strong>${favorites.length}</strong><span>Favorites</span></div>`;
-    if(favoritesSection&&favoritesGrid){favoritesSection.hidden=favorites.length===0;favoritesGrid.innerHTML=favorites.map(card).join('');}
     const recent=studies.map(study=>({study,state:state[study.id]||{}})).filter(item=>item.state.lastOpened||item.state.updated).sort((a,b)=>(b.state.lastOpened||b.state.updated||0)-(a.state.lastOpened||a.state.updated||0))[0];
+    const hasActivity=completed>0||inProgress>0||favorites.length>0||Boolean(recent);
+    if(dashboardSection)dashboardSection.hidden=!hasActivity;
+    if(dashboard)dashboard.innerHTML=hasActivity?`<div class="dashboard-stat"><strong>${completed}</strong><span>Completed</span></div><div class="dashboard-stat"><strong>${inProgress}</strong><span>In Progress</span></div><div class="dashboard-stat"><strong>${favorites.length}</strong><span>Favorites</span></div>`:'';
+    if(favoritesSection&&favoritesGrid){favoritesSection.hidden=favorites.length===0;favoritesGrid.innerHTML=favorites.map(card).join('');}
     if(continueSection&&continueCard){continueSection.hidden=!recent;continueCard.innerHTML=recent?card(recent.study):'';}
   };
 

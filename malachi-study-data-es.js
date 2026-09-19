@@ -401,6 +401,214 @@ window.NLDG_BOOK_STUDY={
         "No uses Malaquías 2 para condenar matrimonio interracial o interétnico; no reduzcas hija de un dios extranjero a etnia cuando la frase apunta a lealtad idólatra; no cites odio el divorcio como si el hebreo fuera textualmente simple; no avergüences sobrevivientes de divorcio; y no presiones a un cónyuge dañado a quedarse, volver, reconciliarse o restaurar confianza donde abuso, coerción o peligro permanecen. Fidelidad del pacto no puede significar proteger traición."
       ],
       "closingTakeaway": "Malaquías se niega a aceptar adoración que coexiste con traición relacional. Dios ve al cónyuge tratado con infidelidad, rechaza compromiso idólatra y llama a su pueblo a fidelidad que protege en vez de atrapar. Verdad, seguridad, responsabilidad y amor del pacto pertenecen juntos."
+    },
+    {
+      "number": 4,
+      "title": "El Señor que ustedes buscan vendrá",
+      "subtitle": "Malaquías 2:17–3:12 • Estudio bíblico libro por libro",
+      "scripture": "Malaquías 2:17–3:12",
+      "supporting": [
+        "Mateo 3:1–12",
+        "Mateo 11:7–15",
+        "Lucas 3:10–14",
+        "Santiago 5:1–6",
+        "2 Corintios 9:6–11"
+      ],
+      "question": "¿Qué ocurre cuando las personas piden justicia a Dios y descubren que el Señor que viene examina primero adoración, explotación, verdad y mayordomía entre su propio pueblo?",
+      "truth": "La justicia venidera de Dios refina a su pueblo, confronta explotación concreta, lo llama a volver con sus recursos y promete bendición del pacto sin crear una fórmula de prosperidad.",
+      "goal": "Distinguir al mensajero que prepara del Señor que viene, conectar responsablemente el texto del mensajero con Juan el Bautista, entender el juicio refinador, centrar a las personas vulnerables nombradas en 3:5 e interpretar los diezmos dentro de la economía del pacto de Israel sin manipulación financiera.",
+      "opening": "Lee Malaquías 2:17–3:12 y marca cansan al SEÑOR, todo el que hace mal es bueno, dónde está el Dios de justicia, mi mensajero, preparar el camino, Señor que buscan, mensajero del pacto, de repente a su templo, quién podrá soportar, fuego del refinador, jabón del lavandero, purificar a Leví, hechiceros, adúlteros, juradores falsos, defraudan a trabajadores de su salario, oprimen viuda, huérfano y extranjero, yo el SEÑOR no cambio, vuélvanse a mí, robar a Dios, diezmos, almacén, alimento, ventanas del cielo, bendición, devorador y tierra deliciosa. Pregunta quién es examinado cuando llega la justicia.",
+      "context": "La sección comienza con personas cansando a Dios al afirmar que los malhechores prosperan y preguntando dónde está el Dios de justicia. Malaquías responde con un mensajero que prepara el camino y una venida repentina del Señor a su templo. La redacción también menciona un mensajero del pacto, cuya relación precisa con el Señor se ha interpretado de distintas maneras. El Nuevo Testamento aplica explícitamente el lenguaje del mensajero preparatorio a Juan el Bautista.\n\nEl pasaje pasa después de purificación del templo a justicia social y finalmente a diezmos y contribuciones. Dentro de la economía del pacto de Israel, estos recursos sostenían adoración del templo y a quienes dependían de ella. La promesa de lluvia, cultivos protegidos del devorador y tierra deliciosa es lenguaje agrícola del pacto. Los cristianos pueden aprender generosidad y confianza, pero no convertirlo en retorno financiero personal garantizado.",
+      "teaching": [
+        {
+          "heading": "Las quejas sobre justicia pueden convertirse en acusaciones contra Dios — Malaquías 2:17",
+          "body": "El pueblo dice que Dios se complace en malhechores o ha fallado en actuar. La frustración moral es comprensible, pero la disputa revela la tentación de acusar a Dios ignorando la propia infidelidad comunitaria.",
+          "paragraphs": [
+            "El pueblo dice que Dios se complace en malhechores o ha fallado en actuar. La frustración moral es comprensible, pero la disputa revela la tentación de acusar a Dios ignorando la propia infidelidad comunitaria."
+          ]
+        },
+        {
+          "heading": "Un mensajero prepara el camino — Malaquías 3:1",
+          "body": "Dios promete un mensajero antes de la venida del Señor. Los Evangelios aplican explícitamente esta función preparatoria a Juan el Bautista, cuyo ministerio llama al arrepentimiento antes de Jesús.",
+          "paragraphs": [
+            "Dios promete un mensajero antes de la venida del Señor. Los Evangelios aplican explícitamente esta función preparatoria a Juan el Bautista, cuyo ministerio llama al arrepentimiento antes de Jesús."
+          ]
+        },
+        {
+          "heading": "La venida del Señor refina antes de tranquilizar — Malaquías 3:1–4",
+          "body": "El Señor que viene es comparado con fuego del refinador y jabón del lavandero. Las imágenes describen purificación que hace aceptable la adoración; no dan permiso a líderes espirituales para infligir sufrimiento en nombre de refinar personas.",
+          "paragraphs": [
+            "El Señor que viene es comparado con fuego del refinador y jabón del lavandero. Las imágenes describen purificación que hace aceptable la adoración; no dan permiso a líderes espirituales para infligir sufrimiento en nombre de refinar personas."
+          ]
+        },
+        {
+          "heading": "La justicia nombra daño concreto — Malaquías 3:5",
+          "body": "Dios nombra hechicería, adulterio, juramentos falsos, robo de salarios y opresión de viudas, huérfanos y extranjeros. La justicia bíblica no es indignación abstracta; alcanza trato de trabajadores y personas con menor poder social.",
+          "paragraphs": [
+            "Dios nombra hechicería, adulterio, juramentos falsos, robo de salarios y opresión de viudas, huérfanos y extranjeros. La justicia bíblica no es indignación abstracta; alcanza trato de trabajadores y personas con menor poder social."
+          ]
+        },
+        {
+          "heading": "La fidelidad del pacto de Dios hace posible volver — Malaquías 3:6–7",
+          "body": "Yo el SEÑOR no cambio fundamenta la supervivencia de los descendientes de Jacob y la invitación vuélvanse a mí. La constancia de Dios es base del arrepentimiento, no excusa para resistir cambio.",
+          "paragraphs": [
+            "Yo el SEÑOR no cambio fundamenta la supervivencia de los descendientes de Jacob y la invitación vuélvanse a mí. La constancia de Dios es base del arrepentimiento, no excusa para resistir cambio."
+          ]
+        },
+        {
+          "heading": "Retener recursos revela confianza del pacto quebrada — Malaquías 3:8–10",
+          "body": "El pueblo es acusado de retener diezmos y contribuciones del almacén. El asunto no es solo presupuesto personal; su negligencia afecta adoración del pacto y provisión comunitaria.",
+          "paragraphs": [
+            "El pueblo es acusado de retener diezmos y contribuciones del almacén. El asunto no es solo presupuesto personal; su negligencia afecta adoración del pacto y provisión comunitaria."
+          ]
+        },
+        {
+          "heading": "La promesa de bendición usa lenguaje agrícola del pacto — Malaquías 3:10–12",
+          "body": "Cielos abiertos, cultivos protegidos, vides fructíferas y tierra deliciosa encajan en el contexto agrario del pacto. El texto promete fidelidad de Dios a esta comunidad, no una tasa universal de inversión por cada donación.",
+          "paragraphs": [
+            "Cielos abiertos, cultivos protegidos, vides fructíferas y tierra deliciosa encajan en el contexto agrario del pacto. El texto promete fidelidad de Dios a esta comunidad, no una tasa universal de inversión por cada donación."
+          ]
+        },
+        {
+          "heading": "La generosidad cristiana es movida por gracia y no transacción",
+          "body": "El Nuevo Testamento enseña dar con generosidad, voluntad y proporción sin coerción. Los creyentes dan por gracia y responsabilidad compartida, no porque puedan comprar riqueza, sanidad, ascenso o protección de Dios.",
+          "paragraphs": [
+            "El Nuevo Testamento enseña dar con generosidad, voluntad y proporción sin coerción. Los creyentes dan por gracia y responsabilidad compartida, no porque puedan comprar riqueza, sanidad, ascenso o protección de Dios."
+          ]
+        }
+      ],
+      "questions": [
+        "¿Qué acusación contra Dios aparece en 2:17 y qué revela acerca de la frustración de la comunidad?",
+        "¿Qué función cumple el mensajero preparatorio en 3:1 y cómo aplica el Nuevo Testamento esa función?",
+        "¿Qué comunican fuego del refinador y jabón del lavandero acerca de la venida del Señor?",
+        "¿Qué injusticias específicas se nombran en 3:5 y quiénes son especialmente vulnerables?",
+        "¿Cómo sostiene yo el SEÑOR no cambio el llamado a volver en los versículos 6–7?",
+        "¿Qué función tienen diezmos y almacén dentro del marco del pacto del pasaje?",
+        "¿Por qué la bendición agrícola de los versículos 10–12 no debe convertirse en fórmula financiera garantizada?",
+        "¿Cómo puede la generosidad cristiana seguir siendo gozosa y significativa sin volverse coercitiva o transaccional?"
+      ],
+      "examination": "¿Dónde exijo justicia a Dios mientras paso por alto una manera en que mis decisiones afectan a trabajadores, vecinos vulnerables o responsabilidades compartidas? ¿Doy por gracia o por temor de tener que comprar el favor de Dios?",
+      "challenge": "Revisa esta semana una práctica financiera o laboral. Haz un cambio hacia generosidad o justicia: paga puntualmente, corrige una práctica injusta, apoya responsablemente el ministerio compartido, ayuda a una persona vulnerable o da libremente sin esperar retorno material.",
+      "caution": "Nunca conviertas dar en prueba de dignidad, salvación o acceso a cuidado. No prometas retornos que Dios no ha prometido. Habla de presupuestos y mayordomía con transparencia. Mantén 3:5 visible para que la enseñanza financiera incluya justicia salarial y protección de personas vulnerables. La imagen del refinador nunca debe excusar abuso.",
+      "prayer": "Dios de justicia, prepara nuestros corazones para tu presencia. Refínanos sin permitir que usemos mal el sufrimiento, haznos honestos con los recursos, protege trabajadores y vecinos vulnerables y libera nuestro dar del temor y la codicia. Centra nuestra esperanza en Jesús y no en ganancia prometida. Amén.",
+      "openingParagraphs": [
+        "Lee Malaquías 2:17–3:12 y marca cansan al SEÑOR, todo el que hace mal es bueno, dónde está el Dios de justicia, mi mensajero, preparar el camino, Señor que buscan, mensajero del pacto, de repente a su templo, quién podrá soportar, fuego del refinador, jabón del lavandero, purificar a Leví, hechiceros, adúlteros, juradores falsos, defraudan a trabajadores de su salario, oprimen viuda, huérfano y extranjero, yo el SEÑOR no cambio, vuélvanse a mí, robar a Dios, diezmos, almacén, alimento, ventanas del cielo, bendición, devorador y tierra deliciosa. Pregunta quién es examinado cuando llega la justicia."
+      ],
+      "contextParagraphs": [
+        "La sección comienza con personas cansando a Dios al afirmar que los malhechores prosperan y preguntando dónde está el Dios de justicia. Malaquías responde con un mensajero que prepara el camino y una venida repentina del Señor a su templo. La redacción también menciona un mensajero del pacto, cuya relación precisa con el Señor se ha interpretado de distintas maneras. El Nuevo Testamento aplica explícitamente el lenguaje del mensajero preparatorio a Juan el Bautista.",
+        "El pasaje pasa después de purificación del templo a justicia social y finalmente a diezmos y contribuciones. Dentro de la economía del pacto de Israel, estos recursos sostenían adoración del templo y a quienes dependían de ella. La promesa de lluvia, cultivos protegidos del devorador y tierra deliciosa es lenguaje agrícola del pacto. Los cristianos pueden aprender generosidad y confianza, pero no convertirlo en retorno financiero personal garantizado."
+      ],
+      "jesusParagraphs": [
+        "La tradición de los Evangelios conecta explícitamente al mensajero preparatorio de Malaquías con Juan el Bautista, quien prepara a las personas para Jesús mediante arrepentimiento. Los cristianos también entienden la venida del Señor y su obra refinadora a través de Jesús, quien entra al templo, confronta adoración corrupta, anuncia buenas noticias y expone explotación. El texto debe centrar el señorío de Cristo y no promesas de recaudación."
+      ],
+      "guardrailParagraphs": [
+        "No uses Malaquías 3:10 para prometer que dar dinero producirá un retorno financiero mayor; no avergüences a personas pobres, endeudadas o en crisis por dar menos; no digas que dificultad prueba que alguien roba a Dios; no uses fuego del refinador para justificar abuso o trauma; y no prediques diezmos mientras ignoras robo de salario, viudas, huérfanos, extranjeros y verdad. Mayordomía y justicia pertenecen juntas."
+      ],
+      "closingTakeaway": "La respuesta de Malaquías a dónde está el Dios de justicia es sobria: el Señor viene y su justicia examina primero a su propio pueblo adorador. Refina adoración, confronta explotación, llama al regreso del pacto y enseña mayordomía como fidelidad y no como esquema para enriquecerse."
+    },
+    {
+      "number": 5,
+      "title": "Recuerda y prepara el camino",
+      "subtitle": "Malaquías 3:13–4:6 • Estudio bíblico libro por libro",
+      "scripture": "Malaquías 3:13–4:6",
+      "supporting": [
+        "Salmo 73:1–28",
+        "Mateo 11:7–15",
+        "Lucas 1:13–17",
+        "Filipenses 2:14–16",
+        "Apocalipsis 21:1–5"
+      ],
+      "question": "¿Cómo puede permanecer fiel el pueblo de Dios cuando la arrogancia parece tener éxito y cómo lo prepara Malaquías para justicia final y el mensajero que viene?",
+      "truth": "Dios oye a quienes lo reverencian, recuerda el servicio fiel, promete justicia final y sanidad y cierra el libro profético llamando a recordar a Moisés y recibir la preparación semejante a Elías para el Señor.",
+      "goal": "Confrontar espiritualidad transaccional, interpretar con cuidado el libro de memoria y las imágenes del sol de justicia, conectar al mensajero semejante a Elías con Juan el Bautista mediante testimonio explícito del Nuevo Testamento y proteger el lenguaje de reconciliación familiar del uso coercitivo.",
+      "opening": "Lee Malaquías 3:13–4:6 y marca palabras duras, inútil servir a Dios, dolientes, arrogantes bendecidos, malhechores prosperan, prueban a Dios y escapan, quienes temían al SEÑOR hablaban juntos, SEÑOR escuchó, libro de memoria, posesión especial, distinguir justo y malvado, horno, rastrojo, sol de justicia, sanidad en sus alas, terneros del establo, recuerden a Moisés, Horeb, Elías, día grande y terrible, volver corazones de padres a hijos e hijos a padres, herir la tierra con maldición. Pregunta qué hacen las personas fieles mientras resultados inmediatos siguen sin resolverse.",
+      "context": "La disputa final de Malaquías vuelve al problema de injusticia aparente. Algunas personas concluyen que servir a Dios es inútil porque malhechores arrogantes parecen prosperar. En contraste, quienes temen al SEÑOR hablan unos con otros y Dios aparece escuchando y registrando un libro de memoria. La imagen comunica atención y memoria divinas, no una técnica espiritual para ganar lugar en un cuaderno celestial literal.\n\nEl capítulo final describe el día del SEÑOR con juicio ardiente y sanidad para quienes reverencian a Dios. La frase sol de justicia es imagen profética vívida y no es citada explícitamente en el Nuevo Testamento como título de Jesús. Después el libro manda recordar a Moisés y promete a Elías antes del día. Lucas 1:17 describe explícitamente a Juan el Bautista viniendo en el espíritu y poder de Elías, y Jesús identifica a Juan con el papel esperado de Elías con matices.",
+      "teaching": [
+        {
+          "heading": "La fe transaccional llama inútil a la obediencia — Malaquías 3:13–15",
+          "body": "La queja evalúa servicio por recompensa inmediata. Cuando personas arrogantes parecen exitosas, la obediencia parece inútil. Malaquías expone una fe reducida a trato: si sirvo, Dios debe mejorar visiblemente mi vida ahora.",
+          "paragraphs": [
+            "La queja evalúa servicio por recompensa inmediata. Cuando personas arrogantes parecen exitosas, la obediencia parece inútil. Malaquías expone una fe reducida a trato: si sirvo, Dios debe mejorar visiblemente mi vida ahora."
+          ]
+        },
+        {
+          "heading": "Las personas fieles hablan unas con otras — Malaquías 3:16",
+          "body": "Quienes temen al SEÑOR responden al cinismo hablando entre sí. La fidelidad se vuelve ánimo comunitario en lugar de resentimiento aislado.",
+          "paragraphs": [
+            "Quienes temen al SEÑOR responden al cinismo hablando entre sí. La fidelidad se vuelve ánimo comunitario en lugar de resentimiento aislado."
+          ]
+        },
+        {
+          "heading": "El libro de memoria expresa atención de Dios — Malaquías 3:16",
+          "body": "Dios escucha y recuerda a quienes honran su nombre. La imagen asegura a creyentes no reconocidos que la fidelidad es vista; no invita a especular sobre una lista secreta ni manipular favor divino.",
+          "paragraphs": [
+            "Dios escucha y recuerda a quienes honran su nombre. La imagen asegura a creyentes no reconocidos que la fidelidad es vista; no invita a especular sobre una lista secreta ni manipular favor divino."
+          ]
+        },
+        {
+          "heading": "La distinción final pertenece a Dios — Malaquías 3:17–18",
+          "body": "Dios promete un día cuando quedará clara la diferencia entre justo y malvado, servir y negarse a servir. La prosperidad presente no es el veredicto final sobre una vida.",
+          "paragraphs": [
+            "Dios promete un día cuando quedará clara la diferencia entre justo y malvado, servir y negarse a servir. La prosperidad presente no es el veredicto final sobre una vida."
+          ]
+        },
+        {
+          "heading": "El día arde contra el mal arrogante — Malaquías 4:1",
+          "body": "Las imágenes de horno y rastrojo representan juicio decisivo. Pertenecen a la justicia final de Dios y no autorizan a creyentes a amenazar, castigar o deshumanizar a quienes juzgan malvados.",
+          "paragraphs": [
+            "Las imágenes de horno y rastrojo representan juicio decisivo. Pertenecen a la justicia final de Dios y no autorizan a creyentes a amenazar, castigar o deshumanizar a quienes juzgan malvados."
+          ]
+        },
+        {
+          "heading": "El sol de justicia trae sanidad — Malaquías 4:2–3",
+          "body": "Para quienes reverencian a Dios, el día es presentado como amanecer, sanidad y liberación gozosa. Lectores cristianos pueden ver esta esperanza cumplida en el reinado salvador de Cristo, pero no deben afirmar que la frase es citada directamente como título mesiánico cuando el Nuevo Testamento no lo hace.",
+          "paragraphs": [
+            "Para quienes reverencian a Dios, el día es presentado como amanecer, sanidad y liberación gozosa. Lectores cristianos pueden ver esta esperanza cumplida en el reinado salvador de Cristo, pero no deben afirmar que la frase es citada directamente como título mesiánico cuando el Nuevo Testamento no lo hace."
+          ]
+        },
+        {
+          "heading": "Recuerda a Moisés — Malaquías 4:4",
+          "body": "El llamado final mira hacia atrás a la Torá mientras la comunidad espera el próximo acto de Dios. La esperanza no desecha revelación anterior; llama a recuerdo fiel y obediencia.",
+          "paragraphs": [
+            "El llamado final mira hacia atrás a la Torá mientras la comunidad espera el próximo acto de Dios. La esperanza no desecha revelación anterior; llama a recuerdo fiel y obediencia."
+          ]
+        },
+        {
+          "heading": "El mensajero semejante a Elías vuelve corazones — Malaquías 4:5–6",
+          "body": "El Elías prometido viene antes del día del SEÑOR para volver corazones entre generaciones. Lucas 1:17 aplica este ministerio a Juan el Bautista. Reconciliación es la meta, pero el versículo no permite presionar contacto inseguro donde abuso o peligro permanecen.",
+          "paragraphs": [
+            "El Elías prometido viene antes del día del SEÑOR para volver corazones entre generaciones. Lucas 1:17 aplica este ministerio a Juan el Bautista. Reconciliación es la meta, pero el versículo no permite presionar contacto inseguro donde abuso o peligro permanecen."
+          ]
+        }
+      ],
+      "questions": [
+        "¿Qué hace transaccional la queja de 3:13–15 en vez de ser simplemente lamento?",
+        "¿Qué hacen de manera distinta quienes temen al SEÑOR en el versículo 16?",
+        "¿Qué comunica la imagen del libro de memoria y qué especulación debe evitarse?",
+        "¿Cómo desafían los versículos 17–18 la suposición de que prosperidad presente revela el veredicto final de Dios?",
+        "¿Qué contraste aparece entre el día ardiente de 4:1 y el amanecer sanador de 4:2?",
+        "¿Por qué debe conectarse el sol de justicia con Jesús con humildad teológica y no afirmarse como cita directa del Nuevo Testamento?",
+        "¿Por qué termina Malaquías diciendo al pueblo que recuerde a Moisés?",
+        "¿Cómo interpreta Lucas 1:17 al mensajero semejante a Elías y cómo debe buscarse reconciliación generacional con seguridad?"
+      ],
+      "examination": "¿He decidido silenciosamente que la obediencia vale la pena solo cuando puedo ver recompensa? ¿Dónde necesito a otras personas fieles para ayudarme a resistir cinismo? ¿Existe una relación generacional donde verdad, arrepentimiento, límites o reconciliación segura necesitan atención?",
+      "challenge": "Anima a una persona cuya fidelidad parece no ser reconocida. Después elige un acto que prepare el camino para una relación generacional más saludable: escucha, pide perdón, di la verdad, honra un límite, busca mediación u ora sin forzar contacto.",
+      "caution": "No avergüences a personas enojadas por injusticia. Distingue lamento honesto de demandas transaccionales. Evita sensacionalismo del fin. Si existe daño familiar, no uses lenguaje de Elías para presionar reunión; reconciliación segura requiere arrepentimiento, responsabilidad, consentimiento y a menudo apoyo competente.",
+      "prayer": "Dios que escuchas y recuerdas, mantennos fieles cuando la arrogancia parece vencer. Sana nuestro cinismo, fortalécenos unos por otros y prepara nuestros corazones mediante verdad, arrepentimiento y reconciliación segura. Gracias por Juan el mensajero y por Jesús el Señor para quien preparó el camino. Amén.",
+      "openingParagraphs": [
+        "Lee Malaquías 3:13–4:6 y marca palabras duras, inútil servir a Dios, dolientes, arrogantes bendecidos, malhechores prosperan, prueban a Dios y escapan, quienes temían al SEÑOR hablaban juntos, SEÑOR escuchó, libro de memoria, posesión especial, distinguir justo y malvado, horno, rastrojo, sol de justicia, sanidad en sus alas, terneros del establo, recuerden a Moisés, Horeb, Elías, día grande y terrible, volver corazones de padres a hijos e hijos a padres, herir la tierra con maldición. Pregunta qué hacen las personas fieles mientras resultados inmediatos siguen sin resolverse."
+      ],
+      "contextParagraphs": [
+        "La disputa final de Malaquías vuelve al problema de injusticia aparente. Algunas personas concluyen que servir a Dios es inútil porque malhechores arrogantes parecen prosperar. En contraste, quienes temen al SEÑOR hablan unos con otros y Dios aparece escuchando y registrando un libro de memoria. La imagen comunica atención y memoria divinas, no una técnica espiritual para ganar lugar en un cuaderno celestial literal.",
+        "El capítulo final describe el día del SEÑOR con juicio ardiente y sanidad para quienes reverencian a Dios. La frase sol de justicia es imagen profética vívida y no es citada explícitamente en el Nuevo Testamento como título de Jesús. Después el libro manda recordar a Moisés y promete a Elías antes del día. Lucas 1:17 describe explícitamente a Juan el Bautista viniendo en el espíritu y poder de Elías, y Jesús identifica a Juan con el papel esperado de Elías con matices."
+      ],
+      "jesusParagraphs": [
+        "El Nuevo Testamento conecta explícitamente al mensajero semejante a Elías de Malaquías con Juan el Bautista, quien prepara a las personas para Jesús. Los cristianos entienden la expectativa final de justicia, sanidad y corazones preparados a la luz de la primera venida de Cristo y su regreso prometido. Esa esperanza centrada en Cristo debe producir fidelidad y reconciliación, no especulación ni coerción."
+      ],
+      "guardrailParagraphs": [
+        "No digas a personas que sufren que la fidelidad se prueba por éxito inmediato; no conviertas el libro de memoria en puntuación mística; no uses imágenes de juicio final para amenazar enemigos personales; no afirmes que sol de justicia es un título explícito de Jesús en el Nuevo Testamento cuando no se cita directamente así; y no uses volver los corazones de padres e hijos para forzar contacto, perdón o reconciliación en familias inseguras. Corazones preparados incluyen verdad y seguridad."
+      ],
+      "closingTakeaway": "Malaquías termina negándose a dejar que el éxito visible defina la realidad. Dios oye a personas fieles, las recuerda, promete justicia final y sanidad, las llama a recordar su instrucción y envía un mensajero semejante a Elías para preparar corazones para el Señor."
     }
   ]
 };

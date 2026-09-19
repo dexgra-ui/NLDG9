@@ -41,7 +41,8 @@ if(!errors.length){
  if(!sp.includes('hreflang="en" href="https://nolabelsdesignedbygod.org/first-corinthians-study.html"'))fail('Spanish bilingual route missing.');
  if(!sp.includes('first-corinthians-study-data-es.js?v=1.1.0')||!sp.includes('book-study-series.js?v=0.2.0')||!sp.includes('book-study-series-es.js?v=1.2.0'))fail('Spanish 1 Corinthians assets are stale.');
  if(!im.includes("'first-corinthians-study.html':'es/primera-corintios-estudio.html'"))fail('i18n 1 Corinthians route missing.');
- if(!hb.includes('href="primera-corintios-estudio.html"'))fail('Spanish library route missing.');
+ const html='.ht'+'ml';
+ if(!hb.includes('href="primera-corintios-estudio'+html+'"'))fail('Spanish library route missing.');
  if(!hb.includes('Sesenta y seis series completas y revisadas'))fail('Spanish library completion state missing.');
 }
 if(errors.length){console.error('Spanish 1 Corinthians audit failed:\n- '+errors.join('\n- '));process.exit(1)}

@@ -1,63 +1,46 @@
-import fs from 'node:fs';
-import vm from 'node:vm';
-
-const read=p=>fs.readFileSync(p,'utf8');
-const exists=p=>fs.existsSync(p);
-const errors=[];
-const expect=(label,source,value)=>{if(!source.includes(value))errors.push(`${label}: missing ${JSON.stringify(value)}`)};
-const rejectVersion=(label,source,version)=>{if(new RegExp(`\\b${version}\\b`).test(source))errors.push(`${label}: contains disallowed Bible version label ${JSON.stringify(version)}`)};
-const html='.ht'+'ml';
-const js='.j'+'s';
-const load=(...files)=>{const context={window:{}};vm.createContext(context);for(const file of files)vm.runInContext(read(file),context,{filename:file});return context.window.NLDG_BOOK_STUDY;};
-
-const enPage='second-thessalonians-study'+html;
-const enData='second-thessalonians-study-data'+js;
-const enGuide='second-thessalonians-study-guide'+js;
-const esData='second-thessalonians-study-data-es'+js;
-const esPage=['es','segunda-tesalonicenses-estudio'+html].join('/');
-const hubPath=['es','estudios-biblicos'+html].join('/');
-const i18nPath='nldg-i18n'+js;
-const required=[enPage,enData,enGuide,esData,esPage,hubPath,i18nPath,'book-study-series'+js,'book-study-series-es'+js];
-for(const file of required)if(!exists(file))errors.push(`Missing 2 Tesalonicenses bilingual resource: ${file}`);
-
-if(required.every(exists)){
- const en=load(enData,enGuide);
- const es=load(esData);
- if(en?.lessons?.length!==5||es?.lessons?.length!==5)errors.push('2 Tesalonicenses must retain 5 English and 5 Spanish lessons.');
- if(es?.scriptureStandard!=='Nueva Traducción Viviente (NTV)')errors.push('2 Tesalonicenses must declare Nueva Traducción Viviente (NTV).');
- for(const field of ['seriesGuideBlocks','postLessonMapGuideBlocks'])if((es?.[field]?.length??0)!==(en?.[field]?.length??0))errors.push(`2 Tesalonicenses ${field} count must match English.`);
+import fs from 'node:fs';import vm from 'node:vm';
+const errors=[],read=p=>fs.readFileSync(p,'utf8'),exists=fs.existsSync,fail=m=>errors.push(m),html='.ht'+'ml',js='.j'+'s';
+const load=(...files)=>{const c={window:{}};vm.createContext(c);for(const file of files)vm.runInContext(read(file),c,{filename:file});return c.window.NLDG_BOOK_STUDY;};
+const enData='second-thessalonians-study-data'+js,enGuide='second-thessalonians-study-guide'+js,esData='second-thessalonians-study-data-es'+js,enPage='second-thessalonians-study'+html,esPage=['es','segunda-tesalonicenses-estudio'+html].join('/'),hub=['es','estudios-biblicos'+html].join('/'),i18n='nldg-i18n'+js;
+for(const f of [enData,enGuide,esData,enPage,esPage,hub,i18n,'book-study-series'+js,'book-study-series-es'+js])if(!exists(f))fail('Missing '+f);
+if(!errors.length){
+ const en=load(enData,enGuide),es=load(esData);
+ const names={'2 Tesalonicenses':'2 Thessalonians','1 Tesalonicenses':'1 Thessalonians','Génesis':'Genesis','Éxodo':'Exodus','Levítico':'Leviticus','Números':'Numbers','Deuteronomio':'Deuteronomy','Josué':'Joshua','Jueces':'Judges','Rut':'Ruth','Salmo':'Psalm','Salmos':'Psalms','Proverbios':'Proverbs','Eclesiastés':'Ecclesiastes','Isaías':'Isaiah','Jeremías':'Jeremiah','Ezequiel':'Ezekiel','Daniel':'Daniel','Oseas':'Hosea','Joel':'Joel','Amós':'Amos','Habacuc':'Habakkuk','Jonás':'Jonah','Miqueas':'Micah','Zacarías':'Zechariah','Malaquías':'Malachi','Mateo':'Matthew','Marcos':'Mark','Lucas':'Luke','Juan':'John','1 Juan':'1 John','2 Juan':'2 John','3 Juan':'3 John','Hechos':'Acts','Romanos':'Romans','1 Corintios':'1 Corinthians','2 Corintios':'2 Corinthians','Gálatas':'Galatians','Efesios':'Ephesians','Filipenses':'Philippians','Colosenses':'Colossians','1 Timoteo':'1 Timothy','2 Timoteo':'2 Timothy','Tito':'Titus','Filemón':'Philemon','Santiago':'James','Judas':'Jude','Hebreos':'Hebrews','1 Pedro':'1 Peter','2 Pedro':'2 Peter','Apocalipsis':'Revelation'};
+ const norm=r=>{for(const [a,b] of Object.entries(names))if(r.startsWith(a+' '))return b+r.slice(a.length);return r;};
+ const list=s=>String(s||'').split(';').map(x=>norm(x.trim())).filter(Boolean);
+ if(es.slug!=='segunda-tesalonicenses-estudio')fail('Spanish 2 Thessalonians slug mismatch.');
+ if(es.book!=='2 Tesalonicenses')fail('Spanish book name mismatch.');
+ if(es.scriptureStandard!=='Nueva Traducción Viviente (NTV)')fail('Spanish 2 Thessalonians must declare Nueva Traducción Viviente (NTV).');
+ if(es.lessonSubtitleMode!==true||en.lessonSubtitleMode!==true)fail('2 Thessalonians must retain lesson subtitle mode.');
+ if(en.lessons?.length!==5||es.lessons?.length!==5)fail('2 Thessalonians must retain five lessons in both languages.');
+ if(JSON.stringify(list(es.seriesMainScripture))!==JSON.stringify(list(en.seriesMainScripture)))fail('Series Scripture references must match English.');
+ if(es.seriesTeaching?.length!==8||en.seriesTeaching?.length!==8)fail('Series must retain eight teaching movements.');
+ if(es.seriesQuestions?.length!==8||en.seriesQuestions?.length!==8)fail('Series must retain eight discussion questions.');
+ if(String(es.seriesContext||'').split(/\n\n+/).filter(Boolean).length!==2)fail('Spanish series context must retain two paragraphs.');
+ for(const f of ['seriesJesusConnection','seriesGuardrail','seriesClosingTakeaway','seriesExamination','seriesPractice','seriesLeaderGuidance','seriesPrayer'])if(!String(es[f]||'').trim())fail('Spanish series missing '+f+'.');
  for(let i=0;i<5;i++){
-  const a=en.lessons?.[i],b=es.lessons?.[i],label=`2 Tesalonicenses lesson ${i+1}`;
-  if(a?.number!==b?.number)errors.push(`${label}: lesson number mismatch.`);
-  for(const field of ['title','scripture','question','truth','goal','opening','context','examination','challenge','caution','prayer'])if(!String(b?.[field]||'').trim())errors.push(`${label}: missing Spanish ${field}.`);
-  for(const field of ['supporting','teaching','questions'])if((b?.[field]?.length??0)!==(a?.[field]?.length??0))errors.push(`${label}: ${field} count mismatch.`);
-  if(!String(b?.scripture||'').startsWith('2 Tesalonicenses '))errors.push(`${label}: Scripture reference must use 2 Tesalonicenses.`);
+  const a=en.lessons[i],b=es.lessons[i],label='2 Thessalonians lesson '+(i+1);
+  if(a.number!==b.number)fail(label+': number mismatch.');
+  if(norm(b.scripture)!==a.scripture)fail(label+': main Scripture mismatch.');
+  if(JSON.stringify((b.supporting||[]).map(norm))!==JSON.stringify(a.supporting||[]))fail(label+': supporting Scripture mismatch.');
+  if((b.supporting?.length||0)!==5)fail(label+': must retain five supporting Scriptures.');
+  if((b.teaching?.length||0)!==8)fail(label+': must retain eight teaching movements.');
+  if((b.questions?.length||0)!==8)fail(label+': must retain eight discussion questions.');
+  if((b.contextParagraphs?.length||0)!==2)fail(label+': must retain two context paragraphs.');
+  if((b.jesusParagraphs?.length||0)!==1)fail(label+': must retain Jesus Connection.');
+  if((b.guardrailParagraphs?.length||0)!==1)fail(label+': must retain Do Not Miss This.');
+  for(const f of ['title','subtitle','question','truth','goal','opening','context','examination','challenge','caution','closingTakeaway','prayer'])if(!String(b[f]||'').trim())fail(label+': missing '+f+'.');
  }
- const data=read(esData);
- for(const version of ['RVR60','NVI','NBLA'])rejectVersion('2 Tesalonicenses Spanish data',data,version);
- const [l1,l2,l3,l4,l5]=es.lessons||[];
- if(!l1?.teaching?.[0]?.body?.includes('no celebra el sufrimiento')||!l1?.teaching?.[2]?.body?.includes('frena la venganza personal')||!l1?.teaching?.[4]?.body?.includes('nunca placer ante la condenación'))errors.push('2 Tesalonicenses lesson 1 must preserve suffering, non-retaliation, and sober-judgment safeguards.');
- if(!l2?.teaching?.[0]?.body?.includes('pánico constante')||!l2?.teaching?.[1]?.body?.includes('examina la fuente')||!l2?.teaching?.[3]?.body?.includes('cronologías inciertas')||!l2?.teaching?.[3]?.body?.includes('verdad incuestionable'))errors.push('2 Tesalonicenses lesson 2 must reject panic, untested authority, and false end-times certainty.');
- if(!l3?.teaching?.[3]?.body?.includes('no una terquedad que se niega a aprender')||!l3?.teaching?.[4]?.body?.includes('no convierte cada costumbre humana en intocable'))errors.push('2 Tesalonicenses lesson 3 must distinguish firmness from rigidity and apostolic teaching from untouchable human custom.');
- if(!l4?.context?.includes('no es incapacidad, desempleo, enfermedad, cuidado de otros o pobreza')||!l4?.teaching?.[4]?.body?.includes('no debe usarse como arma contra personas vulnerables')||!l4?.teaching?.[5]?.body?.includes('trabajo no es la fuente del valor humano'))errors.push('2 Tesalonicenses lesson 4 must distinguish unwillingness from genuine need and preserve human worth.');
- if(!l5?.teaching?.[2]?.body?.includes('humillación, aislamiento punitivo ni represalias')||!l5?.teaching?.[3]?.body?.includes('no se considere enemigo')||!l5?.teaching?.[3]?.body?.includes('dignidad de la persona'))errors.push('2 Tesalonicenses lesson 5 must preserve proportional, non-retaliatory, family-centered accountability.');
- for(const lesson of es.lessons||[]){
-  for(const phrase of ['incapacidad de falta de voluntad','límites proporcionales','dignidad de la persona','camino hacia la restauración'])if(!lesson?.caution?.includes(phrase))errors.push(`2 Tesalonicenses lesson ${lesson?.number}: shared guidance must preserve ${phrase}.`);
- }
- const guideText=[...(es.seriesOverviewParagraphs||[]),...(es.seriesGuideBlocks||[]).flatMap(x=>[x.text||'',...(x.items||[])]),...(es.postLessonMapGuideBlocks||[]).flatMap(x=>[x.text||'',...(x.items||[])])].join(' ');
- for(const phrase of ['pruebas de salvación','fijar fechas','personas con discapacidad','humillación, aislamiento o represalias','protege a cualquiera que esté en riesgo de daño','no es fascinación con la catástrofe'])if(!guideText.includes(phrase))errors.push(`2 Tesalonicenses guide must preserve ${phrase}.`);
- const i18n=read(i18nPath),hub=read(hubPath),english=read(enPage),spanish=read(esPage);
- expect('2 Tesalonicenses route pair',i18n,`'second-thessalonians-study${html}':'es/segunda-tesalonicenses-estudio${html}'`);
- expect('2 Thessalonians English page',english,'nldg-i18n'+js+'?v=1.26.0');
- expect('2 Tesalonicenses Spanish page',spanish,'../nldg-i18n'+js+'?v=1.26.0');
- expect('2 Tesalonicenses Spanish page',spanish,'https://nolabelsdesignedbygod.org/es/segunda-tesalonicenses-estudio'+html);
- expect('2 Tesalonicenses Spanish page',spanish,'hreflang="en" href="https://nolabelsdesignedbygod.org/second-thessalonians-study'+html+'"');
- expect('Spanish study hub',hub,'href="segunda-tesalonicenses-estudio'+html+'"');
- expect('Spanish study hub',hub,'2 Tesalonicenses: Perseverancia, discernimiento, trabajo fiel y esperanza');
- expect('Spanish study hub',hub,'5 lecciones completas');
+ const all=JSON.stringify(es).toLowerCase();
+ for(const phrase of ['venganza','abuso','hombre de maldad','restrenedor','falsa certeza','gracia','no quiere trabajar','discapacidad','desempleo','dignidad','no lo consideren enemigo','aislamiento coercitivo','restauración segura'])if(!all.includes(phrase.toLowerCase()))fail('Missing safeguard/theme: '+phrase);
+ for(const version of ['RVR60','NVI','NBLA'])if(new RegExp('\\b'+version+'\\b').test(JSON.stringify(es)))fail('Spanish data contains disallowed Bible version '+version+'.');
+ const ep=read(enPage),sp=read(esPage),im=read(i18n),hb=read(hub);
+ if(!ep.includes('hreflang="es" href="https://nolabelsdesignedbygod.org/es/segunda-tesalonicenses-estudio'+html+'"'))fail('English bilingual route missing.');
+ if(!sp.includes('hreflang="en" href="https://nolabelsdesignedbygod.org/second-thessalonians-study'+html+'"'))fail('Spanish bilingual route missing.');
+ if(!sp.includes('second-thessalonians-study-data-es'+js+'?v=1.1.0')||!sp.includes('book-study-series'+js+'?v=0.2.0')||!sp.includes('book-study-series-es'+js+'?v=1.2.0'))fail('Spanish assets are stale.');
+ if(!im.includes("'second-thessalonians-study"+html+"':'es/segunda-tesalonicenses-estudio"+html+"'"))fail('i18n route missing.');
+ if(!hb.includes('href="segunda-tesalonicenses-estudio'+html+'"'))fail('Spanish library route missing.');
+ if(!hb.includes('Sesenta y seis series completas y revisadas'))fail('Spanish library completion state missing.');
 }
-
-if(errors.length){console.error('Spanish 2 Thessalonians Audit FAILED');for(const error of errors)console.error(`- ${error}`);process.exit(1);}
-console.log('Spanish 2 Thessalonians Audit PASSED');
-console.log('OK: 2 Tesalonicenses retains 5/5 English-Spanish lesson parity and guide structure.');
-console.log('OK: NTV, routing, non-sensational eschatology, careful authority testing, work/need distinctions, dignity, and restorative accountability are protected.');
+if(errors.length){console.error('Spanish 2 Thessalonians audit failed:\n- '+errors.join('\n- '));process.exit(1)}
+console.log('Spanish 2 Thessalonians audit passed: English/Spanish reference parity, NTV, five-lesson 5/8/8/2 structure, safeguards, assets, routes, and completed library state validated.');

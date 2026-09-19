@@ -63,7 +63,7 @@ if(!errors.length){
   ['blessing not prosperity guarantee',['no uses desde este día los bendeciré como garantía de riqueza, sanidad, fertilidad, empleo o éxito de negocio']],
   ['Jeremiah signet background',['jeremías 22:24–30']],
   ['Zerubbabel not final king',['no digas que zorobabel se convirtió en el rey final prometido']],
-  ['Hebrews citation accuracy',['hebreos 12 cita directamente hageo 2:6']],
+  ['Hebrews citation accuracy',['hebreos 12:26 cita explícitamente hageo 2:6']],
   ['no modern political fulfillment mapping',['no identifiques un gobierno actual, elección, guerra, alianza o colapso militar como cumplimiento específico']],
   ['Jesus temple connection',['juan 2:19–21']],
   ['Zerubbabel in Jesus genealogy',['mateo 1:12–13']]

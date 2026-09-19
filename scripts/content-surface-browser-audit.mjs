@@ -33,7 +33,8 @@ const sitemapPaths=[
   'ancient-writing-sirach.html',
   'ancient-writing-maccabees.html',
   'ancient-writing-meqabyan.html',
-  'ancient-writing-assumption-moses.html'
+  'ancient-writing-assumption-moses.html',
+  'ancient-writing-jannes-jambres.html'
 ];
 
 function expect(condition,success,failure){
@@ -64,7 +65,7 @@ try{
   await open('homepage','index.html');
   await page.waitForFunction(()=>document.querySelector('#home-latest')?.children.length>0,{timeout:5000}).catch(()=>{});
   const homeLatest=await page.locator('#home-latest').innerText().catch(()=>'');
-  expect(homeLatest.includes('Assumption / Testament of Moses: Historical & Biblical Guide'),'Homepage Latest surfaces the newest Moses tradition detailed guide.','Homepage Latest did not surface the newest Moses tradition detailed guide after the shared library loaded.');
+  expect(homeLatest.includes('Jannes and Jambres: Historical & Biblical Guide'),'Homepage Latest surfaces the newest Jannes and Jambres detailed guide.','Homepage Latest did not surface the newest Jannes and Jambres detailed guide after the shared library loaded.');
   const featuredSeries=await page.locator('#home-featured .content-series').allInnerTexts().catch(()=>[]);
   const latestSeries=await page.locator('#home-latest .content-series').allInnerTexts().catch(()=>[]);
   const duplicateSeries=latestSeries.filter(series=>series&&featuredSeries.includes(series));
@@ -150,6 +151,9 @@ try{
   const assumptionCrossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('assumption-moses')?.href||'');
   expect(assumptionCrossLinkHref==='ancient-writing-assumption-moses.html','The Assumption / Testament of Moses cross-link registry routes to the detailed guide.',`The Moses tradition cross-link registry routed to ${assumptionCrossLinkHref}.`);
   expect((await page.locator('#assumption-moses a[href="ancient-writing-assumption-moses.html"]').count())===1,'The Assumption / Testament of Moses overview card links to its detailed guide.','The Assumption / Testament of Moses overview card is missing its detailed-guide link.');
+  const jannesCrossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('jannes-jambres')?.href||'');
+  expect(jannesCrossLinkHref==='ancient-writing-jannes-jambres.html','The Jannes and Jambres cross-link registry routes to the detailed guide.',`The Jannes and Jambres cross-link registry routed to ${jannesCrossLinkHref}.`);
+  expect((await page.locator('#jannes-jambres a[href="ancient-writing-jannes-jambres.html"]').count())===1,'The Jannes and Jambres overview card links to its detailed guide.','The Jannes and Jambres overview card is missing its detailed-guide link.');
 
   await open('1-enoch-guide','ancient-writing-1-enoch.html');
   const enochGuide=await page.locator('main').innerText();
@@ -325,11 +329,36 @@ try{
   expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=8,'Moses tradition guide provides a substantial academic and primary source list.','Moses tradition guide does not provide enough research sources.');
   expect((await page.locator('a[href="jude-study.html"]').count())>=1&&(await page.locator('a[href="deuteronomy-study.html"]').count())>=1&&(await page.locator('a[href="zechariah-study.html"]').count())>=1,'Moses tradition guide links back to Jude, Deuteronomy, and Zechariah studies.','Moses tradition guide is missing Jude, Deuteronomy, or Zechariah return links.');
   expect((await page.locator('a[href="ancient-writing-meqabyan.html"]').count())>=1,'Moses tradition guide links back to the previous Meqabyan guide.','Moses tradition guide is missing previous-guide navigation.');
+  expect((await page.locator('a[href="ancient-writing-jannes-jambres.html"]').count())>=1,'Moses tradition guide links forward to the detailed Jannes and Jambres guide.','Moses tradition guide is missing its Jannes and Jambres next-guide link.');
   await page.setViewportSize({width:390,height:844});
   expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Moses tradition guide has no horizontal overflow at 390px.','Moses tradition guide overflows horizontally at 390px.');
   const assumptionInternalLink=page.locator('.detail-connection-list a').first();
   const assumptionLinkBox=await assumptionInternalLink.boundingBox();
   expect(Boolean(assumptionLinkBox&&assumptionLinkBox.height>=44),'Moses tradition canonical-study links meet the 44px mobile touch target.','Moses tradition canonical-study links are below the 44px mobile touch target.');
+  await page.setViewportSize({width:1440,height:1000});
+
+  await open('jannes-jambres-guide','ancient-writing-jannes-jambres.html');
+  const jannesGuide=await page.locator('main').innerText();
+  expect(jannesGuide.includes('2 Timothy names them. Exodus does not.'),'Jannes guide states the canonical naming distinction.','Jannes guide is missing the Exodus/2 Timothy naming distinction.');
+  expect(jannesGuide.includes('Three layers, one developing tradition'),'Jannes guide separates Exodus, the naming tradition, and the apocryphon.','Jannes guide is missing its three-layer orientation.');
+  expect(jannesGuide.includes('The Damascus Document changes the timeline'),'Jannes guide includes the pre-Christian Damascus Document evidence.','Jannes guide is missing the pre-Christian naming evidence.');
+  expect(jannesGuide.includes('Yannes and his brother')&&jannesGuide.includes('predates 2 Timothy'),'Jannes guide explains the pre-Christian form with one named brother.','Jannes guide overstates or omits the Damascus Document form.');
+  expect(jannesGuide.includes('The Book / Apocryphon of Jannes and Jambres'),'Jannes guide distinguishes the separate literary work.','Jannes guide is missing the apocryphon section.');
+  expect(jannesGuide.includes('2019 · Ethiopic fragment')&&jannesGuide.includes('2025 · complete Ethiopic version reported'),'Jannes guide includes the newer Ethiopic textual evidence.','Jannes guide is missing the 2019 or 2025 Ethiopic evidence.');
+  expect(jannesGuide.includes('Did 2 Timothy quote the Book of Jannes and Jambres?'),'Jannes guide directly addresses the literary-dependence question.','Jannes guide is missing the source-dependence discussion.');
+  expect(jannesGuide.includes('whether it directly cites the particular apocryphal book we can partially reconstruct remains uncertain'),'Jannes guide carefully limits the direct-source claim.','Jannes guide overstates 2 Timothy as a direct citation of the apocryphon.');
+  expect(jannesGuide.includes('Exodus, Damascus Document, 2 Timothy, and the apocryphon'),'Jannes guide includes a clear four-source comparison.','Jannes guide is missing the source comparison.');
+  expect(jannesGuide.includes('The naming tradition is older than 2 Timothy.')&&jannesGuide.includes('2 Timothy 3:8 is not labeled a verified direct quotation.'),'Jannes guide includes the central reading guardrails.','Jannes guide is missing the naming-age or direct-quotation guardrail.');
+  expect(jannesGuide.includes('NLDG is not reproducing a complete translation yet.'),'Jannes guide defers full-text reproduction pending critical verification.','Jannes guide does not clearly defer full-text reproduction.');
+  expect(!jannesGuide.includes('Phase 2'),'Jannes public guide omits internal development-phase language.','Jannes public guide exposes internal Phase 2 language.');
+  expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=8,'Jannes guide provides a substantial academic and primary source list.','Jannes guide does not provide enough research sources.');
+  expect((await page.locator('a[href="second-timothy-study.html"]').count())>=1&&(await page.locator('a[href="exodus-study.html"]').count())>=1,'Jannes guide links back to 2 Timothy and Exodus studies.','Jannes guide is missing 2 Timothy or Exodus return links.');
+  expect((await page.locator('a[href="ancient-writing-assumption-moses.html"]').count())>=1,'Jannes guide links back to the previous Moses tradition guide.','Jannes guide is missing previous-guide navigation.');
+  await page.setViewportSize({width:390,height:844});
+  expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Jannes guide has no horizontal overflow at 390px.','Jannes guide overflows horizontally at 390px.');
+  const jannesInternalLink=page.locator('.detail-connection-list a').first();
+  const jannesLinkBox=await jannesInternalLink.boundingBox();
+  expect(Boolean(jannesLinkBox&&jannesLinkBox.height>=44),'Jannes canonical-study links meet the 44px mobile touch target.','Jannes canonical-study links are below the 44px mobile touch target.');
   await page.setViewportSize({width:1440,height:1000});
 
   await open('other-ancient-writings-mobile','other-ancient-writings.html');
@@ -381,6 +410,10 @@ try{
   await page.waitForTimeout(250);
   const assumptionSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
   expect(assumptionSearchResults.includes('Assumption / Testament of Moses: Historical & Biblical Guide'),'Search finds the detailed Moses tradition guide.','Search did not find the detailed Moses tradition guide.');
+  await search.fill('Jannes and Jambres');
+  await page.waitForTimeout(250);
+  const jannesSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
+  expect(jannesSearchResults.includes('Jannes and Jambres: Historical & Biblical Guide'),'Search finds the detailed Jannes and Jambres guide.','Search did not find the detailed Jannes and Jambres guide.');
 
 
   await open('site-map','site-map.html');
@@ -397,6 +430,7 @@ try{
   expect(siteMapText.includes('1 and 2 Maccabees: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Maccabees guide.','Generated Site Map index is missing the detailed Maccabees guide.');
   expect(siteMapText.includes('Ethiopian Meqabyan: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Meqabyan guide.','Generated Site Map index is missing the detailed Meqabyan guide.');
   expect(siteMapText.includes('Assumption / Testament of Moses: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Moses tradition guide.','Generated Site Map index is missing the detailed Moses tradition guide.');
+  expect(siteMapText.includes('Jannes and Jambres: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Jannes and Jambres guide.','Generated Site Map index is missing the detailed Jannes and Jambres guide.');
   expect((await page.locator('.site-map-grid a[href="other-ancient-writings.html"]').count())>0,'Manual Site Map Bible Studies section links Other Ancient Writings.','Manual Site Map is missing Other Ancient Writings.');
 
 

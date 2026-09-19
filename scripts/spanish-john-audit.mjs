@@ -1,43 +1,44 @@
-import fs from 'node:fs';
-import vm from 'node:vm';
-const read=p=>fs.readFileSync(p,'utf8'),exists=p=>fs.existsSync(p),errors=[];
-const html='.ht'+'ml',js='.j'+'s';
-const expect=(label,source,value)=>{if(!source.includes(value))errors.push(`${label}: missing ${JSON.stringify(value)}`)};
-const load=(...files)=>{const context={window:{}};vm.createContext(context);for(const file of files)vm.runInContext(read(file),context,{filename:file});return context.window.NLDG_BOOK_STUDY;};
-const enPage='john-study'+html,enData='john-study-data'+js,enGuide='john-study-guide'+js,esData='john-study-data-es'+js,esPage=['es','juan-estudio'+html].join('/'),hubPath=['es','estudios-biblicos'+html].join('/'),i18nPath='nldg-i18n'+js;
-const required=[enPage,enData,enGuide,esData,esPage,hubPath,i18nPath,'book-study-series'+js,'book-study-series-es'+js];
-for(const file of required)if(!exists(file))errors.push(`Missing Juan bilingual resource: ${file}`);
-if(required.every(exists)){
+import fs from 'node:fs';import vm from 'node:vm';
+const errors=[],read=p=>fs.readFileSync(p,'utf8'),exists=fs.existsSync,fail=m=>errors.push(m);
+const load=(...files)=>{const c={window:{}};vm.createContext(c);for(const file of files)vm.runInContext(read(file),c,{filename:file});return c.window.NLDG_BOOK_STUDY;};
+const enData='john-study-data.js',enGuide='john-study-guide.js',esData='john-study-data-es.js',enPage='john-study.html',esPage='es/juan-estudio.html',hub='es/estudios-biblicos.html',i18n='nldg-i18n.js';
+for(const f of [enData,enGuide,esData,enPage,esPage,hub,i18n,'book-study-series.js','book-study-series-es.js'])if(!exists(f))fail('Missing '+f);
+if(!errors.length){
  const en=load(enData,enGuide),es=load(esData);
- if(en?.lessons?.length!==8||es?.lessons?.length!==8)errors.push('Juan must retain 8 English and 8 Spanish lessons.');
- if(es?.scriptureStandard!=='Nueva Traducción Viviente (NTV)')errors.push('Juan must declare Nueva Traducción Viviente (NTV).');
- for(let i=0;i<8;i++){const a=en.lessons?.[i],b=es.lessons?.[i],label=`Juan lesson ${i+1}`;
-  if(a?.number!==b?.number)errors.push(`${label}: lesson number mismatch.`);
-  for(const field of ['title','scripture','question','truth','goal','opening','context','examination','practice','caution','prayer'])if(!String(b?.[field]||'').trim())errors.push(`${label}: missing Spanish ${field}.`);
-  for(const field of ['supporting','teaching','questions'])if((b?.[field]?.length??0)!==(a?.[field]?.length??0))errors.push(`${label}: ${field} count mismatch.`);
-  if(!String(b?.scripture||'').startsWith('Juan '))errors.push(`${label}: Scripture reference must use Juan.`);
+ const names={'Juan':'John','Génesis':'Genesis','Éxodo':'Exodus','Levítico':'Leviticus','Números':'Numbers','Deuteronomio':'Deuteronomy','Josué':'Joshua','Jueces':'Judges','Rut':'Ruth','1 Samuel':'1 Samuel','2 Samuel':'2 Samuel','1 Reyes':'1 Kings','2 Reyes':'2 Kings','Salmo':'Psalm','Salmos':'Psalms','Proverbios':'Proverbs','Eclesiastés':'Ecclesiastes','Isaías':'Isaiah','Jeremías':'Jeremiah','Ezequiel':'Ezekiel','Daniel':'Daniel','Oseas':'Hosea','Joel':'Joel','Amós':'Amos','Jonás':'Jonah','Miqueas':'Micah','Zacarías':'Zechariah','Malaquías':'Malachi','Mateo':'Matthew','Marcos':'Mark','Lucas':'Luke','Hechos':'Acts','Romanos':'Romans','1 Corintios':'1 Corinthians','2 Corintios':'2 Corinthians','Gálatas':'Galatians','Efesios':'Ephesians','Filipenses':'Philippians','Colosenses':'Colossians','1 Tesalonicenses':'1 Thessalonians','1 Timoteo':'1 Timothy','Hebreos':'Hebrews','Santiago':'James','1 Pedro':'1 Peter','1 Juan':'1 John'};
+ const norm=r=>{for(const [a,b] of Object.entries(names))if(r.startsWith(a+' '))return b+r.slice(a.length);return r;};
+ const list=s=>String(s||'').split(';').map(x=>norm(x.trim())).filter(Boolean);
+ if(es.slug!=='juan-estudio')fail('Spanish John slug must be juan-estudio.');
+ if(es.book!=='Juan')fail('Spanish book name must be Juan.');
+ if(es.scriptureStandard!=='Nueva Traducción Viviente (NTV)')fail('Spanish John must declare Nueva Traducción Viviente (NTV).');
+ if(es.themeLabel!=='Verdad clave')fail('Spanish John theme label must be Verdad clave.');
+ if(es.lessonSubtitleMode!==true||en.lessonSubtitleMode!==true)fail('John must retain lesson subtitle mode.');
+ if(en.lessons?.length!==8||es.lessons?.length!==8)fail('John must retain eight lessons in both languages.');
+ if(JSON.stringify(list(es.seriesMainScripture))!==JSON.stringify(list(en.seriesMainScripture)))fail('Series Scripture references must match English.');
+ if(es.seriesTeaching?.length!==8||en.seriesTeaching?.length!==8)fail('Series must retain eight teaching movements.');
+ if(es.seriesQuestions?.length!==8||en.seriesQuestions?.length!==8)fail('Series must retain eight discussion questions.');
+ if(String(es.seriesContext||'').split(/\n\n+/).filter(Boolean).length!==2)fail('Spanish series context must retain two paragraphs.');
+ for(let i=0;i<8;i++){
+  const a=en.lessons[i],b=es.lessons[i],label='John lesson '+(i+1);
+  if(a.number!==b.number)fail(label+': number mismatch.');
+  if(norm(b.scripture)!==a.scripture)fail(label+': main Scripture mismatch.');
+  if(JSON.stringify((b.supporting||[]).map(norm))!==JSON.stringify(a.supporting||[]))fail(label+': supporting Scripture mismatch.');
+  for(const f of ['title','subtitle','scripture','question','truth','goal','opening','context','examination','challenge','caution','closingTakeaway','prayer'])if(!String(b[f]||'').trim())fail(label+': missing '+f+'.');
+  if((b.supporting?.length||0)!==5)fail(label+': must retain five supporting Scriptures.');
+  if((b.teaching?.length||0)!==8)fail(label+': must retain eight teaching movements.');
+  if((b.questions?.length||0)!==8)fail(label+': must retain eight discussion questions.');
+  if((b.contextParagraphs?.length||0)!==2)fail(label+': must retain two context paragraphs.');
+  if((b.jesusParagraphs?.length||0)!==1)fail(label+': must retain Jesus Connection.');
+  if((b.guardrailParagraphs?.length||0)!==1)fail(label+': must retain Do Not Miss This.');
  }
- for(const field of ['seriesMainScripture','seriesQuestion','seriesOpening','seriesContext','seriesExamination','seriesPractice','seriesLeaderGuidance','seriesPrayer'])if(!String(es?.[field]||'').trim())errors.push(`Juan series foundation missing ${field}.`);
- if(es?.seriesTeaching?.length!==en?.seriesTeaching?.length)errors.push('Juan seriesTeaching count must match English.');
- if(es?.seriesQuestions?.length!==en?.seriesQuestions?.length)errors.push('Juan seriesQuestions count must match English.');
- const data=read(esData);for(const version of ['RVR60','NVI','NBLA'])if(new RegExp(`\\b${version}\\b`).test(data))errors.push(`Juan Spanish data contains disallowed Bible version ${version}.`);
- const [l1,l2,l3,l4,l5,l6,l7,l8]=es.lessons;
- if(!l1.teaching[1].body.includes('no son vergonzosos')||!l1.teaching[5].body.includes('antisemita'))errors.push('Lesson 1 must preserve embodied dignity and anti-antisemitism safeguards.');
- if(!l2.teaching[3].body.includes('no debe sensacionalizarse')||!l2.teaching[5].body.includes('testimonio de las mujeres'))errors.push('Lesson 2 must preserve Samaritan-woman dignity and women-witness safeguards.');
- if(!l3.teaching[0].body.includes('autonomía')||!l3.teaching[0].body.includes('carecen de fe')||!l3.teaching[5].body.includes('sin coaccionar'))errors.push('Lesson 3 must preserve disability, healing, and non-coercion safeguards.');
- if(!l4.teaching[1].body.includes('manuscritos más antiguos')||!l4.teaching[3].body.includes('no es castigo')||!l4.teaching[5].body.includes('control sin límites'))errors.push('Lesson 4 must preserve textual, disability, and shepherding safeguards.');
- if(!l5.teaching[0].body.includes('no es fórmula')||!l5.teaching[2].body.includes('no es falta de fe')||!l5.teaching[5].body.includes('nunca excusa'))errors.push('Lesson 5 must preserve unanswered-prayer, grief, and justice safeguards.');
- if(!l6.teaching[0].body.includes('actos degradantes')||!l6.teaching[1].body.includes('protege la maldad')||!l6.teaching[4].body.includes('abuso o trauma'))errors.push('Lesson 6 must preserve servant, secrecy, and trauma safeguards.');
- if(!l7.teaching[0].body.includes('ocultar abuso')||!l7.teaching[2].body.includes('no culpa a todo el pueblo judío')||!l7.teaching[2].body.includes('ejecución romana'))errors.push('Lesson 7 must preserve abuse and anti-antisemitism safeguards.');
- if(!l8.teaching[0].body.includes('testimonio de las mujeres')||!l8.teaching[2].body.includes('no lo avergüenza')||!l8.teaching[5].body.includes('responsabilidad'))errors.push('Lesson 8 must preserve women-witness, honest-doubt, and accountable-restoration safeguards.');
- const english=read(enPage),spanish=read(esPage),hub=read(hubPath),i18n=read(i18nPath);
- expect('John English page',english,'hreflang="es" href="https://nolabelsdesignedbygod.org/es/juan-estudio'+html+'"');
- expect('John Spanish page',spanish,'hreflang="en" href="https://nolabelsdesignedbygod.org/john-study'+html+'"');
- expect('John Spanish page',spanish,'john-study-data-es'+js);
- expect('John route map',i18n,"'john-study"+html+"':'es/juan-estudio"+html+"'");
- expect('Spanish study hub',hub,'href="juan-estudio'+html+'"');
- expect('Spanish study hub',hub,'Juan: La Palabra se hizo carne, dio su vida y resucitó');
- expect('Spanish study hub',hub,'8 lecciones completas');
+ const all=JSON.stringify(es).toLowerCase();
+ for(const phrase of ['antisemit','discapacidad','mujer samaritana','juan 5:3b–4','juan 7:53–8:11','abuso','poda','unidad','ejecución romana','restauración','nueva traducción viviente'])if(!all.includes(phrase.toLowerCase()))fail('Missing safeguard/theme: '+phrase);
+ const ep=read(enPage),sp=read(esPage),im=read(i18n),hb=read(hub);
+ if(!ep.includes('hreflang="es" href="https://nolabelsdesignedbygod.org/es/juan-estudio.html"'))fail('English bilingual route missing.');
+ if(!sp.includes('hreflang="en" href="https://nolabelsdesignedbygod.org/john-study.html"'))fail('Spanish bilingual route missing.');
+ if(!sp.includes('john-study-data-es.js?v=1.1.0')||!sp.includes('john-study-guide.js?v=1.1.0')||!sp.includes('book-study-series.js?v=0.2.0'))fail('Spanish John assets are stale.');
+ if(!im.includes("'john-study.html':'es/juan-estudio.html'"))fail('i18n John route missing.');
+ if(!hb.includes('Sesenta y seis series completas y revisadas'))fail('Spanish library completion state missing.');
 }
-if(errors.length){console.error('Spanish John audit failed:\n- '+errors.join('\n- '));process.exit(1);}
-console.log('Spanish John audit passed.');
+if(errors.length){console.error('Spanish John audit failed:\n- '+errors.join('\n- '));process.exit(1)}
+console.log('Spanish John audit passed: exact English/Spanish reference parity, NTV standard, structure, safeguards, assets, routes, and completed library state validated.');

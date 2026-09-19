@@ -47,7 +47,7 @@ if(!errors.length){
   ['marriage metaphor not counseling',['metáfora, no consejería matrimonial','Consentimiento, seguridad, protección legal']],
   ['anti-antisemitism',['nunca debe convertirse en caricatura antisemita','no usar el fracaso de Efraín para despreciar al pueblo judío']],
   ['Gomer uncertainty',['vida interior de Gomer permanece mayormente desconocida','No inventes la historia sexual de Gomer']],
-  ['children dignity',['Ningún niño debe ser etiquetado','no romantices que hijos proféticos carguen etiquetas de rechazo']],
+  ['children dignity',['los seres humanos nunca deben reducirse a los símbolos que cargan','no romantices que hijos proféticos carguen etiquetas de rechazo']],
   ['Jehu Jezreel tension',['Existe una tensión canónica real','violencia de Jehú']],
   ['exposure not imitation',['Ningún cónyuge, iglesia, padre o líder puede usar Oseas para justificar humillación sexual','pornografía de venganza']],
   ['stalking coercion rejected',['no llames al acoso «amor que persigue»','control coercitivo']],

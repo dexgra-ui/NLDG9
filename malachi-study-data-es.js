@@ -201,102 +201,102 @@ window.NLDG_BOOK_STUDY={
       "scripture": "Malaquías 1:6–2:9",
       "supporting": [
         "Levítico 22:17–25",
-        "Deuteronomio 15:21",
-        "1 Samuel 2:27–36",
+        "Deuteronomio 33:8–11",
+        "Ezequiel 44:23–24",
         "Romanos 12:1–2",
         "Santiago 3:1"
       ],
-      "question": "¿Qué revela la adoración descuidada acerca de nuestra visión de Dios y qué responsabilidad llevan los líderes espirituales cuando su enseñanza y ejemplo forman a otros?",
-      "truth": "Dios rechaza desprecio disfrazado de adoración y responsabiliza a líderes espirituales por reverencia, enseñanza verdadera, imparcialidad y conducta que ayude en vez de dañar a quienes sirven.",
-      "goal": "Comprender la crítica sacrificial y sacerdotal de Malaquías dentro de la Torá, evitar usos capacitistas del lenguaje de defectos sacrificiales, tratar detalles debatidos con honestidad y aplicar el pasaje a adoración y liderazgo sin manipulación espiritual.",
-      "opening": "Lee Malaquías 1:6–2:9 y marca hijo honra padre, siervo amo, ¿dónde está mi honor?, alimento contaminado, ¿cómo te hemos contaminado?, ciego, cojo, enfermo, gobernador, cerrar puertas del templo, mi nombre grande entre naciones, ofrenda pura, mesa contaminada, cansancio, maldición, descendencia, estiércol de fiestas, pacto con Leví, vida y paz, instrucción verdadera, mensajero del SEÑOR, apartó a muchos del pecado, se desviaron, hicieron tropezar, corrompieron pacto y parcialidad. Pregunta qué enseñan las acciones de los sacerdotes acerca de Dios.",
-      "context": "El templo funciona y los sacerdotes reciben sacrificios, pero se aceptan animales prohibidos por la Torá para el altar. Levítico 22 y Deuteronomio 15 distinguen elegibilidad sacrificial del valor del animal. La acusación de Malaquías es que los sacerdotes ofrecen a Dios lo que saben que no cumple sus obligaciones del pacto.\n\nVarios detalles requieren cuidado. Malaquías 1:11, acerca del nombre de Dios grande entre las naciones y una ofrenda pura, se ha leído como descripción presente, futuro profético o adoración universal ideal; la referencia temporal exacta es debatida. En 2:3 la imagen de estiércol o desecho sacrificial es lenguaje deliberadamente duro de humillación dirigido a sacerdotes corruptos y no debe reproducirse como permiso para humillar.",
+      "question": "¿Qué revela la adoración descuidada acerca de nuestra visión de Dios y cómo daña el liderazgo espiritual corrupto a las personas que debería servir?",
+      "truth": "Dios merece adoración reverente y veraz, y los líderes espirituales son responsables de conservar conocimiento, rechazar parcialidad y ayudar a las personas a caminar fielmente en vez de hacerlas tropezar.",
+      "goal": "Leer la crítica de las ofrendas dañadas dentro de la ley sacrificial de Israel, proteger a personas con discapacidad de aplicaciones degradantes, comprender el llamado del pacto de Leví y fortalecer la responsabilidad del liderazgo sin convertir la adoración en actuación o perfeccionismo.",
+      "opening": "Lee Malaquías 1:6–2:9 y marca padre, amo, ¿dónde está mi honor?, desprecian mi nombre, altar contaminado, ciego, cojo, enfermo, gobernador, cerrar las puertas del templo, gran Rey, mi nombre entre las naciones, alimento despreciable, animal robado o dañado, pacto con Leví, vida y paz, instrucción verdadera, labios conservan conocimiento, mensajero del SEÑOR, se desviaron del camino, hicieron tropezar a muchos y parcialidad en la instrucción. Pregunta qué enseñan al pueblo acerca de Dios las decisiones de los sacerdotes.",
+      "context": "Malaquías se dirige a sacerdotes que sirven en el templo reconstruido. La Torá exigía que los animales sacrificados cumplieran normas específicas; animales dañados no eran aceptados como ofrendas ordinarias. La comparación del profeta con regalos presentados a un gobernador expone desprecio deliberado dentro de ese sistema sacrificial, no una afirmación general de que seres con discapacidad o heridas tengan menos dignidad humana.\n\nMalaquías 2 contrasta el fracaso de los sacerdotes con una descripción idealizada del llamado del pacto de Leví: reverencia, instrucción verdadera, conducta recta y apartar a muchos del pecado. Los sacerdotes eran responsables no solo de procedimiento ritual sino de enseñar la Torá. Su parcialidad y corrupción dañaban por eso a adoradores que dependían de ellos para orientación.",
       "teaching": [
         {
-          "heading": "Dios expone la diferencia entre honor social y honor divino — Malaquías 1:6",
-          "body": "Los sacerdotes entienden expectativas ordinarias de honor hacia padres, amos y gobernadores, pero fallan en honrar a Dios. La familiaridad religiosa puede volver ordinaria una responsabilidad sagrada.",
+          "heading": "Dios nombra el honor que falta — Malaquías 1:6",
+          "body": "Los sacerdotes entienden que padres y amos reciben honor, pero preguntan cómo han despreciado el nombre de Dios. El oficio religioso puede coexistir con ceguera ante la falta de respeto comunicada por decisiones rutinarias.",
           "paragraphs": [
-            "Los sacerdotes entienden expectativas ordinarias de honor hacia padres, amos y gobernadores, pero fallan en honrar a Dios. La familiaridad religiosa puede volver ordinaria una responsabilidad sagrada."
+            "Los sacerdotes entienden que padres y amos reciben honor, pero preguntan cómo han despreciado el nombre de Dios. El oficio religioso puede coexistir con ceguera ante la falta de respeto comunicada por decisiones rutinarias."
           ]
         },
         {
-          "heading": "El problema es la ofrenda despreciativa, no la discapacidad — Malaquías 1:7–8",
-          "body": "Animales ciegos, heridos o enfermos no cumplen los requisitos de estos sacrificios según la Torá. El pasaje evalúa a adoradores que traen ofrendas prohibidas; no clasifica a seres humanos con discapacidad como menos valiosos o menos santos.",
+          "heading": "Las ofrendas dañadas exponen desprecio dentro del sistema sacrificial — Malaquías 1:7–8",
+          "body": "Animales ciegos, cojos o enfermos violan las normas de ofrenda dadas a Israel. El problema es lo que los sacerdotes presentan a Dios conscientemente, no el valor de personas con discapacidad. La dignidad humana nunca debe medirse por elegibilidad sacrificial.",
           "paragraphs": [
-            "Animales ciegos, heridos o enfermos no cumplen los requisitos de estos sacrificios según la Torá. El pasaje evalúa a adoradores que traen ofrendas prohibidas; no clasifica a seres humanos con discapacidad como menos valiosos o menos santos."
+            "Animales ciegos, cojos o enfermos violan las normas de ofrenda dadas a Israel. El problema es lo que los sacerdotes presentan a Dios conscientemente, no el valor de personas con discapacidad. La dignidad humana nunca debe medirse por elegibilidad sacrificial."
           ]
         },
         {
-          "heading": "Dios prefiere detener adoración vacía a recibirla — Malaquías 1:9–10",
-          "body": "El deseo sorprendente de que alguien cierre las puertas muestra que actividad religiosa no es automáticamente agradable a Dios. Más actividad no es mejor cuando enseña desprecio.",
+          "heading": "La comparación con el gobernador revela una doble norma — Malaquías 1:8",
+          "body": "Los sacerdotes reconocerían el insulto si ofrecieran ese regalo a un gobernador persa. Malaquías expone una adoración que da a Dios lo que las personas mismas consideran inaceptable.",
           "paragraphs": [
-            "El deseo sorprendente de que alguien cierre las puertas muestra que actividad religiosa no es automáticamente agradable a Dios. Más actividad no es mejor cuando enseña desprecio."
+            "Los sacerdotes reconocerían el insulto si ofrecieran ese regalo a un gobernador persa. Malaquías expone una adoración que da a Dios lo que las personas mismas consideran inaceptable."
           ]
         },
         {
-          "heading": "El nombre de Dios no disminuye por fracaso local — Malaquías 1:11–14",
-          "body": "Ya se lea el versículo 11 principalmente como realidad presente, futuro profético o contraste retórico, la afirmación central es clara: la grandeza de Dios se extiende más allá de la negligencia de estos sacerdotes.",
+          "heading": "Dios prefiere detener el ritual a recibir adoración engañosa — Malaquías 1:9–14",
+          "body": "El deseo sorprendente de que alguien cierre las puertas muestra que actividad religiosa no es automáticamente agradable a Dios. El ritual continuo puede profundizar deshonra cuando líderes normalizan desprecio conscientemente.",
           "paragraphs": [
-            "Ya se lea el versículo 11 principalmente como realidad presente, futuro profético o contraste retórico, la afirmación central es clara: la grandeza de Dios se extiende más allá de la negligencia de estos sacerdotes."
+            "El deseo sorprendente de que alguien cierre las puertas muestra que actividad religiosa no es automáticamente agradable a Dios. El ritual continuo puede profundizar deshonra cuando líderes normalizan desprecio conscientemente."
           ]
         },
         {
-          "heading": "El fracaso sacerdotal tiene consecuencias — Malaquías 2:1–4",
-          "body": "Malaquías anuncia disciplina severa del pacto e incluye una imagen degradante de desecho sacrificial. La retórica comunica gravedad del servicio corrupto, no un modelo para vergüenza abusiva.",
+          "heading": "El nombre de Dios no disminuye por fracaso local — Malaquías 1:11,14",
+          "body": "El SEÑOR es gran Rey y su nombre será honrado entre las naciones. El fracaso sacerdotal es serio, pero no puede reducir el valor de Dios ni limitar su gloria al mal ejemplo de ellos.",
           "paragraphs": [
-            "Malaquías anuncia disciplina severa del pacto e incluye una imagen degradante de desecho sacrificial. La retórica comunica gravedad del servicio corrupto, no un modelo para vergüenza abusiva."
+            "El SEÑOR es gran Rey y su nombre será honrado entre las naciones. El fracaso sacerdotal es serio, pero no puede reducir el valor de Dios ni limitar su gloria al mal ejemplo de ellos."
           ]
         },
         {
-          "heading": "El ideal del pacto con Leví es reverencia y verdad — Malaquías 2:5–6",
-          "body": "Malaquías recuerda un ideal sacerdotal marcado por vida, paz, reverencia, enseñanza verdadera, andar recto y apartar a muchos del mal. El liderazgo espiritual se mide por verdad y fruto moral, no por oficio solamente.",
+          "heading": "El pacto con Leví une reverencia y enseñanza — Malaquías 2:4–7",
+          "body": "El llamado de Leví se describe mediante temor reverente, instrucción verdadera, conducta recta y apartar a muchos de la maldad. El liderazgo espiritual responde tanto por carácter como por enseñanza.",
           "paragraphs": [
-            "Malaquías recuerda un ideal sacerdotal marcado por vida, paz, reverencia, enseñanza verdadera, andar recto y apartar a muchos del mal. El liderazgo espiritual se mide por verdad y fruto moral, no por oficio solamente."
+            "El llamado de Leví se describe mediante temor reverente, instrucción verdadera, conducta recta y apartar a muchos de la maldad. El liderazgo espiritual responde tanto por carácter como por enseñanza."
           ]
         },
         {
-          "heading": "Los labios sacerdotales deben conservar conocimiento — Malaquías 2:7",
-          "body": "Las personas buscan instrucción de sacerdotes porque son mensajeros confiados con enseñanza de Dios. Mayor influencia docente trae mayor responsabilidad.",
+          "heading": "Los líderes corruptos hacen tropezar a otros — Malaquías 2:8",
+          "body": "Los sacerdotes se han desviado y han hecho tropezar a muchos por su instrucción. La enseñanza dañina no es solo un fracaso privado; multiplica consecuencias en las personas que confían en líderes.",
           "paragraphs": [
-            "Las personas buscan instrucción de sacerdotes porque son mensajeros confiados con enseñanza de Dios. Mayor influencia docente trae mayor responsabilidad."
+            "Los sacerdotes se han desviado y han hecho tropezar a muchos por su instrucción. La enseñanza dañina no es solo un fracaso privado; multiplica consecuencias en las personas que confían en líderes."
           ]
         },
         {
-          "heading": "Parcialidad e instrucción falsa hacen tropezar — Malaquías 2:8–9",
-          "body": "Los sacerdotes se han apartado del camino, corrompido su responsabilidad de pacto y mostrado parcialidad. La autoridad espiritual se vuelve peligrosa cuando dobla la verdad por estatus, favoritismo, dinero o control.",
+          "heading": "La parcialidad corrompe el juicio espiritual — Malaquías 2:9",
+          "body": "Mostrar parcialidad al aplicar instrucción traiciona la responsabilidad del pacto. Favoritismo, protección de personas cercanas y normas desiguales son incompatibles con un ministerio confiable.",
           "paragraphs": [
-            "Los sacerdotes se han apartado del camino, corrompido su responsabilidad de pacto y mostrado parcialidad. La autoridad espiritual se vuelve peligrosa cuando dobla la verdad por estatus, favoritismo, dinero o control."
+            "Mostrar parcialidad al aplicar instrucción traiciona la responsabilidad del pacto. Favoritismo, protección de personas cercanas y normas desiguales son incompatibles con un ministerio confiable."
           ]
         }
       ],
       "questions": [
-        "¿Qué contraste hace Malaquías entre el honor dado a autoridades humanas y el honor dado a Dios?",
-        "¿Por qué son inaceptables los animales de los versículos 7–8 como sacrificios y por qué nunca debe trasladarse esa categoría al valor humano?",
-        "¿Qué revela el deseo de cerrar las puertas del templo acerca de la visión de Dios sobre actividad religiosa vacía?",
-        "¿Qué es claro en Malaquías 1:11 aunque su cumplimiento temporal preciso sea debatido?",
-        "¿Cuál es el propósito de la imagen severa del estiércol o desecho en 2:3 y qué uso deben evitar líderes?",
-        "¿Qué cualidades marcan el ideal del pacto asociado con Leví en 2:5–6?",
-        "¿Por qué la autoridad de enseñanza aumenta responsabilidad según 2:7–9?",
-        "¿Dónde pueden parcialidad, estatus, comodidad o protección institucional distorsionar adoración y enseñanza hoy?"
+        "¿Qué revela la comparación del honor en el versículo 6 acerca de la visión que los sacerdotes tienen de Dios?",
+        "¿Por qué importan las normas de ofrendas en los versículos 7–8 y qué aplicación degradante debe rechazarse?",
+        "¿Qué expone la comparación con el gobernador acerca de la doble norma de los sacerdotes?",
+        "¿Por qué preferiría Dios puertas del templo cerradas antes que adoración engañosa continua?",
+        "¿Qué dice la grandeza del nombre de Dios entre las naciones acerca del fracaso religioso local?",
+        "¿Qué cualidades definen el papel fiel de enseñanza asociado con Leví en 2:5–7?",
+        "¿Cómo puede una enseñanza corrupta hacer tropezar a otras personas?",
+        "¿Dónde amenaza la parcialidad al liderazgo espiritual confiable hoy?"
       ],
-      "examination": "¿Dónde le he ofrecido a Dios lo conveniente mientras entrego mi mejor energía a otra cosa? Si enseño o lidero, ¿las personas han sido guiadas hacia verdad y fidelidad o presionadas por mi estatus y preferencias?",
-      "challenge": "Entrega a Dios un acto de atención íntegra que te cueste algo real, como oración enfocada, restitución, preparación, servicio o estudio veraz. Si lideras, pregunta a una persona confiable si favoritismo o inconsistencia está haciendo tropezar a alguien.",
-      "caution": "Separa explícitamente elegibilidad sacrificial de dignidad humana. Evita analogías capacitistas. Reconoce debate interpretativo alrededor de 1:11. Aplica la responsabilidad sacerdotal primero a quienes tienen influencia. Si se revela daño de liderazgo, prioriza seguridad, evidencia, denuncia apropiada y responsabilidad independiente.",
-      "prayer": "Dios santo, recibe más que nuestras sobras. Haz veraz nuestra adoración y responsable nuestro liderazgo. Guárdanos de parcialidad, protege a las personas de daño espiritual y enséñanos a honrar la dignidad de cada persona mientras te ofrecemos toda nuestra vida por medio de Jesús. Amén.",
+      "examination": "¿Dónde estoy dando a Dios lo conveniente mientras reservo mi mejor atención, integridad o esfuerzo para otra cosa? Si lidero o enseño, ¿las personas experimentan verdad consistente o normas distintas según estatus y cercanía?",
+      "challenge": "Elige un área de adoración o servicio que se haya vuelto descuidada. Mejórala mediante reverencia e integridad, no perfeccionismo. Si enseñas o lideras, revisa una decisión por favoritismo y corrígela si es necesario.",
+      "caution": "Protege explícitamente a participantes con discapacidad del estigma del lenguaje sacrificial. No conviertas condición física en metáfora de valor moral. Aplica la responsabilidad sacerdotal primero a líderes y maestros. Cuando se revele daño ministerial, prioriza verdad, seguridad, denuncia y responsabilidad independiente sobre reputación institucional.",
+      "prayer": "Gran Rey, perdona la adoración que te trata como algo secundario y el liderazgo que se protege a sí mismo. Enséñanos reverencia sin perfeccionismo, verdad sin parcialidad y servicio que honre la dignidad de cada persona. Haz íntegra nuestra adoración por medio de Jesús. Amén.",
       "openingParagraphs": [
-        "Lee Malaquías 1:6–2:9 y marca hijo honra padre, siervo amo, ¿dónde está mi honor?, alimento contaminado, ¿cómo te hemos contaminado?, ciego, cojo, enfermo, gobernador, cerrar puertas del templo, mi nombre grande entre naciones, ofrenda pura, mesa contaminada, cansancio, maldición, descendencia, estiércol de fiestas, pacto con Leví, vida y paz, instrucción verdadera, mensajero del SEÑOR, apartó a muchos del pecado, se desviaron, hicieron tropezar, corrompieron pacto y parcialidad. Pregunta qué enseñan las acciones de los sacerdotes acerca de Dios."
+        "Lee Malaquías 1:6–2:9 y marca padre, amo, ¿dónde está mi honor?, desprecian mi nombre, altar contaminado, ciego, cojo, enfermo, gobernador, cerrar las puertas del templo, gran Rey, mi nombre entre las naciones, alimento despreciable, animal robado o dañado, pacto con Leví, vida y paz, instrucción verdadera, labios conservan conocimiento, mensajero del SEÑOR, se desviaron del camino, hicieron tropezar a muchos y parcialidad en la instrucción. Pregunta qué enseñan al pueblo acerca de Dios las decisiones de los sacerdotes."
       ],
       "contextParagraphs": [
-        "El templo funciona y los sacerdotes reciben sacrificios, pero se aceptan animales prohibidos por la Torá para el altar. Levítico 22 y Deuteronomio 15 distinguen elegibilidad sacrificial del valor del animal. La acusación de Malaquías es que los sacerdotes ofrecen a Dios lo que saben que no cumple sus obligaciones del pacto.",
-        "Varios detalles requieren cuidado. Malaquías 1:11, acerca del nombre de Dios grande entre las naciones y una ofrenda pura, se ha leído como descripción presente, futuro profético o adoración universal ideal; la referencia temporal exacta es debatida. En 2:3 la imagen de estiércol o desecho sacrificial es lenguaje deliberadamente duro de humillación dirigido a sacerdotes corruptos y no debe reproducirse como permiso para humillar."
+        "Malaquías se dirige a sacerdotes que sirven en el templo reconstruido. La Torá exigía que los animales sacrificados cumplieran normas específicas; animales dañados no eran aceptados como ofrendas ordinarias. La comparación del profeta con regalos presentados a un gobernador expone desprecio deliberado dentro de ese sistema sacrificial, no una afirmación general de que seres con discapacidad o heridas tengan menos dignidad humana.",
+        "Malaquías 2 contrasta el fracaso de los sacerdotes con una descripción idealizada del llamado del pacto de Leví: reverencia, instrucción verdadera, conducta recta y apartar a muchos del pecado. Los sacerdotes eran responsables no solo de procedimiento ritual sino de enseñar la Torá. Su parcialidad y corrupción dañaban por eso a adoradores que dependían de ellos para orientación."
       ],
       "jesusParagraphs": [
-        "Jesús condena actuación religiosa que honra a Dios con palabras mientras el corazón está lejos y enseña que líderes responderán por cómo guían a otros. Romanos 12 llama a cristianos a ofrecerse como sacrificios vivos, no como continuación del sistema animal de Malaquías sino como adoración de toda la vida formada por la misericordia de Dios."
+        "Jesús confronta adoración que honra a Dios con palabras mientras corazones y prácticas permanecen lejos, y se presenta como maestro fiel que habla verdad sin parcialidad. Romanos 12 llama después a la adoración cristiana una ofrenda de toda la vida. Los cristianos no reproducen el sistema de sacrificios animales de Malaquías; por medio de Jesús aprenden que la adoración abarca a toda la persona y que líderes siguen siendo responsables de lo que enseñan."
       ],
       "guardrailParagraphs": [
-        "No uses las categorías ciego, cojo, herido o enfermo de sacrificios para despreciar a personas con discapacidad o enfermedad crónica; no insinúes que una diferencia física hace a alguien espiritualmente defectuoso; no uses el juicio severo a sacerdotes como permiso para humillación; no supongas que 1:11 tiene una única interpretación indiscutida; y no protejas a pastores, maestros o líderes de responsabilidad por ocupar un oficio sagrado."
+        "No uses las palabras ciego, cojo, enfermo, defectuoso o dañado para menospreciar a personas con discapacidad ni insinuar que la discapacidad hace a alguien inaceptable para Dios; no exijas rendimiento impecable como si los cristianos fueran animales sacrificiales; no uses el oficio ministerial para evitar escrutinio; y no confundas lealtad a un líder con lealtad a Dios. Las palabras más duras de Malaquías aquí se dirigen a sacerdotes que deshonran a Dios y desorientan al pueblo."
       ],
-      "closingTakeaway": "Malaquías rechaza adoración que parece religiosa mientras enseña desprecio. Dios merece honor verdadero, y quienes lo representan deben conservar conocimiento, andar con integridad, rechazar parcialidad y ayudar a las personas a avanzar hacia vida en vez de tropiezo."
+      "closingTakeaway": "Malaquías 1:6–2:9 expone adoración que conserva el ritual mientras pierde reverencia. Dios rechaza desprecio, responsabiliza a maestros, condena parcialidad y llama a líderes espirituales a una instrucción verdadera que ayude a las personas a caminar en vez de tropezar."
     },
     {
       "number": 3,

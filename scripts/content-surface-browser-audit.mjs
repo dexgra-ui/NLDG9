@@ -62,6 +62,17 @@ try{
   const duplicateSeries=latestSeries.filter(series=>series&&featuredSeries.includes(series));
   expect(duplicateSeries.length===0,'Homepage Latest preserves featured-series duplicate prevention.',`Homepage Latest repeated featured series: ${duplicateSeries.join(', ')}.`);
 
+  await open('studies','studies.html');
+  const kidsJourneyCount=await page.locator('#collection-grid a[href="growing-with-jesus.html"]').count();
+  const youthJourneyCount=await page.locator('#collection-grid a[href="following-jesus-for-yourself.html"]').count();
+  const collectionText=await page.locator('#collection-grid').innerText().catch(()=>'');
+  const firstCollectionHrefs=await page.locator('#collection-grid .journey-collection-card .collection-action').evaluateAll(links=>links.slice(0,4).map(link=>link.getAttribute('href')));
+  expect(kidsJourneyCount===1,'Bible Studies shows exactly one Growing with Jesus collection card.',`Bible Studies rendered ${kidsJourneyCount} Growing with Jesus collection links.`);
+  expect(youthJourneyCount===1,'Bible Studies shows exactly one Following Jesus for Yourself collection card.',`Bible Studies rendered ${youthJourneyCount} Following Jesus for Yourself collection links.`);
+  expect(!collectionText.includes('Complete Kids Series'),'Bible Studies no longer renders the retired Complete Kids Series card.','Bible Studies still rendered the retired Complete Kids Series card.');
+  expect(!collectionText.includes('Complete Youth Series'),'Bible Studies no longer renders the retired Complete Youth Series card.','Bible Studies still rendered the retired Complete Youth Series card.');
+  expect(JSON.stringify(firstCollectionHrefs)===JSON.stringify(['book-by-book.html','new-believers.html','growing-with-jesus.html','following-jesus-for-yourself.html']),'Bible Studies preserves the intended foundational collection order.',`Bible Studies foundational order was ${firstCollectionHrefs.join(' → ')}.`);
+
   await open('search','search.html');
   const search=page.locator('#site-search');
   for(const title of requiredTitles){

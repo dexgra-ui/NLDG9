@@ -28,17 +28,4 @@ if(!merge()){
   const timer=setInterval(()=>{tries+=1;if(merge()||tries>=100)clearInterval(timer);},20);
 }
 
-const addHubCard=()=>{
-  const grid=document.querySelector('#collection-grid[data-static="true"]');
-  if(!grid||grid.querySelector('[data-following-jesus-for-yourself-card]'))return;
-  const card=document.createElement('article');
-  card.className='journey-collection-card';
-  card.dataset.followingJesusForYourselfCard='true';
-  card.innerHTML='<div class="collection-card-top"><span class="collection-icon" aria-hidden="true">🧭</span><span class="collection-status ready">Complete Youth Series</span></div><h3>Following Jesus for Yourself</h3><p class="collection-description">Ten Scripture-first studies for preteens and teens ages 11–18, with a guided Preteen Track and a Teen Deeper Dive in every lesson.</p><div class="collection-card-footer"><small>10 of 10 youth studies available</small><a class="collection-action" href="following-jesus-for-yourself.html">Open Youth Journey <span aria-hidden="true">→</span></a></div>';
-  const kids=grid.querySelector('[data-growing-with-jesus-card]');
-  if(kids)kids.insertAdjacentElement('afterend',card);
-  else if(grid.firstElementChild)grid.firstElementChild.insertAdjacentElement('afterend',card);
-  else grid.appendChild(card);
-};
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',addHubCard,{once:true});else addHubCard();
 })();

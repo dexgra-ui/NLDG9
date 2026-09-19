@@ -1,5 +1,5 @@
 const navigationScript=document.createElement('script');
-navigationScript.src='site-navigation.js?v=1.9.7';
+navigationScript.src='site-navigation.js?v=1.9.8';
 navigationScript.async=false;
 document.head.appendChild(navigationScript);
 const contactLinksScript=document.createElement('script');
@@ -46,7 +46,7 @@ document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().g
   const replaceBranding=root=>{const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let node;while(node=walker.nextNode()){if(node.parentElement?.closest('script,style'))continue;node.nodeValue=node.nodeValue.replaceAll('Brotherhood Bible Games','No Labels Games');}};
   replaceBranding(document.body);
   const loadScript=(src,test)=>new Promise((resolve,reject)=>{if(test()){resolve();return;}const existing=[...document.scripts].find(script=>script.src.includes(src.split('?')[0]));if(existing){if(test()){resolve();return;}existing.addEventListener('load',resolve,{once:true});existing.addEventListener('error',reject,{once:true});return;}const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=reject;document.head.appendChild(script);});
-  const ensureLibrary=()=>loadScript('content-library.js?v=20260814-1',()=>Boolean(window.NLDG_LIBRARY)).then(()=>loadScript('marriage-family-library.js?v=1.0.0',()=>Boolean(window.NLDG_MARRIAGE_FAMILY_LIBRARY_LOADED))).then(()=>loadScript('difficult-questions-library.js?v=1.0.0',()=>Boolean(window.NLDG_DIFFICULT_QUESTIONS_LIBRARY_LOADED))).then(()=>loadScript('leadership-library.js?v=1.0.0',()=>Boolean(window.NLDG_LEADERSHIP_LIBRARY_LOADED))).then(()=>loadScript('devotional-library.js?v=1.3.0',()=>Boolean(window.NLDG_DEVOTIONAL_LIBRARY_LOADED))).then(()=>loadScript('article-library.js?v=1.0.0',()=>Boolean(window.NLDG_ARTICLE_LIBRARY_LOADED))).then(()=>loadScript('contact-library.js?v=1.0.0',()=>Boolean(window.NLDG_CONTACT_LIBRARY_LOADED)));
+  const ensureLibrary=()=>loadScript('content-library.js?v=20260919-1',()=>Boolean(window.NLDG_LIBRARY)).then(()=>loadScript('marriage-family-library.js?v=1.0.0',()=>Boolean(window.NLDG_MARRIAGE_FAMILY_LIBRARY_LOADED))).then(()=>loadScript('difficult-questions-library.js?v=1.0.0',()=>Boolean(window.NLDG_DIFFICULT_QUESTIONS_LIBRARY_LOADED))).then(()=>loadScript('leadership-library.js?v=1.0.0',()=>Boolean(window.NLDG_LEADERSHIP_LIBRARY_LOADED))).then(()=>loadScript('devotional-library.js?v=1.3.0',()=>Boolean(window.NLDG_DEVOTIONAL_LIBRARY_LOADED))).then(()=>loadScript('article-library.js?v=1.0.0',()=>Boolean(window.NLDG_ARTICLE_LIBRARY_LOADED))).then(()=>loadScript('contact-library.js?v=1.0.0',()=>Boolean(window.NLDG_CONTACT_LIBRARY_LOADED)));
   const escapeHtml=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
   const card=item=>`<article class="unified-content-card"><span class="content-type">${escapeHtml(item.type)}</span><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description||'')}</p>${item.scripture?.length?`<small>📖 ${escapeHtml(item.scripture.join(', '))}</small>`:''}<a href="${escapeHtml(item.url||'#')}">Open resource →</a></article>`;
   window.NLDG_CONTENT_CARD=card;
@@ -68,7 +68,7 @@ document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().g
       'after-benediction-series.html','preferences-idols-series.html','first-john-study.html',
       'philippians-study.html','ruth-study.html','technology-ai.html',
       'sunday-school.html','women-of-faith.html','men-of-faith.html','marriage-family.html',
-      'difficult-questions.html','leadership.html','walking-with-jesus.html',
+      'difficult-questions.html','leadership.html','walking-with-jesus.html','other-ancient-writings.html',
       'study-library.html','dashboard.html','ministry-tools.html','topics.html','scripture-index.html',
       'devotionals.html','articles.html','newsletter.html','resource-center.html','teaching-library.html',
       'podcast.html','news.html','search.html','site-map.html',
@@ -87,7 +87,7 @@ document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().g
       'technology-ai.html','sunday-school.html','sunday-school-lesson.html','women-of-faith.html','men-of-faith.html',
       'marriage-family.html','marriage-family-study.html','difficult-questions.html','difficult-questions-study.html',
       'leadership.html','leadership-study.html','leadership-toolkit.html','leadership-toolkit-packet.html',
-      'walking-with-jesus.html','walking-with-jesus-study.html','topics.html','scripture-index.html'
+      'walking-with-jesus.html','walking-with-jesus-study.html','other-ancient-writings.html','topics.html','scripture-index.html'
     ]);
     const isStudyExperiencePage=studyExperiencePages.has(page)||page.startsWith('study-')||page.startsWith('lesson-')||page.startsWith('women-of-faith-')||page.startsWith('men-of-faith-');
     const dedicatedLessonPages=new Set(['walking-with-jesus-study.html','marriage-family-study.html','difficult-questions-study.html','leadership-study.html','sunday-school-lesson.html']);

@@ -79,8 +79,8 @@ for(const card of cards){
   }
 }
 
-if(books!==66||lessons!==447){
-  findings.push({file:'book-by-book.html',book:'Catalog',lessonNumber:'—',field:'coverage',value:`${books} books / ${lessons} lessons`,reason:'Audit coverage must equal the published 66 books / 447 lessons.'});
+if(books!==66||lessons!==448){
+  findings.push({file:'book-by-book.html',book:'Catalog',lessonNumber:'—',field:'coverage',value:`${books} books / ${lessons} lessons`,reason:'Audit coverage must equal the published 66 books / 448 lessons.'});
 }
 
 const unique=[];
@@ -99,5 +99,5 @@ if(unique.length){
   }
   process.exitCode=1;
 }else{
-  console.log('All 66 Book-by-Book studies and 447 lessons have complete, link-compatible Scripture references.');
+  console.log('All 66 Book-by-Book studies and 448 lessons have complete, link-compatible Scripture references.');
 }

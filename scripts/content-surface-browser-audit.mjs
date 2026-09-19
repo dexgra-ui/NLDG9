@@ -34,7 +34,8 @@ const sitemapPaths=[
   'ancient-writing-maccabees.html',
   'ancient-writing-meqabyan.html',
   'ancient-writing-assumption-moses.html',
-  'ancient-writing-jannes-jambres.html'
+  'ancient-writing-jannes-jambres.html',
+  'ancient-writing-book-jashar.html'
 ];
 
 function expect(condition,success,failure){
@@ -65,7 +66,7 @@ try{
   await open('homepage','index.html');
   await page.waitForFunction(()=>document.querySelector('#home-latest')?.children.length>0,{timeout:5000}).catch(()=>{});
   const homeLatest=await page.locator('#home-latest').innerText().catch(()=>'');
-  expect(homeLatest.includes('Jannes and Jambres: Historical & Biblical Guide'),'Homepage Latest surfaces the newest Jannes and Jambres detailed guide.','Homepage Latest did not surface the newest Jannes and Jambres detailed guide after the shared library loaded.');
+  expect(homeLatest.includes('Book of Jashar: Historical & Biblical Guide'),'Homepage Latest surfaces the newest Book of Jashar detailed guide.','Homepage Latest did not surface the newest Book of Jashar detailed guide after the shared library loaded.');
   const featuredSeries=await page.locator('#home-featured .content-series').allInnerTexts().catch(()=>[]);
   const latestSeries=await page.locator('#home-latest .content-series').allInnerTexts().catch(()=>[]);
   const duplicateSeries=latestSeries.filter(series=>series&&featuredSeries.includes(series));
@@ -154,6 +155,9 @@ try{
   const jannesCrossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('jannes-jambres')?.href||'');
   expect(jannesCrossLinkHref==='ancient-writing-jannes-jambres.html','The Jannes and Jambres cross-link registry routes to the detailed guide.',`The Jannes and Jambres cross-link registry routed to ${jannesCrossLinkHref}.`);
   expect((await page.locator('#jannes-jambres a[href="ancient-writing-jannes-jambres.html"]').count())===1,'The Jannes and Jambres overview card links to its detailed guide.','The Jannes and Jambres overview card is missing its detailed-guide link.');
+  const jasharCrossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('book-jashar')?.href||'');
+  expect(jasharCrossLinkHref==='ancient-writing-book-jashar.html','The Book of Jashar cross-link registry routes to the detailed guide.',`The Book of Jashar cross-link registry routed to ${jasharCrossLinkHref}.`);
+  expect((await page.locator('#book-jashar a[href="ancient-writing-book-jashar.html"]').count())===1,'The Book of Jashar overview card links to its detailed guide.','The Book of Jashar overview card is missing its detailed-guide link.');
 
   await open('1-enoch-guide','ancient-writing-1-enoch.html');
   const enochGuide=await page.locator('main').innerText();
@@ -354,11 +358,36 @@ try{
   expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=8,'Jannes guide provides a substantial academic and primary source list.','Jannes guide does not provide enough research sources.');
   expect((await page.locator('a[href="second-timothy-study.html"]').count())>=1&&(await page.locator('a[href="exodus-study.html"]').count())>=1,'Jannes guide links back to 2 Timothy and Exodus studies.','Jannes guide is missing 2 Timothy or Exodus return links.');
   expect((await page.locator('a[href="ancient-writing-assumption-moses.html"]').count())>=1,'Jannes guide links back to the previous Moses tradition guide.','Jannes guide is missing previous-guide navigation.');
+  expect((await page.locator('a[href="ancient-writing-book-jashar.html"]').count())>=1,'Jannes guide links forward to the detailed Book of Jashar guide.','Jannes guide is missing its Book of Jashar next-guide link.');
   await page.setViewportSize({width:390,height:844});
   expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Jannes guide has no horizontal overflow at 390px.','Jannes guide overflows horizontally at 390px.');
   const jannesInternalLink=page.locator('.detail-connection-list a').first();
   const jannesLinkBox=await jannesInternalLink.boundingBox();
   expect(Boolean(jannesLinkBox&&jannesLinkBox.height>=44),'Jannes canonical-study links meet the 44px mobile touch target.','Jannes canonical-study links are below the 44px mobile touch target.');
+  await page.setViewportSize({width:1440,height:1000});
+
+  await open('book-jashar-guide','ancient-writing-book-jashar.html');
+  const jasharGuide=await page.locator('main').innerText();
+  expect(jasharGuide.includes('A title survives. The book does not.'),'Book of Jashar guide states the central lost-source distinction.','Book of Jashar guide is missing its central lost-source distinction.');
+  expect(jasharGuide.includes('Sefer haYashar')&&jasharGuide.includes('Book / Scroll of the Upright'),'Book of Jashar guide explains the Hebrew title and meaning.','Book of Jashar guide is missing the Hebrew title or meaning.');
+  expect(jasharGuide.includes('Joshua 10:13')&&jasharGuide.includes('2 Samuel 1:18'),'Book of Jashar guide identifies both secure biblical references.','Book of Jashar guide is missing Joshua 10:13 or 2 Samuel 1:18.');
+  expect(jasharGuide.includes('Only references and embedded material, not the complete source'),'Book of Jashar guide clearly explains what survives.','Book of Jashar guide overstates the survival of the ancient source.');
+  expect(jasharGuide.includes('Is there a possible third reference in Greek 1 Kings?')&&jasharGuide.includes('The two secure references remain Joshua 10:13 and 2 Samuel 1:18.'),'Book of Jashar guide labels the Greek 1 Kings connection as uncertain.','Book of Jashar guide overstates a third secure reference.');
+  expect(jasharGuide.includes('The later Sefer haYashar is not the lost biblical source'),'Book of Jashar guide distinguishes the later Hebrew work from the lost source.','Book of Jashar guide conflates the later Hebrew work with the lost source.');
+  expect(jasharGuide.includes('Venice, 1625')&&jasharGuide.includes('medieval period to the early sixteenth century'),'Book of Jashar guide gives the later Sefer haYashar print history and dating uncertainty.','Book of Jashar guide is missing the 1625 Venice history or dating uncertainty.');
+  expect(jasharGuide.includes('Jacob Ilive’s 1751 “Book of Jasher”'),'Book of Jashar guide identifies the separate 1751 English pseudo-Jasher.','Book of Jashar guide is missing the Jacob Ilive 1751 distinction.');
+  expect(jasharGuide.includes('Three different “Jasher / Jashar” identities'),'Book of Jashar guide includes a clear identity comparison.','Book of Jashar guide is missing the same-title comparison.');
+  expect(jasharGuide.includes('Cited by Scripture does not mean separately canonical'),'Book of Jashar guide keeps source citation distinct from canonization.','Book of Jashar guide is missing its canon/source-use guardrail.');
+  expect(jasharGuide.includes('There is no ancient complete text to reproduce'),'Book of Jashar guide clearly states the full-text limitation.','Book of Jashar guide implies an ancient complete text is available.');
+  expect(!jasharGuide.includes('Phase 2'),'Book of Jashar public guide omits internal development-phase language.','Book of Jashar public guide exposes internal Phase 2 language.');
+  expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=8,'Book of Jashar guide provides a substantial academic and primary source list.','Book of Jashar guide does not provide enough research sources.');
+  expect((await page.locator('a[href="joshua-study.html"]').count())>=1&&(await page.locator('a[href="second-samuel-study.html"]').count())>=1&&(await page.locator('a[href="first-kings-study.html"]').count())>=1&&(await page.locator('a[href="numbers-study.html"]').count())>=1,'Book of Jashar guide links back to Joshua, 2 Samuel, 1 Kings, and Numbers studies.','Book of Jashar guide is missing one or more canonical-study links.');
+  expect((await page.locator('a[href="ancient-writing-jannes-jambres.html"]').count())>=1,'Book of Jashar guide links back to the previous Jannes and Jambres guide.','Book of Jashar guide is missing previous-guide navigation.');
+  await page.setViewportSize({width:390,height:844});
+  expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Book of Jashar guide has no horizontal overflow at 390px.','Book of Jashar guide overflows horizontally at 390px.');
+  const jasharInternalLink=page.locator('.detail-connection-list a').first();
+  const jasharLinkBox=await jasharInternalLink.boundingBox();
+  expect(Boolean(jasharLinkBox&&jasharLinkBox.height>=44),'Book of Jashar canonical-study links meet the 44px mobile touch target.','Book of Jashar canonical-study links are below the 44px mobile touch target.');
   await page.setViewportSize({width:1440,height:1000});
 
   await open('other-ancient-writings-mobile','other-ancient-writings.html');
@@ -414,6 +443,10 @@ try{
   await page.waitForTimeout(250);
   const jannesSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
   expect(jannesSearchResults.includes('Jannes and Jambres: Historical & Biblical Guide'),'Search finds the detailed Jannes and Jambres guide.','Search did not find the detailed Jannes and Jambres guide.');
+  await search.fill('Book of Jashar');
+  await page.waitForTimeout(250);
+  const jasharSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
+  expect(jasharSearchResults.includes('Book of Jashar: Historical & Biblical Guide'),'Search finds the detailed Book of Jashar guide.','Search did not find the detailed Book of Jashar guide.');
 
 
   await open('site-map','site-map.html');
@@ -431,6 +464,7 @@ try{
   expect(siteMapText.includes('Ethiopian Meqabyan: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Meqabyan guide.','Generated Site Map index is missing the detailed Meqabyan guide.');
   expect(siteMapText.includes('Assumption / Testament of Moses: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Moses tradition guide.','Generated Site Map index is missing the detailed Moses tradition guide.');
   expect(siteMapText.includes('Jannes and Jambres: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Jannes and Jambres guide.','Generated Site Map index is missing the detailed Jannes and Jambres guide.');
+  expect(siteMapText.includes('Book of Jashar: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Book of Jashar guide.','Generated Site Map index is missing the detailed Book of Jashar guide.');
   expect((await page.locator('.site-map-grid a[href="other-ancient-writings.html"]').count())>0,'Manual Site Map Bible Studies section links Other Ancient Writings.','Manual Site Map is missing Other Ancient Writings.');
 
 

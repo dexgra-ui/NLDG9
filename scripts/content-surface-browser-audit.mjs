@@ -36,7 +36,8 @@ const sitemapPaths=[
   'ancient-writing-assumption-moses.html',
   'ancient-writing-jannes-jambres.html',
   'ancient-writing-jashar.html',
-  'ancient-writing-wars-of-lord.html'
+  'ancient-writing-wars-of-lord.html',
+  'ancient-writing-nathan-gad.html'
 ];
 
 function expect(condition,success,failure){
@@ -67,7 +68,7 @@ try{
   await open('homepage','index.html');
   await page.waitForFunction(()=>document.querySelector('#home-latest')?.children.length>0,{timeout:5000}).catch(()=>{});
   const homeLatest=await page.locator('#home-latest').innerText().catch(()=>'');
-  expect(homeLatest.includes('Book of the Wars of the Lord: Historical & Biblical Guide'),'Homepage Latest surfaces the newest Wars of the Lord detailed guide.','Homepage Latest did not surface the newest Wars of the Lord detailed guide after the shared library loaded.');
+  expect(homeLatest.includes('Records of Nathan and Gad: Historical & Biblical Guide'),'Homepage Latest surfaces the newest Nathan and Gad detailed guide.','Homepage Latest did not surface the newest Nathan and Gad detailed guide after the shared library loaded.');
   const featuredSeries=await page.locator('#home-featured .content-series').allInnerTexts().catch(()=>[]);
   const latestSeries=await page.locator('#home-latest .content-series').allInnerTexts().catch(()=>[]);
   const duplicateSeries=latestSeries.filter(series=>series&&featuredSeries.includes(series));
@@ -162,6 +163,9 @@ try{
   const warsCrossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('wars-of-lord')?.href||'');
   expect(warsCrossLinkHref==='ancient-writing-wars-of-lord.html','The Wars of the Lord cross-link registry routes to the detailed guide.',`The Wars of the Lord cross-link registry routed to ${warsCrossLinkHref}.`);
   expect((await page.locator('#wars-of-lord a[href="ancient-writing-wars-of-lord.html"]').count())===1,'The Wars of the Lord overview card links to its detailed guide.','The Wars of the Lord overview card is missing its detailed-guide link.');
+  const nathanGadCrossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('nathan-gad')?.href||'');
+  expect(nathanGadCrossLinkHref==='ancient-writing-nathan-gad.html','The Nathan and Gad cross-link registry routes to the detailed guide.',`The Nathan and Gad cross-link registry routed to ${nathanGadCrossLinkHref}.`);
+  expect((await page.locator('#nathan-gad a[href="ancient-writing-nathan-gad.html"]').count())===1,'The Nathan and Gad overview card links to its detailed guide.','The Nathan and Gad overview card is missing its detailed-guide link.');
 
   await open('1-enoch-guide','ancient-writing-1-enoch.html');
   const enochGuide=await page.locator('main').innerText();
@@ -412,11 +416,38 @@ try{
   expect(!warsGuide.includes('Phase 2'),'Wars of the Lord public guide omits internal development-phase language.','Wars of the Lord public guide exposes internal Phase 2 language.');
   expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=8,'Wars of the Lord guide provides a substantial research source list.','Wars of the Lord guide does not provide enough research sources.');
   expect((await page.locator('a[href="numbers-study.html"]').count())>=1&&(await page.locator('a[href="exodus-study.html"]').count())>=1&&(await page.locator('a[href="ancient-writing-jashar.html"]').count())>=1,'Wars of the Lord guide links back to Numbers, Exodus, and Jashar resources.','Wars of the Lord guide is missing Numbers, Exodus, or Jashar links.');
+  expect((await page.locator('a[href="ancient-writing-nathan-gad.html"]').count())>=1,'Wars of the Lord guide links forward to the detailed Nathan and Gad guide.','Wars of the Lord guide is missing its Nathan and Gad next-guide link.');
   await page.setViewportSize({width:390,height:844});
   expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Wars of the Lord guide has no horizontal overflow at 390px.','Wars of the Lord guide overflows horizontally at 390px.');
   const warsInternalLink=page.locator('.detail-connection-list a').first();
   const warsLinkBox=await warsInternalLink.boundingBox();
   expect(Boolean(warsLinkBox&&warsLinkBox.height>=44),'Wars of the Lord canonical-study links meet the 44px mobile touch target.','Wars of the Lord canonical-study links are below the 44px mobile touch target.');
+  await page.setViewportSize({width:1440,height:1000});
+
+  await open('nathan-gad-guide','ancient-writing-nathan-gad.html');
+  const nathanGadGuide=await page.locator('main').innerText();
+  expect(nathanGadGuide.includes('Chronicles names three records in David’s source notice.'),'Nathan and Gad guide keeps Samuel visible in the primary source notice.','Nathan and Gad guide incorrectly reduces 1 Chronicles 29:29 to only two records.');
+  expect(nathanGadGuide.includes('What does 1 Chronicles 29:29 actually say?'),'Nathan and Gad guide begins with the primary Chronicles source notice.','Nathan and Gad guide is missing its 1 Chronicles 29:29 orientation.');
+  expect(nathanGadGuide.includes('Samuel, Nathan, and Gad belong to different parts of David’s story'),'Nathan and Gad guide explains all three prophetic witnesses.','Nathan and Gad guide is missing its three-witness orientation.');
+  expect(nathanGadGuide.includes('Nathan is cited for both David and Solomon'),'Nathan and Gad guide includes Nathan’s second source notice for Solomon.','Nathan and Gad guide is missing 2 Chronicles 9:29 or Nathan’s Solomon connection.');
+  expect(nathanGadGuide.includes('What we cannot establish is whether 1 Chronicles 29:29 and 2 Chronicles 9:29 refer to one continuous Nathan collection'),'Nathan and Gad guide preserves uncertainty about Nathan source identity.','Nathan and Gad guide overstates the two Nathan notices as one certain document.');
+  expect(nathanGadGuide.includes('Gad appears across David’s career'),'Nathan and Gad guide covers Gad’s canonical ministry.','Nathan and Gad guide is missing Gad’s narrative setting.');
+  expect(nathanGadGuide.includes('Are these records simply our books of Samuel?'),'Nathan and Gad guide directly addresses the canonical-Samuel identity question.','Nathan and Gad guide is missing the canonical Samuel relationship.');
+  expect(nathanGadGuide.includes('a one-to-one identity between a cited record and an existing canonical book')||nathanGadGuide.includes('one-to-one identity between a cited record and an existing canonical book'),'Nathan and Gad guide rejects an unprovable one-to-one identity with canonical books.','Nathan and Gad guide overstates identity with canonical Samuel.');
+  expect(nathanGadGuide.includes('What about the extant Words of Gad the Seer?')||nathanGadGuide.includes('What about the extant'), 'Nathan and Gad guide discusses the later Words of Gad manuscript.','Nathan and Gad guide is missing the extant Words of Gad discussion.');
+  expect(nathanGadGuide.includes('Same attributed prophet')&&nathanGadGuide.includes('same ancient source'),'Nathan and Gad guide clearly separates attribution from textual identity.','Nathan and Gad guide conflates the Cochin manuscript with Chronicles’ Gad record.');
+  expect(nathanGadGuide.includes('No securely identified ancient “Book of Nathan” survives independently'),'Nathan and Gad guide preserves the Nathan full-text limitation.','Nathan and Gad guide implies a securely recovered Book of Nathan exists.');
+  expect(nathanGadGuide.includes('Prophetic records are not automatically separate canonical books'),'Nathan and Gad guide distinguishes source citation from canonization.','Nathan and Gad guide is missing its canon/source-use distinction.');
+  expect(nathanGadGuide.includes('The cited source records are not independently recoverable'),'Nathan and Gad guide clearly states the full-text limitation.','Nathan and Gad guide implies the Chronicles source records are independently recoverable.');
+  expect(!nathanGadGuide.includes('Phase 2'),'Nathan and Gad public guide omits internal development-phase language.','Nathan and Gad public guide exposes internal Phase 2 language.');
+  expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=8,'Nathan and Gad guide provides a substantial research source list.','Nathan and Gad guide does not provide enough research sources.');
+  expect((await page.locator('a[href="first-chronicles-study.html"]').count())>=1&&(await page.locator('a[href="second-chronicles-study.html"]').count())>=1&&(await page.locator('a[href="second-samuel-study.html"]').count())>=1&&(await page.locator('a[href="first-samuel-study.html"]').count())>=1,'Nathan and Gad guide links back to the relevant Samuel and Chronicles studies.','Nathan and Gad guide is missing one or more canonical-study links.');
+  expect((await page.locator('a[href="ancient-writing-wars-of-lord.html"]').count())>=1,'Nathan and Gad guide links back to the previous Wars of the Lord guide.','Nathan and Gad guide is missing previous-guide navigation.');
+  await page.setViewportSize({width:390,height:844});
+  expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Nathan and Gad guide has no horizontal overflow at 390px.','Nathan and Gad guide overflows horizontally at 390px.');
+  const nathanGadInternalLink=page.locator('.detail-connection-list a').first();
+  const nathanGadLinkBox=await nathanGadInternalLink.boundingBox();
+  expect(Boolean(nathanGadLinkBox&&nathanGadLinkBox.height>=44),'Nathan and Gad canonical-study links meet the 44px mobile touch target.','Nathan and Gad canonical-study links are below the 44px mobile touch target.');
   await page.setViewportSize({width:1440,height:1000});
 
   await open('other-ancient-writings-mobile','other-ancient-writings.html');
@@ -480,6 +511,10 @@ try{
   await page.waitForTimeout(250);
   const warsSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
   expect(warsSearchResults.includes('Book of the Wars of the Lord: Historical & Biblical Guide'),'Search finds the detailed Wars of the Lord guide.','Search did not find the detailed Wars of the Lord guide.');
+  await search.fill('Records of Nathan and Gad');
+  await page.waitForTimeout(250);
+  const nathanGadSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
+  expect(nathanGadSearchResults.includes('Records of Nathan and Gad: Historical & Biblical Guide'),'Search finds the detailed Nathan and Gad guide.','Search did not find the detailed Nathan and Gad guide.');
 
 
   await open('site-map','site-map.html');
@@ -499,6 +534,7 @@ try{
   expect(siteMapText.includes('Jannes and Jambres: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Jannes and Jambres guide.','Generated Site Map index is missing the detailed Jannes and Jambres guide.');
   expect(siteMapText.includes('Book of Jashar: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Book of Jashar guide.','Generated Site Map index is missing the detailed Book of Jashar guide.');
   expect(siteMapText.includes('Book of the Wars of the Lord: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Wars of the Lord guide.','Generated Site Map index is missing the detailed Wars of the Lord guide.');
+  expect(siteMapText.includes('Records of Nathan and Gad: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Nathan and Gad guide.','Generated Site Map index is missing the detailed Nathan and Gad guide.');
   expect((await page.locator('.site-map-grid a[href="other-ancient-writings.html"]').count())>0,'Manual Site Map Bible Studies section links Other Ancient Writings.','Manual Site Map is missing Other Ancient Writings.');
 
 

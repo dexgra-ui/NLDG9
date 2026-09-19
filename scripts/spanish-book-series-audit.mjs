@@ -122,7 +122,7 @@ if(exists('philippians-study-data-es.js')){
   if(!l3?.caution?.toLowerCase().includes('abuso'))errors.push('Philippians lesson 3 must preserve the humility/abuse safeguard.');
   if(!l5?.caution?.includes('atención médica')||!l5?.caution?.includes('salud mental'))errors.push('Philippians lesson 5 must preserve medical and mental-health care language around anxiety.');
   if(!l6?.guardrailParagraphs?.[0]?.includes('Filipenses 4:13')||!l6?.teaching?.[3]?.body?.includes('no garantiza'))errors.push('Philippians lesson 6 must preserve the contextual reading of Philippians 4:13.');
-  if(!l6?.guardrailParagraphs?.[0]?.includes('4:19')||!l6?.teaching?.[6]?.body?.includes('colaboradores fieles'))errors.push('Philippians lesson 6 must preserve the partnership context of Philippians 4:19.');
+  if(!l6?.guardrailParagraphs?.[0]?.includes('4:19')||!l6?.context?.includes('colaboradores generosos'))errors.push('Philippians lesson 6 must preserve the partnership context of Philippians 4:19.');
 }
 
 if(exists('first-peter-study-data-es.js')){

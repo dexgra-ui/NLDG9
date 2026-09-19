@@ -665,7 +665,7 @@ window.NLDG_BOOK_STUDY={
         "Jesús es el Señor crucificado a quien pertenecen los creyentes y cuyo carácter el Espíritu forma en su pueblo. El fruto del Espíritu refleja la vida relacional de Cristo y no una puntuación religiosa."
       ],
       "guardrailParagraphs": [
-        "No iguales «carne» con el cuerpo físico, sexualidad en sí, discapacidad, emoción o enfermedad mental. No uses la lista de obras para atacar grupos seleccionados mientras ignoras odio, rivalidad, ira, división, envidia e intoxicación dentro de la iglesia. No uses paciencia, gentileza o dominio propio para presionar a alguien a permanecer en abuso o suprimir trauma. No conviertas el fruto en sistema de clasificación."
+        "No iguales «carne» con el cuerpo físico, sexualidad en sí, discapacidad, emoción o problemas de salud mental. No uses la lista de obras para atacar grupos seleccionados mientras ignoras odio, rivalidad, ira, división, envidia e intoxicación dentro de la iglesia. No uses paciencia, gentileza o dominio propio para presionar a alguien a permanecer en abuso o suprimir trauma. No conviertas el fruto en sistema de clasificación."
       ],
       "questions": [
         "¿Qué sugiere la metáfora de caminar sobre la vida diaria en el Espíritu?",

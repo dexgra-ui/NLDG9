@@ -54,7 +54,7 @@ if(!errors.length){
   ['chapters 36 to 39 restored',['Isaías 36–39 corre paralelo a 2 Reyes 18–20','giro entre Asiria y el consuelo exílico']],
   ['nation oracles not ethnic hate',['no autorizan a cristianos a declarar malditas poblaciones étnicas modernas','sufrimiento civil']],
   ['disability dignity',['personas discapacitadas sean menos espirituales o menos humanas','Accesibilidad y dignidad son obligaciones presentes']],
-  ['healing not guarantee',['No promete que cada oración fiel alargará la vida','No presiones a personas enfermas o discapacitadas para reclamar una cura']],
+  ['healing not guarantee',['ni promete que cada oración fiel alargará la vida','No presiones a personas enfermas o discapacitadas para reclamar una cura']],
   ['Israel servant identity',['Israel es explícitamente el siervo escogido de Dios','conservar esa identidad corporativa']],
   ['Cyrus not political canonization',['Providencia no equivale a aprobación moral','no es un cheque en blanco para declarar a un político favorito elegido por Dios']],
   ['Isaiah 45 calamity',['no enseña que Dios cometa mal moral']],

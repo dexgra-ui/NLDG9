@@ -64,16 +64,29 @@ try{
   expect(duplicateSeries.length===0,'Homepage Latest preserves featured-series duplicate prevention.',`Homepage Latest repeated featured series: ${duplicateSeries.join(', ')}.`);
 
   await open('studies','studies.html');
+  await page.evaluate(()=>localStorage.removeItem('nldg-study-state'));
+  await page.reload({waitUntil:'domcontentloaded'});
+  await page.waitForLoadState('networkidle').catch(()=>{});
+  await page.waitForTimeout(250);
   const kidsJourneyCount=await page.locator('#collection-grid a[href="growing-with-jesus.html"]').count();
   const youthJourneyCount=await page.locator('#collection-grid a[href="following-jesus-for-yourself.html"]').count();
+  const griefJourneyCount=await page.locator('#collection-grid a[href="faith-when-your-heart-is-hurting.html"]').count();
   const collectionText=await page.locator('#collection-grid').innerText().catch(()=>'');
-  const firstCollectionHrefs=await page.locator('#collection-grid .journey-collection-card .collection-action').evaluateAll(links=>links.slice(0,4).map(link=>link.getAttribute('href')));
+  const collectionHrefs=await page.locator('#collection-grid .journey-collection-card .collection-action').evaluateAll(links=>links.map(link=>link.getAttribute('href')));
+  const expectedCollectionHrefs=['new-believers.html','growing-with-jesus.html','following-jesus-for-yourself.html','standalone-studies.html','after-benediction-series.html','preferences-idols-series.html','marriage-family.html','men-of-faith.html','women-of-faith.html','difficult-questions.html','faith-when-your-heart-is-hurting.html','leadership.html'];
   expect(kidsJourneyCount===1,'Bible Studies shows exactly one Growing with Jesus collection card.',`Bible Studies rendered ${kidsJourneyCount} Growing with Jesus collection links.`);
   expect(youthJourneyCount===1,'Bible Studies shows exactly one Following Jesus for Yourself collection card.',`Bible Studies rendered ${youthJourneyCount} Following Jesus for Yourself collection links.`);
+  expect(griefJourneyCount===1,'Bible Studies shows exactly one static Faith When Your Heart Is Hurting card.',`Bible Studies rendered ${griefJourneyCount} grief collection links.`);
   expect(!collectionText.includes('Complete Kids Series'),'Bible Studies no longer renders the retired Complete Kids Series card.','Bible Studies still rendered the retired Complete Kids Series card.');
   expect(!collectionText.includes('Complete Youth Series'),'Bible Studies no longer renders the retired Complete Youth Series card.','Bible Studies still rendered the retired Complete Youth Series card.');
-  expect(JSON.stringify(firstCollectionHrefs)===JSON.stringify(['book-by-book.html','new-believers.html','growing-with-jesus.html','following-jesus-for-yourself.html']),'Bible Studies preserves the intended foundational collection order.',`Bible Studies foundational order was ${firstCollectionHrefs.join(' → ')}.`);
-  expect((await page.locator('#collection-grid a[href="other-ancient-writings.html"]').count())===1,'Bible Studies catalog includes Other Ancient Writings once.','Bible Studies catalog is missing or duplicating Other Ancient Writings.');
+  expect(JSON.stringify(collectionHrefs)===JSON.stringify(expectedCollectionHrefs),'Bible Studies preserves the intended discipleship and life collection order.',`Bible Studies collection order was ${collectionHrefs.join(' → ')}.`);
+  expect((await page.locator('#collection-grid a[href="book-by-book.html"]').count())===0,'Book-by-Book is not duplicated in the discipleship collection grid.','Book-by-Book is still duplicated in the discipleship collection grid.');
+  expect((await page.locator('#collection-grid a[href="other-ancient-writings.html"]').count())===0,'Other Ancient Writings is not duplicated in the discipleship collection grid.','Other Ancient Writings is still duplicated in the discipleship collection grid.');
+  expect((await page.locator('#collection-grid a[href="technology-ai.html"]').count())===0,'Technology & AI is not presented as a standalone discipleship collection.','Technology & AI is still presented as a standalone discipleship collection.');
+  expect((await page.locator('.featured-journeys-grid .featured-journey').count())===2,'Bible Studies presents two compact featured journeys.','Bible Studies does not present exactly two featured journeys.');
+  expect((await page.locator('.featured-unit-link[href="technology-ai.html"]').count())===1,'Technology & AI is nested under Faith & Truth as a featured unit.','Technology & AI is not nested under Faith & Truth.');
+  expect((await page.locator('.collections-intro .study-guiding-principle').count())===1,'The guiding philosophy sits with the Bible Studies introduction.','The guiding philosophy is not positioned in the Bible Studies introduction.');
+  expect(await page.locator('#study-journey-section').isHidden(),'A visitor with no saved study activity does not see an empty My Study Journey dashboard.','The empty My Study Journey dashboard is visible to a visitor with no activity.');
   const referencePaths=await page.locator('.study-reference-paths-grid a').evaluateAll(links=>links.map(link=>link.getAttribute('href')));
   expect(JSON.stringify(referencePaths)===JSON.stringify(['book-by-book.html','topics.html','biblical-maps.html','other-ancient-writings.html']),'Bible Studies exposes the four requested study and reference paths.',`Bible Studies reference paths were ${referencePaths.join(' → ')}.`);
 

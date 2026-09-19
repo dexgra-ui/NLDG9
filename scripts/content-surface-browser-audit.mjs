@@ -234,7 +234,7 @@ try{
   expect(sirachGuide.includes('NLDG is not reproducing a complete translation yet.'),'Sirach guide defers full-text reproduction pending textual and rights verification.','Sirach guide does not clearly defer full-text reproduction.');
   expect(!sirachGuide.includes('Phase 2'),'Sirach public guide omits internal development-phase language.','Sirach public guide exposes internal Phase 2 language.');
   expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=8,'Sirach guide provides a substantial academic and primary source list.','Sirach guide does not provide enough research sources.');
-  expect((await page.locator('a[href="proverbs-study.html"]').count())>=1&&(await page.locator('a[href="james-study.html"]').count())>=1,'Sirach guide links back to canonical Proverbs and James studies.','Sirach guide is missing Proverbs or James return links.');
+  expect((await page.locator('a[href="proverbs-study.html"]').count())>=1&&(await page.locator('a[href="james-series.html"]').count())>=1,'Sirach guide links back to canonical Proverbs and James studies.','Sirach guide is missing Proverbs or James return links.');
   expect((await page.locator('a[href="ancient-writing-wisdom-solomon.html"]').count())>=1,'Sirach guide cross-links to the detailed Wisdom of Solomon guide.','Sirach guide is missing its Wisdom comparison link.');
   await page.setViewportSize({width:390,height:844});
   expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Sirach guide has no horizontal overflow at 390px.','Sirach guide overflows horizontally at 390px.');

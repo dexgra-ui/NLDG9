@@ -1,94 +1,94 @@
 window.NLDG_BOOK_STUDY={
   "slug": "malaquias-estudio",
   "book": "Malaquías",
-  "title": "Malaquías: Amor del pacto, adoración fiel, justicia, generosidad y corazones preparados",
+  "title": "Malaquías: Amor del pacto, adoración veraz, justicia, generosidad y corazones preparados",
   "description": "Un estudio de cinco lecciones de Malaquías sobre amor del pacto, adoración veraz, relaciones fieles, justicia, generosidad sin manipulación y preparación para el Señor.",
-  "theme": "Malaquías llama a una comunidad posexílica decepcionada a recibir el amor del pacto de Dios, honrarlo en adoración y relaciones, practicar justicia y generosidad y prepararse para el Señor que viene sin convertir promesas del pacto en manipulación.",
+  "theme": "Malaquías llama a una comunidad del pacto decepcionada a volver al amor de Dios, la adoración veraz, las relaciones fieles, la justicia, una mayordomía generosa y la preparación para la venida del Señor.",
   "audience": "Adultos, grupos, clases y equipos de ministerio",
-  "purpose": "Leer Malaquías dentro de su contexto posexílico del pacto, corregir adoración descuidada y traición relacional, proteger a personas vulnerables, enseñar mayordomía sin manipulación de prosperidad y recibir su esperanza del mensajero y del Señor que viene por medio de Jesús.",
-  "background": "Malaquías habla a una comunidad judía posexílica después de que el templo ha sido reconstruido y la adoración sacrificial ha vuelto a funcionar. El libro se refiere a sacerdotes, un altar activo y un gobernador del período persa. No da una fecha exacta; muchos lectores lo sitúan en el siglo V a.C., cerca del mundo social y religioso reflejado en Esdras-Nehemías, aunque la relación precisa es debatida.\n\nGran parte de Malaquías adopta forma de disputa: Dios hace una afirmación, el pueblo responde con una pregunta escéptica y el profeta expone lo que revelan su adoración, relaciones, economía y palabras. El libro confronta ofrendas dañadas, corrupción sacerdotal, traición del pacto, justicia retrasada, explotación, retención de recursos y afirmaciones cínicas de que servir a Dios no sirve. El cierre une el recuerdo de Moisés con la expectativa de un mensajero semejante a Elías.",
+  "purpose": "Leer Malaquías dentro de su contexto persa postexílico, confrontar adoración descuidada y traición del pacto, buscar justicia, practicar generosidad sin manipulación de prosperidad y prepararse para Jesús por medio de los temas del mensajero y Elías.",
+  "background": "Malaquías habla a Judá después del exilio, cuando el templo ya ha sido reconstruido y la adoración sacrificial ha vuelto a funcionar. El libro menciona un gobernador, sacerdotes activos, ofrendas del templo y una comunidad marcada por decepción, adoración descuidada, traición del pacto, injusticia y escepticismo. No se da una fecha exacta; muchos lectores sitúan el libro en el período persa, a menudo en el siglo V a.C., pero su relación cronológica exacta con Esdras o Nehemías sigue siendo debatida.\n\nEl libro se organiza alrededor de una serie de disputas en las que Dios hace una afirmación y el pueblo responde con preguntas como: ¿Cómo nos has amado?, ¿Cómo hemos despreciado tu nombre?, ¿Cómo te hemos cansado?, ¿Cómo volveremos? y ¿Qué hemos dicho contra ti? Malaquías responde recordando la historia del pacto, confrontando a sacerdotes y pueblo, anunciando un mensajero y la venida del Señor, y terminando con Moisés, Elías, juicio, sanidad y relaciones restauradas.",
   "scriptureStandard": "Nueva Traducción Viviente (NTV)",
   "themeLabel": "Verdad clave",
   "lessonSubtitleMode": true,
-  "seriesMainScripture": "Malaquías 1–4; Deuteronomio 7:6–9; Mateo 3:1–12; Mateo 11:7–15; Lucas 1:13–17; Romanos 9:10–16; Santiago 5:1–6",
-  "seriesQuestion": "¿Cómo llama Malaquías a una comunidad posexílica decepcionada a recibir el amor del pacto de Dios, honrarlo en adoración y relaciones, practicar justicia y generosidad y prepararse para el Señor que viene sin convertir promesas del pacto en manipulación?",
-  "seriesOpening": "Lee Malaquías 1–4 a lo largo de la serie y sigue yo los he amado, cómo nos has amado, Esaú y Edom, nombre despreciado, altar contaminado, ofrendas dañadas, pacto con Leví, los labios preservan conocimiento, un Padre, matrimonio traicionado, guarden su espíritu, dónde está el Dios de justicia, mensajero, Señor que viene a su templo, fuego del refinador, trabajadores asalariados, viuda, huérfano, extranjero, vuélvanse a mí, diezmos y almacén, palabras duras, libro de memoria, sol de justicia, recuerden a Moisés y Elías antes del gran día. Pregunta cómo responde Dios a cada disputa exponiendo tanto incredulidad como camino de renovación.",
-  "seriesContext": "Malaquías habla a una comunidad judía posexílica después de que el templo ha sido reconstruido y la adoración sacrificial ha vuelto a funcionar. El libro se refiere a sacerdotes, un altar activo y un gobernador del período persa. No da una fecha exacta; muchos lectores lo sitúan en el siglo V a.C., cerca del mundo social y religioso reflejado en Esdras-Nehemías, aunque la relación precisa es debatida.\n\nGran parte de Malaquías adopta forma de disputa: Dios hace una afirmación, el pueblo responde con una pregunta escéptica y el profeta expone lo que revelan su adoración, relaciones, economía y palabras. El libro confronta ofrendas dañadas, corrupción sacerdotal, traición del pacto, justicia retrasada, explotación, retención de recursos y afirmaciones cínicas de que servir a Dios no sirve. El cierre une el recuerdo de Moisés con la expectativa de un mensajero semejante a Elías.",
+  "seriesMainScripture": "Malaquías 1–4; Deuteronomio 7:6–9; Mateo 11:7–15; Marcos 1:1–4; Romanos 9:10–16; Santiago 5:1–6; 2 Corintios 9:6–11",
+  "seriesQuestion": "¿Cómo responde Malaquías a una comunidad del pacto decepcionada llamándola de nuevo al amor de Dios, la adoración veraz, relaciones fieles, justicia, mayordomía generosa y preparación para la venida del Señor?",
+  "seriesOpening": "Lee Malaquías 1–4 a lo largo de la serie y sigue: los he amado, ¿cómo nos has amado?, Jacob y Esaú, alimento contaminado, sacrificios defectuosos, mi nombre será grande entre las naciones, pacto con Leví, parcialidad, un Padre, matrimonio infiel, lágrimas en el altar, ¿dónde está el Dios de justicia?, mi mensajero, el Señor que viene a su templo, fuego refinador, opresión salarial, vuelvan a mí, diezmos y ofrendas, pruébenme, palabras duras, libro de memoria, sol de justicia, recuerden a Moisés, Elías y corazones de padres e hijos. Pregunta cómo cada disputa expone la distancia entre identidad religiosa y fidelidad al pacto.",
+  "seriesContext": "Malaquías habla a Judá después del exilio, cuando el templo ya ha sido reconstruido y la adoración sacrificial ha vuelto a funcionar. El libro menciona un gobernador, sacerdotes activos, ofrendas del templo y una comunidad marcada por decepción, adoración descuidada, traición del pacto, injusticia y escepticismo. No se da una fecha exacta; muchos lectores sitúan el libro en el período persa, a menudo en el siglo V a.C., pero su relación cronológica exacta con Esdras o Nehemías sigue siendo debatida.\n\nEl libro se organiza alrededor de una serie de disputas en las que Dios hace una afirmación y el pueblo responde con preguntas como: ¿Cómo nos has amado?, ¿Cómo hemos despreciado tu nombre?, ¿Cómo te hemos cansado?, ¿Cómo volveremos? y ¿Qué hemos dicho contra ti? Malaquías responde recordando la historia del pacto, confrontando a sacerdotes y pueblo, anunciando un mensajero y la venida del Señor, y terminando con Moisés, Elías, juicio, sanidad y relaciones restauradas.",
   "seriesTeaching": [
     {
-      "heading": "La renovación comienza con el amor del pacto de Dios",
-      "body": "Malaquías abre con la declaración de Dios, yo los he amado, porque la decepción ha reducido la memoria del pueblo. Dios responde recordando su propósito del pacto en Jacob y su juicio sobre Edom. La elección es gracia y vocación, no prueba de superioridad étnica.",
+      "heading": "La renovación comienza recordando el amor del pacto",
+      "body": "El libro comienza con la declaración de Dios los he amado y la respuesta escéptica del pueblo. Malaquías responde por medio de la historia de Jacob y Esaú, no afirmando que la elección haga moralmente superior a una etnia. La gracia produce gratitud y responsabilidad, no derecho adquirido.",
       "paragraphs": [
-        "Malaquías abre con la declaración de Dios, yo los he amado, porque la decepción ha reducido la memoria del pueblo. Dios responde recordando su propósito del pacto en Jacob y su juicio sobre Edom. La elección es gracia y vocación, no prueba de superioridad étnica."
+        "El libro comienza con la declaración de Dios los he amado y la respuesta escéptica del pueblo. Malaquías responde por medio de la historia de Jacob y Esaú, no afirmando que la elección haga moralmente superior a una etnia. La gracia produce gratitud y responsabilidad, no derecho adquirido."
       ]
     },
     {
-      "heading": "La adoración revela cuánto creemos que Dios vale",
-      "body": "Los sacerdotes aceptan ofrendas que se avergonzarían de presentar a un gobernador humano. El problema no es imperfección estética sino desprecio dentro de un sistema sacrificial que requería animales sin defecto. La actividad religiosa puede continuar mientras la reverencia colapsa.",
+      "heading": "La adoración descuidada revela una visión distorsionada de Dios",
+      "body": "Los sacerdotes aceptan ofrendas que violan las normas sacrificiales de la Torá y preguntan cómo han mostrado desprecio. El problema no es el valor de animales con discapacidad o heridas, sino presentar deliberadamente a Dios ofrendas que ellos mismos reconocen como inaceptables según el pacto.",
       "paragraphs": [
-        "Los sacerdotes aceptan ofrendas que se avergonzarían de presentar a un gobernador humano. El problema no es imperfección estética sino desprecio dentro de un sistema sacrificial que requería animales sin defecto. La actividad religiosa puede continuar mientras la reverencia colapsa."
+        "Los sacerdotes aceptan ofrendas que violan las normas sacrificiales de la Torá y preguntan cómo han mostrado desprecio. El problema no es el valor de animales con discapacidad o heridas, sino presentar deliberadamente a Dios ofrendas que ellos mismos reconocen como inaceptables según el pacto."
       ]
     },
     {
-      "heading": "Los líderes espirituales son responsables de enseñar verdad",
-      "body": "Malaquías contrasta sacerdotes corruptos con el llamado del pacto asociado con Leví: reverencia, instrucción verdadera y apartar a personas del mal. Liderazgo que muestra parcialidad o hace tropezar a otros traiciona la confianza del oficio sagrado.",
+      "heading": "El liderazgo espiritual responde por una enseñanza veraz",
+      "body": "Malaquías contrasta sacerdotes corruptos con el ideal del pacto asociado con Leví: reverencia, instrucción verdadera y apartar a personas del mal. El oficio religioso no protege parcialidad, engaño ni enseñanza que haga tropezar.",
       "paragraphs": [
-        "Malaquías contrasta sacerdotes corruptos con el llamado del pacto asociado con Leví: reverencia, instrucción verdadera y apartar a personas del mal. Liderazgo que muestra parcialidad o hace tropezar a otros traiciona la confianza del oficio sagrado."
+        "Malaquías contrasta sacerdotes corruptos con el ideal del pacto asociado con Leví: reverencia, instrucción verdadera y apartar a personas del mal. El oficio religioso no protege parcialidad, engaño ni enseñanza que haga tropezar."
       ]
     },
     {
       "heading": "La fidelidad del pacto alcanza relaciones íntimas",
-      "body": "El profeta confronta compromiso idólatra y hombres que tratan con traición a sus esposas. La adoración no puede separarse del uso del poder relacional. La difícil redacción de 2:16 nunca debe convertirse en arma para atrapar a un cónyuge dentro de abuso o peligro.",
+      "body": "Malaquías confronta traición dentro de la comunidad del pacto y trato desleal hacia esposas. El hebreo difícil de 2:10–16 requiere humildad, pero la dirección ética es clara: la adoración no puede separarse de fidelidad, verdad y protección contra violencia o traición.",
       "paragraphs": [
-        "El profeta confronta compromiso idólatra y hombres que tratan con traición a sus esposas. La adoración no puede separarse del uso del poder relacional. La difícil redacción de 2:16 nunca debe convertirse en arma para atrapar a un cónyuge dentro de abuso o peligro."
+        "Malaquías confronta traición dentro de la comunidad del pacto y trato desleal hacia esposas. El hebreo difícil de 2:10–16 requiere humildad, pero la dirección ética es clara: la adoración no puede separarse de fidelidad, verdad y protección contra violencia o traición."
       ]
     },
     {
       "heading": "El Dios de justicia examina primero a su propio pueblo",
-      "body": "Cuando la comunidad pregunta dónde está el Dios de justicia, Malaquías anuncia un mensajero y la venida del Señor a su templo. La respuesta no es solo juicio de personas externas: el refinamiento comienza en la adoración y se extiende a adulterio, juramentos falsos, robo de salarios y opresión de viudas, huérfanos y extranjeros.",
+      "body": "Cuando la comunidad se queja de que Dios tolera el mal, Malaquías anuncia un mensajero y la venida del Señor. La sorpresa es que esa venida primero expone y refina a los adoradores, y luego nombra hechicería, adulterio, juramentos falsos, opresión salarial y maltrato de viudas, huérfanos y extranjeros.",
       "paragraphs": [
-        "Cuando la comunidad pregunta dónde está el Dios de justicia, Malaquías anuncia un mensajero y la venida del Señor a su templo. La respuesta no es solo juicio de personas externas: el refinamiento comienza en la adoración y se extiende a adulterio, juramentos falsos, robo de salarios y opresión de viudas, huérfanos y extranjeros."
+        "Cuando la comunidad se queja de que Dios tolera el mal, Malaquías anuncia un mensajero y la venida del Señor. La sorpresa es que esa venida primero expone y refina a los adoradores, y luego nombra hechicería, adulterio, juramentos falsos, opresión salarial y maltrato de viudas, huérfanos y extranjeros."
       ]
     },
     {
-      "heading": "Volver a Dios incluye mayordomía material",
-      "body": "Malaquías 3 aborda diezmos y contribuciones dentro de la economía de templo y pacto de Israel. Retener recursos se trata como infidelidad del pacto, pero la promesa de cielos abiertos pertenece a ese marco histórico y no debe venderse como riqueza personal garantizada.",
+      "heading": "Volver a Dios incluye los recursos de la comunidad",
+      "body": "Malaquías 3 confronta diezmos y ofrendas retenidos dentro del sistema del templo y del pacto de Israel. La promesa del almacén y de cielos abiertos pertenece a ese contexto y no debe venderse como retorno financiero garantizado. Las tradiciones cristianas difieren sobre un diezmo fijo, mientras el Nuevo Testamento llama con claridad a dar de manera voluntaria, generosa y sin coerción.",
       "paragraphs": [
-        "Malaquías 3 aborda diezmos y contribuciones dentro de la economía de templo y pacto de Israel. Retener recursos se trata como infidelidad del pacto, pero la promesa de cielos abiertos pertenece a ese marco histórico y no debe venderse como riqueza personal garantizada."
+        "Malaquías 3 confronta diezmos y ofrendas retenidos dentro del sistema del templo y del pacto de Israel. La promesa del almacén y de cielos abiertos pertenece a ese contexto y no debe venderse como retorno financiero garantizado. Las tradiciones cristianas difieren sobre un diezmo fijo, mientras el Nuevo Testamento llama con claridad a dar de manera voluntaria, generosa y sin coerción."
       ]
     },
     {
-      "heading": "Dios oye la fidelidad cuando la arrogancia parece prosperar",
-      "body": "Algunos dicen que servir a Dios es inútil porque los arrogantes y malhechores parecen tener éxito. Otros hablan con reverencia y Dios los recuerda. Las apariencias presentes no controlan la justicia final y la obediencia no es transacción por resultados inmediatos.",
+      "heading": "Dios recuerda la fidelidad cuando parece triunfar la arrogancia",
+      "body": "Algunos concluyen que servir a Dios es inútil porque los malhechores prosperan. Otros hablan juntos con reverencia, y se escribe un libro de memoria delante de Dios. La imagen asegura que las apariencias presentes no determinan la justicia final.",
       "paragraphs": [
-        "Algunos dicen que servir a Dios es inútil porque los arrogantes y malhechores parecen tener éxito. Otros hablan con reverencia y Dios los recuerda. Las apariencias presentes no controlan la justicia final y la obediencia no es transacción por resultados inmediatos."
+        "Algunos concluyen que servir a Dios es inútil porque los malhechores prosperan. Otros hablan juntos con reverencia, y se escribe un libro de memoria delante de Dios. La imagen asegura que las apariencias presentes no determinan la justicia final."
       ]
     },
     {
-      "heading": "El libro termina preparando corazones para el Señor",
-      "body": "Malaquías cierra con el día del SEÑOR, imágenes de sanidad, recuerdo de Moisés y un mensajero semejante a Elías que vuelve corazones entre generaciones. Lucas conecta explícitamente este ministerio con Juan el Bautista. Corazones preparados buscan reconciliación sin borrar seguridad ni responsabilidad.",
+      "heading": "El libro termina uniendo a Moisés, Elías, juicio y sanidad",
+      "body": "Malaquías cierra llamando al pueblo a recordar a Moisés y esperar a Elías antes del gran día del SEÑOR. El Nuevo Testamento aplica el papel semejante a Elías a Juan el Bautista. La esperanza final incluye juicio severo y sanidad, con corazones vueltos entre generaciones y no una comunidad preparada por temor o coerción.",
       "paragraphs": [
-        "Malaquías cierra con el día del SEÑOR, imágenes de sanidad, recuerdo de Moisés y un mensajero semejante a Elías que vuelve corazones entre generaciones. Lucas conecta explícitamente este ministerio con Juan el Bautista. Corazones preparados buscan reconciliación sin borrar seguridad ni responsabilidad."
+        "Malaquías cierra llamando al pueblo a recordar a Moisés y esperar a Elías antes del gran día del SEÑOR. El Nuevo Testamento aplica el papel semejante a Elías a Juan el Bautista. La esperanza final incluye juicio severo y sanidad, con corazones vueltos entre generaciones y no una comunidad preparada por temor o coerción."
       ]
     }
   ],
   "seriesQuestions": [
-    "¿Por qué comienza Malaquías con la declaración del amor de Dios y cómo revela decepción la pregunta de la comunidad?",
-    "¿Qué revelan las ofrendas dañadas y el sacerdocio corrupto acerca de adoración y liderazgo?",
-    "¿Cómo conecta Malaquías 2 la fidelidad del pacto con poder relacional y qué mal uso del texto sobre matrimonio debe rechazarse?",
-    "¿Por qué el anuncio de justicia divina en 2:17–3:5 comienza refinando a la propia comunidad adoradora de Dios?",
-    "¿Qué grupos vulnerables son nombrados en 3:5 y qué muestra eso acerca de la clase de justicia que Dios busca?",
-    "¿Cómo debe enseñarse Malaquías 3:8–12 sin convertir generosidad en una transacción financiera con Dios?",
-    "¿Qué respuesta da Dios a quienes dicen que servirlo es inútil porque los arrogantes prosperan?",
-    "¿Cómo moldean Moisés y el mensajero semejante a Elías el llamado final del libro a recordar, arrepentirse y prepararse?"
+    "¿Por qué comienza Malaquías con el pueblo cuestionando el amor de Dios, y cómo responde a su cinismo la historia del pacto?",
+    "¿Qué hace despreciables las ofrendas de los sacerdotes en Malaquías 1, y cómo debe enseñarse sin menospreciar la discapacidad?",
+    "¿Qué dice Malaquías 2 que los líderes espirituales deben a quienes confían en su enseñanza?",
+    "¿Qué es claro y qué sigue siendo difícil en Malaquías 2:10–16 acerca del matrimonio, la traición y la violencia?",
+    "¿Por qué se describe al Señor que viene como refinador en vez de solamente como alguien que condena a los de afuera?",
+    "¿Cómo debe formar Malaquías 3:8–12 nuestra generosidad sin convertirse en fórmula de prosperidad?",
+    "¿Qué comunica el libro de memoria a quienes piensan que la arrogancia y la maldad están ganando?",
+    "¿Cómo preparan Moisés, Elías, sanidad, juicio y corazones vueltos el movimiento final del libro hacia el Nuevo Testamento?"
   ],
-  "seriesExamination": "¿Dónde han moldeado decepción, conveniencia, estatus, dinero, poder relacional o cinismo la manera en que adoro y trato a otros? ¿Estoy pidiendo a Dios que juzgue la injusticia mientras resisto las maneras en que su justicia me examina?",
-  "seriesPractice": "Elige una categoría de Malaquías para reparación concreta esta semana: adoración, liderazgo, una relación de pacto, trato de alguien con menos poder, mayordomía financiera o palabra cínica. Da una acción veraz sin adjuntar una recompensa material prometida a tu obediencia.",
-  "seriesLeaderGuidance": "Mantén claro el contexto posexílico del pacto. Protege a las personas de manipulación de prosperidad, estigma por discapacidad, lecturas racializadas y enseñanza matrimonial que ignora abuso. Cuando se revele traición o violencia, prioriza seguridad, atención competente, denuncia apropiada y límites sabios. Distingue perdón, reconciliación, restitución, responsabilidad y confianza restaurada.",
-  "seriesPrayer": "Dios fiel al pacto, restaura nuestra memoria de tu amor, haz veraz nuestra adoración, mantén responsable nuestro liderazgo, protege a quienes han sido dañados en relaciones y enséñanos justicia y generosidad sin manipulación. Vuelve nuestros corazones hacia ti y hacia otros mientras nos preparamos para seguir a Jesús fielmente. Amén.",
-  "seriesJesusConnection": "El Nuevo Testamento usa directamente Malaquías en relación con Jesús y Juan el Bautista. Los Evangelios aplican el texto del mensajero que prepara el camino a Juan y Lucas 1:17 describe a Juan ministrando en el espíritu y poder de Elías. Los cristianos entienden la venida del Señor, el juicio refinador y la esperanza de sanidad a la luz de Jesús, reconociendo al mismo tiempo que no cada frase de Malaquías es una predicción mesiánica directa.",
-  "seriesGuardrail": "No conviertas Jacob y Esaú en superioridad étnica o racial; no uses lenguaje de sacrificios dañados para degradar a personas con discapacidad; no uses Malaquías 2 para avergonzar a sobrevivientes de divorcio ni atrapar a nadie en abuso; no supongas que casarse con una persona de otra etnia es el problema cuando el texto señala traición del pacto e idolatría; no uses Malaquías 3:10 como promesa de retorno garantizado para recaudar fondos; no avergüences a personas pobres que no pueden dar; no trates el libro de memoria como un registro místico manipulable; y no uses la promesa de Elías para presionar reconciliación familiar insegura.",
-  "seriesClosingTakeaway": "Malaquías confronta a una comunidad que todavía tiene religión pero ha perdido confianza, reverencia, fidelidad y justicia. Dios responde con amor del pacto, adoración responsable, protección de personas vulnerables, generosidad sin manipulación, justicia final y llamado a prepararse para el Señor.",
+  "seriesExamination": "¿Dónde ha hecho la decepción que me vuelva cínico acerca del amor de Dios? ¿Dónde le he ofrecido sobras, usado identidad religiosa para evitar responsabilidad, traicionado confianza, ignorado vecinos vulnerables o tratado la ofrenda como transacción?",
+  "seriesPractice": "Elige una respuesta concreta de Malaquías: recuerda una evidencia específica de la fidelidad de Dios, mejora un acto de adoración descuidado, repara una ruptura de confianza cuando sea seguro y apropiado, corrige una práctica financiera injusta, da libremente sin esperar reembolso de Dios o anima a alguien desalentado por el aparente éxito del mal.",
+  "seriesLeaderGuidance": "Enseña con humildad los textos debatidos, especialmente 1:11, 2:10–16 y la relación del diezmo con la práctica cristiana. Protege a participantes afectados por abuso, divorcio, presión financiera o manipulación espiritual. Nunca presiones revelación ni reconciliación insegura. Separa arrepentimiento de coerción, generosidad de presión de recaudación, perdón de acceso restaurado y cumplimiento cristiano de desprecio hacia el pueblo judío.",
+  "seriesPrayer": "Dios fiel al pacto, recuérdanos tu amor cuando la decepción reduzca nuestra visión. Purifica nuestra adoración, haz veraces a líderes, protege a personas de traición y violencia, haz generosa nuestra ofrenda sin manipulación y vuelve nuestros corazones hacia relaciones fieles. Prepáranos para recibir a Jesús con justicia, misericordia, valor y esperanza. Amén.",
+  "seriesJesusConnection": "El Nuevo Testamento conecta explícitamente el lenguaje del mensajero de Malaquías con Juan el Bautista, quien prepara el camino para Jesús, y Jesús identifica a Juan con el papel prometido de Elías en un sentido calificado. Los cristianos ven por eso la venida del Señor, purificación, sanidad y corazones preparados cumplidos decisivamente en Cristo. Sin embargo, no cada frase de Malaquías es una predicción directa de Jesús: por ejemplo, el sol de justicia no es identificado explícitamente con Cristo por una cita del Nuevo Testamento, aunque la tradición cristiana con frecuencia lo ha leído de manera cristológica.",
+  "seriesGuardrail": "No uses a Jacob y Esaú para justificar superioridad étnica u hostilidad; no conviertas el lenguaje de defectos sacrificiales en desprecio hacia personas con discapacidad; no uses autoridad sacerdotal para proteger líderes abusivos; no uses Malaquías 2 para atrapar a un cónyuge en peligro ni afirmes que toda traducción de 2:16 dice exactamente lo mismo; no uses el diezmo como fórmula garantizada de riqueza ni presiones a personas pobres a dar más allá de seguridad y responsabilidad; no trates el almacén como promesa de que cada donante prosperará materialmente; no presentes el sol de justicia como título explícito de Jesús en el Nuevo Testamento cuando el Nuevo Testamento no lo hace; y no uses lenguaje de Elías o del fin para fechas, conspiraciones o reconciliación familiar forzada.",
+  "seriesClosingTakeaway": "Malaquías confronta una comunidad que todavía tiene actividad religiosa pero ha perdido profundidad de pacto. Dios llama a su pueblo a recordar su amor, honrarlo con verdad, proteger relaciones, practicar justicia, dar sin manipulación, fortalecerse mutuamente en fidelidad y prepararse para el Señor que viene a purificar, sanar y poner las cosas en orden.",
   "lessons": [
     {
       "number": 1,
@@ -96,103 +96,103 @@ window.NLDG_BOOK_STUDY={
       "subtitle": "Malaquías 1:1–5 • Estudio bíblico libro por libro",
       "scripture": "Malaquías 1:1–5",
       "supporting": [
-        "Génesis 25:19–34",
         "Deuteronomio 7:6–9",
         "Abdías 10–15",
         "Romanos 5:6–8",
-        "Romanos 9:10–16"
+        "Romanos 9:10–16",
+        "Efesios 2:4–10"
       ],
-      "question": "¿Cómo corrige el recuerdo del amor del pacto de Dios el cinismo sin convertir elección o juicio en superioridad étnica?",
-      "truth": "Dios responde al escepticismo decepcionado recordando su fidelidad del pacto y propósito soberano, llamando a su pueblo a recibir gracia con humildad en vez de usar elección como afirmación de superioridad.",
-      "goal": "Escuchar con honestidad la disputa inicial, situar a Jacob y Esaú dentro de la historia del pacto, entender el juicio de Edom sin desprecio étnico y distinguir el uso de Jacob y Esaú en Romanos 9 de afirmaciones simplistas sobre valor personal.",
-      "opening": "Lee Malaquías 1:1–5 y marca oráculo, yo los he amado, cómo nos has amado, Esaú, Jacob, amado, aborrecido, montañas desoladas, Edom dice volveremos a edificar, el SEÑOR de los Ejércitos dice ellos edificarán pero yo derribaré, tierra de maldad, pueblo bajo indignación, sus propios ojos verán, grande más allá de la frontera de Israel. Pregunta por qué Dios comienza con amor y qué clase de memoria ha perdido la comunidad.",
-      "context": "Malaquías habla a una comunidad posexílica con adoración del templo restaurada pero circunstancias decepcionantes. Su pregunta, cómo nos has amado, no necesariamente niega cada acto pasado de Dios; revela cómo la frustración presente ha hecho difícil reconocer el amor del pacto. Dios responde recordando su elección de Jacob y no Esaú dentro de la historia ancestral.\n\nEl contraste amado-aborrecido usa lenguaje de elección del pacto y es seguido por juicio sobre Edom, la nación asociada con Esaú. Abdías y otros profetas condenan a Edom por orgullo violento y acciones contra Judá. Romanos 9 cita después el lenguaje de Jacob y Esaú al tratar la libertad de Dios en la elección. Ningún pasaje enseña que una etnia posea mayor valor humano.",
+      "question": "¿Cómo responde el recuerdo del amor del pacto de Dios al cinismo sin convertir la elección en derecho adquirido o superioridad étnica?",
+      "truth": "El pueblo de Dios comienza la renovación recibiendo su amor fiel del pacto como gracia y recordando que la elección sirve al propósito redentor de Dios y crea responsabilidad, no superioridad.",
+      "goal": "Escuchar la disputa inicial dentro de su contexto postexílico, interpretar el lenguaje de Jacob y Esaú dentro del pacto, distinguir elección divina de desprecio étnico y permitir que la gracia recordada confronte insensibilidad espiritual.",
+      "opening": "Lee Malaquías 1:1–5 y marca profecía, yo los he amado, ¿cómo nos has amado?, Esaú, Jacob, amé, aborrecí, montañas desoladas, Edom dice reconstruiremos, tierra de maldad, indignación, sus propios ojos lo verán y grande más allá de las fronteras de Israel. Pregunta por qué el libro comienza con amor antes de pasar a corrección.",
+      "context": "Malaquías habla a una comunidad judía postexílica que vive después de la reconstrucción del templo, pero antes de que aparezca la plenitud esperada de restauración. Su pregunta inicial, ¿Cómo nos has amado?, refleja decepción y cansancio del pacto. Dios responde recordando la historia de Jacob y Esaú y el contraste histórico entre la preservación de Israel y el juicio sobre Edom.\n\nLas palabras amé y aborrecí pertenecen al lenguaje bíblico de elección y juicio del pacto y no deben reducirse a categorías emocionales modernas. Romanos 9 cita después este pasaje al hablar de la libertad de Dios en la elección. El punto de Malaquías no hace moralmente superiores a los descendientes de Jacob ni autoriza hostilidad hacia ninguna etnia actual. El juicio de Edom pertenece a la historia profética de oposición y orgullo de Edom, no a una categoría racial moderna.",
       "teaching": [
         {
-          "heading": "Dios comienza con yo los he amado — Malaquías 1:2",
-          "body": "Antes de confrontar adoración corrupta, Dios nombra amor del pacto. La corrección comienza dentro de una relación que Dios no ha abandonado.",
+          "heading": "Dios comienza con Yo los he amado — Malaquías 1:2",
+          "body": "Antes de confrontar adoración, liderazgo, matrimonio, dinero o lenguaje cínico, Dios declara amor del pacto. El orden importa. La corrección viene de un Dios comprometido con su pueblo, no de un crítico indiferente.",
           "paragraphs": [
-            "Antes de confrontar adoración corrupta, Dios nombra amor del pacto. La corrección comienza dentro de una relación que Dios no ha abandonado."
+            "Antes de confrontar adoración, liderazgo, matrimonio, dinero o lenguaje cínico, Dios declara amor del pacto. El orden importa. La corrección viene de un Dios comprometido con su pueblo, no de un crítico indiferente."
           ]
         },
         {
-          "heading": "La decepción puede reducir la memoria espiritual — Malaquías 1:2",
-          "body": "La respuesta cómo nos has amado revela una comunidad que mide el amor principalmente por condiciones presentes. El lamento fiel puede preguntar con honestidad, pero el cinismo se vuelve peligroso cuando se niega a recordar evidencia de gracia.",
+          "heading": "La decepción puede reducir la memoria — Malaquías 1:2",
+          "body": "La comunidad pregunta cómo la ha amado Dios porque las circunstancias presentes parecen menores que la restauración esperada. La pregunta revela cómo la decepción puede hacer difícil ver la gracia pasada.",
           "paragraphs": [
-            "La respuesta cómo nos has amado revela una comunidad que mide el amor principalmente por condiciones presentes. El lamento fiel puede preguntar con honestidad, pero el cinismo se vuelve peligroso cuando se niega a recordar evidencia de gracia."
+            "La comunidad pregunta cómo la ha amado Dios porque las circunstancias presentes parecen menores que la restauración esperada. La pregunta revela cómo la decepción puede hacer difícil ver la gracia pasada."
           ]
         },
         {
-          "heading": "La elección de Jacob pertenece al propósito del pacto de Dios — Malaquías 1:2–3",
-          "body": "La elección de Jacob hace avanzar la promesa por la cual se desarrolla la historia del pacto de Israel. La elección es gracia y llamado, no declaración de que los descendientes de Jacob tengan valor humano superior.",
+          "heading": "Jacob y Esaú recuerdan la gracia electiva de Dios — Malaquías 1:2–3",
+          "body": "Dios señala a los hermanos ancestrales como evidencia de que la existencia del pacto de Israel descansa en elección divina y no en mérito humano. La elección es gracia y no significa que Jacob o sus descendientes fueran siempre más justos.",
           "paragraphs": [
-            "La elección de Jacob hace avanzar la promesa por la cual se desarrolla la historia del pacto de Israel. La elección es gracia y llamado, no declaración de que los descendientes de Jacob tengan valor humano superior."
+            "Dios señala a los hermanos ancestrales como evidencia de que la existencia del pacto de Israel descansa en elección divina y no en mérito humano. La elección es gracia y no significa que Jacob o sus descendientes fueran siempre más justos."
           ]
         },
         {
-          "heading": "El lenguaje amor-aborrecimiento es comparativo y del pacto — Malaquías 1:2–3",
-          "body": "Los contrastes bíblicos de amar y aborrecer pueden expresar elección de una línea del pacto sobre otra y no odio emocional en sentido moderno. Debe leerse dentro de la historia completa y no usarse para justificar desprecio.",
+          "heading": "Aborrecí es lenguaje de juicio del pacto, no permiso para odio humano — Malaquías 1:3",
+          "body": "El contraste entre amor y odio expresa elección y rechazo dentro del argumento profético. Los lectores no deben imitar la palabra cultivando odio hacia grupos étnicos, nacionales o religiosos.",
           "paragraphs": [
-            "Los contrastes bíblicos de amar y aborrecer pueden expresar elección de una línea del pacto sobre otra y no odio emocional en sentido moderno. Debe leerse dentro de la historia completa y no usarse para justificar desprecio."
+            "El contraste entre amor y odio expresa elección y rechazo dentro del argumento profético. Los lectores no deben imitar la palabra cultivando odio hacia grupos étnicos, nacionales o religiosos."
           ]
         },
         {
-          "heading": "El juicio de Edom aborda orgullo y violencia históricos — Malaquías 1:3–4",
-          "body": "La devastación de Edom se relaciona con juicio profético y su jactancia de reconstruir no borra responsabilidad. El blanco no es la etnia como tal sino un pueblo histórico bajo juicio por conducta y orgullo.",
+          "heading": "La confianza de Edom no puede borrar responsabilidad — Malaquías 1:4",
+          "body": "Edom imagina reconstruir después de la devastación, pero Malaquías insiste en que la determinación humana no puede cancelar juicio divino. El texto confronta orgullo, no dignidad étnica.",
           "paragraphs": [
-            "La devastación de Edom se relaciona con juicio profético y su jactancia de reconstruir no borra responsabilidad. El blanco no es la etnia como tal sino un pueblo histórico bajo juicio por conducta y orgullo."
+            "Edom imagina reconstruir después de la devastación, pero Malaquías insiste en que la determinación humana no puede cancelar juicio divino. El texto confronta orgullo, no dignidad étnica."
           ]
         },
         {
-          "heading": "Reconstruir no coloca a una nación fuera de responsabilidad — Malaquías 1:4",
-          "body": "Recuperación económica o política no puede por sí sola probar aprobación moral. El oráculo dice que reconstrucción visible no cancela el juicio de Dios.",
+          "heading": "Los detalles históricos no deben exagerarse — Malaquías 1:3–4",
+          "body": "El texto presupone devastación en Edom, pero no ofrece una cronología completa de todos los acontecimientos detrás del oráculo. Los maestros deben resistir la tentación de fingir que el pasaje resuelve preguntas que no aborda.",
           "paragraphs": [
-            "Recuperación económica o política no puede por sí sola probar aprobación moral. El oráculo dice que reconstrucción visible no cancela el juicio de Dios."
+            "El texto presupone devastación en Edom, pero no ofrece una cronología completa de todos los acontecimientos detrás del oráculo. Los maestros deben resistir la tentación de fingir que el pasaje resuelve preguntas que no aborda."
           ]
         },
         {
-          "heading": "La grandeza de Dios se extiende más allá de Israel — Malaquías 1:5",
-          "body": "La comunidad verá que la grandeza del SEÑOR no está confinada a sus circunstancias locales. La elección del pacto no convierte a Dios en posesión tribal.",
+          "heading": "Israel es llamado a ver y no a presumir — Malaquías 1:5",
+          "body": "La respuesta adecuada es reconocer grandeza de Dios y no congratularse. La comunidad es invitada a ver que la autoridad del SEÑOR alcanza más allá de sus propias fronteras.",
           "paragraphs": [
-            "La comunidad verá que la grandeza del SEÑOR no está confinada a sus circunstancias locales. La elección del pacto no convierte a Dios en posesión tribal."
+            "La respuesta adecuada es reconocer grandeza de Dios y no congratularse. La comunidad es invitada a ver que la autoridad del SEÑOR alcanza más allá de sus propias fronteras."
           ]
         },
         {
-          "heading": "El amor recordado prepara a la comunidad para corrección",
-          "body": "El resto de Malaquías expondrá adoración, liderazgo, relaciones y economía. Comenzar con amor mantiene el arrepentimiento arraigado en gracia y no en superioridad o desesperación.",
+          "heading": "La gracia recordada prepara el resto del libro",
+          "body": "La corrección posterior a sacerdotes, matrimonios, injusticia, ofrendas y palabras descansa sobre esta base. Recibir amor del pacto debe hacer al pueblo más fiel y humilde, no menos responsable.",
           "paragraphs": [
-            "El resto de Malaquías expondrá adoración, liderazgo, relaciones y economía. Comenzar con amor mantiene el arrepentimiento arraigado en gracia y no en superioridad o desesperación."
+            "La corrección posterior a sacerdotes, matrimonios, injusticia, ofrendas y palabras descansa sobre esta base. Recibir amor del pacto debe hacer al pueblo más fiel y humilde, no menos responsable."
           ]
         }
       ],
       "questions": [
-        "¿Por qué comienza Dios el libro con yo los he amado antes de nombrar los fracasos de la comunidad?",
-        "¿Qué revela la pregunta cómo nos has amado acerca de la condición espiritual del pueblo?",
-        "¿Cómo funciona la historia de Jacob y Esaú como historia del pacto y no como clasificación del valor humano?",
-        "¿Qué significa el contraste amor-aborrecimiento dentro del lenguaje bíblico de elección?",
-        "¿Qué aborda el juicio de Edom y por qué no debe convertirse en desprecio étnico?",
-        "¿Por qué el deseo de Edom de reconstruir no resuelve la cuestión de aprobación moral?",
-        "¿Qué dice el versículo 5 acerca de la grandeza del SEÑOR más allá de las fronteras de Israel?",
-        "¿Cómo puede recordar la gracia hacernos más abiertos a corrección sin negar la decepción?"
+        "¿Por qué podría una comunidad postexílica preguntar ¿Cómo nos has amado? mientras mantiene vida religiosa?",
+        "¿Por qué responde Dios a la pregunta sobre amor recordando a Jacob y Esaú?",
+        "¿Cómo difiere el lenguaje de elección del pacto de afirmar que una etnia es inherentemente mejor que otra?",
+        "¿Qué revela la afirmación de Edom reconstruiremos acerca de confianza humana en el versículo 4?",
+        "¿Qué afirma el pasaje acerca de la devastación de Edom y qué detalles deja sin explicar?",
+        "¿Por qué la respuesta del versículo 5 es reconocer grandeza del SEÑOR y no presumir en Israel?",
+        "¿Cómo prepara la gracia recordada a la comunidad para recibir las correcciones difíciles que siguen?",
+        "¿Dónde ha hecho la decepción difícil reconocer la fidelidad de Dios sin fingir que el dolor no es real?"
       ],
-      "examination": "¿Dónde ha reducido la decepción mi memoria de la fidelidad de Dios? ¿He usado alguna vez ser escogido, correcto, informado o religioso para sentirme superior a otro grupo?",
-      "challenge": "Escribe tres evidencias concretas de la gracia de Dios que no dependan de comodidad presente. Después nombra una decepción con honestidad ante Dios sin usarla para negar su amor ni degradar a otra persona.",
-      "caution": "Maneja Jacob, Esaú y Edom con cuidado histórico. Rechaza explícitamente interpretaciones racializadas o nacionalistas. Al hablar de Romanos 9, distingue el argumento teológico de Pablo de afirmaciones de que algunos grupos étnicos tienen menos dignidad.",
-      "prayer": "Dios de amor del pacto, sana el cinismo que olvida tu gracia. Mantennos humildes cuando hablamos de elección y juicio. Líbranos de toda superioridad étnica o espiritual y ayúdanos a recibir tu amor en Jesús como llamado a obediencia fiel y agradecida. Amén.",
+      "examination": "¿He interpretado el amor de Dios solo por comodidad o decepción presente? ¿La gracia recibida me ha hecho más humilde y responsable o he convertido pertenencia en derecho adquirido?",
+      "challenge": "Escribe tres maneras concretas en que la gracia de Dios ha formado tu vida y que no dependan de circunstancias actuales. Luego identifica un área donde recordar esa gracia debe producir mayor humildad o responsabilidad hacia alguien fuera de tu grupo habitual.",
+      "caution": "Maneja con cuidado el lenguaje de elección y rechaza explícitamente superioridad étnica. No obligues a participantes a llamar buena la aflicción presente para afirmar el amor de Dios. Mantén Romanos 9 conectado con el argumento de Pablo y evita especular sobre un Edom moderno.",
+      "prayer": "Dios de amor del pacto, encuéntranos cuando la decepción hace difícil ver tu gracia. Líbranos de convertir elección en derecho adquirido o desprecio. Que el amor revelado plenamente en Jesús nos haga agradecidos, humildes, responsables y listos para recibir tu corrección. Amén.",
       "openingParagraphs": [
-        "Lee Malaquías 1:1–5 y marca oráculo, yo los he amado, cómo nos has amado, Esaú, Jacob, amado, aborrecido, montañas desoladas, Edom dice volveremos a edificar, el SEÑOR de los Ejércitos dice ellos edificarán pero yo derribaré, tierra de maldad, pueblo bajo indignación, sus propios ojos verán, grande más allá de la frontera de Israel. Pregunta por qué Dios comienza con amor y qué clase de memoria ha perdido la comunidad."
+        "Lee Malaquías 1:1–5 y marca profecía, yo los he amado, ¿cómo nos has amado?, Esaú, Jacob, amé, aborrecí, montañas desoladas, Edom dice reconstruiremos, tierra de maldad, indignación, sus propios ojos lo verán y grande más allá de las fronteras de Israel. Pregunta por qué el libro comienza con amor antes de pasar a corrección."
       ],
       "contextParagraphs": [
-        "Malaquías habla a una comunidad posexílica con adoración del templo restaurada pero circunstancias decepcionantes. Su pregunta, cómo nos has amado, no necesariamente niega cada acto pasado de Dios; revela cómo la frustración presente ha hecho difícil reconocer el amor del pacto. Dios responde recordando su elección de Jacob y no Esaú dentro de la historia ancestral.",
-        "El contraste amado-aborrecido usa lenguaje de elección del pacto y es seguido por juicio sobre Edom, la nación asociada con Esaú. Abdías y otros profetas condenan a Edom por orgullo violento y acciones contra Judá. Romanos 9 cita después el lenguaje de Jacob y Esaú al tratar la libertad de Dios en la elección. Ningún pasaje enseña que una etnia posea mayor valor humano."
+        "Malaquías habla a una comunidad judía postexílica que vive después de la reconstrucción del templo, pero antes de que aparezca la plenitud esperada de restauración. Su pregunta inicial, ¿Cómo nos has amado?, refleja decepción y cansancio del pacto. Dios responde recordando la historia de Jacob y Esaú y el contraste histórico entre la preservación de Israel y el juicio sobre Edom.",
+        "Las palabras amé y aborrecí pertenecen al lenguaje bíblico de elección y juicio del pacto y no deben reducirse a categorías emocionales modernas. Romanos 9 cita después este pasaje al hablar de la libertad de Dios en la elección. El punto de Malaquías no hace moralmente superiores a los descendientes de Jacob ni autoriza hostilidad hacia ninguna etnia actual. El juicio de Edom pertenece a la historia profética de oposición y orgullo de Edom, no a una categoría racial moderna."
       ],
       "jesusParagraphs": [
-        "Romanos 9 cita el lenguaje de Jacob y Esaú de Malaquías dentro del argumento de Pablo sobre libertad y misericordia de Dios, mientras Romanos 5 arraiga la seguridad cristiana del amor de Dios en Cristo muriendo por pecadores. Los cristianos reciben por eso la elección como gracia que humilla y no exalta y ven la fidelidad del pacto alcanzar su centro salvador en Jesús."
+        "El evangelio también comienza con gracia y no con mérito humano: Dios demuestra su amor en Cristo mientras las personas aún son pecadoras. El uso de Jacob y Esaú en Romanos 9 coloca Malaquías dentro de una discusión mayor sobre la libertad misericordiosa de Dios. La seguridad cristiana descansa finalmente en la gracia revelada en Jesús y no en ascendencia, estatus o superioridad moral."
       ],
       "guardrailParagraphs": [
-        "No uses Jacob y Esaú para afirmar superioridad racial, étnica, nacional o religiosa; no trates a edomitas o supuestos descendientes modernos como blancos legítimos de desprecio; no afirmes que prosperidad presente demuestra aprobación divina; y no uses Romanos 9 para borrar el marco histórico del pacto de Malaquías. La elección es gracia y responsabilidad, nunca permiso para deshumanizar."
+        "No uses las palabras de Dios sobre Jacob y Esaú para justificar racismo, antisemitismo, hostilidad contra árabes u otra etnia, superioridad nacional o desprecio por quienes están fuera de tu grupo. No afirmes que elección significa que los escogidos son automáticamente más justos. No identifiques a un pueblo moderno como Edom para aplicarle el juicio de Malaquías."
       ],
-      "closingTakeaway": "Malaquías comienza la renovación restaurando la memoria del amor del pacto. La elección de Dios humilla, el juicio de Edom confronta orgullo y violencia y la grandeza del SEÑOR llega más allá de las fronteras de Israel. La gracia prepara al pueblo de Dios para recibir la corrección que sigue."
+      "closingTakeaway": "Malaquías comienza la renovación con amor recordado. La gracia electiva de Dios no halaga a la comunidad; la humilla. El pueblo es preservado por misericordia del pacto, llamado lejos del derecho adquirido e invitado a ver la grandeza de Dios más allá de sus fronteras."
     },
     {
       "number": 2,
@@ -201,102 +201,102 @@ window.NLDG_BOOK_STUDY={
       "scripture": "Malaquías 1:6–2:9",
       "supporting": [
         "Levítico 22:17–25",
-        "Deuteronomio 33:8–11",
-        "Ezequiel 44:23–24",
+        "Deuteronomio 15:21",
+        "1 Samuel 2:27–36",
         "Romanos 12:1–2",
         "Santiago 3:1"
       ],
-      "question": "¿Qué revela la adoración descuidada acerca de nuestra visión de Dios y cómo daña el liderazgo espiritual corrupto a las personas que debería servir?",
-      "truth": "Dios merece adoración reverente y veraz, mientras los líderes espirituales son responsables de preservar conocimiento, rechazar parcialidad y ayudar a las personas a caminar fielmente en vez de tropezar.",
-      "goal": "Leer la crítica de las ofrendas dañadas dentro de la ley sacrificial de Israel, proteger a personas con discapacidad de aplicaciones degradantes, entender el llamado del pacto de Leví y fortalecer responsabilidad de liderazgo sin convertir adoración en actuación o perfeccionismo.",
-      "opening": "Lee Malaquías 1:6–2:9 y marca padre, señor, dónde está mi honor, desprecian mi nombre, altar contaminado, ciego, cojo, enfermo, gobernador, cerrar las puertas del templo, gran Rey, mi nombre entre las naciones, comida despreciable, animal robado o dañado, pacto con Leví, vida y paz, instrucción verdadera, labios preservan conocimiento, mensajero del SEÑOR, se apartaron del camino, hicieron tropezar a muchos, parcialidad en la instrucción. Pregunta qué enseñan al pueblo las decisiones de los sacerdotes acerca de Dios.",
-      "context": "Malaquías se dirige a sacerdotes que sirven en el templo reconstruido. La Torá exigía que los animales sacrificiales cumplieran estándares específicos; animales dañados no eran aceptados como ofrendas ordinarias. La comparación con regalos presentados a un gobernador expone desprecio deliberado dentro de ese sistema sacrificial y no una afirmación general de que seres humanos con discapacidad o lesión tengan menor dignidad.\n\nMalaquías 2 contrasta el fracaso de los sacerdotes con una descripción ideal del llamado del pacto de Leví: reverencia, instrucción verdadera, caminar rectamente y apartar a muchos del pecado. Los sacerdotes eran responsables no solo del ritual sino de enseñar Torá. Su parcialidad y corrupción dañaban a adoradores que dependían de ellos para guía.",
+      "question": "¿Qué revela la adoración descuidada acerca de nuestra visión de Dios y qué responsabilidad llevan los líderes espirituales cuando su enseñanza y ejemplo forman a otros?",
+      "truth": "Dios rechaza desprecio disfrazado de adoración y responsabiliza a líderes espirituales por reverencia, enseñanza verdadera, imparcialidad y conducta que ayude en vez de dañar a quienes sirven.",
+      "goal": "Comprender la crítica sacrificial y sacerdotal de Malaquías dentro de la Torá, evitar usos capacitistas del lenguaje de defectos sacrificiales, tratar detalles debatidos con honestidad y aplicar el pasaje a adoración y liderazgo sin manipulación espiritual.",
+      "opening": "Lee Malaquías 1:6–2:9 y marca hijo honra padre, siervo amo, ¿dónde está mi honor?, alimento contaminado, ¿cómo te hemos contaminado?, ciego, cojo, enfermo, gobernador, cerrar puertas del templo, mi nombre grande entre naciones, ofrenda pura, mesa contaminada, cansancio, maldición, descendencia, estiércol de fiestas, pacto con Leví, vida y paz, instrucción verdadera, mensajero del SEÑOR, apartó a muchos del pecado, se desviaron, hicieron tropezar, corrompieron pacto y parcialidad. Pregunta qué enseñan las acciones de los sacerdotes acerca de Dios.",
+      "context": "El templo funciona y los sacerdotes reciben sacrificios, pero se aceptan animales prohibidos por la Torá para el altar. Levítico 22 y Deuteronomio 15 distinguen elegibilidad sacrificial del valor del animal. La acusación de Malaquías es que los sacerdotes ofrecen a Dios lo que saben que no cumple sus obligaciones del pacto.\n\nVarios detalles requieren cuidado. Malaquías 1:11, acerca del nombre de Dios grande entre las naciones y una ofrenda pura, se ha leído como descripción presente, futuro profético o adoración universal ideal; la referencia temporal exacta es debatida. En 2:3 la imagen de estiércol o desecho sacrificial es lenguaje deliberadamente duro de humillación dirigido a sacerdotes corruptos y no debe reproducirse como permiso para humillar.",
       "teaching": [
         {
-          "heading": "Dios nombra el honor que falta — Malaquías 1:6",
-          "body": "Los sacerdotes entienden que padres y señores reciben honor y aun así preguntan cómo han despreciado el nombre de Dios. El oficio religioso puede coexistir con ceguera frente al desprecio comunicado por decisiones rutinarias.",
+          "heading": "Dios expone la diferencia entre honor social y honor divino — Malaquías 1:6",
+          "body": "Los sacerdotes entienden expectativas ordinarias de honor hacia padres, amos y gobernadores, pero fallan en honrar a Dios. La familiaridad religiosa puede volver ordinaria una responsabilidad sagrada.",
           "paragraphs": [
-            "Los sacerdotes entienden que padres y señores reciben honor y aun así preguntan cómo han despreciado el nombre de Dios. El oficio religioso puede coexistir con ceguera frente al desprecio comunicado por decisiones rutinarias."
+            "Los sacerdotes entienden expectativas ordinarias de honor hacia padres, amos y gobernadores, pero fallan en honrar a Dios. La familiaridad religiosa puede volver ordinaria una responsabilidad sagrada."
           ]
         },
         {
-          "heading": "Las ofrendas dañadas exponen desprecio dentro del sistema sacrificial — Malaquías 1:7–8",
-          "body": "Animales ciegos, cojos o enfermos violaban los estándares de ofrenda dados a Israel. El problema es lo que los sacerdotes presentan conscientemente a Dios, no el valor de personas con discapacidad. La dignidad humana nunca debe medirse por elegibilidad sacrificial.",
+          "heading": "El problema es la ofrenda despreciativa, no la discapacidad — Malaquías 1:7–8",
+          "body": "Animales ciegos, heridos o enfermos no cumplen los requisitos de estos sacrificios según la Torá. El pasaje evalúa a adoradores que traen ofrendas prohibidas; no clasifica a seres humanos con discapacidad como menos valiosos o menos santos.",
           "paragraphs": [
-            "Animales ciegos, cojos o enfermos violaban los estándares de ofrenda dados a Israel. El problema es lo que los sacerdotes presentan conscientemente a Dios, no el valor de personas con discapacidad. La dignidad humana nunca debe medirse por elegibilidad sacrificial."
+            "Animales ciegos, heridos o enfermos no cumplen los requisitos de estos sacrificios según la Torá. El pasaje evalúa a adoradores que traen ofrendas prohibidas; no clasifica a seres humanos con discapacidad como menos valiosos o menos santos."
           ]
         },
         {
-          "heading": "La comparación con el gobernador revela un doble estándar — Malaquías 1:8",
-          "body": "Los sacerdotes reconocerían el insulto si presentaran tal regalo a un gobernador persa. Malaquías expone adoración que da a Dios lo que ellos mismos consideran inaceptable.",
+          "heading": "Dios prefiere detener adoración vacía a recibirla — Malaquías 1:9–10",
+          "body": "El deseo sorprendente de que alguien cierre las puertas muestra que actividad religiosa no es automáticamente agradable a Dios. Más actividad no es mejor cuando enseña desprecio.",
           "paragraphs": [
-            "Los sacerdotes reconocerían el insulto si presentaran tal regalo a un gobernador persa. Malaquías expone adoración que da a Dios lo que ellos mismos consideran inaceptable."
+            "El deseo sorprendente de que alguien cierre las puertas muestra que actividad religiosa no es automáticamente agradable a Dios. Más actividad no es mejor cuando enseña desprecio."
           ]
         },
         {
-          "heading": "Dios preferiría detener el ritual antes que recibir adoración engañosa — Malaquías 1:9–14",
-          "body": "El deseo impactante de que alguien cierre las puertas muestra que la actividad religiosa no es automáticamente agradable a Dios. El ritual continuo puede profundizar deshonra cuando líderes normalizan desprecio.",
+          "heading": "El nombre de Dios no disminuye por fracaso local — Malaquías 1:11–14",
+          "body": "Ya se lea el versículo 11 principalmente como realidad presente, futuro profético o contraste retórico, la afirmación central es clara: la grandeza de Dios se extiende más allá de la negligencia de estos sacerdotes.",
           "paragraphs": [
-            "El deseo impactante de que alguien cierre las puertas muestra que la actividad religiosa no es automáticamente agradable a Dios. El ritual continuo puede profundizar deshonra cuando líderes normalizan desprecio."
+            "Ya se lea el versículo 11 principalmente como realidad presente, futuro profético o contraste retórico, la afirmación central es clara: la grandeza de Dios se extiende más allá de la negligencia de estos sacerdotes."
           ]
         },
         {
-          "heading": "El nombre de Dios no se reduce por fracaso local — Malaquías 1:11,14",
-          "body": "El SEÑOR es gran Rey y su nombre será honrado entre las naciones. El fracaso sacerdotal es grave, pero no puede reducir el valor de Dios ni confinar su gloria a su mal ejemplo.",
+          "heading": "El fracaso sacerdotal tiene consecuencias — Malaquías 2:1–4",
+          "body": "Malaquías anuncia disciplina severa del pacto e incluye una imagen degradante de desecho sacrificial. La retórica comunica gravedad del servicio corrupto, no un modelo para vergüenza abusiva.",
           "paragraphs": [
-            "El SEÑOR es gran Rey y su nombre será honrado entre las naciones. El fracaso sacerdotal es grave, pero no puede reducir el valor de Dios ni confinar su gloria a su mal ejemplo."
+            "Malaquías anuncia disciplina severa del pacto e incluye una imagen degradante de desecho sacrificial. La retórica comunica gravedad del servicio corrupto, no un modelo para vergüenza abusiva."
           ]
         },
         {
-          "heading": "El pacto con Leví une reverencia e instrucción — Malaquías 2:4–7",
-          "body": "El llamado de Leví se describe mediante temor reverente, instrucción verdadera, conducta recta y apartar a muchos de iniquidad. El liderazgo espiritual responde tanto por carácter como por enseñanza.",
+          "heading": "El ideal del pacto con Leví es reverencia y verdad — Malaquías 2:5–6",
+          "body": "Malaquías recuerda un ideal sacerdotal marcado por vida, paz, reverencia, enseñanza verdadera, andar recto y apartar a muchos del mal. El liderazgo espiritual se mide por verdad y fruto moral, no por oficio solamente.",
           "paragraphs": [
-            "El llamado de Leví se describe mediante temor reverente, instrucción verdadera, conducta recta y apartar a muchos de iniquidad. El liderazgo espiritual responde tanto por carácter como por enseñanza."
+            "Malaquías recuerda un ideal sacerdotal marcado por vida, paz, reverencia, enseñanza verdadera, andar recto y apartar a muchos del mal. El liderazgo espiritual se mide por verdad y fruto moral, no por oficio solamente."
           ]
         },
         {
-          "heading": "Líderes corruptos hacen tropezar a otros — Malaquías 2:8",
-          "body": "Los sacerdotes se apartaron e hicieron tropezar a muchos por su instrucción. La enseñanza dañina no es un fracaso privado; multiplica consecuencias en quienes confían en líderes.",
+          "heading": "Los labios sacerdotales deben conservar conocimiento — Malaquías 2:7",
+          "body": "Las personas buscan instrucción de sacerdotes porque son mensajeros confiados con enseñanza de Dios. Mayor influencia docente trae mayor responsabilidad.",
           "paragraphs": [
-            "Los sacerdotes se apartaron e hicieron tropezar a muchos por su instrucción. La enseñanza dañina no es un fracaso privado; multiplica consecuencias en quienes confían en líderes."
+            "Las personas buscan instrucción de sacerdotes porque son mensajeros confiados con enseñanza de Dios. Mayor influencia docente trae mayor responsabilidad."
           ]
         },
         {
-          "heading": "La parcialidad corrompe el juicio espiritual — Malaquías 2:9",
-          "body": "Mostrar parcialidad al aplicar instrucción traiciona la responsabilidad del pacto. Favoritismo, protección de personas internas y estándares desiguales son incompatibles con ministerio confiable.",
+          "heading": "Parcialidad e instrucción falsa hacen tropezar — Malaquías 2:8–9",
+          "body": "Los sacerdotes se han apartado del camino, corrompido su responsabilidad de pacto y mostrado parcialidad. La autoridad espiritual se vuelve peligrosa cuando dobla la verdad por estatus, favoritismo, dinero o control.",
           "paragraphs": [
-            "Mostrar parcialidad al aplicar instrucción traiciona la responsabilidad del pacto. Favoritismo, protección de personas internas y estándares desiguales son incompatibles con ministerio confiable."
+            "Los sacerdotes se han apartado del camino, corrompido su responsabilidad de pacto y mostrado parcialidad. La autoridad espiritual se vuelve peligrosa cuando dobla la verdad por estatus, favoritismo, dinero o control."
           ]
         }
       ],
       "questions": [
-        "¿Qué revela la comparación de honor en el versículo 6 acerca de la visión de Dios de los sacerdotes?",
-        "¿Por qué importan los estándares de ofrenda en los versículos 7–8 y qué aplicación degradante debe rechazarse?",
-        "¿Qué expone la comparación con el gobernador acerca del doble estándar de los sacerdotes?",
-        "¿Por qué preferiría Dios las puertas del templo cerradas antes que adoración engañosa continua?",
-        "¿Qué dice la grandeza del nombre de Dios entre las naciones acerca del fracaso religioso local?",
-        "¿Qué cualidades definen la función de enseñanza fiel asociada con Leví en 2:5–7?",
-        "¿Cómo puede enseñanza corrupta hacer tropezar a otras personas?",
-        "¿Dónde amenaza la parcialidad al liderazgo espiritual confiable?"
+        "¿Qué contraste hace Malaquías entre el honor dado a autoridades humanas y el honor dado a Dios?",
+        "¿Por qué son inaceptables los animales de los versículos 7–8 como sacrificios y por qué nunca debe trasladarse esa categoría al valor humano?",
+        "¿Qué revela el deseo de cerrar las puertas del templo acerca de la visión de Dios sobre actividad religiosa vacía?",
+        "¿Qué es claro en Malaquías 1:11 aunque su cumplimiento temporal preciso sea debatido?",
+        "¿Cuál es el propósito de la imagen severa del estiércol o desecho en 2:3 y qué uso deben evitar líderes?",
+        "¿Qué cualidades marcan el ideal del pacto asociado con Leví en 2:5–6?",
+        "¿Por qué la autoridad de enseñanza aumenta responsabilidad según 2:7–9?",
+        "¿Dónde pueden parcialidad, estatus, comodidad o protección institucional distorsionar adoración y enseñanza hoy?"
       ],
-      "examination": "¿Dónde doy a Dios lo conveniente mientras reservo mi mejor atención, integridad o esfuerzo para otra cosa? Si lidero o enseño, ¿experimentan las personas verdad consistente o estándares distintos según estatus y cercanía?",
-      "challenge": "Elige un área de adoración o servicio que se haya vuelto descuidada. Mejórala mediante reverencia e integridad, no perfeccionismo. Si enseñas o lideras, revisa una decisión por favoritismo y corrígela si hace falta.",
-      "caution": "Protege explícitamente a participantes con discapacidad del estigma del lenguaje sacrificial. No conviertas condición física en metáfora de valor moral. Aplica la responsabilidad sacerdotal primero a líderes y maestros. Cuando se revele daño ministerial, prioriza verdad, seguridad, denuncia y responsabilidad independiente en vez de reputación institucional.",
-      "prayer": "Gran Rey, perdona adoración que te trata como pensamiento secundario y liderazgo que se protege a sí mismo. Enséñanos reverencia sin perfeccionismo, verdad sin parcialidad y servicio que honre la dignidad de cada persona. Haz íntegra nuestra adoración por medio de Jesús. Amén.",
+      "examination": "¿Dónde le he ofrecido a Dios lo conveniente mientras entrego mi mejor energía a otra cosa? Si enseño o lidero, ¿las personas han sido guiadas hacia verdad y fidelidad o presionadas por mi estatus y preferencias?",
+      "challenge": "Entrega a Dios un acto de atención íntegra que te cueste algo real, como oración enfocada, restitución, preparación, servicio o estudio veraz. Si lideras, pregunta a una persona confiable si favoritismo o inconsistencia está haciendo tropezar a alguien.",
+      "caution": "Separa explícitamente elegibilidad sacrificial de dignidad humana. Evita analogías capacitistas. Reconoce debate interpretativo alrededor de 1:11. Aplica la responsabilidad sacerdotal primero a quienes tienen influencia. Si se revela daño de liderazgo, prioriza seguridad, evidencia, denuncia apropiada y responsabilidad independiente.",
+      "prayer": "Dios santo, recibe más que nuestras sobras. Haz veraz nuestra adoración y responsable nuestro liderazgo. Guárdanos de parcialidad, protege a las personas de daño espiritual y enséñanos a honrar la dignidad de cada persona mientras te ofrecemos toda nuestra vida por medio de Jesús. Amén.",
       "openingParagraphs": [
-        "Lee Malaquías 1:6–2:9 y marca padre, señor, dónde está mi honor, desprecian mi nombre, altar contaminado, ciego, cojo, enfermo, gobernador, cerrar las puertas del templo, gran Rey, mi nombre entre las naciones, comida despreciable, animal robado o dañado, pacto con Leví, vida y paz, instrucción verdadera, labios preservan conocimiento, mensajero del SEÑOR, se apartaron del camino, hicieron tropezar a muchos, parcialidad en la instrucción. Pregunta qué enseñan al pueblo las decisiones de los sacerdotes acerca de Dios."
+        "Lee Malaquías 1:6–2:9 y marca hijo honra padre, siervo amo, ¿dónde está mi honor?, alimento contaminado, ¿cómo te hemos contaminado?, ciego, cojo, enfermo, gobernador, cerrar puertas del templo, mi nombre grande entre naciones, ofrenda pura, mesa contaminada, cansancio, maldición, descendencia, estiércol de fiestas, pacto con Leví, vida y paz, instrucción verdadera, mensajero del SEÑOR, apartó a muchos del pecado, se desviaron, hicieron tropezar, corrompieron pacto y parcialidad. Pregunta qué enseñan las acciones de los sacerdotes acerca de Dios."
       ],
       "contextParagraphs": [
-        "Malaquías se dirige a sacerdotes que sirven en el templo reconstruido. La Torá exigía que los animales sacrificiales cumplieran estándares específicos; animales dañados no eran aceptados como ofrendas ordinarias. La comparación con regalos presentados a un gobernador expone desprecio deliberado dentro de ese sistema sacrificial y no una afirmación general de que seres humanos con discapacidad o lesión tengan menor dignidad.",
-        "Malaquías 2 contrasta el fracaso de los sacerdotes con una descripción ideal del llamado del pacto de Leví: reverencia, instrucción verdadera, caminar rectamente y apartar a muchos del pecado. Los sacerdotes eran responsables no solo del ritual sino de enseñar Torá. Su parcialidad y corrupción dañaban a adoradores que dependían de ellos para guía."
+        "El templo funciona y los sacerdotes reciben sacrificios, pero se aceptan animales prohibidos por la Torá para el altar. Levítico 22 y Deuteronomio 15 distinguen elegibilidad sacrificial del valor del animal. La acusación de Malaquías es que los sacerdotes ofrecen a Dios lo que saben que no cumple sus obligaciones del pacto.",
+        "Varios detalles requieren cuidado. Malaquías 1:11, acerca del nombre de Dios grande entre las naciones y una ofrenda pura, se ha leído como descripción presente, futuro profético o adoración universal ideal; la referencia temporal exacta es debatida. En 2:3 la imagen de estiércol o desecho sacrificial es lenguaje deliberadamente duro de humillación dirigido a sacerdotes corruptos y no debe reproducirse como permiso para humillar."
       ],
       "jesusParagraphs": [
-        "Jesús confronta adoración que honra a Dios con palabras mientras corazón y práctica quedan lejos y se presenta como Maestro fiel que habla verdad sin parcialidad. Romanos 12 llama después a la adoración cristiana como ofrenda de toda la vida. Los cristianos no reproducen el sistema sacrificial animal de Malaquías; mediante Jesús aprenden que la adoración pertenece a toda la persona y que líderes siguen siendo responsables por lo que enseñan."
+        "Jesús condena actuación religiosa que honra a Dios con palabras mientras el corazón está lejos y enseña que líderes responderán por cómo guían a otros. Romanos 12 llama a cristianos a ofrecerse como sacrificios vivos, no como continuación del sistema animal de Malaquías sino como adoración de toda la vida formada por la misericordia de Dios."
       ],
       "guardrailParagraphs": [
-        "No uses palabras ciego, cojo, enfermo, defectuoso o dañado para degradar a personas con discapacidad ni insinuar que una discapacidad hace a alguien inaceptable para Dios; no exijas desempeño impecable como si cristianos fueran animales sacrificiales; no uses oficio ministerial para evitar examen; y no confundas lealtad a un líder con lealtad a Dios. Las palabras más duras de Malaquías aquí se dirigen a sacerdotes que deshonran a Dios y extravían al pueblo."
+        "No uses las categorías ciego, cojo, herido o enfermo de sacrificios para despreciar a personas con discapacidad o enfermedad crónica; no insinúes que una diferencia física hace a alguien espiritualmente defectuoso; no uses el juicio severo a sacerdotes como permiso para humillación; no supongas que 1:11 tiene una única interpretación indiscutida; y no protejas a pastores, maestros o líderes de responsabilidad por ocupar un oficio sagrado."
       ],
-      "closingTakeaway": "Malaquías 1:6–2:9 expone adoración que conserva ritual mientras pierde reverencia. Dios rechaza desprecio, hace responsables a maestros, condena parcialidad y llama a líderes espirituales a instrucción veraz que ayude a personas a caminar y no tropezar."
+      "closingTakeaway": "Malaquías rechaza adoración que parece religiosa mientras enseña desprecio. Dios merece honor verdadero, y quienes lo representan deben conservar conocimiento, andar con integridad, rechazar parcialidad y ayudar a las personas a avanzar hacia vida en vez de tropiezo."
     },
     {
       "number": 3,
@@ -306,205 +306,205 @@ window.NLDG_BOOK_STUDY={
       "supporting": [
         "Génesis 2:18–25",
         "Deuteronomio 7:3–4",
+        "Proverbios 2:16–17",
         "Mateo 19:3–9",
-        "1 Corintios 7:10–16",
         "Efesios 5:21–33"
       ],
-      "question": "¿Cómo conecta la fidelidad del pacto adoración, comunidad, matrimonio, idolatría, traición y uso responsable del poder relacional?",
-      "truth": "Dios rechaza adoración que coexiste con traición del pacto y llama a su pueblo a relaciones fieles marcadas por verdad, protección, responsabilidad mutua y libertad de compromiso idólatra.",
-      "goal": "Distinguir la preocupación de Malaquías por compromiso idólatra de prejuicio étnico, abordar con honestidad la difícil redacción sobre divorcio, proteger a cónyuges dañados de usos coercitivos de Escritura y mostrar por qué la adoración no puede separarse de fidelidad relacional.",
-      "opening": "Lee Malaquías 2:10–16 y marca un Padre, un Dios nos creó, profanar pacto, casarse con hija de dios extranjero, cortar, lágrimas sobre altar, testigo entre tú y esposa de juventud, compañera, esposa del pacto, uno, descendencia piadosa, guarda tu espíritu, no seas infiel, redacción sobre divorcio, violencia en la ropa, cuídense. Pregunta de quién nota Dios el daño y cómo la traición privada afecta adoración pública.",
-      "context": "Malaquías primero condena a hombres de Judá que profanaron identidad del pacto uniéndose con la hija de un dios extranjero. La frase apunta a lealtad religiosa e idolatría y no a color de piel o etnia como tal. Las propias Escrituras de Israel incluyen extranjeros fieles recibidos en el pueblo de Dios, por lo que este pasaje no debe usarse para prohibir matrimonio interracial o interétnico.\n\nLos versículos 13–16 confrontan a hombres que tratan con traición a las esposas de su juventud. El hebreo del versículo 16 es difícil y se traduce de maneras significativamente distintas: algunas versiones dicen que Dios odia el divorcio, mientras otras describen al hombre que odia y se divorcia de su esposa o cubre su ropa con violencia. La dificultad textual no oscurece la acusación central de traición, infidelidad y daño.",
+      "question": "¿Cómo conecta la fidelidad del pacto pertenencia comunitaria, adoración, matrimonio, verdad y protección contra traición?",
+      "truth": "Dios rechaza adoración que coexiste con traición en relaciones del pacto y llama a fidelidad que protege dignidad, verdad y seguridad en vez de usar lenguaje del pacto para excusar daño.",
+      "goal": "Leer Malaquías 2:10–16 atendiendo a su hebreo difícil, distinguir preocupaciones de fidelidad al pacto de pureza racial, nombrar claramente traición y violencia e impedir que enseñanza matrimonial atrape a personas en situaciones inseguras.",
+      "opening": "Lee Malaquías 2:10–16 y marca un Padre, un Dios nos creó, infieles unos con otros, profanaron pacto, se casó con hija de dios extranjero, lágrimas, llanto, esposa de tu juventud, compañera, esposa por pacto, uno, descendencia piadosa, cuiden su espíritu, no sean infieles, lenguaje de divorcio, vestido, violencia y cuiden su espíritu. Pregunta qué formas de traición del pacto une Malaquías con la adoración.",
+      "context": "Malaquías se dirige a hombres de la comunidad postexílica cuyas vidas religiosas y matrimonios están marcados por traición. El versículo 10 puede referirse a Dios o, según algunos intérpretes, a Abraham como el único padre; el punto mayor es identidad y responsabilidad compartidas dentro del pacto. La preocupación del versículo 11 no es etnicidad por sí sola sino matrimonio asociado con lealtad a un dios extranjero y profanación de la fidelidad de Judá.\n\nLos versículos 15–16 están entre las oraciones hebreas más difíciles de Malaquías, y traducciones importantes difieren en varias frases, incluida la redacción a menudo traducida Yo odio el divorcio. Lo que permanece claro es la condena repetida de la traición y la asociación del quebranto del pacto con violencia. La enseñanza responsable debe reconocer la dificultad de traducción en vez de construir presión pastoral sobre una sola versión.",
       "teaching": [
         {
-          "heading": "Un Padre crea responsabilidad compartida del pacto — Malaquías 2:10",
-          "body": "El profeta pregunta por qué las personas tratan con infidelidad a otras si comparten un Creador del pacto. Adorar al mismo Dios debe producir responsabilidad hacia el prójimo y no permiso para explotarlo.",
+          "heading": "La identidad compartida del pacto crea responsabilidad — Malaquías 2:10",
+          "body": "La relación común del pueblo con Dios significa que no puede reclamar privilegio del pacto mientras actúa deslealmente entre sí. Adoración y fidelidad al prójimo pertenecen juntas.",
           "paragraphs": [
-            "El profeta pregunta por qué las personas tratan con infidelidad a otras si comparten un Creador del pacto. Adorar al mismo Dios debe producir responsabilidad hacia el prójimo y no permiso para explotarlo."
+            "La relación común del pueblo con Dios significa que no puede reclamar privilegio del pacto mientras actúa deslealmente entre sí. Adoración y fidelidad al prójimo pertenecen juntas."
           ]
         },
         {
-          "heading": "El problema del dios extranjero es lealtad idólatra — Malaquías 2:11–12",
-          "body": "La ofensa se describe como casarse con la hija de un dios extranjero y profanar lo santo. El asunto es adoración del pacto comprometida por idolatría, no una doctrina de pureza étnica.",
+          "heading": "El asunto del dios extranjero es traición religiosa, no pureza racial — Malaquías 2:11–12",
+          "body": "Malaquías describe matrimonio con hija de un dios extranjero en lenguaje de profanación del pacto. La preocupación es lealtad idolátrica. El pasaje no debe usarse para prohibir matrimonio interracial o interétnico.",
           "paragraphs": [
-            "La ofensa se describe como casarse con la hija de un dios extranjero y profanar lo santo. El asunto es adoración del pacto comprometida por idolatría, no una doctrina de pureza étnica."
+            "Malaquías describe matrimonio con hija de un dios extranjero en lenguaje de profanación del pacto. La preocupación es lealtad idolátrica. El pasaje no debe usarse para prohibir matrimonio interracial o interétnico."
           ]
         },
         {
-          "heading": "Las lágrimas religiosas no sustituyen arrepentimiento relacional — Malaquías 2:13",
-          "body": "El altar queda cubierto de lágrimas pero Dios no acepta la ofrenda porque la traición sigue sin tratarse. La adoración emocional no sustituye reparación del daño creado por nuestras decisiones.",
+          "heading": "Lágrimas religiosas no cancelan traición relacional — Malaquías 2:13",
+          "body": "El altar está cubierto de lágrimas, pero los adoradores preguntan por qué Dios no recibe sus ofrendas. Malaquías señala traición en casa. La emoción religiosa no sustituye arrepentimiento hacia personas dañadas.",
           "paragraphs": [
-            "El altar queda cubierto de lágrimas pero Dios no acepta la ofrenda porque la traición sigue sin tratarse. La adoración emocional no sustituye reparación del daño creado por nuestras decisiones."
+            "El altar está cubierto de lágrimas, pero los adoradores preguntan por qué Dios no recibe sus ofrendas. Malaquías señala traición en casa. La emoción religiosa no sustituye arrepentimiento hacia personas dañadas."
           ]
         },
         {
-          "heading": "Dios es testigo de la traición al cónyuge del pacto — Malaquías 2:14",
-          "body": "La esposa de juventud es llamada compañera y pareja del pacto. Dios ve traición relacional que puede esconderse debajo de apariencia religiosa respetable.",
+          "heading": "La esposa de tu juventud es compañera de pacto — Malaquías 2:14",
+          "body": "El matrimonio se describe en términos de compañerismo y pacto. El poder del esposo no borra la posición de la esposa como compañera del pacto cuya traición importa a Dios.",
           "paragraphs": [
-            "La esposa de juventud es llamada compañera y pareja del pacto. Dios ve traición relacional que puede esconderse debajo de apariencia religiosa respetable."
+            "El matrimonio se describe en términos de compañerismo y pacto. El poder del esposo no borra la posición de la esposa como compañera del pacto cuya traición importa a Dios."
           ]
         },
         {
-          "heading": "El matrimonio se trata como pacto de fidelidad compartida — Malaquías 2:14–15",
-          "body": "El pasaje vincula matrimonio, propósito espiritual y fidelidad. Cualesquiera sean los detalles difíciles del versículo 15, la dirección es clara: relaciones del pacto no son instrumentos desechables para deseo egoísta.",
+          "heading": "El versículo 15 requiere interpretación humilde — Malaquías 2:15",
+          "body": "La sintaxis hebrea es extraordinariamente difícil y las traducciones difieren en cómo relacionan unidad, espíritu y descendencia piadosa. El mandato repetido de cuidar el espíritu y rechazar traición es más claro que cualquier reconstrucción única.",
           "paragraphs": [
-            "El pasaje vincula matrimonio, propósito espiritual y fidelidad. Cualesquiera sean los detalles difíciles del versículo 15, la dirección es clara: relaciones del pacto no son instrumentos desechables para deseo egoísta."
+            "La sintaxis hebrea es extraordinariamente difícil y las traducciones difieren en cómo relacionan unidad, espíritu y descendencia piadosa. El mandato repetido de cuidar el espíritu y rechazar traición es más claro que cualquier reconstrucción única."
           ]
         },
         {
-          "heading": "Guarda tu espíritu se dirige a la vida interior — Malaquías 2:15–16",
-          "body": "La advertencia repetida reconoce que la traición crece por deseos, racionalizaciones, resentimientos y elecciones antes de hacerse pública.",
+          "heading": "El versículo 16 condena traición y violencia — Malaquías 2:16",
+          "body": "Cualquiera que sea la traducción seguida, el versículo une infidelidad matrimonial con violencia y vuelve a llamar a guardarse contra la traición. La dirección moral es proteger fidelidad del pacto, no preservar apariencias a costa de seguridad.",
           "paragraphs": [
-            "La advertencia repetida reconoce que la traición crece por deseos, racionalizaciones, resentimientos y elecciones antes de hacerse pública."
+            "Cualquiera que sea la traducción seguida, el versículo une infidelidad matrimonial con violencia y vuelve a llamar a guardarse contra la traición. La dirección moral es proteger fidelidad del pacto, no preservar apariencias a costa de seguridad."
           ]
         },
         {
-          "heading": "El versículo 16 debe enseñarse con humildad de traducción",
-          "body": "Debido a que la sintaxis hebrea es disputada, maestros no deben fingir que una frase española resuelve toda pregunta. El tema constante es oposición a traición y violencia, no una orden de que un cónyuge en peligro permanezca accesible al daño.",
+          "heading": "La fidelidad del pacto nunca exige permanecer en peligro inmediato",
+          "body": "Malaquías no puede usarse responsablemente para ordenar a una persona abusada permanecer físicamente accesible a un abusador. Seguridad, protección legal, revelación veraz y responsabilidad son compatibles con tomar el pacto en serio.",
           "paragraphs": [
-            "Debido a que la sintaxis hebrea es disputada, maestros no deben fingir que una frase española resuelve toda pregunta. El tema constante es oposición a traición y violencia, no una orden de que un cónyuge en peligro permanezca accesible al daño."
+            "Malaquías no puede usarse responsablemente para ordenar a una persona abusada permanecer físicamente accesible a un abusador. Seguridad, protección legal, revelación veraz y responsabilidad son compatibles con tomar el pacto en serio."
           ]
         },
         {
-          "heading": "La fidelidad del pacto protege en vez de atrapar",
-          "body": "La preocupación de Dios por el cónyuge traicionado significa que la enseñanza matrimonial debe proteger dignidad y seguridad. Separación, protección legal y otros límites pueden ser necesarios frente al abuso; el perdón no restaura automáticamente acceso o confianza.",
+          "heading": "Jesús confronta el uso endurecido del divorcio — Mateo 19",
+          "body": "Jesús apela a la creación y expone dureza de corazón en disputas sobre divorcio. Su enseñanza también debe confrontar despido egoísta y traición, no colocar la carga de conservar el matrimonio solamente sobre la persona dañada.",
           "paragraphs": [
-            "La preocupación de Dios por el cónyuge traicionado significa que la enseñanza matrimonial debe proteger dignidad y seguridad. Separación, protección legal y otros límites pueden ser necesarios frente al abuso; el perdón no restaura automáticamente acceso o confianza."
+            "Jesús apela a la creación y expone dureza de corazón en disputas sobre divorcio. Su enseñanza también debe confrontar despido egoísta y traición, no colocar la carga de conservar el matrimonio solamente sobre la persona dañada."
           ]
         }
       ],
       "questions": [
-        "¿Cómo conecta el lenguaje de un Padre del versículo 10 la adoración con el trato de otras personas?",
-        "¿Por qué hija de un dios extranjero se entiende mejor como problema de idolatría y no como regla de pureza étnica?",
-        "¿Qué revelan las lágrimas en el altar acerca de adoración que evita arrepentimiento relacional?",
-        "¿Por qué importa que Dios sea llamado testigo entre marido y mujer en el versículo 14?",
-        "¿Qué comunican compañera y esposa del pacto acerca de responsabilidad relacional?",
-        "¿Cómo aborda guarda tu espíritu la traición antes de hacerse acción visible?",
-        "¿Por qué debe enseñarse el versículo 16 con humildad de traducción?",
-        "¿Cómo pueden iglesias sostener fidelidad del pacto mientras protegen a alguien que enfrenta abuso o coerción?"
+        "¿Cómo conecta el versículo 10 identidad compartida del pacto con responsabilidad mutua?",
+        "¿Por qué el lenguaje hija de un dios extranjero trata lealtad del pacto y no pureza racial?",
+        "¿Qué enseña el versículo 13 acerca de los límites de emoción religiosa cuando el daño relacional sigue sin atenderse?",
+        "¿Qué aporta llamar a la esposa de tu juventud compañera y socia del pacto?",
+        "¿Por qué debe enseñarse el versículo 15 con humildad interpretativa?",
+        "¿Qué temas éticos siguen claros en el versículo 16 a pesar de diferencias de traducción?",
+        "¿Cómo puede una iglesia sostener fidelidad del pacto mientras protege a personas que enfrentan abuso, coerción o peligro creíble?",
+        "¿Cómo impide la enseñanza de Jesús sobre dureza de corazón que textos matrimoniales se conviertan en herramientas de poder egoísta?"
       ],
-      "examination": "¿Dónde he usado lenguaje espiritual para evitar responsabilidad relacional? ¿Existe una promesa, amistad, relación familiar o matrimonio donde se necesiten honestidad, reparación, límites más fuertes o responsabilidad?",
-      "challenge": "Elige una relación de pacto o compromiso y da un paso fiel: di la verdad, pide perdón sin excusas, haz restitución, fortalece un límite, busca ayuda competente o practica cuidado sacrificial. No confundas reconciliación con restauración inmediata de confianza.",
-      "caution": "No enseñes matrimonio como si toda relación tuviera igual poder o seguridad. Cuando se revele abuso, prioriza protección inmediata, recursos profesionales y legales cuando correspondan y obligaciones de denuncia. Nunca conviertas perdón, sumisión o pacto en herramienta de coerción. Reconoce la complejidad de traducción del versículo 16.",
-      "prayer": "Dios fiel, haz veraces nuestras relaciones y honesta nuestra adoración. Expón traición sin aplastar a quienes ya han sido dañados. Da valor para arrepentimiento, reparación, límites sabios y protección. Enséñanos la fidelidad entregada de Jesús. Amén.",
+      "examination": "¿Dónde he usado lenguaje religioso para excusar traición, control o evasión de responsabilidad? En mis relaciones más cercanas, ¿verdad, fidelidad, consentimiento, dignidad y seguridad reflejan la adoración que ofrezco a Dios?",
+      "challenge": "Elige una relación donde la fidelidad requiera acción. Puede significar cumplir una promesa, decir la verdad, pedir perdón sin exigir confianza inmediata, honrar un límite, buscar ayuda calificada o tomar una medida protectora donde ocurre daño.",
+      "caution": "Reconoce las dificultades de traducción de los versículos 15–16. Nunca presiones revelación en grupo. Cuando exista abuso o peligro, prioriza planificación de seguridad, denuncia apropiada, ayuda legal o profesional y responsabilidad independiente. La reconciliación requiere más que perdón y nunca sustituye seguridad.",
+      "prayer": "Dios fiel, haz que nuestras relaciones más cercanas reflejen la verdad de nuestra adoración. Guárdanos de traición, dureza, coerción y violencia. Da valor a quienes necesitan protección, humildad a quienes deben arrepentirse y sabiduría a líderes que cuidan familias heridas. Fórmanos por el amor fiel de Jesús. Amén.",
       "openingParagraphs": [
-        "Lee Malaquías 2:10–16 y marca un Padre, un Dios nos creó, profanar pacto, casarse con hija de dios extranjero, cortar, lágrimas sobre altar, testigo entre tú y esposa de juventud, compañera, esposa del pacto, uno, descendencia piadosa, guarda tu espíritu, no seas infiel, redacción sobre divorcio, violencia en la ropa, cuídense. Pregunta de quién nota Dios el daño y cómo la traición privada afecta adoración pública."
+        "Lee Malaquías 2:10–16 y marca un Padre, un Dios nos creó, infieles unos con otros, profanaron pacto, se casó con hija de dios extranjero, lágrimas, llanto, esposa de tu juventud, compañera, esposa por pacto, uno, descendencia piadosa, cuiden su espíritu, no sean infieles, lenguaje de divorcio, vestido, violencia y cuiden su espíritu. Pregunta qué formas de traición del pacto une Malaquías con la adoración."
       ],
       "contextParagraphs": [
-        "Malaquías primero condena a hombres de Judá que profanaron identidad del pacto uniéndose con la hija de un dios extranjero. La frase apunta a lealtad religiosa e idolatría y no a color de piel o etnia como tal. Las propias Escrituras de Israel incluyen extranjeros fieles recibidos en el pueblo de Dios, por lo que este pasaje no debe usarse para prohibir matrimonio interracial o interétnico.",
-        "Los versículos 13–16 confrontan a hombres que tratan con traición a las esposas de su juventud. El hebreo del versículo 16 es difícil y se traduce de maneras significativamente distintas: algunas versiones dicen que Dios odia el divorcio, mientras otras describen al hombre que odia y se divorcia de su esposa o cubre su ropa con violencia. La dificultad textual no oscurece la acusación central de traición, infidelidad y daño."
+        "Malaquías se dirige a hombres de la comunidad postexílica cuyas vidas religiosas y matrimonios están marcados por traición. El versículo 10 puede referirse a Dios o, según algunos intérpretes, a Abraham como el único padre; el punto mayor es identidad y responsabilidad compartidas dentro del pacto. La preocupación del versículo 11 no es etnicidad por sí sola sino matrimonio asociado con lealtad a un dios extranjero y profanación de la fidelidad de Judá.",
+        "Los versículos 15–16 están entre las oraciones hebreas más difíciles de Malaquías, y traducciones importantes difieren en varias frases, incluida la redacción a menudo traducida Yo odio el divorcio. Lo que permanece claro es la condena repetida de la traición y la asociación del quebranto del pacto con violencia. La enseñanza responsable debe reconocer la dificultad de traducción en vez de construir presión pastoral sobre una sola versión."
       ],
       "jesusParagraphs": [
-        "Jesús trata el matrimonio como pacto serio y confronta trato endurecido de cónyuges. Nunca da a abusadores permiso para usar lenguaje de pacto como arma. Efesios 5 coloca el matrimonio cristiano bajo sumisión mutua y llama a esposos al amor sacrificial modelado en Cristo. La aplicación cristiana une fidelidad con cuidado, verdad, seguridad y responsabilidad."
+        "Jesús llama a sus seguidores a verdad, fidelidad, dignidad mutua y protección frente a dureza de corazón. El matrimonio cristiano también se enmarca por amor sacrificial y sumisión mutua bajo Cristo. Estos temas profundizan el rechazo de Malaquías a la traición sin borrar realidades pastorales como abuso, abandono, separación legal o necesidad de seguridad."
       ],
       "guardrailParagraphs": [
-        "No uses Malaquías 2 para condenar matrimonio interracial o interétnico; no reduzcas hija de un dios extranjero a etnia cuando la frase apunta a lealtad idólatra; no cites odio el divorcio como si el hebreo fuera textualmente simple; no avergüences sobrevivientes de divorcio; y no presiones a un cónyuge dañado a quedarse, volver, reconciliarse o restaurar confianza donde abuso, coerción o peligro permanecen. Fidelidad del pacto no puede significar proteger traición."
+        "No uses Malaquías 2 para prohibir matrimonio interracial; no supongas que extranjero significa étnicamente inferior; no afirmes que toda traducción de 2:15–16 dice lo mismo; no uses Dios odia el divorcio como lema para avergonzar a personas divorciadas o forzar a un cónyuge abusado a permanecer inseguro; no trates perdón como acceso restaurado; y no responsabilices a la persona dañada de conservar un pacto que la otra persona viola."
       ],
-      "closingTakeaway": "Malaquías se niega a aceptar adoración que coexiste con traición relacional. Dios ve al cónyuge tratado con infidelidad, rechaza compromiso idólatra y llama a su pueblo a fidelidad que protege en vez de atrapar. Verdad, seguridad, responsabilidad y amor del pacto pertenecen juntos."
+      "closingTakeaway": "Malaquías se niega a separar adoración de la manera en que son tratados los compañeros de pacto. Dios ve traición escondida detrás de actividad religiosa. La fidelidad significa verdad, responsabilidad y protección frente a traición, no mantener apariencias mientras continúa el daño."
     },
     {
       "number": 4,
-      "title": "El Señor que ustedes buscan vendrá",
+      "title": "El Señor que buscan vendrá",
       "subtitle": "Malaquías 2:17–3:12 • Estudio bíblico libro por libro",
       "scripture": "Malaquías 2:17–3:12",
       "supporting": [
-        "Mateo 3:1–12",
+        "Isaías 40:3–5",
         "Mateo 11:7–15",
-        "Lucas 3:10–14",
+        "Lucas 3:7–14",
         "Santiago 5:1–6",
         "2 Corintios 9:6–11"
       ],
-      "question": "¿Qué ocurre cuando las personas piden justicia a Dios y descubren que el Señor que viene examina primero adoración, explotación, verdad y mayordomía entre su propio pueblo?",
-      "truth": "La justicia venidera de Dios refina a su pueblo, confronta explotación concreta, lo llama a volver con sus recursos y promete bendición del pacto sin crear una fórmula de prosperidad.",
-      "goal": "Distinguir al mensajero que prepara del Señor que viene, conectar responsablemente el texto del mensajero con Juan el Bautista, entender el juicio refinador, centrar a las personas vulnerables nombradas en 3:5 e interpretar los diezmos dentro de la economía del pacto de Israel sin manipulación financiera.",
-      "opening": "Lee Malaquías 2:17–3:12 y marca cansan al SEÑOR, todo el que hace mal es bueno, dónde está el Dios de justicia, mi mensajero, preparar el camino, Señor que buscan, mensajero del pacto, de repente a su templo, quién podrá soportar, fuego del refinador, jabón del lavandero, purificar a Leví, hechiceros, adúlteros, juradores falsos, defraudan a trabajadores de su salario, oprimen viuda, huérfano y extranjero, yo el SEÑOR no cambio, vuélvanse a mí, robar a Dios, diezmos, almacén, alimento, ventanas del cielo, bendición, devorador y tierra deliciosa. Pregunta quién es examinado cuando llega la justicia.",
-      "context": "La sección comienza con personas cansando a Dios al afirmar que los malhechores prosperan y preguntando dónde está el Dios de justicia. Malaquías responde con un mensajero que prepara el camino y una venida repentina del Señor a su templo. La redacción también menciona un mensajero del pacto, cuya relación precisa con el Señor se ha interpretado de distintas maneras. El Nuevo Testamento aplica explícitamente el lenguaje del mensajero preparatorio a Juan el Bautista.\n\nEl pasaje pasa después de purificación del templo a justicia social y finalmente a diezmos y contribuciones. Dentro de la economía del pacto de Israel, estos recursos sostenían adoración del templo y a quienes dependían de ella. La promesa de lluvia, cultivos protegidos del devorador y tierra deliciosa es lenguaje agrícola del pacto. Los cristianos pueden aprender generosidad y confianza, pero no convertirlo en retorno financiero personal garantizado.",
+      "question": "¿Qué ocurre cuando una comunidad pide la justicia de Dios y el Señor que viene examina primero su propia adoración, economía y trato a vecinos vulnerables?",
+      "truth": "El Señor que viene refina a su propio pueblo, confronta explotación y adoración falsa, lo llama a volver con sus recursos y promete bendición del pacto sin ofrecer una fórmula garantizada de riqueza personal.",
+      "goal": "Conectar la queja sobre justicia con el mensajero y la imagen de refinación, identificar a las personas vulnerables nombradas en 3:5, entender diezmos y almacén dentro del sistema del pacto de Israel y practicar generosidad sin coerción ni manipulación de prosperidad.",
+      "opening": "Lee Malaquías 2:17–3:12 y marca cansaron al SEÑOR, todo el que hace mal es bueno, ¿dónde está el Dios de justicia?, mi mensajero, preparar camino, Señor que buscan, mensajero del pacto, de repente a su templo, fuego refinador, jabón de lavandero, purificar levitas, ofrendas aceptables, testigo rápido, hechiceros, adúlteros, falsos juramentos, oprimen trabajadores, viuda, huérfano, extranjero, yo el SEÑOR no cambio, vuelvan a mí, ¿cómo volveremos?, robar a Dios, diezmos y ofrendas, almacén, alimento, pruébenme, ventanas del cielo, bendición, devorador y tierra deseable. Pregunta quién es examinado primero cuando llega la justicia.",
+      "context": "Malaquías 2:17 registra una disputa en la que el pueblo acusa a Dios de favorecer a quienes hacen mal o de no actuar con justicia. La respuesta en 3:1 no es vindicación inmediata de los de adentro: un mensajero prepara el camino, y la llegada del Señor al templo se compara con fuego refinador y jabón limpiador. El Nuevo Testamento aplica explícitamente el texto del mensajero preparador a Juan el Bautista.\n\nMalaquías 3:8–12 pertenece al contexto del templo, diezmo, agricultura y pacto de Israel. El almacén sostenía adoración y obligaciones comunitarias. Las tradiciones cristianas difieren sobre si un diezmo fijo del diez por ciento sigue siendo obligatorio bajo el nuevo pacto, pero este pasaje no puede venderse como promesa universal de inversión. El Nuevo Testamento llama consistentemente a dar con voluntad, generosidad, propósito y sin obligación forzada.",
       "teaching": [
         {
-          "heading": "Las quejas sobre justicia pueden convertirse en acusaciones contra Dios — Malaquías 2:17",
-          "body": "El pueblo dice que Dios se complace en malhechores o ha fallado en actuar. La frustración moral es comprensible, pero la disputa revela la tentación de acusar a Dios ignorando la propia infidelidad comunitaria.",
+          "heading": "El cinismo puede acusar a Dios mientras evita autoexamen — Malaquías 2:17",
+          "body": "El pueblo está cansado de injusticia aparente y concluye que los malhechores reciben favor. La preocupación es comprensible, pero Malaquías expone el peligro de exigir juicio sin considerar lo que revelará entre el propio pueblo de Dios.",
           "paragraphs": [
-            "El pueblo dice que Dios se complace en malhechores o ha fallado en actuar. La frustración moral es comprensible, pero la disputa revela la tentación de acusar a Dios ignorando la propia infidelidad comunitaria."
+            "El pueblo está cansado de injusticia aparente y concluye que los malhechores reciben favor. La preocupación es comprensible, pero Malaquías expone el peligro de exigir juicio sin considerar lo que revelará entre el propio pueblo de Dios."
           ]
         },
         {
-          "heading": "Un mensajero prepara el camino — Malaquías 3:1",
-          "body": "Dios promete un mensajero antes de la venida del Señor. Los Evangelios aplican explícitamente esta función preparatoria a Juan el Bautista, cuyo ministerio llama al arrepentimiento antes de Jesús.",
+          "heading": "El mensajero prepara el camino — Malaquías 3:1",
+          "body": "Un mensajero viene antes del Señor. El Nuevo Testamento aplica este papel preparatorio a Juan el Bautista, cuyo ministerio llama a Israel al arrepentimiento antes de Jesús.",
           "paragraphs": [
-            "Dios promete un mensajero antes de la venida del Señor. Los Evangelios aplican explícitamente esta función preparatoria a Juan el Bautista, cuyo ministerio llama al arrepentimiento antes de Jesús."
+            "Un mensajero viene antes del Señor. El Nuevo Testamento aplica este papel preparatorio a Juan el Bautista, cuyo ministerio llama a Israel al arrepentimiento antes de Jesús."
           ]
         },
         {
-          "heading": "La venida del Señor refina antes de tranquilizar — Malaquías 3:1–4",
-          "body": "El Señor que viene es comparado con fuego del refinador y jabón del lavandero. Las imágenes describen purificación que hace aceptable la adoración; no dan permiso a líderes espirituales para infligir sufrimiento en nombre de refinar personas.",
+          "heading": "La venida del Señor refina antes de consolar — Malaquías 3:1–4",
+          "body": "Fuego refinador y jabón de lavandero son imágenes de purificación. Los levitas son refinados para que la adoración vuelva a ofrecerse con justicia. Los de adentro no quedan exentos de escrutinio.",
           "paragraphs": [
-            "El Señor que viene es comparado con fuego del refinador y jabón del lavandero. Las imágenes describen purificación que hace aceptable la adoración; no dan permiso a líderes espirituales para infligir sufrimiento en nombre de refinar personas."
+            "Fuego refinador y jabón de lavandero son imágenes de purificación. Los levitas son refinados para que la adoración vuelva a ofrecerse con justicia. Los de adentro no quedan exentos de escrutinio."
           ]
         },
         {
-          "heading": "La justicia nombra daño concreto — Malaquías 3:5",
-          "body": "Dios nombra hechicería, adulterio, juramentos falsos, robo de salarios y opresión de viudas, huérfanos y extranjeros. La justicia bíblica no es indignación abstracta; alcanza trato de trabajadores y personas con menor poder social.",
+          "heading": "La justicia nombra formas concretas de daño — Malaquías 3:5",
+          "body": "La lista incluye hechicería, adulterio, juramentos falsos, retención de salarios, opresión de viudas y huérfanos y negación de justicia a extranjeros. La justicia de Malaquías alcanza contratos, tribunales, hogares y poder económico.",
           "paragraphs": [
-            "Dios nombra hechicería, adulterio, juramentos falsos, robo de salarios y opresión de viudas, huérfanos y extranjeros. La justicia bíblica no es indignación abstracta; alcanza trato de trabajadores y personas con menor poder social."
+            "La lista incluye hechicería, adulterio, juramentos falsos, retención de salarios, opresión de viudas y huérfanos y negación de justicia a extranjeros. La justicia de Malaquías alcanza contratos, tribunales, hogares y poder económico."
           ]
         },
         {
-          "heading": "La fidelidad del pacto de Dios hace posible volver — Malaquías 3:6–7",
-          "body": "Yo el SEÑOR no cambio fundamenta la supervivencia de los descendientes de Jacob y la invitación vuélvanse a mí. La constancia de Dios es base del arrepentimiento, no excusa para resistir cambio.",
+          "heading": "La fidelidad inmutable de Dios preserva al pueblo — Malaquías 3:6",
+          "body": "Yo el SEÑOR no cambio se conecta inmediatamente con la supervivencia de los descendientes de Jacob. El versículo apoya la fidelidad de Dios, pero en contexto no es solo una afirmación filosófica abstracta.",
           "paragraphs": [
-            "Yo el SEÑOR no cambio fundamenta la supervivencia de los descendientes de Jacob y la invitación vuélvanse a mí. La constancia de Dios es base del arrepentimiento, no excusa para resistir cambio."
+            "Yo el SEÑOR no cambio se conecta inmediatamente con la supervivencia de los descendientes de Jacob. El versículo apoya la fidelidad de Dios, pero en contexto no es solo una afirmación filosófica abstracta."
           ]
         },
         {
-          "heading": "Retener recursos revela confianza del pacto quebrada — Malaquías 3:8–10",
-          "body": "El pueblo es acusado de retener diezmos y contribuciones del almacén. El asunto no es solo presupuesto personal; su negligencia afecta adoración del pacto y provisión comunitaria.",
+          "heading": "Volver a mí incluye mayordomía material — Malaquías 3:7–9",
+          "body": "El pueblo pregunta cómo volver, y Malaquías identifica diezmos y ofrendas retenidos. Adoración, provisión compartida y recursos están conectados. El dinero es espiritual porque revela confianza y responsabilidad, no porque comprar favor.",
           "paragraphs": [
-            "El pueblo es acusado de retener diezmos y contribuciones del almacén. El asunto no es solo presupuesto personal; su negligencia afecta adoración del pacto y provisión comunitaria."
+            "El pueblo pregunta cómo volver, y Malaquías identifica diezmos y ofrendas retenidos. Adoración, provisión compartida y recursos están conectados. El dinero es espiritual porque revela confianza y responsabilidad, no porque comprar favor."
           ]
         },
         {
-          "heading": "La promesa de bendición usa lenguaje agrícola del pacto — Malaquías 3:10–12",
-          "body": "Cielos abiertos, cultivos protegidos, vides fructíferas y tierra deliciosa encajan en el contexto agrario del pacto. El texto promete fidelidad de Dios a esta comunidad, no una tasa universal de inversión por cada donación.",
+          "heading": "La promesa del almacén pertenece a la economía del pacto de Israel — Malaquías 3:10–11",
+          "body": "Dios invita a Israel a traer el diezmo completo y probar su fidelidad de pacto respecto a provisión agrícola. Esta invitación inusual a probar a Dios es específica del contexto y no debe generalizarse como técnica para obligar retornos financieros.",
           "paragraphs": [
-            "Cielos abiertos, cultivos protegidos, vides fructíferas y tierra deliciosa encajan en el contexto agrario del pacto. El texto promete fidelidad de Dios a esta comunidad, no una tasa universal de inversión por cada donación."
+            "Dios invita a Israel a traer el diezmo completo y probar su fidelidad de pacto respecto a provisión agrícola. Esta invitación inusual a probar a Dios es específica del contexto y no debe generalizarse como técnica para obligar retornos financieros."
           ]
         },
         {
-          "heading": "La generosidad cristiana es movida por gracia y no transacción",
-          "body": "El Nuevo Testamento enseña dar con generosidad, voluntad y proporción sin coerción. Los creyentes dan por gracia y responsabilidad compartida, no porque puedan comprar riqueza, sanidad, ascenso o protección de Dios.",
+          "heading": "La bendición es fruto comunitario, no contrato de riqueza personal — Malaquías 3:10–12",
+          "body": "Las imágenes tratan lluvia, cosechas, productos protegidos y una tierra reconocida como deseable. Es bendición agrícola del pacto para la comunidad, no promesa de que todo donante recibirá más dinero, ascenso, sanidad o cancelación de deuda.",
           "paragraphs": [
-            "El Nuevo Testamento enseña dar con generosidad, voluntad y proporción sin coerción. Los creyentes dan por gracia y responsabilidad compartida, no porque puedan comprar riqueza, sanidad, ascenso o protección de Dios."
+            "Las imágenes tratan lluvia, cosechas, productos protegidos y una tierra reconocida como deseable. Es bendición agrícola del pacto para la comunidad, no promesa de que todo donante recibirá más dinero, ascenso, sanidad o cancelación de deuda."
           ]
         }
       ],
       "questions": [
-        "¿Qué acusación contra Dios aparece en 2:17 y qué revela acerca de la frustración de la comunidad?",
-        "¿Qué función cumple el mensajero preparatorio en 3:1 y cómo aplica el Nuevo Testamento esa función?",
-        "¿Qué comunican fuego del refinador y jabón del lavandero acerca de la venida del Señor?",
-        "¿Qué injusticias específicas se nombran en 3:5 y quiénes son especialmente vulnerables?",
-        "¿Cómo sostiene yo el SEÑOR no cambio el llamado a volver en los versículos 6–7?",
-        "¿Qué función tienen diezmos y almacén dentro del marco del pacto del pasaje?",
-        "¿Por qué la bendición agrícola de los versículos 10–12 no debe convertirse en fórmula financiera garantizada?",
-        "¿Cómo puede la generosidad cristiana seguir siendo gozosa y significativa sin volverse coercitiva o transaccional?"
+        "¿Qué acusación acerca de Dios aparece en 2:17 y cómo complican 3:1–5 la expectativa de justicia del pueblo?",
+        "¿Cómo usa el Nuevo Testamento el lenguaje del mensajero de Malaquías 3:1?",
+        "¿Por qué fuego refinador y jabón de lavandero se entienden mejor como purificación que como simple destrucción?",
+        "¿Qué injusticias concretas se nombran en 3:5 y qué revelan sobre las prioridades de Dios?",
+        "¿Cómo conecta 3:6 el carácter inmutable de Dios con preservación del pacto?",
+        "¿Qué papel tenían diezmos y almacén en el contexto original de Malaquías?",
+        "¿Por qué pruébenme en el versículo 10 no debe convertirse en técnica financiera universal?",
+        "¿Qué principios de generosidad cristiana libre de coerción pueden practicarse sin prometer retorno material?"
       ],
-      "examination": "¿Dónde exijo justicia a Dios mientras paso por alto una manera en que mis decisiones afectan a trabajadores, vecinos vulnerables o responsabilidades compartidas? ¿Doy por gracia o por temor de tener que comprar el favor de Dios?",
-      "challenge": "Revisa esta semana una práctica financiera o laboral. Haz un cambio hacia generosidad o justicia: paga puntualmente, corrige una práctica injusta, apoya responsablemente el ministerio compartido, ayuda a una persona vulnerable o da libremente sin esperar retorno material.",
-      "caution": "Nunca conviertas dar en prueba de dignidad, salvación o acceso a cuidado. No prometas retornos que Dios no ha prometido. Habla de presupuestos y mayordomía con transparencia. Mantén 3:5 visible para que la enseñanza financiera incluya justicia salarial y protección de personas vulnerables. La imagen del refinador nunca debe excusar abuso.",
-      "prayer": "Dios de justicia, prepara nuestros corazones para tu presencia. Refínanos sin permitir que usemos mal el sufrimiento, haznos honestos con los recursos, protege trabajadores y vecinos vulnerables y libera nuestro dar del temor y la codicia. Centra nuestra esperanza en Jesús y no en ganancia prometida. Amén.",
+      "examination": "¿Pido a Dios corregir la sociedad mientras resisto su examen de mi dinero, verdad, trato a trabajadores o cuidado de personas con menos poder? ¿He hecho de la generosidad una transacción en vez de adoración?",
+      "challenge": "Revisa un área de dinero o poder: salarios, cuentas, ofrendas, deuda, prácticas de negocio, propinas, apoyo familiar o trato a alguien dependiente de ti. Corrige una injusticia o elige un acto libre de generosidad sin añadir una expectativa de retorno material.",
+      "caution": "No uses este pasaje como amenaza de recaudación. Explica claramente almacén y contexto del pacto y reconoce desacuerdo cristiano sobre un diezmo fijo. Nunca equipares pobreza con desobediencia. Si surge abuso financiero, robo salarial o ofrenda coercitiva, tómalo en serio y dirige a ayuda práctica y responsabilidad apropiadas.",
+      "prayer": "Dios de justicia, refínanos antes de que exijamos juicio sobre otros. Haz limpia nuestra adoración, veraces nuestras palabras, justos nuestros salarios, correcto nuestro trato a vecinos vulnerables y generosa nuestra ofrenda sin manipulación. Prepáranos para recibir a Jesús con arrepentimiento y mayordomía fiel. Amén.",
       "openingParagraphs": [
-        "Lee Malaquías 2:17–3:12 y marca cansan al SEÑOR, todo el que hace mal es bueno, dónde está el Dios de justicia, mi mensajero, preparar el camino, Señor que buscan, mensajero del pacto, de repente a su templo, quién podrá soportar, fuego del refinador, jabón del lavandero, purificar a Leví, hechiceros, adúlteros, juradores falsos, defraudan a trabajadores de su salario, oprimen viuda, huérfano y extranjero, yo el SEÑOR no cambio, vuélvanse a mí, robar a Dios, diezmos, almacén, alimento, ventanas del cielo, bendición, devorador y tierra deliciosa. Pregunta quién es examinado cuando llega la justicia."
+        "Lee Malaquías 2:17–3:12 y marca cansaron al SEÑOR, todo el que hace mal es bueno, ¿dónde está el Dios de justicia?, mi mensajero, preparar camino, Señor que buscan, mensajero del pacto, de repente a su templo, fuego refinador, jabón de lavandero, purificar levitas, ofrendas aceptables, testigo rápido, hechiceros, adúlteros, falsos juramentos, oprimen trabajadores, viuda, huérfano, extranjero, yo el SEÑOR no cambio, vuelvan a mí, ¿cómo volveremos?, robar a Dios, diezmos y ofrendas, almacén, alimento, pruébenme, ventanas del cielo, bendición, devorador y tierra deseable. Pregunta quién es examinado primero cuando llega la justicia."
       ],
       "contextParagraphs": [
-        "La sección comienza con personas cansando a Dios al afirmar que los malhechores prosperan y preguntando dónde está el Dios de justicia. Malaquías responde con un mensajero que prepara el camino y una venida repentina del Señor a su templo. La redacción también menciona un mensajero del pacto, cuya relación precisa con el Señor se ha interpretado de distintas maneras. El Nuevo Testamento aplica explícitamente el lenguaje del mensajero preparatorio a Juan el Bautista.",
-        "El pasaje pasa después de purificación del templo a justicia social y finalmente a diezmos y contribuciones. Dentro de la economía del pacto de Israel, estos recursos sostenían adoración del templo y a quienes dependían de ella. La promesa de lluvia, cultivos protegidos del devorador y tierra deliciosa es lenguaje agrícola del pacto. Los cristianos pueden aprender generosidad y confianza, pero no convertirlo en retorno financiero personal garantizado."
+        "Malaquías 2:17 registra una disputa en la que el pueblo acusa a Dios de favorecer a quienes hacen mal o de no actuar con justicia. La respuesta en 3:1 no es vindicación inmediata de los de adentro: un mensajero prepara el camino, y la llegada del Señor al templo se compara con fuego refinador y jabón limpiador. El Nuevo Testamento aplica explícitamente el texto del mensajero preparador a Juan el Bautista.",
+        "Malaquías 3:8–12 pertenece al contexto del templo, diezmo, agricultura y pacto de Israel. El almacén sostenía adoración y obligaciones comunitarias. Las tradiciones cristianas difieren sobre si un diezmo fijo del diez por ciento sigue siendo obligatorio bajo el nuevo pacto, pero este pasaje no puede venderse como promesa universal de inversión. El Nuevo Testamento llama consistentemente a dar con voluntad, generosidad, propósito y sin obligación forzada."
       ],
       "jesusParagraphs": [
-        "La tradición de los Evangelios conecta explícitamente al mensajero preparatorio de Malaquías con Juan el Bautista, quien prepara a las personas para Jesús mediante arrepentimiento. Los cristianos también entienden la venida del Señor y su obra refinadora a través de Jesús, quien entra al templo, confronta adoración corrupta, anuncia buenas noticias y expone explotación. El texto debe centrar el señorío de Cristo y no promesas de recaudación."
+        "Jesús identifica a Juan el Bautista como el mensajero preparatorio prometido y luego encarna la presencia examinadora del Señor al confrontar corrupción, hipocresía e injusticia. También enseña mayordomía generosa sin hacer riqueza una medida de fe. La ofrenda cristiana fluye de gracia y amor, no del intento de activar un pago garantizado."
       ],
       "guardrailParagraphs": [
-        "No uses Malaquías 3:10 para prometer que dar dinero producirá un retorno financiero mayor; no avergüences a personas pobres, endeudadas o en crisis por dar menos; no digas que dificultad prueba que alguien roba a Dios; no uses fuego del refinador para justificar abuso o trauma; y no prediques diezmos mientras ignoras robo de salario, viudas, huérfanos, extranjeros y verdad. Mayordomía y justicia pertenecen juntas."
+        "No uses Malaquías 3:8–12 para prometer riqueza financiera a donantes; no digas a personas pobres que dificultad continua prueba que están robando a Dios; no presiones a alguien a dar dinero necesario para comida, medicina, vivienda, manutención, deudas u seguridad para demostrar fe; no generalices pruébenme a otras áreas; y no prediques justicia solo contra los de afuera mientras ignoras robo salarial, falso testimonio, explotación y maltrato de vulnerables dentro de la comunidad."
       ],
-      "closingTakeaway": "La respuesta de Malaquías a dónde está el Dios de justicia es sobria: el Señor viene y su justicia examina primero a su propio pueblo adorador. Refina adoración, confronta explotación, llama al regreso del pacto y enseña mayordomía como fidelidad y no como esquema para enriquecerse."
+      "closingTakeaway": "El Dios de justicia de Malaquías sí viene, pero comienza refinando a su propio pueblo. Adoración, salarios, verdad, trato a vecinos vulnerables y recursos entran bajo su luz. La generosidad forma parte de volver a Dios, pero la bendición del pacto no es una fórmula para enriquecerse."
     },
     {
       "number": 5,
@@ -513,102 +513,102 @@ window.NLDG_BOOK_STUDY={
       "scripture": "Malaquías 3:13–4:6",
       "supporting": [
         "Salmo 73:1–28",
-        "Mateo 11:7–15",
         "Lucas 1:13–17",
+        "Mateo 11:7–15",
         "Filipenses 2:14–16",
         "Apocalipsis 21:1–5"
       ],
-      "question": "¿Cómo puede permanecer fiel el pueblo de Dios cuando la arrogancia parece tener éxito y cómo lo prepara Malaquías para justicia final y el mensajero que viene?",
-      "truth": "Dios oye a quienes lo reverencian, recuerda el servicio fiel, promete justicia final y sanidad y cierra el libro profético llamando a recordar a Moisés y recibir la preparación semejante a Elías para el Señor.",
-      "goal": "Confrontar espiritualidad transaccional, interpretar con cuidado el libro de memoria y las imágenes del sol de justicia, conectar al mensajero semejante a Elías con Juan el Bautista mediante testimonio explícito del Nuevo Testamento y proteger el lenguaje de reconciliación familiar del uso coercitivo.",
-      "opening": "Lee Malaquías 3:13–4:6 y marca palabras duras, inútil servir a Dios, dolientes, arrogantes bendecidos, malhechores prosperan, prueban a Dios y escapan, quienes temían al SEÑOR hablaban juntos, SEÑOR escuchó, libro de memoria, posesión especial, distinguir justo y malvado, horno, rastrojo, sol de justicia, sanidad en sus alas, terneros del establo, recuerden a Moisés, Horeb, Elías, día grande y terrible, volver corazones de padres a hijos e hijos a padres, herir la tierra con maldición. Pregunta qué hacen las personas fieles mientras resultados inmediatos siguen sin resolverse.",
-      "context": "La disputa final de Malaquías vuelve al problema de injusticia aparente. Algunas personas concluyen que servir a Dios es inútil porque malhechores arrogantes parecen prosperar. En contraste, quienes temen al SEÑOR hablan unos con otros y Dios aparece escuchando y registrando un libro de memoria. La imagen comunica atención y memoria divinas, no una técnica espiritual para ganar lugar en un cuaderno celestial literal.\n\nEl capítulo final describe el día del SEÑOR con juicio ardiente y sanidad para quienes reverencian a Dios. La frase sol de justicia es imagen profética vívida y no es citada explícitamente en el Nuevo Testamento como título de Jesús. Después el libro manda recordar a Moisés y promete a Elías antes del día. Lucas 1:17 describe explícitamente a Juan el Bautista viniendo en el espíritu y poder de Elías, y Jesús identifica a Juan con el papel esperado de Elías con matices.",
+      "question": "¿Cómo puede permanecer fiel el pueblo de Dios cuando la arrogancia y la maldad parecen tener éxito y la justicia final parece tardar?",
+      "truth": "Dios escucha a quienes lo reverencian, recuerda servicio fiel, promete distinción final y sanidad y prepara a su pueblo mediante Escritura y un ministerio semejante a Elías, no por cinismo o especulación.",
+      "goal": "Comprender la disputa final acerca del aparente éxito del malvado, interpretar cuidadosamente libro de memoria y sol de justicia, conectar lenguaje de Elías con Juan el Bautista y proteger el lenguaje de restauración familiar de usos coercitivos.",
+      "opening": "Lee Malaquías 3:13–4:6 y marca palabras duras, ¿qué hemos dicho contra ti?, inútil servir a Dios, malhechores prosperan, ponen a prueba a Dios y escapan, quienes temían al SEÑOR hablaron unos con otros, SEÑOR escuchó, libro de memoria, posesión preciada, distinción entre justo e impío, día ardiente como horno, sol de justicia, sanidad en sus alas, becerros liberados, cenizas, recuerda a Moisés, Horeb, Elías, día grande y terrible, volver corazones de padres a hijos e hijos a padres y maldición o destrucción. Pregunta cómo responde el libro a la afirmación de que la fidelidad no importa.",
+      "context": "La disputa final vuelve al problema de justicia demorada. Algunas personas interpretan prosperidad de arrogantes como prueba de que servir a Dios es inútil. En contraste, quienes temen al SEÑOR hablan juntos y Dios escucha. La imagen del libro de memoria recuerda registros reales y comunica atención divina; no implica que Dios olvide y necesite un recordatorio escrito.\n\nEn la numeración cristiana, Malaquías 4 cierra el libro con el día del SEÑOR, sol de justicia, recuerdo de Moisés y promesa de Elías. En la Biblia hebrea estos versículos siguen dentro del capítulo 3. El Nuevo Testamento vincula explícitamente el papel semejante a Elías con Juan el Bautista, especialmente Lucas 1:17 y las palabras de Jesús en Mateo 11. El sol de justicia, sin embargo, no es identificado explícitamente como título de Jesús mediante una cita del Nuevo Testamento, aunque la tradición cristiana con frecuencia aplica la imagen a Cristo.",
       "teaching": [
         {
-          "heading": "La fe transaccional llama inútil a la obediencia — Malaquías 3:13–15",
-          "body": "La queja evalúa servicio por recompensa inmediata. Cuando personas arrogantes parecen exitosas, la obediencia parece inútil. Malaquías expone una fe reducida a trato: si sirvo, Dios debe mejorar visiblemente mi vida ahora.",
+          "heading": "La fe decepcionada puede reducir obediencia a una transacción — Malaquías 3:13–15",
+          "body": "La queja dice que servir a Dios es inútil porque personas arrogantes prosperan. La suposición es que fidelidad debe garantizar ventaja visible inmediata. Malaquías desafía esa visión transaccional.",
           "paragraphs": [
-            "La queja evalúa servicio por recompensa inmediata. Cuando personas arrogantes parecen exitosas, la obediencia parece inútil. Malaquías expone una fe reducida a trato: si sirvo, Dios debe mejorar visiblemente mi vida ahora."
+            "La queja dice que servir a Dios es inútil porque personas arrogantes prosperan. La suposición es que fidelidad debe garantizar ventaja visible inmediata. Malaquías desafía esa visión transaccional."
           ]
         },
         {
-          "heading": "Las personas fieles hablan unas con otras — Malaquías 3:16",
-          "body": "Quienes temen al SEÑOR responden al cinismo hablando entre sí. La fidelidad se vuelve ánimo comunitario en lugar de resentimiento aislado.",
+          "heading": "Las personas fieles se fortalecen mutuamente — Malaquías 3:16",
+          "body": "Quienes temen al SEÑOR hablan juntos. Su respuesta al cinismo no es aislamiento ni negación; forman una comunidad de reverencia y ánimo mutuo.",
           "paragraphs": [
-            "Quienes temen al SEÑOR responden al cinismo hablando entre sí. La fidelidad se vuelve ánimo comunitario en lugar de resentimiento aislado."
+            "Quienes temen al SEÑOR hablan juntos. Su respuesta al cinismo no es aislamiento ni negación; forman una comunidad de reverencia y ánimo mutuo."
           ]
         },
         {
-          "heading": "El libro de memoria expresa atención de Dios — Malaquías 3:16",
-          "body": "Dios escucha y recuerda a quienes honran su nombre. La imagen asegura a creyentes no reconocidos que la fidelidad es vista; no invita a especular sobre una lista secreta ni manipular favor divino.",
+          "heading": "El libro de memoria asegura que Dios ve — Malaquías 3:16",
+          "body": "El registro simboliza conocimiento atento de Dios sobre quienes honran su nombre. La fidelidad escondida no se pierde porque la cultura pública premie arrogancia.",
           "paragraphs": [
-            "Dios escucha y recuerda a quienes honran su nombre. La imagen asegura a creyentes no reconocidos que la fidelidad es vista; no invita a especular sobre una lista secreta ni manipular favor divino."
+            "El registro simboliza conocimiento atento de Dios sobre quienes honran su nombre. La fidelidad escondida no se pierde porque la cultura pública premie arrogancia."
           ]
         },
         {
           "heading": "La distinción final pertenece a Dios — Malaquías 3:17–18",
-          "body": "Dios promete un día cuando quedará clara la diferencia entre justo y malvado, servir y negarse a servir. La prosperidad presente no es el veredicto final sobre una vida.",
+          "body": "Dios promete distinguir justo de impío y quien lo sirve de quien no. Las apariencias presentes no son el veredicto final, y creyentes no están autorizados a convertirse en jueces finales del destino eterno de otros.",
           "paragraphs": [
-            "Dios promete un día cuando quedará clara la diferencia entre justo y malvado, servir y negarse a servir. La prosperidad presente no es el veredicto final sobre una vida."
+            "Dios promete distinguir justo de impío y quien lo sirve de quien no. Las apariencias presentes no son el veredicto final, y creyentes no están autorizados a convertirse en jueces finales del destino eterno de otros."
           ]
         },
         {
-          "heading": "El día arde contra el mal arrogante — Malaquías 4:1",
-          "body": "Las imágenes de horno y rastrojo representan juicio decisivo. Pertenecen a la justicia final de Dios y no autorizan a creyentes a amenazar, castigar o deshumanizar a quienes juzgan malvados.",
+          "heading": "El día arde contra la maldad arrogante — Malaquías 4:1",
+          "body": "La imagen del horno anuncia juicio severo. Es juicio de Dios, no permiso para creyentes de amenazar, celebrar o ejecutar violencia contra personas que consideran malas.",
           "paragraphs": [
-            "Las imágenes de horno y rastrojo representan juicio decisivo. Pertenecen a la justicia final de Dios y no autorizan a creyentes a amenazar, castigar o deshumanizar a quienes juzgan malvados."
+            "La imagen del horno anuncia juicio severo. Es juicio de Dios, no permiso para creyentes de amenazar, celebrar o ejecutar violencia contra personas que consideran malas."
           ]
         },
         {
           "heading": "El sol de justicia trae sanidad — Malaquías 4:2–3",
-          "body": "Para quienes reverencian a Dios, el día es presentado como amanecer, sanidad y liberación gozosa. Lectores cristianos pueden ver esta esperanza cumplida en el reinado salvador de Cristo, pero no deben afirmar que la frase es citada directamente como título mesiánico cuando el Nuevo Testamento no lo hace.",
+          "body": "Para quienes reverencian el nombre de Dios, el mismo día trae sanidad y libertad representada por becerros liberados. La tradición cristiana suele ver a Cristo en la imagen, pero el texto presenta una imagen poética de intervención justa y sanadora de Dios, no un título explícito citado por el Nuevo Testamento.",
           "paragraphs": [
-            "Para quienes reverencian a Dios, el día es presentado como amanecer, sanidad y liberación gozosa. Lectores cristianos pueden ver esta esperanza cumplida en el reinado salvador de Cristo, pero no deben afirmar que la frase es citada directamente como título mesiánico cuando el Nuevo Testamento no lo hace."
+            "Para quienes reverencian el nombre de Dios, el mismo día trae sanidad y libertad representada por becerros liberados. La tradición cristiana suele ver a Cristo en la imagen, pero el texto presenta una imagen poética de intervención justa y sanadora de Dios, no un título explícito citado por el Nuevo Testamento."
           ]
         },
         {
-          "heading": "Recuerda a Moisés — Malaquías 4:4",
-          "body": "El llamado final mira hacia atrás a la Torá mientras la comunidad espera el próximo acto de Dios. La esperanza no desecha revelación anterior; llama a recuerdo fiel y obediencia.",
+          "heading": "Recordar a Moisés mantiene esperanza anclada en instrucción revelada — Malaquías 4:4",
+          "body": "Antes de anunciar a Elías, Malaquías dice recordar la Torá dada mediante Moisés en Horeb. Esperar intervención futura no excusa descuidar instrucción ya dada.",
           "paragraphs": [
-            "El llamado final mira hacia atrás a la Torá mientras la comunidad espera el próximo acto de Dios. La esperanza no desecha revelación anterior; llama a recuerdo fiel y obediencia."
+            "Antes de anunciar a Elías, Malaquías dice recordar la Torá dada mediante Moisés en Horeb. Esperar intervención futura no excusa descuidar instrucción ya dada."
           ]
         },
         {
-          "heading": "El mensajero semejante a Elías vuelve corazones — Malaquías 4:5–6",
-          "body": "El Elías prometido viene antes del día del SEÑOR para volver corazones entre generaciones. Lucas 1:17 aplica este ministerio a Juan el Bautista. Reconciliación es la meta, pero el versículo no permite presionar contacto inseguro donde abuso o peligro permanecen.",
+          "heading": "Elías prepara corazones entre generaciones — Malaquías 4:5–6",
+          "body": "El ministerio prometido semejante a Elías vuelve corazones de padres e hijos antes del día del SEÑOR. El Nuevo Testamento aplica este papel a Juan el Bautista en espíritu y poder de Elías. Volver corazones describe restauración relacional y del pacto, no acceso forzado a familiares inseguros.",
           "paragraphs": [
-            "El Elías prometido viene antes del día del SEÑOR para volver corazones entre generaciones. Lucas 1:17 aplica este ministerio a Juan el Bautista. Reconciliación es la meta, pero el versículo no permite presionar contacto inseguro donde abuso o peligro permanecen."
+            "El ministerio prometido semejante a Elías vuelve corazones de padres e hijos antes del día del SEÑOR. El Nuevo Testamento aplica este papel a Juan el Bautista en espíritu y poder de Elías. Volver corazones describe restauración relacional y del pacto, no acceso forzado a familiares inseguros."
           ]
         }
       ],
       "questions": [
-        "¿Qué hace transaccional la queja de 3:13–15 en vez de ser simplemente lamento?",
-        "¿Qué hacen de manera distinta quienes temen al SEÑOR en el versículo 16?",
-        "¿Qué comunica la imagen del libro de memoria y qué especulación debe evitarse?",
-        "¿Cómo desafían los versículos 17–18 la suposición de que prosperidad presente revela el veredicto final de Dios?",
-        "¿Qué contraste aparece entre el día ardiente de 4:1 y el amanecer sanador de 4:2?",
-        "¿Por qué debe conectarse el sol de justicia con Jesús con humildad teológica y no afirmarse como cita directa del Nuevo Testamento?",
-        "¿Por qué termina Malaquías diciendo al pueblo que recuerde a Moisés?",
-        "¿Cómo interpreta Lucas 1:17 al mensajero semejante a Elías y cómo debe buscarse reconciliación generacional con seguridad?"
+        "¿Qué suposición acerca de obediencia está detrás de la queja de 3:13–15?",
+        "¿Cómo responden de manera distinta quienes temen al SEÑOR en el versículo 16?",
+        "¿Qué comunica la imagen del libro de memoria acerca de fidelidad escondida?",
+        "¿Por qué debe permanecer en manos de Dios la distinción final de los versículos 17–18?",
+        "¿Cómo pueden horno y sanidad describir dos dimensiones del mismo día venidero?",
+        "¿Por qué debe enseñarse cuidadosamente el sol de justicia y no simplemente llamarlo título mesiánico directo?",
+        "¿Por qué dice Malaquías recordar a Moisés antes de anunciar a Elías?",
+        "¿Cómo aplica el Nuevo Testamento el papel de Elías a Juan el Bautista y cómo sería hoy volver corazones de manera segura?"
       ],
-      "examination": "¿He decidido silenciosamente que la obediencia vale la pena solo cuando puedo ver recompensa? ¿Dónde necesito a otras personas fieles para ayudarme a resistir cinismo? ¿Existe una relación generacional donde verdad, arrepentimiento, límites o reconciliación segura necesitan atención?",
-      "challenge": "Anima a una persona cuya fidelidad parece no ser reconocida. Después elige un acto que prepare el camino para una relación generacional más saludable: escucha, pide perdón, di la verdad, honra un límite, busca mediación u ora sin forzar contacto.",
-      "caution": "No avergüences a personas enojadas por injusticia. Distingue lamento honesto de demandas transaccionales. Evita sensacionalismo del fin. Si existe daño familiar, no uses lenguaje de Elías para presionar reunión; reconciliación segura requiere arrepentimiento, responsabilidad, consentimiento y a menudo apoyo competente.",
-      "prayer": "Dios que escuchas y recuerdas, mantennos fieles cuando la arrogancia parece vencer. Sana nuestro cinismo, fortalécenos unos por otros y prepara nuestros corazones mediante verdad, arrepentimiento y reconciliación segura. Gracias por Juan el mensajero y por Jesús el Señor para quien preparó el camino. Amén.",
+      "examination": "¿Dónde he comenzado a medir fidelidad solo por resultados inmediatos? Cuando la maldad parece premiada, ¿me aíslo en cinismo o fortalezco a otros en reverencia, verdad y esperanza?",
+      "challenge": "Anima a una persona cuya fidelidad parece no ser vista. Lee Salmo 73 y Malaquías 3:13–4:6 y escribe una frase sobre lo que las apariencias presentes no pueden decirte acerca de justicia final. Si una relación familiar necesita reparación, elige solamente un paso veraz, voluntario y seguro.",
+      "caution": "Haz espacio para frustración honesta por justicia demorada. No prometas que toda persona fiel verá vindicación inmediata. Distingue la aplicación explícita del Nuevo Testamento de Elías a Juan de aplicaciones devocionales posteriores de la imagen del sol. Nunca uses restauración familiar para sobrepasar límites, órdenes judiciales, planes de seguridad o agencia de personas dañadas.",
+      "prayer": "Dios que ves fidelidad escondida, guárdanos del cinismo cuando la arrogancia parece prosperar. Fortalécenos por medio de otros, sana lo que el mal ha herido, guarda el juicio en tus manos y vuelve corazones hacia reconciliación verdadera y segura. Prepáranos, como Juan preparó el camino, para recibir fielmente a Jesús. Amén.",
       "openingParagraphs": [
-        "Lee Malaquías 3:13–4:6 y marca palabras duras, inútil servir a Dios, dolientes, arrogantes bendecidos, malhechores prosperan, prueban a Dios y escapan, quienes temían al SEÑOR hablaban juntos, SEÑOR escuchó, libro de memoria, posesión especial, distinguir justo y malvado, horno, rastrojo, sol de justicia, sanidad en sus alas, terneros del establo, recuerden a Moisés, Horeb, Elías, día grande y terrible, volver corazones de padres a hijos e hijos a padres, herir la tierra con maldición. Pregunta qué hacen las personas fieles mientras resultados inmediatos siguen sin resolverse."
+        "Lee Malaquías 3:13–4:6 y marca palabras duras, ¿qué hemos dicho contra ti?, inútil servir a Dios, malhechores prosperan, ponen a prueba a Dios y escapan, quienes temían al SEÑOR hablaron unos con otros, SEÑOR escuchó, libro de memoria, posesión preciada, distinción entre justo e impío, día ardiente como horno, sol de justicia, sanidad en sus alas, becerros liberados, cenizas, recuerda a Moisés, Horeb, Elías, día grande y terrible, volver corazones de padres a hijos e hijos a padres y maldición o destrucción. Pregunta cómo responde el libro a la afirmación de que la fidelidad no importa."
       ],
       "contextParagraphs": [
-        "La disputa final de Malaquías vuelve al problema de injusticia aparente. Algunas personas concluyen que servir a Dios es inútil porque malhechores arrogantes parecen prosperar. En contraste, quienes temen al SEÑOR hablan unos con otros y Dios aparece escuchando y registrando un libro de memoria. La imagen comunica atención y memoria divinas, no una técnica espiritual para ganar lugar en un cuaderno celestial literal.",
-        "El capítulo final describe el día del SEÑOR con juicio ardiente y sanidad para quienes reverencian a Dios. La frase sol de justicia es imagen profética vívida y no es citada explícitamente en el Nuevo Testamento como título de Jesús. Después el libro manda recordar a Moisés y promete a Elías antes del día. Lucas 1:17 describe explícitamente a Juan el Bautista viniendo en el espíritu y poder de Elías, y Jesús identifica a Juan con el papel esperado de Elías con matices."
+        "La disputa final vuelve al problema de justicia demorada. Algunas personas interpretan prosperidad de arrogantes como prueba de que servir a Dios es inútil. En contraste, quienes temen al SEÑOR hablan juntos y Dios escucha. La imagen del libro de memoria recuerda registros reales y comunica atención divina; no implica que Dios olvide y necesite un recordatorio escrito.",
+        "En la numeración cristiana, Malaquías 4 cierra el libro con el día del SEÑOR, sol de justicia, recuerdo de Moisés y promesa de Elías. En la Biblia hebrea estos versículos siguen dentro del capítulo 3. El Nuevo Testamento vincula explícitamente el papel semejante a Elías con Juan el Bautista, especialmente Lucas 1:17 y las palabras de Jesús en Mateo 11. El sol de justicia, sin embargo, no es identificado explícitamente como título de Jesús mediante una cita del Nuevo Testamento, aunque la tradición cristiana con frecuencia aplica la imagen a Cristo."
       ],
       "jesusParagraphs": [
-        "El Nuevo Testamento conecta explícitamente al mensajero semejante a Elías de Malaquías con Juan el Bautista, quien prepara a las personas para Jesús. Los cristianos entienden la expectativa final de justicia, sanidad y corazones preparados a la luz de la primera venida de Cristo y su regreso prometido. Esa esperanza centrada en Cristo debe producir fidelidad y reconciliación, no especulación ni coerción."
+        "Lucas 1:17 dice que Juan el Bautista ministra en espíritu y poder de Elías, y Jesús identifica a Juan con el papel esperado de Elías para quienes quieran recibirlo. Juan prepara a las personas para Jesús mediante arrepentimiento. Los cristianos leen por eso el final de Malaquías como puente hacia el evangelio, recordando que Juan no es presentado como Elías reencarnado y que no cada imagen final debe convertirse en predicción exacta uno a uno."
       ],
       "guardrailParagraphs": [
-        "No digas a personas que sufren que la fidelidad se prueba por éxito inmediato; no conviertas el libro de memoria en puntuación mística; no uses imágenes de juicio final para amenazar enemigos personales; no afirmes que sol de justicia es un título explícito de Jesús en el Nuevo Testamento cuando no se cita directamente así; y no uses volver los corazones de padres e hijos para forzar contacto, perdón o reconciliación en familias inseguras. Corazones preparados incluyen verdad y seguridad."
+        "No digas a creyentes desanimados que cuestionar resultados inmediatos es rebelión; no uses el libro de memoria como registro mágico de logros espirituales; no llames al sol de justicia título explícito de Jesús en el Nuevo Testamento cuando el Nuevo Testamento no lo cita así; no uses cenizas u horno para celebrar violencia contra oponentes; no uses lenguaje de Elías para fechas o autoridad profética autoproclamada; y no fuerces contacto entre familiares distanciados o abusados citando corazones de padres e hijos. La restauración debe incluir verdad, seguridad, arrepentimiento y límites apropiados."
       ],
-      "closingTakeaway": "Malaquías termina negándose a dejar que el éxito visible defina la realidad. Dios oye a personas fieles, las recuerda, promete justicia final y sanidad, las llama a recordar su instrucción y envía un mensajero semejante a Elías para preparar corazones para el Señor."
+      "closingTakeaway": "Malaquías termina diciendo a personas desanimadas que la fidelidad es vista, la arrogancia no escribe el veredicto final, sanidad y juicio pertenecen a Dios, la Escritura todavía importa mientras esperamos y los corazones preparados se vuelven hacia relación veraz. El Nuevo Testamento abre con Juan el Bautista llevando ese ministerio semejante a Elías antes de Jesús."
     }
   ]
 };

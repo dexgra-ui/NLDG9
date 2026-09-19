@@ -28,7 +28,8 @@ const sitemapPaths=[
   'newsletter/grace-for-the-changing-season.html',
   'other-ancient-writings.html',
   'ancient-writing-1-enoch.html',
-  'ancient-writing-jubilees.html'
+  'ancient-writing-jubilees.html',
+  'ancient-writing-wisdom-solomon.html'
 ];
 
 function expect(condition,success,failure){
@@ -59,7 +60,7 @@ try{
   await open('homepage','index.html');
   await page.waitForFunction(()=>document.querySelector('#home-latest')?.children.length>0,{timeout:5000}).catch(()=>{});
   const homeLatest=await page.locator('#home-latest').innerText().catch(()=>'');
-  expect(homeLatest.includes('Jubilees: Historical & Biblical Guide'),'Homepage Latest surfaces the newest Jubilees detailed guide.','Homepage Latest did not surface the newest Jubilees detailed guide after the shared library loaded.');
+  expect(homeLatest.includes('Wisdom of Solomon: Historical & Biblical Guide'),'Homepage Latest surfaces the newest Wisdom of Solomon detailed guide.','Homepage Latest did not surface the newest Wisdom of Solomon detailed guide after the shared library loaded.');
   const featuredSeries=await page.locator('#home-featured .content-series').allInnerTexts().catch(()=>[]);
   const latestSeries=await page.locator('#home-latest .content-series').allInnerTexts().catch(()=>[]);
   const duplicateSeries=latestSeries.filter(series=>series&&featuredSeries.includes(series));
@@ -130,6 +131,9 @@ try{
   const jubileesCrossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('jubilees')?.href||'');
   expect(jubileesCrossLinkHref==='ancient-writing-jubilees.html','The Jubilees cross-link registry routes to the detailed guide.',`The Jubilees cross-link registry routed to ${jubileesCrossLinkHref}.`);
   expect((await page.locator('#jubilees a[href="ancient-writing-jubilees.html"]').count())===1,'The Jubilees overview card links to its detailed guide.','The Jubilees overview card is missing its detailed-guide link.');
+  const wisdomCrossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('wisdom-solomon')?.href||'');
+  expect(wisdomCrossLinkHref==='ancient-writing-wisdom-solomon.html','The Wisdom of Solomon cross-link registry routes to the detailed guide.',`The Wisdom of Solomon cross-link registry routed to ${wisdomCrossLinkHref}.`);
+  expect((await page.locator('#wisdom-solomon a[href="ancient-writing-wisdom-solomon.html"]').count())===1,'The Wisdom of Solomon overview card links to its detailed guide.','The Wisdom of Solomon overview card is missing its detailed-guide link.');
 
   await open('1-enoch-guide','ancient-writing-1-enoch.html');
   const enochGuide=await page.locator('main').innerText();
@@ -173,11 +177,38 @@ try{
   expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=9,'Jubilees guide provides a substantial academic and primary source list.','Jubilees guide does not provide enough research sources.');
   expect((await page.locator('a[href="genesis-study.html"]').count())>=1&&(await page.locator('a[href="exodus-study.html"]').count())>=1,'Jubilees guide links back to Genesis and Exodus canonical studies.','Jubilees guide is missing Genesis or Exodus return links.');
   expect((await page.locator('a[href="ancient-writing-1-enoch.html"]').count())>=1,'Jubilees guide cross-links to the detailed 1 Enoch guide.','Jubilees guide is missing its 1 Enoch comparison link.');
+  expect((await page.locator('a[href="ancient-writing-wisdom-solomon.html"]').count())>=1,'Jubilees guide links forward to the detailed Wisdom of Solomon guide.','Jubilees guide is missing its Wisdom of Solomon detail link.');
   await page.setViewportSize({width:390,height:844});
   expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Jubilees guide has no horizontal overflow at 390px.','Jubilees guide overflows horizontally at 390px.');
   const jubileesInternalLink=page.locator('.detail-connection-list a').first();
   const jubileesLinkBox=await jubileesInternalLink.boundingBox();
   expect(Boolean(jubileesLinkBox&&jubileesLinkBox.height>=44),'Jubilees canonical-study links meet the 44px mobile touch target.','Jubilees canonical-study links are below the 44px mobile touch target.');
+  await page.setViewportSize({width:1440,height:1000});
+
+  await open('wisdom-solomon-guide','ancient-writing-wisdom-solomon.html');
+  const wisdomGuide=await page.locator('main').innerText();
+  expect(wisdomGuide.includes('What is the Wisdom of Solomon?'),'Wisdom of Solomon guide includes a clear orientation section.','Wisdom of Solomon guide is missing its orientation section.');
+  for(const sectionTitle of ['Righteousness, persecution, and immortality','Solomon praises and seeks Wisdom','Wisdom and providence in Israel’s history']){
+    expect(wisdomGuide.includes(sectionTitle),`Wisdom of Solomon guide includes ${sectionTitle}.`,`Wisdom of Solomon guide is missing ${sectionTitle}.`);
+  }
+  expect(wisdomGuide.includes('anonymous Jewish work written in Greek'),'Wisdom guide identifies anonymous Greek composition.','Wisdom guide does not clearly identify its anonymous Greek composition.');
+  expect(wisdomGuide.includes('Solomon is the literary voice, not the historical author.'),'Wisdom guide distinguishes literary persona from historical authorship.','Wisdom guide risks attributing the work to the historical Solomon.');
+  expect(wisdomGuide.includes('Roman Catholic and Eastern Orthodox traditions'),'Wisdom guide identifies Catholic and Orthodox canonical reception.','Wisdom guide is missing Catholic and Orthodox canonical reception.');
+  expect(wisdomGuide.includes('not part of the Protestant Old Testament canon'),'Wisdom guide identifies the Protestant canon distinction.','Wisdom guide is missing the Protestant canon distinction.');
+  expect(wisdomGuide.includes('Wisdom 13–14 and Romans 1:18–32'),'Wisdom guide includes the Romans idolatry parallel.','Wisdom guide is missing the Romans parallel.');
+  expect(wisdomGuide.includes('Wisdom 7:26 and Hebrews 1:3'),'Wisdom guide includes the Hebrews Wisdom-language parallel.','Wisdom guide is missing the Hebrews parallel.');
+  expect(wisdomGuide.includes('not directly quoted by the New Testament')||wisdomGuide.includes('Not directly quoted by the New Testament.'),'Wisdom guide distinguishes New Testament echoes from direct quotation.','Wisdom guide overstates New Testament dependence as direct quotation.');
+  expect(wisdomGuide.includes('Not Greek philosophy replacing Jewish faith.'),'Wisdom guide guards against flattening the work into Greek philosophy.','Wisdom guide is missing its Greek/Jewish intellectual guardrail.');
+  expect(wisdomGuide.includes('NLDG is not reproducing a complete translation yet.'),'Wisdom guide defers full-text reproduction pending rights and textual verification.','Wisdom guide does not clearly defer full-text reproduction.');
+  expect(!wisdomGuide.includes('Phase 2'),'Wisdom public guide omits internal development-phase language.','Wisdom public guide exposes internal Phase 2 language.');
+  expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=9,'Wisdom guide provides a substantial academic and primary source list.','Wisdom guide does not provide enough research sources.');
+  expect((await page.locator('a[href="proverbs-study.html"]').count())>=1&&(await page.locator('a[href="romans-study.html"]').count())>=1,'Wisdom guide links back to canonical Proverbs and Romans studies.','Wisdom guide is missing Proverbs or Romans return links.');
+  expect((await page.locator('a[href="ancient-writing-jubilees.html"]').count())>=1,'Wisdom guide cross-links to the detailed Jubilees guide.','Wisdom guide is missing its Jubilees comparison link.');
+  await page.setViewportSize({width:390,height:844});
+  expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Wisdom of Solomon guide has no horizontal overflow at 390px.','Wisdom of Solomon guide overflows horizontally at 390px.');
+  const wisdomInternalLink=page.locator('.detail-connection-list a').first();
+  const wisdomLinkBox=await wisdomInternalLink.boundingBox();
+  expect(Boolean(wisdomLinkBox&&wisdomLinkBox.height>=44),'Wisdom canonical-study links meet the 44px mobile touch target.','Wisdom canonical-study links are below the 44px mobile touch target.');
   await page.setViewportSize({width:1440,height:1000});
 
   await open('other-ancient-writings-mobile','other-ancient-writings.html');
@@ -209,6 +240,10 @@ try{
   await page.waitForTimeout(250);
   const jubileesSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
   expect(jubileesSearchResults.includes('Jubilees: Historical & Biblical Guide'),'Search finds the detailed Jubilees guide.','Search did not find the detailed Jubilees guide.');
+  await search.fill('Wisdom of Solomon');
+  await page.waitForTimeout(250);
+  const wisdomSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
+  expect(wisdomSearchResults.includes('Wisdom of Solomon: Historical & Biblical Guide'),'Search finds the detailed Wisdom of Solomon guide.','Search did not find the detailed Wisdom of Solomon guide.');
 
 
   await open('site-map','site-map.html');
@@ -220,6 +255,7 @@ try{
   expect(siteMapText.includes('Other Ancient Writings'),'Generated Site Map index lists Other Ancient Writings.','Generated Site Map index is missing Other Ancient Writings.');
   expect(siteMapText.includes('1 Enoch: Historical & Biblical Guide'),'Generated Site Map index lists the detailed 1 Enoch guide.','Generated Site Map index is missing the detailed 1 Enoch guide.');
   expect(siteMapText.includes('Jubilees: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Jubilees guide.','Generated Site Map index is missing the detailed Jubilees guide.');
+  expect(siteMapText.includes('Wisdom of Solomon: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Wisdom of Solomon guide.','Generated Site Map index is missing the detailed Wisdom of Solomon guide.');
   expect((await page.locator('.site-map-grid a[href="other-ancient-writings.html"]').count())>0,'Manual Site Map Bible Studies section links Other Ancient Writings.','Manual Site Map is missing Other Ancient Writings.');
 
 

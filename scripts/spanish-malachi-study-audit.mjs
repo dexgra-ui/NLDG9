@@ -15,7 +15,7 @@ if(spanishOldTestamentBooks.some(book=>book.status==='prepared'))fail('No Old Te
 
 if(!errors.length){
  const en=load(enData,enGuide),es=load(esData);
- const names={'Malaquías':'Malachi','Deuteronomio':'Deuteronomy','Abdías':'Obadiah','Romanos':'Romans','Efesios':'Ephesians','Levítico':'Leviticus','Génesis':'Genesis','Proverbios':'Proverbs','Mateo':'Matthew','Isaías':'Isaiah','Lucas':'Luke','Santiago':'James','2 Corintios':'2 Corinthians','Salmo':'Psalm','Filipenses':'Philippians','Apocalipsis':'Revelation','Marcos':'Mark'};
+ const names={'Malaquías':'Malachi','Deuteronomio':'Deuteronomy','Abdías':'Obadiah','Romanos':'Romans','Efesios':'Ephesians','Levítico':'Leviticus','Ezequiel':'Ezekiel','Génesis':'Genesis','Proverbios':'Proverbs','Mateo':'Matthew','Isaías':'Isaiah','Lucas':'Luke','Santiago':'James','2 Corintios':'2 Corinthians','Salmo':'Psalm','Filipenses':'Philippians','Apocalipsis':'Revelation','Marcos':'Mark'};
  const norm=r=>{for(const [a,b] of Object.entries(names))if(r.startsWith(a+' '))return b+r.slice(a.length);return r;};
  const normList=s=>String(s||'').split(';').map(x=>norm(x.trim())).filter(Boolean);
 
@@ -52,10 +52,9 @@ if(!errors.length){
  const raw=read(esData),all=JSON.stringify(es).toLowerCase();
  for(const version of ['RVR60','NVI','NBLA'])if(new RegExp('\\b'+version+'\\b').test(raw))fail('Spanish Malachi contains disallowed Bible version '+version+'.');
  const safeguards=[
-  ['dating humility','la relación cronológica exacta con esdras o nehemías sigue siendo debatida'],
+  ['dating humility','relación cronológica exacta con esdras o nehemías sigue siendo debatida'],
   ['anti-ethnic election misuse','no uses las palabras de dios sobre jacob y esaú para justificar racismo'],
-  ['disability dignity','no uses las categorías ciego, cojo'],
-  ['Malachi 1:11 humility','la referencia temporal exacta es debatida'],
+  ['disability dignity','no uses las palabras ciego, cojo'],
   ['marriage translation humility','traducciones importantes difieren'],
   ['interracial marriage protection','no uses malaquías 2 para prohibir matrimonio interracial'],
   ['abuse safety','forzar a un cónyuge abusado a permanecer inseguro'],

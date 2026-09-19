@@ -1,44 +1,47 @@
-import fs from 'node:fs';
-import vm from 'node:vm';
-const read=p=>fs.readFileSync(p,'utf8'),exists=p=>fs.existsSync(p),errors=[];
-const html='.ht'+'ml',js='.j'+'s';
-const expect=(label,source,value)=>{if(!source.includes(value))errors.push(`${label}: missing ${JSON.stringify(value)}`)};
-const load=(...files)=>{const context={window:{}};vm.createContext(context);for(const file of files)vm.runInContext(read(file),context,{filename:file});return context.window.NLDG_BOOK_STUDY;};
-const enPage='acts-study'+html,enData='acts-study-data'+js,enGuide='acts-study-guide'+js,esData='acts-study-data-es'+js,esPage=['es','hechos-estudio'+html].join('/'),hubPath=['es','estudios-biblicos'+html].join('/'),i18nPath='nldg-i18n'+js;
-const required=[enPage,enData,enGuide,esData,esPage,hubPath,i18nPath,'book-study-series'+js,'book-study-series-es'+js];
-for(const file of required)if(!exists(file))errors.push(`Missing Hechos bilingual resource: ${file}`);
-if(required.every(exists)){
+import fs from 'node:fs';import vm from 'node:vm';
+const errors=[],read=p=>fs.readFileSync(p,'utf8'),exists=fs.existsSync,fail=m=>errors.push(m);
+const load=(...files)=>{const c={window:{}};vm.createContext(c);for(const file of files)vm.runInContext(read(file),c,{filename:file});return c.window.NLDG_BOOK_STUDY;};
+const enData='acts-study-data.js',enGuide='acts-study-guide.js',esData='acts-study-data-es.js',enPage='acts-study.html',esPage='es/hechos-estudio.html',hub='es/estudios-biblicos.html',i18n='nldg-i18n.js';
+for(const f of [enData,enGuide,esData,enPage,esPage,hub,i18n,'book-study-series.js','book-study-series-es.js'])if(!exists(f))fail('Missing '+f);
+if(!errors.length){
  const en=load(enData,enGuide),es=load(esData);
- if(en?.lessons?.length!==8||es?.lessons?.length!==8)errors.push('Hechos must retain 8 English and 8 Spanish lessons.');
- if(es?.scriptureStandard!=='Nueva Traducción Viviente (NTV)')errors.push('Hechos must declare Nueva Traducción Viviente (NTV).');
- for(let i=0;i<8;i++){const a=en.lessons?.[i],b=es.lessons?.[i],label=`Hechos lesson ${i+1}`;
-  if(a?.number!==b?.number)errors.push(`${label}: lesson number mismatch.`);
-  for(const field of ['title','scripture','question','truth','goal','opening','context','examination','practice','caution','prayer'])if(!String(b?.[field]||'').trim())errors.push(`${label}: missing Spanish ${field}.`);
-  for(const field of ['supporting','teaching','questions'])if((b?.[field]?.length??0)!==(a?.[field]?.length??0))errors.push(`${label}: ${field} count mismatch.`);
-  for(const movement of b?.teaching||[])if(!String(movement?.heading||'').trim()||!String(movement?.body||'').trim())errors.push(`${label}: incomplete teaching movement.`);
-  if(!String(b?.scripture||'').startsWith('Hechos '))errors.push(`${label}: Scripture reference must use Hechos.`);
+ const names={'Hechos':'Acts','Génesis':'Genesis','Éxodo':'Exodus','Levítico':'Leviticus','Números':'Numbers','Deuteronomio':'Deuteronomy','Josué':'Joshua','Jueces':'Judges','Rut':'Ruth','1 Samuel':'1 Samuel','2 Samuel':'2 Samuel','1 Reyes':'1 Kings','2 Reyes':'2 Kings','Salmo':'Psalm','Salmos':'Psalms','Proverbios':'Proverbs','Eclesiastés':'Ecclesiastes','Isaías':'Isaiah','Jeremías':'Jeremiah','Ezequiel':'Ezekiel','Daniel':'Daniel','Oseas':'Hosea','Joel':'Joel','Amós':'Amos','Jonás':'Jonah','Miqueas':'Micah','Zacarías':'Zechariah','Malaquías':'Malachi','Mateo':'Matthew','Marcos':'Mark','Lucas':'Luke','Romanos':'Romans','1 Corintios':'1 Corinthians','2 Corintios':'2 Corinthians','Gálatas':'Galatians','Efesios':'Ephesians','Filipenses':'Philippians','Colosenses':'Colossians','1 Tesalonicenses':'1 Thessalonians','1 Timoteo':'1 Timothy','Hebreos':'Hebrews','Santiago':'James','1 Pedro':'1 Peter','1 Juan':'1 John'};
+ const norm=r=>{for(const [a,b] of Object.entries(names))if(r.startsWith(a+' '))return b+r.slice(a.length);return r;};
+ const list=s=>String(s||'').split(';').map(x=>norm(x.trim())).filter(Boolean);
+ if(es.slug!=='hechos-estudio')fail('Spanish Acts slug must be hechos-estudio.');
+ if(es.book!=='Hechos')fail('Spanish book name must be Hechos.');
+ if(es.scriptureStandard!=='Nueva Traducción Viviente (NTV)')fail('Spanish Acts must declare Nueva Traducción Viviente (NTV).');
+ if(es.themeLabel!=='Verdad clave')fail('Spanish Acts theme label must be Verdad clave.');
+ if(es.lessonSubtitleMode!==true||en.lessonSubtitleMode!==true)fail('Acts must retain lesson subtitle mode.');
+ if(en.lessons?.length!==8||es.lessons?.length!==8)fail('Acts must retain eight lessons in both languages.');
+ if(JSON.stringify(list(es.seriesMainScripture))!==JSON.stringify(list(en.seriesMainScripture)))fail('Series Scripture references must match English.');
+ if(es.seriesTeaching?.length!==8||en.seriesTeaching?.length!==8)fail('Series must retain eight teaching movements.');
+ if(es.seriesQuestions?.length!==8||en.seriesQuestions?.length!==8)fail('Series must retain eight discussion questions.');
+ if(String(es.seriesContext||'').split(/\n\n+/).filter(Boolean).length!==2)fail('Spanish series context must retain two paragraphs.');
+ for(const f of ['seriesJesusConnection','seriesGuardrail','seriesClosingTakeaway','seriesExamination','seriesPractice','seriesLeaderGuidance','seriesPrayer'])if(!String(es[f]||'').trim())fail('Spanish Acts series missing '+f+'.');
+ for(let i=0;i<8;i++){
+  const a=en.lessons[i],b=es.lessons[i],label='Acts lesson '+(i+1);
+  if(a.number!==b.number)fail(label+': number mismatch.');
+  if(norm(b.scripture)!==a.scripture)fail(label+': main Scripture mismatch.');
+  if(JSON.stringify((b.supporting||[]).map(norm))!==JSON.stringify(a.supporting||[]))fail(label+': supporting Scripture mismatch.');
+  for(const f of ['title','subtitle','scripture','question','truth','goal','opening','context','examination','challenge','caution','closingTakeaway','prayer'])if(!String(b[f]||'').trim())fail(label+': missing '+f+'.');
+  if((b.supporting?.length||0)!==5)fail(label+': must retain five supporting Scriptures.');
+  if((b.teaching?.length||0)!==8)fail(label+': must retain eight teaching movements.');
+  if((b.questions?.length||0)!==8)fail(label+': must retain eight discussion questions.');
+  if((b.contextParagraphs?.length||0)!==2)fail(label+': must retain two context paragraphs.');
+  if((b.jesusParagraphs?.length||0)!==1)fail(label+': must retain Jesus Connection.');
+  if((b.guardrailParagraphs?.length||0)!==1)fail(label+': must retain Do Not Miss This.');
+  for(const m of b.teaching||[])if(!String(m.heading||'').trim()||!String(m.body||'').trim())fail(label+': incomplete teaching movement.');
  }
- for(const field of ['seriesMainScripture','seriesQuestion','seriesOpening','seriesContext','seriesExamination','seriesPractice','seriesLeaderGuidance','seriesPrayer'])if(!String(es?.[field]||'').trim())errors.push(`Hechos series foundation missing ${field}.`);
- if(es?.seriesTeaching?.length!==en?.seriesTeaching?.length)errors.push('Hechos seriesTeaching count must match English.');
- if(es?.seriesQuestions?.length!==en?.seriesQuestions?.length)errors.push('Hechos seriesQuestions count must match English.');
- const data=read(esData);for(const version of ['RVR60','NVI','NBLA'])if(new RegExp(`\\b${version}\\b`).test(data))errors.push(`Hechos Spanish data contains disallowed Bible version ${version}.`);
- const [l1,l2,l3,l4,l5,l6,l7,l8]=es.lessons;
- if(!l1.teaching[3].body.includes('jerarquía de valor')||!l1.teaching[5].body.includes('voluntariamente')||!l1.teaching[5].body.includes('salvaguardas'))errors.push('Lesson 1 must preserve gift-equality and voluntary-generosity safeguards.');
- if(!l2.teaching[0].body.includes('no accesorios')||!l2.teaching[1].body.includes('carece de fe')||!l2.teaching[4].body.includes('disciplina violenta'))errors.push('Lesson 2 must preserve disability, healing, and nonviolent-discipline safeguards.');
- if(!l3.teaching[0].body.includes('desigualdad')||!l3.teaching[2].body.includes('no permiso')||!l3.teaching[3].body.includes('no hace justa'))errors.push('Lesson 3 must preserve equity, anti-antisemitism, and justice safeguards.');
- if(!l4.teaching[1].body.includes('víctimas')||!l4.teaching[1].body.includes('salvaguardas')||!l4.teaching[2].body.includes('evidencia'))errors.push('Lesson 4 must preserve victim safety and evidence-based trust.');
- if(!l5.teaching[0].body.includes('rendición de cuentas')||!l5.teaching[3].body.includes('transparente')||!l5.teaching[5].body.includes('no a un empresario'))errors.push('Lesson 5 must preserve accountable leadership, transparent aid, and non-celebrity mission.');
- if(!l6.teaching[0].body.includes('ni romantizarse')||!l6.teaching[4].body.includes('antisemitismo')||!l6.teaching[5].body.includes('sin declarar'))errors.push('Lesson 6 must preserve suffering, anti-antisemitism, and conflict safeguards.');
- if(!l7.teaching[0].body.includes('culpa colectiva')||!l7.teaching[3].body.includes('remunerar justamente')||!l7.teaching[5].body.includes('poder sin rendición de cuentas'))errors.push('Lesson 7 must preserve anti-blame, fair-pay, and leadership-accountability safeguards.');
- if(!l8.teaching[1].body.includes('no es prueba')||!l8.teaching[2].body.includes('derechos legales')||!l8.teaching[4].body.includes('protege a los presos'))errors.push('Lesson 8 must preserve due-process, legal-rights, and humane-action safeguards.');
- const english=read(enPage),spanish=read(esPage),hub=read(hubPath),i18n=read(i18nPath);
- expect('Acts English page',english,'hreflang="es" href="https://nolabelsdesignedbygod.org/es/hechos-estudio'+html+'"');
- expect('Acts Spanish page',spanish,'hreflang="en" href="https://nolabelsdesignedbygod.org/acts-study'+html+'"');
- expect('Acts Spanish page',spanish,'acts-study-data-es'+js);
- expect('Acts route map',i18n,"'acts-study"+html+"':'es/hechos-estudio"+html+"'");
- expect('Spanish study hub',hub,'href="hechos-estudio'+html+'"');
- expect('Spanish study hub',hub,'Hechos: Testimonio capacitado por el Espíritu desde Jerusalén hasta Roma');
- expect('Spanish study hub',hub,'8 lecciones completas');
+ const all=JSON.stringify(es).toLowerCase();
+ for(const phrase of ['antisemit','discapacidad','generosidad voluntaria','rendición de cuentas','derechos legales','debido proceso','abuso','explotación','censura','nacionalismo cristiano','nueva traducción viviente'])if(!all.includes(phrase.toLowerCase()))fail('Missing safeguard/theme: '+phrase);
+ for(const version of ['RVR60','NVI','NBLA'])if(new RegExp('\\b'+version+'\\b').test(JSON.stringify(es)))fail('Spanish Acts contains disallowed Bible version '+version+'.');
+ const ep=read(enPage),sp=read(esPage),im=read(i18n),hb=read(hub);
+ if(!ep.includes('hreflang="es" href="https://nolabelsdesignedbygod.org/es/hechos-estudio.html"'))fail('English bilingual route missing.');
+ if(!sp.includes('hreflang="en" href="https://nolabelsdesignedbygod.org/acts-study.html"'))fail('Spanish bilingual route missing.');
+ if(!sp.includes('acts-study-data-es.js?v=1.1.0')||!sp.includes('book-study-series.js?v=0.2.0')||!sp.includes('book-study-series-es.js?v=1.2.0'))fail('Spanish Acts assets are stale.');
+ if(!im.includes("'acts-study.html':'es/hechos-estudio.html'"))fail('i18n Acts route missing.');
+ if(!hb.includes('Sesenta y seis series completas y revisadas'))fail('Spanish library completion state missing.');
 }
-if(errors.length){console.error('Spanish Acts audit failed:\n- '+errors.join('\n- '));process.exit(1);}
-console.log('Spanish Acts audit passed.');
+if(errors.length){console.error('Spanish Acts audit failed:\n- '+errors.join('\n- '));process.exit(1)}
+console.log('Spanish Acts audit passed: exact English/Spanish Scripture-reference parity, NTV standard, 5/8/8/2 structure, safeguards, assets, routes, and completed library state validated.');

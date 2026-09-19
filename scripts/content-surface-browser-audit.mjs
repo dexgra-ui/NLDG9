@@ -31,7 +31,8 @@ const sitemapPaths=[
   'ancient-writing-jubilees.html',
   'ancient-writing-wisdom-solomon.html',
   'ancient-writing-sirach.html',
-  'ancient-writing-maccabees.html'
+  'ancient-writing-maccabees.html',
+  'ancient-writing-meqabyan.html'
 ];
 
 function expect(condition,success,failure){
@@ -62,7 +63,7 @@ try{
   await open('homepage','index.html');
   await page.waitForFunction(()=>document.querySelector('#home-latest')?.children.length>0,{timeout:5000}).catch(()=>{});
   const homeLatest=await page.locator('#home-latest').innerText().catch(()=>'');
-  expect(homeLatest.includes('1 and 2 Maccabees: Historical & Biblical Guide'),'Homepage Latest surfaces the newest Maccabees detailed guide.','Homepage Latest did not surface the newest Maccabees detailed guide after the shared library loaded.');
+  expect(homeLatest.includes('Ethiopian Meqabyan: Historical & Biblical Guide'),'Homepage Latest surfaces the newest Meqabyan detailed guide.','Homepage Latest did not surface the newest Meqabyan detailed guide after the shared library loaded.');
   const featuredSeries=await page.locator('#home-featured .content-series').allInnerTexts().catch(()=>[]);
   const latestSeries=await page.locator('#home-latest .content-series').allInnerTexts().catch(()=>[]);
   const duplicateSeries=latestSeries.filter(series=>series&&featuredSeries.includes(series));
@@ -142,6 +143,9 @@ try{
   const maccabeesCrossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('maccabees')?.href||'');
   expect(maccabeesCrossLinkHref==='ancient-writing-maccabees.html','The Maccabees cross-link registry routes to the detailed guide.',`The Maccabees cross-link registry routed to ${maccabeesCrossLinkHref}.`);
   expect((await page.locator('#maccabees a[href="ancient-writing-maccabees.html"]').count())===1,'The Maccabees overview card links to its detailed guide.','The Maccabees overview card is missing its detailed-guide link.');
+  const meqabyanCrossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('ethiopian-meqabyan')?.href||'');
+  expect(meqabyanCrossLinkHref==='ancient-writing-meqabyan.html','The Meqabyan cross-link registry routes to the detailed guide.',`The Meqabyan cross-link registry routed to ${meqabyanCrossLinkHref}.`);
+  expect((await page.locator('#ethiopian-meqabyan a[href="ancient-writing-meqabyan.html"]').count())===1,'The Meqabyan overview card links to its detailed guide.','The Meqabyan overview card is missing its detailed-guide link.');
 
   await open('1-enoch-guide','ancient-writing-1-enoch.html');
   const enochGuide=await page.locator('main').innerText();
@@ -266,11 +270,35 @@ try{
   expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=10,'Maccabees guide provides a substantial academic and primary source list.','Maccabees guide does not provide enough research sources.');
   expect((await page.locator('a[href="daniel-study.html"]').count())>=1&&(await page.locator('a[href="john-study.html"]').count())>=1&&(await page.locator('a[href="hebrews-study.html"]').count())>=1,'Maccabees guide links back to Daniel, John, and Hebrews studies.','Maccabees guide is missing Daniel, John, or Hebrews return links.');
   expect((await page.locator('a[href="ancient-writing-sirach.html"]').count())>=1,'Maccabees guide links back to the previous Sirach guide.','Maccabees guide is missing previous-guide navigation.');
+  expect((await page.locator('a[href="ancient-writing-meqabyan.html"]').count())>=1,'Maccabees guide links forward to the detailed Meqabyan guide.','Maccabees guide is missing its Meqabyan next-guide link.');
   await page.setViewportSize({width:390,height:844});
   expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Maccabees guide has no horizontal overflow at 390px.','Maccabees guide overflows horizontally at 390px.');
   const maccabeesInternalLink=page.locator('.detail-connection-list a').first();
   const maccabeesLinkBox=await maccabeesInternalLink.boundingBox();
   expect(Boolean(maccabeesLinkBox&&maccabeesLinkBox.height>=44),'Maccabees canonical-study links meet the 44px mobile touch target.','Maccabees canonical-study links are below the 44px mobile touch target.');
+  await page.setViewportSize({width:1440,height:1000});
+
+  await open('meqabyan-guide','ancient-writing-meqabyan.html');
+  const meqabyanGuide=await page.locator('main').innerText();
+  expect(meqabyanGuide.includes('Meqabyan is not Greek Maccabees'),'Meqabyan guide clearly distinguishes the Ethiopic books from Greek Maccabees.','Meqabyan guide is missing its central identity distinction.');
+  expect(meqabyanGuide.includes('What can be said with confidence?'),'Meqabyan guide separates established evidence from uncertain claims.','Meqabyan guide is missing its evidence-first section.');
+  expect(meqabyanGuide.includes('British Library Or. 505')&&meqabyanGuide.includes('British Library Or. 506'),'Meqabyan guide identifies concrete Ge\'ez manuscript witnesses.','Meqabyan guide is missing the British Library manuscript witnesses.');
+  expect(meqabyanGuide.includes('Dating is not secure')&&meqabyanGuide.includes('Authorship is not secure'),'Meqabyan guide explicitly marks dating and authorship uncertainty.','Meqabyan guide overstates dating or authorship certainty.');
+  expect(meqabyanGuide.includes('Why Ethiopian book counts can look confusing'),'Meqabyan guide explains variable Ethiopian canon counting.','Meqabyan guide is missing the canon-count explanation.');
+  expect(meqabyanGuide.includes('A working orientation, not a pretend critical edition')&&meqabyanGuide.includes('1 Meqabyan')&&meqabyanGuide.includes('2 Meqabyan')&&meqabyanGuide.includes('3 Meqabyan'),'Meqabyan guide orients readers to all three books while labeling the outline provisional.','Meqabyan guide is missing its three-book orientation.');
+  expect(meqabyanGuide.includes('Meqabyan and Greek Maccabees side by side'),'Meqabyan guide includes a direct comparison with Greek Maccabees.','Meqabyan guide is missing the Greek Maccabees comparison.');
+  expect(meqabyanGuide.includes('No Greek-Maccabees substitution.')&&meqabyanGuide.includes('Antiochus IV, Judas Maccabeus, and the Temple rededication'),'Meqabyan guide guards against mislabeled Greek Maccabees editions.','Meqabyan guide is missing the Greek-Maccabees substitution guardrail.');
+  expect(meqabyanGuide.includes('Say whose canon you mean'),'Meqabyan guide presents tradition-specific canonical reception.','Meqabyan guide is missing tradition-specific canon framing.');
+  expect(meqabyanGuide.includes('NLDG is not reproducing complete Meqabyan translations yet.'),'Meqabyan guide defers full-text reproduction pending source verification.','Meqabyan guide does not clearly defer full-text reproduction.');
+  expect(!meqabyanGuide.includes('Phase 2'),'Meqabyan public guide omits internal development-phase language.','Meqabyan public guide exposes internal Phase 2 language.');
+  expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=9,'Meqabyan guide provides a substantial academic, church, and manuscript source list.','Meqabyan guide does not provide enough research sources.');
+  expect((await page.locator('a[href="first-kings-study.html"]').count())>=1&&(await page.locator('a[href="daniel-study.html"]').count())>=1&&(await page.locator('a[href="hebrews-study.html"]').count())>=1,'Meqabyan guide links back to 1 Kings, Daniel, and Hebrews studies.','Meqabyan guide is missing 1 Kings, Daniel, or Hebrews return links.');
+  expect((await page.locator('a[href="ancient-writing-maccabees.html"]').count())>=1,'Meqabyan guide links back to the separate Maccabees guide.','Meqabyan guide is missing previous-guide navigation.');
+  await page.setViewportSize({width:390,height:844});
+  expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Meqabyan guide has no horizontal overflow at 390px.','Meqabyan guide overflows horizontally at 390px.');
+  const meqabyanInternalLink=page.locator('.detail-connection-list a').first();
+  const meqabyanLinkBox=await meqabyanInternalLink.boundingBox();
+  expect(Boolean(meqabyanLinkBox&&meqabyanLinkBox.height>=44),'Meqabyan canonical-study links meet the 44px mobile touch target.','Meqabyan canonical-study links are below the 44px mobile touch target.');
   await page.setViewportSize({width:1440,height:1000});
 
   await open('other-ancient-writings-mobile','other-ancient-writings.html');
@@ -314,6 +342,10 @@ try{
   await page.waitForTimeout(250);
   const maccabeesSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
   expect(maccabeesSearchResults.includes('1 and 2 Maccabees: Historical & Biblical Guide'),'Search finds the detailed Maccabees guide.','Search did not find the detailed Maccabees guide.');
+  await search.fill('Meqabyan');
+  await page.waitForTimeout(250);
+  const meqabyanSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
+  expect(meqabyanSearchResults.includes('Ethiopian Meqabyan: Historical & Biblical Guide'),'Search finds the detailed Meqabyan guide.','Search did not find the detailed Meqabyan guide.');
 
 
   await open('site-map','site-map.html');
@@ -328,6 +360,7 @@ try{
   expect(siteMapText.includes('Wisdom of Solomon: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Wisdom of Solomon guide.','Generated Site Map index is missing the detailed Wisdom of Solomon guide.');
   expect(siteMapText.includes('Sirach: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Sirach guide.','Generated Site Map index is missing the detailed Sirach guide.');
   expect(siteMapText.includes('1 and 2 Maccabees: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Maccabees guide.','Generated Site Map index is missing the detailed Maccabees guide.');
+  expect(siteMapText.includes('Ethiopian Meqabyan: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Meqabyan guide.','Generated Site Map index is missing the detailed Meqabyan guide.');
   expect((await page.locator('.site-map-grid a[href="other-ancient-writings.html"]').count())>0,'Manual Site Map Bible Studies section links Other Ancient Writings.','Manual Site Map is missing Other Ancient Writings.');
 
 

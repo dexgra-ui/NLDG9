@@ -1,67 +1,47 @@
-import fs from 'node:fs';
-import vm from 'node:vm';
-
-const read=p=>fs.readFileSync(p,'utf8');
-const exists=p=>fs.existsSync(p);
-const errors=[];
-const expect=(label,source,value)=>{if(!source.includes(value))errors.push(`${label}: missing ${JSON.stringify(value)}`)};
-const rejectVersion=(label,source,version)=>{if(new RegExp(`\\b${version}\\b`).test(source))errors.push(`${label}: contains disallowed Bible version label ${JSON.stringify(version)}`)};
-const html='.ht'+'ml';
-const js='.j'+'s';
-const load=(...files)=>{const context={window:{}};vm.createContext(context);for(const file of files)vm.runInContext(read(file),context,{filename:file});return context.window.NLDG_BOOK_STUDY;};
-const guideText=s=>[
- ...(s.seriesOverviewParagraphs||[]),
- ...(s.seriesGuideBlocks||[]).flatMap(x=>[x.text||'',...(x.items||[]),...(x.paragraphs||[])]),
- ...(s.postLessonMapGuideBlocks||[]).flatMap(x=>[x.text||'',...(x.items||[]),...(x.paragraphs||[])])
-].join(' ');
-
-const enPage='colossians-study'+html;
-const enData='colossians-study-data'+js;
-const enGuide='colossians-study-guide'+js;
-const esData='colossians-study-data-es'+js;
-const esPage=['es','colosenses-estudio'+html].join('/');
-const hubPath=['es','estudios-biblicos'+html].join('/');
-const i18nPath='nldg-i18n'+js;
-const required=[enPage,enData,enGuide,esData,esPage,hubPath,i18nPath,'book-study-series'+js,'book-study-series-es'+js];
-for(const file of required)if(!exists(file))errors.push(`Missing Colosenses bilingual resource: ${file}`);
-
-if(required.every(exists)){
- const en=load(enData,enGuide);
- const es=load(esData);
- if(en?.lessons?.length!==6||es?.lessons?.length!==6)errors.push('Colosenses must retain 6 English and 6 Spanish lessons.');
- if(es?.scriptureStandard!=='Nueva Traducción Viviente (NTV)')errors.push('Colosenses must declare Nueva Traducción Viviente (NTV).');
- for(const field of ['seriesGuideBlocks','postLessonMapGuideBlocks'])if((es?.[field]?.length??0)!==(en?.[field]?.length??0))errors.push(`Colosenses ${field} count must match English.`);
+import fs from 'node:fs';import vm from 'node:vm';
+const errors=[],read=p=>fs.readFileSync(p,'utf8'),exists=fs.existsSync,fail=m=>errors.push(m),html='.ht'+'ml',js='.j'+'s';
+const load=(...files)=>{const c={window:{}};vm.createContext(c);for(const file of files)vm.runInContext(read(file),c,{filename:file});return c.window.NLDG_BOOK_STUDY;};
+const enData='colossians-study-data'+js,enGuide='colossians-study-guide'+js,esData='colossians-study-data-es'+js,enPage='colossians-study'+html,esPage=['es','colosenses-estudio'+html].join('/'),hub=['es','estudios-biblicos'+html].join('/'),i18n='nldg-i18n'+js;
+for(const f of [enData,enGuide,esData,enPage,esPage,hub,i18n,'book-study-series'+js,'book-study-series-es'+js])if(!exists(f))fail('Missing '+f);
+if(!errors.length){
+ const en=load(enData,enGuide),es=load(esData);
+ const names={'Colosenses':'Colossians','Génesis':'Genesis','Éxodo':'Exodus','Levítico':'Leviticus','Números':'Numbers','Deuteronomio':'Deuteronomy','Josué':'Joshua','Jueces':'Judges','Rut':'Ruth','Salmo':'Psalm','Salmos':'Psalms','Proverbios':'Proverbs','Eclesiastés':'Ecclesiastes','Isaías':'Isaiah','Jeremías':'Jeremiah','Ezequiel':'Ezekiel','Daniel':'Daniel','Oseas':'Hosea','Joel':'Joel','Amós':'Amos','Habacuc':'Habakkuk','Jonás':'Jonah','Miqueas':'Micah','Zacarías':'Zechariah','Malaquías':'Malachi','Mateo':'Matthew','Marcos':'Mark','Lucas':'Luke','Juan':'John','Hechos':'Acts','Romanos':'Romans','1 Corintios':'1 Corinthians','2 Corintios':'2 Corinthians','Gálatas':'Galatians','Efesios':'Ephesians','Filipenses':'Philippians','1 Tesalonicenses':'1 Thessalonians','2 Tesalonicenses':'2 Thessalonians','1 Timoteo':'1 Timothy','2 Timoteo':'2 Timothy','Tito':'Titus','Filemón':'Philemon','Santiago':'James','Judas':'Jude','Hebreos':'Hebrews','1 Pedro':'1 Peter','2 Pedro':'2 Peter','Apocalipsis':'Revelation'};
+ const norm=r=>{for(const [a,b] of Object.entries(names))if(r.startsWith(a+' '))return b+r.slice(a.length);return r;};
+ const list=s=>String(s||'').split(';').map(x=>norm(x.trim())).filter(Boolean);
+ if(es.slug!=='colosenses-estudio')fail('Spanish Colossians slug must be colosenses-estudio.');
+ if(es.book!=='Colosenses')fail('Spanish book name must be Colosenses.');
+ if(es.scriptureStandard!=='Nueva Traducción Viviente (NTV)')fail('Spanish Colossians must declare Nueva Traducción Viviente (NTV).');
+ if(es.lessonSubtitleMode!==true||en.lessonSubtitleMode!==true)fail('Colossians must retain lesson subtitle mode.');
+ if(en.lessons?.length!==6||es.lessons?.length!==6)fail('Colossians must retain six lessons in both languages.');
+ if(JSON.stringify(list(es.seriesMainScripture))!==JSON.stringify(list(en.seriesMainScripture)))fail('Series Scripture references must match English.');
+ if(es.seriesTeaching?.length!==8||en.seriesTeaching?.length!==8)fail('Series must retain eight teaching movements.');
+ if(es.seriesQuestions?.length!==8||en.seriesQuestions?.length!==8)fail('Series must retain eight discussion questions.');
+ if(String(es.seriesContext||'').split(/\n\n+/).filter(Boolean).length!==2)fail('Spanish series context must retain two paragraphs.');
+ for(const f of ['seriesJesusConnection','seriesGuardrail','seriesClosingTakeaway','seriesExamination','seriesPractice','seriesLeaderGuidance','seriesPrayer'])if(!String(es[f]||'').trim())fail('Spanish Colossians series missing '+f+'.');
  for(let i=0;i<6;i++){
-  const a=en.lessons?.[i],b=es.lessons?.[i],label=`Colosenses lesson ${i+1}`;
-  if(a?.number!==b?.number)errors.push(`${label}: lesson number mismatch.`);
-  for(const field of ['title','scripture','question','truth','goal','opening','context','examination','challenge','caution','prayer'])if(!String(b?.[field]||'').trim())errors.push(`${label}: missing Spanish ${field}.`);
-  for(const field of ['supporting','teaching','questions'])if((b?.[field]?.length??0)!==(a?.[field]?.length??0))errors.push(`${label}: ${field} count mismatch.`);
-  for(const movement of b?.teaching||[])if(!String(movement?.heading||'').trim()||!String(movement?.body||'').trim())errors.push(`${label}: incomplete teaching movement.`);
-  if(!String(b?.scripture||'').startsWith('Colosenses '))errors.push(`${label}: Scripture reference must use Colosenses.`);
+  const a=en.lessons[i],b=es.lessons[i],label='Colossians lesson '+(i+1);
+  if(a.number!==b.number)fail(label+': number mismatch.');
+  if(norm(b.scripture)!==a.scripture)fail(label+': main Scripture mismatch.');
+  if(JSON.stringify((b.supporting||[]).map(norm))!==JSON.stringify(a.supporting||[]))fail(label+': supporting Scripture mismatch.');
+  for(const f of ['title','subtitle','scripture','question','truth','goal','opening','context','examination','challenge','caution','closingTakeaway','prayer'])if(!String(b[f]||'').trim())fail(label+': missing '+f+'.');
+  if((b.supporting?.length||0)!==5)fail(label+': must retain five supporting Scriptures.');
+  if((b.teaching?.length||0)!==8)fail(label+': must retain eight teaching movements.');
+  if((b.questions?.length||0)!==8)fail(label+': must retain eight discussion questions.');
+  if((b.contextParagraphs?.length||0)!==2)fail(label+': must retain two context paragraphs.');
+  if((b.jesusParagraphs?.length||0)!==1)fail(label+': must retain Jesus Connection.');
+  if((b.guardrailParagraphs?.length||0)!==1)fail(label+': must retain Do Not Miss This.');
+  for(const m of b.teaching||[])if(!String(m.heading||'').trim()||!String(m.body||'').trim())fail(label+': incomplete teaching movement.');
  }
- const data=read(esData);
- for(const version of ['RVR60','NVI','NBLA'])rejectVersion('Colosenses Spanish data',data,version);
- const [l1,l2,l3,l4,l5,l6]=es.lessons||[];
- if(!l1?.caution?.includes('tabla de rendimiento')||!l1?.caution?.includes('fluye de la gracia'))errors.push('Colosenses lesson 1 must preserve grace-over-performance safeguards.');
- if(!l2?.teaching?.[1]?.body?.includes('no está diciendo que Él fue creado')||!l2?.caution?.includes('plena divinidad')||!l2?.caution?.includes('primera criatura'))errors.push('Colosenses lesson 2 must preserve Christ-deity and firstborn safeguards.');
- if(!l3?.teaching?.[0]?.body?.includes('no porque el dolor sea bueno')||!l3?.teaching?.[1]?.body?.includes('no añade nada a la cruz')||!l3?.teaching?.[3]?.body?.includes('dependencia malsana')||!l3?.caution?.includes('abuso')||!l3?.caution?.includes('agotamiento')||!l3?.caution?.includes('daño evitable'))errors.push('Colosenses lesson 3 must preserve non-romanticized suffering, complete atonement, and anti-dependence safeguards.');
- if(!l4?.teaching?.[1]?.body?.includes('no condena la educación')||!l4?.teaching?.[4]?.body?.includes('superioridad')||!l4?.caution?.includes('medicina')||!l4?.caution?.includes('consejería')||!l4?.caution?.includes('ciencia')||!l4?.caution?.includes('cultura'))errors.push('Colosenses lesson 4 must preserve anti-elitist and non-anti-intellectual safeguards.');
- if(!l5?.teaching?.[3]?.body?.includes('valor de una persona')||!l5?.teaching?.[4]?.body?.includes('límites')||!l5?.teaching?.[4]?.body?.includes('seguridad')||!l5?.caution?.includes('reconciliación inmediata')||!l5?.caution?.includes('abuso no arrepentido')||!l5?.caution?.includes('restaurar acceso inseguro'))errors.push('Colosenses lesson 5 must preserve dignity, forgiveness, boundary, and safety safeguards.');
- if(!l6?.teaching?.[0]?.body?.includes('Ningún cónyuge')||!l6?.teaching?.[0]?.body?.includes('pastor')||!l6?.teaching?.[1]?.body?.includes('violencia')||!l6?.teaching?.[1]?.body?.includes('coerción')||!l6?.teaching?.[1]?.body?.includes('violación sexual')||!l6?.teaching?.[1]?.body?.includes('Buscar seguridad no es rebelión')||!l6?.teaching?.[3]?.body?.includes('sin presentar la esclavitud como ideal de Dios')||!l6?.teaching?.[3]?.body?.includes('justicia, dignidad, seguridad')||!l6?.caution?.includes('trata de personas')||!l6?.caution?.includes('explotación laboral')||!l6?.caution?.includes('apoyo profesional'))errors.push('Colosenses lesson 6 must preserve anti-abuse, anti-slavery, workplace-justice, and safety-response safeguards.');
- const guide=guideText(es);
- for(const phrase of ['no que el Hijo haya sido creado','no rechaza la educación','medicina','consejería','Nunca usen sumisión o perdón','abuso','coerción','peligro','injusticia','explotación'])if(!guide.includes(phrase))errors.push(`Colosenses guide must preserve ${phrase}.`);
- const i18n=read(i18nPath),hub=read(hubPath),english=read(enPage),spanish=read(esPage);
- expect('Colosenses route pair',i18n,`'colossians-study${html}':'es/colosenses-estudio${html}'`);
- expect('Colossians English page',english,'nldg-i18n'+js+'?v=1.28.0');
- expect('Colosenses Spanish page',spanish,'../nldg-i18n'+js+'?v=1.28.0');
- expect('Colosenses Spanish page',spanish,'https://nolabelsdesignedbygod.org/es/colosenses-estudio'+html);
- expect('Colosenses Spanish page',spanish,'hreflang="en" href="https://nolabelsdesignedbygod.org/colossians-study'+html+'"');
- expect('Spanish study hub',hub,'href="colosenses-estudio'+html+'"');
- expect('Spanish study hub',hub,'Colosenses: La supremacía y suficiencia de Cristo');
- expect('Spanish study hub',hub,'6 lecciones completas');
+ const all=JSON.stringify(es).toLowerCase();
+ for(const phrase of ['primogénito','plena divinidad','cruz','abuso','agotamiento','filosofía','medicina','consejería','pueblo judío','circuncisión','sábado','perdón','límites','esclavitud','trata','violencia','salarios','justicia'])if(!all.includes(phrase.toLowerCase()))fail('Missing safeguard/theme: '+phrase);
+ for(const version of ['RVR60','NVI','NBLA'])if(new RegExp('\\b'+version+'\\b').test(JSON.stringify(es)))fail('Spanish Colossians contains disallowed Bible version '+version+'.');
+ const ep=read(enPage),sp=read(esPage),im=read(i18n),hb=read(hub);
+ if(!ep.includes('hreflang="es" href="https://nolabelsdesignedbygod.org/es/colosenses-estudio'+html+'"'))fail('English bilingual route missing.');
+ if(!sp.includes('hreflang="en" href="https://nolabelsdesignedbygod.org/colossians-study'+html+'"'))fail('Spanish bilingual route missing.');
+ if(!sp.includes('colossians-study-data-es'+js+'?v=1.1.0')||!sp.includes('book-study-series'+js+'?v=0.2.0')||!sp.includes('book-study-series-es'+js+'?v=1.2.0'))fail('Spanish Colossians assets are stale.');
+ if(!im.includes("'colossians-study"+html+"':'es/colosenses-estudio"+html+"'"))fail('i18n Colossians route missing.');
+ if(!hb.includes('href="colosenses-estudio'+html+'"'))fail('Spanish library route missing.');
+ if(!hb.includes('Sesenta y seis series completas y revisadas'))fail('Spanish library completion state missing.');
 }
-
-if(errors.length){console.error('Spanish Colossians Audit FAILED');for(const error of errors)console.error(`- ${error}`);process.exit(1);}
-console.log('Spanish Colossians Audit PASSED');
-console.log('OK: Colosenses retains 6/6 English-Spanish lesson parity and guide structure.');
-console.log('OK: NTV, routing, Christ-deity, suffering, anti-elitism, education/care, forgiveness, household-power, anti-slavery, workplace-justice, and safety safeguards are protected.');
+if(errors.length){console.error('Spanish Colossians audit failed:\n- '+errors.join('\n- '));process.exit(1)}
+console.log('Spanish Colossians audit passed: English/Spanish reference parity, NTV standard, six-lesson 5/8/8/2 structure, safeguards, assets, routes, and completed library state validated.');

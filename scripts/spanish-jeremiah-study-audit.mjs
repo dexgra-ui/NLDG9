@@ -14,52 +14,71 @@ if(book?.status!=='published')fail('Jeremiah must be marked published in the Spa
 
 if(!errors.length){
  const en=load(enData,enGuide),es=load(esData);
+ const names={'Jeremías':'Jeremiah','Éxodo':'Exodus','Isaías':'Isaiah','Ezequiel':'Ezekiel','1 Timoteo':'1 Timothy','Santiago':'James','Deuteronomio':'Deuteronomy','Oseas':'Hosea','Juan':'John','Romanos':'Romans','Apocalipsis':'Revelation','1 Samuel':'1 Samuel','Miqueas':'Micah','Mateo':'Matthew','Salmo':'Psalm','2 Corintios':'2 Corinthians','1 Juan':'1 John','2 Reyes':'2 Kings','1 Tesalonicenses':'1 Thessalonians','1 Pedro':'1 Peter','Lucas':'Luke','Hebreos':'Hebrews','Hechos':'Acts','2 Timoteo':'2 Timothy','Génesis':'Genesis','Abdías':'Obadiah'};
+ const norm=r=>{for(const [a,b] of Object.entries(names))if(r.startsWith(a+' '))return b+r.slice(a.length);return r;};
  if(es?.slug!=='jeremias-estudio')fail('Spanish Jeremiah slug must be jeremias-estudio.');
  if(es?.book!=='Jeremías')fail('Spanish book name must be Jeremías.');
  if(es?.scriptureStandard!=='Nueva Traducción Viviente (NTV)')fail('Spanish Jeremiah must declare Nueva Traducción Viviente (NTV).');
  if(en?.lessons?.length!==8||es?.lessons?.length!==8)fail('Jeremiah must retain eight lessons in both languages.');
- const fields=['title','scripture','question','truth','goal','opening','context','examination','challenge','caution','prayer'];
+ const expectedEn=['Jeremiah 1','Jeremiah 2–6','Jeremiah 7–13','Jeremiah 14–20','Jeremiah 21–29','Jeremiah 30–35','Jeremiah 36–45','Jeremiah 46–52'];
+ const expectedEs=['Jeremías 1','Jeremías 2–6','Jeremías 7–13','Jeremías 14–20','Jeremías 21–29','Jeremías 30–35','Jeremías 36–45','Jeremías 46–52'];
+ const fields=['title','subtitle','scripture','question','truth','goal','opening','context','examination','challenge','caution','closingTakeaway','prayer'];
  for(let i=0;i<8;i++){
   const a=en.lessons[i],b=es.lessons[i],label=`Jeremiah lesson ${i+1}`;
   if(a?.number!==b?.number)fail(`${label}: lesson number mismatch.`);
+  if(a?.scripture!==expectedEn[i]||b?.scripture!==expectedEs[i])fail(`${label}: full-book Scripture range mismatch.`);
+  if(norm(b.scripture)!==a.scripture)fail(`${label}: main Scripture range must match English.`);
+  if(JSON.stringify((b.supporting||[]).map(norm))!==JSON.stringify(a.supporting||[]))fail(`${label}: supporting passages must match English exactly.`);
   for(const field of fields)if(!String(b?.[field]||'').trim())fail(`${label}: missing ${field}.`);
-  for(const field of ['supporting','teaching','questions'])if((b?.[field]?.length??-1)!==(a?.[field]?.length??0))fail(`${label}: ${field} count must match English.`);
-  for(const move of b?.teaching||[])if(!move?.heading?.trim()||!move?.body?.trim())fail(`${label}: incomplete teaching movement.`);
+  for(const field of ['supporting','teaching','questions','jesusParagraphs','guardrailParagraphs'])if((b?.[field]?.length??-1)!==(a?.[field]?.length??0))fail(`${label}: ${field} count must match English.`);
+  if((b?.supporting?.length??0)!==5)fail(`${label}: must retain exactly five supporting passages.`);
+  if((b?.teaching?.length??0)!==8)fail(`${label}: must retain eight text-grounded teaching movements.`);
+  if((b?.questions?.length??0)!==8)fail(`${label}: must retain eight passage-based questions.`);
+  if((b?.contextParagraphs?.length??0)!==2)fail(`${label}: must retain two Scripture-context paragraphs.`);
+  for(const move of b?.teaching||[])if(!move?.heading?.trim()||!move?.body?.trim()||!(move?.paragraphs?.length))fail(`${label}: incomplete teaching movement.`);
   if(!String(b?.scripture||'').startsWith('Jeremías '))fail(`${label}: Scripture reference must begin with Jeremías.`);
  }
- for(const field of ['themeLabel','seriesPurposeLabel','lessonPurposeLabel','recommendedRhythm','facilitatorSafeguards','howToReadTogether','seriesPrayer'])if(!String(es?.[field]||'').trim())fail(`Spanish Jeremiah missing ${field}.`);
+ if(es?.themeLabel!=='Verdad clave')fail('Jeremiah theme label must be Verdad clave.');
+ if(es?.lessonSubtitleMode!==true)fail('Jeremiah must retain lesson subtitle mode.');
+ for(const field of ['seriesMainScripture','seriesQuestion','seriesOpening','seriesContext','seriesExamination','seriesPractice','seriesLeaderGuidance','seriesPrayer','seriesJesusConnection','seriesGuardrail','seriesClosingTakeaway'])if(!String(es?.[field]||'').trim())fail(`Jeremiah series foundation missing ${field}.`);
+ if((es?.seriesTeaching?.length??0)!==8||(en?.seriesTeaching?.length??0)!==8)fail('Jeremiah series guide must retain eight teaching movements.');
+ if((es?.seriesQuestions?.length??0)!==8||(en?.seriesQuestions?.length??0)!==8)fail('Jeremiah series guide must retain eight discussion questions.');
+
  const raw=read(esData),all=JSON.stringify(es);
  for(const version of ['RVR60','NVI','NBLA'])if(new RegExp(`\\b${version}\\b`).test(raw))fail(`Spanish Jeremiah contains disallowed Bible version ${version}.`);
  const safeguards=[
-  ['prophecy not weaponized',['No uses el lenguaje profético como arma contra opositores modernos','no equipares desacuerdo con rebelión contra Dios']],
-  ['critics not enemies',['no da permiso para tratar a cada crítico como enemigo de Dios']],
-  ['institutions and justice',['Las instituciones no pueden reemplazar justicia y arrepentimiento','La pertenencia religiosa, un edificio, una denominación o una reputación cristiana nunca excusan abuso']],
-  ['immigrants orphans widows',['Dios nombra específicamente a inmigrantes, huérfanos y viudas']],
-  ['child safeguarding',['La protección infantil tiene prioridad sobre la imagen institucional']],
-  ['prophetic accountability',['Nunca uses «Dios me dijo» para silenciar preguntas','Los líderes siguen sujetos a rendición de cuentas']],
-  ['political and medical manipulation',['manipular votos, dinero, relaciones, tratamientos médicos o decisiones de seguridad']],
-  ['religious abuse',['El abuso espiritual, físico o institucional no se vuelve santo porque lo cometa una autoridad religiosa']],
-  ['despair and suicide safety',['pensamientos suicidas, prioriza seguridad inmediata, compañía y apoyo profesional de crisis']],
-  ['suffering not proof of obedience',['Nadie debe permanecer en peligro para probar obediencia']],
-  ['displacement dignity',['refugiados, inmigrantes y desplazados','desplazamiento es bueno']],
-  ['faithful presence not nationalism',['sin nacionalismo ni dominio religioso','lealtad partidista o silencio ante injusticia']],
-  ['Jeremiah 29:11 in context',['Jeremías 29:11 habla a una comunidad que enfrenta un exilio largo','no promete éxito individual instantáneo, riqueza, ausencia de enfermedad ni el cumplimiento de cada sueño personal']],
-  ['Jewish identity and new covenant',['sin borrar la identidad judía, fomentar antisemitismo','como si Dios hubiera rechazado a Israel']],
-  ['forgiveness and safe boundaries',['el perdón no obliga acceso inseguro','No conviertas el perdón en secreto, impunidad, reconciliación forzada']],
-  ['Jerusalem tragedy',['La destrucción de Jerusalén se narra como tragedia, no entretenimiento','Nunca debe alimentar antisemitismo, nacionalismo cristiano ni deleite en el sufrimiento civil']],
-  ['survivor and displaced care',['Cuidado de sobrevivientes y desplazados','seguridad, vivienda, alimento, atención médica, salud mental, apoyo legal y acompañamiento a largo plazo']],
-  ['disaster victim blaming',['no declares que una guerra, huracán, enfermedad, pobreza o muerte moderna demuestra culpa específica']],
-  ['civilian suffering dignity',['El sufrimiento civil merece lamento, protección y ayuda, no satisfacción religiosa']],
-  ['qualified care',['apoyo pastoral, médico, de salud mental, legal o de protección']]
+  ['calling accountability',['El llamado nunca hace intocable a un profeta','Ningún líder moderno puede usar llamado para quedar por encima de prueba']],
+  ['critics not enemies',['La oposición no demuestra automáticamente','sus críticos sean enemigos de Dios']],
+  ['sexualized metaphor care',['Las metáforas sexualizadas requieren cuidado pastoral','No uses metáforas sexuales del pacto para avergonzar mujeres o sobrevivientes']],
+  ['ancient paths not nostalgia',['Las sendas antiguas son fidelidad del pacto, no nostalgia']],
+  ['institutional accountability',['«Templo del SEÑOR» se vuelve falsa seguridad','Ninguna iglesia, denominación o ministerio queda fuera de rendición de cuentas']],
+  ['child safeguarding',['Tofet muestra el horror de sacrificar niños','prioriza protección y denuncia obligatoria']],
+  ['balm not cure formula',['«¿No hay bálsamo en Galaad?» es lamento, no fórmula de cura']],
+  ['potter conditional',['El pasaje del Alfarero es explícitamente condicional','El Alfarero es Dios, no un controlador humano']],
+  ['Pashhur abuse',['La violencia de Pasur es abuso de autoridad']],
+  ['suicide safety',['desea no haber nacido','intención suicida actual, plan, medios o incapacidad para mantenerse a salvo']],
+  ['Jeremiah 29 context',['Jeremías 29:11 habla a esa comunidad dentro de setenta años','no promete prosperidad individual instantánea']],
+  ['yoke not tyranny',['No uses el yugo para exigir sumisión a abuso o tiranía']],
+  ['new covenant Israel Judah',['El nuevo pacto es hecho con Israel y Judá','sin declarar obsoleta la identidad judía']],
+  ['forgiveness boundaries',['El perdón no obliga acceso','el nuevo pacto para borrar a Israel']],
+  ['slavery reversal',['La libertad dada y luego revocada expone hipocresía']],
+  ['Rechabites not universal rule',['Los recabitas muestran constancia, no regla universal']],
+  ['Ebed-melech dignity',['Ebed-melec usa su acceso para rescatar','Un extranjero a la élite de Judá actúa con valentía moral']],
+  ['Jerusalem tragedy',['La caída de Jerusalén es catástrofe, no entretenimiento','nunca debe alimentar antisemitismo']],
+  ['safety plan dignity',['el paso fiel puede ser planificar seguridad','No equipares un plan de seguridad con cobardía']],
+  ['nation oracles not ethnic hate',['Las naciones son responsables sin volverse blancos de odio étnico','No autorizan a tratar egipcios, palestinos, jordanos, sirios, árabes']],
+  ['Babylon providence accountability',['Babilonia es usada por Dios y también juzgada','nunca coloca a una nación, ejército, institución o gobernante fuera de responsabilidad moral']],
+  ['vengeance not Christian violence',['No autoriza venganza privada, milicias, terrorismo']],
+  ['qualified care',['Nunca prometas confidencialidad absoluta','deberes de protección','seguridad inmediata y apoyo calificado']]
  ];
  for(const [label,phrases] of safeguards)for(const phrase of phrases)if(!all.includes(phrase))fail(`Jeremiah safeguard missing ${label}: ${phrase}.`);
+
  const english=read(enPage),spanish=read(esPage),hub=read(hubPath),i18n=read(i18nPath);
  if(!english.includes('hreflang="es" href="https://nolabelsdesignedbygod.org/es/jeremias-estudio'+html+'"'))fail('English Jeremiah page must link Spanish alternate.');
- if(!english.includes('nldg-i18n'+js+'?v=1.61.0'))fail('English Jeremiah page must load current language switcher.');
- for(const marker of ['<html lang="es"','https://nolabelsdesignedbygod.org/es/jeremias-estudio'+html,'hreflang="en" href="https://nolabelsdesignedbygod.org/jeremiah-study'+html+'"','../jeremiah-study-data-es'+js+'?v=1.0.0','../book-study-series-es'+js+'?v=1.1.0','../nldg-i18n'+js+'?v=1.61.0'])if(!spanish.includes(marker))fail(`Spanish Jeremiah page missing ${marker}.`);
+ if(!english.includes('jeremiah-study-data'+js+'?v=1.1.0')||!english.includes('jeremiah-study-guide'+js+'?v=1.1.0')||!english.includes('book-study-series'+js+'?v=0.2.0'))fail('English Jeremiah page must load corrected study assets.');
+ for(const marker of ['<html lang="es"','https://nolabelsdesignedbygod.org/es/jeremias-estudio'+html,'hreflang="en" href="https://nolabelsdesignedbygod.org/jeremiah-study'+html+'"','../jeremiah-study-data-es'+js+'?v=1.1.0','../book-study-series'+js+'?v=0.2.0','../book-study-series-es'+js+'?v=1.2.0','../nldg-i18n'+js+'?v=1.61.0'])if(!spanish.includes(marker))fail(`Spanish Jeremiah page missing ${marker}.`);
  if(!i18n.includes("'jeremiah-study"+html+"':'es/jeremias-estudio"+html+"'"))fail('Jeremiah bilingual route is missing.');
- if(!hub.includes('href="jeremias-estudio'+html+'"'))fail('Spanish Jeremiah library card is missing.');
- if(!hub.includes('cincuenta y una series completas y revisadas'))fail('Spanish library count must be fifty-one series.');
+ if(!hub.includes('Sesenta y seis series completas y revisadas'))fail('Spanish library must describe all sixty-six series.');
 }
 if(errors.length){console.error('Spanish Jeremiah study audit failed:');for(const error of errors)console.error(`- ${error}`);process.exit(1);}
 console.log('Spanish Jeremiah study audit passed.');

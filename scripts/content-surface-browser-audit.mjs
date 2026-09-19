@@ -149,6 +149,7 @@ try{
   const enochLinkBox=await enochInternalLink.boundingBox();
   expect(Boolean(enochLinkBox&&enochLinkBox.height>=44),'1 Enoch canonical-study links meet the 44px mobile touch target.','1 Enoch canonical-study links are below the 44px mobile touch target.');
   await page.setViewportSize({width:1440,height:1000});
+  await open('other-ancient-writings-mobile','other-ancient-writings.html');
   await page.setViewportSize({width:390,height:844});
   expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Ancient Writings has no horizontal overflow at 390px.','Ancient Writings overflows horizontally at 390px.');
   const firstAncientLink=page.locator('.ancient-links a').first();

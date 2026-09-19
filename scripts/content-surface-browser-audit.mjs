@@ -83,6 +83,17 @@ try{
   expect(ancientMain.includes(exactNotice),'Ancient Writings includes the required canonical-status notice.','Ancient Writings is missing the required introductory notice.');
   expect((await page.locator('.ancient-section').count())===3,'Ancient Writings has the three requested major sections.','Ancient Writings does not have exactly three major content sections.');
   expect((await page.locator('[data-ancient-writing-id]').count())===13,'Ancient Writings renders all 13 phase-one overview cards.',`Ancient Writings rendered ${await page.locator('[data-ancient-writing-id]').count()} overview cards instead of 13.`);
+  const ancientCardCompleteness=await page.locator('[data-ancient-writing-id]').evaluateAll(cards=>cards.map(card=>({
+    title:card.querySelector('h3')?.textContent?.trim()||'untitled',
+    hasDate:[...card.querySelectorAll('dt')].some(dt=>dt.textContent?.includes('Date')),
+    hasCanon:[...card.querySelectorAll('dt')].some(dt=>dt.textContent?.includes('Canonical status')),
+    hasConnection:[...card.querySelectorAll('dt')].some(dt=>dt.textContent?.includes('Connection type')),
+    hasExternalSource:Boolean(card.querySelector('.ancient-links a[target="_blank"]')),
+    hasCanonicalReturn:Boolean(card.querySelector('.ancient-links a:not([target])'))
+  })));
+  const incompleteAncientCards=ancientCardCompleteness.filter(card=>!card.hasDate||!card.hasCanon||!card.hasConnection||!card.hasExternalSource||!card.hasCanonicalReturn);
+  expect(incompleteAncientCards.length===0,'Every Ancient Writings card includes date, canon, connection type, source, and canonical-study return link.',`Incomplete Ancient Writings cards: ${incompleteAncientCards.map(card=>card.title).join(', ')}.`);
+  expect(ancientMain.includes('Complete translations are intentionally deferred'),'Ancient Writings explicitly defers complete translations pending verification.','Ancient Writings does not clearly defer complete translations pending verification.');
   for(const title of ['1 Enoch','Jubilees','Wisdom of Solomon','Sirach (Ben Sira / Ecclesiasticus)','1 and 2 Maccabees','Ethiopian Meqabyan','The Assumption / Testament of Moses Tradition and Jude 9','Jannes and Jambres in 2 Timothy 3:8','Book of Jashar','Book of the Wars of the Lord','Records of Nathan and Gad','Royal Chronicles and Other Named Records']){
     expect(ancientMain.includes(title),`Ancient Writings includes ${title}.`,`Ancient Writings is missing ${title}.`);
   }

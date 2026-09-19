@@ -43,7 +43,7 @@ if(!errors.length){
  const raw=read(esData),all=JSON.stringify(es).toLowerCase();
  for(const version of ['RVR60','NVI','NBLA'])if(new RegExp(`\\b${version}\\b`).test(raw))fail(`Spanish Amos contains disallowed Bible version ${version}.`);
  const safeguards=[
-  ['historical setting',['tecóa','jeroboam ii','siglo viii']],
+  ['historical setting',['tecoa','jeroboam ii','siglo viii']],
   ['ancient nations not modern codes',['no códigos para odio étnico moderno','no deben convertirse en etiquetas para enemigos raciales']],
   ['sexual-text humility',['la situación exacta de amós 2:7 es debatida','no debe afirmarse sin evidencia que la joven era prostituta de culto']],
   ['known not superiority',['no ignorancia ni desprecio de otros pueblos','superioridad étnica']],

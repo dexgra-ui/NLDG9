@@ -1,7 +1,7 @@
 (()=>{
 const writings=[
   {id:'1-enoch',title:'1 Enoch',url:'ancient-writing-1-enoch.html',passages:['Jude 14–15'],relationship:'direct quotation',canonicalStudies:[{label:'Jude',url:'jude-study.html'}]},
-  {id:'jubilees',title:'Jubilees',url:'other-ancient-writings.html#jubilees',passages:['Genesis','Exodus 1–20'],relationship:'historical background',canonicalStudies:[{label:'Genesis',url:'genesis-study.html'},{label:'Exodus',url:'exodus-study.html'}]},
+  {id:'jubilees',title:'Jubilees',url:'ancient-writing-jubilees.html',passages:['Genesis','Exodus 1–20'],relationship:'historical background',canonicalStudies:[{label:'Genesis',url:'genesis-study.html'},{label:'Exodus',url:'exodus-study.html'}]},
   {id:'wisdom-solomon',title:'Wisdom of Solomon',url:'other-ancient-writings.html#wisdom-solomon',passages:['Wisdom tradition'],relationship:'historical background',canonicalStudies:[{label:'Proverbs',url:'proverbs-study.html'}]},
   {id:'sirach',title:'Sirach',url:'other-ancient-writings.html#sirach',passages:['Wisdom tradition'],relationship:'historical background',canonicalStudies:[{label:'Proverbs',url:'proverbs-study.html'}]},
   {id:'maccabees',title:'1 and 2 Maccabees',url:'other-ancient-writings.html#maccabees',passages:['Second Temple historical background'],relationship:'historical background',canonicalStudies:[{label:'Daniel',url:'daniel-study.html'}]},

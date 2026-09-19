@@ -27,7 +27,8 @@ const sitemapPaths=[
   'devotionals/worship-after-sunday.html',
   'newsletter/grace-for-the-changing-season.html',
   'other-ancient-writings.html',
-  'ancient-writing-1-enoch.html'
+  'ancient-writing-1-enoch.html',
+  'ancient-writing-jubilees.html'
 ];
 
 function expect(condition,success,failure){
@@ -58,7 +59,7 @@ try{
   await open('homepage','index.html');
   await page.waitForFunction(()=>document.querySelector('#home-latest')?.children.length>0,{timeout:5000}).catch(()=>{});
   const homeLatest=await page.locator('#home-latest').innerText().catch(()=>'');
-  expect(homeLatest.includes('1 Enoch: Historical & Biblical Guide'),'Homepage Latest surfaces the new 1 Enoch detailed guide.','Homepage Latest did not surface the new 1 Enoch detailed guide after the shared library loaded.');
+  expect(homeLatest.includes('Jubilees: Historical & Biblical Guide'),'Homepage Latest surfaces the newest Jubilees detailed guide.','Homepage Latest did not surface the newest Jubilees detailed guide after the shared library loaded.');
   const featuredSeries=await page.locator('#home-featured .content-series').allInnerTexts().catch(()=>[]);
   const latestSeries=await page.locator('#home-latest .content-series').allInnerTexts().catch(()=>[]);
   const duplicateSeries=latestSeries.filter(series=>series&&featuredSeries.includes(series));
@@ -126,6 +127,9 @@ try{
   const crossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('1-enoch')?.href||'');
   expect(crossLinkHref==='ancient-writing-1-enoch.html','The 1 Enoch cross-link registry routes to the detailed guide.',`The 1 Enoch cross-link registry routed to ${crossLinkHref}.`);
   expect((await page.locator('[id="1-enoch"] a[href="ancient-writing-1-enoch.html"]').count())===1,'The 1 Enoch overview card links to its detailed guide.','The 1 Enoch overview card is missing its detailed-guide link.');
+  const jubileesCrossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('jubilees')?.href||'');
+  expect(jubileesCrossLinkHref==='ancient-writing-jubilees.html','The Jubilees cross-link registry routes to the detailed guide.',`The Jubilees cross-link registry routed to ${jubileesCrossLinkHref}.`);
+  expect((await page.locator('#jubilees a[href="ancient-writing-jubilees.html"]').count())===1,'The Jubilees overview card links to its detailed guide.','The Jubilees overview card is missing its detailed-guide link.');
 
   await open('1-enoch-guide','ancient-writing-1-enoch.html');
   const enochGuide=await page.locator('main').innerText();
@@ -143,12 +147,39 @@ try{
   expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=8,'1 Enoch guide provides a substantial academic and primary source list.','1 Enoch guide does not provide enough research sources.');
   expect((await page.locator('a[href="other-ancient-writings.html"]').count())>=2,'1 Enoch guide provides clear return paths to Other Ancient Writings.','1 Enoch guide does not provide clear return paths to Other Ancient Writings.');
   expect((await page.locator('a[href="jude-study.html"]').count())>=1,'1 Enoch guide links back to the canonical Jude study.','1 Enoch guide is missing the Jude study return link.');
+  expect((await page.locator('a[href="ancient-writing-jubilees.html"]').count())>=1,'1 Enoch guide links forward to the detailed Jubilees guide.','1 Enoch guide is missing its Jubilees detail link.');
   await page.setViewportSize({width:390,height:844});
   expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'1 Enoch guide has no horizontal overflow at 390px.','1 Enoch guide overflows horizontally at 390px.');
   const enochInternalLink=page.locator('.detail-connection-list a').first();
   const enochLinkBox=await enochInternalLink.boundingBox();
   expect(Boolean(enochLinkBox&&enochLinkBox.height>=44),'1 Enoch canonical-study links meet the 44px mobile touch target.','1 Enoch canonical-study links are below the 44px mobile touch target.');
   await page.setViewportSize({width:1440,height:1000});
+
+  await open('jubilees-guide','ancient-writing-jubilees.html');
+  const jubileesGuide=await page.locator('main').innerText();
+  expect(jubileesGuide.includes('What is the Book of Jubilees?'),'Jubilees guide includes a clear orientation section.','Jubilees guide is missing its orientation section.');
+  for(const sectionTitle of ['Moses receives heavenly revelation','Creation, Sabbath, Watchers, flood','Abraham, Isaac, Jacob, and covenant','Joseph & Egypt','Passover, deliverance, and law']){
+    expect(jubileesGuide.includes(sectionTitle),`Jubilees guide includes ${sectionTitle}.`,`Jubilees guide is missing ${sectionTitle}.`);
+  }
+  expect(jubileesGuide.includes('fourteen copies of Jubilees among the Dead Sea Scrolls, all in Hebrew'),'Jubilees guide explains the recent Oxford count of Hebrew Qumran copies.','Jubilees guide is missing the Hebrew Qumran manuscript evidence.');
+  expect(jubileesGuide.includes('Older cataloguing sometimes counts fifteen'),'Jubilees guide explains why manuscript counts can differ.','Jubilees guide is missing the manuscript-count caution.');
+  expect(jubileesGuide.includes('364 days, or exactly fifty-two weeks'),'Jubilees guide explains the 364-day calendar structure.','Jubilees guide is missing the 364-day calendar structure.');
+  expect(jubileesGuide.includes('not simply the astronomical solar year'),'Jubilees guide qualifies the common solar-calendar shorthand.','Jubilees guide overstates or fails to qualify the solar-calendar label.');
+  expect(jubileesGuide.includes('Ethiopian Orthodox Tewahedo Church'),'Jubilees guide identifies Ethiopian Orthodox Tewahedo canonical reception.','Jubilees guide is missing Ethiopian canonical reception.');
+  expect(jubileesGuide.includes('Unlike the clear Jude quotation of 1 Enoch'),'Jubilees guide distinguishes its biblical relationship from the direct Enoch quotation in Jude.','Jubilees guide does not clearly distinguish direct quotation from interpretive relationship.');
+  expect(jubileesGuide.includes('Not a missing edition of Genesis.'),'Jubilees guide rejects the missing/uncut Genesis misconception.','Jubilees guide is missing the Genesis guardrail.');
+  expect(jubileesGuide.includes('NLDG is not reproducing a complete translation yet.'),'Jubilees guide defers full-text reproduction pending verification.','Jubilees guide does not clearly defer full-text reproduction.');
+  expect(!jubileesGuide.includes('Phase 2'),'Jubilees public guide omits internal development-phase language.','Jubilees public guide exposes internal Phase 2 language.');
+  expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=9,'Jubilees guide provides a substantial academic and primary source list.','Jubilees guide does not provide enough research sources.');
+  expect((await page.locator('a[href="genesis-study.html"]').count())>=1&&(await page.locator('a[href="exodus-study.html"]').count())>=1,'Jubilees guide links back to Genesis and Exodus canonical studies.','Jubilees guide is missing Genesis or Exodus return links.');
+  expect((await page.locator('a[href="ancient-writing-1-enoch.html"]').count())>=1,'Jubilees guide cross-links to the detailed 1 Enoch guide.','Jubilees guide is missing its 1 Enoch comparison link.');
+  await page.setViewportSize({width:390,height:844});
+  expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Jubilees guide has no horizontal overflow at 390px.','Jubilees guide overflows horizontally at 390px.');
+  const jubileesInternalLink=page.locator('.detail-connection-list a').first();
+  const jubileesLinkBox=await jubileesInternalLink.boundingBox();
+  expect(Boolean(jubileesLinkBox&&jubileesLinkBox.height>=44),'Jubilees canonical-study links meet the 44px mobile touch target.','Jubilees canonical-study links are below the 44px mobile touch target.');
+  await page.setViewportSize({width:1440,height:1000});
+
   await open('other-ancient-writings-mobile','other-ancient-writings.html');
   await page.setViewportSize({width:390,height:844});
   expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Ancient Writings has no horizontal overflow at 390px.','Ancient Writings overflows horizontally at 390px.');
@@ -174,6 +205,10 @@ try{
   await page.waitForTimeout(250);
   const enochSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
   expect(enochSearchResults.includes('1 Enoch: Historical & Biblical Guide'),'Search finds the detailed 1 Enoch guide.','Search did not find the detailed 1 Enoch guide.');
+  await search.fill('Jubilees');
+  await page.waitForTimeout(250);
+  const jubileesSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
+  expect(jubileesSearchResults.includes('Jubilees: Historical & Biblical Guide'),'Search finds the detailed Jubilees guide.','Search did not find the detailed Jubilees guide.');
 
 
   await open('site-map','site-map.html');
@@ -184,6 +219,7 @@ try{
   }
   expect(siteMapText.includes('Other Ancient Writings'),'Generated Site Map index lists Other Ancient Writings.','Generated Site Map index is missing Other Ancient Writings.');
   expect(siteMapText.includes('1 Enoch: Historical & Biblical Guide'),'Generated Site Map index lists the detailed 1 Enoch guide.','Generated Site Map index is missing the detailed 1 Enoch guide.');
+  expect(siteMapText.includes('Jubilees: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Jubilees guide.','Generated Site Map index is missing the detailed Jubilees guide.');
   expect((await page.locator('.site-map-grid a[href="other-ancient-writings.html"]').count())>0,'Manual Site Map Bible Studies section links Other Ancient Writings.','Manual Site Map is missing Other Ancient Writings.');
 
 

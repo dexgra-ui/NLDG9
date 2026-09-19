@@ -29,7 +29,8 @@ const sitemapPaths=[
   'other-ancient-writings.html',
   'ancient-writing-1-enoch.html',
   'ancient-writing-jubilees.html',
-  'ancient-writing-wisdom-solomon.html'
+  'ancient-writing-wisdom-solomon.html',
+  'ancient-writing-sirach.html'
 ];
 
 function expect(condition,success,failure){
@@ -60,7 +61,7 @@ try{
   await open('homepage','index.html');
   await page.waitForFunction(()=>document.querySelector('#home-latest')?.children.length>0,{timeout:5000}).catch(()=>{});
   const homeLatest=await page.locator('#home-latest').innerText().catch(()=>'');
-  expect(homeLatest.includes('Wisdom of Solomon: Historical & Biblical Guide'),'Homepage Latest surfaces the newest Wisdom of Solomon detailed guide.','Homepage Latest did not surface the newest Wisdom of Solomon detailed guide after the shared library loaded.');
+  expect(homeLatest.includes('Sirach: Historical & Biblical Guide'),'Homepage Latest surfaces the newest Sirach detailed guide.','Homepage Latest did not surface the newest Sirach detailed guide after the shared library loaded.');
   const featuredSeries=await page.locator('#home-featured .content-series').allInnerTexts().catch(()=>[]);
   const latestSeries=await page.locator('#home-latest .content-series').allInnerTexts().catch(()=>[]);
   const duplicateSeries=latestSeries.filter(series=>series&&featuredSeries.includes(series));
@@ -134,6 +135,9 @@ try{
   const wisdomCrossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('wisdom-solomon')?.href||'');
   expect(wisdomCrossLinkHref==='ancient-writing-wisdom-solomon.html','The Wisdom of Solomon cross-link registry routes to the detailed guide.',`The Wisdom of Solomon cross-link registry routed to ${wisdomCrossLinkHref}.`);
   expect((await page.locator('#wisdom-solomon a[href="ancient-writing-wisdom-solomon.html"]').count())===1,'The Wisdom of Solomon overview card links to its detailed guide.','The Wisdom of Solomon overview card is missing its detailed-guide link.');
+  const sirachCrossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('sirach')?.href||'');
+  expect(sirachCrossLinkHref==='ancient-writing-sirach.html','The Sirach cross-link registry routes to the detailed guide.',`The Sirach cross-link registry routed to ${sirachCrossLinkHref}.`);
+  expect((await page.locator('#sirach a[href="ancient-writing-sirach.html"]').count())===1,'The Sirach overview card links to its detailed guide.','The Sirach overview card is missing its detailed-guide link.');
 
   await open('1-enoch-guide','ancient-writing-1-enoch.html');
   const enochGuide=await page.locator('main').innerText();
@@ -204,11 +208,39 @@ try{
   expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=9,'Wisdom guide provides a substantial academic and primary source list.','Wisdom guide does not provide enough research sources.');
   expect((await page.locator('a[href="proverbs-study.html"]').count())>=1&&(await page.locator('a[href="romans-study.html"]').count())>=1,'Wisdom guide links back to canonical Proverbs and Romans studies.','Wisdom guide is missing Proverbs or Romans return links.');
   expect((await page.locator('a[href="ancient-writing-jubilees.html"]').count())>=1,'Wisdom guide cross-links to the detailed Jubilees guide.','Wisdom guide is missing its Jubilees comparison link.');
+  expect((await page.locator('a[href="ancient-writing-sirach.html"]').count())>=1,'Wisdom guide links forward to the detailed Sirach guide.','Wisdom guide is missing its Sirach detail link.');
   await page.setViewportSize({width:390,height:844});
   expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Wisdom of Solomon guide has no horizontal overflow at 390px.','Wisdom of Solomon guide overflows horizontally at 390px.');
   const wisdomInternalLink=page.locator('.detail-connection-list a').first();
   const wisdomLinkBox=await wisdomInternalLink.boundingBox();
   expect(Boolean(wisdomLinkBox&&wisdomLinkBox.height>=44),'Wisdom canonical-study links meet the 44px mobile touch target.','Wisdom canonical-study links are below the 44px mobile touch target.');
+  await page.setViewportSize({width:1440,height:1000});
+
+  await open('sirach-guide','ancient-writing-sirach.html');
+  const sirachGuide=await page.locator('main').innerText();
+  expect(sirachGuide.includes('What is Sirach?'),'Sirach guide includes a clear orientation section.','Sirach guide is missing its orientation section.');
+  expect(sirachGuide.includes('Ben Sira')&&sirachGuide.includes('Jerusalem'),'Sirach guide identifies the named Jerusalem sage Ben Sira.','Sirach guide is missing its named Jerusalem authorship.');
+  expect(sirachGuide.includes('author’s grandson')&&sirachGuide.includes('after 117 BCE'),'Sirach guide explains the grandson’s Greek translation.','Sirach guide is missing the grandson translation history.');
+  expect(sirachGuide.includes('Cairo Geniza')&&sirachGuide.includes('Masada'),'Sirach guide explains the rediscovered Hebrew manuscript evidence.','Sirach guide is missing key Hebrew manuscript evidence.');
+  expect(sirachGuide.includes('Wisdom takes root in Israel’s covenant life'),'Sirach guide explains the Wisdom/Torah synthesis.','Sirach guide is missing the Wisdom/Torah synthesis.');
+  expect(sirachGuide.includes('Sirach’s portrayal of women requires context and discernment'),'Sirach guide includes the gender-context reading caution.','Sirach guide is missing the gender-context reading caution.');
+  expect(sirachGuide.includes('context does not require Christians to reproduce every ancient social assumption as a timeless command'),'Sirach guide prevents historical context from becoming automatic moral endorsement.','Sirach guide is missing the social-assumption guardrail.');
+  expect(sirachGuide.includes('Roman Catholic and Eastern Orthodox traditions')||sirachGuide.includes('Roman Catholic tradition'),'Sirach guide identifies Catholic and Orthodox canonical reception.','Sirach guide is missing Catholic and Orthodox canonical reception.');
+  expect(sirachGuide.includes('not part of the Protestant Old Testament canon'),'Sirach guide identifies the Protestant canon distinction.','Sirach guide is missing the Protestant canon distinction.');
+  expect(sirachGuide.includes('Sirach 28:2 and Matthew 6:12–15'),'Sirach guide includes the forgiveness parallel with Matthew.','Sirach guide is missing the Matthew forgiveness parallel.');
+  expect(sirachGuide.includes('Sirach 5:11 and James 1:19'),'Sirach guide includes the listening/speech parallel with James.','Sirach guide is missing the James parallel.');
+  expect(sirachGuide.includes('New Testament parallels are not automatically quotations.'),'Sirach guide distinguishes NT parallels from direct quotation.','Sirach guide overstates NT parallels as quotations.');
+  expect(sirachGuide.includes('Sirach is not Ecclesiastes.'),'Sirach guide distinguishes Ecclesiasticus from Ecclesiastes.','Sirach guide is missing the Ecclesiasticus/Ecclesiastes distinction.');
+  expect(sirachGuide.includes('NLDG is not reproducing a complete translation yet.'),'Sirach guide defers full-text reproduction pending textual and rights verification.','Sirach guide does not clearly defer full-text reproduction.');
+  expect(!sirachGuide.includes('Phase 2'),'Sirach public guide omits internal development-phase language.','Sirach public guide exposes internal Phase 2 language.');
+  expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=8,'Sirach guide provides a substantial academic and primary source list.','Sirach guide does not provide enough research sources.');
+  expect((await page.locator('a[href="proverbs-study.html"]').count())>=1&&(await page.locator('a[href="james-study.html"]').count())>=1,'Sirach guide links back to canonical Proverbs and James studies.','Sirach guide is missing Proverbs or James return links.');
+  expect((await page.locator('a[href="ancient-writing-wisdom-solomon.html"]').count())>=1,'Sirach guide cross-links to the detailed Wisdom of Solomon guide.','Sirach guide is missing its Wisdom comparison link.');
+  await page.setViewportSize({width:390,height:844});
+  expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Sirach guide has no horizontal overflow at 390px.','Sirach guide overflows horizontally at 390px.');
+  const sirachInternalLink=page.locator('.detail-connection-list a').first();
+  const sirachLinkBox=await sirachInternalLink.boundingBox();
+  expect(Boolean(sirachLinkBox&&sirachLinkBox.height>=44),'Sirach canonical-study links meet the 44px mobile touch target.','Sirach canonical-study links are below the 44px mobile touch target.');
   await page.setViewportSize({width:1440,height:1000});
 
   await open('other-ancient-writings-mobile','other-ancient-writings.html');
@@ -244,6 +276,10 @@ try{
   await page.waitForTimeout(250);
   const wisdomSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
   expect(wisdomSearchResults.includes('Wisdom of Solomon: Historical & Biblical Guide'),'Search finds the detailed Wisdom of Solomon guide.','Search did not find the detailed Wisdom of Solomon guide.');
+  await search.fill('Sirach');
+  await page.waitForTimeout(250);
+  const sirachSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
+  expect(sirachSearchResults.includes('Sirach: Historical & Biblical Guide'),'Search finds the detailed Sirach guide.','Search did not find the detailed Sirach guide.');
 
 
   await open('site-map','site-map.html');
@@ -256,6 +292,7 @@ try{
   expect(siteMapText.includes('1 Enoch: Historical & Biblical Guide'),'Generated Site Map index lists the detailed 1 Enoch guide.','Generated Site Map index is missing the detailed 1 Enoch guide.');
   expect(siteMapText.includes('Jubilees: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Jubilees guide.','Generated Site Map index is missing the detailed Jubilees guide.');
   expect(siteMapText.includes('Wisdom of Solomon: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Wisdom of Solomon guide.','Generated Site Map index is missing the detailed Wisdom of Solomon guide.');
+  expect(siteMapText.includes('Sirach: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Sirach guide.','Generated Site Map index is missing the detailed Sirach guide.');
   expect((await page.locator('.site-map-grid a[href="other-ancient-writings.html"]').count())>0,'Manual Site Map Bible Studies section links Other Ancient Writings.','Manual Site Map is missing Other Ancient Writings.');
 
 

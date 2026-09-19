@@ -64,7 +64,7 @@ if(!errors.length){
   ['Daniel 8 explicit interpretation',['el carnero representa a los reyes de Media y Persia','el macho cabrío representa a Grecia']],
   ['Antiochus horizon',['Antíoco IV Epífanes','no borres a Antíoco IV del horizonte histórico']],
   ['2300 humility',['debaten si la frase cuenta 2.300 días o 1.150 sacrificios','no debe convertirse casualmente en años y fechas modernas']],
-  ['seventy weeks humility',['Las setenta semanas son importantes y profundamente debatidas','no fijar fechas de regreso']],
+  ['seventy weeks humility',['Las setenta semanas son importantes y profundamente debatidas','fijar fechas de regreso']],
   ['no demonizing people',['no autoriza demonizar personas','no identifiques personas como demonios']],
   ['Daniel 11 uncertainty',['Hay desacuerdo sobre si 36–45 continúa con Antíoco','Se requiere humildad']],
   ['resurrection final horizon',['La resurrección, no el cálculo, es el horizonte final','La última palabra no es un gráfico sino resurrección']],

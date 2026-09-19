@@ -47,10 +47,10 @@ if(!errors.length){
  const safeguards=[
   ['composition humility',['no hace de una teoría composicional una prueba de fe','horizontes históricos']],
   ['worship and justice',['La santidad expone adoración separada de justicia','adoración usada para cubrir injusticia']],
-  ['hardening not ministry strategy',['La comisión de endurecimiento es juicio, no estrategia ministerial','no autorizan a maestros a manipular, confundir o abandonar personas']],
+  ['hardening not ministry strategy',['La comisión de endurecimiento es juicio, no estrategia ministerial','autorizan a maestros a manipular, confundir o abandonar personas']],
   ['Immanuel historical horizon',['La señal de Emanuel debe tener significado dentro de esa emergencia','sin borrar el primer horizonte']],
   ['Jewish dignity',['No presentes desacuerdo judío como deshonestidad o inferioridad espiritual','no ridiculices la interpretación judía']],
-  ['nation oracles not ethnic hate',['no autorizan a cristianos a declarar malditas poblaciones étnicas modernas','no conviertas oráculos de naciones en odio a grupos actuales']],
+  ['nation oracles not ethnic hate',['no autorizan a cristianos a declarar malditas poblaciones étnicas modernas','No conviertas oráculos de naciones en odio a grupos actuales']],
   ['disability dignity',['Accesibilidad y dignidad son obligaciones presentes','No presiones a personas enfermas o discapacitadas para reclamar una cura']],
   ['Hezekiah hinge',['Isaías 36–39','giro entre Asiria y el consuelo exílico del capítulo 40']],
   ['Cyrus not political canonization',['Providencia no equivale a aprobación moral','no uses a Ciro para canonizar un político favorito']],
@@ -60,12 +60,12 @@ if(!errors.length){
   ['infertility dignity',['no garantía de fertilidad','no avergüences la infertilidad']],
   ['outsider inclusion',['Extranjeros y eunucos reciben un nombre en la casa de Dios','resiste tratar etnia, nacionalidad o diferencia corporal como descalificación automática']],
   ['fasting not prosperity',['no son fórmulas que garanticen riqueza o recuperación médica']],
-  ['divine warrior not Christian violence',['Los cristianos no son invitados a imitar el lagar','no conviertas el Guerrero divino en permiso para violencia cristiana']],
+  ['divine warrior not Christian violence',['Los cristianos no son invitados a imitar el lagar','el Guerrero divino en permiso para violencia cristiana']],
   ['filthy rags context',['«Trapos contaminados» confiesa justicia corrompida, no inutilidad de toda buena obra','no enseña que misericordia, justicia, arrepentimiento u obediencia del Espíritu sean repugnantes para Dios']],
-  ['potter not pastor',['El Alfarero es Dios, no el pastor','no barro/alfarero en autoridad humana sobre otra persona']],
+  ['potter not pastor',['El Alfarero es Dios, no el pastor','ni barro/alfarero en autoridad humana sobre otra persona']],
   ['new creation texture',['La imagen de nueva creación de Isaías no es idéntica a la forma final de Apocalipsis','no aplanes Isaías 65 dentro de Apocalipsis 21']],
-  ['no prosperity guarantees',['no garantía individual','no uses Isaías 65 para garantizar larga vida, casa propia, fertilidad o prosperidad']],
-  ['no antisemitic final judgment',['no debe volverse antisemitismo, triunfo nacionalista ni entretenimiento con castigo']],
+  ['no prosperity guarantees',['no garantía individual','No uses Isaías 65 para garantizar larga vida, casa propia, fertilidad o prosperidad']],
+  ['no antisemitic final judgment',['No debe volverse antisemitismo, triunfo nacionalista ni entretenimiento con castigo']],
   ['leader safeguards',['No prometas confidencialidad absoluta','deberes de protección','apoyo médico','violencia doméstica']]
  ];
  for(const [label,phrases] of safeguards)for(const phrase of phrases)if(!all.includes(phrase))fail(`Isaiah safeguard missing ${label}: ${phrase}.`);

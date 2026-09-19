@@ -48,7 +48,7 @@ if(!errors.length){
  for(const version of ['RVR60','NVI','NBLA'])if(new RegExp(`\\b${version}\\b`).test(raw))fail(`Spanish Jeremiah contains disallowed Bible version ${version}.`);
  const safeguards=[
   ['calling accountability',['El llamado nunca hace intocable a un profeta','Ningún líder moderno puede usar llamado para quedar por encima de prueba']],
-  ['critics not enemies',['la oposición no demuestra automáticamente','sus críticos sean enemigos de Dios']],
+  ['critics not enemies',['La oposición no demuestra automáticamente','sus críticos sean enemigos de Dios']],
   ['sexualized metaphor care',['Las metáforas sexualizadas requieren cuidado pastoral','No uses metáforas sexuales del pacto para avergonzar mujeres o sobrevivientes']],
   ['ancient paths not nostalgia',['Las sendas antiguas son fidelidad del pacto, no nostalgia']],
   ['institutional accountability',['«Templo del SEÑOR» se vuelve falsa seguridad','Ninguna iglesia, denominación o ministerio queda fuera de rendición de cuentas']],
@@ -60,7 +60,7 @@ if(!errors.length){
   ['Jeremiah 29 context',['Jeremías 29:11 habla a esa comunidad dentro de setenta años','no promete prosperidad individual instantánea']],
   ['yoke not tyranny',['No uses el yugo para exigir sumisión a abuso o tiranía']],
   ['new covenant Israel Judah',['El nuevo pacto es hecho con Israel y Judá','sin declarar obsoleta la identidad judía']],
-  ['forgiveness boundaries',['El perdón no obliga acceso','no uses el nuevo pacto para borrar a Israel']],
+  ['forgiveness boundaries',['El perdón no obliga acceso','el nuevo pacto para borrar a Israel']],
   ['slavery reversal',['La libertad dada y luego revocada expone hipocresía']],
   ['Rechabites not universal rule',['Los recabitas muestran constancia, no regla universal']],
   ['Ebed-melech dignity',['Ebed-melec usa su acceso para rescatar','Un extranjero a la élite de Judá actúa con valentía moral']],
@@ -68,7 +68,7 @@ if(!errors.length){
   ['safety plan dignity',['el paso fiel puede ser planificar seguridad','No equipares un plan de seguridad con cobardía']],
   ['nation oracles not ethnic hate',['Las naciones son responsables sin volverse blancos de odio étnico','No autorizan a tratar egipcios, palestinos, jordanos, sirios, árabes']],
   ['Babylon providence accountability',['Babilonia es usada por Dios y también juzgada','nunca coloca a una nación, ejército, institución o gobernante fuera de responsabilidad moral']],
-  ['vengeance not Christian violence',['no autoriza venganza privada, milicias, terrorismo']],
+  ['vengeance not Christian violence',['No autoriza venganza privada, milicias, terrorismo']],
   ['qualified care',['Nunca prometas confidencialidad absoluta','deberes de protección','seguridad inmediata y apoyo calificado']]
  ];
  for(const [label,phrases] of safeguards)for(const phrase of phrases)if(!all.includes(phrase))fail(`Jeremiah safeguard missing ${label}: ${phrase}.`);

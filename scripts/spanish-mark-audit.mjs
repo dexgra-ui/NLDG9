@@ -5,7 +5,7 @@ const enData='mark-study-data.js',enGuide='mark-study-guide.js',esData='mark-stu
 for(const f of [enData,enGuide,esData,enPage,esPage,hub,i18n,'book-study-series.js','book-study-series-es.js'])if(!exists(f))fail('Missing '+f);
 if(!errors.length){
  const en=load(enData,enGuide),es=load(esData);
- const names={'Marcos':'Mark','Isaías':'Isaiah','Malaquías':'Malachi','Daniel':'Daniel','Levítico':'Leviticus','Oseas':'Hosea','Ezequiel':'Ezekiel','Joel':'Joel','Hebreos':'Hebrews','Salmo':'Psalm','Números':'Numbers','2 Reyes':'2 Kings','Jeremías':'Jeremiah','Éxodo':'Exodus','Filipenses':'Philippians','Génesis':'Genesis','Zacarías':'Zechariah','1 Pedro':'1 Peter','Amós':'Amos','1 Corintios':'1 Corinthians'};
+ const names={'Marcos':'Mark','Isaías':'Isaiah','Malaquías':'Malachi','Daniel':'Daniel','Levítico':'Leviticus','Oseas':'Hosea','Ezequiel':'Ezekiel','Joel':'Joel','Hebreos':'Hebrews','Salmo':'Psalm','Números':'Numbers','2 Reyes':'2 Kings','Jeremías':'Jeremiah','Deuteronomio':'Deuteronomy','Éxodo':'Exodus','Filipenses':'Philippians','Génesis':'Genesis','Zacarías':'Zechariah','1 Pedro':'1 Peter','Amós':'Amos','1 Corintios':'1 Corinthians'};
  const norm=r=>{for(const [a,b] of Object.entries(names))if(r.startsWith(a+' '))return b+r.slice(a.length);return r;};
  const list=s=>String(s||'').split(';').map(x=>norm(x.trim())).filter(Boolean);
  if(es.slug!=='marcos-estudio')fail('Spanish Mark slug must be marcos-estudio.');

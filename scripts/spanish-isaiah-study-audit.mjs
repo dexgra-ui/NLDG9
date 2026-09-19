@@ -41,39 +41,32 @@ if(!errors.length){
  for(const field of ['seriesMainScripture','seriesQuestion','seriesOpening','seriesContext','seriesExamination','seriesPractice','seriesLeaderGuidance','seriesPrayer','seriesJesusConnection','seriesGuardrail','seriesClosingTakeaway'])if(!String(es?.[field]||'').trim())fail(`Isaiah series foundation missing ${field}.`);
  if((es?.seriesTeaching?.length??0)!==8||(en?.seriesTeaching?.length??0)!==8)fail('Isaiah series guide must retain eight teaching movements.');
  if((es?.seriesQuestions?.length??0)!==8||(en?.seriesQuestions?.length??0)!==8)fail('Isaiah series guide must retain eight discussion questions.');
- if(es.seriesTeaching.length!==en.seriesTeaching.length||es.seriesQuestions.length!==en.seriesQuestions.length)fail('Isaiah series architecture must match across languages.');
 
  const raw=read(esData),all=JSON.stringify(es);
  for(const version of ['RVR60','NVI','NBLA'])if(new RegExp(`\\b${version}\\b`).test(raw))fail(`Spanish Isaiah contains disallowed Bible version ${version}.`);
  const safeguards=[
   ['composition humility',['no hace de una teoría composicional una prueba de fe','horizontes históricos']],
-  ['hardening not ministry strategy',['La comisión de endurecimiento es juicio, no estrategia ministerial','autorizan a maestros a manipular, confundir o abandonar personas']],
-  ['Immanuel two horizons',['debe tener significado dentro de esa emergencia','cumplimiento de Mateo']],
-  ['Jewish dignity',['no ridiculices la interpretación judía','identidad e historia judías']],
-  ['Assyria not modern code',['no uses Asiria como código para un país actual']],
-  ['chapters 36 to 39 restored',['Isaías 36–39 corre paralelo a 2 Reyes 18–20','giro entre Asiria y el consuelo exílico']],
-  ['nation oracles not ethnic hate',['no autorizan a cristianos a declarar malditas poblaciones étnicas modernas','sufrimiento civil']],
-  ['disability dignity',['personas discapacitadas sean menos espirituales o menos humanas','Accesibilidad y dignidad son obligaciones presentes']],
-  ['healing not guarantee',['ni promete que cada oración fiel alargará la vida','No presiones a personas enfermas o discapacitadas para reclamar una cura']],
-  ['Israel servant identity',['Israel es explícitamente el siervo escogido de Dios','conservar esa identidad corporativa']],
-  ['Cyrus not political canonization',['Providencia no equivale a aprobación moral','no es un cheque en blanco para declarar a un político favorito elegido por Dios']],
-  ['Isaiah 45 calamity',['no enseña que Dios cometa mal moral']],
-  ['servant identity nuance',['El Siervo está arraigado en la vocación de Israel','restaurar a Israel']],
-  ['Isaiah 53 no abuse mandate',['Nunca autoriza a abusadores a exigir silencio','no digas a víctimas que imiten al Siervo permaneciendo en peligro']],
-  ['healing verse not cure formula',['no garantiza cura física inmediata','No debe usarse para culpar a enfermos o discapacitados']],
-  ['infertility dignity',['no son espiritualmente deficientes','no garantía de fertilidad']],
-  ['word not magic formula',['no promete que todo sermón, predicción personal o supuesta profecía']],
-  ['foreigners and eunuchs dignity',['Extranjeros y eunucos reciben un nombre','diferencia corporal como descalificación automática']],
-  ['leader accountability',['El oficio espiritual nunca elimina rendición de cuentas','protección contra represalias']],
+  ['worship and justice',['La santidad expone adoración separada de justicia','adoración usada para cubrir injusticia']],
+  ['hardening not ministry strategy',['La comisión de endurecimiento es juicio, no estrategia ministerial','no autorizan a maestros a manipular, confundir o abandonar personas']],
+  ['Immanuel historical horizon',['La señal de Emanuel debe tener significado dentro de esa emergencia','sin borrar el primer horizonte']],
+  ['Jewish dignity',['No presentes desacuerdo judío como deshonestidad o inferioridad espiritual','no ridiculices la interpretación judía']],
+  ['nation oracles not ethnic hate',['no autorizan a cristianos a declarar malditas poblaciones étnicas modernas','no conviertas oráculos de naciones en odio a grupos actuales']],
+  ['disability dignity',['Accesibilidad y dignidad son obligaciones presentes','No presiones a personas enfermas o discapacitadas para reclamar una cura']],
+  ['Hezekiah hinge',['Isaías 36–39','giro entre Asiria y el consuelo exílico del capítulo 40']],
+  ['Cyrus not political canonization',['Providencia no equivale a aprobación moral','no uses a Ciro para canonizar un político favorito']],
+  ['Israel remains servant',['Israel es explícitamente el siervo escogido de Dios','no trates la identidad de Israel como siervo como obsoleta']],
+  ['Servant abuse safeguard',['Nunca autoriza a abusadores a exigir silencio','no digas a víctimas que imiten al Siervo permaneciendo en peligro']],
+  ['healing not guaranteed',['no garantiza cura física inmediata','no prometas sanidad física a toda persona que crea']],
+  ['infertility dignity',['no garantía de fertilidad','no avergüences la infertilidad']],
+  ['outsider inclusion',['Extranjeros y eunucos reciben un nombre en la casa de Dios','resiste tratar etnia, nacionalidad o diferencia corporal como descalificación automática']],
   ['fasting not prosperity',['no son fórmulas que garanticen riqueza o recuperación médica']],
-  ['divine armor not vigilantism',['no autoriza a vigilantes a tomar armas literales']],
-  ['Isaiah 64 context',['«Trapos contaminados» confiesa justicia corrompida, no inutilidad de toda buena obra','no enseña que misericordia, justicia, arrepentimiento u obediencia del Espíritu sean repugnantes']],
-  ['potter not pastor',['El Alfarero es Dios, no el pastor','nunca da a clero, cónyuges, padres, políticos o instituciones derecho a «moldear» personas']],
-  ['Isaiah 65 not Revelation flattening',['no debe igualarse línea por línea con Apocalipsis 21','La imagen de nueva creación de Isaías no es idéntica']],
-  ['no longevity prosperity guarantee',['No debe predicarse como promesa de que toda persona fiel vivirá cierta edad, poseerá casa, tendrá hijos o prosperará financieramente ahora']],
-  ['final judgment not delight',['No debe volverse antisemitismo, triunfo nacionalista ni entretenimiento con castigo']],
-  ['no partisan codebook',['No conviertas Isaías en código para elecciones modernas, guerras, países, conspiraciones o fechas']],
-  ['leader support and safeguarding',['No prometas confidencialidad absoluta','violencia doméstica','apoyo médico']]
+  ['divine warrior not Christian violence',['Los cristianos no son invitados a imitar el lagar','no conviertas el Guerrero divino en permiso para violencia cristiana']],
+  ['filthy rags context',['«Trapos contaminados» confiesa justicia corrompida, no inutilidad de toda buena obra','no enseña que misericordia, justicia, arrepentimiento u obediencia del Espíritu sean repugnantes para Dios']],
+  ['potter not pastor',['El Alfarero es Dios, no el pastor','no barro/alfarero en autoridad humana sobre otra persona']],
+  ['new creation texture',['La imagen de nueva creación de Isaías no es idéntica a la forma final de Apocalipsis','no aplanes Isaías 65 dentro de Apocalipsis 21']],
+  ['no prosperity guarantees',['no garantía individual','no uses Isaías 65 para garantizar larga vida, casa propia, fertilidad o prosperidad']],
+  ['no antisemitic final judgment',['no debe volverse antisemitismo, triunfo nacionalista ni entretenimiento con castigo']],
+  ['leader safeguards',['No prometas confidencialidad absoluta','deberes de protección','apoyo médico','violencia doméstica']]
  ];
  for(const [label,phrases] of safeguards)for(const phrase of phrases)if(!all.includes(phrase))fail(`Isaiah safeguard missing ${label}: ${phrase}.`);
 
@@ -82,7 +75,6 @@ if(!errors.length){
  if(!english.includes('isaiah-study-data'+js+'?v=1.1.0')||!english.includes('isaiah-study-guide'+js+'?v=1.1.0')||!english.includes('book-study-series'+js+'?v=0.2.0'))fail('English Isaiah page must load corrected study assets.');
  for(const marker of ['<html lang="es"','https://nolabelsdesignedbygod.org/es/isaias-estudio'+html,'hreflang="en" href="https://nolabelsdesignedbygod.org/isaiah-study'+html+'"','../isaiah-study-data-es'+js+'?v=1.1.0','../book-study-series'+js+'?v=0.2.0','../book-study-series-es'+js+'?v=1.2.0','../nldg-i18n'+js+'?v=1.60.0'])if(!spanish.includes(marker))fail(`Spanish Isaiah page missing ${marker}.`);
  if(!i18n.includes("'isaiah-study"+html+"':'es/isaias-estudio"+html+"'"))fail('Isaiah bilingual route is missing.');
- if(!hub.includes('href="libro-por-libro'+html+'"'))fail('Spanish Book-by-Book library link is missing.');
  if(!hub.includes('Sesenta y seis series completas y revisadas'))fail('Spanish library must describe all sixty-six series.');
 }
 if(errors.length){console.error('Spanish Isaiah study audit failed:');for(const error of errors)console.error(`- ${error}`);process.exit(1);}

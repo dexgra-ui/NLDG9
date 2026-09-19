@@ -14,7 +14,7 @@ if(book?.status!=='published')fail('Proverbs must be marked published in the Spa
 
 if(!errors.length){
  const en=load(enData,enGuide),es=load(esData);
- const names={'Salmo':'Psalm','Santiago':'James','Deuteronomio':'Deuteronomy','Colosenses':'Colossians','Mateo':'Matthew','Filipenses':'Philippians','Hebreos':'Hebrews','1 Corintios':'1 Corinthians','1 Tesalonicenses':'1 Thessalonians','Efesios':'Ephesians','Isaías':'Isaiah','2 Corintios':'2 Corinthians','Gálatas':'Galatians','Marcos':'Mark','Miqueas':'Micah','Romanos':'Romans','Lucas':'Luke'};
+ const names={'Proverbios':'Proverbs','Salmo':'Psalm','Santiago':'James','Deuteronomio':'Deuteronomy','Colosenses':'Colossians','Mateo':'Matthew','Filipenses':'Philippians','Hebreos':'Hebrews','1 Corintios':'1 Corinthians','1 Tesalonicenses':'1 Thessalonians','Efesios':'Ephesians','Isaías':'Isaiah','2 Corintios':'2 Corinthians','Gálatas':'Galatians','Marcos':'Mark','Miqueas':'Micah','Romanos':'Romans','Lucas':'Luke'};
  const norm=r=>{for(const [a,b] of Object.entries(names))if(r.startsWith(a+' '))return b+r.slice(a.length);return r;};
  if(es?.slug!=='proverbios-estudio')fail('Spanish Proverbs slug must be proverbios-estudio.');
  if(es?.book!=='Proverbios')fail('Spanish book name must be Proverbios.');
@@ -51,12 +51,12 @@ if(!errors.length){
   ['group coercion',['coerción, manipulación, amenazas','misma libertad']],
   ['discipline not abuse',['disciplina es formación, no permiso para crueldad','control coercitivo o abuso']],
   ['trust not anti intellectualism',['Confiar en el SEÑOR no significa dejar de pensar','antiintelectualismo']],
-  ['sexual responsibility',['nunca da permiso a hombres para culpar a mujeres','consentimiento, honestidad, ternura y honor mutuo']],
-  ['victim blaming rejected',['no culpe a quien fue objetivo de coerción','Nunca preguntes a sobrevivientes qué hicieron para «provocar» daño']],
+  ['sexual responsibility',['Nunca da permiso a hombres para culpar a mujeres','consentimiento, honestidad, ternura y honor mutuo']],
+  ['victim blaming rejected',['culpe a quien fue objetivo de coerción','Nunca preguntes a sobrevivientes qué hicieron para «provocar» daño']],
   ['speech not manifestation',['no poder mágico','No conviertas Proverbios 18:21 en enseñanza de «manifestación»']],
   ['abuse not covered by love',['El amor no significa cubrir abuso','No uses «el amor cubre ofensas» para esconder abuso']],
   ['confidentiality limits',['La confidencialidad tiene límites morales','No prometas confidencialidad absoluta']],
-  ['poverty dignity',['La riqueza no salva, la pobreza no prueba pereza','No llames perezosa a toda persona desempleada o pobre']],
+  ['poverty dignity',['la riqueza no salva, la pobreza no prueba pereza','No llames perezosa a toda persona desempleada o pobre']],
   ['giving not prosperity',['sin convertirse en fórmula de retorno','No prometas que generosidad garantiza aumento financiero']],
   ['public assistance dignity',['asistencia pública, apoyo por discapacidad, atención médica o ayuda comunitaria']],
   ['Proverbs 22:6 not guarantee',['no control parental de la vida adulta','no garantiza que una crianza fiel determine toda elección posterior']],
@@ -71,7 +71,7 @@ if(!errors.length){
   ['private habits public justice',['gobierno propio con justicia pública','juicio deteriorado puede producir daño público']],
   ['series parenting safeguard',['Proverbios 22:6 garantiza las decisiones de un hijo adulto']],
   ['series poverty safeguard',['prometer prosperidad, avergonzar pobreza']],
-  ['series abuse safeguard',['excusa crianza cruel','personas abusadas que se sometan al peligro']]
+  ['series abuse safeguard',['excusar crianza cruel','personas abusadas que se sometan al peligro']]
  ];
  for(const [label,phrases] of safeguards)for(const phrase of phrases)if(!all.includes(phrase))fail(`Proverbs safeguard missing ${label}: ${phrase}.`);
  for(const phrase of ['No exijas revelación ni confrontación privada','Nunca uses confidencialidad para ocultar abuso o delito','deberes de denuncia','protección legal','cuidado calificado'])if(!all.includes(phrase))fail(`Proverbs leader safeguard missing ${phrase}.`);

@@ -1,68 +1,82 @@
-(function(){
- const s=window.NLDG_BOOK_STUDY;
- if(!s)return;
- Object.assign(s,{
-  seriesPurposeLabel:"SERIES PURPOSE",
-  seriesOverviewParagraphs:[
-   "Philippians teaches believers how the gospel reshapes identity, suffering, relationships, ambition, thought, contentment, generosity, and hope. Paul writes from imprisonment, yet joy runs through the letter because his confidence rests in Christ rather than circumstances."
+(function(){const s=window.NLDG_BOOK_STUDY;if(!s)return;Object.assign(s,{
+  "themeLabel": "Key Truth",
+  "seriesMainScripture": "Philippians 1–4; Acts 16:6–40; Isaiah 45:22–23; Habakkuk 3:17–19; Matthew 6:25–34",
+  "seriesQuestion": "How does life centered on Christ produce joy, humility, courage, maturity, peace, contentment, and generous partnership without denying suffering or misusing familiar verses?",
+  "seriesOpening": "Read Philippians as a prison letter shaped by deep affection and gospel partnership. Trace grace, prayer, imprisonment, witness, life and death, unity, the mind of Christ, obedience, shining as lights, faithful coworkers, religious credentials, knowing Christ, pressing forward, heavenly citizenship, reconciliation, anxiety, disciplined thought, contentment, generosity, provision, and joy. Ask how Paul’s confidence in Christ reshapes circumstances without pretending circumstances are painless.",
+  "seriesContext": "Paul writes to believers in Philippi, a Roman colony in Macedonia where Acts 16 describes Lydia, an enslaved girl, imprisonment, an earthquake, and the jailer’s household. The Philippian church maintained an unusually close partnership with Paul, including material support. Paul writes from imprisonment, though interpreters debate whether the setting is Rome, Ephesus, Caesarea, or another location. The letter combines thanksgiving, pastoral exhortation, personal testimony, coworker commendation, warning, and financial gratitude.\n\nJoy in Philippians is not denial, forced positivity, or proof that mature Christians never grieve. Paul names rivalry, imprisonment, possible death, suffering, conflict, anxiety, need, illness, and sacrifice. His hope comes from Christ’s lordship, resurrection, self-giving pattern, promised return, and sustaining strength. Familiar verses must stay in context: “to die is gain” is not permission for self-harm; “work out your salvation” is not earning salvation; heavenly citizenship is not escape from earthly responsibility; “I can do all things” concerns endurance in abundance and need; and God’s supply in 4:19 is not a prosperity formula.",
+  "seriesTeaching": [
+    {
+      "heading": "Gospel Partnership Grows Through Grace, Prayer, and Discernment — Philippians 1:1–11",
+      "body": "Paul’s gratitude is rooted in shared participation in the gospel. He trusts God’s continuing work and prays for love that grows in knowledge and discernment so the church bears fruit through Jesus Christ.",
+      "paragraphs": [
+        "Paul’s gratitude is rooted in shared participation in the gospel. He trusts God’s continuing work and prays for love that grows in knowledge and discernment so the church bears fruit through Jesus Christ."
+      ]
+    },
+    {
+      "heading": "Christ Can Be Magnified in Hard Circumstances — Philippians 1:12–30",
+      "body": "Imprisonment limits Paul yet also creates witness. He refuses to call suffering good or corrupt motives healthy, but he sees that hardship cannot cancel faithful purpose when life is centered on Christ.",
+      "paragraphs": [
+        "Imprisonment limits Paul yet also creates witness. He refuses to call suffering good or corrupt motives healthy, but he sees that hardship cannot cancel faithful purpose when life is centered on Christ."
+      ]
+    },
+    {
+      "heading": "The Mind of Christ Redefines Power and Greatness — Philippians 2:1–18",
+      "body": "Unity grows through humility modeled by Jesus, who does not exploit status but takes the servant’s path. God’s work within believers produces active obedience, and the church shines through faithful attitudes and conduct.",
+      "paragraphs": [
+        "Unity grows through humility modeled by Jesus, who does not exploit status but takes the servant’s path. God’s work within believers produces active obedience, and the church shines through faithful attitudes and conduct."
+      ]
+    },
+    {
+      "heading": "Faithful Coworkers and Christ-Centered Confidence Expose False Status — Philippians 2:19–3:11",
+      "body": "Timothy and Epaphroditus embody costly care, while Paul renounces confidence in heritage and performance as grounds of righteousness. Knowing Christ surpasses every spiritual résumé.",
+      "paragraphs": [
+        "Timothy and Epaphroditus embody costly care, while Paul renounces confidence in heritage and performance as grounds of righteousness. Knowing Christ surpasses every spiritual résumé."
+      ]
+    },
+    {
+      "heading": "Maturity Presses Forward Without Being Ruled by the Past — Philippians 3:12–21",
+      "body": "Paul admits he has not arrived, refuses captivity to past failure or success, follows faithful examples, and locates ultimate citizenship under the returning Christ rather than any earthly identity.",
+      "paragraphs": [
+        "Paul admits he has not arrived, refuses captivity to past failure or success, follows faithful examples, and locates ultimate citizenship under the returning Christ rather than any earthly identity."
+      ]
+    },
+    {
+      "heading": "Peaceful Community Requires Reconciliation, Prayer, and Disciplined Thought — Philippians 4:1–9",
+      "body": "Euodia and Syntyche are honored coworkers who need help resolving conflict. Paul directs anxiety toward prayer, thanksgiving, truthful thought, and practiced obedience without shaming those who need medical, psychological, or practical care.",
+      "paragraphs": [
+        "Euodia and Syntyche are honored coworkers who need help resolving conflict. Paul directs anxiety toward prayer, thanksgiving, truthful thought, and practiced obedience without shaming those who need medical, psychological, or practical care."
+      ]
+    },
+    {
+      "heading": "Contentment Is Learned in Both Need and Abundance — Philippians 4:10–13",
+      "body": "Paul’s famous claim that he can do all things through Christ concerns learned endurance across changing material conditions. Contentment is not complacency, poverty romanticization, or unlimited personal achievement.",
+      "paragraphs": [
+        "Paul’s famous claim that he can do all things through Christ concerns learned endurance across changing material conditions. Contentment is not complacency, poverty romanticization, or unlimited personal achievement."
+      ]
+    },
+    {
+      "heading": "Generosity and Provision Belong to Gospel Partnership — Philippians 4:14–23",
+      "body": "The Philippians’ gift is partnership and worship, not a transaction that purchases blessing. God’s provision serves faithfulness and may come through community; it is not a guarantee of consumer comfort or wealth.",
+      "paragraphs": [
+        "The Philippians’ gift is partnership and worship, not a transaction that purchases blessing. God’s provision serves faithfulness and may come through community; it is not a guarantee of consumer comfort or wealth."
+      ]
+    }
   ],
-  seriesGuideBlocks:[
-   {
-    title:"BOOK BACKGROUND",
-    paragraphs:[
-     "Author: The apostle Paul.",
-     "Original audience: The church in Philippi, a Roman colony in Macedonia.",
-     "Setting: Paul writes while imprisoned, thanking the church for its partnership and addressing pressures that could weaken its unity.",
-     "Key themes: Gospel partnership, joy in Christ, courageous witness, humility, unity, spiritual maturity, disciplined thought, contentment, generosity, and heavenly citizenship.",
-     "Key verse: Philippians 1:21 — “For to me to live is Christ, and to die is gain.”",
-     "Series length: Six lessons, approximately 60–75 minutes each.",
-     "Audience: Adults, small groups, Sunday school, ministry teams, and personal study."
-    ]
-   },
-   {
-    title:"HOW TO USE THE SERIES",
-    text:"Each lesson contains a central question, key truth, passage study, six teaching movements, discussion questions, personal examination, weekly practice, leader guidance, and prayer. Leaders should teach the main movements without rushing through every supporting idea. Allow Scripture, silence, and honest discussion to do their work."
-   },
-   {
-    title:"SERIES MAP",
-    paragraphs:[
-     "Lesson 1 — Partners in the Gospel",
-     "Philippians 1:1–11. Christian joy grows through grace, gratitude, prayer, and gospel partnership.",
-     "Lesson 2 — Christ Magnified in Every Circumstance",
-     "Philippians 1:12–30. Hardship cannot prevent Christ from being honored when the gospel becomes our controlling purpose.",
-     "Lesson 3 — The Mind of Christ",
-     "Philippians 2:1–18. Christian unity is formed through humility, service, and the self-giving pattern of Jesus.",
-     "Lesson 4 — Knowing Christ Above Everything",
-     "Philippians 2:19–3:11. Spiritual credentials and religious achievement cannot compare with knowing Christ.",
-     "Lesson 5 — Pressing Forward Together",
-     "Philippians 3:12–4:9. Mature believers keep growing, remember their true citizenship, pursue reconciliation, and discipline their thoughts.",
-     "Lesson 6 — The Secret of Contentment",
-     "Philippians 4:10–23. Christ supplies strength for contentment, generosity, partnership, and faithful endurance."
-    ]
-   },
-   {
-    title:"SERIES OUTCOME",
-    text:"By the end of the study, participants should be able to explain Philippians in context, identify its major themes, interpret its best-known verses responsibly, and practice joy that is rooted in Christ rather than favorable circumstances."
-   },
-   {
-    title:"LEADER COMMITMENT",
-    text:"Keep Christ at the center. Do not turn joy into forced cheerfulness, suffering into silence about harm, humility into permission for abuse, contentment into passivity, or “I can do all things” into a promise of unlimited personal success. Paul’s message is stronger and more hopeful than those distortions."
-   }
+  "seriesJesusConnection": "Jesus is the center of Paul’s life, the Lord whose gospel creates partnership, the One magnified in life and death, the servant who humbles Himself and is exalted, the righteousness and treasure worth knowing above every credential, the Savior from heaven who transforms His people, the source of peace, and the strength for contentment and generosity.",
+  "seriesGuardrail": "Do not turn joy into forced cheerfulness or silence grief. Do not use “to die is gain” to romanticize death, suicide, self-harm, refusing treatment, or neglecting safety. Do not use humility or the mind of Christ to keep people in abuse. Do not read Paul’s harsh warning in 3:2 as permission for antisemitism or contempt toward Jewish people. Do not use “forgetting what lies behind” to erase accountability or trauma. Do not make heavenly citizenship a reason to ignore earthly justice or responsibility. Do not shame anxiety or make prayer a substitute for needed care. Do not use contentment to excuse poverty, exploitation, withheld wages, or abuse. Do not use Philippians 4:13 or 4:19 as promises of unlimited success or guaranteed wealth.",
+  "seriesQuestions": [
+    "How does gospel partnership differ from merely attending the same church?",
+    "What allows Paul to experience real joy without denying imprisonment, rivalry, suffering, or grief?",
+    "How does the self-giving pattern of Christ redefine humility and the use of power?",
+    "Why does Paul reject confidence in religious credentials while still honoring faithful service?",
+    "What does pressing forward require us to remember, release, and pursue?",
+    "How do heavenly citizenship and reconciliation shape ordinary life in the present?",
+    "How do prayer, thanksgiving, disciplined thought, and appropriate care work together when anxiety is real?",
+    "What do contentment, generosity, and God’s provision mean when Philippians 4:13 and 4:19 are read in context?"
   ],
-  lessonPurposeLabel:"LESSON PURPOSE",
-  openingLabel:"OPENING DISCUSSION",
-  mainPassageLabel:"MAIN PASSAGE",
-  supportingScriptureLabel:"SUPPORTING SCRIPTURES",
-  scriptureContextLabel:"SCRIPTURE CONTEXT",
-  keyTruthLabel:"KEY TRUTH",
-  lessonQuestionLabel:"CENTRAL QUESTION",
-  lessonTeachingLabel:"",
-  discussionQuestionsLabel:"DISCUSSION QUESTIONS",
-  personalExaminationLabel:"PERSONAL EXAMINATION",
-  personalExaminationTitle:"",
-  weeklyPracticeLabel:"WEEKLY PRACTICE",
-  weeklyPracticeTitle:"",
-  leaderGuidanceLabel:"LEADER GUIDANCE",
-  closingPrayerLabel:"CLOSING PRAYER"
- });
-})();
+  "seriesExamination": "Where is my identity being controlled by circumstances, recognition, past failure, past success, anxiety, status, financial security, or the need to appear strong? What would it look like to center that area more fully on Christ?",
+  "seriesPractice": "Choose one Philippians practice for the week: thank God for a gospel partner, identify faithful action inside a limitation, serve without recognition, release one status marker, seek safe reconciliation, pray through a real anxiety while taking responsible care, or practice contentment through gratitude and generosity.",
+  "seriesLeaderGuidance": "Make room for grief, depression, anxiety, illness, financial stress, conflict, and trauma without treating them as failures of joy. If someone expresses self-harm or suicide risk, respond as a safety concern rather than using Philippians 1:21 devotionally; seek immediate qualified help and appropriate emergency support. Do not use humility, suffering, forgiveness, contentment, or unity to keep people in danger. Teach the anti-Jewish risks around 3:2 carefully. Resist prosperity readings of 4:13 and 4:19 and keep financial generosity voluntary and accountable.",
+  "seriesClosingTakeaway": "Philippians teaches joy that is stronger than circumstances because it is rooted in Christ. That joy becomes partnership, courage, humility, mature pursuit, reconciled relationships, disciplined prayer, learned contentment, and generous faithfulness.",
+  "seriesPrayer": "Lord Jesus, become the center of our joy, identity, ambition, suffering, relationships, thoughts, and resources. Give us humble courage, truthful peace, learned contentment, generous hearts, and faithful partnership in Your gospel. Amen."
+});})();

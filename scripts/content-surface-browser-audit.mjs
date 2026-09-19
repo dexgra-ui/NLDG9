@@ -32,7 +32,8 @@ const sitemapPaths=[
   'ancient-writing-wisdom-solomon.html',
   'ancient-writing-sirach.html',
   'ancient-writing-maccabees.html',
-  'ancient-writing-meqabyan.html'
+  'ancient-writing-meqabyan.html',
+  'ancient-writing-assumption-moses.html'
 ];
 
 function expect(condition,success,failure){
@@ -63,7 +64,7 @@ try{
   await open('homepage','index.html');
   await page.waitForFunction(()=>document.querySelector('#home-latest')?.children.length>0,{timeout:5000}).catch(()=>{});
   const homeLatest=await page.locator('#home-latest').innerText().catch(()=>'');
-  expect(homeLatest.includes('Ethiopian Meqabyan: Historical & Biblical Guide'),'Homepage Latest surfaces the newest Meqabyan detailed guide.','Homepage Latest did not surface the newest Meqabyan detailed guide after the shared library loaded.');
+  expect(homeLatest.includes('Assumption / Testament of Moses: Historical & Biblical Guide'),'Homepage Latest surfaces the newest Moses tradition detailed guide.','Homepage Latest did not surface the newest Moses tradition detailed guide after the shared library loaded.');
   const featuredSeries=await page.locator('#home-featured .content-series').allInnerTexts().catch(()=>[]);
   const latestSeries=await page.locator('#home-latest .content-series').allInnerTexts().catch(()=>[]);
   const duplicateSeries=latestSeries.filter(series=>series&&featuredSeries.includes(series));
@@ -146,6 +147,9 @@ try{
   const meqabyanCrossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('ethiopian-meqabyan')?.href||'');
   expect(meqabyanCrossLinkHref==='ancient-writing-meqabyan.html','The Meqabyan cross-link registry routes to the detailed guide.',`The Meqabyan cross-link registry routed to ${meqabyanCrossLinkHref}.`);
   expect((await page.locator('#ethiopian-meqabyan a[href="ancient-writing-meqabyan.html"]').count())===1,'The Meqabyan overview card links to its detailed guide.','The Meqabyan overview card is missing its detailed-guide link.');
+  const assumptionCrossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('assumption-moses')?.href||'');
+  expect(assumptionCrossLinkHref==='ancient-writing-assumption-moses.html','The Assumption / Testament of Moses cross-link registry routes to the detailed guide.',`The Moses tradition cross-link registry routed to ${assumptionCrossLinkHref}.`);
+  expect((await page.locator('#assumption-moses a[href="ancient-writing-assumption-moses.html"]').count())===1,'The Assumption / Testament of Moses overview card links to its detailed guide.','The Assumption / Testament of Moses overview card is missing its detailed-guide link.');
 
   await open('1-enoch-guide','ancient-writing-1-enoch.html');
   const enochGuide=await page.locator('main').innerText();
@@ -294,11 +298,38 @@ try{
   expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=9,'Meqabyan guide provides a substantial academic, church, and manuscript source list.','Meqabyan guide does not provide enough research sources.');
   expect((await page.locator('a[href="first-kings-study.html"]').count())>=1&&(await page.locator('a[href="daniel-study.html"]').count())>=1&&(await page.locator('a[href="hebrews-study.html"]').count())>=1,'Meqabyan guide links back to 1 Kings, Daniel, and Hebrews studies.','Meqabyan guide is missing 1 Kings, Daniel, or Hebrews return links.');
   expect((await page.locator('a[href="ancient-writing-maccabees.html"]').count())>=1,'Meqabyan guide links back to the separate Maccabees guide.','Meqabyan guide is missing previous-guide navigation.');
+  expect((await page.locator('a[href="ancient-writing-assumption-moses.html"]').count())>=1,'Meqabyan guide links forward to the detailed Moses tradition guide.','Meqabyan guide is missing its Moses tradition next-guide link.');
   await page.setViewportSize({width:390,height:844});
   expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Meqabyan guide has no horizontal overflow at 390px.','Meqabyan guide overflows horizontally at 390px.');
   const meqabyanInternalLink=page.locator('.detail-connection-list a').first();
   const meqabyanLinkBox=await meqabyanInternalLink.boundingBox();
   expect(Boolean(meqabyanLinkBox&&meqabyanLinkBox.height>=44),'Meqabyan canonical-study links meet the 44px mobile touch target.','Meqabyan canonical-study links are below the 44px mobile touch target.');
+  await page.setViewportSize({width:1440,height:1000});
+
+  await open('assumption-moses-guide','ancient-writing-assumption-moses.html');
+  const assumptionGuide=await page.locator('main').innerText();
+  expect(assumptionGuide.includes('The surviving text does not contain Jude 9’s dispute scene.'),'Moses tradition guide states the central surviving-text limitation.','Moses tradition guide fails to distinguish the extant text from Jude 9’s lost dispute scene.');
+  expect(assumptionGuide.includes('Three overlapping pieces of evidence'),'Moses tradition guide separates the surviving manuscript, lost Assumption tradition, and Jude 9.','Moses tradition guide is missing its three-evidence orientation.');
+  expect(assumptionGuide.includes('“Testament,” “Assumption,” “Ascension,” or simply a Moses fragment?'),'Moses tradition guide explains the title and identification problem.','Moses tradition guide is missing the title-identification discussion.');
+  expect(assumptionGuide.includes('single fragmentary Latin palimpsest')||assumptionGuide.includes('one damaged Latin manuscript'),'Moses tradition guide identifies the single incomplete Latin witness.','Moses tradition guide is missing the manuscript limitation.');
+  expect(assumptionGuide.includes('1861 · Antonio Ceriani'),'Moses tradition guide includes Ceriani’s 1861 publication.','Moses tradition guide is missing the Ceriani manuscript-history marker.');
+  expect(assumptionGuide.includes('4 BCE to 30 CE')&&assumptionGuide.includes('not a precise composition date'),'Moses tradition guide presents the approximate date range with uncertainty.','Moses tradition guide overstates or omits the dating uncertainty.');
+  expect(assumptionGuide.includes('Taxo and his sons')&&assumptionGuide.includes('God’s kingdom and the defeat of evil'),'Moses tradition guide covers the surviving work’s persecution and eschatological themes.','Moses tradition guide is missing Taxo or eschatological hope.');
+  expect(assumptionGuide.includes('Jude 9 and the dispute over Moses’ body'),'Moses tradition guide includes the key Jude 9 connection.','Moses tradition guide is missing the Jude 9 connection.');
+  expect(assumptionGuide.includes('weaker than a direct quotation we can verify against a surviving manuscript'),'Moses tradition guide distinguishes likely source relationship from a verifiable quotation.','Moses tradition guide overstates Jude 9 as a recoverable direct quotation.');
+  expect(assumptionGuide.includes('Surviving Testament vs. lost Assumption tradition'),'Moses tradition guide includes a direct evidence comparison.','Moses tradition guide is missing the surviving/lost tradition comparison.');
+  expect(assumptionGuide.includes('Influential does not mean canonical'),'Moses tradition guide keeps literary use distinct from canonical status.','Moses tradition guide is missing its canon guardrail.');
+  expect(assumptionGuide.includes('The surviving manuscript does not contain Jude 9’s dispute scene.')&&assumptionGuide.includes('“Testament” and “Assumption” are not automatically interchangeable titles.'),'Moses tradition guide includes both central reading guardrails.','Moses tradition guide is missing the central title or manuscript guardrail.');
+  expect(assumptionGuide.includes('NLDG is not reproducing a complete translation yet.'),'Moses tradition guide defers full-text reproduction pending textual verification.','Moses tradition guide does not clearly defer full-text reproduction.');
+  expect(!assumptionGuide.includes('Phase 2'),'Moses tradition public guide omits internal development-phase language.','Moses tradition public guide exposes internal Phase 2 language.');
+  expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=8,'Moses tradition guide provides a substantial academic and primary source list.','Moses tradition guide does not provide enough research sources.');
+  expect((await page.locator('a[href="jude-study.html"]').count())>=1&&(await page.locator('a[href="deuteronomy-study.html"]').count())>=1&&(await page.locator('a[href="zechariah-study.html"]').count())>=1,'Moses tradition guide links back to Jude, Deuteronomy, and Zechariah studies.','Moses tradition guide is missing Jude, Deuteronomy, or Zechariah return links.');
+  expect((await page.locator('a[href="ancient-writing-meqabyan.html"]').count())>=1,'Moses tradition guide links back to the previous Meqabyan guide.','Moses tradition guide is missing previous-guide navigation.');
+  await page.setViewportSize({width:390,height:844});
+  expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Moses tradition guide has no horizontal overflow at 390px.','Moses tradition guide overflows horizontally at 390px.');
+  const assumptionInternalLink=page.locator('.detail-connection-list a').first();
+  const assumptionLinkBox=await assumptionInternalLink.boundingBox();
+  expect(Boolean(assumptionLinkBox&&assumptionLinkBox.height>=44),'Moses tradition canonical-study links meet the 44px mobile touch target.','Moses tradition canonical-study links are below the 44px mobile touch target.');
   await page.setViewportSize({width:1440,height:1000});
 
   await open('other-ancient-writings-mobile','other-ancient-writings.html');
@@ -346,6 +377,10 @@ try{
   await page.waitForTimeout(250);
   const meqabyanSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
   expect(meqabyanSearchResults.includes('Ethiopian Meqabyan: Historical & Biblical Guide'),'Search finds the detailed Meqabyan guide.','Search did not find the detailed Meqabyan guide.');
+  await search.fill('Assumption of Moses');
+  await page.waitForTimeout(250);
+  const assumptionSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
+  expect(assumptionSearchResults.includes('Assumption / Testament of Moses: Historical & Biblical Guide'),'Search finds the detailed Moses tradition guide.','Search did not find the detailed Moses tradition guide.');
 
 
   await open('site-map','site-map.html');
@@ -361,6 +396,7 @@ try{
   expect(siteMapText.includes('Sirach: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Sirach guide.','Generated Site Map index is missing the detailed Sirach guide.');
   expect(siteMapText.includes('1 and 2 Maccabees: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Maccabees guide.','Generated Site Map index is missing the detailed Maccabees guide.');
   expect(siteMapText.includes('Ethiopian Meqabyan: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Meqabyan guide.','Generated Site Map index is missing the detailed Meqabyan guide.');
+  expect(siteMapText.includes('Assumption / Testament of Moses: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Moses tradition guide.','Generated Site Map index is missing the detailed Moses tradition guide.');
   expect((await page.locator('.site-map-grid a[href="other-ancient-writings.html"]').count())>0,'Manual Site Map Bible Studies section links Other Ancient Writings.','Manual Site Map is missing Other Ancient Writings.');
 
 

@@ -395,6 +395,30 @@ try{
   expect(Boolean(jasharLinkBox&&jasharLinkBox.height>=44),'Jashar canonical-study links meet the 44px mobile touch target.','Jashar canonical-study links are below the 44px mobile touch target.');
   await page.setViewportSize({width:1440,height:1000});
 
+  await open('wars-of-lord-guide','ancient-writing-wars-of-lord.html');
+  const warsGuide=await page.locator('main').innerText();
+  expect(warsGuide.includes('One secure citation. Many later guesses.'),'Wars of the Lord guide states its central evidence limit.','Wars of the Lord guide is missing its one-secure-citation guardrail.');
+  expect(warsGuide.includes('What does Numbers 21:14 actually preserve?'),'Wars of the Lord guide begins with the canonical source notice.','Wars of the Lord guide is missing its Numbers 21:14 orientation.');
+  expect(warsGuide.includes('The Arnon border and Israel’s wilderness itinerary'),'Wars of the Lord guide explains the Arnon border context.','Wars of the Lord guide is missing the Arnon setting.');
+  expect(warsGuide.includes('Waheb, Suphah, and a passage ancient translators already struggled with'),'Wars of the Lord guide explains the difficult textual wording.','Wars of the Lord guide is missing the Waheb/Suphah textual problem.');
+  expect(warsGuide.includes('Was “Wars of the Lord” certainly the book’s title?'),'Wars of the Lord guide acknowledges the title-text tradition question.','Wars of the Lord guide overstates the title as textually uniform.');
+  expect(warsGuide.includes('The boundaries of the quotation are debated'),'Wars of the Lord guide explains disputed quotation scope.','Wars of the Lord guide is missing quotation-boundary uncertainty.');
+  expect(warsGuide.includes('verses 14–15 as the safest immediate citation context'),'Wars of the Lord guide labels broader source assignments as proposals.','Wars of the Lord guide overstates broader Numbers 21 poetry as certain quotation.');
+  expect(warsGuide.includes('The text does not give us a secure date or compiler'),'Wars of the Lord guide preserves dating and authorship uncertainty.','Wars of the Lord guide overstates date or authorship.');
+  expect(warsGuide.includes('Was it the same book as Jashar?')&&warsGuide.includes('no evidence'),'Wars of the Lord guide rejects unsupported identity with Jashar.','Wars of the Lord guide fails to guard against Jashar conflation.');
+  expect(warsGuide.includes('Does Exodus 17:14 refer to this same lost book?')&&warsGuide.includes('interesting possibility, not a recoverable fact'),'Wars of the Lord guide labels the Exodus 17 connection as speculative.','Wars of the Lord guide overstates Exodus 17:14 as a second citation.');
+  expect(warsGuide.includes('A source named by Scripture is not automatically a separate canonical book'),'Wars of the Lord guide distinguishes source use from canonization.','Wars of the Lord guide is missing its canon/source-use distinction.');
+  expect(warsGuide.includes('There is no complete ancient text to publish'),'Wars of the Lord guide clearly states the full-text limitation.','Wars of the Lord guide implies a complete ancient text survives.');
+  expect(!warsGuide.includes('Phase 2'),'Wars of the Lord public guide omits internal development-phase language.','Wars of the Lord public guide exposes internal Phase 2 language.');
+  expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=8,'Wars of the Lord guide provides a substantial research source list.','Wars of the Lord guide does not provide enough research sources.');
+  expect((await page.locator('a[href="numbers-study.html"]').count())>=1&&(await page.locator('a[href="exodus-study.html"]').count())>=1&&(await page.locator('a[href="ancient-writing-jashar.html"]').count())>=1,'Wars of the Lord guide links back to Numbers, Exodus, and Jashar resources.','Wars of the Lord guide is missing Numbers, Exodus, or Jashar links.');
+  await page.setViewportSize({width:390,height:844});
+  expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Wars of the Lord guide has no horizontal overflow at 390px.','Wars of the Lord guide overflows horizontally at 390px.');
+  const warsInternalLink=page.locator('.detail-connection-list a').first();
+  const warsLinkBox=await warsInternalLink.boundingBox();
+  expect(Boolean(warsLinkBox&&warsLinkBox.height>=44),'Wars of the Lord canonical-study links meet the 44px mobile touch target.','Wars of the Lord canonical-study links are below the 44px mobile touch target.');
+  await page.setViewportSize({width:1440,height:1000});
+
   await open('other-ancient-writings-mobile','other-ancient-writings.html');
   await page.setViewportSize({width:390,height:844});
   expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Ancient Writings has no horizontal overflow at 390px.','Ancient Writings overflows horizontally at 390px.');
@@ -452,6 +476,10 @@ try{
   await page.waitForTimeout(250);
   const jasharSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
   expect(jasharSearchResults.includes('Book of Jashar: Historical & Biblical Guide'),'Search finds the detailed Book of Jashar guide.','Search did not find the detailed Book of Jashar guide.');
+  await search.fill('Book of the Wars of the Lord');
+  await page.waitForTimeout(250);
+  const warsSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
+  expect(warsSearchResults.includes('Book of the Wars of the Lord: Historical & Biblical Guide'),'Search finds the detailed Wars of the Lord guide.','Search did not find the detailed Wars of the Lord guide.');
 
 
   await open('site-map','site-map.html');
@@ -470,6 +498,7 @@ try{
   expect(siteMapText.includes('Assumption / Testament of Moses: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Moses tradition guide.','Generated Site Map index is missing the detailed Moses tradition guide.');
   expect(siteMapText.includes('Jannes and Jambres: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Jannes and Jambres guide.','Generated Site Map index is missing the detailed Jannes and Jambres guide.');
   expect(siteMapText.includes('Book of Jashar: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Book of Jashar guide.','Generated Site Map index is missing the detailed Book of Jashar guide.');
+  expect(siteMapText.includes('Book of the Wars of the Lord: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Wars of the Lord guide.','Generated Site Map index is missing the detailed Wars of the Lord guide.');
   expect((await page.locator('.site-map-grid a[href="other-ancient-writings.html"]').count())>0,'Manual Site Map Bible Studies section links Other Ancient Writings.','Manual Site Map is missing Other Ancient Writings.');
 
 

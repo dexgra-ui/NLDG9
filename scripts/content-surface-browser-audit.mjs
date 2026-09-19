@@ -97,7 +97,7 @@ try{
   for(const title of ['1 Enoch','Jubilees','Wisdom of Solomon','Sirach (Ben Sira / Ecclesiasticus)','1 and 2 Maccabees','Ethiopian Meqabyan','The Assumption / Testament of Moses Tradition and Jude 9','Jannes and Jambres in 2 Timothy 3:8','Book of Jashar','Book of the Wars of the Lord','Records of Nathan and Gad','Royal Chronicles and Other Named Records']){
     expect(ancientMain.includes(title),`Ancient Writings includes ${title}.`,`Ancient Writings is missing ${title}.`);
   }
-  const enochText=await page.locator('#1-enoch').innerText();
+  const enochText=await page.locator('[id="1-enoch"]').innerText();
   expect(enochText.includes('Jude 14–15')&&enochText.includes('Ethiopian Orthodox Tewahedo'),'1 Enoch card identifies the Jude quotation and Ethiopian canonical reception.','1 Enoch card is missing its quotation or canonical-status distinction.');
   const meqabyanText=await page.locator('#ethiopian-meqabyan').innerText();
   expect(meqabyanText.toLowerCase().includes('not the same')&&meqabyanText.includes('Greek 1 and 2 Maccabees'),'Meqabyan card explicitly distinguishes Ethiopian Meqabyan from Greek Maccabees.','Meqabyan card does not clearly distinguish the Ethiopian and Greek works.');

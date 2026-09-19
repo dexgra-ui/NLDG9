@@ -1,11 +1,11 @@
 window.NLDG_BOOK_STUDY={
   "slug": "malachi-study",
   "book": "Malachi",
-  "title": "Malachi: Covenant Love, Faithful Worship, Justice, Generosity, and Prepared Hearts",
-  "description": "A five-lesson study through Malachi on covenant love, truthful worship, faithful relationships, justice, generosity without manipulation, and preparing for the Lord.",
-  "theme": "Malachi calls a disappointed postexilic community to receive God’s covenant love, honor Him in worship and relationships, practice justice and generosity, and prepare for the coming Lord without turning covenant promises into manipulation.",
+  "title": "Malachi: Covenant Love, Truthful Worship, Justice, Generosity, and Prepared Hearts",
+  "description": "A five-lesson study through Malachi on covenant love, truthful worship, faithful relationships, justice, generosity without manipulation, and preparation for the Lord.",
+  "theme": "Malachi calls a disappointed covenant community back to God’s love, truthful worship, faithful relationships, justice, generous stewardship, and readiness for the Lord’s coming.",
   "audience": "Adults, groups, classes, and ministry teams",
-  "purpose": "To read Malachi in its postexilic covenant setting, correct careless worship and relational betrayal, protect vulnerable people, teach stewardship without prosperity manipulation, and receive its messenger and coming-Lord hope through Jesus.",
+  "purpose": "To read Malachi in its postexilic Persian-period setting, confront careless worship and covenant betrayal, pursue justice, practice generosity without prosperity manipulation, and prepare for Jesus through the book’s messenger and Elijah themes.",
   "background": "Malachi addresses Judah after the exile, after the temple has been rebuilt and sacrificial worship has resumed. The book refers to a governor, functioning priests, temple offerings, and a community struggling with disappointment, careless worship, covenant betrayal, injustice, and skepticism. An exact date is not given; many readers place the book in the Persian period, often in the fifth century BC, but attempts to align it precisely with Ezra or Nehemiah remain debated.\n\nThe book is structured around a series of disputations in which God makes a claim and the people respond with questions such as How have You loved us? How have we despised Your name? How have we wearied Him? How are we to return? and What have we said against You? Malachi answers these challenges by recalling covenant history, confronting priests and people, announcing a coming messenger and Lord, and ending with Moses, Elijah, judgment, healing, and restored relationships.",
   "lessonSubtitleMode": true,
   "lessons": [

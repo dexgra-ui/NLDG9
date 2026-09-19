@@ -49,7 +49,7 @@ if(!errors.length){
   ['acrostic structure',['Los capítulos 1, 2 y 4 son acrósticos alfabéticos','el capítulo 3 es un triple acróstico','el capítulo 5 también tiene 22 versículos pero no sigue el patrón alfabético']],
   ['survivor dignity',['sin hacer personalmente responsable a cada víctima','no culpes sobrevivientes individuales por catástrofe']],
   ['divine judgment not cruelty license',['El juicio divino nunca licencia crueldad humana','no uses juicio divino para excusar perpetradores']],
-  ['no misogynistic shame',['Nunca debe convertirse en afirmación misógina','no conviertas la humillación de la Hija de Sion en vergüenza hacia mujeres']],
+  ['no misogynistic shame',['Nunca debe convertirse en afirmación misógina','No conviertas la humillación de la Hija de Sion en vergüenza hacia mujeres']],
   ['no body stigma',['No debe emplearse para estigmatizar menstruación, historia sexual, sobrevivientes de agresión']],
   ['mercies in devastation',['«Grande es tu fidelidad» no nace de una mañana cómoda sino de ruinas','No cites «misericordias nuevas cada mañana» como orden de sentirse alegre']],
   ['yoke not abuse command',['«Llevar el yugo» no es mandato de abuso','Ningún pastor, cónyuge, empleador o padre puede imponer un «yugo»']],

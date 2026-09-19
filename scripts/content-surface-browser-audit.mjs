@@ -30,7 +30,8 @@ const sitemapPaths=[
   'ancient-writing-1-enoch.html',
   'ancient-writing-jubilees.html',
   'ancient-writing-wisdom-solomon.html',
-  'ancient-writing-sirach.html'
+  'ancient-writing-sirach.html',
+  'ancient-writing-maccabees.html'
 ];
 
 function expect(condition,success,failure){
@@ -61,7 +62,7 @@ try{
   await open('homepage','index.html');
   await page.waitForFunction(()=>document.querySelector('#home-latest')?.children.length>0,{timeout:5000}).catch(()=>{});
   const homeLatest=await page.locator('#home-latest').innerText().catch(()=>'');
-  expect(homeLatest.includes('Sirach: Historical & Biblical Guide'),'Homepage Latest surfaces the newest Sirach detailed guide.','Homepage Latest did not surface the newest Sirach detailed guide after the shared library loaded.');
+  expect(homeLatest.includes('1 and 2 Maccabees: Historical & Biblical Guide'),'Homepage Latest surfaces the newest Maccabees detailed guide.','Homepage Latest did not surface the newest Maccabees detailed guide after the shared library loaded.');
   const featuredSeries=await page.locator('#home-featured .content-series').allInnerTexts().catch(()=>[]);
   const latestSeries=await page.locator('#home-latest .content-series').allInnerTexts().catch(()=>[]);
   const duplicateSeries=latestSeries.filter(series=>series&&featuredSeries.includes(series));
@@ -138,6 +139,9 @@ try{
   const sirachCrossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('sirach')?.href||'');
   expect(sirachCrossLinkHref==='ancient-writing-sirach.html','The Sirach cross-link registry routes to the detailed guide.',`The Sirach cross-link registry routed to ${sirachCrossLinkHref}.`);
   expect((await page.locator('#sirach a[href="ancient-writing-sirach.html"]').count())===1,'The Sirach overview card links to its detailed guide.','The Sirach overview card is missing its detailed-guide link.');
+  const maccabeesCrossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('maccabees')?.href||'');
+  expect(maccabeesCrossLinkHref==='ancient-writing-maccabees.html','The Maccabees cross-link registry routes to the detailed guide.',`The Maccabees cross-link registry routed to ${maccabeesCrossLinkHref}.`);
+  expect((await page.locator('#maccabees a[href="ancient-writing-maccabees.html"]').count())===1,'The Maccabees overview card links to its detailed guide.','The Maccabees overview card is missing its detailed-guide link.');
 
   await open('1-enoch-guide','ancient-writing-1-enoch.html');
   const enochGuide=await page.locator('main').innerText();
@@ -236,11 +240,37 @@ try{
   expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=8,'Sirach guide provides a substantial academic and primary source list.','Sirach guide does not provide enough research sources.');
   expect((await page.locator('a[href="proverbs-study.html"]').count())>=1&&(await page.locator('a[href="james-series.html"]').count())>=1,'Sirach guide links back to canonical Proverbs and James studies.','Sirach guide is missing Proverbs or James return links.');
   expect((await page.locator('a[href="ancient-writing-wisdom-solomon.html"]').count())>=1,'Sirach guide cross-links to the detailed Wisdom of Solomon guide.','Sirach guide is missing its Wisdom comparison link.');
+  expect((await page.locator('a[href="ancient-writing-maccabees.html"]').count())>=1,'Sirach guide links forward to the detailed Maccabees guide.','Sirach guide is missing its Maccabees next-guide link.');
   await page.setViewportSize({width:390,height:844});
   expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Sirach guide has no horizontal overflow at 390px.','Sirach guide overflows horizontally at 390px.');
   const sirachInternalLink=page.locator('.detail-connection-list a').first();
   const sirachLinkBox=await sirachInternalLink.boundingBox();
   expect(Boolean(sirachLinkBox&&sirachLinkBox.height>=44),'Sirach canonical-study links meet the 44px mobile touch target.','Sirach canonical-study links are below the 44px mobile touch target.');
+  await page.setViewportSize({width:1440,height:1000});
+
+  await open('maccabees-guide','ancient-writing-maccabees.html');
+  const maccabeesGuide=await page.locator('main').innerText();
+  expect(maccabeesGuide.includes('Two independent books, not a two-volume sequel'),'Maccabees guide clearly orients readers to two independent works.','Maccabees guide is missing the independent-works orientation.');
+  expect(maccabeesGuide.includes('Antiochus IV Epiphanes')&&maccabeesGuide.includes('Mattathias')&&maccabeesGuide.includes('164 BCE'),'Maccabees guide includes the Seleucid crisis, Mattathias, and Temple-rededication timeline.','Maccabees guide is missing core historical timeline markers.');
+  expect(maccabeesGuide.includes('originally composed in Hebrew')&&maccabeesGuide.includes('around 100 BCE'),'Maccabees guide identifies 1 Maccabees language and approximate date.','Maccabees guide is missing 1 Maccabees authorship/date/language details.');
+  expect(maccabeesGuide.includes('epitome')&&maccabeesGuide.includes('Jason of Cyrene')&&maccabeesGuide.includes('composed in Greek'),'Maccabees guide identifies 2 Maccabees as Jason of Cyrene epitome written in Greek.','Maccabees guide is missing the Jason of Cyrene epitome distinction.');
+  expect(maccabeesGuide.includes('They overlap, but they are not the same project'),'Maccabees guide includes a clear side-by-side comparison.','Maccabees guide is missing the comparison section.');
+  expect(maccabeesGuide.includes('2 Maccabees 6–7')&&maccabeesGuide.includes('bodily resurrection'),'Maccabees guide covers martyrdom and resurrection theology.','Maccabees guide is missing martyrdom or resurrection theology.');
+  expect(maccabeesGuide.includes('2 Maccabees 12:39–46')&&maccabeesGuide.includes('Roman Catholic interpretation')&&maccabeesGuide.includes('Eastern Orthodox interpretation')&&maccabeesGuide.includes('Protestant interpretation'),'Maccabees guide distinguishes Christian readings of prayer for the dead.','Maccabees guide is missing the tradition-specific 2 Maccabees 12 treatment.');
+  expect(maccabeesGuide.includes('Calling the books simply “noncanonical” is inaccurate'),'Maccabees guide uses tradition-specific canon wording.','Maccabees guide flattens canonical reception.');
+  expect(maccabeesGuide.includes('Historical correspondence does not by itself settle every claim about prophecy fulfillment'),'Maccabees guide distinguishes Daniel historical background from prophecy-fulfillment claims.','Maccabees guide overstates the Daniel fulfillment claim.');
+  expect(maccabeesGuide.includes('John 10:22')&&maccabeesGuide.includes('Feast of Dedication'),'Maccabees guide connects Hanukkah with John 10:22.','Maccabees guide is missing the John 10:22 Feast of Dedication connection.');
+  expect(maccabeesGuide.includes('Hebrews 11:35')&&maccabeesGuide.includes('uncertain literary dependence should not be presented as a direct quotation'),'Maccabees guide cautiously labels the Hebrews 11:35 martyr-tradition relationship.','Maccabees guide overstates the Hebrews 11:35 dependence.');
+  expect(maccabeesGuide.includes('NLDG is not reproducing complete translations yet.'),'Maccabees guide defers full-text reproduction pending verification.','Maccabees guide does not clearly defer full-text reproduction.');
+  expect(!maccabeesGuide.includes('Phase 2'),'Maccabees public guide omits internal development-phase language.','Maccabees public guide exposes internal Phase 2 language.');
+  expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=10,'Maccabees guide provides a substantial academic and primary source list.','Maccabees guide does not provide enough research sources.');
+  expect((await page.locator('a[href="daniel-study.html"]').count())>=1&&(await page.locator('a[href="john-study.html"]').count())>=1&&(await page.locator('a[href="hebrews-study.html"]').count())>=1,'Maccabees guide links back to Daniel, John, and Hebrews studies.','Maccabees guide is missing Daniel, John, or Hebrews return links.');
+  expect((await page.locator('a[href="ancient-writing-sirach.html"]').count())>=1,'Maccabees guide links back to the previous Sirach guide.','Maccabees guide is missing previous-guide navigation.');
+  await page.setViewportSize({width:390,height:844});
+  expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Maccabees guide has no horizontal overflow at 390px.','Maccabees guide overflows horizontally at 390px.');
+  const maccabeesInternalLink=page.locator('.detail-connection-list a').first();
+  const maccabeesLinkBox=await maccabeesInternalLink.boundingBox();
+  expect(Boolean(maccabeesLinkBox&&maccabeesLinkBox.height>=44),'Maccabees canonical-study links meet the 44px mobile touch target.','Maccabees canonical-study links are below the 44px mobile touch target.');
   await page.setViewportSize({width:1440,height:1000});
 
   await open('other-ancient-writings-mobile','other-ancient-writings.html');
@@ -280,6 +310,10 @@ try{
   await page.waitForTimeout(250);
   const sirachSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
   expect(sirachSearchResults.includes('Sirach: Historical & Biblical Guide'),'Search finds the detailed Sirach guide.','Search did not find the detailed Sirach guide.');
+  await search.fill('Maccabees');
+  await page.waitForTimeout(250);
+  const maccabeesSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
+  expect(maccabeesSearchResults.includes('1 and 2 Maccabees: Historical & Biblical Guide'),'Search finds the detailed Maccabees guide.','Search did not find the detailed Maccabees guide.');
 
 
   await open('site-map','site-map.html');
@@ -293,6 +327,7 @@ try{
   expect(siteMapText.includes('Jubilees: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Jubilees guide.','Generated Site Map index is missing the detailed Jubilees guide.');
   expect(siteMapText.includes('Wisdom of Solomon: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Wisdom of Solomon guide.','Generated Site Map index is missing the detailed Wisdom of Solomon guide.');
   expect(siteMapText.includes('Sirach: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Sirach guide.','Generated Site Map index is missing the detailed Sirach guide.');
+  expect(siteMapText.includes('1 and 2 Maccabees: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Maccabees guide.','Generated Site Map index is missing the detailed Maccabees guide.');
   expect((await page.locator('.site-map-grid a[href="other-ancient-writings.html"]').count())>0,'Manual Site Map Bible Studies section links Other Ancient Writings.','Manual Site Map is missing Other Ancient Writings.');
 
 

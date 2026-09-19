@@ -37,7 +37,8 @@ const sitemapPaths=[
   'ancient-writing-jannes-jambres.html',
   'ancient-writing-jashar.html',
   'ancient-writing-wars-of-lord.html',
-  'ancient-writing-nathan-gad.html'
+  'ancient-writing-nathan-gad.html',
+  'ancient-writing-royal-chronicles.html'
 ];
 
 function expect(condition,success,failure){
@@ -68,7 +69,7 @@ try{
   await open('homepage','index.html');
   await page.waitForFunction(()=>document.querySelector('#home-latest')?.children.length>0,{timeout:5000}).catch(()=>{});
   const homeLatest=await page.locator('#home-latest').innerText().catch(()=>'');
-  expect(homeLatest.includes('Records of Nathan and Gad: Historical & Biblical Guide'),'Homepage Latest surfaces the newest Nathan and Gad detailed guide.','Homepage Latest did not surface the newest Nathan and Gad detailed guide after the shared library loaded.');
+  expect(homeLatest.includes('Royal Chronicles and Other Named Records: Historical & Biblical Guide'),'Homepage Latest surfaces the newest Royal Chronicles detailed guide.','Homepage Latest did not surface the newest Royal Chronicles detailed guide after the shared library loaded.');
   const featuredSeries=await page.locator('#home-featured .content-series').allInnerTexts().catch(()=>[]);
   const latestSeries=await page.locator('#home-latest .content-series').allInnerTexts().catch(()=>[]);
   const duplicateSeries=latestSeries.filter(series=>series&&featuredSeries.includes(series));
@@ -166,6 +167,9 @@ try{
   const nathanGadCrossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('nathan-gad')?.href||'');
   expect(nathanGadCrossLinkHref==='ancient-writing-nathan-gad.html','The Nathan and Gad cross-link registry routes to the detailed guide.',`The Nathan and Gad cross-link registry routed to ${nathanGadCrossLinkHref}.`);
   expect((await page.locator('#nathan-gad a[href="ancient-writing-nathan-gad.html"]').count())===1,'The Nathan and Gad overview card links to its detailed guide.','The Nathan and Gad overview card is missing its detailed-guide link.');
+  const royalCrossLinkHref=await page.evaluate(()=>window.NLDG_ANCIENT_WRITINGS_API?.relatedLink('royal-chronicles')?.href||'');
+  expect(royalCrossLinkHref==='ancient-writing-royal-chronicles.html','The Royal Chronicles cross-link registry routes to the detailed guide.',`The Royal Chronicles cross-link registry routed to ${royalCrossLinkHref}.`);
+  expect((await page.locator('#royal-chronicles a[href="ancient-writing-royal-chronicles.html"]').count())===1,'The Royal Chronicles overview card links to its detailed guide.','The Royal Chronicles overview card is missing its detailed-guide link.');
 
   await open('1-enoch-guide','ancient-writing-1-enoch.html');
   const enochGuide=await page.locator('main').innerText();
@@ -443,6 +447,7 @@ try{
   expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=8,'Nathan and Gad guide provides a substantial research source list.','Nathan and Gad guide does not provide enough research sources.');
   expect((await page.locator('a[href="first-chronicles-study.html"]').count())>=1&&(await page.locator('a[href="second-chronicles-study.html"]').count())>=1&&(await page.locator('a[href="second-samuel-study.html"]').count())>=1&&(await page.locator('a[href="first-samuel-study.html"]').count())>=1,'Nathan and Gad guide links back to the relevant Samuel and Chronicles studies.','Nathan and Gad guide is missing one or more canonical-study links.');
   expect((await page.locator('a[href="ancient-writing-wars-of-lord.html"]').count())>=1,'Nathan and Gad guide links back to the previous Wars of the Lord guide.','Nathan and Gad guide is missing previous-guide navigation.');
+  expect((await page.locator('a[href="ancient-writing-royal-chronicles.html"]').count())>=1,'Nathan and Gad guide links forward to the detailed Royal Chronicles guide.','Nathan and Gad guide is missing its Royal Chronicles next-guide link.');
   await page.setViewportSize({width:390,height:844});
   expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Nathan and Gad guide has no horizontal overflow at 390px.','Nathan and Gad guide overflows horizontally at 390px.');
   const nathanGadInternalLink=page.locator('.detail-connection-list a').first();

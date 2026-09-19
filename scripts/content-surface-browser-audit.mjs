@@ -455,6 +455,30 @@ try{
   expect(Boolean(nathanGadLinkBox&&nathanGadLinkBox.height>=44),'Nathan and Gad canonical-study links meet the 44px mobile touch target.','Nathan and Gad canonical-study links are below the 44px mobile touch target.');
   await page.setViewportSize({width:1440,height:1000});
 
+  await open('royal-chronicles-guide','ancient-writing-royal-chronicles.html');
+  const royalGuide=await page.locator('main').innerText();
+  expect(royalGuide.includes('“Book of the chronicles” does not mean our biblical Chronicles.'),'Royal Chronicles guide states the central identity distinction.','Royal Chronicles guide is missing the annals/canonical-Chronicles distinction.');
+  expect(royalGuide.includes('Two royal kingdoms, two recurring source formulas'),'Royal Chronicles guide separates Israel and Judah annals.','Royal Chronicles guide is missing its Israel/Judah source orientation.');
+  expect(royalGuide.includes('Chronicles of the Kings of Israel')&&royalGuide.includes('Chronicles of the Kings of Judah'),'Royal Chronicles guide covers both recurring Kings source formulas.','Royal Chronicles guide is missing one of the two royal-annals traditions.');
+  expect(royalGuide.includes('The Book of the Acts of Solomon'),'Royal Chronicles guide includes Solomon’s distinct source title.','Royal Chronicles guide is missing the Acts of Solomon source.');
+  expect(royalGuide.includes('Chronicles names additional historical records'),'Royal Chronicles guide explains the Chronicler’s broader source world.','Royal Chronicles guide is missing Chronicles’ additional source notices.');
+  expect(royalGuide.includes('the midrash of the book of the kings'),'Royal Chronicles guide includes the distinct 2 Chronicles 24:27 source label.','Royal Chronicles guide is missing the midrash of the Book of Kings notice.');
+  expect(royalGuide.includes('The cited annals are not the canonical books of 1–2 Chronicles'),'Royal Chronicles guide clearly separates lost annals from canonical Chronicles.','Royal Chronicles guide conflates the lost annals with canonical Chronicles.');
+  expect(royalGuide.includes('Plausible, but the surviving evidence does not let us inspect the archive'),'Royal Chronicles guide keeps official-court-record claims cautious.','Royal Chronicles guide overstates official archive identification.');
+  expect(royalGuide.includes('The royal annals are sources named by Scripture, not separate canonical books'),'Royal Chronicles guide distinguishes source use from canonization.','Royal Chronicles guide is missing its canon/source-use distinction.');
+  expect(royalGuide.includes('The royal source books are not independently recoverable'),'Royal Chronicles guide clearly states the lost-source limitation.','Royal Chronicles guide implies independent recovery of the royal annals.');
+  expect(royalGuide.includes('You’ve reached the end of the current detailed Ancient Writings catalog.'),'Royal Chronicles guide closes the current detailed catalog without inventing a next resource.','Royal Chronicles guide is missing its end-of-catalog navigation.');
+  expect(!royalGuide.includes('Phase 2'),'Royal Chronicles public guide omits internal development-phase language.','Royal Chronicles public guide exposes internal Phase 2 language.');
+  expect((await page.locator('.ancient-source-grid a[target="_blank"]').count())>=9,'Royal Chronicles guide provides a substantial primary/source list.','Royal Chronicles guide does not provide enough research sources.');
+  expect((await page.locator('a[href="first-kings-study.html"]').count())>=1&&(await page.locator('a[href="second-kings-study.html"]').count())>=1&&(await page.locator('a[href="second-chronicles-study.html"]').count())>=1,'Royal Chronicles guide links back to Kings and Chronicles studies.','Royal Chronicles guide is missing one or more canonical-study links.');
+  expect((await page.locator('a[href="ancient-writing-nathan-gad.html"]').count())>=1,'Royal Chronicles guide links back to the previous Nathan and Gad guide.','Royal Chronicles guide is missing previous-guide navigation.');
+  await page.setViewportSize({width:390,height:844});
+  expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Royal Chronicles guide has no horizontal overflow at 390px.','Royal Chronicles guide overflows horizontally at 390px.');
+  const royalInternalLink=page.locator('.detail-connection-list a').first();
+  const royalLinkBox=await royalInternalLink.boundingBox();
+  expect(Boolean(royalLinkBox&&royalLinkBox.height>=44),'Royal Chronicles canonical-study links meet the 44px mobile touch target.','Royal Chronicles canonical-study links are below the 44px mobile touch target.');
+  await page.setViewportSize({width:1440,height:1000});
+
   await open('other-ancient-writings-mobile','other-ancient-writings.html');
   await page.setViewportSize({width:390,height:844});
   expect((await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)),'Ancient Writings has no horizontal overflow at 390px.','Ancient Writings overflows horizontally at 390px.');
@@ -520,6 +544,10 @@ try{
   await page.waitForTimeout(250);
   const nathanGadSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
   expect(nathanGadSearchResults.includes('Records of Nathan and Gad: Historical & Biblical Guide'),'Search finds the detailed Nathan and Gad guide.','Search did not find the detailed Nathan and Gad guide.');
+  await search.fill('Royal Chronicles and Other Named Records');
+  await page.waitForTimeout(250);
+  const royalSearchResults=await page.locator('#search-results').innerText().catch(()=>'');
+  expect(royalSearchResults.includes('Royal Chronicles and Other Named Records: Historical & Biblical Guide'),'Search finds the detailed Royal Chronicles guide.','Search did not find the detailed Royal Chronicles guide.');
 
 
   await open('site-map','site-map.html');
@@ -540,6 +568,7 @@ try{
   expect(siteMapText.includes('Book of Jashar: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Book of Jashar guide.','Generated Site Map index is missing the detailed Book of Jashar guide.');
   expect(siteMapText.includes('Book of the Wars of the Lord: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Wars of the Lord guide.','Generated Site Map index is missing the detailed Wars of the Lord guide.');
   expect(siteMapText.includes('Records of Nathan and Gad: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Nathan and Gad guide.','Generated Site Map index is missing the detailed Nathan and Gad guide.');
+  expect(siteMapText.includes('Royal Chronicles and Other Named Records: Historical & Biblical Guide'),'Generated Site Map index lists the detailed Royal Chronicles guide.','Generated Site Map index is missing the detailed Royal Chronicles guide.');
   expect((await page.locator('.site-map-grid a[href="other-ancient-writings.html"]').count())>0,'Manual Site Map Bible Studies section links Other Ancient Writings.','Manual Site Map is missing Other Ancient Writings.');
 
 

@@ -14,7 +14,7 @@ if(book?.status!=='published')fail('Song of Songs must be marked published in th
 
 if(!errors.length){
  const en=load(enData,enGuide),es=load(esData);
- const names={'Cantar de los Cantares':'Song of Songs','Génesis':'Genesis','1 Corintios':'1 Corinthians','Santiago':'James','Proverbios':'Proverbs','1 Tesalonicenses':'1 Thessalonians','2 Timoteo':'2 Timothy','Filipenses':'Philippians','Efesios':'Ephesians','Hebreos':'Hebrews','Gálatas':'Galatians','Salmo':'Psalm','Romanos':'Romans','1 Juan':'1 John','Marcos':'Mark'};
+ const names={'Cantar de los Cantares':'Song of Songs','Génesis':'Genesis','1 Corintios':'1 Corinthians','Santiago':'James','Proverbios':'Proverbs','1 Tesalonicenses':'1 Thessalonians','2 Timoteo':'2 Timothy','Filipenses':'Philippians','Efesios':'Ephesians','Hebreos':'Hebrews','Gálatas':'Galatians','Salmo':'Psalm','Romanos':'Romans','Colosenses':'Colossians','1 Juan':'1 John','Marcos':'Mark'};
  const norm=r=>{for(const [a,b] of Object.entries(names))if(r.startsWith(a+' '))return b+r.slice(a.length);return r;};
  if(es?.slug!=='cantares-estudio')fail('Spanish Song of Songs slug must be cantares-estudio.');
  if(es?.book!=='Cantar de los Cantares')fail('Spanish book name must be Cantar de los Cantares.');
@@ -50,7 +50,7 @@ if(!errors.length){
   ['woman agency',['La voz de la mujer es central','La mujer habla ampliamente, inicia, desea, busca, alaba, invita']],
   ['colorism without anachronism',['rechazar colorismo','sin afirmar anacrónicamente']],
   ['family control',['El control de sus hermanos forma parte de su historia','La autoridad familiar no debe romantizarse']],
-  ['timing not purity guarantee',['no es una promesa de que cumplir reglas garantice un matrimonio perfecto','cultura de pureza']],
+  ['timing not purity guarantee',['No es una promesa de que cumplir reglas garantice un matrimonio perfecto','cultura de pureza']],
   ['consent term humility',['Consentimiento es un término moderno aplicado con cuidado bíblico','no como si el poema diera una definición legal']],
   ['anti stalking',['rastreo digital','aparecer después de una petición clara de distancia']],
   ['little foxes humility',['no son un glosario oculto del versículo']],
@@ -62,7 +62,7 @@ if(!errors.length){
   ['unsafe return not required',['regresar a una relación insegura','no significa que regresar']],
   ['repair not automatic',['Alabanza renovada no equivale a reparación completada','no restauran automáticamente confianza, acceso, liderazgo, sexo, convivencia ni la relación anterior']],
   ['Shulammite ambiguity',['La escena de la sulamita conserva ambigüedad y agencia','no debemos convertir a la mujer en espectáculo público']],
-  ['seal not ownership',['El sello expresa compromiso duradero, no propiedad','no debe convertirse en marca, vigilancia, aislamiento']],
+  ['seal not ownership',['El sello expresa compromiso duradero, no propiedad','No debe convertirse en marca, vigilancia, aislamiento']],
   ['jealousy not control',['La fuerza del amor no santifica celos posesivos','no excusa amenazas, violencia, acecho, control']],
   ['flame of Yah humility',['«llama de Yah»','La traducción varía']],
   ['love cannot be bought',['El amor no puede comprarse','nunca compran afecto, sexo, perdón ni acceso relacional']],

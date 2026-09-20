@@ -13,6 +13,8 @@ on:
       - 'manifest.webmanifest'
       - 'sw.js'
       - 'scripts/repository-completion-audit.mjs'
+      - 'scripts/book-study-question-numbering-audit.mjs'
+      - 'scripts/book-study-question-numbering-audit.mjs'
       - '.github/workflows/repository-completion-audit.yml'
       - '*.html'
       - '*.css'
@@ -57,6 +59,9 @@ jobs:
             echo "Checking $file"
             node --check "$file"
           done
+
+      - name: Check book-study question numbering
+        run: node scripts/book-study-question-numbering-audit.mjs
 
       - name: Install audit tools
         run: |

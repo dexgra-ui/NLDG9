@@ -833,7 +833,7 @@ window.NLDG_BOOK_STUDY={
       "examination": "¿Mi esperanza del fin me hace cuidar más o menos cuerpos, prójimos, justicia, creación, verdad y sanidad ahora? ¿Dónde ha desplazado el miedo a la invitación llena de gracia de Cristo?",
       "challenge": "Elige una práctica de nueva creación: consuela a alguien en duelo, cuida un lugar o criatura, trabaja por reconciliación, da agua o alimento, crea belleza o invita a alguien hacia Cristo sin presión.",
       "practice": "Elige una práctica de nueva creación: consuela a alguien en duelo, cuida un lugar o criatura, trabaja por reconciliación, da agua o alimento, crea belleza o invita a alguien hacia Cristo sin presión.",
-      "caution": "No reduzcas la esperanza cristiana a escape desincorporado permanente de la tierra. No uses la imagen de Israel en la ciudad para borrar o despreciar al pueblo judío. No conviertas «afuera están los perros» en insulto contra grupos humanos. No uses 22:18–19 para atacar traducción responsable, estudio de manuscritos o interpretación honesta. No fijes fechas.",
+      "caution": "No reduzcas la esperanza cristiana a escape desincorporado permanente de la tierra. No uses la imagen de Israel en la ciudad para borrar o despreciar al pueblo judío. No conviertas «afuera están los perros» en insulto contra grupos humanos. No uses 22:18–19 para atacar traducción responsable, crítica textual, estudio de manuscritos o interpretación honesta. No fijes fechas.",
       "closingTakeaway": "Apocalipsis termina no con bestias, Babilonia o lago de fuego, sino con Dios habitando con su pueblo, el Cordero iluminando, las naciones sanadas, la maldición quitada, el sediento invitado y la gracia extendida.",
       "prayer": "Señor Jesús, estrella brillante de la mañana, haznos pueblo de esperanza de nueva creación. Seca nuestras lágrimas, sana divisiones, profundiza nuestro cuidado por tu mundo y enséñanos a decir con el Espíritu y la novia: Ven. Amén.",
       "openingParagraphs": [
@@ -847,7 +847,7 @@ window.NLDG_BOOK_STUDY={
         "Jesús es el Cordero que ilumina la ciudad, la raíz y descendiente de David, la estrella brillante de la mañana, el Señor que viene y cuya gracia cierra el libro."
       ],
       "guardrailParagraphs": [
-        "No reduzcas la esperanza cristiana a escape desincorporado permanente de la tierra. No uses la imagen de Israel en la ciudad para borrar o despreciar al pueblo judío. No conviertas «afuera están los perros» en insulto contra grupos humanos. No uses 22:18–19 para atacar traducción responsable, estudio de manuscritos o interpretación honesta. No fijes fechas."
+        "No reduzcas la esperanza cristiana a escape desincorporado permanente de la tierra. No uses la imagen de Israel en la ciudad para borrar o despreciar al pueblo judío. No conviertas «afuera están los perros» en insulto contra grupos humanos. No uses 22:18–19 para atacar traducción responsable, crítica textual, estudio de manuscritos o interpretación honesta. No fijes fechas."
       ]
     }
   ],

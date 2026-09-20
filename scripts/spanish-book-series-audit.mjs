@@ -22,7 +22,7 @@ const loadJamesSeries=file=>{
   return context.window.NLDG_JAMES_SERIES;
 };
 
-const commonRequired=['book-study-series.js','book-study-series-es.js','es/biblical-study-map-links.js','nldg-i18n.js','es/estudios-biblicos.html'];
+const commonRequired=['book-study-series.js','book-study-series-es.js','es/biblical-study-map-links.js','nldg-i18n.js','es/estudios-biblicos.html','es/libro-por-libro.html'];
 const standardSeries=[
   {label:'Ruth',expected:5,bookPrefix:'Rut ',enData:'ruth-study-data.js',enGuide:'ruth-study-guide.js',esData:'ruth-study-data-es.js',enPage:'ruth-study.html',esPage:'es/rut-estudio.html',esRoute:'rut-estudio',canonical:'https://nolabelsdesignedbygod.org/es/rut-estudio.html',completion:'5 lecciones completas',i18nVersion:'1.45.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'Philippians',expected:6,bookPrefix:'Filipenses ',enData:'philippians-study-data.js',enGuide:'philippians-study-guide.js',esData:'philippians-study-data-es.js',enPage:'philippians-study.html',esPage:'es/filipenses-estudio.html',esRoute:'filipenses-estudio',canonical:'https://nolabelsdesignedbygod.org/es/filipenses-estudio.html',completion:'6 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
@@ -39,6 +39,7 @@ const standardSeries=[
 for(const file of commonRequired)if(!exists(file))errors.push(`Required shared bilingual book-series resource is missing: ${file}`);
 const i18n=read('nldg-i18n.js');
 const hub=read('es/estudios-biblicos.html');
+const library=read('es/libro-por-libro.html');
 const adapter=read('book-study-series-es.js');
 const mapBridge=read('es/biblical-study-map-links.js');
 const requiredLessonFields=['title','scripture','question','truth','goal','opening','context','examination','challenge','caution','prayer'];
@@ -87,8 +88,8 @@ for(const config of standardSeries){
   const englishPage=read(config.enPage);
   expect(`${config.label} English page`,englishPage,`nldg-i18n.js?v=${config.i18nVersion}`);
   expect(`${config.label} route pair`,i18n,`'${config.enPage}':'es/${config.esRoute}${html}'`);
-  expect('Spanish study hub',hub,`href="${config.esRoute}${html}"`);
-  expect('Spanish study hub',hub,config.completion);
+  expect('Spanish book-by-book library',library,`href="${config.esRoute}${html}"`);
+  expect('Spanish book-by-book library',library,config.completion.replace(' completas',''));
 }
 
 expect('Spanish study hub',hub,'Estudios por libro');

@@ -106,7 +106,7 @@ if(exists('hebrews-study-data-es.js')){
   const s=loadBookSeries('hebrews-study-data-es.js'),l2=s.lessons?.[1],l3=s.lessons?.[2],l4=s.lessons?.[3],l5=s.lessons?.[4],l6=s.lessons?.[5],l7=s.lessons?.[6],l8=s.lessons?.[7];
   if((s.seriesTeaching?.length??0)!==8)errors.push('Hebrews must retain eight series-level teaching movements.');
   if((s.seriesQuestions?.length??0)!==8)errors.push('Hebrews must retain eight series-level discussion questions.');
-  if(String(s.seriesContext||'').split(/\\n\\n+/).filter(Boolean).length!==2)errors.push('Hebrews must retain two series-level Scripture Context paragraphs.');
+  if(String(s.seriesContext||'').split(/\n\n+/).filter(Boolean).length!==2)errors.push('Hebrews must retain two series-level Scripture Context paragraphs.');
   for(const [i,lesson] of (s.lessons||[]).entries()){
     const label=`Hebrews lesson ${i+1}`;
     if((lesson.supporting?.length??0)!==5)errors.push(`${label}: must retain five supporting Scriptures.`);

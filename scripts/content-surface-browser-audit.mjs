@@ -99,8 +99,10 @@ async function checkBookStudyPrint(name,url,{spanish=false}={}){
   await tools.locator('[data-print-mode="participant"]').click();
   const immediateParticipantPrintCalls=await page.evaluate(()=>window.__nldgPrintCalls);
   expect(immediateParticipantPrintCalls===1,`${name} invokes print synchronously from the participant tap.`,`${name} delayed the participant print call outside the tap handler.`);
+  await page.evaluate(()=>window.dispatchEvent(new Event('afterprint')));
   await page.waitForTimeout(50);
   const participant=await page.locator('#book-print-surface').innerText().catch(()=>'');
+  expect(participant.length>0,`${name} preserves the packet if afterprint fires while iOS is still building its preview.`,`${name} cleared the print packet too early after afterprint.`);
   const participantHeadings=await page.locator('#book-print-surface .print-section h2').allInnerTexts();
   const teachingHeading=spanish?'Movimientos de enseñanza':'Teaching Movements';
   const leaderGuidanceHeading=spanish?'Guía para líderes':'Leader Guidance';

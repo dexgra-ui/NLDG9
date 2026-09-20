@@ -124,7 +124,7 @@ window.NLDG_BOOK_STUDY={
         "Numbers 16:1–35",
         "Numbers 22:1–35",
         "2 Peter 2:1–19",
-        "1 Enoch 1:9"
+        "Zechariah 14:5"
       ],
       "question": "What patterns reveal corrupt spiritual influence, and how can the church discern them without overreading Jude’s difficult examples?",
       "truth": "Corrupt influence becomes visible through rebellion, boundary violation, arrogance, greed, exploitation, fruitlessness, self-serving speech, and refusal of Jesus’ authority.",

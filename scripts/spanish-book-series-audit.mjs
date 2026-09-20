@@ -288,7 +288,7 @@ if(exists('third-john-study-data-es.js')){
 if(exists('jude-study-data-es.js')){
   const en=loadBookSeries('jude-study-data.js','jude-study-guide.js');
   const s=loadBookSeries('jude-study-data-es.js');
-  const bookNames={'Judas':'Jude','Génesis':'Genesis','Números':'Numbers','2 Pedro':'2 Peter','1 Enoc':'1 Enoch','Hechos':'Acts','Gálatas':'Galatians','2 Timoteo':'2 Timothy','Tito':'Titus','1 Juan':'1 John','Mateo':'Matthew','1 Timoteo':'1 Timothy','1 Tesalonicenses':'1 Thessalonians','Santiago':'James','Juan':'John','Romanos':'Romans','Efesios':'Ephesians'};
+  const bookNames={'Judas':'Jude','Génesis':'Genesis','Números':'Numbers','2 Pedro':'2 Peter','1 Enoc':'1 Enoch','Zacarías':'Zechariah','Hechos':'Acts','Gálatas':'Galatians','2 Timoteo':'2 Timothy','Tito':'Titus','1 Juan':'1 John','Mateo':'Matthew','1 Timoteo':'1 Timothy','1 Tesalonicenses':'1 Thessalonians','Santiago':'James','Juan':'John','Romanos':'Romans','Efesios':'Ephesians'};
   const normRef=r=>{for(const [a,b] of Object.entries(bookNames))if(String(r||'').startsWith(a+' '))return b+String(r).slice(a.length);return String(r||'');};
   const normList=x=>String(x||'').split(';').map(v=>normRef(v.trim())).filter(Boolean);
   if((s.seriesTeaching?.length??0)!==8)errors.push('Jude must retain eight series-level teaching movements.');

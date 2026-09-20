@@ -5,6 +5,48 @@
  const done=new Set(read().completed||[]),n=Number(new URLSearchParams(location.search).get('lesson')||0),lesson=s.lessons.find(x=>x.number===n),href=x=>`${s.slug}.html?lesson=${x}`;
  const paras=(arr,fallback='')=>arr?.length?arr.map(p=>`<p>${esc(p)}</p>`).join(''):(fallback?`<p>${esc(fallback)}</p>`:'');
  const renderGuideBlocks=blocks=>(blocks||[]).map(block=>{const paragraphs=(block.paragraphs||[]).map(p=>`<p>${esc(p)}</p>`).join('');const text=block.text?`<p>${esc(block.text)}</p>`:'';const items=(block.items||[]).length?`<ul>${block.items.map(item=>`<li>${esc(item)}</li>`).join('')}</ul>`:'';return `<article class="lesson-panel"><p class="kicker">Series guide</p><h2>${esc(block.title)}</h2>${paragraphs}${text}${items}</article>`}).join('');
+ const isSpanish=document.documentElement.lang==='es';
+ const printLabels={
+  print:isSpanish?'Imprimir':'Print',
+  printLesson:isSpanish?'Imprimir lección':'Print Lesson',
+  participant:isSpanish?'Guía del participante':'Participant Handout',
+  leader:isSpanish?'Guía para líderes':'Leader Guide',
+  both:isSpanish?'Imprimir ambos':'Print Both',
+  centralQuestion:s.lessonQuestionLabel||(isSpanish?'Pregunta central':'Central Question'),
+  keyTruth:s.keyTruthLabel||(isSpanish?'Verdad clave':'Key Truth'),
+  purpose:s.lessonPurposeLabel||(isSpanish?'Propósito':'Purpose'),
+  opening:s.openingLabel||(isSpanish?'Apertura':'Opening'),
+  mainScripture:s.mainPassageLabel||(isSpanish?'Pasaje principal':'Main Scripture'),
+  supporting:s.supportingScripturesLabel||(isSpanish?'Escrituras de apoyo':'Supporting Scripture'),
+  context:s.scriptureContextLabel||(isSpanish?'Contexto bíblico':'Scripture Context'),
+  teaching:s.lessonTeachingLabel||(isSpanish?'Movimientos de enseñanza':'Teaching Movements'),
+  jesus:s.jesusConnectionLabel||(isSpanish?'Conexión con Jesús':'Jesus Connection'),
+  guardrail:s.guardrailLabel||(isSpanish?'No pases esto por alto':'Do Not Miss This'),
+  discussion:s.discussionQuestionsLabel||(isSpanish?'Preguntas para conversar':'Discussion Questions'),
+  examination:s.personalExaminationLabel||(isSpanish?'Examen personal':'Personal Examination'),
+  practice:s.weeklyPracticeLabel||(isSpanish?'Práctica semanal':'Weekly Practice'),
+  leaderGuidance:s.leaderGuidanceLabel||(isSpanish?'Guía para líderes':'Leader Guidance'),
+  takeaway:s.closingTakeawayLabel||(isSpanish?'Conclusión principal':'Closing Takeaway'),
+  prayer:s.closingPrayerLabel||(isSpanish?'Oración final':'Closing Prayer'),
+  name:isSpanish?'Nombre':'Name',
+  date:isSpanish?'Fecha':'Date',
+  notes:isSpanish?'Notas':'Notes'
+ };
+ const supportsSplitPrint=x=>{const mode=x.printMode||s.printMode;if(mode==='simple')return false;if(mode==='split')return true;return Boolean(x.teaching?.length)};
+ const printParas=(arr,fallback='')=>arr?.length?arr.map(p=>`<p>${esc(p)}</p>`).join(''):(fallback?`<p>${esc(fallback)}</p>`:'');
+ const printSection=(label,content,className='')=>content?`<section class="print-section ${className}"><h2>${esc(label)}</h2>${content}</section>`:'';
+ const answerLines=count=>`<span class="print-answer-lines" aria-hidden="true">${Array.from({length:count},()=>'<span></span>').join('')}</span>`;
+ const printHeader=(x,kind)=>`<header class="print-packet-header"><p class="print-brand">No Labels, Designed by God</p><p class="print-packet-kind">${esc(kind)}</p><h1>${esc(x.title)}</h1><p class="print-series-title">${esc(s.title)}</p><p class="print-scripture-summary">${esc(x.scripture)}</p></header>`;
+ const printScripture=x=>`<p class="print-main-scripture">${esc(x.scripture)}</p>${x.supporting?.length?`<p><strong>${esc(printLabels.supporting)}:</strong> ${x.supporting.map(esc).join('; ')}</p>`:''}`;
+ const printQuestions=(x,withLines=false)=>x.questions?.length?`<ol class="print-question-list">${x.questions.map(q=>`<li><span>${esc(q)}</span>${withLines?answerLines(2):''}</li>`).join('')}</ol>`:'';
+ const printTeaching=x=>x.teaching?.length?`<div class="print-teaching-list">${x.teaching.map((t,j)=>`<article class="print-teaching-movement"><p class="print-teaching-number">${j+1}</p><div><h3>${esc(t.heading)}</h3>${printParas(t.paragraphs,t.body)}</div></article>`).join('')}</div>`:'';
+ const participantPacket=x=>`<article class="print-packet print-participant">${printHeader(x,printLabels.participant)}<div class="print-name-date"><span>${esc(printLabels.name)}: ______________________________</span><span>${esc(printLabels.date)}: __________________</span></div>${printSection(printLabels.centralQuestion,`<p class="print-emphasis">${esc(x.question)}</p>`)}${printSection(printLabels.keyTruth,`<p>${esc(x.truth)}</p>`)}${printSection(printLabels.mainScripture,printScripture(x),'print-scripture-section')}${printSection(printLabels.opening,printParas(x.openingParagraphs,x.opening))}${printSection(printLabels.discussion,printQuestions(x,true),'print-discussion-section')}${printSection(printLabels.examination,`<p>${esc(x.examination)}</p>${answerLines(3)}`)}${printSection(printLabels.practice,`<p>${esc(x.practice||x.challenge)}</p>`)}${printSection(printLabels.takeaway,x.closingTakeaway?`<p>${esc(x.closingTakeaway)}</p>`:'')}${printSection(printLabels.prayer,x.prayer?`<p>${esc(x.prayer)}</p>`:'')}${printSection(printLabels.notes,answerLines(5),'print-notes-section')}</article>`;
+ const leaderPacket=(x,kind=printLabels.leader)=>`<article class="print-packet print-leader">${printHeader(x,kind)}${printSection(printLabels.centralQuestion,`<p class="print-emphasis">${esc(x.question)}</p>`)}${printSection(printLabels.keyTruth,`<p>${esc(x.truth)}</p>`)}${printSection(printLabels.purpose,x.goal?`<p>${esc(x.goal)}</p>`:'')}${printSection(printLabels.opening,printParas(x.openingParagraphs,x.opening))}${printSection(printLabels.mainScripture,printScripture(x),'print-scripture-section')}${printSection(printLabels.context,printParas(x.contextParagraphs,x.context))}${printSection(printLabels.teaching,printTeaching(x),'print-teaching-section')}${printSection(printLabels.jesus,printParas(x.jesusParagraphs,x.jesusConnection))}${printSection(printLabels.guardrail,printParas(x.guardrailParagraphs,x.guardrail))}${printSection(printLabels.discussion,printQuestions(x))}${printSection(printLabels.examination,x.examination?`<p>${esc(x.examination)}</p>`:'')}${printSection(printLabels.practice,(x.practice||x.challenge)?`<p>${esc(x.practice||x.challenge)}</p>`:'')}${printSection(printLabels.leaderGuidance,(x.leaderGuidance||x.caution)?`<p>${esc(x.leaderGuidance||x.caution)}</p>`:'')}${printSection(printLabels.takeaway,x.closingTakeaway?`<p>${esc(x.closingTakeaway)}</p>`:'')}${printSection(printLabels.prayer,x.prayer?`<p>${esc(x.prayer)}</p>`:'')}</article>`;
+ const printControl=x=>supportsSplitPrint(x)?`<details class="lesson-print-tools"><summary class="button secondary">${esc(printLabels.print)}</summary><div class="lesson-print-menu" role="group" aria-label="${esc(printLabels.print)}"><button type="button" data-print-mode="participant">${esc(printLabels.participant)}</button><button type="button" data-print-mode="leader">${esc(printLabels.leader)}</button><button type="button" data-print-mode="both">${esc(printLabels.both)}</button></div></details>`:`<button type="button" class="button secondary lesson-print-single" data-print-mode="lesson">${esc(printLabels.printLesson)}</button>`;
+ const ensurePrintSurface=()=>{let surface=document.getElementById('book-print-surface');if(!surface){surface=document.createElement('section');surface.id='book-print-surface';surface.setAttribute('aria-hidden','true');document.body.appendChild(surface)}return surface};
+ const preparePrint=(x,mode)=>{const surface=ensurePrintSurface();surface.innerHTML=mode==='participant'?participantPacket(x):mode==='leader'?leaderPacket(x):mode==='both'?participantPacket(x)+leaderPacket(x):leaderPacket(x,printLabels.printLesson);document.body.dataset.bookPrintMode=mode;hero.querySelector('.lesson-print-tools')?.removeAttribute('open');requestAnimationFrame(()=>window.print())};
+ const bindPrintControls=x=>hero.querySelectorAll('[data-print-mode]').forEach(button=>button.addEventListener('click',()=>preparePrint(x,button.dataset.printMode||'lesson')));
+ window.addEventListener('afterprint',()=>{const surface=document.getElementById('book-print-surface');if(surface)surface.innerHTML='';delete document.body.dataset.bookPrintMode});
  function landing(){
   document.title=`${s.title} | No Labels, Designed by God`;const themeLabel=s.theme?`<p class="kicker series-theme-label">${esc(s.themeLabel||'Interpretive commitments')}</p><blockquote>${esc(s.theme)}</blockquote>`:'';
   hero.innerHTML=`<div class="book-hero-inner"><a class="series-back" href="studies.html">← Bible Studies</a><p class="kicker">Book-by-Book Bible Study</p><h1>${esc(s.title)}</h1><p class="book-lead">${esc(s.description)}</p>${themeLabel}<div class="series-meta"><span>📖 ${esc(s.book)}</span><span>◷ ${s.lessons.length} lessons · 60–75 minutes</span><span>◎ ${esc(s.audience)}</span></div><div class="series-progress"><strong>${done.size} of ${s.lessons.length} completed</strong><progress max="${s.lessons.length}" value="${done.size}"></progress></div></div>`;
@@ -14,7 +56,7 @@
  }
  function render(x){
   document.title=`${x.title} | ${s.title}`;const i=s.lessons.indexOf(x),prev=s.lessons[i-1],next=s.lessons[i+1];
-  hero.innerHTML=`<div class="book-hero-inner"><a class="series-back" href="${s.slug}.html">← Series Overview</a><p class="kicker">Lesson ${x.number} of ${s.lessons.length}</p><h1>${esc(x.title)}</h1><p class="book-lead">${esc(x.question)}</p><div class="series-meta"><span>📖 ${esc(x.scripture)}</span><span>◷ 60–75 minutes</span></div></div>`;
+  hero.innerHTML=`<div class="book-hero-inner"><a class="series-back" href="${s.slug}.html">← Series Overview</a><p class="kicker">Lesson ${x.number} of ${s.lessons.length}</p><h1>${esc(x.title)}</h1><p class="book-lead">${esc(x.question)}</p><div class="series-meta"><span>📖 ${esc(x.scripture)}</span><span>◷ 60–75 minutes</span></div>${printControl(x)}</div>`;
   const purpose=x.goal?`<section class="lesson-panel"><p class="kicker">Purpose</p><p>${esc(x.goal)}</p></section>`:'';
   const opening=`<section class="lesson-panel"><h2>Opening</h2>${paras(x.openingParagraphs,x.opening)}</section>`;
   const supporting=x.supporting?.length?`<p class="kicker supporting-scripture-label">Supporting Scripture</p><p>${x.supporting.map(esc).join('; ')}</p>`:'';
@@ -23,6 +65,7 @@
   const special=(label,arr,text)=>arr?.length||text?`<section class="lesson-panel"><p class="kicker">${esc(label)}</p>${paras(arr,text)}</section>`:'';
   const takeaway=x.closingTakeaway?`<section class="lesson-panel closing-takeaway"><p class="kicker">Closing Takeaway</p><p>${esc(x.closingTakeaway)}</p></section>`:'';
   view.innerHTML=`<article class="book-lesson"><section class="truth-banner"><p class="kicker">Key Truth</p><h2>${esc(x.truth)}</h2></section>${purpose}${opening}${context}<div class="section-heading lesson-teaching-heading"><p class="kicker">Teaching Movements</p></div>${teaching}${special('Jesus Connection',x.jesusParagraphs,x.jesusConnection)}${special('Do Not Miss This',x.guardrailParagraphs,x.guardrail)}<section class="lesson-panel"><p class="kicker">Discuss</p><h2>Discussion Questions</h2><ol>${x.questions.map(q=>`<li>${esc(q)}</li>`).join('')}</ol></section><section class="lesson-panel"><p class="kicker">Personal Examination</p><h2>Bring the lesson home</h2><p>${esc(x.examination)}</p></section><section class="challenge-panel"><p class="kicker">Weekly Practice</p><h2>Live the Word</h2><p>${esc(x.challenge)}</p></section><aside class="leader-note"><strong>Leader Guidance:</strong> ${esc(x.caution)}</aside>${takeaway}<section class="prayer-panel"><p class="kicker">Closing Prayer</p><p>${esc(x.prayer)}</p></section><div class="complete-panel"><div><strong>${done.has(x.number)?'Lesson completed':'Finished this lesson?'}</strong><span>Progress is saved on this device.</span></div><button id="toggle-complete" class="button primary">${done.has(x.number)?'Mark Incomplete':'Mark Complete'}</button></div><nav class="lesson-navigation">${prev?`<a href="${href(prev.number)}">← Lesson ${prev.number}<strong>${esc(prev.title)}</strong></a>`:'<span></span>'}${next?`<a href="${href(next.number)}">Lesson ${next.number} →<strong>${esc(next.title)}</strong></a>`:`<a href="${s.slug}.html">Series Complete →<strong>Return to Overview</strong></a>`}</nav></article>`;
+  bindPrintControls(x);
   document.getElementById('toggle-complete').onclick=()=>{const st=read(),set=new Set(st.completed||[]);set.has(x.number)?set.delete(x.number):set.add(x.number);st.completed=[...set].sort((a,b)=>a-b);save(st);location.reload()};
  }
  lesson?render(lesson):landing();

@@ -248,7 +248,7 @@ if(exists('second-john-study-data-es.js')){
     if(JSON.stringify((lesson.supporting||[]).map(normRef))!==JSON.stringify(eng?.supporting||[]))errors.push(`${label}: supporting Scripture references must match English after book-name normalization.`);
   }
   const all=JSON.stringify(s).toLowerCase(),l1=s.lessons?.[0],l2=s.lessons?.[1],l3=s.lessons?.[2];
-  if(!s.seriesContext?.includes('el anciano')||!s.seriesContext?.includes('señora elegida')||!s.seriesContext?.includes('respaldo públicamente'))errors.push('2 John series context must preserve elder, elect-lady, and endorsement nuance.');
+  if(!s.seriesContext?.includes('el anciano')||!s.seriesContext?.includes('señora elegida')||!s.seriesContext?.includes('respaldar públicamente'))errors.push('2 John series context must preserve elder, elect-lady, and endorsement nuance.');
   if(!l1?.guardrailParagraphs?.[0]?.includes('crueldad')||!l1?.guardrailParagraphs?.[0]?.includes('perfeccionismo'))errors.push('2 John lesson 1 must preserve truth/love and non-perfectionist safeguards.');
   if(!l2?.guardrailParagraphs?.[0]?.includes('desacuerdo político')||!l2?.guardrailParagraphs?.[0]?.includes('anticristo')||!l2?.guardrailParagraphs?.[0]?.includes('afirmaciones reales'))errors.push('2 John lesson 2 must preserve careful antichrist and evidence-based discernment safeguards.');
   if(!l3?.guardrailParagraphs?.[0]?.includes('ruptura familiar')||!l3?.guardrailParagraphs?.[0]?.includes('ayuda de emergencia')||!l3?.guardrailParagraphs?.[0]?.includes('respaldo automático'))errors.push('2 John lesson 3 must preserve anti-shunning, emergency-compassion, and endorsement safeguards.');

@@ -476,6 +476,361 @@ window.NLDG_JAMES_SERIES={
       "leaderGuidance": "Esta lección puede exponer dinámicas de clase y raza. Mantén la conversación específica sin convertir personas en símbolos. No corras a «tratamos a todos igual» antes de examinar patrones reales de atención, acceso y poder.",
       "closingTakeaway": "Santiago dice que el favoritismo es incompatible con la fe en el glorioso Señor Jesucristo. La ley real crea comunidades donde la dignidad no se compra con estatus y la misericordia forma el trato.",
       "prayer": "Glorioso Señor Jesús, expón nuestra parcialidad. Enséñanos a amar al prójimo sin clasificar su valor, confrontar explotación y construir comunidades de misericordia, dignidad y verdad. Amén."
+    },
+    {
+      "week": 6,
+      "title": "La fe que se mueve",
+      "scripture": "Santiago 2:14–26",
+      "supporting": [
+        "Génesis 15:1–6",
+        "Génesis 22:1–18",
+        "Josué 2:1–21",
+        "Romanos 3:21–31",
+        "Efesios 2:8–10"
+      ],
+      "question": "¿Cómo se hace visible la fe viva en obras sin convertir las obras en una manera de ganar salvación?",
+      "truth": "Santiago confronta una fe meramente verbal que deja necesidades y obediencia intactas; la fe viva se hace visible en obras que completan y demuestran la confianza.",
+      "goal": "Conectar la fe salvadora con fruto visible sin convertir las obras en medio para ganar salvación.",
+      "opening": "Lee Santiago 2:14–26 lentamente. Marca fe, obras, hermano, hermana, comida, ropa, demonios, Abraham, Rahab, justificar y cuerpo.",
+      "contextParagraphs": [
+        "Santiago pregunta qué beneficio hay en afirmar fe mientras se rehúsa ayuda práctica a un hermano o hermana que carece de ropa o alimento. Su objetivo no es un creyente que crece imperfectamente, sino una afirmación de fe que permanece sin vida e indiferente.",
+        "Pablo y Santiago usan justificar y obras en contextos argumentativos distintos. Pablo niega que pecadores establezcan justicia delante de Dios por obras; Santiago afirma que la fe genuina se muestra y llega a madurez en acción. Abraham y Rahab ilustran confianza que responde, aunque sus historias completas siguen siendo moralmente complejas."
+      ],
+      "teaching": [
+        {
+          "heading": "Una afirmación de fe puede estar vacía — Santiago 2:14",
+          "body": "Santiago cuestiona el valor salvador de una profesión que no produce respuesta viva."
+        },
+        {
+          "heading": "La necesidad práctica pone a prueba las palabras religiosas — Santiago 2:15–16",
+          "body": "Bendecir a alguien hambriento o mal vestido sin ayudar materialmente expone la vaciedad de palabras piadosas."
+        },
+        {
+          "heading": "La fe sin obras está muerta — Santiago 2:17",
+          "body": "Las obras no son otro salvador; muestran que la fe está viva."
+        },
+        {
+          "heading": "Creencia correcta por sí sola no es toda la fe — Santiago 2:18–19",
+          "body": "Hasta los demonios reconocen verdades acerca de Dios. La fe bíblica incluye confianza, lealtad y respuesta."
+        },
+        {
+          "heading": "La fe de Abraham se volvió activa en obediencia — Santiago 2:20–23",
+          "body": "Santiago lee Génesis 15 y 22 juntos. La acción muestra una fe que obra y madura, no que compra gracia."
+        },
+        {
+          "heading": "«Justificado por obras» debe leerse dentro del argumento de Santiago — Santiago 2:24",
+          "body": "Santiago confronta profesión vacía. El versículo no debe aislarse de Pablo ni usarse para crear salvación por desempeño."
+        },
+        {
+          "heading": "Rahab ilustra lealtad costosa — Santiago 2:25",
+          "body": "Rahab arriesga su seguridad al recibir y enviar a los mensajeros. Su inclusión muestra gracia obrando por personas socialmente inesperadas."
+        },
+        {
+          "heading": "Un cuerpo sin aliento es la imagen final — Santiago 2:26",
+          "body": "Las obras se relacionan con la fe como el aliento con el cuerpo: muestran vida. La actividad no crea la vida, pero la vida no permanece invisible para siempre."
+        }
+      ],
+      "jesusConnection": "Jesús rechaza lealtad verbal sin obediencia y conecta amor por Él con hacer lo que enseña. Su gracia viene primero y capacita la acción fiel; la fe viva de Santiago es respuesta, no autosalvación.",
+      "guardrail": "No enseñes que buenas obras ganan salvación, cancelan pecado o ponen a Dios en deuda. No midas la salvación de otra persona por tus actividades ministeriales preferidas. No excuses inactividad apelando a gracia. El cuidado práctico de personas necesitadas es central al ejemplo de Santiago.",
+      "discussion": [
+        "1. ¿Qué clase de fe desafía Santiago en el versículo 14?",
+        "2. ¿Por qué usa comida y ropa como primer ejemplo?",
+        "3. ¿Cómo son las obras evidencia y no pago por salvación?",
+        "4. ¿Qué revela el ejemplo de los demonios sobre creencia intelectual?",
+        "5. ¿Cómo conecta Santiago Génesis 15 y Génesis 22?",
+        "6. ¿Cómo pueden leerse juntos Santiago 2:24 y la enseñanza de Pablo?",
+        "7. ¿Qué aporta Rahab al argumento?",
+        "8. ¿Qué fruto visible debería producir la fe viva sin convertir discipulado en desempeño?"
+      ],
+      "examination": "¿Dónde mis palabras acerca de la fe van más lejos que mi obediencia real? ¿Qué necesidad o responsabilidad he bendecido verbalmente mientras evito actuar?",
+      "practice": "Elige una acción concreta que haga visible la fe: cubre una necesidad, cumple una promesa, reconcilia de manera segura, da con generosidad, actúa sobre una convicción o sirve sin reconocimiento.",
+      "leaderGuidance": "Espera preguntas sobre Pablo y Santiago. Explica los errores distintos que cada escritor confronta. Mantén la gracia primero y el fruto real.",
+      "closingTakeaway": "Santiago no reemplaza fe con obras. Expone una afirmación muerta y enseña que la confianza viva respira mediante obediencia, misericordia y respuesta costosa.",
+      "prayer": "Señor Jesús, líbranos de palabras religiosas vacías y de religión de desempeño. Que tu gracia produzca en nosotros una fe viva que actúa, sirve, obedece y ama porque confía en ti. Amén."
+    },
+    {
+      "week": 7,
+      "title": "Las palabras importan",
+      "scripture": "Santiago 3:1–12",
+      "supporting": [
+        "Proverbios 12:18",
+        "Proverbios 18:21",
+        "Mateo 12:33–37",
+        "Efesios 4:25–32",
+        "Colosenses 4:5–6"
+      ],
+      "question": "¿Por qué trata Santiago las palabras y la enseñanza como pruebas importantes de madurez espiritual?",
+      "truth": "Las palabras revelan madurez espiritual porque pueden dirigir vidas, extender destrucción, bendecir a Dios y herir a personas hechas a su imagen.",
+      "goal": "Reconocer la seria responsabilidad de los maestros y el poder desproporcionado de las palabras para bendecir, herir, guiar y destruir.",
+      "opening": "Lee Santiago 3:1–12 lentamente. Marca maestros, juicio, tropiezo, freno, timón, fuego, lengua, veneno, bendecir, maldecir, imagen de Dios, fuente e higuera.",
+      "contextParagraphs": [
+        "Santiago comienza con los maestros porque el habla pública lleva influencia y por eso juicio más estricto. Luego amplía la lección a todos: todos tropezamos de muchas maneras y la lengua concentra la dificultad del dominio propio maduro.",
+        "Las imágenes del freno, timón y fuego enfatizan poder desproporcionado. «Encendida por el infierno» es imagen moral fuerte sobre habla destructiva, no permiso para etiquetar personas como demoníacas. La contradicción más profunda es bendecir a Dios y maldecir a quienes llevan su imagen."
+      ],
+      "teaching": [
+        {
+          "heading": "Los maestros reciben juicio más estricto — Santiago 3:1",
+          "body": "Mayor influencia trae mayor responsabilidad. Autoridad para enseñar nunca significa inmunidad a corrección."
+        },
+        {
+          "heading": "Todos tropezamos, incluso maestros — Santiago 3:2",
+          "body": "Santiago une responsabilidad con humildad. Madurez no exige fingir que el habla ya es perfecta."
+        },
+        {
+          "heading": "Instrumentos pequeños pueden dirigir grandes resultados — Santiago 3:3–5",
+          "body": "Frenos y timones muestran cómo palabras pequeñas pueden cambiar dirección mucho más allá de su tamaño."
+        },
+        {
+          "heading": "Las palabras pueden propagarse como fuego — Santiago 3:5–6",
+          "body": "Rumor, humillación, engaño, rabia y habla pública imprudente pueden dañar una comunidad rápidamente."
+        },
+        {
+          "heading": "La habilidad humana no domina plenamente la lengua — Santiago 3:7–8",
+          "body": "El lenguaje advierte contra confianza en uno mismo. La transformación requiere más que etiqueta."
+        },
+        {
+          "heading": "Las palabras pueden llevar veneno — Santiago 3:8",
+          "body": "Crueldad verbal, amenazas, calumnia y manipulación son espiritualmente serias aunque no dejen marca física."
+        },
+        {
+          "heading": "Bendecir a Dios y maldecir su imagen es contradictorio — Santiago 3:9–10",
+          "body": "La adoración no puede separarse de cómo hablamos de seres humanos."
+        },
+        {
+          "heading": "Una fuente cambiada debe producir palabras cambiadas — Santiago 3:11–12",
+          "body": "Fuentes y árboles producen según su naturaleza. Santiago exige integridad entre adoración, corazón y boca."
+        }
+      ],
+      "jesusConnection": "Jesús enseña que las palabras salen del corazón y que daremos cuenta por ellas. También usa palabras para sanar, defender al vulnerable, confrontar hipocresía, perdonar y decir verdad. Santidad no es silencio, sino amor verdadero.",
+      "guardrail": "No uses «cuida tu lengua» para silenciar reportes de abuso, denuncias, lamento, testimonio público o confrontación necesaria. Distingue chisme y calumnia de reporte verdadero. No llames «demoníaca» a una persona por una declaración dañina. Los maestros tienen mayor responsabilidad y deben aceptar corrección.",
+      "discussion": [
+        "1. ¿Por qué comienza Santiago con maestros?",
+        "2. ¿Cómo evita el versículo 2 una responsabilidad arrogante?",
+        "3. ¿Qué imagen—freno, timón o fuego—describe mejor el habla?",
+        "4. ¿Qué clase de palabras dañan rápidamente una comunidad o red social?",
+        "5. ¿Por qué no basta la habilidad humana para dominar la lengua?",
+        "6. ¿Qué formas de daño verbal suelen minimizarse porque no dejan marca física?",
+        "7. ¿Por qué maldecir a personas hechas a imagen de Dios es asunto de adoración?",
+        "8. ¿Qué práctica puede alinear mejor tus palabras con el Dios que bendices?"
+      ],
+      "examination": "¿A quién disminuyen, exageran, ridiculizan, manipulan o exponen innecesariamente mis palabras? ¿Dónde contradice mi habla pública mi adoración?",
+      "practice": "Elige una disciplina de palabras durante siete días: no bromas degradantes, verifica antes de compartir, pausa antes de responder con ira, pide perdón por una palabra dañina o habla ánimo verdadero cada día.",
+      "leaderGuidance": "Crea seguridad alrededor de ejemplos de habla. No obligues a nombrar víctimas u ofensores en público. Si alguien reporta abuso o mala conducta, trátalo como asunto de protección y no como chisme.",
+      "closingTakeaway": "Santiago trata las palabras como gran prueba de madurez porque dirigen, incendian, envenenan, bendicen y maldicen. El habla cristiana debe reflejar cada vez más la dignidad de quienes llevan la imagen de Dios.",
+      "prayer": "Dios de verdad, gobierna nuestra boca. Haz humildes y responsables a los maestros, frena palabras destructivas, danos valor para decir verdad necesaria y deja que nuestras palabras bendigan a quienes llevan tu imagen. Amén."
+    },
+    {
+      "week": 8,
+      "title": "Sabiduría de lo alto",
+      "scripture": "Santiago 3:13–18",
+      "supporting": [
+        "Proverbios 3:13–18",
+        "Mateo 5:5–9",
+        "Filipenses 2:1–11",
+        "Gálatas 5:22–23",
+        "1 Pedro 3:8–12"
+      ],
+      "question": "¿Cómo distinguen los creyentes la sabiduría de lo alto de una influencia impulsada por envidia y ambición egoísta?",
+      "truth": "La sabiduría de lo alto se conoce no por brillantez o dominio, sino por conducta humilde, pureza, paz, gentileza, disposición a escuchar, misericordia, buen fruto, imparcialidad y sinceridad.",
+      "goal": "Distinguir sabiduría piadosa de influencia movida por ambición examinando el fruto que cada una produce.",
+      "opening": "Lee Santiago 3:13–18 lentamente. Marca sabio, entendido, conducta, mansedumbre, celos, ambición, terrenal, no espiritual, demoníaca, desorden, pureza, paz, amabilidad, misericordia, fruto, imparcialidad, sinceridad y justicia.",
+      "contextParagraphs": [
+        "Santiago pasa de la lengua a la sabiduría porque palabras e influencia son gobernadas por la clase de sabiduría que una persona sigue. La persona sabia debe mostrar sabiduría mediante buena conducta y mansedumbre en vez de simplemente reclamar entendimiento.",
+        "Envidia amarga y ambición egoísta producen desorden, mientras la sabiduría de arriba produce una cosecha de justicia en paz. «Pacífica» no significa mantener calma superficial a cualquier precio; Santiago ya confrontó favoritismo y pronto confrontará opresión económica."
+      ],
+      "teaching": [
+        {
+          "heading": "La sabiduría debe mostrarse por la conducta — Santiago 3:13",
+          "body": "Santiago mide sabiduría por la vida, no por inteligencia, plataforma o habilidad retórica."
+        },
+        {
+          "heading": "La mansedumbre es fuerza sin autoexaltación — Santiago 3:13",
+          "body": "La sabiduría mansa no necesita dominar el espacio para probarse."
+        },
+        {
+          "heading": "La envidia amarga corrompe la perspectiva — Santiago 3:14",
+          "body": "La comparación puede convertir el bien de otra persona en amenaza y distorsionar juicio."
+        },
+        {
+          "heading": "La ambición egoísta vuelve la influencia hacia el yo — Santiago 3:14",
+          "body": "El liderazgo se vuelve peligroso cuando posición, reconocimiento o victoria importan más que verdad y amor."
+        },
+        {
+          "heading": "La falsa sabiduría puede ser terrenal, no espiritual y demoníaca — Santiago 3:15",
+          "body": "Santiago describe origen y carácter de sabiduría movida por ambición. Estas palabras no deben usarse como acusaciones casuales contra quien discrepa."
+        },
+        {
+          "heading": "El desorden revela el fruto de envidia y ambición — Santiago 3:16",
+          "body": "Caos repetido puede revelar la sabiduría que gobierna una comunidad."
+        },
+        {
+          "heading": "La sabiduría de lo alto tiene cualidades reconocibles — Santiago 3:17",
+          "body": "Pureza, paz, amabilidad, disposición a escuchar, misericordia, fruto, imparcialidad y sinceridad ofrecen una prueba práctica."
+        },
+        {
+          "heading": "La justicia crece donde los pacificadores siembran paz — Santiago 3:18",
+          "body": "La paz se cultiva y puede requerir verdad valiente, reparación, límites y justicia en vez de evasión."
+        }
+      ],
+      "jesusConnection": "Jesús encarna mansedumbre, misericordia, pureza de corazón, paz y liderazgo servidor. No evita conflicto para conservar apariencias; confronta hipocresía sin dominación ni autoexaltación.",
+      "guardrail": "No equipares paz con silencio, obediencia automática o permanecer en sistemas dañinos. No uses «dispuesta a ceder» o «amable» para presionar a personas vulnerables a abandonar límites. No llames demoníacos a oponentes simplemente por desacuerdo. Juzga sabiduría por fruto sostenido, no carisma.",
+      "discussion": [
+        "1. ¿Por qué pide Santiago que la sabiduría se muestre?",
+        "2. ¿Qué es mansedumbre y cómo difiere de debilidad?",
+        "3. ¿Cómo distorsiona la envidia el juicio espiritual?",
+        "4. ¿Qué señales modernas revelan ambición egoísta en liderazgo?",
+        "5. ¿Por qué no deben volverse armas las palabras fuertes del versículo 15?",
+        "6. ¿Qué desorden suele crecer de rivalidad y ambición?",
+        "7. ¿Qué cualidad del versículo 17 necesitas más ahora?",
+        "8. ¿Cómo puede la paz incluir confrontación verdadera?"
+      ],
+      "examination": "¿Qué fruto produce mi manera de lograr cosas: paz, misericordia, sinceridad y buen fruto, o rivalidad, defensa y desorden?",
+      "practice": "Antes de una conversación o decisión difícil, evalúa tu enfoque con cada cualidad de Santiago 3:17 y cámbialo donde haga falta.",
+      "leaderGuidance": "Observa la confusión entre ser agradable y hacer paz. Deja espacio para ejemplos donde la justicia exige confrontación. En conflictos de liderazgo, enfócate en conductas y fruto más que diagnosticar motivos.",
+      "closingTakeaway": "Santiago dice que la sabiduría es visible. La sabiduría del cielo es humilde, pura, pacífica, razonable, misericordiosa, fructífera, imparcial y sincera; su fruto crece mediante paz activa.",
+      "prayer": "Dios de sabiduría, expón envidia y ambición egoísta en nosotros. Danos sabiduría de lo alto y haznos pacificadores que no se esconden de la verdad. Amén."
+    },
+    {
+      "week": 9,
+      "title": "Vida rendida",
+      "scripture": "Santiago 4:1–17",
+      "supporting": [
+        "Proverbios 3:5–7",
+        "Mateo 6:9–13",
+        "Mateo 6:24",
+        "Lucas 12:13–21",
+        "1 Pedro 5:5–9"
+      ],
+      "question": "¿Cómo transforma la rendición a Dios los conflictos, deseos, palabras, resistencia al mal y planes futuros?",
+      "truth": "La vida rendida pone deseos, lealtades, palabras, juicios y planes futuros bajo el gobierno de Dios, resistiendo orgullo sin confundir humildad con pasividad.",
+      "goal": "Exponer conflictos movidos por deseos, llamar a humilde sumisión a Dios y transformar planificación presuntuosa en dependencia.",
+      "opening": "Lee Santiago 4:1–17 lentamente. Marca guerras, deseos, pedir, amistad con el mundo, gracia, humildad, someter, resistir, acercarse, lamentar, juzgar, mañana, vapor y voluntad del Señor.",
+      "contextParagraphs": [
+        "Santiago pregunta de dónde vienen peleas y apunta a deseos que luchan dentro de la comunidad. Esto diagnostica conflicto egocéntrico, no todo conflicto. Algunos conflictos comienzan porque alguien resiste injusticia, abuso, engaño o explotación; la persona dañada no debe ser culpada por la agresión ajena.",
+        "El capítulo pasa por deseo mal orientado, amistad con el mundo, humildad, sumisión a Dios, resistencia al diablo, arrepentimiento, palabras sobre el prójimo y planes presuntuosos. «Si el Señor quiere» es una postura de humildad ante un futuro incierto, no una fórmula mágica."
+      ],
+      "teaching": [
+        {
+          "heading": "Deseos desordenados pueden alimentar conflicto — Santiago 4:1–2",
+          "body": "Desear algo hasta controlar, envidiar o destruir relaciones revela deseo mal ubicado."
+        },
+        {
+          "heading": "La oración puede deformarse por motivos egoístas — Santiago 4:2–3",
+          "body": "Santiago no dice que toda oración no respondida prueba malos motivos, pero sí confronta oraciones destinadas a alimentar deseo egoísta."
+        },
+        {
+          "heading": "Amistad con el mundo nombra lealtad rival — Santiago 4:4–5",
+          "body": "El asunto es un sistema de valores opuesto a Dios, no odio por la creación ni aislamiento de no cristianos."
+        },
+        {
+          "heading": "Dios da mayor gracia al humilde — Santiago 4:6",
+          "body": "Humildad es dependencia y disposición a aprender, no aceptar humillación de otras personas."
+        },
+        {
+          "heading": "Sométete a Dios y resiste al diablo — Santiago 4:7",
+          "body": "La sumisión a Dios fortalece resistencia al mal. El versículo no es encantamiento ni sustituto de seguridad práctica."
+        },
+        {
+          "heading": "Acércate, arrepiéntete y deja que Dios te levante — Santiago 4:8–10",
+          "body": "Santiago llama a personas divididas a volver de todo corazón. Arrepentimiento serio no es odio propio."
+        },
+        {
+          "heading": "No te conviertas en juez sobre tu prójimo — Santiago 4:11–12",
+          "body": "Calumnia y juicio autoexaltado violan amor al prójimo. Esto no prohíbe responsabilidad, testimonio o reporte verdadero."
+        },
+        {
+          "heading": "Planifica con dependencia humilde — Santiago 4:13–17",
+          "body": "No se condena planificar negocios; se condena certeza arrogante. Planificación fiel une diligencia con reconocimiento de que la vida está bajo Dios."
+        }
+      ],
+      "jesusConnection": "Jesús se somete plenamente al Padre sin rendirse a manipulación humana, resiste al diablo, enseña dependencia humilde en oración, advierte contra juicio hipócrita y expone confianza presuntuosa en riqueza y mañana.",
+      "guardrail": "No uses Santiago 4:1 para culpar a una persona abusada por «causar conflicto» al hablar. No uses «sométanse a Dios» para exigir sumisión a un líder o cónyuge abusivo. No trates resistencia al diablo como sustituto de planificación médica, legal, financiera o de seguridad. No confundas prohibición de calumnia con prohibición de reportar verdad.",
+      "discussion": [
+        "1. ¿Qué deseos convierten desacuerdo común en conflicto destructivo?",
+        "2. ¿Por qué no debe usarse Santiago para culpar a víctimas que resisten daño?",
+        "3. ¿Qué enseña el versículo 3 sobre motivos sin explicar toda oración no respondida?",
+        "4. ¿Qué significa amistad con el mundo aquí?",
+        "5. ¿Cómo difiere humildad de aceptar humillación?",
+        "6. ¿Cómo luce resistir el mal más allá de decir palabras espirituales?",
+        "7. ¿Cuál es la diferencia entre calumnia y responsabilidad necesaria?",
+        "8. ¿Cómo planificamos responsablemente mientras vivimos «si el Señor quiere»?"
+      ],
+      "examination": "¿Qué deseo me vuelve más controlador, defensivo, envidioso o presuntuoso? ¿Dónde necesito rendición real a Dios y no más control sobre personas o resultados?",
+      "practice": "Revisa un plan próximo. Mantén la planificación responsable, pero nombra lo que no puedes controlar y una forma de permanecer abierto a la redirección de Dios.",
+      "leaderGuidance": "Distingue conflicto generado por deseo egoísta de conflicto creado al confrontar maldad. No presiones reconciliación con personas inseguras. Explica resistencia espiritual junto con sabiduría práctica y ayuda profesional.",
+      "closingTakeaway": "Santiago 4 llama a salir del afán de controlar y entrar en dependencia humilde: examinar deseos, someterse a Dios, resistir el mal, arrepentirse, hablar con cuidado y planificar sin fingir que mañana nos pertenece.",
+      "prayer": "Dios de mayor gracia, expón los deseos que nos gobiernan. Enséñanos humildad verdadera, valor para resistir el mal, palabras limpias, arrepentimiento honesto y planes sostenidos con manos abiertas. Amén."
+    },
+    {
+      "week": 10,
+      "title": "Oración y perseverancia",
+      "scripture": "Santiago 5:1–20",
+      "supporting": [
+        "Levítico 19:13",
+        "Mateo 5:33–37",
+        "Lucas 18:1–8",
+        "1 Reyes 18:36–46",
+        "Gálatas 6:1–2"
+      ],
+      "question": "¿Cómo conecta Santiago justicia económica, paciencia, palabras verdaderas, oración, sanidad, confesión y restauración?",
+      "truth": "Santiago termina confrontando riqueza opresiva y llamando a esperanza paciente, integridad, cuidado en oración, confesión veraz y restauración de quienes se apartan.",
+      "goal": "Construir una cultura de justicia, perseverancia paciente, palabras verdaderas, oración, cuidado de enfermos, confesión y restauración gentil.",
+      "opening": "Lee Santiago 5:1–20 lentamente. Marca ricos, salarios, clamor, paciencia, agricultor, profetas, Job, sí, no, sufrir, alegre, enfermo, ancianos, ungir, oración, confesar, Elías y apartarse.",
+      "contextParagraphs": [
+        "Santiago 5 comienza con denuncia profética de ricos cuyas riquezas acumuladas, salarios retenidos, lujo y opresión testifican contra ellos. El problema no es simplemente poseer riqueza, sino usar poder económico injustamente. El clamor de trabajadores defraudados llega al Señor.",
+        "Luego el capítulo pasa a paciencia, habla verdadera, oración en sufrimiento y gozo, cuidado de enfermos, confesión, la oración de Elías y restauración. Los cristianos difieren sobre detalles de unción y sanidad. Santiago llama a cuidado activo en oración, pero no promete que toda oración fiel produzca sanidad física inmediata."
+      ],
+      "teaching": [
+        {
+          "heading": "La riqueza opresiva queda bajo juicio profético — Santiago 5:1–6",
+          "body": "Acumular, retener salarios, vivir en lujo a costa de otros y aplastar al justo son asuntos morales delante de Dios."
+        },
+        {
+          "heading": "El clamor de trabajadores defraudados llega al Señor — Santiago 5:4",
+          "body": "La injusticia económica es espiritual, no solo administrativa. Dios escucha a quien no recibe lo que le corresponde."
+        },
+        {
+          "heading": "La paciencia mira a la venida del Señor — Santiago 5:7–8",
+          "body": "El agricultor espera activamente. La paciencia cristiana es firmeza esperanzada, no aceptación pasiva de explotación o abuso."
+        },
+        {
+          "heading": "Profetas y Job muestran perseverancia sin respuestas fáciles — Santiago 5:9–11",
+          "body": "Santiago nombra el sufrimiento y destaca compasión del Señor. Perseverar no exige fingir que la historia fue sencilla."
+        },
+        {
+          "heading": "Que tu sí sea sí — Santiago 5:12",
+          "body": "Habla verdadera reduce la necesidad de juramentos manipuladores y promesas exageradas."
+        },
+        {
+          "heading": "La oración pertenece al sufrimiento, gozo y enfermedad — Santiago 5:13–15",
+          "body": "La comunidad ora, canta, reúne ancianos y unge. El cuidado en oración debe acompañar, no reemplazar automáticamente, tratamiento médico apropiado."
+        },
+        {
+          "heading": "Confesión y oración requieren comunidad confiable — Santiago 5:16–18",
+          "body": "Confesión mutua y oración pueden traer sanidad, pero nunca deben ser forzadas por líderes inseguros. Elías muestra que personas humanas comunes pueden orar con fervor."
+        },
+        {
+          "heading": "La restauración busca a quien se aparta sin coerción — Santiago 5:19–20",
+          "body": "Ayudar a alguien a volver de un camino destructivo es amor. Restauración respeta verdad, agencia, seguridad y la diferencia entre cuidado y control."
+        }
+      ],
+      "jesusConnection": "Jesús advierte a ricos sobre riqueza acumulada, se identifica con oprimidos, enseña oración perseverante, sana con compasión, valora palabras verdaderas y busca a quien se pierde. Santiago termina esperando al mismo Señor.",
+      "guardrail": "No suavices la condena de robo de salario y explotación económica. No uses paciencia para silenciar trabajadores, víctimas u oprimidos. No prometas que toda persona ungida o fiel será sanada físicamente. La oración no sustituye atención médica urgente o continua. No asumas que enfermedad prueba pecado personal. No fuerces confesión ni expongas información privada. Restauración no significa acceso forzado.",
+      "discussion": [
+        "1. ¿Qué pecados económicos condena Santiago en 1–6?",
+        "2. ¿Por qué importa espiritualmente el salario retenido?",
+        "3. ¿Cómo difiere paciencia de aceptar injusticia pasivamente?",
+        "4. ¿Qué aportan los profetas y Job a la perseverancia?",
+        "5. ¿Por qué vuelve Santiago a palabras verdaderas antes de oración?",
+        "6. ¿Qué revela el papel comunitario en oración y unción sobre cuidado de enfermos?",
+        "7. ¿Qué condiciones hacen sana la confesión?",
+        "8. ¿Cómo busca la iglesia a alguien que se aparta sin controlarlo?"
+      ],
+      "examination": "¿Cómo revelan mi dinero, promesas, paciencia, hábitos de oración y respuesta a quien lucha la clase de fe que Santiago ha descrito?",
+      "practice": "Elige una práctica final: paga pronto lo que debes, defiende trato justo, cumple una promesa, ora con quien sufre, recibe oración mientras buscas cuidado médico, confiesa con seguridad a una persona confiable o contacta gentilmente a quien se está apartando.",
+      "leaderGuidance": "Esta lección cubre áreas sensibles. Toma en serio explotación financiera. Nunca prometas sanidad. Anima atención médica cuando sea necesaria. La confesión debe ser voluntaria, privada y segura. Daño criminal o reportable exige protección y responsabilidad legal además de oración.",
+      "closingTakeaway": "Santiago termina llevando la fe al dinero, trabajo, espera, palabras, enfermedad, confesión, oración y restauración. La fe viva es paciente pero no pasiva, orante pero no mágica, misericordiosa pero no evasiva y práctica hasta el final.",
+      "prayer": "Señor compasivo, haznos justos con el dinero, pacientes en esperanza, verdaderos en palabras, fieles en oración, sabios en cuidado de enfermos, seguros en confesión y gentiles en restauración. Forma en nosotros una fe que obra hasta el final. Amén."
     }
   ]
 };

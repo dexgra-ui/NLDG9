@@ -149,7 +149,7 @@ window.NLDG_BOOK_STUDY={
         },
         {
           "heading": "Las palabras maliciosas pueden controlar la narrativa — 3 Juan 10",
-          "body": "Acusaciones falsas y palabras perversas pueden desacreditar voces externas antes de que otros las escuchen. La distorsión repetida, el rumor y el ataque personal pueden proteger poder.",
+          "body": "Las acusaciones falsas y las palabras perversas pueden desacreditar voces externas antes de que otros las escuchen. La distorsión repetida, el rumor y el ataque personal pueden proteger poder.",
           "paragraphs": [
             "Acusaciones falsas y palabras perversas pueden desacreditar voces externas antes de que otros las escuchen. La distorsión repetida, el rumor y el ataque personal pueden proteger poder."
           ]

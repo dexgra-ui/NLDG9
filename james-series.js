@@ -49,6 +49,9 @@
  }
  function detail(x){
   const i=s.lessons.indexOf(x),prev=s.lessons[i-1],next=s.lessons[i+1];
+  const lessonTeaching=x.teaching||((x.teachingNotes||[]).map((body,index)=>({heading:`${labels.teachingMovements} ${index+1}`,body})));
+  const lessonLeaderGuidance=x.leaderGuidance||((x.leaderTips||[]).join(' '));
+  const lessonPrayer=x.prayer||x.prayerFocus||'';
   hero.innerHTML=`<div class="book-hero-inner"><a class="series-back" href="${esc(route)}">← ${esc(labels.seriesOverview)}</a><p class="kicker">${esc(labels.week)} ${x.week}</p><h1>${esc(x.title)}</h1><p class="book-lead">${esc(labels.text)}: ${esc(x.scripture)}</p><p class="book-lead">${esc(labels.goal)}: ${esc(x.goal)}</p>${ntvBadge?`<div class="series-meta">${ntvBadge}</div>`:''}</div>`;
   view.innerHTML=`<article class="book-lesson james-lesson">
    ${panel(labels.supportingScriptures,list(x.supporting))}
@@ -56,13 +59,13 @@
    ${panel(labels.keyTruth,`<p>${esc(x.truth)}</p>`)}
    ${panel(labels.opening,`<p>${esc(x.opening)}</p>`)}
    ${panel(labels.scriptureContext,paras(x.contextParagraphs))}
-   ${panel(labels.teachingMovements,teaching(x.teaching))}
+   ${panel(labels.teachingMovements,teaching(lessonTeaching))}
    ${panel(labels.jesusConnection,`<p>${esc(x.jesusConnection)}</p>`)}
    ${panel(labels.doNotMiss,`<p>${esc(x.guardrail)}</p>`)}
    ${panel(labels.discussion,list(x.discussion,true))}
    ${panel(labels.personalExamination,`<p>${esc(x.examination)}</p>`)}
    ${panel(labels.weeklyPractice,`<p>${esc(x.practice)}</p>`)}
-   ${panel(labels.leaderGuidance,`<p>${esc(x.leaderGuidance)}</p>`)}
+   ${panel(labels.leaderGuidance,`<p>${esc(lessonLeaderGuidance)}</p>`)}
    ${panel(labels.closingTakeaway,`<p>${esc(x.closingTakeaway)}</p>`)}
    ${panel(labels.closingPrayer,`<p>${esc(x.prayer)}</p>`,'prayer-panel prayer')}
    <div class="complete-panel"><div><strong>${esc(done.has(x.week)?labels.lessonCompleted:labels.finishedLesson)}</strong><span>${esc(labels.progressSaved)}</span></div><button id="toggle" class="button primary">${esc(done.has(x.week)?labels.markIncomplete:labels.markComplete)}</button></div>

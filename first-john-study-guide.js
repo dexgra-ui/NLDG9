@@ -65,14 +65,14 @@
   "seriesJesusConnection": "Jesus is the eternal Word of Life who came in the flesh, the righteous Advocate and atoning sacrifice, the pattern of obedient love, the Christ whom the Spirit confesses, the Son in whom eternal life is found, and the One who gives believers confidence before God. Every test of authentic faith ultimately returns to relationship with Him.",
   "seriesGuardrail": "Do not use 1 John to terrify people with scrupulosity, OCD, depression, trauma, sincere doubt, or a tender conscience. Do not force public confession or disclose private information unnecessarily. Do not use obedience texts to teach salvation by performance. Do not use “antichrist” as a political insult. Do not treat the Spirit’s anointing as personal infallibility or a reason to reject teachers. Do not shame anxiety with “perfect love casts out fear.” Do not speculate dogmatically about “sin leading to death.” Do not use discernment language to spread rumor or accuse without evidence.",
   "seriesQuestions": [
-    "1. Why does John connect authentic faith to the real, incarnate Jesus?",
-    "2. How does walking in the light differ from claiming sinless perfection?",
-    "3. Why are obedience and love evidence of life with God rather than payment for salvation?",
-    "4. What does John actually mean by “antichrist,” and how is that term often misused?",
-    "5. How should 1 John 3’s strong language about sin be read alongside 1:8–2:2?",
-    "6. What two tests does chapter 4 give for spiritual claims?",
-    "7. How does prayer according to God’s will differ from trying to control outcomes?",
-    "8. Why is “keep yourselves from idols” a fitting final command for the entire letter?"
+    "Why does John connect authentic faith to the real, incarnate Jesus?",
+    "How does walking in the light differ from claiming sinless perfection?",
+    "Why are obedience and love evidence of life with God rather than payment for salvation?",
+    "What does John actually mean by “antichrist,” and how is that term often misused?",
+    "How should 1 John 3’s strong language about sin be read alongside 1:8–2:2?",
+    "What two tests does chapter 4 give for spiritual claims?",
+    "How does prayer according to God’s will differ from trying to control outcomes?",
+    "Why is “keep yourselves from idols” a fitting final command for the entire letter?"
   ],
   "seriesExamination": "Where do I most need 1 John’s correction: hidden sin, anxious self-examination, loveless certainty, doctrinal carelessness, contempt, fear, demand for guaranteed prayer outcomes, or an idol that competes with Jesus?",
   "seriesPractice": "Choose one practice from the letter: confess one sin honestly and repair harm where appropriate, obey one clear command, meet one practical need, evaluate one spiritual message by truth and fruit, pray according to God’s will without demanding an outcome, or name and reject one idol competing for ultimate trust.",

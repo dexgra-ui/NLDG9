@@ -65,14 +65,14 @@
   "seriesJesusConnection": "Jesus is the faithful witness, firstborn from the dead, ruler of earth’s kings, Son of Man among the churches, Lion who conquers as a slain Lamb, shepherd of the redeemed, rider called Faithful and True, temple and lamp of the new Jerusalem, and the One who says, “Surely I am coming soon.” Revelation is Christ-centered from first vision to final invitation.",
   "seriesGuardrail": "Do not use Revelation for date-setting, conspiracy theories, partisan decoding, ethnic scapegoating, antisemitism, fear of vaccines, microchips, barcodes, biometric systems, or ordinary technology. Do not label political opponents, denominations, nations, women, or minorities as “the beast,” “Jezebel,” “Babylon,” or “the synagogue of Satan.” Those phrases belong to specific symbolic and first-century contexts and can become dangerous weapons when detached from them. Do not use judgment scenes to celebrate human suffering or justify Christian violence. Do not make one millennial, tribulation, or timeline system a test of salvation. Interpretive humility is part of faithful witness.",
   "seriesQuestions": [
-    "1. Why does Revelation begin with Jesus among the churches rather than with predictions about world events?",
-    "2. How does throne-room worship reshape the way believers view empire, crisis, and fear?",
-    "3. What do the judgment cycles reveal about sin, violence, and creation?",
-    "4. How does the slain Lamb redefine what victory and power look like?",
-    "5. What features of beastly power recur across political, religious, and economic systems without requiring us to name one modern person as “the beast”?",
-    "6. What does Babylon teach about luxury, exploitation, propaganda, and human lives?",
-    "7. Why is new creation—not escape from creation—the climax of the book?",
-    "8. Which habits would help a church become more patient, truthful, worshipful, discerning, and hopeful as Revelation intends?"
+    "Why does Revelation begin with Jesus among the churches rather than with predictions about world events?",
+    "How does throne-room worship reshape the way believers view empire, crisis, and fear?",
+    "What do the judgment cycles reveal about sin, violence, and creation?",
+    "How does the slain Lamb redefine what victory and power look like?",
+    "What features of beastly power recur across political, religious, and economic systems without requiring us to name one modern person as “the beast”?",
+    "What does Babylon teach about luxury, exploitation, propaganda, and human lives?",
+    "Why is new creation—not escape from creation—the climax of the book?",
+    "Which habits would help a church become more patient, truthful, worshipful, discerning, and hopeful as Revelation intends?"
   ],
   "seriesExamination": "Where am I most tempted to misuse Revelation: fear, certainty, political anger, fascination with hidden codes, contempt for another group, or avoidance of its ethical challenge? What loyalty, comfort, or habit does the Lamb need to confront in me?",
   "seriesPractice": "Read Revelation 1:4–8, 5:6–14, and 21:1–5 this week. Write three sentences: who Jesus is, what faithful power looks like, and what future God promises. Let those three truths govern one concrete choice about fear, money, speech, leadership, or neighbor-love.",

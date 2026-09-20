@@ -86,14 +86,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué describe Judas a los creyentes como llamados, amados y guardados antes de advertirlos?",
-        "2. ¿Qué aportan misericordia, paz y amor al discernimiento fiel?",
-        "3. ¿Por qué la salvación compartida resiste el elitismo espiritual?",
-        "4. ¿Qué llevó a Judas a cambiar su tema previsto?",
-        "5. ¿Qué significa «la fe confiada una vez para siempre» en contexto?",
-        "6. ¿Cómo puede distorsionarse la gracia para permitir daño?",
-        "7. ¿Por qué está el señorío de Jesús en el centro de la preocupación de Judas?",
-        "8. ¿Qué evidencia debe requerirse antes de llamar públicamente a alguien maestro destructivo?"
+        "¿Por qué describe Judas a los creyentes como llamados, amados y guardados antes de advertirlos?",
+        "¿Qué aportan misericordia, paz y amor al discernimiento fiel?",
+        "¿Por qué la salvación compartida resiste el elitismo espiritual?",
+        "¿Qué llevó a Judas a cambiar su tema previsto?",
+        "¿Qué significa «la fe confiada una vez para siempre» en contexto?",
+        "¿Cómo puede distorsionarse la gracia para permitir daño?",
+        "¿Por qué está el señorío de Jesús en el centro de la preocupación de Judas?",
+        "¿Qué evidencia debe requerirse antes de llamar públicamente a alguien maestro destructivo?"
       ],
       "examination": "Cuando percibo error, ¿me vuelvo combativo, pasivo o cuidadoso y veraz? ¿He tratado alguna preferencia como si fuera el evangelio mismo?",
       "challenge": "Antes de compartir una advertencia sobre un maestro, enseñanza o ministerio, verifica la fuente original, identifica el asunto central, separa hechos de inferencias y pregunta si tu respuesta refleja misericordia, paz y amor.",
@@ -191,14 +191,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué dice el ejemplo del desierto sobre privilegio espiritual pasado?",
-        "2. ¿Qué conecta los ejemplos de ángeles y Sodoma en el argumento de Judas?",
-        "3. ¿Por qué deben las imágenes severas de juicio producir humildad y no venganza?",
-        "4. ¿Qué enseña la respuesta de Miguel sobre el habla en conflicto espiritual?",
-        "5. ¿Qué puede enseñarnos el uso de la tradición de Moisés sobre el trasfondo interpretativo judío?",
-        "6. ¿Qué motivos representan Caín, Balaam y Coré?",
-        "7. ¿Qué revelan las imágenes naturales sobre liderazgo fallido?",
-        "8. ¿Cómo debe entenderse la cita de Enoc sin afirmar más de lo que dice el texto?"
+        "¿Qué dice el ejemplo del desierto sobre privilegio espiritual pasado?",
+        "¿Qué conecta los ejemplos de ángeles y Sodoma en el argumento de Judas?",
+        "¿Por qué deben las imágenes severas de juicio producir humildad y no venganza?",
+        "¿Qué enseña la respuesta de Miguel sobre el habla en conflicto espiritual?",
+        "¿Qué puede enseñarnos el uso de la tradición de Moisés sobre el trasfondo interpretativo judío?",
+        "¿Qué motivos representan Caín, Balaam y Coré?",
+        "¿Qué revelan las imágenes naturales sobre liderazgo fallido?",
+        "¿Cómo debe entenderse la cita de Enoc sin afirmar más de lo que dice el texto?"
       ],
       "examination": "¿Me atraen líderes porque son fructíferos y semejantes a Cristo o porque son dramáticos, aduladores, seguros e impresionantes? ¿Dónde necesitan mayor resistencia la codicia, la autoexaltación o la violación de límites?",
       "challenge": "Evalúa una influencia espiritual con criterios observables: doctrina, trato a vulnerables, dinero, límites sexuales, rendición de cuentas, veracidad y fruto. Evita rumor y documenta solo lo que pueda verificarse responsablemente.",
@@ -296,14 +296,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué recordar es mejor primera respuesta que entrar en pánico?",
-        "2. ¿Cómo normaliza la advertencia apostólica la realidad de corrupción sin normalizar la corrupción?",
-        "3. ¿Qué significa «último tiempo» en el argumento pastoral de Judas?",
-        "4. ¿Cómo distinguir burla impulsada por deseos de preguntas sinceras?",
-        "5. ¿Qué divisiones pueden dar más control a un líder manipulador?",
-        "6. ¿Por qué carisma y sentimientos intensos son pruebas poco fiables del Espíritu?",
-        "7. ¿Qué fruto observable debe importar al evaluar afirmaciones espirituales?",
-        "8. ¿Cómo mantiene la memoria apostólica a la novedad de desplazar a Jesús?"
+        "¿Por qué recordar es mejor primera respuesta que entrar en pánico?",
+        "¿Cómo normaliza la advertencia apostólica la realidad de corrupción sin normalizar la corrupción?",
+        "¿Qué significa «último tiempo» en el argumento pastoral de Judas?",
+        "¿Cómo distinguir burla impulsada por deseos de preguntas sinceras?",
+        "¿Qué divisiones pueden dar más control a un líder manipulador?",
+        "¿Por qué carisma y sentimientos intensos son pruebas poco fiables del Espíritu?",
+        "¿Qué fruto observable debe importar al evaluar afirmaciones espirituales?",
+        "¿Cómo mantiene la memoria apostólica a la novedad de desplazar a Jesús?"
       ],
       "examination": "¿Me desestabilizan fácilmente afirmaciones dramáticas de que «todo es diferente ahora»? ¿Confundo certeza emocional con madurez espiritual o descarto preguntas honestas como rebelión?",
       "challenge": "Toma una afirmación religiosa o de últimos tiempos alarmante que encuentres esta semana y compárala con el pasaje bíblico real, su contexto y la enseñanza apostólica antes de aceptarla o compartirla.",
@@ -401,14 +401,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué pasa Judas de advertencia a edificación, oración, amor y esperanza?",
-        "2. ¿Qué significa edificarse unos a otros en la fe?",
-        "3. ¿Cómo protege la oración en el Espíritu al discernimiento del miedo?",
-        "4. ¿Cómo pueden los creyentes «mantenerse» en el amor de Dios sin convertirlo en algo ganado?",
-        "5. ¿Por qué llama Judas específicamente a misericordia hacia quienes dudan?",
-        "6. ¿Cómo puede verse un rescate urgente sin coerción?",
-        "7. ¿Cómo trabajan juntas misericordia y límites?",
-        "8. ¿Qué enseña la doxología sobre la fuente más profunda de perseverancia?"
+        "¿Por qué pasa Judas de advertencia a edificación, oración, amor y esperanza?",
+        "¿Qué significa edificarse unos a otros en la fe?",
+        "¿Cómo protege la oración en el Espíritu al discernimiento del miedo?",
+        "¿Cómo pueden los creyentes «mantenerse» en el amor de Dios sin convertirlo en algo ganado?",
+        "¿Por qué llama Judas específicamente a misericordia hacia quienes dudan?",
+        "¿Cómo puede verse un rescate urgente sin coerción?",
+        "¿Cómo trabajan juntas misericordia y límites?",
+        "¿Qué enseña la doxología sobre la fuente más profunda de perseverancia?"
       ],
       "examination": "Cuando alguien duda o queda atrapado en enseñanza dañina, ¿reacciono con miedo, superioridad, control de complejo de rescate o misericordia paciente? ¿Dónde necesito límites más sabios y mayor confianza en el poder de Dios?",
       "challenge": "Anima a una persona que cuestiona o está espiritualmente cansada sin intentar arreglarla de inmediato. Escucha, ora, ofrece un recurso si lo desea y confía en Dios en vez de forzar un resultado.",

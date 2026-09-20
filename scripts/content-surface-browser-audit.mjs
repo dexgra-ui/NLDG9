@@ -99,8 +99,11 @@ async function checkBookStudyPrint(name,url,{spanish=false}={}){
   await tools.locator('[data-print-mode="participant"]').click();
   await page.waitForTimeout(50);
   const participant=await page.locator('#book-print-surface').innerText().catch(()=>'');
+  const participantHeadings=await page.locator('#book-print-surface .print-section h2').allInnerTexts();
+  const teachingHeading=spanish?'Movimientos de enseñanza':'Teaching Movements';
+  const leaderGuidanceHeading=spanish?'Guía para líderes':'Leader Guidance';
   expect(participant.includes(expectedOptions[0]),`${name} builds a participant handout.`,`${name} did not build the participant handout.`);
-  expect(!participant.includes(spanish?'Movimientos de enseñanza':'Teaching Movements')&&!participant.includes(spanish?'Guía para líderes:':'Leader Guidance'),`${name} participant handout omits teaching movements and leader guidance.`,`${name} participant handout exposed leader-only material.`);
+  expect(!participantHeadings.includes(teachingHeading)&&!participantHeadings.includes(leaderGuidanceHeading),`${name} participant handout omits teaching movements and leader guidance.`,`${name} participant handout exposed leader-only material.`);
   expect((await page.locator('#book-print-surface .print-answer-lines').count())>=9,`${name} participant handout includes writing space.`,`${name} participant handout is missing writing space.`);
   expect((await page.locator('#book-print-surface .print-question-list li').count())===8,`${name} participant handout includes all eight discussion questions.`,`${name} participant handout does not include eight discussion questions.`);
   await page.emulateMedia({media:'print'});
@@ -115,9 +118,10 @@ async function checkBookStudyPrint(name,url,{spanish=false}={}){
   await tools.locator('[data-print-mode="leader"]').click();
   await page.waitForTimeout(50);
   const leader=await page.locator('#book-print-surface').innerText().catch(()=>'');
+  const leaderHeadings=await page.locator('#book-print-surface .print-section h2').allInnerTexts();
   expect(leader.includes(expectedOptions[1]),`${name} builds a leader guide.`,`${name} did not build the leader guide.`);
-  expect(leader.includes(spanish?'Movimientos de enseñanza':'Teaching Movements'),`${name} leader guide includes teaching movements.`,`${name} leader guide is missing teaching movements.`);
-  expect(leader.includes(spanish?'Guía para líderes':'Leader Guidance'),`${name} leader guide includes leader guidance.`,`${name} leader guide is missing leader guidance.`);
+  expect(leaderHeadings.includes(teachingHeading),`${name} leader guide includes teaching movements.`,`${name} leader guide is missing teaching movements.`);
+  expect(leaderHeadings.includes(leaderGuidanceHeading),`${name} leader guide includes leader guidance.`,`${name} leader guide is missing leader guidance.`);
 
   await summary.click();
   await tools.locator('[data-print-mode="both"]').click();

@@ -82,6 +82,55 @@ async function checkBookStudyQuestionRendering(name,url){
   expect(result.manuallyNumbered.length===0,`${name} discussion questions rely only on ordered-list numbering.`,`${name} still renders manual numeric prefixes: ${result.manuallyNumbered.join(' | ')}`);
 }
 
+async function checkBookStudyPrint(name,url,{spanish=false}={}){
+  await open(name,url);
+  await page.evaluate(()=>{window.__nldgPrintCalls=0;window.print=()=>{window.__nldgPrintCalls+=1}});
+  const tools=page.locator('.lesson-print-tools');
+  expect((await tools.count())===1,`${name} exposes the split lesson print control.`,`${name} is missing the split lesson print control.`);
+  const summary=tools.locator('summary');
+  const expectedPrintLabel=spanish?'Imprimir':'Print';
+  expect((await summary.innerText().catch(()=>''))===expectedPrintLabel,`${name} uses the expected print control label.`,`${name} print control label was not ${expectedPrintLabel}.`);
+
+  await summary.click();
+  const options=await tools.locator('[data-print-mode]').allInnerTexts();
+  const expectedOptions=spanish?['Guía del participante','Guía para líderes','Imprimir ambos']:['Participant Handout','Leader Guide','Print Both'];
+  expect(JSON.stringify(options)===JSON.stringify(expectedOptions),`${name} offers participant, leader, and combined print choices.`,`${name} print choices were: ${options.join(' | ')}.`);
+
+  await tools.locator('[data-print-mode="participant"]').click();
+  await page.waitForTimeout(50);
+  const participant=await page.locator('#book-print-surface').innerText().catch(()=>'');
+  const participantHeadings=await page.locator('#book-print-surface .print-section h2').allInnerTexts();
+  const teachingHeading=spanish?'Movimientos de enseñanza':'Teaching Movements';
+  const leaderGuidanceHeading=spanish?'Guía para líderes':'Leader Guidance';
+  expect(participant.includes(expectedOptions[0]),`${name} builds a participant handout.`,`${name} did not build the participant handout.`);
+  expect(!participantHeadings.includes(teachingHeading)&&!participantHeadings.includes(leaderGuidanceHeading),`${name} participant handout omits teaching movements and leader guidance.`,`${name} participant handout exposed leader-only material.`);
+  expect((await page.locator('#book-print-surface .print-answer-lines').count())>=9,`${name} participant handout includes writing space.`,`${name} participant handout is missing writing space.`);
+  expect((await page.locator('#book-print-surface .print-question-list li').count())===8,`${name} participant handout includes all eight discussion questions.`,`${name} participant handout does not include eight discussion questions.`);
+  await page.emulateMedia({media:'print'});
+  const printVisibility=await page.evaluate(()=>({
+    surface:getComputedStyle(document.querySelector('#book-print-surface')).display,
+    main:getComputedStyle(document.querySelector('main')).display
+  }));
+  expect(printVisibility.surface!=='none'&&printVisibility.main==='none',`${name} print media shows only the print packet.`,`${name} print media did not isolate the print packet.`);
+  await page.emulateMedia({media:'screen'});
+
+  await summary.click();
+  await tools.locator('[data-print-mode="leader"]').click();
+  await page.waitForTimeout(50);
+  const leader=await page.locator('#book-print-surface').innerText().catch(()=>'');
+  const leaderHeadings=await page.locator('#book-print-surface .print-section h2').allInnerTexts();
+  expect(leader.includes(expectedOptions[1]),`${name} builds a leader guide.`,`${name} did not build the leader guide.`);
+  expect(leaderHeadings.includes(teachingHeading),`${name} leader guide includes teaching movements.`,`${name} leader guide is missing teaching movements.`);
+  expect(leaderHeadings.includes(leaderGuidanceHeading),`${name} leader guide includes leader guidance.`,`${name} leader guide is missing leader guidance.`);
+
+  await summary.click();
+  await tools.locator('[data-print-mode="both"]').click();
+  await page.waitForTimeout(50);
+  expect((await page.locator('#book-print-surface .print-packet').count())===2,`${name} Print Both builds participant and leader packets.`,`${name} Print Both did not build two packets.`);
+  const calls=await page.evaluate(()=>window.__nldgPrintCalls);
+  expect(calls===3,`${name} print actions invoke the browser print flow.`,`${name} invoked the browser print flow ${calls} times instead of 3.`);
+}
+
 try{
   await open('homepage','index.html');
   await page.waitForFunction(()=>document.querySelector('#home-latest')?.children.length>0,{timeout:5000}).catch(()=>{});
@@ -128,6 +177,9 @@ try{
   ]){
     await checkBookStudyQuestionRendering(name,url);
   }
+
+  await checkBookStudyPrint('revelation-smart-print','revelation-study.html?lesson=1');
+  await checkBookStudyPrint('revelation-spanish-smart-print','es/apocalipsis-estudio.html?lesson=1',{spanish:true});
 
   await open('other-ancient-writings','other-ancient-writings.html');
   const ancientMain=await page.locator('main').innerText();

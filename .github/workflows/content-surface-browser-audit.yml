@@ -20,6 +20,9 @@ on:
       - 'site-navigation.js'
       - 'sitemap.xml'
       - 'script.js'
+      - 'book-study-series.js'
+      - 'book-study-series.css'
+      - 'book-study-series-es.js'
       - 'scripts/content-surface-browser-audit.mjs'
       - '.github/workflows/content-surface-browser-audit.yml'
   push:
@@ -40,6 +43,9 @@ on:
       - 'site-navigation.js'
       - 'sitemap.xml'
       - 'script.js'
+      - 'book-study-series.js'
+      - 'book-study-series.css'
+      - 'book-study-series-es.js'
       - 'scripts/content-surface-browser-audit.mjs'
       - '.github/workflows/content-surface-browser-audit.yml'
 

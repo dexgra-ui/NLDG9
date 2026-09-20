@@ -85,14 +85,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What does Revelation 1 reveal about Jesus before any message of warning is given?",
-        "2. Why does Jesus answer John’s fear with His death and resurrection?",
-        "3. What does Ephesus teach about the relationship between truth and love?",
-        "4. How can Smyrna’s call to endurance comfort sufferers without glorifying preventable harm?",
-        "5. Why is antisemitic use of “synagogue of Satan” historically and theologically irresponsible?",
-        "6. What kinds of compromise can hide behind public courage like Pergamum’s?",
-        "7. How should churches confront destructive teaching without weaponizing the name “Jezebel”?",
-        "8. Which of these church messages most directly challenges your congregation’s present life?"
+        "What does Revelation 1 reveal about Jesus before any message of warning is given?",
+        "Why does Jesus answer John’s fear with His death and resurrection?",
+        "What does Ephesus teach about the relationship between truth and love?",
+        "How can Smyrna’s call to endurance comfort sufferers without glorifying preventable harm?",
+        "Why is antisemitic use of “synagogue of Satan” historically and theologically irresponsible?",
+        "What kinds of compromise can hide behind public courage like Pergamum’s?",
+        "How should churches confront destructive teaching without weaponizing the name “Jezebel”?",
+        "Which of these church messages most directly challenges your congregation’s present life?"
       ],
       "examination": "Am I more eager to identify another group’s error than to hear what the Spirit might be correcting in me? Where have truth, love, courage, holiness, or endurance drifted apart in my life?",
       "challenge": "Read one church message each day from Revelation 2–3. Before applying it to anyone else, write one sentence beginning, “Jesus may be asking me/us to…” and choose one concrete response.",
@@ -190,14 +190,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why can a church’s reputation differ so sharply from Christ’s evaluation?",
-        "2. What does Philadelphia teach communities with little social or institutional power?",
-        "3. Why must the hostile phrase in 3:9 remain inside its first-century conflict rather than become antisemitism?",
-        "4. What forms of self-sufficiency can make churches spiritually blind?",
-        "5. How does love change the meaning of Christ’s rebuke and discipline?",
-        "6. Why does Revelation show the throne before the later visions of chaos?",
-        "7. What does creation-centered worship challenge about ownership and exploitation?",
-        "8. What would it look like for a leader or church to “lay down crowns” today?"
+        "Why can a church’s reputation differ so sharply from Christ’s evaluation?",
+        "What does Philadelphia teach communities with little social or institutional power?",
+        "Why must the hostile phrase in 3:9 remain inside its first-century conflict rather than become antisemitism?",
+        "What forms of self-sufficiency can make churches spiritually blind?",
+        "How does love change the meaning of Christ’s rebuke and discipline?",
+        "Why does Revelation show the throne before the later visions of chaos?",
+        "What does creation-centered worship challenge about ownership and exploitation?",
+        "What would it look like for a leader or church to “lay down crowns” today?"
       ],
       "examination": "Where am I relying on reputation, resources, experience, or influence rather than living dependence on Christ? What crown, status, or claim of self-sufficiency needs to be laid down?",
       "challenge": "Choose one area where success or reputation has become a substitute for spiritual life. Practice one hidden act of repentance, dependence, service, or worship that cannot improve your public image.",
@@ -295,14 +295,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why is it important that John hears “Lion” but sees a slain Lamb?",
-        "2. How does the new song challenge ethnic, national, or racial superiority?",
-        "3. What do the four horsemen reveal about recurring human systems of destruction?",
-        "4. Why is “How long?” a faithful prayer rather than a failure of trust?",
-        "5. What kinds of false security collapse in the sixth seal?",
-        "6. Why should the 144,000 be taught with interpretive humility?",
-        "7. How does the great multitude expand the vision of God’s people?",
-        "8. What does it mean that the Lamb is also the Shepherd who wipes away tears?"
+        "Why is it important that John hears “Lion” but sees a slain Lamb?",
+        "How does the new song challenge ethnic, national, or racial superiority?",
+        "What do the four horsemen reveal about recurring human systems of destruction?",
+        "Why is “How long?” a faithful prayer rather than a failure of trust?",
+        "What kinds of false security collapse in the sixth seal?",
+        "Why should the 144,000 be taught with interpretive humility?",
+        "How does the great multitude expand the vision of God’s people?",
+        "What does it mean that the Lamb is also the Shepherd who wipes away tears?"
       ],
       "examination": "Do I imagine victory more like the empire or more like the Lamb? Where am I tempted to seek vengeance, ethnic superiority, false security, or sensational certainty rather than faithful witness?",
       "challenge": "Pray one honest “How long?” prayer about a real injustice, then take one non-retaliatory step toward truth, mercy, protection, or repair. End by reading Revelation 7:15–17 aloud.",
@@ -400,14 +400,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why does Revelation place the prayers of the saints before the trumpet judgments?",
-        "2. What does the repeated “one-third” limitation suggest about the trumpet cycle?",
-        "3. Why are modern technology identifications usually weaker than reading the biblical echoes?",
-        "4. What does Revelation 9 teach about the limits of fear as a tool for repentance?",
-        "5. Why is God’s word both sweet and bitter for a prophetic witness?",
-        "6. What does measuring communicate without promising physical immunity?",
-        "7. What shared message remains regardless of how one identifies the two witnesses?",
-        "8. How does the seventh trumpet challenge political or religious claims to ultimate loyalty?"
+        "Why does Revelation place the prayers of the saints before the trumpet judgments?",
+        "What does the repeated “one-third” limitation suggest about the trumpet cycle?",
+        "Why are modern technology identifications usually weaker than reading the biblical echoes?",
+        "What does Revelation 9 teach about the limits of fear as a tool for repentance?",
+        "Why is God’s word both sweet and bitter for a prophetic witness?",
+        "What does measuring communicate without promising physical immunity?",
+        "What shared message remains regardless of how one identifies the two witnesses?",
+        "How does the seventh trumpet challenge political or religious claims to ultimate loyalty?"
       ],
       "examination": "Do I want God’s justice because I love what is right, or because I enjoy imagining opponents punished? Where might my witness need more courage, patience, prayer, or refusal of retaliation?",
       "challenge": "Choose one injustice to bring before God in sustained prayer. Pair that prayer with one truthful, non-retaliatory act: support someone harmed, speak responsibly, give resources, document facts, or pursue a lawful avenue of accountability.",
@@ -505,14 +505,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. How does the woman-child-dragon vision connect the conflict to the biblical story?",
-        "2. Why does identifying the dragon explicitly as Satan matter for how Christians treat human opponents?",
-        "3. What kind of victory is described in 12:11?",
-        "4. Which features make political power “beastly” in chapter 13?",
-        "5. How can religious influence become the servant of domination?",
-        "6. Why does the mark fit allegiance and economic conformity better than accidental technological exposure?",
-        "7. What can the Nero/666 connection illuminate without exhausting the symbol?",
-        "8. What practices help Christians belong visibly to the Lamb rather than to coercive systems?"
+        "How does the woman-child-dragon vision connect the conflict to the biblical story?",
+        "Why does identifying the dragon explicitly as Satan matter for how Christians treat human opponents?",
+        "What kind of victory is described in 12:11?",
+        "Which features make political power “beastly” in chapter 13?",
+        "How can religious influence become the servant of domination?",
+        "Why does the mark fit allegiance and economic conformity better than accidental technological exposure?",
+        "What can the Nero/666 connection illuminate without exhausting the symbol?",
+        "What practices help Christians belong visibly to the Lamb rather than to coercive systems?"
       ],
       "examination": "What political, economic, technological, or religious power am I tempted either to worship or to fear more than Christ? Where might comfort, access, or belonging be pressuring my allegiance?",
       "challenge": "Audit one area of allegiance—money, media, politics, work, shopping, or church culture. Ask what it rewards, what it pressures you to ignore, and what one Lamb-shaped choice would look like.",
@@ -610,14 +610,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why does Revelation combine the song of Moses with the song of the Lamb?",
-        "2. What makes the bowl judgments morally serious without making fear a healthy conversion strategy?",
-        "3. Why is Armageddon better read as apocalyptic battle imagery than a modern military map?",
-        "4. What features of Babylon would first-century Christians have recognized in Rome?",
-        "5. Why must the female imagery remain a symbol of empire rather than a judgment on women?",
-        "6. What does “come out of her” require without demanding withdrawal from all public life?",
-        "7. Why is “human lives” the devastating climax of the merchant cargo list?",
-        "8. How can Christians welcome the end of oppression without becoming cruel toward people harmed in a system’s collapse?"
+        "Why does Revelation combine the song of Moses with the song of the Lamb?",
+        "What makes the bowl judgments morally serious without making fear a healthy conversion strategy?",
+        "Why is Armageddon better read as apocalyptic battle imagery than a modern military map?",
+        "What features of Babylon would first-century Christians have recognized in Rome?",
+        "Why must the female imagery remain a symbol of empire rather than a judgment on women?",
+        "What does “come out of her” require without demanding withdrawal from all public life?",
+        "Why is “human lives” the devastating climax of the merchant cargo list?",
+        "How can Christians welcome the end of oppression without becoming cruel toward people harmed in a system’s collapse?"
       ],
       "examination": "Where does my comfort depend on costs I rarely see? Which forms of luxury, status, political access, or consumption make it harder for me to notice exploitation?",
       "challenge": "Trace one ordinary purchase or financial habit as far as you reasonably can. Choose one more humane or transparent alternative where possible, and pray for workers and communities affected by the system.",
@@ -715,14 +715,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why do heaven’s hallelujahs celebrate justice rather than cruelty?",
-        "2. What does the marriage supper reveal about the goal of the Lamb’s victory?",
-        "3. Which details distinguish the Faithful and True rider from beastly rulers?",
-        "4. Why does Christ’s judgment not authorize Christian violence?",
-        "5. What truths are shared across premillennial, amillennial, and postmillennial readings?",
-        "6. How should Gog and Magog imagery be handled without ethnic or geopolitical scapegoating?",
-        "7. What does the great white throne say about status and accountability?",
-        "8. Why is the destruction of death itself essential to Christian hope?"
+        "Why do heaven’s hallelujahs celebrate justice rather than cruelty?",
+        "What does the marriage supper reveal about the goal of the Lamb’s victory?",
+        "Which details distinguish the Faithful and True rider from beastly rulers?",
+        "Why does Christ’s judgment not authorize Christian violence?",
+        "What truths are shared across premillennial, amillennial, and postmillennial readings?",
+        "How should Gog and Magog imagery be handled without ethnic or geopolitical scapegoating?",
+        "What does the great white throne say about status and accountability?",
+        "Why is the destruction of death itself essential to Christian hope?"
       ],
       "examination": "Am I more interested in winning an eschatology argument than in becoming faithful to Christ? Where do I secretly enjoy the idea of an opponent’s destruction rather than entrusting judgment to God?",
       "challenge": "Read Revelation 19:11–16 and 20:11–15 slowly. Release one act of private vengeance or final judgment you have been carrying against another person, then take any responsible justice or boundary step that remains yours to take.",
@@ -820,14 +820,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What changes when Christian hope is understood as new creation rather than escape from creation?",
-        "2. Why is God’s dwelling with humanity the center of the final vision?",
-        "3. How does the promise to wipe tears honor rather than minimize present grief?",
-        "4. What do the tribal gates and apostolic foundations communicate about continuity in God’s story?",
-        "5. Why are open gates, nations, and kings important in the holy-city vision?",
-        "6. What does the healing of the nations suggest about the scope of God’s restorative purpose?",
-        "7. What does the warning about adding or taking away actually refer to in context?",
-        "8. Why is “Come” a fitting final response to the whole book?"
+        "What changes when Christian hope is understood as new creation rather than escape from creation?",
+        "Why is God’s dwelling with humanity the center of the final vision?",
+        "How does the promise to wipe tears honor rather than minimize present grief?",
+        "What do the tribal gates and apostolic foundations communicate about continuity in God’s story?",
+        "Why are open gates, nations, and kings important in the holy-city vision?",
+        "What does the healing of the nations suggest about the scope of God’s restorative purpose?",
+        "What does the warning about adding or taking away actually refer to in context?",
+        "Why is “Come” a fitting final response to the whole book?"
       ],
       "examination": "Does my end-times hope make me care more or less about bodies, neighbors, justice, creation, truth, and healing now? Where has fear of the future displaced the grace-filled invitation of Christ?",
       "challenge": "Choose one new-creation practice: comfort someone grieving, care for a place or creature, work for reconciliation across a divided community, give water or food, create beauty, or invite someone toward Christ without pressure.",

@@ -65,14 +65,14 @@
   "seriesJesusConnection": "Jesus is the final and supreme revelation of God, the Son who shares divine glory and human suffering, the merciful High Priest, mediator of the promised covenant, once-for-all self-offering, pioneer and perfecter of faith, and unchanging center of an unshakable kingdom. Every warning and command in Hebrews ultimately calls the church to keep trusting Him.",
   "seriesGuardrail": "Do not use Hebrews to promote antisemitism, contempt for Judaism, or disdain for the Old Testament. Do not use warning passages to terrorize tender consciences or manipulate people into loyalty to leaders. Do not turn suffering or discipline into a reason to endure abuse, self-harm, untreated illness, or unsafe conditions. Do not use sacrifice language to glorify victimization. Do not read “obey your leaders” as blind obedience; leaders remain accountable to Christ, truth, character, and the fruit of their lives. Do not promise that strong faith guarantees deliverance, wealth, health, or protection from suffering.",
   "seriesQuestions": [
-    "1. Why does Hebrews combine theological exposition with repeated pastoral exhortation?",
-    "2. What does the book gain by presenting Jesus as both exalted Son and merciful brother?",
-    "3. How can churches teach the warning passages seriously without creating spiritual terror?",
-    "4. What does Christ’s permanent priesthood change about the role of human spiritual leaders?",
-    "5. How should Christians speak about the “better covenant” without contempt for Jewish people or the Old Testament?",
-    "6. What does the once-for-all sacrifice of Christ free believers from trying to earn or repay?",
-    "7. How does Hebrews 11 correct the idea that faithful people always receive immediate deliverance?",
-    "8. Which practices in Hebrews 12–13 show that perseverance is a communal way of life rather than an individual achievement?"
+    "Why does Hebrews combine theological exposition with repeated pastoral exhortation?",
+    "What does the book gain by presenting Jesus as both exalted Son and merciful brother?",
+    "How can churches teach the warning passages seriously without creating spiritual terror?",
+    "What does Christ’s permanent priesthood change about the role of human spiritual leaders?",
+    "How should Christians speak about the “better covenant” without contempt for Jewish people or the Old Testament?",
+    "What does the once-for-all sacrifice of Christ free believers from trying to earn or repay?",
+    "How does Hebrews 11 correct the idea that faithful people always receive immediate deliverance?",
+    "Which practices in Hebrews 12–13 show that perseverance is a communal way of life rather than an individual achievement?"
   ],
   "seriesExamination": "Where am I tempted to drift, harden myself, perform spiritually, place too much confidence in a human leader, measure faith by outcomes, or use Scripture to pressure myself or others? What truth about Jesus in Hebrews needs to become more central to my worship and endurance?",
   "seriesPractice": "Choose one practice from Hebrews: give sustained attention to Jesus, encourage a discouraged believer, approach God honestly for mercy, reject a shame-driven attempt to earn acceptance, support someone under pressure, strengthen an accessible form of community, or examine whether your view of leadership leaves Christ as the true High Priest.",

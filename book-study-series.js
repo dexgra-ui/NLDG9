@@ -30,13 +30,14 @@
   prayer:s.closingPrayerLabel||(isSpanish?'Oración final':'Closing Prayer'),
   name:isSpanish?'Nombre':'Name',
   date:isSpanish?'Fecha':'Date',
-  notes:isSpanish?'Notas':'Notes'
+  notes:isSpanish?'Notas':'Notes',
+  lesson:isSpanish?'Lección':'Lesson'
  };
  const supportsSplitPrint=x=>{const mode=x.printMode||s.printMode;if(mode==='simple')return false;if(mode==='split')return true;return Boolean(x.teaching?.length)};
  const printParas=(arr,fallback='')=>arr?.length?arr.map(p=>`<p>${esc(p)}</p>`).join(''):(fallback?`<p>${esc(fallback)}</p>`:'');
  const printSection=(label,content,className='')=>content?`<section class="print-section ${className}"><h2>${esc(label)}</h2>${content}</section>`:'';
  const answerLines=count=>`<span class="print-answer-lines" aria-hidden="true">${Array.from({length:count},()=>'<span></span>').join('')}</span>`;
- const printHeader=(x,kind)=>`<header class="print-packet-header"><p class="print-brand">No Labels, Designed by God</p><p class="print-packet-kind">${esc(kind)}</p><h1>${esc(x.title)}</h1><p class="print-series-title">${esc(s.title)}</p><p class="print-scripture-summary">${esc(x.scripture)}</p></header>`;
+ const printHeader=(x,kind)=>`<header class="print-packet-header"><p class="print-brand">No Labels, Designed by God</p><p class="print-packet-kind">${esc(kind)} · ${esc(printLabels.lesson)} ${esc(x.number)}</p><h1>${esc(x.title)}</h1><p class="print-series-title">${esc(s.title)}</p><p class="print-scripture-summary">${esc(x.scripture)}</p></header>`;
  const printScripture=x=>`<p class="print-main-scripture">${esc(x.scripture)}</p>${x.supporting?.length?`<p><strong>${esc(printLabels.supporting)}:</strong> ${x.supporting.map(esc).join('; ')}</p>`:''}`;
  const printQuestions=(x,withLines=false)=>x.questions?.length?`<ol class="print-question-list">${x.questions.map(q=>`<li><span>${esc(q)}</span>${withLines?answerLines(2):''}</li>`).join('')}</ol>`:'';
  const printTeaching=x=>x.teaching?.length?`<div class="print-teaching-list">${x.teaching.map((t,j)=>`<article class="print-teaching-movement"><p class="print-teaching-number">${j+1}</p><div><h3>${esc(t.heading)}</h3>${printParas(t.paragraphs,t.body)}</div></article>`).join('')}</div>`:'';

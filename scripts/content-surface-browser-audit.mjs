@@ -97,6 +97,8 @@ async function checkBookStudyPrint(name,url,{spanish=false}={}){
   expect(JSON.stringify(options)===JSON.stringify(expectedOptions),`${name} offers participant, leader, and combined print choices.`,`${name} print choices were: ${options.join(' | ')}.`);
 
   await tools.locator('[data-print-mode="participant"]').click();
+  const immediateParticipantPrintCalls=await page.evaluate(()=>window.__nldgPrintCalls);
+  expect(immediateParticipantPrintCalls===1,`${name} invokes print synchronously from the participant tap.`,`${name} delayed the participant print call outside the tap handler.`);
   await page.waitForTimeout(50);
   const participant=await page.locator('#book-print-surface').innerText().catch(()=>'');
   const participantHeadings=await page.locator('#book-print-surface .print-section h2').allInnerTexts();

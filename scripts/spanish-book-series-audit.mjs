@@ -26,7 +26,7 @@ const commonRequired=['book-study-series.js','book-study-series-es.js','es/bibli
 const standardSeries=[
   {label:'Ruth',expected:5,bookPrefix:'Rut ',enData:'ruth-study-data.js',enGuide:'ruth-study-guide.js',esData:'ruth-study-data-es.js',enPage:'ruth-study.html',esPage:'es/rut-estudio.html',esRoute:'rut-estudio',canonical:'https://nolabelsdesignedbygod.org/es/rut-estudio.html',completion:'5 lecciones completas',i18nVersion:'1.45.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'Philippians',expected:6,bookPrefix:'Filipenses ',enData:'philippians-study-data.js',enGuide:'philippians-study-guide.js',esData:'philippians-study-data-es.js',enPage:'philippians-study.html',esPage:'es/filipenses-estudio.html',esRoute:'filipenses-estudio',canonical:'https://nolabelsdesignedbygod.org/es/filipenses-estudio.html',completion:'6 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
-  {label:'Hebrews',expected:8,bookPrefix:'Hebreos ',enData:'hebrews-study-data.js',enGuide:'hebrews-study-guide.js',esData:'hebrews-study-data-es.js',enPage:'hebrews-study.html',esPage:'es/hebreos-estudio.html',esRoute:'hebreos-estudio',canonical:'https://nolabelsdesignedbygod.org/es/hebreos-estudio.html',completion:'8 lecciones completas',i18nVersion:'1.21.0'},
+  {label:'Hebrews',expected:8,bookPrefix:'Hebreos ',enData:'hebrews-study-data.js',enGuide:'hebrews-study-guide.js',esData:'hebrews-study-data-es.js',enPage:'hebrews-study.html',esPage:'es/hebreos-estudio.html',esRoute:'hebreos-estudio',canonical:'https://nolabelsdesignedbygod.org/es/hebreos-estudio.html',completion:'8 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'1 Peter',expected:8,bookPrefix:'1 Pedro ',enData:'first-peter-study-data.js',enGuide:'first-peter-study-guide.js',esData:'first-peter-study-data-es.js',enPage:'first-peter-study.html',esPage:'es/primera-pedro-estudio.html',esRoute:'primera-pedro-estudio',canonical:'https://nolabelsdesignedbygod.org/es/primera-pedro-estudio.html',completion:'8 lecciones completas',i18nVersion:'1.14.0'},
   {label:'2 Peter',expected:5,bookPrefix:'2 Pedro ',enData:'second-peter-study-data.js',enGuide:'second-peter-study-guide.js',esData:'second-peter-study-data-es.js',enPage:'second-peter-study.html',esPage:'es/segunda-pedro-estudio.html',esRoute:'segunda-pedro-estudio',canonical:'https://nolabelsdesignedbygod.org/es/segunda-pedro-estudio.html',completion:'5 lecciones completas',i18nVersion:'1.15.0'},
   {label:'1 John',expected:7,bookPrefix:'1 Juan ',enData:'first-john-study-data.js',enGuide:'first-john-study-guide.js',esData:'first-john-study-data-es.js',enPage:'first-john-study.html',esPage:'es/primera-juan-estudio.html',esRoute:'primera-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/primera-juan-estudio.html',completion:'7 lecciones completas',i18nVersion:'1.16.0'},
@@ -104,16 +104,26 @@ expect('Spanish geography bridge',mapBridge,'inglés');
 
 if(exists('hebrews-study-data-es.js')){
   const s=loadBookSeries('hebrews-study-data-es.js'),l2=s.lessons?.[1],l3=s.lessons?.[2],l4=s.lessons?.[3],l5=s.lessons?.[4],l6=s.lessons?.[5],l7=s.lessons?.[6],l8=s.lessons?.[7];
-  if((s.seriesTeaching?.length??0)!==6)errors.push('Hebrews must preserve all six series-level teaching movements.');
-  if(!l2?.teaching?.[4]?.body?.includes('no da permiso a líderes'))errors.push('Hebrews lesson 2 must reject leaders claiming access to hidden motives.');
-  const l3Warning=(l3?.teaching?.[3]?.body||'').toLowerCase();
-  if(!l3Warning.includes('no está dirigido a cada pensamiento intrusivo')||!l3Warning.includes('aterrorizar conciencias sensibles'))errors.push('Hebrews lesson 3 must preserve the non-terrorizing reading of Hebrews 6.');
-  if(!l4?.teaching?.[4]?.body?.includes('Nunca autoriza antisemitismo')||!l4?.teaching?.[4]?.body?.includes('desprecio por el judaísmo'))errors.push('Hebrews lesson 4 must reject antisemitic better-covenant readings.');
-  if(!l5?.teaching?.[2]?.body?.includes('Nunca debe usarse para glorificar abuso')||!l5?.teaching?.[2]?.body?.includes('víctima'))errors.push('Hebrews lesson 5 must preserve abuse-safe sacrifice language.');
-  if(!l6?.teaching?.[2]?.body?.includes('no debe usarse para controlar asistencia')||!l6?.teaching?.[3]?.body?.includes('un solo pecado consciente'))errors.push('Hebrews lesson 6 must preserve non-coercive attendance and warning-passage guidance.');
-  if(!l7?.teaching?.[4]?.body?.includes('no son una medida confiable de cuánta fe'))errors.push('Hebrews lesson 7 must reject outcome-based measures of faith.');
-  if(!l8?.teaching?.[2]?.body?.includes('abuso físico')||!l8?.teaching?.[2]?.body?.includes('control coercitivo')||!l8?.teaching?.[5]?.body?.includes('obedecer nunca significa seguir abuso'))errors.push('Hebrews lesson 8 must preserve discipline and leadership abuse safeguards.');
-  for(const phrase of ['crear miedo','silenciar preguntas','exigir lealtad','justificar abuso','reconciliación insegura','seguridad','ayuda calificada','responsabilidades de denuncia'])if(!s.seriesLeaderGuidance?.includes(phrase))errors.push(`Hebrews leader safeguards must preserve ${phrase}.`);
+  if((s.seriesTeaching?.length??0)!==8)errors.push('Hebrews must retain eight series-level teaching movements.');
+  if((s.seriesQuestions?.length??0)!==8)errors.push('Hebrews must retain eight series-level discussion questions.');
+  if(String(s.seriesContext||'').split(/\n\n+/).filter(Boolean).length!==2)errors.push('Hebrews must retain two series-level Scripture Context paragraphs.');
+  for(const [i,lesson] of (s.lessons||[]).entries()){
+    const label=`Hebrews lesson ${i+1}`;
+    if((lesson.supporting?.length??0)!==5)errors.push(`${label}: must retain five supporting Scriptures.`);
+    if((lesson.teaching?.length??0)!==8)errors.push(`${label}: must retain eight teaching movements.`);
+    if((lesson.questions?.length??0)!==8)errors.push(`${label}: must retain eight discussion questions.`);
+    if((lesson.contextParagraphs?.length??0)!==2)errors.push(`${label}: must retain two Scripture Context paragraphs.`);
+    if((lesson.jesusParagraphs?.length??0)!==1||(lesson.guardrailParagraphs?.length??0)!==1||!String(lesson.closingTakeaway||'').trim())errors.push(`${label}: must retain Jesus Connection, Do Not Miss This, and Closing Takeaway.`);
+  }
+  const all=JSON.stringify(s);
+  if(!l2?.guardrailParagraphs?.[0]?.includes('motivos'))errors.push('Hebrews lesson 2 must reject leaders claiming access to hidden motives.');
+  if(!l3?.guardrailParagraphs?.[0]?.includes('escrupulosidad')||!l3?.guardrailParagraphs?.[0]?.includes('aterrorizar'))errors.push('Hebrews lesson 3 must preserve the non-terrorizing reading of Hebrews 6.');
+  if(!l4?.guardrailParagraphs?.[0]?.includes('judaísmo')||!all.includes('antisemitismo'))errors.push('Hebrews lesson 4 must reject antisemitic better-covenant readings.');
+  if(!l5?.guardrailParagraphs?.[0]?.includes('abuso doméstico')||!l5?.guardrailParagraphs?.[0]?.includes('autolesión'))errors.push('Hebrews lesson 5 must preserve abuse-safe sacrifice language.');
+  if(!l6?.guardrailParagraphs?.[0]?.includes('controlar asistencia')||!l6?.guardrailParagraphs?.[0]?.includes('pecado intencional'))errors.push('Hebrews lesson 6 must preserve non-coercive attendance and warning-passage guidance.');
+  if(!l7?.guardrailParagraphs?.[0]?.includes('resultados')||!l7?.guardrailParagraphs?.[0]?.includes('fe'))errors.push('Hebrews lesson 7 must reject outcome-based measures of faith.');
+  if(!l8?.guardrailParagraphs?.[0]?.includes('disciplina divina')||!all.includes('obediencia ciega'))errors.push('Hebrews lesson 8 must preserve discipline and leadership abuse safeguards.');
+  for(const phrase of ['advertencia de manipulación','disciplina de abuso','liderazgo de control','seguridad','cuidado calificado','responsabilidades de reporte'])if(!s.seriesLeaderGuidance?.includes(phrase))errors.push(`Hebrews leader safeguards must preserve ${phrase}.`);
 }
 
 if(exists('philippians-study-data-es.js')){

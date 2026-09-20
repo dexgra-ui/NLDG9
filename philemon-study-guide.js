@@ -65,14 +65,14 @@
   "seriesJesusConnection": "Jesus is the Lord whose grace creates one family across status, the Master who rejects domineering power, the reconciler who brings estranged people near, and the One whose self-giving love provides the pattern for costly mediation. Paul’s willingness to bear another person’s debt can point analogically toward Christ, but Philemon should not be turned into a one-to-one allegory that erases Onesimus’s real human situation.",
   "seriesGuardrail": "Do not use Philemon to defend slavery, racial hierarchy, trafficking, exploitative labor, or ownership of people. Do not state as fact that Onesimus was a runaway thief; the letter does not say that. Do not romanticize his return or assume it was safe simply because Paul appealed to Philemon. Do not pressure victims of abuse, coercion, financial exploitation, or spiritual manipulation to reconcile, resume contact, return to unsafe settings, forgive on demand, or restore trust without evidence of change. Forgiveness, reconciliation, restitution, accountability, legal responsibility, access, and restored trust are related but not identical. Do not use “you owe me your very self” or spiritual gratitude to control people.",
   "seriesQuestions": [
-    "1. Why does it matter that the church in Philemon’s house hears a letter about a relationship shaped by slavery and power?",
-    "2. What does Paul’s praise in verses 4–7 reveal about the kind of faith he values?",
-    "3. What can we learn from Paul choosing appeal rather than command while still acknowledging the power he carries?",
-    "4. How do Paul’s descriptions of Onesimus challenge a system that could reduce him to property or usefulness?",
-    "5. What does verse 14 teach about voluntary goodness, and why must we still keep Onesimus’s limited agency in view?",
-    "6. Why is Paul’s word “perhaps” important when Christians talk about providence in painful situations?",
-    "7. What do reception, repayment, mediation, and communal accountability add to a serious understanding of reconciliation?",
-    "8. How can churches pursue repair and restored relationship without pressuring vulnerable people into unsafe contact or premature trust?"
+    "Why does it matter that the church in Philemon’s house hears a letter about a relationship shaped by slavery and power?",
+    "What does Paul’s praise in verses 4–7 reveal about the kind of faith he values?",
+    "What can we learn from Paul choosing appeal rather than command while still acknowledging the power he carries?",
+    "How do Paul’s descriptions of Onesimus challenge a system that could reduce him to property or usefulness?",
+    "What does verse 14 teach about voluntary goodness, and why must we still keep Onesimus’s limited agency in view?",
+    "Why is Paul’s word “perhaps” important when Christians talk about providence in painful situations?",
+    "What do reception, repayment, mediation, and communal accountability add to a serious understanding of reconciliation?",
+    "How can churches pursue repair and restored relationship without pressuring vulnerable people into unsafe contact or premature trust?"
   ],
   "seriesExamination": "Where do status, gratitude, money, ministry authority, social standing, or unequal power shape my expectations of other people? Have I confused forgiveness with access, reconciliation with silence, or spiritual influence with the right to control someone else’s decision?",
   "seriesPractice": "Choose one action that fits your situation: refresh someone through concrete encouragement, listen seriously to a person with less power, repair a debt or commitment, advocate for someone whose voice is discounted, clarify a needed boundary, or examine whether an appeal you are making leaves the other person genuinely free to respond.",

@@ -86,14 +86,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Cómo conecta Hebreos el habla de Dios por los profetas con su palabra por el Hijo?",
-        "2. ¿Qué descripciones de 1:2–4 hacen al Hijo más que un maestro?",
-        "3. ¿Por qué usa Hebreos tantas citas del Antiguo Testamento para hablar de Cristo?",
-        "4. ¿Cómo se distingue desviarse lentamente de rechazar abiertamente?",
-        "5. ¿Cómo desafía el sufrimiento de Jesús una fe que espera solo triunfo visible?",
-        "6. ¿Qué significa que Jesús no se avergüence de llamar hermanos y hermanas a su pueblo?",
-        "7. ¿Cómo puede la esperanza confrontar temor a la muerte sin negar el duelo?",
-        "8. ¿Qué diferencia debe hacer un Sumo Sacerdote misericordioso para una persona probada o agotada?"
+        "¿Cómo conecta Hebreos el habla de Dios por los profetas con su palabra por el Hijo?",
+        "¿Qué descripciones de 1:2–4 hacen al Hijo más que un maestro?",
+        "¿Por qué usa Hebreos tantas citas del Antiguo Testamento para hablar de Cristo?",
+        "¿Cómo se distingue desviarse lentamente de rechazar abiertamente?",
+        "¿Cómo desafía el sufrimiento de Jesús una fe que espera solo triunfo visible?",
+        "¿Qué significa que Jesús no se avergüence de llamar hermanos y hermanas a su pueblo?",
+        "¿Cómo puede la esperanza confrontar temor a la muerte sin negar el duelo?",
+        "¿Qué diferencia debe hacer un Sumo Sacerdote misericordioso para una persona probada o agotada?"
       ],
       "examination": "¿Dónde se ha vuelto delgada o distraída mi atención a Jesús? ¿Me relaciono con Dios principalmente por miedo, rendimiento o guardianes humanos en vez de por el Hijo que revela a Dios y ayuda al probado?",
       "challenge": "Lee Hebreos 1:1–2:18 en voz alta tres días distintos. Cada vez escribe: «Porque Jesús es ___, puedo ___». Deja que una respuesta forme una acción de adoración, valor o búsqueda de ayuda.",
@@ -191,14 +191,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Cómo honra Hebreos a Moisés mientras presenta a Jesús como mayor?",
-        "2. ¿Qué distingue endurecimiento persistente de duda o lucha sincera?",
-        "3. ¿Por qué hace Hebreos del ánimo una responsabilidad comunitaria?",
-        "4. ¿Cómo puede una iglesia animar sin volverse controladora?",
-        "5. ¿Cómo contribuyen creación, desierto y promesa al significado del reposo?",
-        "6. ¿Por qué procurar entrar en reposo no significa ganar aceptación?",
-        "7. ¿Qué expone la Palabra viva y qué autoridad no da a líderes humanos?",
-        "8. ¿Por qué es el trono de gracia el cierre necesario después de exposición y responsabilidad?"
+        "¿Cómo honra Hebreos a Moisés mientras presenta a Jesús como mayor?",
+        "¿Qué distingue endurecimiento persistente de duda o lucha sincera?",
+        "¿Por qué hace Hebreos del ánimo una responsabilidad comunitaria?",
+        "¿Cómo puede una iglesia animar sin volverse controladora?",
+        "¿Cómo contribuyen creación, desierto y promesa al significado del reposo?",
+        "¿Por qué procurar entrar en reposo no significa ganar aceptación?",
+        "¿Qué expone la Palabra viva y qué autoridad no da a líderes humanos?",
+        "¿Por qué es el trono de gracia el cierre necesario después de exposición y responsabilidad?"
       ],
       "examination": "¿Dónde resisto la voz de Dios y dónde simplemente estoy cansado o asustado y necesito misericordia? ¿Recibo ánimo comunitario sin entregar a otros la responsabilidad de escuchar a Cristo?",
       "challenge": "Elige una práctica de «hoy»: anima específicamente a un creyente, toma un tiempo real de descanso restaurador, lleva un temor honestamente a Dios o pide ayuda en vez de esconderte.",
@@ -296,14 +296,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué conecta Hebreos ministerio sacerdotal con gentileza?",
-        "2. ¿Qué significa que Jesús «aprendió obediencia» sin implicar pecado previo?",
-        "3. ¿Cómo difiere discernimiento practicado de simplemente saber más?",
-        "4. ¿Por qué importan los fundamentos cuando se llama a madurez?",
-        "5. ¿Qué hace Hebreos 6:4–6 más serio que duda o falla ordinaria?",
-        "6. ¿Qué sugiere la imagen del campo sobre fruto a largo plazo?",
-        "7. ¿Por qué son esenciales «cosas mejores acerca de ustedes» para el tono pastoral?",
-        "8. ¿Cómo mueve la imagen del ancla la seguridad lejos de autoanálisis obsesivo?"
+        "¿Por qué conecta Hebreos ministerio sacerdotal con gentileza?",
+        "¿Qué significa que Jesús «aprendió obediencia» sin implicar pecado previo?",
+        "¿Cómo difiere discernimiento practicado de simplemente saber más?",
+        "¿Por qué importan los fundamentos cuando se llama a madurez?",
+        "¿Qué hace Hebreos 6:4–6 más serio que duda o falla ordinaria?",
+        "¿Qué sugiere la imagen del campo sobre fruto a largo plazo?",
+        "¿Por qué son esenciales «cosas mejores acerca de ustedes» para el tono pastoral?",
+        "¿Cómo mueve la imagen del ancla la seguridad lejos de autoanálisis obsesivo?"
       ],
       "examination": "¿Estoy creciendo en discernimiento practicado o solo repitiendo material conocido? ¿Dónde debo recibir una advertencia seria y dónde debo dejar de convertir advertencias en miedo que eclipsa fidelidad de Cristo?",
       "challenge": "Elige un área donde necesites discernimiento. Estudia un pasaje relevante, busca consejo sabio y toma una decisión concreta que refleje obediencia madura.",
@@ -401,14 +401,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué conecta Hebreos Génesis 14 con Salmo 110?",
-        "2. ¿Cuál es la diferencia entre provisional y malo?",
-        "3. ¿Por qué importa el juramento de Dios al argumento del sacerdocio?",
-        "4. ¿Qué revela el sacerdocio permanente sobre límites de líderes humanos?",
-        "5. ¿Cómo fortalece la intercesión continua la confianza en Dios?",
-        "6. ¿Por qué deben permanecer juntas santidad y compasión?",
-        "7. ¿Qué significa «copia y sombra» sin despreciar el culto de Israel?",
-        "8. ¿Cómo celebrar el nuevo pacto rechazando antisemitismo y arrogancia espiritual?"
+        "¿Por qué conecta Hebreos Génesis 14 con Salmo 110?",
+        "¿Cuál es la diferencia entre provisional y malo?",
+        "¿Por qué importa el juramento de Dios al argumento del sacerdocio?",
+        "¿Qué revela el sacerdocio permanente sobre límites de líderes humanos?",
+        "¿Cómo fortalece la intercesión continua la confianza en Dios?",
+        "¿Por qué deben permanecer juntas santidad y compasión?",
+        "¿Qué significa «copia y sombra» sin despreciar el culto de Israel?",
+        "¿Cómo celebrar el nuevo pacto rechazando antisemitismo y arrogancia espiritual?"
       ],
       "examination": "¿Dependo de Cristo como Sumo Sacerdote permanente o he dado demasiado control espiritual a un líder humano? ¿Hablo del judaísmo o Antiguo Testamento con humildad o superioridad descuidada?",
       "challenge": "Lee Jeremías 31:31–34 junto a Hebreos 8:7–13. Anota lo que Dios promete hacer y ora por una forma en que su ley, misericordia y perdón transformen tu corazón.",
@@ -506,14 +506,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué enseñaba el tabernáculo sobre santidad y acceso?",
-        "2. ¿Por qué la entrada repetida mostraba gracia y límite?",
-        "3. ¿Qué diferencia hace la autoentrega voluntaria de Jesús al interpretar sacrificio?",
-        "4. ¿Cómo difiere una conciencia limpia de negar responsabilidad?",
-        "5. ¿Por qué debe leerse el lenguaje de sangre dentro de su mundo bíblico?",
-        "6. ¿De qué libera «una vez y para siempre» a los creyentes?",
-        "7. ¿Cómo llamar «sombra» a los sacrificios sin burlarse de ellos?",
-        "8. ¿Qué relación hay entre perdón, corazones transformados y fin del sacrificio repetido?"
+        "¿Qué enseñaba el tabernáculo sobre santidad y acceso?",
+        "¿Por qué la entrada repetida mostraba gracia y límite?",
+        "¿Qué diferencia hace la autoentrega voluntaria de Jesús al interpretar sacrificio?",
+        "¿Cómo difiere una conciencia limpia de negar responsabilidad?",
+        "¿Por qué debe leerse el lenguaje de sangre dentro de su mundo bíblico?",
+        "¿De qué libera «una vez y para siempre» a los creyentes?",
+        "¿Cómo llamar «sombra» a los sacrificios sin burlarse de ellos?",
+        "¿Qué relación hay entre perdón, corazones transformados y fin del sacrificio repetido?"
       ],
       "examination": "¿Recibo el perdón suficiente de Cristo o sigo intentando castigarme hasta sentirme aceptable? ¿Dónde exige el arrepentimiento reparación honesta sin convertirla en compra de gracia?",
       "challenge": "Identifica una práctica o pensamiento de vergüenza que trate la obra de Cristo como insuficiente. Reemplázalo con confesión, gratitud y una acción responsable de reparación o servicio.",
@@ -611,14 +611,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué da confianza para acercarse a Dios?",
-        "2. ¿Cómo difiere conciencia limpia de fingir que no hubo maldad?",
-        "3. ¿Por qué mantener firme depende de fidelidad de Dios?",
-        "4. ¿Cuál es el propósito de reunirse según 24–25?",
-        "5. ¿Qué hace la advertencia 26–31 más seria que un pecado intencional aislado?",
-        "6. ¿Cómo ayuda recordar fidelidad anterior sin romantizar trauma?",
-        "7. ¿Cómo luce perseverancia cuando alguien está agotado?",
-        "8. ¿Por qué termina el escritor identificando a la comunidad con quienes tienen fe?"
+        "¿Qué da confianza para acercarse a Dios?",
+        "¿Cómo difiere conciencia limpia de fingir que no hubo maldad?",
+        "¿Por qué mantener firme depende de fidelidad de Dios?",
+        "¿Cuál es el propósito de reunirse según 24–25?",
+        "¿Qué hace la advertencia 26–31 más seria que un pecado intencional aislado?",
+        "¿Cómo ayuda recordar fidelidad anterior sin romantizar trauma?",
+        "¿Cómo luce perseverancia cuando alguien está agotado?",
+        "¿Por qué termina el escritor identificando a la comunidad con quienes tienen fe?"
       ],
       "examination": "¿Dónde me escondo de Dios, me aíslo del ánimo sano o confundo perseverar con absorber daño en silencio? ¿Qué sería acercarme honestamente y mantener esperanza porque Dios es fiel?",
       "challenge": "Elige una práctica comunitaria: pide oración, anima a un creyente desanimado, quita una barrera de participación o reconecta con una comunidad cristiana sana de manera realista.",
@@ -716,14 +716,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Cómo difiere la fe bíblica de pensamiento positivo?",
-        "2. ¿Qué muestran Abel, Enoc y Noé sobre fe hecha acción?",
-        "3. ¿Qué enseña lenguaje de peregrinos sobre promesas parcialmente cumplidas?",
-        "4. ¿Por qué distinguir una acción elogiada de aprobación total de una vida?",
-        "5. ¿Qué revela Moisés sobre fe y lealtad?",
-        "6. ¿Por qué fe valiente no debe confundirse con imprudencia?",
-        "7. ¿Qué hace el contraste entre liberación y sufrimiento a definiciones de prosperidad?",
-        "8. ¿Cómo convierte el versículo 40 historias individuales en una historia compartida?"
+        "¿Cómo difiere la fe bíblica de pensamiento positivo?",
+        "¿Qué muestran Abel, Enoc y Noé sobre fe hecha acción?",
+        "¿Qué enseña lenguaje de peregrinos sobre promesas parcialmente cumplidas?",
+        "¿Por qué distinguir una acción elogiada de aprobación total de una vida?",
+        "¿Qué revela Moisés sobre fe y lealtad?",
+        "¿Por qué fe valiente no debe confundirse con imprudencia?",
+        "¿Qué hace el contraste entre liberación y sufrimiento a definiciones de prosperidad?",
+        "¿Cómo convierte el versículo 40 historias individuales en una historia compartida?"
       ],
       "examination": "¿Dónde he medido la fe por resultados? ¿Puedo confiar en Dios cuando el resultado que deseo se retrasa, cambia o no llega como esperaba?",
       "challenge": "Elige un acto de obediencia cuyo valor no dependa del resultado inmediato: decir verdad, servir, mantener un límite sabio, dar, buscar reconciliación de manera segura o continuar una buena práctica.",
@@ -821,14 +821,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Cuál es la diferencia entre pecado y un «peso» no pecaminoso que estorba?",
-        "2. ¿Cómo fijar los ojos en Jesús protege de cristianismo centrado en líderes?",
-        "3. ¿Qué distinciones impiden usar disciplina como defensa de abuso?",
-        "4. ¿Cómo se fortalecen manos débiles de manera práctica?",
-        "5. ¿Por qué un reino inconmovible debe producir gratitud y no pánico?",
-        "6. ¿Cómo permanecen hospitalidad y solidaridad generosas respetando seguridad?",
-        "7. ¿Cómo difiere contentamiento de aceptar explotación pasivamente?",
-        "8. ¿Qué exige Hebreos 13 observar sobre líderes antes de interpretar «obedezcan»?"
+        "¿Cuál es la diferencia entre pecado y un «peso» no pecaminoso que estorba?",
+        "¿Cómo fijar los ojos en Jesús protege de cristianismo centrado en líderes?",
+        "¿Qué distinciones impiden usar disciplina como defensa de abuso?",
+        "¿Cómo se fortalecen manos débiles de manera práctica?",
+        "¿Por qué un reino inconmovible debe producir gratitud y no pánico?",
+        "¿Cómo permanecen hospitalidad y solidaridad generosas respetando seguridad?",
+        "¿Cómo difiere contentamiento de aceptar explotación pasivamente?",
+        "¿Qué exige Hebreos 13 observar sobre líderes antes de interpretar «obedezcan»?"
       ],
       "examination": "¿Qué peso necesita soltarse? ¿Dónde necesito apoyo en vez de vergüenza? ¿He dado a un líder autoridad que pertenece solo a Jesús o usado lenguaje espiritual para evitar límites y rendición de cuentas?",
       "challenge": "Elige una práctica final de Hebreos: suelta un peso insostenible, apoya a alguien agotado, ofrece hospitalidad segura, recuerda a alguien preso o bajo dificultad, revisa un hábito financiero, evalúa liderazgo por carácter u ofrece alabanza y generosidad práctica.",

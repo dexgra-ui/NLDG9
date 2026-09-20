@@ -86,14 +86,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué nombra Pablo a Apia, Arquipo y la iglesia en vez de dirigirse solo a Filemón?",
-        "2. ¿Qué revelan los versículos 4–5 sobre el amor y la fe que Pablo ya ha visto en Filemón?",
-        "3. ¿Qué podría significar que la comunión o colaboración de la fe llegue a ser eficaz en el versículo 6?",
-        "4. ¿Cómo cambia la manera de ver a otras personas un reconocimiento más profundo del bien que tenemos en Cristo?",
-        "5. ¿Qué sugiere el versículo 7 sobre “fortalecer corazones” como medida de influencia cristiana?",
-        "6. ¿Por qué puede el ánimo honesto hacer una conversación difícil más veraz y no menos seria?",
-        "7. ¿Cómo puede la participación comunitaria aumentar rendición de cuentas sin convertirse en presión social o coerción?",
-        "8. ¿Quién en tu comunidad puede necesitar fortalecimiento, dignidad o ánimo antes de recibir consejo o corrección?"
+        "¿Por qué nombra Pablo a Apia, Arquipo y la iglesia en vez de dirigirse solo a Filemón?",
+        "¿Qué revelan los versículos 4–5 sobre el amor y la fe que Pablo ya ha visto en Filemón?",
+        "¿Qué podría significar que la comunión o colaboración de la fe llegue a ser eficaz en el versículo 6?",
+        "¿Cómo cambia la manera de ver a otras personas un reconocimiento más profundo del bien que tenemos en Cristo?",
+        "¿Qué sugiere el versículo 7 sobre “fortalecer corazones” como medida de influencia cristiana?",
+        "¿Por qué puede el ánimo honesto hacer una conversación difícil más veraz y no menos seria?",
+        "¿Cómo puede la participación comunitaria aumentar rendición de cuentas sin convertirse en presión social o coerción?",
+        "¿Quién en tu comunidad puede necesitar fortalecimiento, dignidad o ánimo antes de recibir consejo o corrección?"
       ],
       "examination": "¿Experimentan las personas mi fe principalmente como opiniones y expectativas, o como amor, ánimo, hospitalidad y fortalecimiento? Cuando necesito abordar algo difícil, ¿puedo reconocer el bien real sin usar elogio como palanca?",
       "challenge": "Fortalece a una persona de manera concreta esta semana mediante ánimo, ayuda práctica, hospitalidad, defensa o escucha cuidadosa. Haz que la acción busque el bien de esa persona y no ganar influencia sobre una decisión posterior.",
@@ -191,14 +191,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué dice Pablo explícitamente que podría ordenar a Filemón antes de elegir apelar?",
-        "2. ¿Qué formas de influencia pueden hacer que una «apelación» se sienta obligatoria aun sin orden directa?",
-        "3. ¿Qué cambia cuando Pablo llama a Onésimo su hijo antes de hablar de utilidad?",
-        "4. ¿Cómo pueden las iglesias resistir medir a personas por productividad, utilidad o valor económico?",
-        "5. ¿Qué comunica «mi propio corazón» sobre cómo quiere Pablo que Filemón vea a Onésimo?",
-        "6. ¿Qué enseña el versículo 14 sobre bondad voluntaria y qué preguntas de consentimiento quedan debido al poder desigual de Onésimo?",
-        "7. ¿Por qué es el «quizás» de Pablo un modelo más saludable que afirmar certeza sobre las razones ocultas de Dios para eventos dolorosos?",
-        "8. ¿Cómo desafía «ya no como esclavo, sino más que esclavo, como hermano amado» las relaciones cristianas aunque la carta no registre manumisión legal?"
+        "¿Por qué dice Pablo explícitamente que podría ordenar a Filemón antes de elegir apelar?",
+        "¿Qué formas de influencia pueden hacer que una «apelación» se sienta obligatoria aun sin orden directa?",
+        "¿Qué cambia cuando Pablo llama a Onésimo su hijo antes de hablar de utilidad?",
+        "¿Cómo pueden las iglesias resistir medir a personas por productividad, utilidad o valor económico?",
+        "¿Qué comunica «mi propio corazón» sobre cómo quiere Pablo que Filemón vea a Onésimo?",
+        "¿Qué enseña el versículo 14 sobre bondad voluntaria y qué preguntas de consentimiento quedan debido al poder desigual de Onésimo?",
+        "¿Por qué es el «quizás» de Pablo un modelo más saludable que afirmar certeza sobre las razones ocultas de Dios para eventos dolorosos?",
+        "¿Cómo desafía «ya no como esclavo, sino más que esclavo, como hermano amado» las relaciones cristianas aunque la carta no registre manumisión legal?"
       ],
       "examination": "¿Dónde podría estar usando autoridad, gratitud, estatus, empleo, influencia ministerial o poder financiero de manera que haga menos libre el «sí» de otra persona? ¿Valoro a las personas por quienes son en Cristo o principalmente por lo que pueden hacer por mí?",
       "challenge": "Elige una relación con poder desigual y examínala con honestidad. Pregunta si las expectativas son claras, si el consentimiento es significativo, si se protege la dignidad y si la persona puede disentir sin represalias. Haz un cambio concreto que reduzca coerción innecesaria.",
@@ -296,14 +296,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué quiere decir Pablo al pedir a Filemón recibir a Onésimo como lo recibiría a él?",
-        "2. ¿Por qué es importante la palabra «si» del versículo 18 al reconstruir la historia de Onésimo?",
-        "3. ¿Qué enseña la disposición de Pablo a pagar sobre el costo de una mediación seria?",
-        "4. ¿Cómo pueden compromisos escritos, restitución o responsabilidad clara fortalecer la reparación?",
-        "5. ¿Cuándo pueden recordatorios de gratitud espiritual convertirse en manipulación en vez de amor?",
-        "6. ¿Por qué no debe «obediencia» en el versículo 21 convertirse en cumplimiento incuestionable hacia líderes religiosos?",
-        "7. ¿Qué podría significar «aún más de lo que digo» y por qué deben los intérpretes evitar afirmar certeza?",
-        "8. ¿Cómo puede una iglesia apoyar reconciliación y rendición de cuentas mientras protege a personas vulnerables de presión grupal o restauración insegura?"
+        "¿Qué quiere decir Pablo al pedir a Filemón recibir a Onésimo como lo recibiría a él?",
+        "¿Por qué es importante la palabra «si» del versículo 18 al reconstruir la historia de Onésimo?",
+        "¿Qué enseña la disposición de Pablo a pagar sobre el costo de una mediación seria?",
+        "¿Cómo pueden compromisos escritos, restitución o responsabilidad clara fortalecer la reparación?",
+        "¿Cuándo pueden recordatorios de gratitud espiritual convertirse en manipulación en vez de amor?",
+        "¿Por qué no debe «obediencia» en el versículo 21 convertirse en cumplimiento incuestionable hacia líderes religiosos?",
+        "¿Qué podría significar «aún más de lo que digo» y por qué deben los intérpretes evitar afirmar certeza?",
+        "¿Cómo puede una iglesia apoyar reconciliación y rendición de cuentas mientras protege a personas vulnerables de presión grupal o restauración insegura?"
       ],
       "examination": "Cuando deseo reconciliación, ¿estoy dispuesto a asumir costo apropiado, decir la verdad sobre lo que se sabe, aceptar rendición de cuentas y respetar límites de la otra persona? ¿He usado alguna vez gratitud, autoridad espiritual, presión comunitaria o lenguaje de perdón para obtener acceso que no había ganado?",
       "challenge": "Identifica una obligación no resuelta o relación dañada. Elige el paso fiel más seguro disponible: aclarar hechos, pagar una deuda, documentar un compromiso, pedir perdón sin exigir respuesta, buscar mediador neutral, fortalecer un límite u obtener ayuda profesional o legal apropiada. No fuerces contacto donde la seguridad sea incierta.",

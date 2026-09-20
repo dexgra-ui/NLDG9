@@ -85,14 +85,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What does verse 1 say truth is supposed to produce?",
-        "2. Why does Titus need to appoint elders rather than leave the churches without accountable structure?",
-        "3. How is “above reproach” different from requiring sinless perfection?",
-        "4. What can closest relationships reveal about a person’s use of power?",
-        "5. Why are arrogance, anger, violence, addiction, and greed leadership issues rather than merely private weaknesses?",
-        "6. What positive qualities in verse 8 show what healthy leadership is for?",
-        "7. Why must a leader hold to the trustworthy word rather than personal preference or charisma?",
-        "8. What safeguards help correction remain truthful and protective without becoming controlling or cruel?"
+        "What does verse 1 say truth is supposed to produce?",
+        "Why does Titus need to appoint elders rather than leave the churches without accountable structure?",
+        "How is “above reproach” different from requiring sinless perfection?",
+        "What can closest relationships reveal about a person’s use of power?",
+        "Why are arrogance, anger, violence, addiction, and greed leadership issues rather than merely private weaknesses?",
+        "What positive qualities in verse 8 show what healthy leadership is for?",
+        "Why must a leader hold to the trustworthy word rather than personal preference or charisma?",
+        "What safeguards help correction remain truthful and protective without becoming controlling or cruel?"
       ],
       "examination": "Am I more impressed by visible talent than by self-control, hospitality, honesty, relational safety, and accountability? If I lead, where does my ordinary life need to become more consistent with the truth I teach?",
       "challenge": "Evaluate one leadership role you hold or observe using the whole passage: character, relationships, use of power, money, hospitality, self-control, doctrine, encouragement, correction, and accountability. Refuse both celebrity-style admiration and perfectionistic judgment.",
@@ -190,14 +190,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Which descriptions in verse 10 identify the character of the teaching problem?",
-        "2. Why does the impact on whole households make this more than an abstract doctrinal disagreement?",
-        "3. What financial safeguards help a church recognize and resist dishonest gain?",
-        "4. Why must the circumcision language remain tied to specific opponents rather than Jewish people generally?",
-        "5. How should Christians handle the harsh Cretan quotation without repeating prejudice?",
-        "6. What does “that they may be sound in the faith” reveal about the purpose of rebuke?",
-        "7. When can a human rule or tradition begin to displace truth rather than serve wisdom?",
-        "8. What kinds of conduct can deny a profession of knowing God even when the words sound orthodox?"
+        "Which descriptions in verse 10 identify the character of the teaching problem?",
+        "Why does the impact on whole households make this more than an abstract doctrinal disagreement?",
+        "What financial safeguards help a church recognize and resist dishonest gain?",
+        "Why must the circumcision language remain tied to specific opponents rather than Jewish people generally?",
+        "How should Christians handle the harsh Cretan quotation without repeating prejudice?",
+        "What does “that they may be sound in the faith” reveal about the purpose of rebuke?",
+        "When can a human rule or tradition begin to displace truth rather than serve wisdom?",
+        "What kinds of conduct can deny a profession of knowing God even when the words sound orthodox?"
       ],
       "examination": "Do I evaluate teaching only by whether I agree with it, or also by truth, financial transparency, use of power, household fruit, humility, and conduct? Am I tempted to generalize from one harmful group to an entire people?",
       "challenge": "Examine one ministry, teacher, or source you trust using the passage’s criteria: truthfulness, money, treatment of households, human requirements, and observable fruit. Do the review fairly, without rumor or prejudice, and identify one safeguard worth strengthening.",
@@ -295,14 +295,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What does verse 1 imply about the relationship between sound doctrine and daily life?",
-        "2. Which qualities in verse 2 describe mature character rather than merely older age?",
-        "3. What teaching and mentoring role does Paul give older women?",
-        "4. How can intergenerational discipleship honor Titus 2 without forcing everyone into identical life situations?",
-        "5. Why is Titus’s own example part of his teaching authority?",
-        "6. What makes speech and doctrine credible in verses 7–8?",
-        "7. How should the instructions to enslaved believers be read without endorsing slavery or exploitation?",
-        "8. What ordinary practice in your life could make the teaching about God our Savior more beautiful to others?"
+        "What does verse 1 imply about the relationship between sound doctrine and daily life?",
+        "Which qualities in verse 2 describe mature character rather than merely older age?",
+        "What teaching and mentoring role does Paul give older women?",
+        "How can intergenerational discipleship honor Titus 2 without forcing everyone into identical life situations?",
+        "Why is Titus’s own example part of his teaching authority?",
+        "What makes speech and doctrine credible in verses 7–8?",
+        "How should the instructions to enslaved believers be read without endorsing slavery or exploitation?",
+        "What ordinary practice in your life could make the teaching about God our Savior more beautiful to others?"
       ],
       "examination": "Does my private conduct support the truth I profess? Am I learning from believers in another generation, and am I using any biblical role language to control people rather than to serve them with dignity and love?",
       "challenge": "Have one intentional conversation with a trusted believer from another generation about a concrete area of faithfulness. Listen for wisdom, share honestly, and choose one practice of self-control, love, integrity, or service to strengthen.",
@@ -400,14 +400,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why does Paul place grace before the commands of verses 12–14?",
-        "2. What does it mean for grace to train rather than merely pardon?",
-        "3. How does focusing the blessed hope on Jesus protect believers from speculative date-setting?",
-        "4. What does Christ’s self-giving accomplish according to verse 14?",
-        "5. How can Christians practice respectful public conduct without becoming complicit in injustice?",
-        "6. Why does verse 3 require humility when speaking about people outside the church?",
-        "7. What does 3:4–7 say God does in salvation, and what role do our righteous works not play?",
-        "8. Why should people saved by mercy become especially devoted to useful good works?"
+        "Why does Paul place grace before the commands of verses 12–14?",
+        "What does it mean for grace to train rather than merely pardon?",
+        "How does focusing the blessed hope on Jesus protect believers from speculative date-setting?",
+        "What does Christ’s self-giving accomplish according to verse 14?",
+        "How can Christians practice respectful public conduct without becoming complicit in injustice?",
+        "Why does verse 3 require humility when speaking about people outside the church?",
+        "What does 3:4–7 say God does in salvation, and what role do our righteous works not play?",
+        "Why should people saved by mercy become especially devoted to useful good works?"
       ],
       "examination": "Am I using grace to excuse something grace is training me to reject, or using good works to prove I am better than others? Where does remembering God’s mercy need to make my public speech more humble and useful?",
       "challenge": "Choose one grace-trained “no” and one grace-trained “yes.” Reject one destructive habit, desire, or speech pattern, and replace it with one concrete good work that benefits another person.",
@@ -505,14 +505,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What kinds of controversy does Paul call unprofitable and worthless?",
-        "2. How can a church distinguish necessary doctrinal disagreement from endless quarrelling?",
-        "3. What makes divisiveness a pattern rather than a single objection or difficult conversation?",
-        "4. Why do the first and second warnings matter for fair process?",
-        "5. What misuse becomes possible if leaders treat “self-condemned” as permission to assume motives?",
-        "6. What do Zenas and Apollos reveal about the practical side of supporting ministry?",
-        "7. Why does Paul say believers must learn to meet urgent needs?",
-        "8. What controversy could your community reduce so that more attention goes to faithful relationships and useful service?"
+        "What kinds of controversy does Paul call unprofitable and worthless?",
+        "How can a church distinguish necessary doctrinal disagreement from endless quarrelling?",
+        "What makes divisiveness a pattern rather than a single objection or difficult conversation?",
+        "Why do the first and second warnings matter for fair process?",
+        "What misuse becomes possible if leaders treat “self-condemned” as permission to assume motives?",
+        "What do Zenas and Apollos reveal about the practical side of supporting ministry?",
+        "Why does Paul say believers must learn to meet urgent needs?",
+        "What controversy could your community reduce so that more attention goes to faithful relationships and useful service?"
       ],
       "examination": "Am I using controversy to feel important, informed, or spiritually superior while useful work goes undone? On the other hand, am I tempted to call legitimate challenge “division” because it threatens my comfort or authority?",
       "challenge": "Reduce your participation in one fruitless dispute and redirect that time or energy toward one urgent, concrete need. If a conflict truly requires attention, write down the behavior, evidence, process, and hoped-for healthy outcome before acting.",

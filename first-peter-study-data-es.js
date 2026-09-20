@@ -86,14 +86,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué llama Pedro a sus lectores elegidos y extranjeros?",
-        "2. ¿Qué hace «viva» a la esperanza cristiana?",
-        "3. ¿Cómo habla la herencia a circunstancias inestables?",
-        "4. ¿Qué promete la protección de Dios y qué no promete?",
-        "5. ¿Por qué importa que Pedro nombre dolor y gozo juntos?",
-        "6. ¿Cómo pueden las pruebas refinar la fe sin hacer bueno el sufrimiento?",
-        "7. ¿Qué revela amar a Cristo sin verlo sobre la fe?",
-        "8. ¿Cómo conectan los profetas la esperanza cristiana con la historia bíblica?"
+        "¿Por qué llama Pedro a sus lectores elegidos y extranjeros?",
+        "¿Qué hace «viva» a la esperanza cristiana?",
+        "¿Cómo habla la herencia a circunstancias inestables?",
+        "¿Qué promete la protección de Dios y qué no promete?",
+        "¿Por qué importa que Pedro nombre dolor y gozo juntos?",
+        "¿Cómo pueden las pruebas refinar la fe sin hacer bueno el sufrimiento?",
+        "¿Qué revela amar a Cristo sin verlo sobre la fe?",
+        "¿Cómo conectan los profetas la esperanza cristiana con la historia bíblica?"
       ],
       "examination": "¿He interpretado dificultad como prueba de que Dios me abandonó? ¿Qué seguridad temporal se ha vuelto demasiado central para mi esperanza?",
       "challenge": "Memoriza 1 Pedro 1:3–5. Nombra un dolor honestamente delante de Dios y coloca junto a él una razón concreta por la que tu esperanza sigue viva por la resurrección de Jesús.",
@@ -191,14 +191,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué añade preparar la mente a la enseñanza de Pedro sobre esperanza?",
-        "2. ¿Por qué pone Pedro la gracia en el centro de la santidad?",
-        "3. ¿Cómo siguen formando a las personas los deseos anteriores?",
-        "4. ¿Cómo se ve la santidad definida por el carácter de Dios?",
-        "5. ¿Cómo transforma la redención costosa la reverencia?",
-        "6. ¿Por qué crea el nuevo nacimiento una responsabilidad de amor profundo?",
-        "7. ¿Qué venenos relacionales son más fáciles de excusar en la iglesia?",
-        "8. ¿Qué ayuda a crecer un apetito sano por la palabra de Dios?"
+        "¿Qué añade preparar la mente a la enseñanza de Pedro sobre esperanza?",
+        "¿Por qué pone Pedro la gracia en el centro de la santidad?",
+        "¿Cómo siguen formando a las personas los deseos anteriores?",
+        "¿Cómo se ve la santidad definida por el carácter de Dios?",
+        "¿Cómo transforma la redención costosa la reverencia?",
+        "¿Por qué crea el nuevo nacimiento una responsabilidad de amor profundo?",
+        "¿Qué venenos relacionales son más fáciles de excusar en la iglesia?",
+        "¿Qué ayuda a crecer un apetito sano por la palabra de Dios?"
       ],
       "examination": "¿Busco una imagen santa mientras protejo envidia, engaño, calumnia o hipocresía? ¿Qué está formando con mayor fuerza mi apetito mental y espiritual?",
       "challenge": "Quita una fuente de veneno relacional y reemplázala con un acto veraz de ánimo, disculpa, reparación o reconciliación segura.",
@@ -296,14 +296,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué revela la imagen de la piedra viva sobre Jesús?",
-        "2. ¿Por qué es fundamentalmente comunitaria la identidad cristiana?",
-        "3. ¿Qué obra sacerdotal pertenece a todo el pueblo?",
-        "4. ¿Cómo sostiene y expone la piedra angular?",
-        "5. ¿Cuál es el propósito de ser un pueblo escogido y sacerdotal?",
-        "6. ¿Cómo impide la misericordia que la identidad se vuelva superioridad?",
-        "7. ¿Qué exige moralmente la identidad de extranjero sin exigir desprecio social?",
-        "8. ¿Cómo se apoyan mutuamente buenas obras y proclamación?"
+        "¿Qué revela la imagen de la piedra viva sobre Jesús?",
+        "¿Por qué es fundamentalmente comunitaria la identidad cristiana?",
+        "¿Qué obra sacerdotal pertenece a todo el pueblo?",
+        "¿Cómo sostiene y expone la piedra angular?",
+        "¿Cuál es el propósito de ser un pueblo escogido y sacerdotal?",
+        "¿Cómo impide la misericordia que la identidad se vuelva superioridad?",
+        "¿Qué exige moralmente la identidad de extranjero sin exigir desprecio social?",
+        "¿Cómo se apoyan mutuamente buenas obras y proclamación?"
       ],
       "examination": "¿Trato a la iglesia como producto que consumo o como pueblo en el que estoy siendo edificado? ¿Mi identidad en Cristo me hace más agradecido y útil a mis vecinos o más despreciativo?",
       "challenge": "Usa un don para edificar a la comunidad cristiana y haz un bien visible por un vecino sin autopromoción ni expectativa de retorno.",
@@ -401,14 +401,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué revela «por causa del Señor» sobre propósito y límite de la sumisión?",
-        "2. ¿Cómo puede la conducta honorable responder a calumnia sin volverse manejo de reputación?",
-        "3. ¿Por qué distingue Pedro temer a Dios de honrar al emperador?",
-        "4. ¿Por qué es esencial el contexto de esclavitud romana?",
-        "5. ¿Qué sufrimiento elogia Pedro y cuál excluye?",
-        "6. ¿En qué sentidos es único el sufrimiento de Cristo?",
-        "7. ¿Por qué rechazar represalias es compatible con buscar justicia y seguridad?",
-        "8. ¿Dónde necesitan los creyentes hoy conducta respetuosa y resistencia moral?"
+        "¿Qué revela «por causa del Señor» sobre propósito y límite de la sumisión?",
+        "¿Cómo puede la conducta honorable responder a calumnia sin volverse manejo de reputación?",
+        "¿Por qué distingue Pedro temer a Dios de honrar al emperador?",
+        "¿Por qué es esencial el contexto de esclavitud romana?",
+        "¿Qué sufrimiento elogia Pedro y cuál excluye?",
+        "¿En qué sentidos es único el sufrimiento de Cristo?",
+        "¿Por qué rechazar represalias es compatible con buscar justicia y seguridad?",
+        "¿Dónde necesitan los creyentes hoy conducta respetuosa y resistencia moral?"
       ],
       "examination": "¿He usado autoridad para exigir silencio o «sumisión» para protegerme de rendición de cuentas? Si estoy siendo dañado, ¿qué próximo paso seguro y veraz está disponible?",
       "challenge": "Identifica una condición injusta que puedas abordar mediante un canal seguro, legal y veraz manteniendo conducta honorable y rechazando represalias deshumanizantes.",
@@ -506,14 +506,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué realidades sociales formaban la instrucción de Pedro a las esposas?",
-        "2. ¿Por qué la conducta fiel no garantiza la conversión de otra persona?",
-        "3. ¿Qué aplicaciones abusivas de la sumisión deben rechazarse?",
-        "4. ¿Qué contrasta Pedro en el tema del adorno?",
-        "5. ¿Cómo crea valor la esperanza en Dios?",
-        "6. ¿Qué exige «coherederas de la gracia de la vida» a los esposos?",
-        "7. ¿Cómo equilibra la ética de toda la iglesia las instrucciones domésticas?",
-        "8. ¿Cómo buscar paz sin entregar verdad, límites o seguridad?"
+        "¿Qué realidades sociales formaban la instrucción de Pedro a las esposas?",
+        "¿Por qué la conducta fiel no garantiza la conversión de otra persona?",
+        "¿Qué aplicaciones abusivas de la sumisión deben rechazarse?",
+        "¿Qué contrasta Pedro en el tema del adorno?",
+        "¿Cómo crea valor la esperanza en Dios?",
+        "¿Qué exige «coherederas de la gracia de la vida» a los esposos?",
+        "¿Cómo equilibra la ética de toda la iglesia las instrucciones domésticas?",
+        "¿Cómo buscar paz sin entregar verdad, límites o seguridad?"
       ],
       "examination": "¿Quienes están más cerca de mí experimentan comprensión, honor y libertad de intimidación? ¿Confundo silencio bajo presión con paz bíblica?",
       "challenge": "Practica un acto específico de comprensión y honor en una relación cercana. Si una relación es insegura, contacta una fuente de apoyo confiable y calificada.",
@@ -611,14 +611,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué comienza Pedro con celo por el bien y no expectativa de conflicto?",
-        "2. ¿Qué cambia al honrar a Cristo como Señor?",
-        "3. ¿Por qué son gentileza y respeto parte de una defensa cristiana?",
-        "4. ¿Cómo distinguir persecución de consecuencias por propia conducta?",
-        "5. ¿Qué es único en el sufrimiento de Cristo?",
-        "6. ¿Por qué manejar con humildad el pasaje de espíritus encarcelados?",
-        "7. ¿Qué dice Pedro explícitamente que el bautismo no es y con qué lo conecta?",
-        "8. ¿Cómo responder cuando antiguos compañeros insultan una vida cambiada?"
+        "¿Por qué comienza Pedro con celo por el bien y no expectativa de conflicto?",
+        "¿Qué cambia al honrar a Cristo como Señor?",
+        "¿Por qué son gentileza y respeto parte de una defensa cristiana?",
+        "¿Cómo distinguir persecución de consecuencias por propia conducta?",
+        "¿Qué es único en el sufrimiento de Cristo?",
+        "¿Por qué manejar con humildad el pasaje de espíritus encarcelados?",
+        "¿Qué dice Pedro explícitamente que el bautismo no es y con qué lo conecta?",
+        "¿Cómo responder cuando antiguos compañeros insultan una vida cambiada?"
       ],
       "examination": "¿La oposición que enfrento surge de fidelidad a Cristo o de una manera innecesariamente dura, deshonesta o provocadora? ¿Me interesa más ganar discusiones que dar razón creíble de esperanza?",
       "challenge": "Prepara una explicación de dos minutos de tu esperanza en Cristo y practícala con claridad, gentileza y respeto ante una persona de confianza.",
@@ -716,14 +716,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué conecta Pedro la cercanía del fin con oración sobria en vez de especulación?",
-        "2. ¿Qué puede cubrir el amor y qué nunca debe ocultar?",
-        "3. ¿Cómo permanece generosa la hospitalidad respetando límites?",
-        "4. ¿Qué significa administrar un don en vez de poseerlo?",
-        "5. ¿Por qué deben hablar y servir dependiendo de Dios?",
-        "6. ¿Cómo distinguir sufrimiento fiel de conflicto fabricado?",
-        "7. ¿Por qué excluye Pedro el sufrimiento por hacer mal?",
-        "8. ¿Cómo se ve encomendarse al Creador mientras se actúa responsablemente?"
+        "¿Por qué conecta Pedro la cercanía del fin con oración sobria en vez de especulación?",
+        "¿Qué puede cubrir el amor y qué nunca debe ocultar?",
+        "¿Cómo permanece generosa la hospitalidad respetando límites?",
+        "¿Qué significa administrar un don en vez de poseerlo?",
+        "¿Por qué deben hablar y servir dependiendo de Dios?",
+        "¿Cómo distinguir sufrimiento fiel de conflicto fabricado?",
+        "¿Por qué excluye Pedro el sufrimiento por hacer mal?",
+        "¿Cómo se ve encomendarse al Creador mientras se actúa responsablemente?"
       ],
       "examination": "¿Mis preocupaciones sobre el fin me hacen más orante, amoroso, hospitalario y útil o más temeroso y distraído? ¿Protejo alguna conducta dañina bajo lenguaje de amor o reputación eclesial?",
       "challenge": "Usa un don para servir a alguien y practica una forma de hospitalidad o cuidado. Identifica además un límite que impida que el amor se convierta en encubrimiento.",
@@ -821,14 +821,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué importa que Pedro llame a la iglesia «rebaño de Dios»?",
-        "2. ¿Qué motivos rechaza Pedro en el liderazgo?",
-        "3. ¿Qué comportamientos modernos contarían como dominar?",
-        "4. ¿Cómo limita el Pastor principal la autoridad humana?",
-        "5. ¿Por qué combina Pedro sumisión con humildad para todos?",
-        "6. ¿Qué significa echar ansiedad sobre Dios sin rechazar cuidado práctico?",
-        "7. ¿Cómo resistir al diablo sin pánico ni deshumanizar personas?",
-        "8. ¿Por qué es la gracia restauradora de Dios el cierre correcto de una carta sobre sufrimiento?"
+        "¿Por qué importa que Pedro llame a la iglesia «rebaño de Dios»?",
+        "¿Qué motivos rechaza Pedro en el liderazgo?",
+        "¿Qué comportamientos modernos contarían como dominar?",
+        "¿Cómo limita el Pastor principal la autoridad humana?",
+        "¿Por qué combina Pedro sumisión con humildad para todos?",
+        "¿Qué significa echar ansiedad sobre Dios sin rechazar cuidado práctico?",
+        "¿Cómo resistir al diablo sin pánico ni deshumanizar personas?",
+        "¿Por qué es la gracia restauradora de Dios el cierre correcto de una carta sobre sufrimiento?"
       ],
       "examination": "Si lidero, ¿las personas experimentan cuidado, libertad para preguntar y ejemplo responsable o miedo y control? Si sigo, ¿practico humildad sin rendir discernimiento moral?",
       "challenge": "Líderes: inviten retroalimentación específica sobre un área de autoridad. Todos: nombren una ansiedad a Dios y den un paso práctico sabio en vez de cargarla solos.",

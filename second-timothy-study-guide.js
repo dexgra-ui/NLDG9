@@ -65,14 +65,14 @@
   "seriesJesusConnection": "Jesus Christ is the risen descendant of David who destroyed death and brought life and immortality to light, the Lord whose grace strengthens servants, the center of the gospel that cannot be chained, the faithful One who remains true, the Judge before whom ministry is carried out, the One whose appearing believers love, and the Lord who stands near and brings His people safely into His heavenly kingdom.",
   "seriesGuardrail": "Do not use “fan into flame” or “share in suffering” to demand burnout, silence mental-health struggles, or keep people in abuse, unsafe ministry, criminal danger, or preventable harm. Do not militarize the soldier metaphor or excuse authoritarian leadership. Do not turn “rightly handling the word” into arrogance or use Scripture as a weapon against questions, evidence, professional expertise, or careful interpretation. Do not use the “last days” vice list to diagnose entire generations, political opponents, women, or cultural groups. Do not blame vulnerable people for being targeted by manipulators. Do not interpret “all who desire to live a godly life will be persecuted” as proof that every criticism or consequence is persecution. Do not use “itching ears” to dismiss everyone who disagrees with you. Finishing faithfully does not require neglecting rest, relationships, health, boundaries, or ordinary needs.",
   "seriesQuestions": [
-    "1. How does chapter 1 hold sincere faith, spiritual gifts, fear, suffering, grace, and the Spirit together?",
-    "2. What does 2:1–13 teach about multiplying ministry without building dependence on one personality?",
-    "3. Why does Paul connect accurate handling of truth with gentleness and freedom from quarrels?",
-    "4. What makes the “last days” list in chapter 3 a mirror for the church rather than merely a label for outsiders?",
-    "5. How do 3:14–17 connect Scripture, salvation in Christ, correction, training, and good works?",
-    "6. What does “preach the word” require from both teachers and hearers when preferred messages are easier to accept?",
-    "7. How does Paul’s race imagery encourage perseverance without turning exhaustion or suffering into spiritual achievements?",
-    "8. What do the names, requests, warnings, forgiveness, and testimony in 4:9–22 reveal about finishing well?"
+    "How does chapter 1 hold sincere faith, spiritual gifts, fear, suffering, grace, and the Spirit together?",
+    "What does 2:1–13 teach about multiplying ministry without building dependence on one personality?",
+    "Why does Paul connect accurate handling of truth with gentleness and freedom from quarrels?",
+    "What makes the “last days” list in chapter 3 a mirror for the church rather than merely a label for outsiders?",
+    "How do 3:14–17 connect Scripture, salvation in Christ, correction, training, and good works?",
+    "What does “preach the word” require from both teachers and hearers when preferred messages are easier to accept?",
+    "How does Paul’s race imagery encourage perseverance without turning exhaustion or suffering into spiritual achievements?",
+    "What do the names, requests, warnings, forgiveness, and testimony in 4:9–22 reveal about finishing well?"
   ],
   "seriesExamination": "Where am I most tempted to shrink back in fear, seek approval, become quarrelsome, misuse Scripture, confuse familiarity with truth, isolate myself, or treat endurance as self-sufficiency? Where is grace inviting a more faithful, teachable, relational response?",
   "seriesPractice": "Choose one practice from the letter: encourage someone’s gift, invest in a trustworthy learner, study a disputed passage in context before speaking, withdraw from a fruitless argument, seek help instead of isolating, examine one favorite teaching for confirmation bias, complete a neglected responsibility, or offer presence to someone finishing a difficult season.",

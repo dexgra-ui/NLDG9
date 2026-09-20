@@ -65,14 +65,14 @@
   "seriesJesusConnection": "Jesus is God our Savior’s grace made visible, the One who gave Himself to redeem and purify a people eager for good works, the blessed hope whose appearing believers await, and the center of the trustworthy message that shapes leaders, households, public witness, mercy, and mission.",
   "seriesGuardrail": "Do not turn elder qualifications into a perfection checklist, a weapon against family members, or cover for charismatic leaders whose conduct is unsafe. Do not use Titus 1 to promote antisemitism or contempt for Cretans or any other people. Do not use Titus 2 to justify slavery, domestic abuse, coercive submission, or rigid stereotypes. Do not make submission to authorities mean complicity with injustice or obedience to unlawful harm. Do not use grace to excuse destructive conduct, and do not use good works as a way to earn salvation. Do not label victims, whistleblowers, or people asking legitimate questions as “divisive” merely because they challenge leaders or institutions.",
   "seriesQuestions": [
-    "1. Why does Titus connect truth so closely with godliness?",
-    "2. Which leadership qualities protect a church from abuse of power?",
-    "3. How should deceptive teaching be confronted without slipping into ethnic or religious prejudice?",
-    "4. What does Titus 2 reveal about the relationship between doctrine and ordinary conduct?",
-    "5. How does grace both save and train believers?",
-    "6. Why does remembering our former condition produce humility in public life?",
-    "7. How can churches teach good works without turning them into a basis for salvation or superiority?",
-    "8. How should a church distinguish destructive divisiveness from necessary disagreement, accountability, or reporting harm?"
+    "Why does Titus connect truth so closely with godliness?",
+    "Which leadership qualities protect a church from abuse of power?",
+    "How should deceptive teaching be confronted without slipping into ethnic or religious prejudice?",
+    "What does Titus 2 reveal about the relationship between doctrine and ordinary conduct?",
+    "How does grace both save and train believers?",
+    "Why does remembering our former condition produce humility in public life?",
+    "How can churches teach good works without turning them into a basis for salvation or superiority?",
+    "How should a church distinguish destructive divisiveness from necessary disagreement, accountability, or reporting harm?"
   ],
   "seriesExamination": "Where am I most tempted to separate belief from character, overlook unhealthy leadership because of gifting, judge whole groups from a conflict, use grace as an excuse, prove myself through works, or spend energy on controversy while urgent needs go unmet?",
   "seriesPractice": "Choose one practice from Titus: evaluate leadership by character, examine the fruit and financial transparency of a teaching ministry, seek wisdom from another generation, reject one destructive desire, perform one useful good work, correct a careless public statement, or redirect time from fruitless controversy toward an urgent need.",

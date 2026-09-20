@@ -85,14 +85,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. How does Hebrews connect God’s speech through the prophets with His speech through the Son?",
-        "2. Which descriptions in Hebrews 1:2–4 make the Son more than merely a teacher or prophet?",
-        "3. Why does Hebrews use so many Old Testament quotations when arguing for Christ’s supremacy?",
-        "4. What does “drifting” look like differently from open rejection?",
-        "5. How does Jesus’ suffering challenge a version of faith that expects only visible triumph?",
-        "6. What does it mean that Jesus is not ashamed to call His people brothers and sisters?",
-        "7. How can hope in Christ confront fear of death without denying grief?",
-        "8. What difference should a merciful High Priest make for someone who is tested, ashamed, or exhausted?"
+        "How does Hebrews connect God’s speech through the prophets with His speech through the Son?",
+        "Which descriptions in Hebrews 1:2–4 make the Son more than merely a teacher or prophet?",
+        "Why does Hebrews use so many Old Testament quotations when arguing for Christ’s supremacy?",
+        "What does “drifting” look like differently from open rejection?",
+        "How does Jesus’ suffering challenge a version of faith that expects only visible triumph?",
+        "What does it mean that Jesus is not ashamed to call His people brothers and sisters?",
+        "How can hope in Christ confront fear of death without denying grief?",
+        "What difference should a merciful High Priest make for someone who is tested, ashamed, or exhausted?"
       ],
       "examination": "Where has my attention to Jesus become thin or distracted? Do I relate to God mainly through fear, performance, or human gatekeepers rather than through the Son who reveals God and helps the tested?",
       "challenge": "Read Hebrews 1:1–2:18 aloud on three different days. Each time write one sentence beginning, “Because Jesus is ___, I can ___.” Let the answer shape one act of worship, courage, or seeking help.",
@@ -190,14 +190,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. How does Hebrews honor Moses while still presenting Jesus as greater?",
-        "2. What distinguishes persistent hardening from sincere doubt or struggle?",
-        "3. Why does Hebrews make encouragement a shared community responsibility?",
-        "4. What can churches do to encourage without becoming controlling?",
-        "5. How do creation, wilderness, and promise contribute to the meaning of God’s rest?",
-        "6. Why is “striving to enter rest” different from trying to earn God’s acceptance?",
-        "7. What does the living Word expose, and what authority does it not give human leaders?",
-        "8. Why is the throne of grace the necessary conclusion after the language of exposure and accountability?"
+        "How does Hebrews honor Moses while still presenting Jesus as greater?",
+        "What distinguishes persistent hardening from sincere doubt or struggle?",
+        "Why does Hebrews make encouragement a shared community responsibility?",
+        "What can churches do to encourage without becoming controlling?",
+        "How do creation, wilderness, and promise contribute to the meaning of God’s rest?",
+        "Why is “striving to enter rest” different from trying to earn God’s acceptance?",
+        "What does the living Word expose, and what authority does it not give human leaders?",
+        "Why is the throne of grace the necessary conclusion after the language of exposure and accountability?"
       ],
       "examination": "Where am I resisting God’s voice, and where am I simply tired or afraid and in need of mercy? Am I receiving encouragement from community without surrendering the responsibility to listen to Christ Himself?",
       "challenge": "Choose one “today” practice: encourage one believer specifically, take a genuine period of restorative rest, bring one hidden fear honestly to God, or ask for help instead of hiding in shame.",
@@ -295,14 +295,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why does Hebrews connect priestly ministry with gentleness?",
-        "2. What does it mean that Jesus “learned obedience” without implying He was previously sinful?",
-        "3. How does practiced discernment differ from merely knowing more information?",
-        "4. Why are foundations important even when believers are called to move toward maturity?",
-        "5. What makes Hebrews 6:4–6 more serious than ordinary doubt or failure?",
-        "6. What does the field image suggest about long-term fruit?",
-        "7. Why is “better things concerning you” essential to the pastoral tone of the chapter?",
-        "8. How does hope as an anchor shift assurance away from obsessive self-analysis?"
+        "Why does Hebrews connect priestly ministry with gentleness?",
+        "What does it mean that Jesus “learned obedience” without implying He was previously sinful?",
+        "How does practiced discernment differ from merely knowing more information?",
+        "Why are foundations important even when believers are called to move toward maturity?",
+        "What makes Hebrews 6:4–6 more serious than ordinary doubt or failure?",
+        "What does the field image suggest about long-term fruit?",
+        "Why is “better things concerning you” essential to the pastoral tone of the chapter?",
+        "How does hope as an anchor shift assurance away from obsessive self-analysis?"
       ],
       "examination": "Am I growing in practiced discernment, or simply repeating familiar material? Where do I need to receive a serious warning, and where do I need to stop turning warning texts into fear that eclipses Christ’s faithfulness?",
       "challenge": "Choose one area where discernment needs practice. Study a relevant passage, seek wise counsel, and make one concrete decision that reflects mature obedience rather than fear, impulse, or spiritual performance.",
@@ -400,14 +400,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why does Hebrews connect Genesis 14 with Psalm 110?",
-        "2. What is the difference between saying a system was provisional and saying it was evil?",
-        "3. Why does God’s oath matter to the argument about Jesus’ priesthood?",
-        "4. What does Christ’s permanent priesthood reveal about the limits of human leaders?",
-        "5. How does continual intercession strengthen confidence in God’s welcome?",
-        "6. Why must holiness and compassion remain together?",
-        "7. What does “copy and shadow” mean without demeaning Israel’s worship?",
-        "8. How can Christians celebrate the new covenant while rejecting antisemitism and spiritual arrogance?"
+        "Why does Hebrews connect Genesis 14 with Psalm 110?",
+        "What is the difference between saying a system was provisional and saying it was evil?",
+        "Why does God’s oath matter to the argument about Jesus’ priesthood?",
+        "What does Christ’s permanent priesthood reveal about the limits of human leaders?",
+        "How does continual intercession strengthen confidence in God’s welcome?",
+        "Why must holiness and compassion remain together?",
+        "What does “copy and shadow” mean without demeaning Israel’s worship?",
+        "How can Christians celebrate the new covenant while rejecting antisemitism and spiritual arrogance?"
       ],
       "examination": "Am I depending on Christ as my permanent High Priest, or have I given a human leader too much spiritual control? Do I speak about Judaism or the Old Testament with humility and gratitude, or with careless superiority?",
       "challenge": "Read Jeremiah 31:31–34 alongside Hebrews 8:7–13. Write down what God promises to do, then pray specifically for one way His law, mercy, and forgiveness should reshape your heart.",
@@ -505,14 +505,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What did the tabernacle teach about holiness and access to God?",
-        "2. Why did repeated priestly entry reveal both grace and limitation?",
-        "3. What difference does Jesus’ voluntary self-offering make for interpreting sacrificial language?",
-        "4. How is a cleansed conscience different from denial or avoidance of responsibility?",
-        "5. Why should covenant and blood language be read within Scripture’s own symbolic world?",
-        "6. What does “once for all” free believers from trying to repeat?",
-        "7. How can Christians call the earlier sacrifices “shadow” without mocking them?",
-        "8. What is the relationship between forgiveness, transformed hearts, and the end of repeated sacrifice?"
+        "What did the tabernacle teach about holiness and access to God?",
+        "Why did repeated priestly entry reveal both grace and limitation?",
+        "What difference does Jesus’ voluntary self-offering make for interpreting sacrificial language?",
+        "How is a cleansed conscience different from denial or avoidance of responsibility?",
+        "Why should covenant and blood language be read within Scripture’s own symbolic world?",
+        "What does “once for all” free believers from trying to repeat?",
+        "How can Christians call the earlier sacrifices “shadow” without mocking them?",
+        "What is the relationship between forgiveness, transformed hearts, and the end of repeated sacrifice?"
       ],
       "examination": "Am I receiving Christ’s sufficient forgiveness, or am I still trying to punish myself into feeling acceptable? Where does repentance require honest repair without turning repair into an attempt to purchase grace?",
       "challenge": "Identify one shame-driven practice or thought that treats Christ’s work as insufficient. Replace it this week with confession, gratitude, and one responsible act of repair or service that flows from forgiveness rather than trying to earn it.",
@@ -610,14 +610,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What gives believers confidence to draw near to God?",
-        "2. How is a cleansed conscience different from pretending wrongdoing never happened?",
-        "3. Why does holding fast depend on God’s faithfulness rather than our emotional strength?",
-        "4. What is the purpose of Christian gathering according to verses 24–25?",
-        "5. What makes the warning in verses 26–31 more serious than one isolated intentional sin?",
-        "6. How can remembering earlier faithfulness help without romanticizing trauma?",
-        "7. What does endurance look like when someone is genuinely exhausted?",
-        "8. Why does the writer end this section by identifying the community with those who have faith rather than those who shrink back?"
+        "What gives believers confidence to draw near to God?",
+        "How is a cleansed conscience different from pretending wrongdoing never happened?",
+        "Why does holding fast depend on God’s faithfulness rather than our emotional strength?",
+        "What is the purpose of Christian gathering according to verses 24–25?",
+        "What makes the warning in verses 26–31 more serious than one isolated intentional sin?",
+        "How can remembering earlier faithfulness help without romanticizing trauma?",
+        "What does endurance look like when someone is genuinely exhausted?",
+        "Why does the writer end this section by identifying the community with those who have faith rather than those who shrink back?"
       ],
       "examination": "Where am I tempted to hide from God, isolate from healthy encouragement, or confuse endurance with silently absorbing harm? What would it look like to draw near honestly and hold hope because God is faithful?",
       "challenge": "Choose one communal endurance practice: ask someone for prayer, encourage one discouraged believer, remove one barrier that prevents another person from participating, or reconnect with a healthy Christian community in a realistic way.",
@@ -715,14 +715,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. How is biblical faith different from positive thinking or mental certainty?",
-        "2. What do Abel, Enoch, and Noah show about faith becoming action?",
-        "3. What does the pilgrim language teach about receiving promises only partially in this life?",
-        "4. Why is it important to distinguish a commended act from blanket approval of a person’s whole story?",
-        "5. What does Moses’ rejection of status reveal about faith and loyalty?",
-        "6. Why should courageous faith never be confused with reckless danger-seeking?",
-        "7. What does the pairing of deliverance and suffering do to prosperity-style definitions of faith?",
-        "8. How does verse 40 turn the chapter from individual hero stories into a shared story?"
+        "How is biblical faith different from positive thinking or mental certainty?",
+        "What do Abel, Enoch, and Noah show about faith becoming action?",
+        "What does the pilgrim language teach about receiving promises only partially in this life?",
+        "Why is it important to distinguish a commended act from blanket approval of a person’s whole story?",
+        "What does Moses’ rejection of status reveal about faith and loyalty?",
+        "Why should courageous faith never be confused with reckless danger-seeking?",
+        "What does the pairing of deliverance and suffering do to prosperity-style definitions of faith?",
+        "How does verse 40 turn the chapter from individual hero stories into a shared story?"
       ],
       "examination": "Where have I been tempted to measure faith by outcomes? Can I trust God faithfully even when the result I want is delayed, changed, or never given in the way I expected?",
       "challenge": "Choose one act of faithful obedience whose value does not depend on immediate results: tell the truth, serve quietly, keep a wise boundary, give generously, pursue reconciliation safely, or continue a good practice even without visible reward.",
@@ -820,14 +820,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What is the difference between a sin and a non-sinful “weight” that still hinders endurance?",
-        "2. How does fixing our eyes on Jesus protect us from leader-centered Christianity?",
-        "3. What distinctions keep Hebrews 12’s discipline language from becoming a defense of abuse?",
-        "4. What does it look like practically to strengthen weak hands and make straight paths?",
-        "5. Why should an unshakable kingdom produce gratitude rather than panic or triumphalism?",
-        "6. How can hospitality and solidarity remain generous while respecting safety?",
-        "7. How do contentment and financial integrity differ from passively accepting exploitation?",
-        "8. What does Hebrews 13 require us to observe about leaders before interpreting “obey” or “submit”?"
+        "What is the difference between a sin and a non-sinful “weight” that still hinders endurance?",
+        "How does fixing our eyes on Jesus protect us from leader-centered Christianity?",
+        "What distinctions keep Hebrews 12’s discipline language from becoming a defense of abuse?",
+        "What does it look like practically to strengthen weak hands and make straight paths?",
+        "Why should an unshakable kingdom produce gratitude rather than panic or triumphalism?",
+        "How can hospitality and solidarity remain generous while respecting safety?",
+        "How do contentment and financial integrity differ from passively accepting exploitation?",
+        "What does Hebrews 13 require us to observe about leaders before interpreting “obey” or “submit”?"
       ],
       "examination": "What weight needs to be laid aside? Where do I need support rather than shame? Have I given a leader authority that belongs to Jesus alone, or used spiritual language to avoid necessary boundaries, accountability, or change?",
       "challenge": "Choose one closing-Hebrews practice: release one unsustainable weight, support an exhausted person, show safe hospitality, remember someone in confinement or hardship, review a financial habit, evaluate leadership by character, or offer a sacrifice of praise and practical generosity.",

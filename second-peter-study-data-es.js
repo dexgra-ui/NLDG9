@@ -86,14 +86,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué dice «fe igualmente preciosa» sobre estatus espiritual?",
-        "2. ¿Por qué vincula Pedro gracia y paz con conocer a Dios?",
-        "3. ¿Qué incluye la provisión divina en los versículos 3–4?",
-        "4. ¿Cómo explica Pedro participar de la naturaleza divina?",
-        "5. ¿Por qué la gracia lleva al esfuerzo y no a la pasividad?",
-        "6. ¿Cómo trabajan juntas las virtudes de los versículos 5–7?",
-        "7. ¿Qué olvida la miopía espiritual?",
-        "8. ¿Cómo puede la diligencia confirmar el llamado sin convertirse en salvación por obras?"
+        "¿Qué dice «fe igualmente preciosa» sobre estatus espiritual?",
+        "¿Por qué vincula Pedro gracia y paz con conocer a Dios?",
+        "¿Qué incluye la provisión divina en los versículos 3–4?",
+        "¿Cómo explica Pedro participar de la naturaleza divina?",
+        "¿Por qué la gracia lleva al esfuerzo y no a la pasividad?",
+        "¿Cómo trabajan juntas las virtudes de los versículos 5–7?",
+        "¿Qué olvida la miopía espiritual?",
+        "¿Cómo puede la diligencia confirmar el llamado sin convertirse en salvación por obras?"
       ],
       "examination": "¿Qué virtud de 1:5–7 es más débil en mi vida actual? ¿Uso la gracia como excusa para pasividad o el esfuerzo como motivo de orgullo?",
       "challenge": "Elige una virtud de 1:5–7 y practícala intencionalmente durante siete días en un entorno concreto, conectando el esfuerzo con gratitud por lo que Dios ya dio.",
@@ -191,14 +191,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué enfatiza Pedro recordatorios para quienes ya conocen la verdad?",
-        "2. ¿Cómo forma la muerte cercana las prioridades de la carta?",
-        "3. ¿Qué significa rechazar mitos ingeniosos?",
-        "4. ¿Por qué importa la transfiguración?",
-        "5. ¿Qué enseña la imagen de la lámpara sobre la Escritura?",
-        "6. ¿Cómo ayuda el versículo 21 a explicar el 20?",
-        "7. ¿Cómo puede ser confiable la Escritura y falible nuestra interpretación?",
-        "8. ¿Qué prácticas ayudan a leer textos difíciles con humildad?"
+        "¿Por qué enfatiza Pedro recordatorios para quienes ya conocen la verdad?",
+        "¿Cómo forma la muerte cercana las prioridades de la carta?",
+        "¿Qué significa rechazar mitos ingeniosos?",
+        "¿Por qué importa la transfiguración?",
+        "¿Qué enseña la imagen de la lámpara sobre la Escritura?",
+        "¿Cómo ayuda el versículo 21 a explicar el 20?",
+        "¿Cómo puede ser confiable la Escritura y falible nuestra interpretación?",
+        "¿Qué prácticas ayudan a leer textos difíciles con humildad?"
       ],
       "examination": "¿Confundo confianza en la Escritura con confianza en mi propia interpretación? ¿Dónde necesito más confianza en el texto o más humildad sobre mi lectura?",
       "challenge": "Elige un pasaje difícil. Léelo en contexto, compara por lo menos dos recursos responsables y escribe qué es claro, qué es debatido y qué debe permanecer incierto.",
@@ -296,14 +296,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué conductas concretas hacen destructivos a estos maestros?",
-        "2. ¿Por qué negar a Cristo es distinto de un desacuerdo secundario?",
-        "3. ¿Cómo aparece la explotación económica?",
-        "4. ¿Qué revelan los ejemplos de juicio y rescate sobre Dios?",
-        "5. ¿Cómo puede abusarse de «despreciar autoridad» para proteger líderes?",
-        "6. ¿Cuál es la diferencia entre preocupación basada en evidencia y acusación guiada por rumores?",
-        "7. ¿Cómo puede una promesa de libertad crear dependencia?",
-        "8. ¿Qué procedimientos ayudan a investigar preocupaciones serias sin calumnia ni encubrimiento?"
+        "¿Qué conductas concretas hacen destructivos a estos maestros?",
+        "¿Por qué negar a Cristo es distinto de un desacuerdo secundario?",
+        "¿Cómo aparece la explotación económica?",
+        "¿Qué revelan los ejemplos de juicio y rescate sobre Dios?",
+        "¿Cómo puede abusarse de «despreciar autoridad» para proteger líderes?",
+        "¿Cuál es la diferencia entre preocupación basada en evidencia y acusación guiada por rumores?",
+        "¿Cómo puede una promesa de libertad crear dependencia?",
+        "¿Qué procedimientos ayudan a investigar preocupaciones serias sin calumnia ni encubrimiento?"
       ],
       "examination": "¿Me impresiona demasiado el carisma, confianza, acceso o promesas de libertad? ¿Estoy dispuesto tanto a exigir evidencia antes de acusar como a actuar cuando la evidencia de explotación es creíble?",
       "challenge": "Evalúa un maestro, ministerio o mensaje que consumes regularmente: ¿qué dice de Cristo?, ¿cómo maneja dinero y poder?, ¿qué fruto produce?, ¿acepta rendición de cuentas?",
@@ -401,14 +401,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué comienza Pedro con recordar?",
-        "2. ¿Qué argumento hacen los burladores?",
-        "3. ¿Por qué apela Pedro a creación y diluvio?",
-        "4. ¿Qué enseña realmente la comparación entre un día y mil años?",
-        "5. ¿Cómo reinterpreta el versículo 9 la aparente demora?",
-        "6. ¿Por qué la imagen del ladrón debilita la fijación de fechas?",
-        "7. ¿Qué conducta presente debe producir la esperanza futura?",
-        "8. ¿Qué añade una nueva creación donde habita justicia?"
+        "¿Por qué comienza Pedro con recordar?",
+        "¿Qué argumento hacen los burladores?",
+        "¿Por qué apela Pedro a creación y diluvio?",
+        "¿Qué enseña realmente la comparación entre un día y mil años?",
+        "¿Cómo reinterpreta el versículo 9 la aparente demora?",
+        "¿Por qué la imagen del ladrón debilita la fijación de fechas?",
+        "¿Qué conducta presente debe producir la esperanza futura?",
+        "¿Qué añade una nueva creación donde habita justicia?"
       ],
       "examination": "¿El contenido sobre el fin me hace más santo, paciente, útil y esperanzado o más ansioso, especulativo, distraído y sospechoso?",
       "challenge": "Aléjate una semana de contenido especulativo sobre el fin. Reemplázalo con oración, servicio y una acción de mayordomía fiel.",
@@ -506,14 +506,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué significa ser hallados en paz mientras esperamos?",
-        "2. ¿Cómo deben interpretar los creyentes la paciencia de Dios?",
-        "3. ¿Qué revela la descripción de Pablo sobre su relación con Pedro?",
-        "4. ¿Por qué importa que la propia Escritura reconozca pasajes difíciles?",
-        "5. ¿Qué distingue torcer un texto de luchar honestamente por entenderlo?",
-        "6. ¿Qué puede decir responsablemente «las otras Escrituras» sobre la recepción temprana de Pablo?",
-        "7. ¿Cómo estar en guardia sin volverse rígido o sospechoso?",
-        "8. ¿Por qué «crezcan en gracia y conocimiento» es un cierre apropiado?"
+        "¿Qué significa ser hallados en paz mientras esperamos?",
+        "¿Cómo deben interpretar los creyentes la paciencia de Dios?",
+        "¿Qué revela la descripción de Pablo sobre su relación con Pedro?",
+        "¿Por qué importa que la propia Escritura reconozca pasajes difíciles?",
+        "¿Qué distingue torcer un texto de luchar honestamente por entenderlo?",
+        "¿Qué puede decir responsablemente «las otras Escrituras» sobre la recepción temprana de Pablo?",
+        "¿Cómo estar en guardia sin volverse rígido o sospechoso?",
+        "¿Por qué «crezcan en gracia y conocimiento» es un cierre apropiado?"
       ],
       "examination": "¿Me pongo a la defensiva cuando la Escritura es difícil? ¿He tratado mi interpretación como si fuera idéntica al texto? ¿Dónde necesito más gracia, más conocimiento o ambos?",
       "challenge": "Vuelve a un pasaje difícil. Estudia su contexto, anota al menos dos interpretaciones responsables si existen y distingue claramente lo cierto, probable y no resuelto.",

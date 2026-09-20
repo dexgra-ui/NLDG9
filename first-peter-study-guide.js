@@ -65,14 +65,14 @@
   "seriesJesusConnection": "Jesus is the risen source of living hope, the precious living stone, the suffering Servant who bore sins without authorizing abuse, the victorious Lord who brings believers to God, the Chief Shepherd, and the center of every call to holiness, witness, endurance, service, and leadership.",
   "seriesGuardrail": "Do not romanticize persecution or label every criticism as persecution. Do not use submission texts to demand absolute obedience to governments, employers, spouses, or church leaders. Do not use slavery language to defend trafficking, racial hierarchy, exploitative labor, or ownership of people. Do not use marriage texts to excuse domestic abuse, sexual violence, coercive control, or economic captivity. Do not use Christ’s suffering to pressure victims to remain in danger. Do not use “love covers a multitude of sins” to conceal crimes or misconduct. Do not use elder authority to protect domineering leaders from accountability.",
   "seriesQuestions": [
-    "1. Why does Peter begin with living hope rather than with the readers’ hostility?",
-    "2. How does holiness grow out of grace rather than compete with it?",
-    "3. What does it mean to live as a chosen, priestly people without becoming socially contemptuous?",
-    "4. What limits does Peter’s own language place on human authority?",
-    "5. How should Roman slavery and household vulnerability shape modern application?",
-    "6. What makes a defense of Christian hope gentle and credible rather than combative?",
-    "7. Why should end-times urgency produce prayer, love, hospitality, and service instead of panic?",
-    "8. What marks shepherding as Christlike rather than controlling?"
+    "Why does Peter begin with living hope rather than with the readers’ hostility?",
+    "How does holiness grow out of grace rather than compete with it?",
+    "What does it mean to live as a chosen, priestly people without becoming socially contemptuous?",
+    "What limits does Peter’s own language place on human authority?",
+    "How should Roman slavery and household vulnerability shape modern application?",
+    "What makes a defense of Christian hope gentle and credible rather than combative?",
+    "Why should end-times urgency produce prayer, love, hospitality, and service instead of panic?",
+    "What marks shepherding as Christlike rather than controlling?"
   ],
   "seriesExamination": "Where do I most need 1 Peter’s correction: despair, unholy habits, contempt for outsiders, misuse of authority, fear of people, conflict, panic about suffering, or dependence on controlling leadership?",
   "seriesPractice": "Choose one practice from 1 Peter: name a grief alongside living hope, remove one form of relational poison, perform a visible good for a neighbor, address injustice through a safe channel, honor someone with less power, prepare a gentle explanation of hope, use a gift in service, or invite accountable feedback on leadership.",

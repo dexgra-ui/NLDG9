@@ -65,14 +65,14 @@
   "seriesJesusConnection": "Jesus is our only Master and Lord, the One whose mercy leads to eternal life, the center of apostolic faith, and the One through whom glory, majesty, dominion, and authority belong to God. Jude’s call to contend is ultimately a call to remain faithful to Him.",
   "seriesGuardrail": "Do not label every doctrinal disagreement, question, or criticism “apostasy.” Require evidence before accusing people of exploitation, sexual misconduct, greed, or deception. Do not use Jude’s Sodom language as a simplistic proof text while ignoring the letter’s broader focus on rebellion, boundary violation, arrogance, exploitation, and corrupt leadership. Do not use the angels or Michael passages to build speculative demonologies. Do not treat Jude’s use of 1 Enoch or the Moses tradition as automatic proof that every part of those surviving works is canonical Scripture. Do not use “snatching from the fire” to justify coercion, forced confession, harassment, or dangerous intervention.",
   "seriesQuestions": [
-    "1. Why does Jude begin with calling, love, mercy, and keeping before urging believers to contend?",
-    "2. What makes the threat in verses 3–4 more serious than ordinary disagreement?",
-    "3. How should Jude’s judgment examples be handled without turning them into weapons against outsiders?",
-    "4. What does Michael’s restraint teach about speech in spiritual conflict?",
-    "5. Which concrete motives and fruits identify corrupt influence in verses 11–16?",
-    "6. How does remembering apostolic teaching keep a church from panic and manipulation?",
-    "7. Why does Jude give different responses to different people in verses 22–23?",
-    "8. How does the doxology change the emotional tone of the entire letter?"
+    "Why does Jude begin with calling, love, mercy, and keeping before urging believers to contend?",
+    "What makes the threat in verses 3–4 more serious than ordinary disagreement?",
+    "How should Jude’s judgment examples be handled without turning them into weapons against outsiders?",
+    "What does Michael’s restraint teach about speech in spiritual conflict?",
+    "Which concrete motives and fruits identify corrupt influence in verses 11–16?",
+    "How does remembering apostolic teaching keep a church from panic and manipulation?",
+    "Why does Jude give different responses to different people in verses 22–23?",
+    "How does the doxology change the emotional tone of the entire letter?"
   ],
   "seriesExamination": "Am I more prone to ignore corruption or to see corruption everywhere? Do I verify claims, distinguish disagreement from exploitation, show mercy to doubters, and trust God enough to resist fear-driven control?",
   "seriesPractice": "Choose one practice: verify a claim before repeating it, listen to someone harmed by spiritual abuse, study one Jude background tradition carefully, encourage a sincere doubter, establish a safe boundary with manipulative influence, or pray Jude 24–25 daily as an act of trust.",

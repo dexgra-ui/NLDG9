@@ -86,14 +86,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué dice el versículo 1 que debe producir la verdad?",
-        "2. ¿Por qué necesita Tito nombrar ancianos en vez de dejar iglesias sin estructura responsable?",
-        "3. ¿Cómo difiere «irreprochable» de exigir perfección sin pecado?",
-        "4. ¿Qué pueden revelar las relaciones más cercanas sobre el uso del poder?",
-        "5. ¿Por qué arrogancia, ira, violencia, adicción y codicia son asuntos de liderazgo y no solo debilidades privadas?",
-        "6. ¿Qué cualidades positivas del versículo 8 muestran para qué existe el liderazgo saludable?",
-        "7. ¿Por qué debe un líder aferrarse a la palabra confiable en vez de preferencias o carisma?",
-        "8. ¿Qué salvaguardas mantienen la corrección verdadera y protectora sin volverla controladora o cruel?"
+        "¿Qué dice el versículo 1 que debe producir la verdad?",
+        "¿Por qué necesita Tito nombrar ancianos en vez de dejar iglesias sin estructura responsable?",
+        "¿Cómo difiere «irreprochable» de exigir perfección sin pecado?",
+        "¿Qué pueden revelar las relaciones más cercanas sobre el uso del poder?",
+        "¿Por qué arrogancia, ira, violencia, adicción y codicia son asuntos de liderazgo y no solo debilidades privadas?",
+        "¿Qué cualidades positivas del versículo 8 muestran para qué existe el liderazgo saludable?",
+        "¿Por qué debe un líder aferrarse a la palabra confiable en vez de preferencias o carisma?",
+        "¿Qué salvaguardas mantienen la corrección verdadera y protectora sin volverla controladora o cruel?"
       ],
       "examination": "¿Me impresionan más los talentos visibles que el dominio propio, hospitalidad, honestidad, seguridad relacional y rendición de cuentas? Si lidero, ¿dónde necesita mi vida ordinaria concordar mejor con la verdad que enseño?",
       "challenge": "Evalúa un rol de liderazgo que ocupas u observas usando todo el pasaje: carácter, relaciones, uso del poder, dinero, hospitalidad, dominio propio, doctrina, ánimo, corrección y rendición de cuentas. Rechaza tanto la admiración tipo celebridad como el juicio perfeccionista.",
@@ -191,14 +191,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué descripciones del versículo 10 identifican el carácter del problema?",
-        "2. ¿Por qué el impacto sobre hogares enteros hace que esto sea más que una discusión doctrinal abstracta?",
-        "3. ¿Qué salvaguardas financieras ayudan a reconocer y resistir ganancia deshonesta?",
-        "4. ¿Por qué debe el lenguaje de circuncisión permanecer ligado a oponentes específicos y no al pueblo judío en general?",
-        "5. ¿Cómo deben los cristianos manejar la cita severa sobre Creta sin repetir prejuicio?",
-        "6. ¿Qué revela «para que sean sanos en la fe» sobre el propósito de la reprensión?",
-        "7. ¿Cuándo puede una regla o tradición humana empezar a desplazar verdad?",
-        "8. ¿Qué conductas pueden negar una profesión de conocer a Dios aunque las palabras suenen ortodoxas?"
+        "¿Qué descripciones del versículo 10 identifican el carácter del problema?",
+        "¿Por qué el impacto sobre hogares enteros hace que esto sea más que una discusión doctrinal abstracta?",
+        "¿Qué salvaguardas financieras ayudan a reconocer y resistir ganancia deshonesta?",
+        "¿Por qué debe el lenguaje de circuncisión permanecer ligado a oponentes específicos y no al pueblo judío en general?",
+        "¿Cómo deben los cristianos manejar la cita severa sobre Creta sin repetir prejuicio?",
+        "¿Qué revela «para que sean sanos en la fe» sobre el propósito de la reprensión?",
+        "¿Cuándo puede una regla o tradición humana empezar a desplazar verdad?",
+        "¿Qué conductas pueden negar una profesión de conocer a Dios aunque las palabras suenen ortodoxas?"
       ],
       "examination": "¿Evalúo enseñanza solo por si estoy de acuerdo con ella, o también por verdad, transparencia financiera, uso del poder, fruto en hogares, humildad y conducta? ¿Tengo tentación de generalizar desde un grupo dañino a un pueblo entero?",
       "challenge": "Examina un ministerio, maestro o fuente que confías usando los criterios del pasaje: verdad, dinero, trato de hogares, requisitos humanos y fruto observable. Hazlo justamente, sin rumor ni prejuicio, e identifica una salvaguarda que valga fortalecer.",
@@ -296,14 +296,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué implica el versículo 1 sobre la relación entre sana doctrina y vida diaria?",
-        "2. ¿Qué cualidades del versículo 2 describen carácter maduro y no solo edad?",
-        "3. ¿Qué rol de enseñanza y mentoría da Pablo a las mujeres mayores?",
-        "4. ¿Cómo puede el discipulado entre generaciones honrar Tito 2 sin forzar situaciones idénticas de vida?",
-        "5. ¿Por qué el ejemplo de Tito forma parte de su autoridad para enseñar?",
-        "6. ¿Qué hace creíble el discurso y la doctrina en los versículos 7–8?",
-        "7. ¿Cómo deben leerse las instrucciones a creyentes esclavizados sin respaldar esclavitud o explotación?",
-        "8. ¿Qué práctica ordinaria podría hacer más hermosa para otros la enseñanza acerca de Dios nuestro Salvador?"
+        "¿Qué implica el versículo 1 sobre la relación entre sana doctrina y vida diaria?",
+        "¿Qué cualidades del versículo 2 describen carácter maduro y no solo edad?",
+        "¿Qué rol de enseñanza y mentoría da Pablo a las mujeres mayores?",
+        "¿Cómo puede el discipulado entre generaciones honrar Tito 2 sin forzar situaciones idénticas de vida?",
+        "¿Por qué el ejemplo de Tito forma parte de su autoridad para enseñar?",
+        "¿Qué hace creíble el discurso y la doctrina en los versículos 7–8?",
+        "¿Cómo deben leerse las instrucciones a creyentes esclavizados sin respaldar esclavitud o explotación?",
+        "¿Qué práctica ordinaria podría hacer más hermosa para otros la enseñanza acerca de Dios nuestro Salvador?"
       ],
       "examination": "¿Apoya mi conducta privada la verdad que profeso? ¿Estoy aprendiendo de creyentes de otra generación y uso algún lenguaje de roles bíblicos para controlar en vez de servir con dignidad y amor?",
       "challenge": "Ten una conversación intencional con un creyente confiable de otra generación sobre un área concreta de fidelidad. Escucha sabiduría, habla con honestidad y elige una práctica de dominio propio, amor, integridad o servicio para fortalecer.",
@@ -401,14 +401,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué coloca Pablo la gracia antes de los mandatos de los versículos 12–14?",
-        "2. ¿Qué significa que la gracia entrene y no solo perdone?",
-        "3. ¿Cómo protege centrarse en Jesús como esperanza bendita contra fijar fechas especulativas?",
-        "4. ¿Qué logra la entrega de Cristo según el versículo 14?",
-        "5. ¿Cómo pueden cristianos practicar conducta pública respetuosa sin ser cómplices de injusticia?",
-        "6. ¿Por qué el versículo 3 exige humildad al hablar de personas fuera de la iglesia?",
-        "7. ¿Qué dice 3:4–7 que Dios hace en salvación y qué papel no cumplen nuestras obras justas?",
-        "8. ¿Por qué personas salvadas por misericordia deberían dedicarse especialmente a buenas obras útiles?"
+        "¿Por qué coloca Pablo la gracia antes de los mandatos de los versículos 12–14?",
+        "¿Qué significa que la gracia entrene y no solo perdone?",
+        "¿Cómo protege centrarse en Jesús como esperanza bendita contra fijar fechas especulativas?",
+        "¿Qué logra la entrega de Cristo según el versículo 14?",
+        "¿Cómo pueden cristianos practicar conducta pública respetuosa sin ser cómplices de injusticia?",
+        "¿Por qué el versículo 3 exige humildad al hablar de personas fuera de la iglesia?",
+        "¿Qué dice 3:4–7 que Dios hace en salvación y qué papel no cumplen nuestras obras justas?",
+        "¿Por qué personas salvadas por misericordia deberían dedicarse especialmente a buenas obras útiles?"
       ],
       "examination": "¿Uso la gracia para excusar algo que la gracia me entrena a rechazar, o uso buenas obras para probar que soy mejor que otros? ¿Dónde necesita el recuerdo de misericordia de Dios hacer más humilde y útil mi palabra pública?",
       "challenge": "Elige un «no» entrenado por la gracia y un «sí» entrenado por la gracia. Rechaza un hábito, deseo o patrón de palabra destructivo y reemplázalo con una buena obra concreta que beneficie a otra persona.",
@@ -506,14 +506,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué clases de controversia llama Pablo improductivas e inútiles?",
-        "2. ¿Cómo puede una iglesia distinguir desacuerdo doctrinal necesario de pelea interminable?",
-        "3. ¿Qué hace de la división un patrón y no una sola objeción o conversación difícil?",
-        "4. ¿Por qué importan la primera y segunda advertencia para un proceso justo?",
-        "5. ¿Qué mal uso se vuelve posible si líderes tratan «condenado a sí mismo» como permiso para suponer motivos?",
-        "6. ¿Qué revelan Zenas y Apolos sobre el lado práctico de apoyar ministerio?",
-        "7. ¿Por qué dice Pablo que los creyentes deben aprender a atender necesidades urgentes?",
-        "8. ¿Qué controversia podría reducir tu comunidad para dedicar más atención a relaciones fieles y servicio útil?"
+        "¿Qué clases de controversia llama Pablo improductivas e inútiles?",
+        "¿Cómo puede una iglesia distinguir desacuerdo doctrinal necesario de pelea interminable?",
+        "¿Qué hace de la división un patrón y no una sola objeción o conversación difícil?",
+        "¿Por qué importan la primera y segunda advertencia para un proceso justo?",
+        "¿Qué mal uso se vuelve posible si líderes tratan «condenado a sí mismo» como permiso para suponer motivos?",
+        "¿Qué revelan Zenas y Apolos sobre el lado práctico de apoyar ministerio?",
+        "¿Por qué dice Pablo que los creyentes deben aprender a atender necesidades urgentes?",
+        "¿Qué controversia podría reducir tu comunidad para dedicar más atención a relaciones fieles y servicio útil?"
       ],
       "examination": "¿Uso controversia para sentirme importante, informado o espiritualmente superior mientras trabajo útil queda sin hacer? Por otro lado, ¿tengo tentación de llamar «división» a desafío legítimo porque amenaza mi comodidad o autoridad?",
       "challenge": "Reduce tu participación en una disputa estéril y redirige ese tiempo o energía a una necesidad concreta y urgente. Si un conflicto realmente requiere atención, escribe la conducta, evidencia, proceso y resultado saludable esperado antes de actuar.",

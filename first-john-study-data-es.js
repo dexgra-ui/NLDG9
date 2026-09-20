@@ -86,14 +86,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué enfatiza Juan oír, ver, contemplar y tocar?",
-        "2. ¿Cómo aparecen la eternidad y la humanidad de Jesús?",
-        "3. ¿Qué enseña la encarnación sobre la vida física y el cuidado material?",
-        "4. ¿Cómo es la comunión cristiana más que amistad?",
-        "5. ¿Por qué debe la comunión permanecer ligada a la verdad acerca de Jesús?",
-        "6. ¿Cómo pueden los límites veraces proteger sin volverse elitistas?",
-        "7. ¿Qué relación hay entre proclamación y gozo?",
-        "8. ¿Dónde eres tentado a rehacer a Jesús según cultura, preferencia o imaginación privada?"
+        "¿Por qué enfatiza Juan oír, ver, contemplar y tocar?",
+        "¿Cómo aparecen la eternidad y la humanidad de Jesús?",
+        "¿Qué enseña la encarnación sobre la vida física y el cuidado material?",
+        "¿Cómo es la comunión cristiana más que amistad?",
+        "¿Por qué debe la comunión permanecer ligada a la verdad acerca de Jesús?",
+        "¿Cómo pueden los límites veraces proteger sin volverse elitistas?",
+        "¿Qué relación hay entre proclamación y gozo?",
+        "¿Dónde eres tentado a rehacer a Jesús según cultura, preferencia o imaginación privada?"
       ],
       "examination": "¿Mi comprensión de Jesús está siendo formada por la Escritura y el testimonio apostólico o principalmente por cultura, preferencia, utilidad política e imaginación privada?",
       "challenge": "Lee Juan 1:1–18 junto con 1 Juan 1:1–4. Escribe qué dice cada pasaje sobre quién es Jesús, qué significa que vino en carne y qué comunión crea.",
@@ -191,14 +191,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué revela «Dios es luz» sobre su carácter?",
-        "2. ¿Cómo difiere caminar en tinieblas de tropezar en pecado?",
-        "3. ¿Por qué el ocultamiento daña la comunión?",
-        "4. ¿Qué hace veraz y vivificante la confesión?",
-        "5. ¿Cómo se vuelve la negación autoengaño?",
-        "6. ¿Qué significa la defensa de Jesús para quien ha fallado?",
-        "7. ¿Cómo permanecen juntas la gracia y el llamado a no pecar?",
-        "8. ¿Qué área de vida cuesta más traer a la luz?"
+        "¿Qué revela «Dios es luz» sobre su carácter?",
+        "¿Cómo difiere caminar en tinieblas de tropezar en pecado?",
+        "¿Por qué el ocultamiento daña la comunión?",
+        "¿Qué hace veraz y vivificante la confesión?",
+        "¿Cómo se vuelve la negación autoengaño?",
+        "¿Qué significa la defensa de Jesús para quien ha fallado?",
+        "¿Cómo permanecen juntas la gracia y el llamado a no pecar?",
+        "¿Qué área de vida cuesta más traer a la luz?"
       ],
       "examination": "Cuando fallo, ¿me escondo, racionalizo, culpo, me castigo, desespero o vengo honestamente a Dios por medio de Cristo?",
       "challenge": "Ora cada día con 1 Juan 1:9. Nombra un pecado sin excusas, agradece el perdón de Cristo, identifica reparación apropiada y escoge una respuesta nueva.",
@@ -296,14 +296,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Cómo es la obediencia evidencia y no pago?",
-        "2. ¿Qué significa caminar como Jesús?",
-        "3. ¿Por qué el amor es central para la seguridad?",
-        "4. ¿Cómo puede el odio cegar espiritualmente?",
-        "5. ¿Qué comunican las palabras a diferentes etapas de madurez?",
-        "6. ¿Qué significa «el mundo» aquí?",
-        "7. ¿Dónde presionan más la codicia, comparación, estatus u orgullo?",
-        "8. ¿Qué mandato estás aprendiendo a practicar?"
+        "¿Cómo es la obediencia evidencia y no pago?",
+        "¿Qué significa caminar como Jesús?",
+        "¿Por qué el amor es central para la seguridad?",
+        "¿Cómo puede el odio cegar espiritualmente?",
+        "¿Qué comunican las palabras a diferentes etapas de madurez?",
+        "¿Qué significa «el mundo» aquí?",
+        "¿Dónde presionan más la codicia, comparación, estatus u orgullo?",
+        "¿Qué mandato estás aprendiendo a practicar?"
       ],
       "examination": "¿Mis deseos más fuertes me mueven hacia amor y obediencia o hacia apetito, apariencia, control, resentimiento y orgullo?",
       "challenge": "Escoge un mandato de Jesús que entiendes pero practicas de manera inconsistente. Planea un acto específico de obediencia y uno de amor.",
@@ -401,14 +401,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué puede surgir engaño cerca de comunidades cristianas?",
-        "2. ¿Qué identifica Juan como el asunto central detrás de «anticristo»?",
-        "3. ¿Por qué no pueden separarse Padre e Hijo?",
-        "4. ¿Qué provee la unción del Espíritu?",
-        "5. ¿Por qué el versículo 27 no elimina maestros o estudio cuidadoso?",
-        "6. ¿Cómo probar afirmaciones nuevas según lo oído desde el principio?",
-        "7. ¿Cuál es la diferencia entre discernimiento y paranoia?",
-        "8. ¿Cómo produce confianza el permanecer?"
+        "¿Por qué puede surgir engaño cerca de comunidades cristianas?",
+        "¿Qué identifica Juan como el asunto central detrás de «anticristo»?",
+        "¿Por qué no pueden separarse Padre e Hijo?",
+        "¿Qué provee la unción del Espíritu?",
+        "¿Por qué el versículo 27 no elimina maestros o estudio cuidadoso?",
+        "¿Cómo probar afirmaciones nuevas según lo oído desde el principio?",
+        "¿Cuál es la diferencia entre discernimiento y paranoia?",
+        "¿Cómo produce confianza el permanecer?"
       ],
       "examination": "¿Me atrae una enseñanza porque es fiel a Jesús o porque parece secreta, dramática, halagadora, enojada, políticamente útil o exclusiva?",
       "challenge": "Evalúa un sermón, video, artículo o publicación sobre Jesús. Pregunta qué dice acerca de su identidad, encarnación, cruz, resurrección, autoridad y relación con el Padre.",
@@ -506,14 +506,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué significa ser llamado hijo de Dios?",
-        "2. ¿Cómo forma la esperanza futura la santidad presente?",
-        "3. ¿Por qué 1 Juan 3 no puede significar que creyentes nunca cometen pecado?",
-        "4. ¿Qué diferencia hay entre lucha y práctica protegida?",
-        "5. ¿Cómo define Jesús el amor?",
-        "6. ¿Qué necesidades puede ignorar un cristiano mientras habla de amor?",
-        "7. ¿Cómo puede la conciencia ayudar y también preocupar?",
-        "8. ¿Dónde debe verse más claramente la semejanza familiar de Dios en ti?"
+        "¿Qué significa ser llamado hijo de Dios?",
+        "¿Cómo forma la esperanza futura la santidad presente?",
+        "¿Por qué 1 Juan 3 no puede significar que creyentes nunca cometen pecado?",
+        "¿Qué diferencia hay entre lucha y práctica protegida?",
+        "¿Cómo define Jesús el amor?",
+        "¿Qué necesidades puede ignorar un cristiano mientras habla de amor?",
+        "¿Cómo puede la conciencia ayudar y también preocupar?",
+        "¿Dónde debe verse más claramente la semejanza familiar de Dios en ti?"
       ],
       "examination": "¿Mi amor se expresa principalmente con palabras o afecta mi tiempo, atención, dinero, valor, perdón, límites y respuesta a necesidades reales?",
       "challenge": "Identifica una necesidad concreta a tu alcance. Responde con una acción apropiadamente costosa: tiempo, atención, recursos, defensa, inconveniencia o un límite protector.",
@@ -611,14 +611,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué deben probarse las afirmaciones espirituales?",
-        "2. ¿Qué incluye confesar al Cristo encarnado?",
-        "3. ¿Cómo puede la confianza en Dios volverse arrogancia descuidada?",
-        "4. ¿Qué fruto ayuda a revelar verdad y error?",
-        "5. ¿Cómo define la cruz el amor cristiano?",
-        "6. ¿Cómo hacen visible al Dios invisible los creyentes?",
-        "7. ¿Qué temor es expulsado por el amor perfeccionado?",
-        "8. ¿Cómo se prueba el amor a Dios por el amor a personas?"
+        "¿Por qué deben probarse las afirmaciones espirituales?",
+        "¿Qué incluye confesar al Cristo encarnado?",
+        "¿Cómo puede la confianza en Dios volverse arrogancia descuidada?",
+        "¿Qué fruto ayuda a revelar verdad y error?",
+        "¿Cómo define la cruz el amor cristiano?",
+        "¿Cómo hacen visible al Dios invisible los creyentes?",
+        "¿Qué temor es expulsado por el amor perfeccionado?",
+        "¿Cómo se prueba el amor a Dios por el amor a personas?"
       ],
       "examination": "¿Evalúo voces espirituales por verdad y fruto o principalmente por confianza, popularidad, afirmaciones sobrenaturales, poder emocional y acuerdo conmigo?",
       "challenge": "Usa una prueba de dos partes en un mensaje espiritual: ¿qué enseña sobre Jesús y qué tipo de amor, honestidad, humildad y carácter produce?",
@@ -716,14 +716,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Cómo se conectan fe, nuevo nacimiento, amor y obediencia?",
-        "2. ¿En qué sentido no son pesados los mandamientos?",
-        "3. ¿Qué significa vencer al mundo y qué no promete?",
-        "4. ¿Dónde coloca Juan la vida eterna?",
-        "5. ¿Por qué es importante 5:13 para el propósito de la carta?",
-        "6. ¿Cómo difiere la confianza en oración de exigir un resultado?",
-        "7. ¿Por qué debe manejarse con humildad el pecado que lleva a muerte?",
-        "8. ¿Por qué termina Juan con una advertencia contra ídolos?"
+        "¿Cómo se conectan fe, nuevo nacimiento, amor y obediencia?",
+        "¿En qué sentido no son pesados los mandamientos?",
+        "¿Qué significa vencer al mundo y qué no promete?",
+        "¿Dónde coloca Juan la vida eterna?",
+        "¿Por qué es importante 5:13 para el propósito de la carta?",
+        "¿Cómo difiere la confianza en oración de exigir un resultado?",
+        "¿Por qué debe manejarse con humildad el pecado que lleva a muerte?",
+        "¿Por qué termina Juan con una advertencia contra ídolos?"
       ],
       "examination": "¿Descansa mi seguridad en el Hijo de Dios o intento producir suficiente emoción, conocimiento, actividad, oración respondida o éxito moral para sentirme aceptado?",
       "challenge": "Escribe una declaración de seguridad usando 1 Juan 5:11–13. Identifica un mandato a practicar, una persona a amar, una oración a continuar sin controlar el resultado y un ídolo a rechazar.",

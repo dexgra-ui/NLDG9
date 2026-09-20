@@ -86,14 +86,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué significa amar «en verdad» en los versículos 1–2?",
-        "2. ¿Cómo difiere la verdad que permanece de información temporal o modas?",
-        "3. ¿Por qué se colocan juntas gracia, misericordia, paz, verdad y amor?",
-        "4. ¿Qué añade «caminar en verdad» a una creencia correcta?",
-        "5. ¿Por qué llama el anciano al amor un mandamiento conocido desde el principio?",
-        "6. ¿Cómo protege la obediencia al amor de convertirse en lo que prefiramos?",
-        "7. ¿Qué ocurre cuando verdad y amor se separan?",
-        "8. ¿Cómo se vería caminar en verdad y amor en una relación difícil esta semana?"
+        "¿Qué significa amar «en verdad» en los versículos 1–2?",
+        "¿Cómo difiere la verdad que permanece de información temporal o modas?",
+        "¿Por qué se colocan juntas gracia, misericordia, paz, verdad y amor?",
+        "¿Qué añade «caminar en verdad» a una creencia correcta?",
+        "¿Por qué llama el anciano al amor un mandamiento conocido desde el principio?",
+        "¿Cómo protege la obediencia al amor de convertirse en lo que prefiramos?",
+        "¿Qué ocurre cuando verdad y amor se separan?",
+        "¿Cómo se vería caminar en verdad y amor en una relación difícil esta semana?"
       ],
       "examination": "¿Dónde me inclino hacia corrección dura, evitar conflicto, agradar personas o vaguedad moral? ¿Qué requeriría caminar en verdad y amor?",
       "challenge": "Elige una relación donde verdad y amor deban mantenerse juntos. Di algo verdadero con humildad y realiza un acto concreto de amor sin manipulación.",
@@ -191,14 +191,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué enseñanza exacta identifica el versículo 7 como engañosa?",
-        "2. ¿Por qué es la encarnación central y no opcional?",
-        "3. ¿Cuál es la diferencia entre engaño activo y error honesto?",
-        "4. ¿Cómo define la propia carta «anticristo» en este pasaje?",
-        "5. ¿Por qué manda el anciano a la comunidad cuidarse a sí misma?",
-        "6. ¿Qué podría perder una comunidad cuando una enseñanza destructiva la transforma?",
-        "7. ¿Por qué una novedad espiritual puede ser retroceso?",
-        "8. ¿Qué evidencia debería requerirse antes de emitir una advertencia pública seria sobre un maestro?"
+        "¿Qué enseñanza exacta identifica el versículo 7 como engañosa?",
+        "¿Por qué es la encarnación central y no opcional?",
+        "¿Cuál es la diferencia entre engaño activo y error honesto?",
+        "¿Cómo define la propia carta «anticristo» en este pasaje?",
+        "¿Por qué manda el anciano a la comunidad cuidarse a sí misma?",
+        "¿Qué podría perder una comunidad cuando una enseñanza destructiva la transforma?",
+        "¿Por qué una novedad espiritual puede ser retroceso?",
+        "¿Qué evidencia debería requerirse antes de emitir una advertencia pública seria sobre un maestro?"
       ],
       "examination": "¿Me atraen más la novedad, la certeza, el carisma o el conocimiento secreto que permanecer en Cristo? ¿He usado alguna vez etiquetas severas con menos evidencia de la que justificaban?",
       "challenge": "Toma una afirmación espiritual fuerte que hayas oído recientemente y verifica las palabras reales del maestro, el pasaje en contexto y al menos una fuente confiable antes de repetir elogio o crítica.",
@@ -296,14 +296,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué proporcionaba la hospitalidad doméstica a maestros itinerantes?",
-        "2. ¿Qué formas modernas de apoyo pueden funcionar como respaldo público?",
-        "3. ¿Por qué deben leerse los versículos 10–11 después de 7–9?",
-        "4. ¿Cómo puede un saludo o gesto público comunicar asociación?",
-        "5. ¿Qué factores deberían determinar la fuerza de un límite?",
-        "6. ¿Cómo difiere la compasión ordinaria de impulsar materialmente un ministerio dañino?",
-        "7. ¿Cómo puede una iglesia proteger a personas dejando espacio para preguntas y arrepentimiento?",
-        "8. ¿Cuándo puede ser mejor una conversación cara a cara que seguir comunicándose digitalmente?"
+        "¿Qué proporcionaba la hospitalidad doméstica a maestros itinerantes?",
+        "¿Qué formas modernas de apoyo pueden funcionar como respaldo público?",
+        "¿Por qué deben leerse los versículos 10–11 después de 7–9?",
+        "¿Cómo puede un saludo o gesto público comunicar asociación?",
+        "¿Qué factores deberían determinar la fuerza de un límite?",
+        "¿Cómo difiere la compasión ordinaria de impulsar materialmente un ministerio dañino?",
+        "¿Cómo puede una iglesia proteger a personas dejando espacio para preguntas y arrepentimiento?",
+        "¿Cuándo puede ser mejor una conversación cara a cara que seguir comunicándose digitalmente?"
       ],
       "examination": "¿Doy credibilidad demasiado rápido porque alguien es agradable, popular o espiritualmente seguro? ¿O retiro bondad demasiado rápido por miedo a ser asociado con alguien?",
       "challenge": "Revisa un ministerio, maestro o asociación que apoyas. Pregunta si tu apoyo comunica respaldo y si la evidencia justifica ese respaldo. Fortalece, pausa o aclara la relación según corresponda.",

@@ -85,14 +85,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What does Paul remind Timothy about his identity and relationships before giving commands?",
-        "2. What can Lois and Eunice teach us about spiritual influence without assuming faith is inherited?",
-        "3. What is the difference between cultivating a gift and trying to prove your worth through ministry?",
-        "4. How do power, love, and self-control keep courage from becoming aggression or recklessness?",
-        "5. What kind of shame is Timothy being told to resist in verses 8–12?",
-        "6. How do verses 9–10 prevent Christian service from becoming an attempt to earn salvation?",
-        "7. What does it mean to guard the good deposit “through the Holy Spirit” rather than through control or fear?",
-        "8. How do the actions of Onesiphorus show a practical form of gospel faithfulness?"
+        "What does Paul remind Timothy about his identity and relationships before giving commands?",
+        "What can Lois and Eunice teach us about spiritual influence without assuming faith is inherited?",
+        "What is the difference between cultivating a gift and trying to prove your worth through ministry?",
+        "How do power, love, and self-control keep courage from becoming aggression or recklessness?",
+        "What kind of shame is Timothy being told to resist in verses 8–12?",
+        "How do verses 9–10 prevent Christian service from becoming an attempt to earn salvation?",
+        "What does it mean to guard the good deposit “through the Holy Spirit” rather than through control or fear?",
+        "How do the actions of Onesiphorus show a practical form of gospel faithfulness?"
       ],
       "examination": "Where am I withdrawing because of fear or shame, and where might I be pushing myself beyond wise limits because I think faithfulness requires constant output? What gift, relationship, or responsibility needs renewed stewardship through grace?",
       "challenge": "Name one gift or responsibility you have neglected and choose one sustainable action to cultivate it this week. Also identify one person carrying a costly burden and offer concrete encouragement or presence without trying to control the outcome.",
@@ -190,14 +190,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why does Paul tell Timothy to be strengthened “by the grace that is in Christ Jesus” before discussing effort?",
-        "2. What safeguards keep the four-generation pattern in verse 2 from becoming personality dependence?",
-        "3. What does the soldier metaphor emphasize, and what applications would go beyond the metaphor?",
-        "4. How does the athlete image challenge the idea that good results can justify bad methods?",
-        "5. What can the farmer teach people who are serving faithfully without quick visible results?",
-        "6. Why does Paul combine serious reflection with trust that the Lord gives understanding?",
-        "7. What changes when “remember Jesus Christ” becomes the center of the entire passage?",
-        "8. How do verses 11–13 hold warning, endurance, union with Christ, and God’s faithfulness together?"
+        "Why does Paul tell Timothy to be strengthened “by the grace that is in Christ Jesus” before discussing effort?",
+        "What safeguards keep the four-generation pattern in verse 2 from becoming personality dependence?",
+        "What does the soldier metaphor emphasize, and what applications would go beyond the metaphor?",
+        "How does the athlete image challenge the idea that good results can justify bad methods?",
+        "What can the farmer teach people who are serving faithfully without quick visible results?",
+        "Why does Paul combine serious reflection with trust that the Lord gives understanding?",
+        "What changes when “remember Jesus Christ” becomes the center of the entire passage?",
+        "How do verses 11–13 hold warning, endurance, union with Christ, and God’s faithfulness together?"
       ],
       "examination": "Am I trying to serve from grace or from fear-driven self-sufficiency? Am I investing in people who can mature beyond dependence on me, and are my methods as faithful as the results I say I want?",
       "challenge": "Identify one trustworthy person in whom you can invest something you have learned. Share one specific truth, practice, or skill, then create room for that person to think, ask questions, and eventually teach or serve without needing to imitate your personality.",
@@ -295,14 +295,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What kind of word quarrels does Paul say can ruin hearers?",
-        "2. What practices help a worker handle the word of truth accurately and humbly?",
-        "3. Why is the resurrection error in verses 17–18 more serious than an ordinary secondary disagreement?",
-        "4. How do both lines of verse 19 keep assurance and holiness together?",
-        "5. What is the actual purpose of the household-vessel image in verses 20–21?",
-        "6. What do “flee” and “pursue” reveal about the positive direction of Christian holiness?",
-        "7. Why does Paul place the pursuit of righteousness, faith, love, and peace in community with others?",
-        "8. What does gentle correction look like when truth matters but coercion and quarrels are rejected?"
+        "What kind of word quarrels does Paul say can ruin hearers?",
+        "What practices help a worker handle the word of truth accurately and humbly?",
+        "Why is the resurrection error in verses 17–18 more serious than an ordinary secondary disagreement?",
+        "How do both lines of verse 19 keep assurance and holiness together?",
+        "What is the actual purpose of the household-vessel image in verses 20–21?",
+        "What do “flee” and “pursue” reveal about the positive direction of Christian holiness?",
+        "Why does Paul place the pursuit of righteousness, faith, love, and peace in community with others?",
+        "What does gentle correction look like when truth matters but coercion and quarrels are rejected?"
       ],
       "examination": "When I believe I am right, what happens to my tone, patience, accuracy, and treatment of other people? Is there a controversy I need to leave, a habit I need to flee, or a Christlike quality I need to pursue with others?",
       "challenge": "Before entering one disagreement this week, write down the actual issue, the level of importance, the evidence you have, the effect the argument may have on hearers, and the most truthful gentle way to respond. If the dispute is foolish or fruitless, choose not to feed it.",
@@ -400,14 +400,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why does Paul describe “last days” behavior instead of giving Timothy a prophetic timetable?",
-        "2. What do the repeated forms of “love” in verses 2–4 reveal about the root of the vice list?",
-        "3. How can religious appearance exist without transformed character, and what fruit should believers examine?",
-        "4. Who bears responsibility in verses 6–7, and how should that shape the church’s treatment of people who have been manipulated?",
-        "5. What can we responsibly say about Jannes and Jambres, and what should we avoid claiming?",
-        "6. Why does Paul connect Timothy’s knowledge of doctrine with his observation of conduct, love, patience, and endurance?",
-        "7. What does it mean that the sacred writings make Timothy wise “for salvation through faith in Christ Jesus”?",
-        "8. How do teaching, reproof, correction, and training keep us from using Scripture only to confirm ourselves?"
+        "Why does Paul describe “last days” behavior instead of giving Timothy a prophetic timetable?",
+        "What do the repeated forms of “love” in verses 2–4 reveal about the root of the vice list?",
+        "How can religious appearance exist without transformed character, and what fruit should believers examine?",
+        "Who bears responsibility in verses 6–7, and how should that shape the church’s treatment of people who have been manipulated?",
+        "What can we responsibly say about Jannes and Jambres, and what should we avoid claiming?",
+        "Why does Paul connect Timothy’s knowledge of doctrine with his observation of conduct, love, patience, and endurance?",
+        "What does it mean that the sacred writings make Timothy wise “for salvation through faith in Christ Jesus”?",
+        "How do teaching, reproof, correction, and training keep us from using Scripture only to confirm ourselves?"
       ],
       "examination": "Where am I tempted to use a vice list mainly to diagnose other people? Which function of Scripture—teaching, reproof, correction, or training—am I most resistant to receiving personally?",
       "challenge": "Choose one familiar passage that you often use to make a point. Read the surrounding context, note what it says about Christ and its first hearers, and write one way the passage corrects or trains you before using it to address anyone else.",
@@ -505,14 +505,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. How does serving “in the presence of God and of Christ Jesus” change the way ministry success is measured?",
-        "2. What is the difference between preaching the word and using the Bible to support a message already decided in advance?",
-        "3. How can someone be “ready in season and out of season” without becoming intrusive or unwise?",
-        "4. Why does Paul place complete patience and teaching beside reproof, rebuke, and exhortation?",
-        "5. How can both teachers and hearers participate in creating an “itching ears” environment?",
-        "6. What does sober-minded endurance look like compared with panic, performance, or burnout?",
-        "7. What does Paul’s “poured out” imagery communicate about his particular final season?",
-        "8. Why does the righteous Judge and the shared promise of the crown keep Paul’s race imagery centered in grace and hope?"
+        "How does serving “in the presence of God and of Christ Jesus” change the way ministry success is measured?",
+        "What is the difference between preaching the word and using the Bible to support a message already decided in advance?",
+        "How can someone be “ready in season and out of season” without becoming intrusive or unwise?",
+        "Why does Paul place complete patience and teaching beside reproof, rebuke, and exhortation?",
+        "How can both teachers and hearers participate in creating an “itching ears” environment?",
+        "What does sober-minded endurance look like compared with panic, performance, or burnout?",
+        "What does Paul’s “poured out” imagery communicate about his particular final season?",
+        "Why does the righteous Judge and the shared promise of the crown keep Paul’s race imagery centered in grace and hope?"
       ],
       "examination": "Am I more tempted to shape truth around what people want to hear or to use truth as a way to control people? What would patient, Scripture-shaped, Christ-accountable communication require from me now?",
       "challenge": "Listen to or review one teaching you strongly agree with. Instead of asking only whether it confirms your view, ask what Scripture it handles, whether the context supports the claim, how it presents Christ, and whether it includes correction you would rather avoid.",
@@ -610,14 +610,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What does Paul’s request for Timothy to come soon teach about the relational needs of mature believers?",
-        "2. Why is it important to distinguish Demas’s desertion from the unexplained travel of Crescens and Titus?",
-        "3. What does Mark’s usefulness reveal about growth, restored trust, and the danger of permanently defining people by past conflict?",
-        "4. What do the cloak, books, and parchments teach about ordinary bodily and intellectual needs?",
-        "5. How does Paul’s warning about Alexander combine truthful boundaries with leaving repayment to the Lord?",
-        "6. What is significant about Paul both naming abandonment and praying that it not be charged against those who left him?",
-        "7. How does “the Lord stood by me” function when human support was absent?",
-        "8. Since Paul expects death, what kind of rescue does verse 18 ultimately promise?"
+        "What does Paul’s request for Timothy to come soon teach about the relational needs of mature believers?",
+        "Why is it important to distinguish Demas’s desertion from the unexplained travel of Crescens and Titus?",
+        "What does Mark’s usefulness reveal about growth, restored trust, and the danger of permanently defining people by past conflict?",
+        "What do the cloak, books, and parchments teach about ordinary bodily and intellectual needs?",
+        "How does Paul’s warning about Alexander combine truthful boundaries with leaving repayment to the Lord?",
+        "What is significant about Paul both naming abandonment and praying that it not be charged against those who left him?",
+        "How does “the Lord stood by me” function when human support was absent?",
+        "Since Paul expects death, what kind of rescue does verse 18 ultimately promise?"
       ],
       "examination": "Where am I tempted either to hide my need for others or to label someone’s absence as betrayal without enough evidence? Is there a harm I need to name truthfully while releasing personal vengeance and maintaining wise boundaries?",
       "challenge": "Take one concrete step against isolation: ask for help, schedule time with a trustworthy person, or offer presence to someone else. If you are carrying a relational wound, write separately what happened, what boundary is needed, and what vengeance you can entrust to God.",

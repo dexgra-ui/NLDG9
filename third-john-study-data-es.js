@@ -86,14 +86,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué revela el amor «en la verdad» sobre la amistad cristiana?",
-        "2. ¿Por qué no debe usarse 3 Juan 2 como garantía de prosperidad?",
-        "3. ¿Qué evidencia muestra que Gayo camina en la verdad?",
-        "4. ¿Qué tiene de significativo su hospitalidad hacia personas que no conocía?",
-        "5. ¿Cómo puede una iglesia reconocer servicio discreto sin convertirlo en estatus?",
-        "6. ¿Qué puede incluir hoy «encaminarlos de una manera digna de Dios»?",
-        "7. ¿Qué verificaciones o límites pueden fortalecer en vez de debilitar la hospitalidad?",
-        "8. ¿Dónde podrías convertirte en colaborador con la verdad mediante apoyo práctico?"
+        "¿Qué revela el amor «en la verdad» sobre la amistad cristiana?",
+        "¿Por qué no debe usarse 3 Juan 2 como garantía de prosperidad?",
+        "¿Qué evidencia muestra que Gayo camina en la verdad?",
+        "¿Qué tiene de significativo su hospitalidad hacia personas que no conocía?",
+        "¿Cómo puede una iglesia reconocer servicio discreto sin convertirlo en estatus?",
+        "¿Qué puede incluir hoy «encaminarlos de una manera digna de Dios»?",
+        "¿Qué verificaciones o límites pueden fortalecer en vez de debilitar la hospitalidad?",
+        "¿Dónde podrías convertirte en colaborador con la verdad mediante apoyo práctico?"
       ],
       "examination": "¿Soy generoso solo cuando hay reconocimiento personal o amistad previa? ¿Confundo la hospitalidad cristiana con una obligación de dar acceso sin verificar a personas inseguras?",
       "challenge": "Apoya esta semana a un obrero o ministerio confiable de una manera práctica: ánimo, comida, transporte, alojamiento, apoyo económico, oración o un contacto útil. Practica al menos una salvaguarda apropiada al hacerlo.",
@@ -191,14 +191,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué «amar ser el primero» es más que una peculiaridad de personalidad?",
-        "2. ¿Cuál es la diferencia entre desacuerdo con supervisión y hacerse incorregible?",
-        "3. ¿Cómo pueden las palabras maliciosas funcionar como control?",
-        "4. ¿Cuándo puede el control de acceso proteger y cuándo se vuelve dominación?",
-        "5. ¿Qué cambia cuando un líder pasa de su propia decisión a impedir que otros actúen?",
-        "6. ¿Cómo distingue una iglesia disciplina legítima de exclusión punitiva?",
-        "7. ¿Por qué debe concentrarse la rendición de cuentas en hechos observables y no motivos supuestos?",
-        "8. ¿Qué salvaguardas protegen tanto a acusados como a personas dañadas durante un proceso?"
+        "¿Por qué «amar ser el primero» es más que una peculiaridad de personalidad?",
+        "¿Cuál es la diferencia entre desacuerdo con supervisión y hacerse incorregible?",
+        "¿Cómo pueden las palabras maliciosas funcionar como control?",
+        "¿Cuándo puede el control de acceso proteger y cuándo se vuelve dominación?",
+        "¿Qué cambia cuando un líder pasa de su propia decisión a impedir que otros actúen?",
+        "¿Cómo distingue una iglesia disciplina legítima de exclusión punitiva?",
+        "¿Por qué debe concentrarse la rendición de cuentas en hechos observables y no motivos supuestos?",
+        "¿Qué salvaguardas protegen tanto a acusados como a personas dañadas durante un proceso?"
       ],
       "examination": "Si lidero, ¿recibo corrección y rendición de cuentas independiente, o trato el desacuerdo como deslealtad? Si sigo, ¿evalúo preocupaciones por evidencia clara o por rumor?",
       "challenge": "Si lideras, invita una forma específica de retroalimentación responsable. Si te preocupa daño de liderazgo, anota hechos observables, fechas, testigos e impactos en vez de etiquetas y busca un proceso seguro y apropiado.",
@@ -296,14 +296,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué redirige el anciano a Gayo de Diótrefes hacia imitar lo bueno?",
-        "2. ¿Qué hace de la imitación una práctica formativa?",
-        "3. ¿Cómo es hacer el bien evidencia de relación con Dios sin convertirse en salvación por obras?",
-        "4. ¿Por qué un patrón persistente de daño debe afectar cómo evaluamos una afirmación espiritual?",
-        "5. ¿Qué se gana con el testimonio de múltiples testigos acerca de Demetrio?",
-        "6. ¿Por qué no basta una buena reputación pública sin acuerdo con «la verdad»?",
-        "7. ¿Qué asuntos se benefician del cara a cara y cuándo otro canal es más seguro?",
-        "8. ¿Qué revela el cierre de paz y amistad sobre una autoridad sana?"
+        "¿Por qué redirige el anciano a Gayo de Diótrefes hacia imitar lo bueno?",
+        "¿Qué hace de la imitación una práctica formativa?",
+        "¿Cómo es hacer el bien evidencia de relación con Dios sin convertirse en salvación por obras?",
+        "¿Por qué un patrón persistente de daño debe afectar cómo evaluamos una afirmación espiritual?",
+        "¿Qué se gana con el testimonio de múltiples testigos acerca de Demetrio?",
+        "¿Por qué no basta una buena reputación pública sin acuerdo con «la verdad»?",
+        "¿Qué asuntos se benefician del cara a cara y cuándo otro canal es más seguro?",
+        "¿Qué revela el cierre de paz y amistad sobre una autoridad sana?"
       ],
       "examination": "¿Qué hábitos, estilo de liderazgo, habla o prioridades estoy absorbiendo de quienes admiro? ¿Elijo ejemplos por carácter y verdad o por carisma, éxito, plataforma o similitud conmigo?",
       "challenge": "Identifica un ejemplo cristiano confiable y nombra el fruto específico que vale la pena imitar. Practica uno de esos rasgos esta semana y, si necesitas una conversación difícil, elige el canal más seguro y constructivo.",

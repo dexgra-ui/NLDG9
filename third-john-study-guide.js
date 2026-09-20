@@ -65,14 +65,14 @@
   "seriesJesusConnection": "Jesus defines greatness through service rather than domination, sends workers into mission, teaches truthful love, exposes leaders who burden others, and calls His followers friends. 3 John reflects His pattern when hospitality serves mission, leadership remains accountable, good fruit is imitated, and peace is pursued without concealing harm.",
   "seriesGuardrail": "Do not label every strong leader, disagreement, church discipline decision, or boundary as “Diotrephes.” Require clear evidence of controlling patterns. Do not treat hospitality as unlimited access or platforming; wise verification and safeguarding matter. Do not call good-faith criticism “malicious talk” merely because it is uncomfortable. Do not use confidentiality to hide abuse, financial misconduct, retaliation, or coercive exclusion. Do not force face-to-face reconciliation when there is intimidation, violence, stalking, harassment, or a serious power imbalance. Accountability should protect people and truth rather than become public revenge.",
   "seriesQuestions": [
-    "1. What does 3 John mean by “walking in the truth” rather than merely knowing the truth?",
-    "2. Why does practical hospitality count as participation in mission?",
-    "3. What distinguishes faithful hospitality from careless access or platforming?",
-    "4. Which behaviors, not merely motives, reveal Diotrephes’s unhealthy leadership?",
-    "5. How can malicious speech and gatekeeping reinforce one another in a community?",
-    "6. What makes accountability truthful rather than retaliatory?",
-    "7. Why is Demetrius’s multiple-source testimony important when choosing examples to imitate?",
-    "8. When is face-to-face conversation helpful, and when may safety or power imbalance require another process?"
+    "What does 3 John mean by “walking in the truth” rather than merely knowing the truth?",
+    "Why does practical hospitality count as participation in mission?",
+    "What distinguishes faithful hospitality from careless access or platforming?",
+    "Which behaviors, not merely motives, reveal Diotrephes’s unhealthy leadership?",
+    "How can malicious speech and gatekeeping reinforce one another in a community?",
+    "What makes accountability truthful rather than retaliatory?",
+    "Why is Demetrius’s multiple-source testimony important when choosing examples to imitate?",
+    "When is face-to-face conversation helpful, and when may safety or power imbalance require another process?"
   ],
   "seriesExamination": "Where am I most tempted by 3 John’s failures: wanting recognition, controlling access, believing one-sided reports, withholding support from trustworthy workers, avoiding accountability, or imitating charisma instead of character?",
   "seriesPractice": "Choose one concrete response: support a trustworthy ministry worker, verify before repeating a negative claim, invite accountable feedback if you lead, protect someone from coercive gatekeeping, encourage a leader who serves well, or identify one healthy example worth imitating.",

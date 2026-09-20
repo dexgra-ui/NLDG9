@@ -85,14 +85,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What does “equally precious faith” say about spiritual status?",
-        "2. Why does Peter connect grace and peace with knowing God?",
-        "3. What does divine provision include in verses 3–4?",
-        "4. How does Peter himself explain participation in the divine nature?",
-        "5. Why does grace lead to effort rather than passivity?",
-        "6. How do the virtues in verses 5–7 work together?",
-        "7. What does spiritual nearsightedness forget?",
-        "8. How can diligence confirm calling without becoming works-based salvation?"
+        "What does “equally precious faith” say about spiritual status?",
+        "Why does Peter connect grace and peace with knowing God?",
+        "What does divine provision include in verses 3–4?",
+        "How does Peter himself explain participation in the divine nature?",
+        "Why does grace lead to effort rather than passivity?",
+        "How do the virtues in verses 5–7 work together?",
+        "What does spiritual nearsightedness forget?",
+        "How can diligence confirm calling without becoming works-based salvation?"
       ],
       "examination": "Which virtue in 1:5–7 is weakest in my present life? Am I using grace as an excuse for passivity or effort as a reason for pride?",
       "challenge": "Choose one virtue from 1:5–7 and practice it intentionally for seven days in one concrete setting. Connect the effort explicitly to gratitude for what God has already given.",
@@ -190,14 +190,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why does Peter emphasize reminders for people who already know the truth?",
-        "2. How does approaching death shape the letter’s priorities?",
-        "3. What does Peter mean by rejecting cleverly devised myths?",
-        "4. Why is the transfiguration important to his argument?",
-        "5. What does the lamp image say about the purpose of Scripture?",
-        "6. How does verse 21 help explain verse 20?",
-        "7. How can Scripture be fully trustworthy while human interpretation remains fallible?",
-        "8. What practices help a community read difficult Scripture humbly and responsibly?"
+        "Why does Peter emphasize reminders for people who already know the truth?",
+        "How does approaching death shape the letter’s priorities?",
+        "What does Peter mean by rejecting cleverly devised myths?",
+        "Why is the transfiguration important to his argument?",
+        "What does the lamp image say about the purpose of Scripture?",
+        "How does verse 21 help explain verse 20?",
+        "How can Scripture be fully trustworthy while human interpretation remains fallible?",
+        "What practices help a community read difficult Scripture humbly and responsibly?"
       ],
       "examination": "Do I confuse confidence in Scripture with confidence in my own interpretation? Where do I need either greater trust in the text or greater humility about how I understand it?",
       "challenge": "Choose one passage you consider difficult. Read it in literary context, compare at least two responsible study resources, and write down what is clear, what is debated, and what should remain uncertain.",
@@ -295,14 +295,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What specific behaviors make these teachers destructive in Peter’s description?",
-        "2. Why is denial of Christ different from a secondary disagreement?",
-        "3. How does financial exploitation appear in verses 3 and 14–15?",
-        "4. What do the judgment-and-rescue examples reveal about God?",
-        "5. How can “despising authority” be misused to protect abusive leaders?",
-        "6. What is the difference between evidence-based concern and rumor-driven accusation?",
-        "7. How can a promise of freedom actually create dependence or bondage?",
-        "8. What procedures help a church investigate serious concerns without slander or concealment?"
+        "What specific behaviors make these teachers destructive in Peter’s description?",
+        "Why is denial of Christ different from a secondary disagreement?",
+        "How does financial exploitation appear in verses 3 and 14–15?",
+        "What do the judgment-and-rescue examples reveal about God?",
+        "How can “despising authority” be misused to protect abusive leaders?",
+        "What is the difference between evidence-based concern and rumor-driven accusation?",
+        "How can a promise of freedom actually create dependence or bondage?",
+        "What procedures help a church investigate serious concerns without slander or concealment?"
       ],
       "examination": "Am I too easily impressed by charisma, confidence, access, or promises of freedom? Am I equally willing to demand evidence before accusing and to act when evidence of exploitation is credible?",
       "challenge": "Choose one teacher, ministry, or message you regularly consume and evaluate it using four questions: What does it say about Christ? How does it handle money and power? What fruit does it produce? Is accountability welcomed or resisted?",
@@ -400,14 +400,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why does Peter begin this chapter with remembrance?",
-        "2. What argument do the scoffers make about delay?",
-        "3. Why does Peter appeal to creation and the flood?",
-        "4. What does the “day and thousand years” comparison actually teach?",
-        "5. How does verse 9 reinterpret apparent delay?",
-        "6. Why does the thief image undermine date-setting?",
-        "7. What present behavior should future hope produce according to verses 11–12?",
-        "8. What does a new creation where righteousness dwells add to Christian hope?"
+        "Why does Peter begin this chapter with remembrance?",
+        "What argument do the scoffers make about delay?",
+        "Why does Peter appeal to creation and the flood?",
+        "What does the “day and thousand years” comparison actually teach?",
+        "How does verse 9 reinterpret apparent delay?",
+        "Why does the thief image undermine date-setting?",
+        "What present behavior should future hope produce according to verses 11–12?",
+        "What does a new creation where righteousness dwells add to Christian hope?"
       ],
       "examination": "Does end-times content make me more holy, patient, useful, and hopeful—or more anxious, speculative, distracted, and suspicious?",
       "challenge": "Step away for one week from speculative end-times media. Replace that time with prayer, service, and one act of faithful stewardship that reflects the righteousness you hope for.",
@@ -505,14 +505,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What does Peter mean by being found at peace while waiting?",
-        "2. How should believers interpret God’s patience?",
-        "3. What does Peter’s description of Paul reveal about their relationship?",
-        "4. Why is it important that Scripture itself admits some Scripture is difficult?",
-        "5. What distinguishes twisting a text from honestly struggling to understand it?",
-        "6. What can “the other Scriptures” responsibly tell us about early reception of Paul’s letters?",
-        "7. How can believers be on guard without becoming suspicious or rigid?",
-        "8. Why is “grow in grace and knowledge” the fitting final command for the letter?"
+        "What does Peter mean by being found at peace while waiting?",
+        "How should believers interpret God’s patience?",
+        "What does Peter’s description of Paul reveal about their relationship?",
+        "Why is it important that Scripture itself admits some Scripture is difficult?",
+        "What distinguishes twisting a text from honestly struggling to understand it?",
+        "What can “the other Scriptures” responsibly tell us about early reception of Paul’s letters?",
+        "How can believers be on guard without becoming suspicious or rigid?",
+        "Why is “grow in grace and knowledge” the fitting final command for the letter?"
       ],
       "examination": "Do I become defensive when Scripture is difficult? Have I treated my interpretation as if it were identical to the text itself? Where do I need more grace, more knowledge, or both?",
       "challenge": "Return to one difficult passage you have avoided or oversimplified. Study its context, note at least two responsible interpretations if they exist, and write a conclusion that clearly distinguishes what is certain, probable, and unresolved.",

@@ -85,14 +85,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why does Jude describe believers as called, loved, and kept before giving any warning?",
-        "2. What do mercy, peace, and love contribute to faithful discernment?",
-        "3. Why does “shared salvation” resist spiritual elitism?",
-        "4. What caused Jude to change his intended topic?",
-        "5. What does “the faith once for all entrusted” refer to in context?",
-        "6. How can grace be distorted into permission for harm?",
-        "7. Why is Jesus’ lordship central to Jude’s concern?",
-        "8. What evidence should be required before publicly labeling someone a destructive teacher?"
+        "Why does Jude describe believers as called, loved, and kept before giving any warning?",
+        "What do mercy, peace, and love contribute to faithful discernment?",
+        "Why does “shared salvation” resist spiritual elitism?",
+        "What caused Jude to change his intended topic?",
+        "What does “the faith once for all entrusted” refer to in context?",
+        "How can grace be distorted into permission for harm?",
+        "Why is Jesus’ lordship central to Jude’s concern?",
+        "What evidence should be required before publicly labeling someone a destructive teacher?"
       ],
       "examination": "When I sense error, do I become combative, passive, or careful and truthful? Have I ever treated a preference as if it were the gospel itself?",
       "challenge": "Before sharing a warning about a teacher, teaching, or ministry, verify the original source, identify the core issue, separate fact from inference, and ask whether your response reflects mercy, peace, and love.",
@@ -190,14 +190,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What does the wilderness example say about past spiritual privilege?",
-        "2. What connects the angel and Sodom examples in Jude’s argument?",
-        "3. Why should severe judgment imagery produce humility rather than vengeance?",
-        "4. What does Michael’s response teach about speech in spiritual conflict?",
-        "5. What can Jude’s use of the Moses tradition tell us about ancient Jewish interpretive background?",
-        "6. What motives do Cain, Balaam, and Korah represent?",
-        "7. What do Jude’s nature images reveal about failed leadership?",
-        "8. How should Jude’s quotation of Enoch be understood without making claims beyond the text?"
+        "What does the wilderness example say about past spiritual privilege?",
+        "What connects the angel and Sodom examples in Jude’s argument?",
+        "Why should severe judgment imagery produce humility rather than vengeance?",
+        "What does Michael’s response teach about speech in spiritual conflict?",
+        "What can Jude’s use of the Moses tradition tell us about ancient Jewish interpretive background?",
+        "What motives do Cain, Balaam, and Korah represent?",
+        "What do Jude’s nature images reveal about failed leadership?",
+        "How should Jude’s quotation of Enoch be understood without making claims beyond the text?"
       ],
       "examination": "Am I drawn to leaders because they are fruitful and Christlike, or because they are dramatic, flattering, certain, and impressive? Where do greed, self-exaltation, or boundary violations need stronger resistance?",
       "challenge": "Evaluate one spiritual influence using observable criteria: doctrine, treatment of vulnerable people, money, sexual boundaries, accountability, truthfulness, and fruit. Avoid rumor and document only what can be responsibly verified.",
@@ -295,14 +295,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why is remembering a better first response than panic?",
-        "2. How does apostolic warning normalize the reality of corruption without normalizing corruption itself?",
-        "3. What does “last time” mean in Jude’s pastoral argument?",
-        "4. How can we distinguish desire-driven mockery from sincere questioning?",
-        "5. What kinds of division can give a manipulative leader more control?",
-        "6. Why are charisma and strong feelings unreliable tests of the Spirit?",
-        "7. What observable fruit should matter when evaluating spiritual claims?",
-        "8. How does apostolic memory keep novelty from displacing Jesus?"
+        "Why is remembering a better first response than panic?",
+        "How does apostolic warning normalize the reality of corruption without normalizing corruption itself?",
+        "What does “last time” mean in Jude’s pastoral argument?",
+        "How can we distinguish desire-driven mockery from sincere questioning?",
+        "What kinds of division can give a manipulative leader more control?",
+        "Why are charisma and strong feelings unreliable tests of the Spirit?",
+        "What observable fruit should matter when evaluating spiritual claims?",
+        "How does apostolic memory keep novelty from displacing Jesus?"
       ],
       "examination": "Am I easily destabilized by dramatic claims that “everything is different now”? Do I confuse emotional certainty with spiritual maturity or dismiss honest questions as rebellion?",
       "challenge": "Take one alarming religious or end-times claim you encounter this week and compare it with the actual biblical passage, context, and apostolic teaching before accepting or sharing it.",
@@ -400,14 +400,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why does Jude move from warning to building, prayer, love, and hope?",
-        "2. What does it mean to build one another up in the faith?",
-        "3. How does prayer in the Spirit protect discernment from fear?",
-        "4. How can believers “keep themselves” in God’s love without turning love into something earned?",
-        "5. Why does Jude specifically call for mercy toward doubters?",
-        "6. What might urgent rescue look like without coercion?",
-        "7. How can mercy and boundaries work together?",
-        "8. What does the doxology teach about the deepest source of perseverance?"
+        "Why does Jude move from warning to building, prayer, love, and hope?",
+        "What does it mean to build one another up in the faith?",
+        "How does prayer in the Spirit protect discernment from fear?",
+        "How can believers “keep themselves” in God’s love without turning love into something earned?",
+        "Why does Jude specifically call for mercy toward doubters?",
+        "What might urgent rescue look like without coercion?",
+        "How can mercy and boundaries work together?",
+        "What does the doxology teach about the deepest source of perseverance?"
       ],
       "examination": "When someone doubts or gets caught in harmful teaching, do I react with fear, superiority, rescue-complex control, or patient mercy? Where do I need wiser boundaries and greater trust in God’s keeping power?",
       "challenge": "Encourage one person who is questioning or spiritually weary without trying to fix them immediately. Listen, pray, offer one helpful resource if welcomed, and trust God rather than forcing an outcome.",

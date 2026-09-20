@@ -85,14 +85,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What does the elder’s love “in truth” reveal about Christian friendship?",
-        "2. Why should 3 John 2 not be used as a prosperity guarantee?",
-        "3. What evidence shows that Gaius is walking in truth?",
-        "4. What is significant about his hospitality toward people he did not already know?",
-        "5. How can churches affirm hidden service without turning it into status?",
-        "6. What does “send them on their way in a manner worthy of God” include today?",
-        "7. What kinds of verification or boundaries can strengthen rather than weaken hospitality?",
-        "8. Where could you become a fellow worker with the truth through practical support?"
+        "What does the elder’s love “in truth” reveal about Christian friendship?",
+        "Why should 3 John 2 not be used as a prosperity guarantee?",
+        "What evidence shows that Gaius is walking in truth?",
+        "What is significant about his hospitality toward people he did not already know?",
+        "How can churches affirm hidden service without turning it into status?",
+        "What does “send them on their way in a manner worthy of God” include today?",
+        "What kinds of verification or boundaries can strengthen rather than weaken hospitality?",
+        "Where could you become a fellow worker with the truth through practical support?"
       ],
       "examination": "Am I generous only when there is personal recognition or existing friendship? Do I confuse Christian hospitality with a responsibility to give unsafe people unverified access?",
       "challenge": "Support one trustworthy worker or ministry in a practical way this week: encouragement, a meal, transportation, lodging, financial support, prayer, or a useful connection. Practice at least one appropriate safeguard while doing so.",
@@ -190,14 +190,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why is “loving to be first” more than a personality quirk in this passage?",
-        "2. What is the difference between disagreement with oversight and making oneself unaccountable?",
-        "3. How can malicious speech function as a form of control?",
-        "4. When can gatekeeping be protective, and when does it become self-protective domination?",
-        "5. What changes when a leader moves from making a personal choice to preventing others from acting?",
-        "6. How can churches distinguish legitimate discipline from punitive exclusion?",
-        "7. Why should accountability focus on observable deeds rather than guessed motives?",
-        "8. What safeguards help protect both accused and harmed people during an accountability process?"
+        "Why is “loving to be first” more than a personality quirk in this passage?",
+        "What is the difference between disagreement with oversight and making oneself unaccountable?",
+        "How can malicious speech function as a form of control?",
+        "When can gatekeeping be protective, and when does it become self-protective domination?",
+        "What changes when a leader moves from making a personal choice to preventing others from acting?",
+        "How can churches distinguish legitimate discipline from punitive exclusion?",
+        "Why should accountability focus on observable deeds rather than guessed motives?",
+        "What safeguards help protect both accused and harmed people during an accountability process?"
       ],
       "examination": "If I lead, do I welcome correction and independent accountability, or do I treat disagreement as disloyalty? If I follow, do I rely on rumor or on clear evidence when evaluating leadership concerns?",
       "challenge": "If you lead, invite one specific form of accountable feedback. If you are concerned about leadership harm, write down observable facts, dates, witnesses, and impacts rather than labels, and seek a safe, appropriate process.",
@@ -295,14 +295,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why does the elder redirect Gaius from Diotrephes toward imitating good?",
-        "2. What makes imitation spiritually formative?",
-        "3. How is doing good evidence of relationship with God without becoming works-based salvation?",
-        "4. Why should persistent harmful conduct affect how we evaluate a spiritual claim?",
-        "5. What is gained by Demetrius having testimony from multiple sources?",
-        "6. Why is public reputation insufficient without agreement with “the truth”?",
-        "7. What kinds of issues are helped by face-to-face conversation, and when is another channel safer?",
-        "8. What does the closing language of peace and friendship reveal about healthy authority?"
+        "Why does the elder redirect Gaius from Diotrephes toward imitating good?",
+        "What makes imitation spiritually formative?",
+        "How is doing good evidence of relationship with God without becoming works-based salvation?",
+        "Why should persistent harmful conduct affect how we evaluate a spiritual claim?",
+        "What is gained by Demetrius having testimony from multiple sources?",
+        "Why is public reputation insufficient without agreement with “the truth”?",
+        "What kinds of issues are helped by face-to-face conversation, and when is another channel safer?",
+        "What does the closing language of peace and friendship reveal about healthy authority?"
       ],
       "examination": "Whose habits, leadership style, speech, or priorities am I absorbing? Do I choose examples because of character and truth, or because of charisma, success, platform, or similarity to me?",
       "challenge": "Identify one trustworthy Christian example and name the specific fruit worth imitating. Practice one of those traits this week, and if a difficult conversation is needed, choose the safest and most constructive communication channel.",

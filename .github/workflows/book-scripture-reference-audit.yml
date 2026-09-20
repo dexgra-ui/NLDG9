@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - '*-study-data.js'
+      - 'james-series-data.js'
       - 'scripture-links.js'
       - 'scripts/book-scripture-reference-audit.mjs'
       - '.github/workflows/book-scripture-reference-audit.yml'

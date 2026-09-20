@@ -85,14 +85,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why does Peter call the readers both chosen and exiles?",
-        "2. What makes Christian hope “living”?",
-        "3. How does the description of the inheritance address unstable circumstances?",
-        "4. What does God’s guarding promise, and what does it not promise?",
-        "5. Why is it important that Peter names grief and rejoicing together?",
-        "6. How can trials refine faith without making suffering itself good?",
-        "7. What does loving Christ without seeing Him reveal about faith?",
-        "8. How do the prophets connect Christian hope to the larger biblical story?"
+        "Why does Peter call the readers both chosen and exiles?",
+        "What makes Christian hope “living”?",
+        "How does the description of the inheritance address unstable circumstances?",
+        "What does God’s guarding promise, and what does it not promise?",
+        "Why is it important that Peter names grief and rejoicing together?",
+        "How can trials refine faith without making suffering itself good?",
+        "What does loving Christ without seeing Him reveal about faith?",
+        "How do the prophets connect Christian hope to the larger biblical story?"
       ],
       "examination": "Have I interpreted hardship as proof that God has abandoned me? What temporary security has become too central to my hope?",
       "challenge": "Memorize 1 Peter 1:3–5. Name one grief honestly before God and place beside it one specific reason your hope remains alive because of Jesus’ resurrection.",
@@ -190,14 +190,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What does preparing the mind add to Peter’s teaching about hope?",
-        "2. Why does Peter place grace at the center of holy living?",
-        "3. How do former desires continue shaping people after conversion?",
-        "4. What does holiness look like when defined by God’s character rather than culture?",
-        "5. How does costly redemption reshape reverence?",
-        "6. Why does new birth create a responsibility for deep love?",
-        "7. Which relational poisons in 2:1 are easiest for churches to excuse?",
-        "8. What helps a healthy appetite for God’s word grow?"
+        "What does preparing the mind add to Peter’s teaching about hope?",
+        "Why does Peter place grace at the center of holy living?",
+        "How do former desires continue shaping people after conversion?",
+        "What does holiness look like when defined by God’s character rather than culture?",
+        "How does costly redemption reshape reverence?",
+        "Why does new birth create a responsibility for deep love?",
+        "Which relational poisons in 2:1 are easiest for churches to excuse?",
+        "What helps a healthy appetite for God’s word grow?"
       ],
       "examination": "Am I pursuing a holy image while protecting envy, deception, slander, or hypocrisy? What is shaping my mental and spiritual appetite most strongly?",
       "challenge": "Remove one source of relational poison this week and replace it with a truthful act of encouragement, apology, repair, or safe reconciliation.",
@@ -295,14 +295,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What does the living-stone image reveal about Jesus?",
-        "2. Why is Christian identity fundamentally communal in this passage?",
-        "3. What priestly work belongs to the whole people of God?",
-        "4. How does the cornerstone both support and expose?",
-        "5. What is the purpose of being a chosen and priestly people?",
-        "6. How does mercy keep identity from becoming superiority?",
-        "7. What does exile identity require morally without requiring social contempt?",
-        "8. How do good works and proclamation support one another in public witness?"
+        "What does the living-stone image reveal about Jesus?",
+        "Why is Christian identity fundamentally communal in this passage?",
+        "What priestly work belongs to the whole people of God?",
+        "How does the cornerstone both support and expose?",
+        "What is the purpose of being a chosen and priestly people?",
+        "How does mercy keep identity from becoming superiority?",
+        "What does exile identity require morally without requiring social contempt?",
+        "How do good works and proclamation support one another in public witness?"
       ],
       "examination": "Am I treating church as a product I consume or a people into whom I am being built? Does my identity in Christ make me more grateful and useful to neighbors, or more contemptuous?",
       "challenge": "Use one gift to build the Christian community and do one visible good for a neighbor without self-promotion or expectation of return.",
@@ -400,14 +400,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What does “for the Lord’s sake” reveal about the purpose and limit of submission?",
-        "2. How can honorable conduct answer slander without becoming reputation management?",
-        "3. Why does Peter distinguish “fear God” from “honor the emperor”?",
-        "4. Why is the Roman slavery context essential for interpreting verses 18–20?",
-        "5. What suffering does Peter praise, and what suffering does he explicitly exclude?",
-        "6. In what ways is Christ’s suffering unique rather than directly repeatable?",
-        "7. Why is refusing retaliation compatible with seeking justice and safety?",
-        "8. Where do believers today need both respectful conduct and moral resistance?"
+        "What does “for the Lord’s sake” reveal about the purpose and limit of submission?",
+        "How can honorable conduct answer slander without becoming reputation management?",
+        "Why does Peter distinguish “fear God” from “honor the emperor”?",
+        "Why is the Roman slavery context essential for interpreting verses 18–20?",
+        "What suffering does Peter praise, and what suffering does he explicitly exclude?",
+        "In what ways is Christ’s suffering unique rather than directly repeatable?",
+        "Why is refusing retaliation compatible with seeking justice and safety?",
+        "Where do believers today need both respectful conduct and moral resistance?"
       ],
       "examination": "Have I used authority to demand silence or used “submission” to protect myself from accountability? If I am being harmed, what safe and truthful next step is available?",
       "challenge": "Identify one unjust condition you can address through a safe, lawful, truthful channel while maintaining honorable conduct and refusing dehumanizing retaliation.",
@@ -505,14 +505,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What social realities likely shaped Peter’s instruction to wives?",
-        "2. Why does faithful conduct not guarantee another person’s conversion?",
-        "3. What abusive applications of submission must be rejected?",
-        "4. What is Peter contrasting in the discussion of adornment?",
-        "5. How does hope in God create courage rather than passivity?",
-        "6. What does “co-heirs of the grace of life” require from husbands?",
-        "7. How does the whole-church ethic in verses 8–9 balance the household instructions?",
-        "8. How can believers pursue peace without surrendering truth, boundaries, or safety?"
+        "What social realities likely shaped Peter’s instruction to wives?",
+        "Why does faithful conduct not guarantee another person’s conversion?",
+        "What abusive applications of submission must be rejected?",
+        "What is Peter contrasting in the discussion of adornment?",
+        "How does hope in God create courage rather than passivity?",
+        "What does “co-heirs of the grace of life” require from husbands?",
+        "How does the whole-church ethic in verses 8–9 balance the household instructions?",
+        "How can believers pursue peace without surrendering truth, boundaries, or safety?"
       ],
       "examination": "Do people closest to me experience understanding, honor, and freedom from intimidation? Am I mistaking silence under pressure for biblical peace?",
       "challenge": "Practice one specific act of understanding and honor in a close relationship. If any relationship is unsafe, contact a trusted and qualified source of support rather than handling it alone.",
@@ -610,14 +610,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why does Peter begin with eagerness to do good rather than expectation of conflict?",
-        "2. What does honoring Christ as Lord change about fear?",
-        "3. Why are gentleness and respect part of a Christian defense?",
-        "4. How can believers tell persecution from consequences for their own conduct?",
-        "5. What is unique about Christ’s suffering in verse 18?",
-        "6. Why should the spirits-in-prison passage be handled with interpretive humility?",
-        "7. What does Peter explicitly say baptism is not, and what does he connect it to?",
-        "8. How should believers respond when former companions malign a changed way of life?"
+        "Why does Peter begin with eagerness to do good rather than expectation of conflict?",
+        "What does honoring Christ as Lord change about fear?",
+        "Why are gentleness and respect part of a Christian defense?",
+        "How can believers tell persecution from consequences for their own conduct?",
+        "What is unique about Christ’s suffering in verse 18?",
+        "Why should the spirits-in-prison passage be handled with interpretive humility?",
+        "What does Peter explicitly say baptism is not, and what does he connect it to?",
+        "How should believers respond when former companions malign a changed way of life?"
       ],
       "examination": "Is opposition to me arising from faithfulness to Christ, or from an unnecessarily harsh, dishonest, or provocative manner? Am I more interested in winning arguments than giving a credible reason for hope?",
       "challenge": "Prepare a two-minute explanation of your hope in Christ. Practice saying it with clarity, gentleness, and respect to a trusted person who can give honest feedback.",
@@ -715,14 +715,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why does Peter connect end-times urgency with sober prayer rather than speculation?",
-        "2. What can love “cover,” and what must love never conceal?",
-        "3. How can hospitality remain generous while respecting boundaries and safety?",
-        "4. What does it mean to steward a gift rather than own it?",
-        "5. Why should speaking and serving remain dependent on God rather than personal platform?",
-        "6. How can Christians distinguish faithful suffering from conflict they unnecessarily create?",
-        "7. Why does Peter explicitly exclude suffering for wrongdoing from honorable suffering?",
-        "8. What does entrusting yourself to the Creator look like while still taking responsible action?"
+        "Why does Peter connect end-times urgency with sober prayer rather than speculation?",
+        "What can love “cover,” and what must love never conceal?",
+        "How can hospitality remain generous while respecting boundaries and safety?",
+        "What does it mean to steward a gift rather than own it?",
+        "Why should speaking and serving remain dependent on God rather than personal platform?",
+        "How can Christians distinguish faithful suffering from conflict they unnecessarily create?",
+        "Why does Peter explicitly exclude suffering for wrongdoing from honorable suffering?",
+        "What does entrusting yourself to the Creator look like while still taking responsible action?"
       ],
       "examination": "Are end-times concerns making me more prayerful, loving, hospitable, and useful—or more fearful, distracted, and suspicious? Am I protecting any harmful behavior under the language of love or church reputation?",
       "challenge": "Use one gift to serve someone this week and practice one form of hospitality or practical care. Also identify one boundary that keeps love from becoming concealment or enabling.",
@@ -820,14 +820,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why does it matter that Peter calls the church “God’s flock”?",
-        "2. Which motives does Peter reject in spiritual leadership?",
-        "3. What behaviors today would count as domineering?",
-        "4. How does the Chief Shepherd limit human authority?",
-        "5. Why does Peter pair submission language with humility for everyone?",
-        "6. What does casting anxiety on God mean without rejecting practical care?",
-        "7. How can believers resist the devil without panic or dehumanizing people?",
-        "8. Why is God’s restoring grace the right ending for a letter shaped by suffering?"
+        "Why does it matter that Peter calls the church “God’s flock”?",
+        "Which motives does Peter reject in spiritual leadership?",
+        "What behaviors today would count as domineering?",
+        "How does the Chief Shepherd limit human authority?",
+        "Why does Peter pair submission language with humility for everyone?",
+        "What does casting anxiety on God mean without rejecting practical care?",
+        "How can believers resist the devil without panic or dehumanizing people?",
+        "Why is God’s restoring grace the right ending for a letter shaped by suffering?"
       ],
       "examination": "If I lead, do people experience care, freedom to ask questions, and accountable example—or fear and control? If I follow, am I practicing humility without surrendering moral discernment?",
       "challenge": "Leaders: invite specific, honest feedback about one area of authority. Everyone: name one anxiety to God and take one wise practical step rather than carrying it alone.",

@@ -27,7 +27,7 @@ const standardSeries=[
   {label:'Ruth',expected:5,bookPrefix:'Rut ',enData:'ruth-study-data.js',enGuide:'ruth-study-guide.js',esData:'ruth-study-data-es.js',enPage:'ruth-study.html',esPage:'es/rut-estudio.html',esRoute:'rut-estudio',canonical:'https://nolabelsdesignedbygod.org/es/rut-estudio.html',completion:'5 lecciones completas',i18nVersion:'1.45.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'Philippians',expected:6,bookPrefix:'Filipenses ',enData:'philippians-study-data.js',enGuide:'philippians-study-guide.js',esData:'philippians-study-data-es.js',enPage:'philippians-study.html',esPage:'es/filipenses-estudio.html',esRoute:'filipenses-estudio',canonical:'https://nolabelsdesignedbygod.org/es/filipenses-estudio.html',completion:'6 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'Hebrews',expected:8,bookPrefix:'Hebreos ',enData:'hebrews-study-data.js',enGuide:'hebrews-study-guide.js',esData:'hebrews-study-data-es.js',enPage:'hebrews-study.html',esPage:'es/hebreos-estudio.html',esRoute:'hebreos-estudio',canonical:'https://nolabelsdesignedbygod.org/es/hebreos-estudio.html',completion:'8 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
-  {label:'1 Peter',expected:8,bookPrefix:'1 Pedro ',enData:'first-peter-study-data.js',enGuide:'first-peter-study-guide.js',esData:'first-peter-study-data-es.js',enPage:'first-peter-study.html',esPage:'es/primera-pedro-estudio.html',esRoute:'primera-pedro-estudio',canonical:'https://nolabelsdesignedbygod.org/es/primera-pedro-estudio.html',completion:'8 lecciones completas',i18nVersion:'1.14.0'},
+  {label:'1 Peter',expected:8,bookPrefix:'1 Pedro ',enData:'first-peter-study-data.js',enGuide:'first-peter-study-guide.js',esData:'first-peter-study-data-es.js',enPage:'first-peter-study.html',esPage:'es/primera-pedro-estudio.html',esRoute:'primera-pedro-estudio',canonical:'https://nolabelsdesignedbygod.org/es/primera-pedro-estudio.html',completion:'8 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'2 Peter',expected:5,bookPrefix:'2 Pedro ',enData:'second-peter-study-data.js',enGuide:'second-peter-study-guide.js',esData:'second-peter-study-data-es.js',enPage:'second-peter-study.html',esPage:'es/segunda-pedro-estudio.html',esRoute:'segunda-pedro-estudio',canonical:'https://nolabelsdesignedbygod.org/es/segunda-pedro-estudio.html',completion:'5 lecciones completas',i18nVersion:'1.15.0'},
   {label:'1 John',expected:7,bookPrefix:'1 Juan ',enData:'first-john-study-data.js',enGuide:'first-john-study-guide.js',esData:'first-john-study-data-es.js',enPage:'first-john-study.html',esPage:'es/primera-juan-estudio.html',esRoute:'primera-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/primera-juan-estudio.html',completion:'7 lecciones completas',i18nVersion:'1.16.0'},
   {label:'2 John',expected:3,bookPrefix:'2 Juan ',enData:'second-john-study-data.js',enGuide:'second-john-study-guide.js',esData:'second-john-study-data-es.js',enPage:'second-john-study.html',esPage:'es/segunda-juan-estudio.html',esRoute:'segunda-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/segunda-juan-estudio.html',completion:'3 lecciones completas',i18nVersion:'1.17.0'},
@@ -136,12 +136,34 @@ if(exists('philippians-study-data-es.js')){
 }
 
 if(exists('first-peter-study-data-es.js')){
-  const s=loadBookSeries('first-peter-study-data-es.js'),l4=s.lessons?.[3],l5=s.lessons?.[4],l6=s.lessons?.[5],l7=s.lessons?.[6],l8=s.lessons?.[7];
-  if(!l4?.teaching?.[2]?.body?.includes('trata de personas')||!l4?.teaching?.[4]?.body?.includes('control coercitivo'))errors.push('1 Peter lesson 4 must preserve anti-slavery and domestic-abuse safeguards.');
-  if(!l5?.teaching?.[1]?.body?.includes('denunciar')||!l5?.teaching?.[1]?.body?.includes('protección legal'))errors.push('1 Peter lesson 5 must preserve reporting and lawful-protection language.');
-  if(!l6?.teaching?.[1]?.body?.includes('No oculta abuso'))errors.push('1 Peter lesson 6 must preserve the warning that love never conceals abuse.');
-  if(!l7?.teaching?.[4]?.body?.includes('liderazgo coercitivo'))errors.push('1 Peter lesson 7 must preserve the anti-domination leadership safeguard.');
-  if(!l8?.context?.includes('no promueve fascinación con los demonios'))errors.push('1 Peter lesson 8 must preserve sober spiritual-warfare framing.');
+  const en=loadBookSeries('first-peter-study-data.js','first-peter-study-guide.js');
+  const s=loadBookSeries('first-peter-study-data-es.js');
+  const bookNames={'1 Pedro':'1 Peter','Salmo':'Psalm','Juan':'John','Romanos':'Romans','2 Corintios':'2 Corinthians','Efesios':'Ephesians','Levítico':'Leviticus','Hebreos':'Hebrews','1 Juan':'1 John','Éxodo':'Exodus','Oseas':'Hosea','Isaías':'Isaiah','Mateo':'Matthew','Daniel':'Daniel','Marcos':'Mark','Hechos':'Acts','Génesis':'Genesis','Proverbios':'Proverbs','Colosenses':'Colossians','Santiago':'James','1 Corintios':'1 Corinthians','Ezequiel':'Ezekiel'};
+  const normRef=r=>{for(const [a,b] of Object.entries(bookNames))if(String(r||'').startsWith(a+' '))return b+String(r).slice(a.length);return String(r||'');};
+  const normList=x=>String(x||'').split(';').map(v=>normRef(v.trim())).filter(Boolean);
+  if((s.seriesTeaching?.length??0)!==8)errors.push('1 Peter must retain eight series-level teaching movements.');
+  if((s.seriesQuestions?.length??0)!==8)errors.push('1 Peter must retain eight series-level discussion questions.');
+  if(String(s.seriesContext||'').split(/\n\n+/).filter(Boolean).length!==2)errors.push('1 Peter must retain two series-level Scripture Context paragraphs.');
+  if(JSON.stringify(normList(s.seriesMainScripture))!==JSON.stringify(normList(en.seriesMainScripture)))errors.push('1 Peter series Scripture references must match English after book-name normalization.');
+  for(const [i,lesson] of (s.lessons||[]).entries()){
+    const label=`1 Peter lesson ${i+1}`,eng=en.lessons?.[i];
+    if((lesson.supporting?.length??0)!==5)errors.push(`${label}: must retain five supporting Scriptures.`);
+    if((lesson.teaching?.length??0)!==8)errors.push(`${label}: must retain eight teaching movements.`);
+    if((lesson.questions?.length??0)!==8)errors.push(`${label}: must retain eight discussion questions.`);
+    if((lesson.contextParagraphs?.length??0)!==2)errors.push(`${label}: must retain two Scripture Context paragraphs.`);
+    if((lesson.jesusParagraphs?.length??0)!==1||(lesson.guardrailParagraphs?.length??0)!==1||!String(lesson.closingTakeaway||'').trim())errors.push(`${label}: must retain Jesus Connection, Do Not Miss This, and Closing Takeaway.`);
+    if(normRef(lesson.scripture)!==String(eng?.scripture||''))errors.push(`${label}: main Scripture reference must match English after book-name normalization.`);
+    if(JSON.stringify((lesson.supporting||[]).map(normRef))!==JSON.stringify(eng?.supporting||[]))errors.push(`${label}: supporting Scripture references must match English after book-name normalization.`);
+  }
+  const all=JSON.stringify(s).toLowerCase(),l3=s.lessons?.[2],l4=s.lessons?.[3],l5=s.lessons?.[4],l6=s.lessons?.[5],l7=s.lessons?.[6],l8=s.lessons?.[7];
+  if(!s.seriesContext?.includes('autoría directa')||!s.seriesContext?.includes('Silvano'))errors.push('1 Peter series context must preserve authorship and Silvanus nuance.');
+  if(!all.includes('antisemitismo')||!l3?.guardrailParagraphs?.[0]?.includes('nacionalismo cristiano'))errors.push('1 Peter lesson 3 must preserve anti-antisemitism and anti-nationalist safeguards.');
+  if(!l4?.guardrailParagraphs?.[0]?.includes('trata de personas')||!l4?.guardrailParagraphs?.[0]?.includes('denunciar'))errors.push('1 Peter lesson 4 must preserve anti-slavery and reporting safeguards.');
+  if(!l5?.guardrailParagraphs?.[0]?.includes('protección legal')||!l5?.guardrailParagraphs?.[0]?.includes('silencio forzado'))errors.push('1 Peter lesson 5 must preserve domestic-abuse, lawful-protection, and non-silencing safeguards.');
+  if(!l6?.guardrailParagraphs?.[0]?.includes('espíritus encarcelados')||!l6?.guardrailParagraphs?.[0]?.includes('bautismo'))errors.push('1 Peter lesson 6 must preserve interpretive humility around spirits and baptism.');
+  if(!l7?.guardrailParagraphs?.[0]?.includes('amor cubre pecados')||!l7?.guardrailParagraphs?.[0]?.includes('ocultar abuso'))errors.push('1 Peter lesson 7 must preserve the warning that love never conceals abuse.');
+  if(!l8?.guardrailParagraphs?.[0]?.includes('liderazgo dominante')||!l8?.guardrailParagraphs?.[0]?.includes('tratamiento profesional'))errors.push('1 Peter lesson 8 must preserve anti-domination and anxiety-care safeguards.');
+  for(const phrase of ['violencia doméstica','daño sexual','trata','liderazgo coercitivo','seguridad','apoyo calificado','responsabilidades de denuncia'])if(!s.seriesLeaderGuidance?.includes(phrase))errors.push(`1 Peter leader safeguards must preserve ${phrase}.`);
 }
 
 if(exists('second-peter-study-data-es.js')){

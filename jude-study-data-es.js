@@ -125,7 +125,7 @@ window.NLDG_BOOK_STUDY={
         "Números 16:1–35",
         "Números 22:1–35",
         "2 Pedro 2:1–19",
-        "1 Enoc 1:9"
+        "Zacarías 14:5"
       ],
       "question": "¿Qué patrones revelan influencia espiritual corrupta y cómo puede discernirlos la iglesia sin sobreinterpretar los ejemplos difíciles de Judas?",
       "truth": "La influencia corrupta se hace visible mediante rebelión, violación de límites, arrogancia, codicia, explotación, falta de fruto, habla interesada y rechazo de la autoridad de Jesús.",
@@ -432,7 +432,7 @@ window.NLDG_BOOK_STUDY={
     }
   ],
   "themeLabel": "Verdad clave",
-  "seriesMainScripture": "Judas 1–25; Génesis 19:1–29; Números 16:1–35; 2 Pedro 2:1–22; 1 Enoc 1:9",
+  "seriesMainScripture": "Judas 1–25; Génesis 19:1–29; Números 16:1–35; 2 Pedro 2:1–22; Zacarías 14:5",
   "seriesQuestion": "¿Cómo puede la iglesia contender por la fe, reconocer influencia corrupta, mostrar misericordia sabia y permanecer confiada en el poder de Dios para guardar sin volverse combativa, sospechosa o abusiva?",
   "seriesOpening": "Lee Judas como una carta pastoral corta pero intensa. Sigue llamado, misericordia, contienda, gracia distorsionada, ejemplos de juicio, rebelión angélica, Sodoma, Miguel, Caín, Balaam, Coré, falsos maestros, advertencia apostólica, misericordia hacia quienes dudan, rescate, perseverancia santa y la doxología final. Pregunta qué evidencia usa realmente Judas para identificar influencia destructiva y cómo mantiene el discernimiento arraigado en Jesús, misericordia y el poder de Dios para guardar.",
   "seriesContext": "La carta identifica a su autor como Judas, siervo de Jesucristo y hermano de Santiago. La tradición cristiana suele relacionarlo con Judas, hermano de Santiago y por tanto hermano de Jesús, aunque la carta no dice explícitamente «hermano de Jesús» y la investigación moderna debate autoría y fecha. Judas escribe a una audiencia cristiana familiarizada con las Escrituras de Israel y con tradiciones interpretativas judías. Su estilo condensado presupone trasfondo compartido y requiere lectura cuidadosa.\n\nJudas se refiere a tradiciones conocidas también por escritos judíos fuera de la Biblia hebrea. Judas 14–15 se parece estrechamente a 1 Enoc 1:9, y Judas 9 refleja una tradición sobre Moisés comúnmente asociada con la corriente de la Asunción/Testamento de Moisés. El uso de ese material muestra que escritores cristianos tempranos podían emplear tradiciones conocidas para un punto particular. Por sí solo, esto no decide el estatus canónico de toda la fuente ni demuestra que cada versión superviviente sea idéntica a la conocida por Judas.",

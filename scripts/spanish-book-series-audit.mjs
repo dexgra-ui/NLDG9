@@ -33,7 +33,7 @@ const standardSeries=[
   {label:'2 John',expected:3,bookPrefix:'2 Juan ',enData:'second-john-study-data.js',enGuide:'second-john-study-guide.js',esData:'second-john-study-data-es.js',enPage:'second-john-study.html',esPage:'es/segunda-juan-estudio.html',esRoute:'segunda-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/segunda-juan-estudio.html',completion:'3 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'3 John',expected:3,bookPrefix:'3 Juan ',enData:'third-john-study-data.js',enGuide:'third-john-study-guide.js',esData:'third-john-study-data-es.js',enPage:'third-john-study.html',esPage:'es/tercera-juan-estudio.html',esRoute:'tercera-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/tercera-juan-estudio.html',completion:'3 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'Jude',expected:4,bookPrefix:'Judas ',enData:'jude-study-data.js',enGuide:'jude-study-guide.js',esData:'jude-study-data-es.js',enPage:'jude-study.html',esPage:'es/judas-estudio.html',esRoute:'judas-estudio',canonical:'https://nolabelsdesignedbygod.org/es/judas-estudio.html',completion:'4 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
-  {label:'Revelation',expected:8,bookPrefix:'Apocalipsis ',enData:'revelation-study-data.js',enGuide:'revelation-study-guide.js',esData:'revelation-study-data-es.js',enPage:'revelation-study.html',esPage:'es/apocalipsis-estudio.html',esRoute:'apocalipsis-estudio',canonical:'https://nolabelsdesignedbygod.org/es/apocalipsis-estudio.html',completion:'8 lecciones completas',i18nVersion:'1.20.0'}
+  {label:'Revelation',expected:8,bookPrefix:'Apocalipsis ',enData:'revelation-study-data.js',enGuide:'revelation-study-guide.js',esData:'revelation-study-data-es.js',enPage:'revelation-study.html',esPage:'es/apocalipsis-estudio.html',esRoute:'apocalipsis-estudio',canonical:'https://nolabelsdesignedbygod.org/es/apocalipsis-estudio.html',completion:'8 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'}
 ];
 
 for(const file of commonRequired)if(!exists(file))errors.push(`Required shared bilingual book-series resource is missing: ${file}`);
@@ -317,18 +317,37 @@ if(exists('jude-study-data-es.js')){
 }
 
 if(exists('revelation-study-data-es.js')){
-  const s=loadBookSeries('revelation-study-data-es.js'),l1=s.lessons?.[0],l3=s.lessons?.[2],l4=s.lessons?.[3],l5=s.lessons?.[4],l6=s.lessons?.[5],l7=s.lessons?.[6],l8=s.lessons?.[7];
-  const guides=[...(s.seriesGuideBlocks||[]),...(s.postLessonMapGuideBlocks||[])].map(x=>x.text||'').join(' ');
-  if(!s.theme?.includes('no para fijar fechas')||!s.theme?.includes('descifrar partidos políticos'))errors.push('Revelation foundation must reject date-setting and partisan decoding.');
-  for(const phrase of ['cronologías debatidas','antisemitismo','señalamiento étnico','pánico tecnológico','violencia cristiana'])if(!guides.includes(phrase))errors.push(`Revelation interpretive safeguards must preserve ${phrase}.`);
-  if(!l1?.teaching?.[3]?.body?.includes('buscar seguridad')||!l1?.teaching?.[5]?.body?.includes('insulto contra las mujeres'))errors.push('Revelation lesson 1 must preserve safety and non-gendered Jezebel safeguards.');
-  if(!l3?.teaching?.[1]?.body?.includes('rechaza la supremacía étnica')||!l3?.teaching?.[4]?.body?.includes('maneras distintas'))errors.push('Revelation lesson 3 must preserve ethnic-equality and 144,000 humility safeguards.');
-  if(!l4?.teaching?.[4]?.body?.includes('no en resistencia religiosa armada'))errors.push('Revelation lesson 4 must reject armed-religious-resistance readings of the witnesses.');
-  if(!l5?.teaching?.[2]?.body?.includes('sin llamar casualmente “la bestia”')||!l5?.teaching?.[4]?.body?.includes('vacunas')||!l5?.teaching?.[4]?.body?.includes('microchips'))errors.push('Revelation lesson 5 must reject casual beast labels and vaccine/microchip panic.');
-  if(!l6?.teaching?.[2]?.body?.includes('una sola nación actual')||!l6?.teaching?.[3]?.body?.includes('vidas humanas'))errors.push('Revelation lesson 6 must preserve Babylon humility and anti-exploitation teaching.');
-  if(!l7?.teaching?.[1]?.body?.includes('no autoriza guerra cristiana')||!l7?.teaching?.[3]?.body?.includes('premilenial')||!l7?.teaching?.[4]?.body?.includes('No debe usarse como amenaza'))errors.push('Revelation lesson 7 must preserve nonviolence, millennial humility, and non-coercive judgment teaching.');
-  if(!l8?.teaching?.[0]?.body?.includes('no almas escapando')||!l8?.teaching?.[2]?.body?.includes('nunca debe alimentar antisemitismo')||!l8?.teaching?.[5]?.body?.includes('No calculamos fechas'))errors.push('Revelation lesson 8 must preserve embodied hope, anti-antisemitism, and no-date-setting safeguards.');
-  if(!s.lessons?.every(x=>x.caution?.includes('antisemitismo')&&x.caution?.includes('vacunas')&&x.caution?.includes('microchips')&&x.caution?.includes('violencia cristiana')))errors.push('Revelation leader guidance must reject antisemitism, technology panic, and Christian violence throughout the series.');
+  const en=loadBookSeries('revelation-study-data.js','revelation-study-guide.js');
+  const s=loadBookSeries('revelation-study-data-es.js');
+  const bookNames={'Apocalipsis':'Revelation','Daniel':'Daniel','Isaías':'Isaiah','Ezequiel':'Ezekiel','Zacarías':'Zechariah','Mateo':'Matthew','Hechos':'Acts','1 Juan':'1 John','Colosenses':'Colossians','Hebreos':'Hebrews','Éxodo':'Exodus','Romanos':'Romans','Génesis':'Genesis','Efesios':'Ephesians','2 Tesalonicenses':'2 Thessalonians','1 Timoteo':'1 Timothy','1 Corintios':'1 Corinthians','Salmo':'Psalm','Jeremías':'Jeremiah','Juan':'John','Lucas':'Luke'};
+  const normRef=r=>{for(const [a,b] of Object.entries(bookNames))if(String(r||'').startsWith(a+' '))return b+String(r).slice(a.length);return String(r||'');};
+  const normList=x=>String(x||'').split(';').map(v=>normRef(v.trim())).filter(Boolean);
+  if((s.seriesTeaching?.length??0)!==8)errors.push('Revelation must retain eight series-level teaching movements.');
+  if((s.seriesQuestions?.length??0)!==8)errors.push('Revelation must retain eight series-level discussion questions.');
+  if(String(s.seriesContext||'').split(/\n\n+/).filter(Boolean).length!==2)errors.push('Revelation must retain two series-level Scripture Context paragraphs.');
+  if(JSON.stringify(normList(s.seriesMainScripture))!==JSON.stringify(normList(en.seriesMainScripture)))errors.push('Revelation series Scripture references must match English after book-name normalization.');
+  for(const [i,lesson] of (s.lessons||[]).entries()){
+    const label=`Revelation lesson ${i+1}`,eng=en.lessons?.[i];
+    if((lesson.supporting?.length??0)!==5)errors.push(`${label}: must retain five supporting Scriptures.`);
+    if((lesson.teaching?.length??0)!==8)errors.push(`${label}: must retain eight teaching movements.`);
+    if((lesson.questions?.length??0)!==8)errors.push(`${label}: must retain eight discussion questions.`);
+    if((lesson.contextParagraphs?.length??0)!==2)errors.push(`${label}: must retain two Scripture Context paragraphs.`);
+    if((lesson.jesusParagraphs?.length??0)!==1||(lesson.guardrailParagraphs?.length??0)!==1||!String(lesson.closingTakeaway||'').trim())errors.push(`${label}: must retain Jesus Connection, Do Not Miss This, and Closing Takeaway.`);
+    if(normRef(lesson.scripture)!==String(eng?.scripture||''))errors.push(`${label}: main Scripture reference must match English after book-name normalization.`);
+    if(JSON.stringify((lesson.supporting||[]).map(normRef))!==JSON.stringify(eng?.supporting||[]))errors.push(`${label}: supporting Scripture references must match English after book-name normalization.`);
+  }
+  const l1=s.lessons?.[0],l2=s.lessons?.[1],l3=s.lessons?.[2],l4=s.lessons?.[3],l5=s.lessons?.[4],l6=s.lessons?.[5],l7=s.lessons?.[6],l8=s.lessons?.[7],all=JSON.stringify(s).toLowerCase();
+  if(!s.seriesContext?.includes('Juan el apóstol')||!s.seriesContext?.includes('Domiciano')||!s.seriesContext?.includes('neroniano'))errors.push('Revelation series context must preserve authorship and dating nuance.');
+  for(const phrase of ['fijar fechas','antisemitismo','vacunas','microchips','violencia cristiana'])if(!s.seriesGuardrail?.includes(phrase))errors.push(`Revelation series guardrails must preserve ${phrase}.`);
+  if(!l1?.guardrailParagraphs?.[0]?.includes('sinagoga de Satanás')||!l1?.guardrailParagraphs?.[0]?.includes('Jezabel'))errors.push('Revelation lesson 1 must preserve anti-antisemitism and anti-misogyny safeguards.');
+  if(!l2?.guardrailParagraphs?.[0]?.includes('tibio')||!l2?.guardrailParagraphs?.[0]?.includes('antijudía'))errors.push('Revelation lesson 2 must preserve Laodicea and anti-Jewish safeguards.');
+  if(!l3?.guardrailParagraphs?.[0]?.includes('144.000')||!l3?.guardrailParagraphs?.[0]?.includes('inmunidad'))errors.push('Revelation lesson 3 must preserve 144,000 humility and non-immunity safeguards.');
+  if(!l4?.guardrailParagraphs?.[0]?.includes('armas o desastres modernos')||!l4?.guardrailParagraphs?.[0]?.includes('violencia cristiana'))errors.push('Revelation lesson 4 must reject modern-weapon decoding and Christian violence.');
+  if(!l5?.guardrailParagraphs?.[0]?.includes('vacunas')||!l5?.guardrailParagraphs?.[0]?.includes('microchips')||!l5?.guardrailParagraphs?.[0]?.includes('666'))errors.push('Revelation lesson 5 must reject technology panic and 666 accusations.');
+  if(!l6?.guardrailParagraphs?.[0]?.includes('Armagedón')||!l6?.guardrailParagraphs?.[0]?.includes('trabajadoras sexuales'))errors.push('Revelation lesson 6 must preserve Armageddon and anti-misogyny safeguards.');
+  if(!l7?.context?.includes('premileniales')||!l7?.context?.includes('amileniales')||!l7?.context?.includes('postmileniales')||!l7?.guardrailParagraphs?.[0]?.includes('violencia política'))errors.push('Revelation lesson 7 must preserve millennial humility and nonviolence.');
+  if(!l8?.guardrailParagraphs?.[0]?.includes('crítica textual')||!l8?.guardrailParagraphs?.[0]?.includes('fijes fechas'))errors.push('Revelation lesson 8 must preserve textual-study and no-date-setting safeguards.');
+  for(const phrase of ['pánico tecnológico','nueva creación','cordero','adoración','testimonio'])if(!all.includes(phrase))errors.push(`Revelation must preserve core theme ${phrase}.`);
 }
 
 const jamesRequired=['james-series.html','james-series-data.js','james-series-data-es.js','james-series.js','es/santiago-estudio.html'];

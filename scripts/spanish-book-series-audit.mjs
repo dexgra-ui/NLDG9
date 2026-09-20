@@ -31,7 +31,7 @@ const standardSeries=[
   {label:'2 Peter',expected:5,bookPrefix:'2 Pedro ',enData:'second-peter-study-data.js',enGuide:'second-peter-study-guide.js',esData:'second-peter-study-data-es.js',enPage:'second-peter-study.html',esPage:'es/segunda-pedro-estudio.html',esRoute:'segunda-pedro-estudio',canonical:'https://nolabelsdesignedbygod.org/es/segunda-pedro-estudio.html',completion:'5 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'1 John',expected:7,bookPrefix:'1 Juan ',enData:'first-john-study-data.js',enGuide:'first-john-study-guide.js',esData:'first-john-study-data-es.js',enPage:'first-john-study.html',esPage:'es/primera-juan-estudio.html',esRoute:'primera-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/primera-juan-estudio.html',completion:'7 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'2 John',expected:3,bookPrefix:'2 Juan ',enData:'second-john-study-data.js',enGuide:'second-john-study-guide.js',esData:'second-john-study-data-es.js',enPage:'second-john-study.html',esPage:'es/segunda-juan-estudio.html',esRoute:'segunda-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/segunda-juan-estudio.html',completion:'3 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
-  {label:'3 John',expected:3,bookPrefix:'3 Juan ',enData:'third-john-study-data.js',enGuide:'third-john-study-guide.js',esData:'third-john-study-data-es.js',enPage:'third-john-study.html',esPage:'es/tercera-juan-estudio.html',esRoute:'tercera-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/tercera-juan-estudio.html',completion:'3 lecciones completas',i18nVersion:'1.18.0'},
+  {label:'3 John',expected:3,bookPrefix:'3 Juan ',enData:'third-john-study-data.js',enGuide:'third-john-study-guide.js',esData:'third-john-study-data-es.js',enPage:'third-john-study.html',esPage:'es/tercera-juan-estudio.html',esRoute:'tercera-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/tercera-juan-estudio.html',completion:'3 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'Jude',expected:4,bookPrefix:'Judas ',enData:'jude-study-data.js',enGuide:'jude-study-guide.js',esData:'jude-study-data-es.js',enPage:'jude-study.html',esPage:'es/judas-estudio.html',esRoute:'judas-estudio',canonical:'https://nolabelsdesignedbygod.org/es/judas-estudio.html',completion:'4 lecciones completas',i18nVersion:'1.19.0'},
   {label:'Revelation',expected:8,bookPrefix:'Apocalipsis ',enData:'revelation-study-data.js',enGuide:'revelation-study-guide.js',esData:'revelation-study-data-es.js',enPage:'revelation-study.html',esPage:'es/apocalipsis-estudio.html',esRoute:'apocalipsis-estudio',canonical:'https://nolabelsdesignedbygod.org/es/apocalipsis-estudio.html',completion:'8 lecciones completas',i18nVersion:'1.20.0'}
 ];
@@ -256,13 +256,33 @@ if(exists('second-john-study-data-es.js')){
 }
 
 if(exists('third-john-study-data-es.js')){
-  const s=loadBookSeries('third-john-study-data-es.js'),l2=s.lessons?.[1],l3=s.lessons?.[2],guide=(s.postLessonMapGuideBlocks||[]).map(x=>x.text||'').join(' ');
-  if(!l2?.context?.includes('liderazgo espiritual coercitivo'))errors.push('3 John lesson 2 must name coercive spiritual leadership explicitly.');
-  if(!l2?.teaching?.[2]?.body?.includes('acusaciones falsas')||!l2?.teaching?.[4]?.body?.includes('crea temor'))errors.push('3 John lesson 2 must preserve safeguards around slander and fear-based leadership.');
-  if(!l2?.teaching?.[5]?.body?.includes('abuso de autoridad'))errors.push('3 John lesson 2 must preserve the source statement that love does not require silence about abuse of authority.');
-  if(!l3?.teaching?.[3]?.body?.includes('múltiples testigos'))errors.push('3 John lesson 3 must preserve multiple-witness credibility guidance.');
-  if(!l3?.teaching?.[5]?.body?.includes('amigos, no de seguidores'))errors.push('3 John lesson 3 must preserve the source contrast between friends and followers.');
-  for(const phrase of ['evidencia clara','liderazgo coercitivo','experiencias traumáticas','confidencialidad','reportes de daño'])if(!guide.includes(phrase))errors.push(`3 John leader safeguards must preserve ${phrase}.`);
+  const en=loadBookSeries('third-john-study-data.js','third-john-study-guide.js');
+  const s=loadBookSeries('third-john-study-data-es.js');
+  const bookNames={'3 Juan':'3 John','Marcos':'Mark','Romanos':'Romans','1 Pedro':'1 Peter','Hebreos':'Hebrews','Mateo':'Matthew','1 Corintios':'1 Corinthians','Filipenses':'Philippians','Ezequiel':'Ezekiel','Hechos':'Acts','1 Timoteo':'1 Timothy','1 Tesalonicenses':'1 Thessalonians'};
+  const normRef=r=>{for(const [a,b] of Object.entries(bookNames))if(String(r||'').startsWith(a+' '))return b+String(r).slice(a.length);return String(r||'');};
+  const normList=x=>String(x||'').split(';').map(v=>normRef(v.trim())).filter(Boolean);
+  if((s.seriesTeaching?.length??0)!==8)errors.push('3 John must retain eight series-level teaching movements.');
+  if((s.seriesQuestions?.length??0)!==8)errors.push('3 John must retain eight series-level discussion questions.');
+  if(String(s.seriesContext||'').split(/\n\n+/).filter(Boolean).length!==2)errors.push('3 John must retain two series-level Scripture Context paragraphs.');
+  if(JSON.stringify(normList(s.seriesMainScripture))!==JSON.stringify(normList(en.seriesMainScripture)))errors.push('3 John series Scripture references must match English after book-name normalization.');
+  for(const [i,lesson] of (s.lessons||[]).entries()){
+    const label=`3 John lesson ${i+1}`,eng=en.lessons?.[i];
+    if((lesson.supporting?.length??0)!==5)errors.push(`${label}: must retain five supporting Scriptures.`);
+    if((lesson.teaching?.length??0)!==8)errors.push(`${label}: must retain eight teaching movements.`);
+    if((lesson.questions?.length??0)!==8)errors.push(`${label}: must retain eight discussion questions.`);
+    if((lesson.contextParagraphs?.length??0)!==2)errors.push(`${label}: must retain two Scripture Context paragraphs.`);
+    if((lesson.jesusParagraphs?.length??0)!==1||(lesson.guardrailParagraphs?.length??0)!==1||!String(lesson.closingTakeaway||'').trim())errors.push(`${label}: must retain Jesus Connection, Do Not Miss This, and Closing Takeaway.`);
+    if(normRef(lesson.scripture)!==String(eng?.scripture||''))errors.push(`${label}: main Scripture reference must match English after book-name normalization.`);
+    if(JSON.stringify((lesson.supporting||[]).map(normRef))!==JSON.stringify(eng?.supporting||[]))errors.push(`${label}: supporting Scripture references must match English after book-name normalization.`);
+  }
+  const l1=s.lessons?.[0],l2=s.lessons?.[1],l3=s.lessons?.[2],all=JSON.stringify(s).toLowerCase();
+  if(!s.seriesContext?.includes('se identifica como «el anciano»')||!s.seriesContext?.includes('siguen debatiendo'))errors.push('3 John series context must preserve authorship nuance around the elder and Johannine tradition.');
+  if(!l1?.guardrailParagraphs?.[0]?.includes('acceso ilimitado')||!l1?.guardrailParagraphs?.[0]?.includes('transparencia financiera'))errors.push('3 John lesson 1 must preserve wise hospitality, access, and financial-transparency safeguards.');
+  if(!l2?.context?.includes('liderazgo espiritual coercitivo')||!l2?.teaching?.[2]?.body?.includes('acusaciones falsas')||!l2?.teaching?.[5]?.body?.includes('crea temor'))errors.push('3 John lesson 2 must preserve coercive-leadership, false-accusation, and fear safeguards.');
+  if(!l2?.guardrailParagraphs?.[0]?.includes('patrones documentados')||!l2?.guardrailParagraphs?.[0]?.includes('represalia'))errors.push('3 John lesson 2 must require evidence and protect against retaliation.');
+  if(!l3?.teaching?.[4]?.body?.includes('múltiples testigos')||!l3?.teaching?.[7]?.body?.includes('amigos, no de seguidores'))errors.push('3 John lesson 3 must preserve multiple-witness credibility and friends-not-followers guidance.');
+  if(!l3?.guardrailParagraphs?.[0]?.includes('cara a cara')||!l3?.guardrailParagraphs?.[0]?.includes('abusadores'))errors.push('3 John lesson 3 must preserve safe alternatives to face-to-face confrontation.');
+  for(const phrase of ['evidencia clara','controlador','confidencialidad','abuso','represalia','seguridad'])if(!all.includes(phrase))errors.push(`3 John safeguards must preserve ${phrase}.`);
 }
 
 if(exists('jude-study-data-es.js')){

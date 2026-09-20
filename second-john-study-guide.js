@@ -65,14 +65,14 @@
   "seriesJesusConnection": "Jesus Christ truly came in the flesh and is the center of truth, love, obedience, fellowship, and discernment. The letter protects not an abstract doctrinal system but faithful allegiance to the incarnate Son who reveals the Father and commands His people to love one another.",
   "seriesGuardrail": "Do not use “deceiver” or “antichrist” as casual labels for political opponents, other denominations, secondary doctrinal disagreements, whistleblowers, critics, or people asking sincere questions. Do not use verses 10–11 to justify blanket shunning of unbelievers, family members, former church members, people in need, or anyone with doubts. The boundary concerns active teachers promoting the incarnation-denying doctrine just described and receiving material support or public endorsement for it. Boundaries should be evidence-based, proportionate, nonviolent, and compatible with ordinary compassion, emergency help, safeguarding, and a path toward repentance.",
   "seriesQuestions": [
-    "1. Why does the elder repeatedly keep truth and love together?",
-    "2. What does “walking in truth” add beyond merely agreeing with doctrine?",
-    "3. What is certain and what remains uncertain about the “elect lady”?",
-    "4. Why does denial of Jesus Christ coming in the flesh matter so deeply in this letter?",
-    "5. How does verse 8 make discernment a form of self-examination rather than only accusation?",
-    "6. What kinds of modern support are comparable to ancient hospitality and endorsement?",
-    "7. How can a church refuse a platform without becoming cruel, suspicious, or isolated?",
-    "8. What does the closing desire for face-to-face fellowship contribute to the letter’s teaching on boundaries?"
+    "Why does the elder repeatedly keep truth and love together?",
+    "What does “walking in truth” add beyond merely agreeing with doctrine?",
+    "What is certain and what remains uncertain about the “elect lady”?",
+    "Why does denial of Jesus Christ coming in the flesh matter so deeply in this letter?",
+    "How does verse 8 make discernment a form of self-examination rather than only accusation?",
+    "What kinds of modern support are comparable to ancient hospitality and endorsement?",
+    "How can a church refuse a platform without becoming cruel, suspicious, or isolated?",
+    "What does the closing desire for face-to-face fellowship contribute to the letter’s teaching on boundaries?"
   ],
   "seriesExamination": "Where am I tempted either to call compromise “love” or call suspicion “discernment”? Do my boundaries protect truth and people without dehumanizing anyone?",
   "seriesPractice": "Choose one practice: verify a teacher’s actual claims before repeating criticism, strengthen a trustworthy ministry partnership, decline an unhealthy platform without hostility, show ordinary kindness without implying endorsement, or have a face-to-face conversation where digital communication has created misunderstanding.",

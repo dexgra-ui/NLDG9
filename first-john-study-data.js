@@ -85,14 +85,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why does John emphasize hearing, seeing, observing, and touching?",
-        "2. How are Jesus’ eternity and humanity both present in the passage?",
-        "3. What does the incarnation teach about physical life and material care?",
-        "4. How is Christian fellowship more than friendship?",
-        "5. Why must fellowship remain connected to truth about Jesus?",
-        "6. How can truthful boundaries protect without becoming elitist?",
-        "7. What is the relationship between proclamation and joy?",
-        "8. Where are you tempted to reshape Jesus around culture, preference, or private assumption?"
+        "Why does John emphasize hearing, seeing, observing, and touching?",
+        "How are Jesus’ eternity and humanity both present in the passage?",
+        "What does the incarnation teach about physical life and material care?",
+        "How is Christian fellowship more than friendship?",
+        "Why must fellowship remain connected to truth about Jesus?",
+        "How can truthful boundaries protect without becoming elitist?",
+        "What is the relationship between proclamation and joy?",
+        "Where are you tempted to reshape Jesus around culture, preference, or private assumption?"
       ],
       "examination": "Is my understanding of Jesus being formed by Scripture and apostolic witness, or mainly by culture, preference, political usefulness, and private imagination?",
       "challenge": "Read John 1:1–18 alongside 1 John 1:1–4. Write what each passage says about who Jesus is, what it means that He came in flesh, and what kind of fellowship that creates.",
@@ -190,14 +190,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What does “God is light” reveal about His character?",
-        "2. How is walking in darkness different from stumbling into sin?",
-        "3. Why does concealment damage fellowship?",
-        "4. What makes confession truthful and life-giving?",
-        "5. How can denial become self-deception?",
-        "6. What does Jesus’ advocacy mean for a believer who has failed?",
-        "7. How do grace and the call not to sin remain together?",
-        "8. What area of life is hardest to bring honestly into God’s light?"
+        "What does “God is light” reveal about His character?",
+        "How is walking in darkness different from stumbling into sin?",
+        "Why does concealment damage fellowship?",
+        "What makes confession truthful and life-giving?",
+        "How can denial become self-deception?",
+        "What does Jesus’ advocacy mean for a believer who has failed?",
+        "How do grace and the call not to sin remain together?",
+        "What area of life is hardest to bring honestly into God’s light?"
       ],
       "examination": "When I fail, do I hide, rationalize, blame, punish myself, despair, or come honestly to God through Christ?",
       "challenge": "Pray through 1 John 1:9 each day. Name one sin without excuses, thank Christ for forgiveness, identify any appropriate repair, and choose one concrete new response.",
@@ -295,14 +295,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. How is obedience evidence rather than payment?",
-        "2. What does it mean to walk as Jesus walked?",
-        "3. Why is love central to assurance?",
-        "4. How can hatred blind a person spiritually?",
-        "5. What do John’s words to different maturity stages communicate?",
-        "6. What does “the world” mean in this passage?",
-        "7. Where do craving, comparison, status, or pride pressure believers most strongly?",
-        "8. Which command is God presently teaching you to practice?"
+        "How is obedience evidence rather than payment?",
+        "What does it mean to walk as Jesus walked?",
+        "Why is love central to assurance?",
+        "How can hatred blind a person spiritually?",
+        "What do John’s words to different maturity stages communicate?",
+        "What does “the world” mean in this passage?",
+        "Where do craving, comparison, status, or pride pressure believers most strongly?",
+        "Which command is God presently teaching you to practice?"
       ],
       "examination": "Do my strongest desires move me toward love and obedience or toward appetite, appearance, control, resentment, and pride?",
       "challenge": "Choose one command of Jesus that you understand but practice inconsistently. Plan one specific act of obedience and one act of love that makes that command concrete.",
@@ -400,14 +400,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why can deception arise close to Christian communities?",
-        "2. What does John actually identify as the central issue behind “antichrist”?",
-        "3. Why can the Father and Son not be separated in John’s theology?",
-        "4. What does the Spirit’s anointing provide to ordinary believers?",
-        "5. Why can verse 27 not mean that teachers or careful study are unnecessary?",
-        "6. How should new claims be tested against “what you heard from the beginning”?",
-        "7. What is the difference between discernment and paranoia?",
-        "8. How does abiding create confidence without prophetic sensationalism?"
+        "Why can deception arise close to Christian communities?",
+        "What does John actually identify as the central issue behind “antichrist”?",
+        "Why can the Father and Son not be separated in John’s theology?",
+        "What does the Spirit’s anointing provide to ordinary believers?",
+        "Why can verse 27 not mean that teachers or careful study are unnecessary?",
+        "How should new claims be tested against “what you heard from the beginning”?",
+        "What is the difference between discernment and paranoia?",
+        "How does abiding create confidence without prophetic sensationalism?"
       ],
       "examination": "Am I drawn to teaching because it is faithful to Jesus or because it feels secret, dramatic, flattering, angry, politically useful, or exclusive?",
       "challenge": "Evaluate one sermon, video, article, or post about Jesus. Ask what it says about His identity, incarnation, cross, resurrection, authority, and relationship with the Father.",
@@ -505,14 +505,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What does it mean to be called a child of God?",
-        "2. How does future hope shape present holiness?",
-        "3. Why can 1 John 3 not mean believers never commit a sin?",
-        "4. What is the difference between struggle and protected practice?",
-        "5. How does Jesus define love?",
-        "6. What needs can Christians wrongly ignore while speaking lovingly?",
-        "7. How can conscience both help and trouble us?",
-        "8. Where should God’s family resemblance become clearer in you?"
+        "What does it mean to be called a child of God?",
+        "How does future hope shape present holiness?",
+        "Why can 1 John 3 not mean believers never commit a sin?",
+        "What is the difference between struggle and protected practice?",
+        "How does Jesus define love?",
+        "What needs can Christians wrongly ignore while speaking lovingly?",
+        "How can conscience both help and trouble us?",
+        "Where should God’s family resemblance become clearer in you?"
       ],
       "examination": "Is my love mainly expressed through words, or does it affect my time, attention, money, courage, forgiveness, boundaries, and response to real need?",
       "challenge": "Identify one concrete need within your reach. Respond with an action that costs something appropriate—time, attention, resources, advocacy, inconvenience, or a wise protective boundary.",
@@ -610,14 +610,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why must spiritual claims be tested?",
-        "2. What does confession of the incarnate Christ include?",
-        "3. How can confidence in God become careless arrogance?",
-        "4. What kinds of fruit help reveal truth and error?",
-        "5. How does the cross define Christian love?",
-        "6. In what sense can believers make the invisible God visible?",
-        "7. What fear is cast out by perfected love?",
-        "8. How is love for God tested by love for people?"
+        "Why must spiritual claims be tested?",
+        "What does confession of the incarnate Christ include?",
+        "How can confidence in God become careless arrogance?",
+        "What kinds of fruit help reveal truth and error?",
+        "How does the cross define Christian love?",
+        "In what sense can believers make the invisible God visible?",
+        "What fear is cast out by perfected love?",
+        "How is love for God tested by love for people?"
       ],
       "examination": "Do I evaluate spiritual voices by truth and fruit, or mainly by confidence, popularity, supernatural claims, emotional power, and agreement with me?",
       "challenge": "Use a two-part discernment test on one spiritual message this week: What does it teach about Jesus, and what kind of love, honesty, humility, and character does it produce?",
@@ -715,14 +715,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. How do faith, new birth, love, and obedience connect?",
-        "2. In what sense are God’s commands not burdensome?",
-        "3. What does overcoming the world mean, and what does it not promise?",
-        "4. Where does John locate eternal life?",
-        "5. Why is 5:13 such an important statement of purpose?",
-        "6. How is prayerful confidence different from demanding an outcome?",
-        "7. Why should “sin leading to death” be handled with humility?",
-        "8. Why does John end with a warning about idols?"
+        "How do faith, new birth, love, and obedience connect?",
+        "In what sense are God’s commands not burdensome?",
+        "What does overcoming the world mean, and what does it not promise?",
+        "Where does John locate eternal life?",
+        "Why is 5:13 such an important statement of purpose?",
+        "How is prayerful confidence different from demanding an outcome?",
+        "Why should “sin leading to death” be handled with humility?",
+        "Why does John end with a warning about idols?"
       ],
       "examination": "Is my assurance resting in the Son of God, or am I continually trying to produce enough emotion, knowledge, activity, answered prayer, or moral success to feel accepted?",
       "challenge": "Write an assurance statement using 1 John 5:11–13. Then identify one command to practice, one person to love actively, one prayer to continue without controlling the outcome, and one idol to reject.",

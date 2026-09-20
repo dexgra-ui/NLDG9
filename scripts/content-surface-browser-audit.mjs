@@ -117,6 +117,9 @@ try{
   expect((await page.locator('.collections-intro .study-guiding-principle').count())===1,'The guiding philosophy sits with the Bible Studies introduction.','The guiding philosophy is not positioned in the Bible Studies introduction.');
   expect(await page.locator('#study-journey-section').isHidden(),'A visitor with no saved study activity does not see an empty My Study Journey dashboard.','The empty My Study Journey dashboard is visible to a visitor with no activity.');
 
+  const referencePaths=await page.locator('.study-reference-paths-grid a').evaluateAll(links=>links.map(link=>link.getAttribute('href')));
+  expect(JSON.stringify(referencePaths)===JSON.stringify(['book-by-book.html','topics.html','biblical-maps.html','other-ancient-writings.html']),'Bible Studies exposes the four requested study and reference paths.',`Bible Studies reference paths were ${referencePaths.join(' → ')}.`);
+
   for(const [name,url] of [
     ['revelation-question-rendering','revelation-study.html?lesson=1'],
     ['first-john-question-rendering','first-john-study.html?lesson=1'],
@@ -125,9 +128,6 @@ try{
   ]){
     await checkBookStudyQuestionRendering(name,url);
   }
-
-  const referencePaths=await page.locator('.study-reference-paths-grid a').evaluateAll(links=>links.map(link=>link.getAttribute('href')));
-  expect(JSON.stringify(referencePaths)===JSON.stringify(['book-by-book.html','topics.html','biblical-maps.html','other-ancient-writings.html']),'Bible Studies exposes the four requested study and reference paths.',`Bible Studies reference paths were ${referencePaths.join(' → ')}.`);
 
   await open('other-ancient-writings','other-ancient-writings.html');
   const ancientMain=await page.locator('main').innerText();

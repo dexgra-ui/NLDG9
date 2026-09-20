@@ -65,14 +65,14 @@
   "seriesJesusConnection": "Jesus is presented as God and Savior, the majestic Son honored by the Father, the coming Lord, the righteous Judge, the source of grace and peace, and the One in whose grace and knowledge believers must keep growing. Every warning and every promise is oriented toward faithfulness to Him.",
   "seriesGuardrail": "Do not use “false teacher” as a label for secondary disagreement, criticism, whistleblowing, or honest questions. Require evidence before making accusations of greed, sexual misconduct, deception, or exploitation. Do not use 2 Peter 2 to dehumanize people with its animal imagery or reduce Sodom’s judgment to a weapon against one modern group. Do not use “despising authority” to shield leaders from accountability. Do not use 2 Peter 3 to set dates, decode disasters, or create end-times panic. “A day is like a thousand years” is not a prophetic conversion formula. Do not use difficult-Scripture warnings to give leaders a monopoly on interpretation.",
   "seriesQuestions": [
-    "1. How does 2 Peter hold divine provision and human effort together?",
-    "2. Why does the letter emphasize remembering truth believers already know?",
-    "3. What does the transfiguration contribute to Peter’s argument about Jesus?",
-    "4. What does 1:20–21 say about the origin of prophecy, and what does it not say about private Bible reading?",
-    "5. What evidence does chapter 2 actually give for identifying destructive teachers?",
-    "6. How can churches practice discernment without becoming rumor-driven or suspicious of everyone?",
-    "7. How does God’s patience reshape the question of Christ’s delayed return?",
-    "8. What does the closing command to grow in grace and knowledge add to the whole letter?"
+    "How does 2 Peter hold divine provision and human effort together?",
+    "Why does the letter emphasize remembering truth believers already know?",
+    "What does the transfiguration contribute to Peter’s argument about Jesus?",
+    "What does 1:20–21 say about the origin of prophecy, and what does it not say about private Bible reading?",
+    "What evidence does chapter 2 actually give for identifying destructive teachers?",
+    "How can churches practice discernment without becoming rumor-driven or suspicious of everyone?",
+    "How does God’s patience reshape the question of Christ’s delayed return?",
+    "What does the closing command to grow in grace and knowledge add to the whole letter?"
   ],
   "seriesExamination": "Where am I most vulnerable to instability: spiritual laziness, attraction to charisma, suspicion without evidence, resistance to accountability, end-times anxiety, or overconfidence in my interpretation of difficult Scripture?",
   "seriesPractice": "Choose one concrete response: cultivate one virtue from 1:5–7, revisit a truth you need to remember, verify a teacher’s claim before sharing it, examine the fruit of a teaching, step away from speculative end-times content, or study one difficult passage with multiple trustworthy resources.",

@@ -30,7 +30,7 @@ const standardSeries=[
   {label:'1 Peter',expected:8,bookPrefix:'1 Pedro ',enData:'first-peter-study-data.js',enGuide:'first-peter-study-guide.js',esData:'first-peter-study-data-es.js',enPage:'first-peter-study.html',esPage:'es/primera-pedro-estudio.html',esRoute:'primera-pedro-estudio',canonical:'https://nolabelsdesignedbygod.org/es/primera-pedro-estudio.html',completion:'8 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'2 Peter',expected:5,bookPrefix:'2 Pedro ',enData:'second-peter-study-data.js',enGuide:'second-peter-study-guide.js',esData:'second-peter-study-data-es.js',enPage:'second-peter-study.html',esPage:'es/segunda-pedro-estudio.html',esRoute:'segunda-pedro-estudio',canonical:'https://nolabelsdesignedbygod.org/es/segunda-pedro-estudio.html',completion:'5 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'1 John',expected:7,bookPrefix:'1 Juan ',enData:'first-john-study-data.js',enGuide:'first-john-study-guide.js',esData:'first-john-study-data-es.js',enPage:'first-john-study.html',esPage:'es/primera-juan-estudio.html',esRoute:'primera-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/primera-juan-estudio.html',completion:'7 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
-  {label:'2 John',expected:3,bookPrefix:'2 Juan ',enData:'second-john-study-data.js',enGuide:'second-john-study-guide.js',esData:'second-john-study-data-es.js',enPage:'second-john-study.html',esPage:'es/segunda-juan-estudio.html',esRoute:'segunda-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/segunda-juan-estudio.html',completion:'3 lecciones completas',i18nVersion:'1.17.0'},
+  {label:'2 John',expected:3,bookPrefix:'2 Juan ',enData:'second-john-study-data.js',enGuide:'second-john-study-guide.js',esData:'second-john-study-data-es.js',enPage:'second-john-study.html',esPage:'es/segunda-juan-estudio.html',esRoute:'segunda-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/segunda-juan-estudio.html',completion:'3 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'3 John',expected:3,bookPrefix:'3 Juan ',enData:'third-john-study-data.js',enGuide:'third-john-study-guide.js',esData:'third-john-study-data-es.js',enPage:'third-john-study.html',esPage:'es/tercera-juan-estudio.html',esRoute:'tercera-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/tercera-juan-estudio.html',completion:'3 lecciones completas',i18nVersion:'1.18.0'},
   {label:'Jude',expected:4,bookPrefix:'Judas ',enData:'jude-study-data.js',enGuide:'jude-study-guide.js',esData:'jude-study-data-es.js',enPage:'jude-study.html',esPage:'es/judas-estudio.html',esRoute:'judas-estudio',canonical:'https://nolabelsdesignedbygod.org/es/judas-estudio.html',completion:'4 lecciones completas',i18nVersion:'1.19.0'},
   {label:'Revelation',expected:8,bookPrefix:'Apocalipsis ',enData:'revelation-study-data.js',enGuide:'revelation-study-guide.js',esData:'revelation-study-data-es.js',enPage:'revelation-study.html',esPage:'es/apocalipsis-estudio.html',esRoute:'apocalipsis-estudio',canonical:'https://nolabelsdesignedbygod.org/es/apocalipsis-estudio.html',completion:'8 lecciones completas',i18nVersion:'1.20.0'}
@@ -228,10 +228,31 @@ if(exists('first-john-study-data-es.js')){
 }
 
 if(exists('second-john-study-data-es.js')){
-  const s=loadBookSeries('second-john-study-data-es.js'),l3=s.lessons?.[2],guide=(s.postLessonMapGuideBlocks||[]).map(x=>x.text||'').join(' ');
-  if(!s.lessons?.every(x=>x.caution?.includes('basados en evidencia')&&x.caution?.includes('No avergüences')))errors.push('2 John must preserve evidence-based, non-shaming boundary guidance.');
-  if(!l3?.context?.includes('no prohíbe la bondad común')||!l3?.teaching?.[3]?.body?.includes('compasión de emergencia'))errors.push('2 John lesson 3 must preserve ordinary-kindness and emergency-compassion safeguards.');
-  for(const phrase of ['experiencias traumáticas','confidencialidad','temor a los de afuera'])if(!guide.includes(phrase))errors.push(`2 John leader safeguards must preserve ${phrase}.`);
+  const en=loadBookSeries('second-john-study-data.js','second-john-study-guide.js');
+  const s=loadBookSeries('second-john-study-data-es.js');
+  const bookNames={'2 Juan':'2 John','Juan':'John','1 Juan':'1 John','3 Juan':'3 John','Efesios':'Ephesians','Colosenses':'Colossians','1 Timoteo':'1 Timothy','Lucas':'Luke','Romanos':'Romans','1 Corintios':'1 Corinthians','Tito':'Titus'};
+  const normRef=r=>{for(const [a,b] of Object.entries(bookNames))if(String(r||'').startsWith(a+' '))return b+String(r).slice(a.length);return String(r||'');};
+  const normList=x=>String(x||'').split(';').map(v=>normRef(v.trim())).filter(Boolean);
+  if((s.seriesTeaching?.length??0)!==8)errors.push('2 John must retain eight series-level teaching movements.');
+  if((s.seriesQuestions?.length??0)!==8)errors.push('2 John must retain eight series-level discussion questions.');
+  if(String(s.seriesContext||'').split(/\n\n+/).filter(Boolean).length!==2)errors.push('2 John must retain two series-level Scripture Context paragraphs.');
+  if(JSON.stringify(normList(s.seriesMainScripture))!==JSON.stringify(normList(en.seriesMainScripture)))errors.push('2 John series Scripture references must match English after book-name normalization.');
+  for(const [i,lesson] of (s.lessons||[]).entries()){
+    const label=`2 John lesson ${i+1}`,eng=en.lessons?.[i];
+    if((lesson.supporting?.length??0)!==5)errors.push(`${label}: must retain five supporting Scriptures.`);
+    if((lesson.teaching?.length??0)!==8)errors.push(`${label}: must retain eight teaching movements.`);
+    if((lesson.questions?.length??0)!==8)errors.push(`${label}: must retain eight discussion questions.`);
+    if((lesson.contextParagraphs?.length??0)!==2)errors.push(`${label}: must retain two Scripture Context paragraphs.`);
+    if((lesson.jesusParagraphs?.length??0)!==1||(lesson.guardrailParagraphs?.length??0)!==1||!String(lesson.closingTakeaway||'').trim())errors.push(`${label}: must retain Jesus Connection, Do Not Miss This, and Closing Takeaway.`);
+    if(normRef(lesson.scripture)!==String(eng?.scripture||''))errors.push(`${label}: main Scripture reference must match English after book-name normalization.`);
+    if(JSON.stringify((lesson.supporting||[]).map(normRef))!==JSON.stringify(eng?.supporting||[]))errors.push(`${label}: supporting Scripture references must match English after book-name normalization.`);
+  }
+  const all=JSON.stringify(s).toLowerCase(),l1=s.lessons?.[0],l2=s.lessons?.[1],l3=s.lessons?.[2];
+  if(!s.seriesContext?.includes('el anciano')||!s.seriesContext?.includes('señora elegida')||!s.seriesContext?.includes('respaldar públicamente'))errors.push('2 John series context must preserve elder, elect-lady, and endorsement nuance.');
+  if(!l1?.guardrailParagraphs?.[0]?.includes('crueldad')||!l1?.guardrailParagraphs?.[0]?.includes('perfeccionismo'))errors.push('2 John lesson 1 must preserve truth/love and non-perfectionist safeguards.');
+  if(!l2?.guardrailParagraphs?.[0]?.includes('desacuerdo político')||!l2?.guardrailParagraphs?.[0]?.includes('anticristo')||!l2?.guardrailParagraphs?.[0]?.includes('afirmaciones reales'))errors.push('2 John lesson 2 must preserve careful antichrist and evidence-based discernment safeguards.');
+  if(!l3?.guardrailParagraphs?.[0]?.includes('ruptura familiar')||!l3?.guardrailParagraphs?.[0]?.includes('ayuda de emergencia')||!l3?.guardrailParagraphs?.[0]?.includes('respaldo automático'))errors.push('2 John lesson 3 must preserve anti-shunning, emergency-compassion, and endorsement safeguards.');
+  for(const phrase of ['adversarios políticos','denunciantes','doxxing','rumor','aislamiento punitivo'])if(!all.includes(phrase))errors.push(`2 John safeguards must preserve ${phrase}.`);
 }
 
 if(exists('third-john-study-data-es.js')){

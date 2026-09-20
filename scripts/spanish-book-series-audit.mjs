@@ -209,20 +209,39 @@ for(const file of jamesRequired)if(!exists(file))errors.push(`James: required bi
 if(jamesRequired.every(exists)){
   const en=loadJamesSeries('james-series-data.js');
   const es=loadJamesSeries('james-series-data-es.js');
+  const refMap=[
+    ['2 Corintios','2 Corinthians'],['1 Corintios','1 Corinthians'],['1 Tesalonicenses','1 Thessalonians'],['1 Pedro','1 Peter'],['2 Pedro','2 Peter'],['1 Juan','1 John'],['1 Reyes','1 Kings'],
+    ['Santiago','James'],['Génesis','Genesis'],['Josué','Joshua'],['Romanos','Romans'],['Efesios','Ephesians'],['Proverbios','Proverbs'],['Mateo','Matthew'],['Colosenses','Colossians'],['Gálatas','Galatians'],['Miqueas','Micah'],['Lucas','Luke'],['Juan','John'],['Levítico','Leviticus'],['Deuteronomio','Deuteronomy'],['Filipenses','Philippians'],['Hebreos','Hebrews'],['Marcos','Mark']
+  ];
+  const normRef=value=>{const s=String(value||'').trim();for(const [esName,enName] of refMap)if(s===esName||s.startsWith(esName+' '))return enName+s.slice(esName.length);return s;};
+  const refList=value=>String(value||'').split(';').map(x=>normRef(x)).filter(Boolean);
   if(en?.lessons?.length!==10||es?.lessons?.length!==10)errors.push('James must retain 10 English and 10 Spanish weeks.');
   if(es?.scriptureStandard!=='Nueva Traducción Viviente (NTV)')errors.push('James: Spanish study must declare Nueva Traducción Viviente (NTV).');
+  if(JSON.stringify(refList(es?.seriesMainScripture))!==JSON.stringify(refList(en?.seriesMainScripture)))errors.push('James: series Scripture references must retain normalized English/Spanish parity.');
+  if((en?.seriesContextParagraphs?.length??0)!==2||(es?.seriesContextParagraphs?.length??0)!==2)errors.push('James: series must retain two context paragraphs in both languages.');
+  if((en?.seriesTeaching?.length??0)!==8||(es?.seriesTeaching?.length??0)!==8)errors.push('James: series must retain eight teaching movements in both languages.');
+  if((en?.seriesQuestions?.length??0)!==8||(es?.seriesQuestions?.length??0)!==8)errors.push('James: series must retain eight discussion questions in both languages.');
+  for(const field of ['seriesQuestion','seriesOpening','seriesJesusConnection','seriesGuardrail','seriesExamination','seriesPractice','seriesLeaderGuidance','seriesClosingTakeaway','seriesPrayer'])if(!String(es?.[field]||'').trim())errors.push(`James: missing Spanish ${field}.`);
   for(let i=0;i<10;i++){
     const a=en.lessons?.[i],b=es.lessons?.[i],label=`James week ${i+1}`;
     if(a?.week!==b?.week)errors.push(`${label}: week number mismatch.`);
-    for(const field of ['title','scripture','goal','discussionLabel','prayerFocus'])if(!String(b?.[field]||'').trim())errors.push(`${label}: missing Spanish ${field}.`);
-    for(const field of ['teachingNotes','discussion','leaderTips'])if((b?.[field]?.length??0)!==(a?.[field]?.length??0))errors.push(`${label}: ${field} count mismatch.`);
-    if(!String(b?.scripture||'').startsWith('Santiago '))errors.push(`${label}: Scripture reference must use Santiago.`);
+    if(normRef(b?.scripture)!==String(a?.scripture||''))errors.push(`${label}: main Scripture reference mismatch.`);
+    if(JSON.stringify((b?.supporting||[]).map(normRef))!==JSON.stringify(a?.supporting||[]))errors.push(`${label}: supporting Scripture references mismatch.`);
+    if((a?.supporting?.length??0)!==5||(b?.supporting?.length??0)!==5)errors.push(`${label}: must retain five supporting Scriptures.`);
+    if((a?.contextParagraphs?.length??0)!==2||(b?.contextParagraphs?.length??0)!==2)errors.push(`${label}: must retain two context paragraphs.`);
+    if((a?.teaching?.length??0)!==8||(b?.teaching?.length??0)!==8)errors.push(`${label}: must retain eight teaching movements.`);
+    if((a?.discussion?.length??0)!==8||(b?.discussion?.length??0)!==8)errors.push(`${label}: must retain eight discussion questions.`);
+    for(const field of ['title','scripture','question','truth','goal','opening','jesusConnection','guardrail','examination','practice','leaderGuidance','closingTakeaway','prayer'])if(!String(b?.[field]||'').trim())errors.push(`${label}: missing Spanish ${field}.`);
   }
-  if(!es?.lessons?.[0]?.leaderTips?.some(x=>x.includes('sin minimizar el dolor')))errors.push('James week 1 must preserve the safeguard against minimizing pain.');
-  if(!es?.lessons?.[2]?.leaderTips?.some(x=>x.includes('libre de vergüenza')))errors.push('James week 3 must preserve shame-free leadership guidance.');
-  if(!es?.lessons?.[5]?.leaderTips?.some(x=>x.includes('gracia')&&x.includes('desempeño')))errors.push('James week 6 must preserve grace-over-performance guidance.');
-  expect('James Spanish page',read('es/santiago-estudio.html'),'../nldg-i18n.js?v=1.13.0');
-  expect('James English page',read('james-series.html'),'nldg-i18n.js?v=1.13.0');
+  const all=JSON.stringify(es).toLowerCase();
+  for(const phrase of ['salvación por obras','culpar a víctimas','abuso','atención médica','chisme','rendición de cuentas','robo de salario','no prometas','confesión'])if(!all.includes(phrase))errors.push(`James: missing safeguard/theme ${JSON.stringify(phrase)}.`);
+  for(const version of ['RVR60','NVI','NBLA'])rejectVersion('James Spanish data',JSON.stringify(es),version);
+  expect('James Spanish page',read('es/santiago-estudio.html'),'../james-series-data-es.js?v=1.1.0');
+  expect('James Spanish page',read('es/santiago-estudio.html'),'../james-series.js?v=1.3.0');
+  expect('James Spanish page',read('es/santiago-estudio.html'),'../nldg-i18n.js?v=1.79.0');
+  expect('James English page',read('james-series.html'),'james-series-data.js?v=1.1.0');
+  expect('James English page',read('james-series.html'),'james-series.js?v=1.3.0');
+  expect('James English page',read('james-series.html'),'nldg-i18n.js?v=1.79.0');
   expect('James route pair',i18n,`'james-series${html}':'es/santiago-estudio${html}'`);
 }
 

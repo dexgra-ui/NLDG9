@@ -28,7 +28,7 @@ const standardSeries=[
   {label:'Philippians',expected:6,bookPrefix:'Filipenses ',enData:'philippians-study-data.js',enGuide:'philippians-study-guide.js',esData:'philippians-study-data-es.js',enPage:'philippians-study.html',esPage:'es/filipenses-estudio.html',esRoute:'filipenses-estudio',canonical:'https://nolabelsdesignedbygod.org/es/filipenses-estudio.html',completion:'6 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'Hebrews',expected:8,bookPrefix:'Hebreos ',enData:'hebrews-study-data.js',enGuide:'hebrews-study-guide.js',esData:'hebrews-study-data-es.js',enPage:'hebrews-study.html',esPage:'es/hebreos-estudio.html',esRoute:'hebreos-estudio',canonical:'https://nolabelsdesignedbygod.org/es/hebreos-estudio.html',completion:'8 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'1 Peter',expected:8,bookPrefix:'1 Pedro ',enData:'first-peter-study-data.js',enGuide:'first-peter-study-guide.js',esData:'first-peter-study-data-es.js',enPage:'first-peter-study.html',esPage:'es/primera-pedro-estudio.html',esRoute:'primera-pedro-estudio',canonical:'https://nolabelsdesignedbygod.org/es/primera-pedro-estudio.html',completion:'8 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
-  {label:'2 Peter',expected:5,bookPrefix:'2 Pedro ',enData:'second-peter-study-data.js',enGuide:'second-peter-study-guide.js',esData:'second-peter-study-data-es.js',enPage:'second-peter-study.html',esPage:'es/segunda-pedro-estudio.html',esRoute:'segunda-pedro-estudio',canonical:'https://nolabelsdesignedbygod.org/es/segunda-pedro-estudio.html',completion:'5 lecciones completas',i18nVersion:'1.15.0'},
+  {label:'2 Peter',expected:5,bookPrefix:'2 Pedro ',enData:'second-peter-study-data.js',enGuide:'second-peter-study-guide.js',esData:'second-peter-study-data-es.js',enPage:'second-peter-study.html',esPage:'es/segunda-pedro-estudio.html',esRoute:'segunda-pedro-estudio',canonical:'https://nolabelsdesignedbygod.org/es/segunda-pedro-estudio.html',completion:'5 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'1 John',expected:7,bookPrefix:'1 Juan ',enData:'first-john-study-data.js',enGuide:'first-john-study-guide.js',esData:'first-john-study-data-es.js',enPage:'first-john-study.html',esPage:'es/primera-juan-estudio.html',esRoute:'primera-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/primera-juan-estudio.html',completion:'7 lecciones completas',i18nVersion:'1.16.0'},
   {label:'2 John',expected:3,bookPrefix:'2 Juan ',enData:'second-john-study-data.js',enGuide:'second-john-study-guide.js',esData:'second-john-study-data-es.js',enPage:'second-john-study.html',esPage:'es/segunda-juan-estudio.html',esRoute:'segunda-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/segunda-juan-estudio.html',completion:'3 lecciones completas',i18nVersion:'1.17.0'},
   {label:'3 John',expected:3,bookPrefix:'3 Juan ',enData:'third-john-study-data.js',enGuide:'third-john-study-guide.js',esData:'third-john-study-data-es.js',enPage:'third-john-study.html',esPage:'es/tercera-juan-estudio.html',esRoute:'tercera-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/tercera-juan-estudio.html',completion:'3 lecciones completas',i18nVersion:'1.18.0'},
@@ -168,10 +168,33 @@ if(exists('first-peter-study-data-es.js')){
 }
 
 if(exists('second-peter-study-data-es.js')){
-  const s=loadBookSeries('second-peter-study-data-es.js'),l3=s.lessons?.[2],l4=s.lessons?.[3],l5=s.lessons?.[4];
-  if(!l3?.context?.includes('rumores')||!l3?.caution?.includes('Exige evidencia'))errors.push('2 Peter lesson 3 must distinguish vigilance from rumor and require evidence.');
-  if(!l4?.caution?.includes('calendarios especulativos')||!l4?.caution?.includes('pánico'))errors.push('2 Peter lesson 4 must reject speculative date-setting and panic.');
-  if(!l5?.caution?.includes('preguntas honestas')||!l5?.caution?.includes('control'))errors.push('2 Peter lesson 5 must distinguish honest questions from deliberate distortion and control.');
+  const en=loadBookSeries('second-peter-study-data.js','second-peter-study-guide.js');
+  const s=loadBookSeries('second-peter-study-data-es.js');
+  const bookNames={'2 Pedro':'2 Peter','Juan':'John','Gálatas':'Galatians','Efesios':'Ephesians','Filipenses':'Philippians','Colosenses':'Colossians','Salmo':'Psalm','Mateo':'Matthew','Lucas':'Luke','2 Timoteo':'2 Timothy','1 Corintios':'1 Corinthians','Deuteronomio':'Deuteronomy','Hechos':'Acts','1 Timoteo':'1 Timothy','Judas':'Jude','Isaías':'Isaiah','Apocalipsis':'Revelation'};
+  const normRef=r=>{for(const [a,b] of Object.entries(bookNames))if(String(r||'').startsWith(a+' '))return b+String(r).slice(a.length);return String(r||'');};
+  const normList=x=>String(x||'').split(';').map(v=>normRef(v.trim())).filter(Boolean);
+  if((s.seriesTeaching?.length??0)!==8)errors.push('2 Peter must retain eight series-level teaching movements.');
+  if((s.seriesQuestions?.length??0)!==8)errors.push('2 Peter must retain eight series-level discussion questions.');
+  if(String(s.seriesContext||'').split(/\n\n+/).filter(Boolean).length!==2)errors.push('2 Peter must retain two series-level Scripture Context paragraphs.');
+  if(JSON.stringify(normList(s.seriesMainScripture))!==JSON.stringify(normList(en.seriesMainScripture)))errors.push('2 Peter series Scripture references must match English after book-name normalization.');
+  for(const [i,lesson] of (s.lessons||[]).entries()){
+    const label=`2 Peter lesson ${i+1}`,eng=en.lessons?.[i];
+    if((lesson.supporting?.length??0)!==5)errors.push(`${label}: must retain five supporting Scriptures.`);
+    if((lesson.teaching?.length??0)!==8)errors.push(`${label}: must retain eight teaching movements.`);
+    if((lesson.questions?.length??0)!==8)errors.push(`${label}: must retain eight discussion questions.`);
+    if((lesson.contextParagraphs?.length??0)!==2)errors.push(`${label}: must retain two Scripture Context paragraphs.`);
+    if((lesson.jesusParagraphs?.length??0)!==1||(lesson.guardrailParagraphs?.length??0)!==1||!String(lesson.closingTakeaway||'').trim())errors.push(`${label}: must retain Jesus Connection, Do Not Miss This, and Closing Takeaway.`);
+    if(normRef(lesson.scripture)!==String(eng?.scripture||''))errors.push(`${label}: main Scripture reference must match English after book-name normalization.`);
+    if(JSON.stringify((lesson.supporting||[]).map(normRef))!==JSON.stringify(eng?.supporting||[]))errors.push(`${label}: supporting Scripture references must match English after book-name normalization.`);
+  }
+  const all=JSON.stringify(s).toLowerCase(),l1=s.lessons?.[0],l2=s.lessons?.[1],l3=s.lessons?.[2],l4=s.lessons?.[3],l5=s.lessons?.[4];
+  if(!s.seriesContext?.includes('autoría petrina directa')||!s.seriesContext?.includes('relación con Judas'))errors.push('2 Peter series context must preserve authorship and Jude-relationship nuance.');
+  if(!l1?.guardrailParagraphs?.[0]?.includes('se convierten en dioses')||!l1?.guardrailParagraphs?.[0]?.includes('perfección'))errors.push('2 Peter lesson 1 must preserve divine-nature and perfectionism safeguards.');
+  if(!l2?.guardrailParagraphs?.[0]?.includes('estudio personal')||!l2?.guardrailParagraphs?.[0]?.includes('infalible'))errors.push('2 Peter lesson 2 must preserve private-interpretation and interpretive-humility safeguards.');
+  if(!l3?.guardrailParagraphs?.[0]?.includes('Exige evidencia')||!l3?.guardrailParagraphs?.[0]?.includes('deshumanizar')||!all.includes('rumor'))errors.push('2 Peter lesson 3 must preserve evidence-based, anti-rumor, and anti-dehumanization safeguards.');
+  if(!l4?.guardrailParagraphs?.[0]?.includes('calendarios especulativos')||!l4?.guardrailParagraphs?.[0]?.includes('pánico')||!l4?.guardrailParagraphs?.[0]?.includes('mil años'))errors.push('2 Peter lesson 4 must reject date-setting, panic, and the thousand-year formula.');
+  if(!l5?.guardrailParagraphs?.[0]?.includes('preguntas honestas')||!l5?.guardrailParagraphs?.[0]?.includes('27 libros')||!l5?.guardrailParagraphs?.[0]?.includes('control exclusivo'))errors.push('2 Peter lesson 5 must preserve honest-question, canon, and interpretive-control safeguards.');
+  for(const phrase of ['cultura de acusación','evidencia pública','rumores','reportes apropiados','personas vulnerables'])if(!s.seriesLeaderGuidance?.includes(phrase))errors.push(`2 Peter leader safeguards must preserve ${phrase}.`);
 }
 
 if(exists('first-john-study-data-es.js')){

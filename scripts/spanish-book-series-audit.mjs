@@ -32,7 +32,7 @@ const standardSeries=[
   {label:'1 John',expected:7,bookPrefix:'1 Juan ',enData:'first-john-study-data.js',enGuide:'first-john-study-guide.js',esData:'first-john-study-data-es.js',enPage:'first-john-study.html',esPage:'es/primera-juan-estudio.html',esRoute:'primera-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/primera-juan-estudio.html',completion:'7 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'2 John',expected:3,bookPrefix:'2 Juan ',enData:'second-john-study-data.js',enGuide:'second-john-study-guide.js',esData:'second-john-study-data-es.js',enPage:'second-john-study.html',esPage:'es/segunda-juan-estudio.html',esRoute:'segunda-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/segunda-juan-estudio.html',completion:'3 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'3 John',expected:3,bookPrefix:'3 Juan ',enData:'third-john-study-data.js',enGuide:'third-john-study-guide.js',esData:'third-john-study-data-es.js',enPage:'third-john-study.html',esPage:'es/tercera-juan-estudio.html',esRoute:'tercera-juan-estudio',canonical:'https://nolabelsdesignedbygod.org/es/tercera-juan-estudio.html',completion:'3 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
-  {label:'Jude',expected:4,bookPrefix:'Judas ',enData:'jude-study-data.js',enGuide:'jude-study-guide.js',esData:'jude-study-data-es.js',enPage:'jude-study.html',esPage:'es/judas-estudio.html',esRoute:'judas-estudio',canonical:'https://nolabelsdesignedbygod.org/es/judas-estudio.html',completion:'4 lecciones completas',i18nVersion:'1.19.0'},
+  {label:'Jude',expected:4,bookPrefix:'Judas ',enData:'jude-study-data.js',enGuide:'jude-study-guide.js',esData:'jude-study-data-es.js',enPage:'jude-study.html',esPage:'es/judas-estudio.html',esRoute:'judas-estudio',canonical:'https://nolabelsdesignedbygod.org/es/judas-estudio.html',completion:'4 lecciones completas',i18nVersion:'1.79.0',dataVersion:'1.1.0',rendererVersion:'0.2.0',adapterVersion:'1.2.0'},
   {label:'Revelation',expected:8,bookPrefix:'Apocalipsis ',enData:'revelation-study-data.js',enGuide:'revelation-study-guide.js',esData:'revelation-study-data-es.js',enPage:'revelation-study.html',esPage:'es/apocalipsis-estudio.html',esRoute:'apocalipsis-estudio',canonical:'https://nolabelsdesignedbygod.org/es/apocalipsis-estudio.html',completion:'8 lecciones completas',i18nVersion:'1.20.0'}
 ];
 
@@ -286,15 +286,34 @@ if(exists('third-john-study-data-es.js')){
 }
 
 if(exists('jude-study-data-es.js')){
-  const s=loadBookSeries('jude-study-data-es.js'),l1=s.lessons?.[0],l2=s.lessons?.[1],l3=s.lessons?.[2],l4=s.lessons?.[3],guide=(s.postLessonMapGuideBlocks||[]).map(x=>x.text||'').join(' ');
-  if(!l1?.context?.includes('desacuerdo menor')||!l1?.teaching?.[3]?.body?.includes('preferencias personales'))errors.push('Jude lesson 1 must distinguish core gospel threats from secondary or personal disagreements.');
-  if(!l2?.context?.includes('se discuten entre intérpretes')||!l2?.context?.includes('no requieren especulación'))errors.push('Jude lesson 2 must preserve interpretive humility around debated Jewish traditions.');
-  if(!l2?.teaching?.[2]?.body?.includes('no autoriza rumores')||!l2?.teaching?.[2]?.body?.includes('no podemos demostrar'))errors.push('Jude lesson 2 must reject rumor-driven or overconfident spiritual-warfare claims.');
-  if(!l3?.teaching?.[2]?.body?.includes('no invita a fijar fechas')||!l3?.teaching?.[2]?.body?.includes('titulares'))errors.push('Jude lesson 3 must reject date-setting and headline speculation.');
-  if(!l4?.teaching?.[4]?.body?.includes('misericordia')||!l4?.teaching?.[4]?.body?.includes('sospecha automática'))errors.push('Jude lesson 4 must preserve compassionate care for doubters.');
-  if(!l4?.teaching?.[5]?.body?.includes('Dios')||!l4?.teaching?.[5]?.body?.includes('control'))errors.push('Jude lesson 4 must ground final security in God rather than human control.');
-  for(const phrase of ['No llames falsa enseñanza a cada desacuerdo','evidencia','rumores','control centrado en el líder','experiencias traumáticas','confidencialidad','ayuda pastoral o profesional'])if(!guide.includes(phrase))errors.push(`Jude leader safeguards must preserve ${phrase}.`);
-  if(!s.lessons?.every(x=>x.caution?.includes('superioridad nacional')&&x.caution?.includes('rumores')))errors.push('Jude must reject national superiority and rumor in severe-warning applications.');
+  const en=loadBookSeries('jude-study-data.js','jude-study-guide.js');
+  const s=loadBookSeries('jude-study-data-es.js');
+  const bookNames={'Judas':'Jude','Génesis':'Genesis','Números':'Numbers','2 Pedro':'2 Peter','1 Enoc':'1 Enoch','Hechos':'Acts','Gálatas':'Galatians','2 Timoteo':'2 Timothy','Tito':'Titus','1 Juan':'1 John','Mateo':'Matthew','1 Timoteo':'1 Timothy','1 Tesalonicenses':'1 Thessalonians','Santiago':'James','Juan':'John','Romanos':'Romans','Efesios':'Ephesians'};
+  const normRef=r=>{for(const [a,b] of Object.entries(bookNames))if(String(r||'').startsWith(a+' '))return b+String(r).slice(a.length);return String(r||'');};
+  const normList=x=>String(x||'').split(';').map(v=>normRef(v.trim())).filter(Boolean);
+  if((s.seriesTeaching?.length??0)!==8)errors.push('Jude must retain eight series-level teaching movements.');
+  if((s.seriesQuestions?.length??0)!==8)errors.push('Jude must retain eight series-level discussion questions.');
+  if(String(s.seriesContext||'').split(/\n\n+/).filter(Boolean).length!==2)errors.push('Jude must retain two series-level Scripture Context paragraphs.');
+  if(JSON.stringify(normList(s.seriesMainScripture))!==JSON.stringify(normList(en.seriesMainScripture)))errors.push('Jude series Scripture references must match English after book-name normalization.');
+  for(const [i,lesson] of (s.lessons||[]).entries()){
+    const label=`Jude lesson ${i+1}`,eng=en.lessons?.[i];
+    if((lesson.supporting?.length??0)!==5)errors.push(`${label}: must retain five supporting Scriptures.`);
+    if((lesson.teaching?.length??0)!==8)errors.push(`${label}: must retain eight teaching movements.`);
+    if((lesson.questions?.length??0)!==8)errors.push(`${label}: must retain eight discussion questions.`);
+    if((lesson.contextParagraphs?.length??0)!==2)errors.push(`${label}: must retain two Scripture Context paragraphs.`);
+    if((lesson.jesusParagraphs?.length??0)!==1||(lesson.guardrailParagraphs?.length??0)!==1||!String(lesson.closingTakeaway||'').trim())errors.push(`${label}: must retain Jesus Connection, Do Not Miss This, and Closing Takeaway.`);
+    if(normRef(lesson.scripture)!==String(eng?.scripture||''))errors.push(`${label}: main Scripture reference must match English after book-name normalization.`);
+    if(JSON.stringify((lesson.supporting||[]).map(normRef))!==JSON.stringify(eng?.supporting||[]))errors.push(`${label}: supporting Scripture references must match English after book-name normalization.`);
+  }
+  const l1=s.lessons?.[0],l2=s.lessons?.[1],l3=s.lessons?.[2],l4=s.lessons?.[3],all=JSON.stringify(s).toLowerCase();
+  if(!s.seriesContext?.includes('1 Enoc 1:9')||!s.seriesContext?.includes('Asunción/Testamento de Moisés'))errors.push('Jude series context must preserve 1 Enoch and Moses-tradition background.');
+  if(!s.seriesContext?.includes('no decide el estatus canónico'))errors.push('Jude series context must explicitly avoid automatic canon conclusions from citations.');
+  if(!l1?.guardrailParagraphs?.[0]?.includes('denunciar abuso')||!l1?.guardrailParagraphs?.[0]?.includes('evidencia'))errors.push('Jude lesson 1 must preserve evidence-based discernment and protect abuse reporting.');
+  if(!l2?.guardrailParagraphs?.[0]?.includes('1 Enoc')||!l2?.guardrailParagraphs?.[0]?.includes('anti-gay')||!l2?.guardrailParagraphs?.[0]?.includes('violencia sexual'))errors.push('Jude lesson 2 must preserve Enoch, Sodom, and anti-weaponization safeguards.');
+  if(!l2?.context?.includes('no canoniza automáticamente'))errors.push('Jude lesson 2 must preserve the noncanonical-source safeguard.');
+  if(!l3?.guardrailParagraphs?.[0]?.includes('predecir fechas')||!l3?.guardrailParagraphs?.[0]?.includes('preguntas académicas'))errors.push('Jude lesson 3 must reject date-setting and protect sincere questions.');
+  if(!l4?.guardrailParagraphs?.[0]?.includes('coerción')||!l4?.guardrailParagraphs?.[0]?.includes('dudan'))errors.push('Jude lesson 4 must preserve non-coercive rescue and mercy toward doubters.');
+  for(const phrase of ['evidencia','abuso','explotación','mala conducta sexual','delitos','protege a personas vulnerables','denuncia'])if(!all.includes(phrase))errors.push(`Jude safeguards must preserve ${phrase}.`);
 }
 
 if(exists('revelation-study-data-es.js')){

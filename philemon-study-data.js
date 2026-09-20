@@ -85,14 +85,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why does Paul name Apphia, Archippus, and the church rather than address only Philemon?",
-        "2. What do verses 4–5 reveal about the love and faith Paul has already seen in Philemon?",
-        "3. What might it mean for the sharing or partnership of faith to become effective in verse 6?",
-        "4. How does deeper recognition of the good we have in Christ change the way we see other people?",
-        "5. What does verse 7 suggest about “refreshing hearts” as a measure of Christian influence?",
-        "6. Why can honest encouragement make a difficult conversation more truthful rather than less serious?",
-        "7. How can community involvement increase accountability without becoming social pressure or coercion?",
-        "8. Who in your community may need refreshment, dignity, or encouragement before any advice or correction is offered?"
+        "Why does Paul name Apphia, Archippus, and the church rather than address only Philemon?",
+        "What do verses 4–5 reveal about the love and faith Paul has already seen in Philemon?",
+        "What might it mean for the sharing or partnership of faith to become effective in verse 6?",
+        "How does deeper recognition of the good we have in Christ change the way we see other people?",
+        "What does verse 7 suggest about “refreshing hearts” as a measure of Christian influence?",
+        "Why can honest encouragement make a difficult conversation more truthful rather than less serious?",
+        "How can community involvement increase accountability without becoming social pressure or coercion?",
+        "Who in your community may need refreshment, dignity, or encouragement before any advice or correction is offered?"
       ],
       "examination": "Do people experience my faith mainly as opinions and expectations, or as love, encouragement, hospitality, and refreshment? When I need to address something difficult, am I able to recognize real good without using praise as leverage?",
       "challenge": "Refresh one person in a concrete way this week through encouragement, practical help, hospitality, advocacy, or careful listening. Make the action about that person’s good rather than about gaining influence over a later decision.",
@@ -190,14 +190,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. Why does Paul explicitly say he could command Philemon before choosing to appeal?",
-        "2. What forms of influence can make an “appeal” feel compulsory even without a direct command?",
-        "3. What changes when Paul calls Onesimus his child before discussing usefulness?",
-        "4. How can churches resist measuring people by productivity, usefulness, or economic value?",
-        "5. What does “my very heart” communicate about how Paul wants Philemon to see Onesimus?",
-        "6. What does verse 14 teach about voluntary goodness, and what consent questions remain because of Onesimus’s unequal power?",
-        "7. Why is Paul’s “perhaps” a healthier model than claiming certainty about God’s hidden reasons for painful events?",
-        "8. How does “no longer as a slave, but more than a slave, a beloved brother” challenge Christian relationships even if the letter does not record legal manumission?"
+        "Why does Paul explicitly say he could command Philemon before choosing to appeal?",
+        "What forms of influence can make an “appeal” feel compulsory even without a direct command?",
+        "What changes when Paul calls Onesimus his child before discussing usefulness?",
+        "How can churches resist measuring people by productivity, usefulness, or economic value?",
+        "What does “my very heart” communicate about how Paul wants Philemon to see Onesimus?",
+        "What does verse 14 teach about voluntary goodness, and what consent questions remain because of Onesimus’s unequal power?",
+        "Why is Paul’s “perhaps” a healthier model than claiming certainty about God’s hidden reasons for painful events?",
+        "How does “no longer as a slave, but more than a slave, a beloved brother” challenge Christian relationships even if the letter does not record legal manumission?"
       ],
       "examination": "Where might I be using authority, gratitude, status, employment, ministry influence, or financial power in ways that make another person’s “yes” less free? Do I value people for who they are in Christ or mainly for what they can do for me?",
       "challenge": "Choose one relationship with unequal power and examine it honestly. Ask whether expectations are clear, consent is meaningful, dignity is protected, and the person can disagree without retaliation. Make one concrete change that reduces unnecessary coercion.",
@@ -295,14 +295,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What does Paul mean by asking Philemon to receive Onesimus as he would receive Paul?",
-        "2. Why is the word “if” in verse 18 important when reconstructing Onesimus’s history?",
-        "3. What does Paul’s willingness to repay teach about the cost of serious mediation?",
-        "4. How can written commitments, restitution, or clear responsibility strengthen repair?",
-        "5. When can reminders of spiritual gratitude become manipulative rather than loving?",
-        "6. Why should “obedience” in verse 21 not be turned into unquestioning compliance with religious leaders?",
-        "7. What might “even more than I say” mean, and why should interpreters avoid claiming certainty?",
-        "8. How can a church support reconciliation and accountability while protecting vulnerable people from group pressure or unsafe restoration?"
+        "What does Paul mean by asking Philemon to receive Onesimus as he would receive Paul?",
+        "Why is the word “if” in verse 18 important when reconstructing Onesimus’s history?",
+        "What does Paul’s willingness to repay teach about the cost of serious mediation?",
+        "How can written commitments, restitution, or clear responsibility strengthen repair?",
+        "When can reminders of spiritual gratitude become manipulative rather than loving?",
+        "Why should “obedience” in verse 21 not be turned into unquestioning compliance with religious leaders?",
+        "What might “even more than I say” mean, and why should interpreters avoid claiming certainty?",
+        "How can a church support reconciliation and accountability while protecting vulnerable people from group pressure or unsafe restoration?"
       ],
       "examination": "When I want reconciliation, am I willing to bear appropriate cost, tell the truth about what is known, accept accountability, and respect the other person’s boundaries? Have I ever used gratitude, spiritual authority, community pressure, or forgiveness language to get access I had not earned?",
       "challenge": "Identify one unresolved obligation or damaged relationship. Choose the safest faithful step available: clarify facts, repay a debt, document a commitment, apologize without demanding response, seek a neutral mediator, strengthen a boundary, or obtain appropriate professional or legal help. Do not force contact where safety is uncertain.",

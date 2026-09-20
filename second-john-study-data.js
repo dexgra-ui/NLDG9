@@ -85,14 +85,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What does loving “in truth” mean in verses 1–2?",
-        "2. How does abiding truth differ from temporary information or trends?",
-        "3. Why are grace, mercy, peace, truth, and love placed together in verse 3?",
-        "4. What does “walking in truth” add to correct belief?",
-        "5. Why does the elder call the command to love something known from the beginning?",
-        "6. How does obedience protect love from becoming whatever we prefer?",
-        "7. What happens when truth is separated from love, or love from truth?",
-        "8. What would truth-and-love obedience look like in one difficult relationship this week?"
+        "What does loving “in truth” mean in verses 1–2?",
+        "How does abiding truth differ from temporary information or trends?",
+        "Why are grace, mercy, peace, truth, and love placed together in verse 3?",
+        "What does “walking in truth” add to correct belief?",
+        "Why does the elder call the command to love something known from the beginning?",
+        "How does obedience protect love from becoming whatever we prefer?",
+        "What happens when truth is separated from love, or love from truth?",
+        "What would truth-and-love obedience look like in one difficult relationship this week?"
       ],
       "examination": "Where am I tempted toward harsh correctness, conflict avoidance, people-pleasing, or moral vagueness? What would walking in truth and love require from me?",
       "challenge": "Choose one relationship where truth and love need to be held together. Speak one truthful thing with humility and perform one concrete act of love without manipulation.",
@@ -190,14 +190,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What exact teaching does verse 7 identify as deceptive?",
-        "2. Why is the incarnation central rather than optional?",
-        "3. What is the difference between active deception and honest error?",
-        "4. How does the letter itself define “antichrist” in this passage?",
-        "5. Why does the elder tell the community to watch itself?",
-        "6. What might believers “lose” when destructive teaching reshapes a community?",
-        "7. Why can spiritual novelty become regression rather than progress?",
-        "8. What evidence should be required before a teacher receives a serious public warning?"
+        "What exact teaching does verse 7 identify as deceptive?",
+        "Why is the incarnation central rather than optional?",
+        "What is the difference between active deception and honest error?",
+        "How does the letter itself define “antichrist” in this passage?",
+        "Why does the elder tell the community to watch itself?",
+        "What might believers “lose” when destructive teaching reshapes a community?",
+        "Why can spiritual novelty become regression rather than progress?",
+        "What evidence should be required before a teacher receives a serious public warning?"
       ],
       "examination": "Am I more attracted to novelty, certainty, charisma, or secret insight than to remaining in Christ? Have I ever used severe labels faster than the evidence justified?",
       "challenge": "Take one strong spiritual claim you recently heard and verify it from the speaker’s own words, the passage in context, and at least one trustworthy source before repeating either praise or criticism.",
@@ -295,14 +295,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. What did household hospitality provide to traveling teachers in the first-century setting?",
-        "2. What modern forms of support can function like public endorsement?",
-        "3. Why must verses 10–11 be read after verses 7–9?",
-        "4. How can a greeting or public gesture communicate partnership in some settings?",
-        "5. What factors should determine the strength of a boundary?",
-        "6. How is ordinary compassion different from materially advancing a harmful ministry?",
-        "7. How can churches protect people while leaving room for questions and repentance?",
-        "8. When might face-to-face conversation be better than continued digital exchange?"
+        "What did household hospitality provide to traveling teachers in the first-century setting?",
+        "What modern forms of support can function like public endorsement?",
+        "Why must verses 10–11 be read after verses 7–9?",
+        "How can a greeting or public gesture communicate partnership in some settings?",
+        "What factors should determine the strength of a boundary?",
+        "How is ordinary compassion different from materially advancing a harmful ministry?",
+        "How can churches protect people while leaving room for questions and repentance?",
+        "When might face-to-face conversation be better than continued digital exchange?"
       ],
       "examination": "Am I too quick to give credibility because someone is likable, popular, or spiritually confident? Or am I too quick to withdraw kindness because I fear being associated with someone?",
       "challenge": "Review one ministry, teacher, or partnership you support. Ask whether your support communicates endorsement and whether the evidence justifies that endorsement. Strengthen, pause, or clarify the relationship as appropriate.",

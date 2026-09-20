@@ -347,7 +347,7 @@ if(exists('revelation-study-data-es.js')){
   if(!l6?.guardrailParagraphs?.[0]?.includes('Armagedón')||!l6?.guardrailParagraphs?.[0]?.includes('trabajadoras sexuales'))errors.push('Revelation lesson 6 must preserve Armageddon and anti-misogyny safeguards.');
   if(!l7?.context?.includes('premileniales')||!l7?.context?.includes('amileniales')||!l7?.context?.includes('postmileniales')||!l7?.guardrailParagraphs?.[0]?.includes('violencia política'))errors.push('Revelation lesson 7 must preserve millennial humility and nonviolence.');
   if(!l8?.guardrailParagraphs?.[0]?.includes('crítica textual')||!l8?.guardrailParagraphs?.[0]?.includes('fijes fechas'))errors.push('Revelation lesson 8 must preserve textual-study and no-date-setting safeguards.');
-  for(const phrase of ['pánico tecnológico','nueva creación','Cordero','adoración','testimonio'])if(!all.includes(phrase))errors.push(`Revelation must preserve core theme ${phrase}.`);
+  for(const phrase of ['pánico tecnológico','nueva creación','cordero','adoración','testimonio'])if(!all.includes(phrase))errors.push(`Revelation must preserve core theme ${phrase}.`);
 }
 
 const jamesRequired=['james-series.html','james-series-data.js','james-series-data-es.js','james-series.js','es/santiago-estudio.html'];

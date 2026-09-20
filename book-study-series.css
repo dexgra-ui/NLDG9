@@ -42,6 +42,6 @@
  .print-teaching-number{display:grid;place-items:center;width:20pt;height:20pt;margin:0;border:1px solid #555;border-radius:50%;font-weight:700}
  .print-teaching-movement p{margin:0 0 4pt}
  .print-scripture-section,.print-discussion-section,.print-notes-section{break-inside:auto;page-break-inside:auto}
- .print-participant .print-section:not(.print-discussion-section):not(.print-notes-section),.print-leader .print-section{break-inside:avoid-page;page-break-inside:avoid}
+ .print-participant .print-section:not(.print-discussion-section):not(.print-notes-section),.print-leader .print-section:not(.print-teaching-section):not(.print-discussion-section){break-inside:avoid-page;page-break-inside:avoid}
  .print-notes-section{margin-top:20pt}
 }

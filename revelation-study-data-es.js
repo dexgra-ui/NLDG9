@@ -86,14 +86,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué revela Apocalipsis 1 acerca de Jesús antes de toda advertencia?",
-        "2. ¿Por qué responde Jesús al temor de Juan con su muerte y resurrección?",
-        "3. ¿Qué enseña Éfeso sobre la relación entre verdad y amor?",
-        "4. ¿Cómo puede el llamado de Esmirna consolar sin glorificar daño prevenible?",
-        "5. ¿Por qué es irresponsable usar «sinagoga de Satanás» de manera antisemita?",
-        "6. ¿Qué compromisos pueden esconderse detrás del valor público como en Pérgamo?",
-        "7. ¿Cómo confrontar enseñanza destructiva sin convertir «Jezabel» en insulto sexista?",
-        "8. ¿Cuál de estos mensajes desafía más directamente la vida de tu congregación?"
+        "¿Qué revela Apocalipsis 1 acerca de Jesús antes de toda advertencia?",
+        "¿Por qué responde Jesús al temor de Juan con su muerte y resurrección?",
+        "¿Qué enseña Éfeso sobre la relación entre verdad y amor?",
+        "¿Cómo puede el llamado de Esmirna consolar sin glorificar daño prevenible?",
+        "¿Por qué es irresponsable usar «sinagoga de Satanás» de manera antisemita?",
+        "¿Qué compromisos pueden esconderse detrás del valor público como en Pérgamo?",
+        "¿Cómo confrontar enseñanza destructiva sin convertir «Jezabel» en insulto sexista?",
+        "¿Cuál de estos mensajes desafía más directamente la vida de tu congregación?"
       ],
       "examination": "¿Estoy más dispuesto a identificar el error de otros que a escuchar lo que el Espíritu quiere corregir en mí? ¿Dónde se han separado verdad, amor, valor, santidad o perseverancia?",
       "challenge": "Lee un mensaje a las iglesias cada día de Apocalipsis 2–3. Antes de aplicarlo a otro, escribe: «Jesús quizá nos/me está pidiendo…» y elige una respuesta concreta.",
@@ -191,14 +191,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué puede diferir la reputación de una iglesia de la evaluación de Cristo?",
-        "2. ¿Qué enseña Filadelfia a comunidades con poco poder?",
-        "3. ¿Por qué debe permanecer 3:9 dentro de su conflicto del primer siglo?",
-        "4. ¿Qué formas de autosuficiencia pueden volver ciega a una iglesia?",
-        "5. ¿Cómo cambia el amor el sentido de la reprensión de Cristo?",
-        "6. ¿Por qué muestra Apocalipsis el trono antes del caos posterior?",
-        "7. ¿Qué desafía la adoración al Creador acerca de propiedad y explotación?",
-        "8. ¿Qué significa hoy «poner coronas» delante de Dios?"
+        "¿Por qué puede diferir la reputación de una iglesia de la evaluación de Cristo?",
+        "¿Qué enseña Filadelfia a comunidades con poco poder?",
+        "¿Por qué debe permanecer 3:9 dentro de su conflicto del primer siglo?",
+        "¿Qué formas de autosuficiencia pueden volver ciega a una iglesia?",
+        "¿Cómo cambia el amor el sentido de la reprensión de Cristo?",
+        "¿Por qué muestra Apocalipsis el trono antes del caos posterior?",
+        "¿Qué desafía la adoración al Creador acerca de propiedad y explotación?",
+        "¿Qué significa hoy «poner coronas» delante de Dios?"
       ],
       "examination": "¿Dónde dependo de reputación, recursos, experiencia o influencia en vez de dependencia viva de Cristo? ¿Qué corona o seguridad necesito entregar?",
       "challenge": "Elige un área donde éxito o reputación sustituyen vida espiritual. Practica un acto escondido de arrepentimiento, dependencia, servicio o adoración.",
@@ -296,14 +296,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué importa que Juan oiga «León» pero vea un Cordero inmolado?",
-        "2. ¿Cómo desafía el cántico la superioridad racial o nacional?",
-        "3. ¿Qué revelan los cuatro jinetes sobre sistemas humanos de destrucción?",
-        "4. ¿Por qué «¿hasta cuándo?» es oración fiel?",
-        "5. ¿Qué formas de falsa seguridad colapsan en el sexto sello?",
-        "6. ¿Por qué deben enseñarse los 144.000 con humildad?",
-        "7. ¿Cómo amplía la gran multitud la visión del pueblo de Dios?",
-        "8. ¿Qué significa que el Cordero sea también Pastor?"
+        "¿Por qué importa que Juan oiga «León» pero vea un Cordero inmolado?",
+        "¿Cómo desafía el cántico la superioridad racial o nacional?",
+        "¿Qué revelan los cuatro jinetes sobre sistemas humanos de destrucción?",
+        "¿Por qué «¿hasta cuándo?» es oración fiel?",
+        "¿Qué formas de falsa seguridad colapsan en el sexto sello?",
+        "¿Por qué deben enseñarse los 144.000 con humildad?",
+        "¿Cómo amplía la gran multitud la visión del pueblo de Dios?",
+        "¿Qué significa que el Cordero sea también Pastor?"
       ],
       "examination": "¿Imagino la victoria más como imperio o como Cordero? ¿Dónde busco venganza, superioridad, falsa seguridad o certeza sensacionalista?",
       "challenge": "Ora un «¿hasta cuándo?» honesto por una injusticia real y luego da un paso no retaliatorio hacia verdad, misericordia, protección o reparación.",
@@ -401,14 +401,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué aparecen las oraciones antes de los juicios de trompeta?",
-        "2. ¿Qué sugiere la repetición de «un tercio»?",
-        "3. ¿Por qué suelen ser débiles las identificaciones con tecnología moderna?",
-        "4. ¿Qué enseña Apocalipsis 9 sobre los límites del miedo como herramienta de arrepentimiento?",
-        "5. ¿Por qué es dulce y amarga la palabra para un testigo?",
-        "6. ¿Qué comunica medir sin prometer inmunidad física?",
-        "7. ¿Qué mensaje compartido permanece sin importar cómo identifiquemos a los dos testigos?",
-        "8. ¿Cómo desafía la séptima trompeta lealtades políticas y religiosas?"
+        "¿Por qué aparecen las oraciones antes de los juicios de trompeta?",
+        "¿Qué sugiere la repetición de «un tercio»?",
+        "¿Por qué suelen ser débiles las identificaciones con tecnología moderna?",
+        "¿Qué enseña Apocalipsis 9 sobre los límites del miedo como herramienta de arrepentimiento?",
+        "¿Por qué es dulce y amarga la palabra para un testigo?",
+        "¿Qué comunica medir sin prometer inmunidad física?",
+        "¿Qué mensaje compartido permanece sin importar cómo identifiquemos a los dos testigos?",
+        "¿Cómo desafía la séptima trompeta lealtades políticas y religiosas?"
       ],
       "examination": "¿Quiero la justicia de Dios porque amo lo recto o porque disfruto imaginar castigados a mis adversarios? ¿Dónde necesita mi testimonio más valor, paciencia, oración o rechazo de represalia?",
       "challenge": "Elige una injusticia para orar de manera sostenida. Une esa oración con un acto veraz y no retaliatorio: apoyar al dañado, hablar responsablemente, dar recursos, documentar hechos o buscar rendición de cuentas legal.",
@@ -506,14 +506,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Cómo conecta mujer-hijo-dragón el conflicto con la historia bíblica?",
-        "2. ¿Por qué importa que el dragón sea identificado como Satanás al tratar a adversarios humanos?",
-        "3. ¿Qué clase de victoria describe 12:11?",
-        "4. ¿Qué rasgos hacen «bestial» al poder político?",
-        "5. ¿Cómo puede la influencia religiosa servir a dominación?",
-        "6. ¿Por qué encaja mejor la marca con lealtad y comercio que con exposición tecnológica accidental?",
-        "7. ¿Qué puede iluminar la conexión Nerón/666 sin agotar el símbolo?",
-        "8. ¿Qué prácticas ayudan a pertenecer visiblemente al Cordero?"
+        "¿Cómo conecta mujer-hijo-dragón el conflicto con la historia bíblica?",
+        "¿Por qué importa que el dragón sea identificado como Satanás al tratar a adversarios humanos?",
+        "¿Qué clase de victoria describe 12:11?",
+        "¿Qué rasgos hacen «bestial» al poder político?",
+        "¿Cómo puede la influencia religiosa servir a dominación?",
+        "¿Por qué encaja mejor la marca con lealtad y comercio que con exposición tecnológica accidental?",
+        "¿Qué puede iluminar la conexión Nerón/666 sin agotar el símbolo?",
+        "¿Qué prácticas ayudan a pertenecer visiblemente al Cordero?"
       ],
       "examination": "¿Qué poder político, económico, tecnológico o religioso temo o adoro más que a Cristo? ¿Dónde presionan mi lealtad la comodidad, el acceso o la pertenencia?",
       "challenge": "Audita un área de lealtad: dinero, medios, política, trabajo, compras o cultura eclesial. Pregunta qué recompensa y qué te presiona a ignorar, y elige una respuesta semejante al Cordero.",
@@ -611,14 +611,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué combina Apocalipsis el cántico de Moisés y el del Cordero?",
-        "2. ¿Cómo pueden las copas ser moralmente serias sin volver el miedo una estrategia sana de conversión?",
-        "3. ¿Por qué es mejor leer Armagedón como imagen apocalíptica que como mapa militar moderno?",
-        "4. ¿Qué rasgos de Babilonia reconocerían cristianos del primer siglo en Roma?",
-        "5. ¿Por qué debe mantenerse la imagen femenina como símbolo del imperio y no juicio contra mujeres?",
-        "6. ¿Qué exige «salgan de ella» sin retirarnos de toda vida pública?",
-        "7. ¿Por qué «vidas humanas» es el clímax devastador de la lista comercial?",
-        "8. ¿Cómo celebrar el fin de opresión sin crueldad hacia personas dañadas por el colapso?"
+        "¿Por qué combina Apocalipsis el cántico de Moisés y el del Cordero?",
+        "¿Cómo pueden las copas ser moralmente serias sin volver el miedo una estrategia sana de conversión?",
+        "¿Por qué es mejor leer Armagedón como imagen apocalíptica que como mapa militar moderno?",
+        "¿Qué rasgos de Babilonia reconocerían cristianos del primer siglo en Roma?",
+        "¿Por qué debe mantenerse la imagen femenina como símbolo del imperio y no juicio contra mujeres?",
+        "¿Qué exige «salgan de ella» sin retirarnos de toda vida pública?",
+        "¿Por qué «vidas humanas» es el clímax devastador de la lista comercial?",
+        "¿Cómo celebrar el fin de opresión sin crueldad hacia personas dañadas por el colapso?"
       ],
       "examination": "¿Dónde depende mi comodidad de costos que rara vez veo? ¿Qué formas de lujo, estatus, acceso político o consumo me dificultan notar explotación?",
       "challenge": "Sigue una compra o hábito financiero hasta donde razonablemente puedas. Elige una alternativa más humana o transparente cuando sea posible y ora por trabajadores y comunidades afectadas.",
@@ -716,14 +716,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Por qué los aleluyas del cielo celebran justicia y no crueldad?",
-        "2. ¿Qué revela la cena de bodas sobre la meta de la victoria del Cordero?",
-        "3. ¿Qué distingue al Jinete Fiel y Verdadero de gobernantes bestiales?",
-        "4. ¿Por qué el juicio de Cristo no autoriza violencia cristiana?",
-        "5. ¿Qué verdades comparten lecturas premileniales, amileniales y postmileniales?",
-        "6. ¿Cómo manejar Gog y Magog sin chivos expiatorios geopolíticos?",
-        "7. ¿Qué dice el gran trono blanco sobre estatus y responsabilidad?",
-        "8. ¿Por qué la destrucción de la muerte es esencial a la esperanza cristiana?"
+        "¿Por qué los aleluyas del cielo celebran justicia y no crueldad?",
+        "¿Qué revela la cena de bodas sobre la meta de la victoria del Cordero?",
+        "¿Qué distingue al Jinete Fiel y Verdadero de gobernantes bestiales?",
+        "¿Por qué el juicio de Cristo no autoriza violencia cristiana?",
+        "¿Qué verdades comparten lecturas premileniales, amileniales y postmileniales?",
+        "¿Cómo manejar Gog y Magog sin chivos expiatorios geopolíticos?",
+        "¿Qué dice el gran trono blanco sobre estatus y responsabilidad?",
+        "¿Por qué la destrucción de la muerte es esencial a la esperanza cristiana?"
       ],
       "examination": "¿Me interesa más ganar una discusión escatológica que ser fiel a Cristo? ¿Disfruto secretamente imaginar la destrucción de un adversario en vez de entregar el juicio a Dios?",
       "challenge": "Lee Apocalipsis 19:11–16 y 20:11–15. Suelta un acto de venganza privada o juicio final que cargas contra alguien y conserva cualquier paso responsable de justicia o límite que sí te corresponde.",
@@ -821,14 +821,14 @@ window.NLDG_BOOK_STUDY={
         }
       ],
       "questions": [
-        "1. ¿Qué cambia cuando entendemos la esperanza cristiana como nueva creación y no escape?",
-        "2. ¿Por qué es la morada de Dios el centro de la visión final?",
-        "3. ¿Cómo honra el dolor actual la promesa de secar lágrimas?",
-        "4. ¿Qué comunican puertas tribales y fundamentos apostólicos?",
-        "5. ¿Por qué importan puertas abiertas, naciones y reyes?",
-        "6. ¿Qué sugiere sanar las naciones acerca del alcance restaurador de Dios?",
-        "7. ¿A qué se refiere realmente la advertencia de añadir o quitar?",
-        "8. ¿Por qué «Ven» es una respuesta apropiada a todo el libro?"
+        "¿Qué cambia cuando entendemos la esperanza cristiana como nueva creación y no escape?",
+        "¿Por qué es la morada de Dios el centro de la visión final?",
+        "¿Cómo honra el dolor actual la promesa de secar lágrimas?",
+        "¿Qué comunican puertas tribales y fundamentos apostólicos?",
+        "¿Por qué importan puertas abiertas, naciones y reyes?",
+        "¿Qué sugiere sanar las naciones acerca del alcance restaurador de Dios?",
+        "¿A qué se refiere realmente la advertencia de añadir o quitar?",
+        "¿Por qué «Ven» es una respuesta apropiada a todo el libro?"
       ],
       "examination": "¿Mi esperanza del fin me hace cuidar más o menos cuerpos, prójimos, justicia, creación, verdad y sanidad ahora? ¿Dónde ha desplazado el miedo a la invitación llena de gracia de Cristo?",
       "challenge": "Elige una práctica de nueva creación: consuela a alguien en duelo, cuida un lugar o criatura, trabaja por reconciliación, da agua o alimento, crea belleza o invita a alguien hacia Cristo sin presión.",

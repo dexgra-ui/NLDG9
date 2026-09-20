@@ -131,7 +131,7 @@ window.NLDG_BOOK_STUDY={
       "truth": "El liderazgo se vuelve destructivo cuando el amor a la prominencia produce rechazo de rendición de cuentas, palabras maliciosas, obstrucción del ministerio fiel y control punitivo de los miembros.",
       "goal": "Identificar patrones observables de liderazgo espiritual coercitivo, distinguir liderazgo firme de dominación y practicar rendición de cuentas basada en evidencia que proteja sin volverse retaliatoria.",
       "opening": "Lee 3 Juan 9–10 y marca escribí, iglesia, Diótrefes, le gusta ser el primero, no nos reconoce, iré, recordaré, lo que hace, palabras maliciosas, no satisfecho, no recibe, hermanos, impide, quieren y expulsa de la iglesia. Observa cómo el texto pasa del deseo de prominencia a acciones concretas que afectan a toda la comunidad.",
-      "context": "El anciano dice que ya escribió a la iglesia, pero Diótrefes «ama ser el primero» y no acepta la autoridad o influencia del anciano. El conflicto no se describe solo como choque de personalidades. El texto nombra un conjunto de conductas: acusaciones falsas y palabras maliciosas, rechazo de obreros confiables, obstrucción de miembros que quieren recibirlos y expulsión de la iglesia.\n\nComo la carta es breve, debemos evitar inventar motivos o trasfondo que no ofrece. Sin embargo, el patrón observable basta para que el anciano prometa rendición de cuentas. Esto ofrece un modelo importante: no diagnosticar abuso por un solo desacuerdo, pero tampoco ignorar conducta repetida simplemente porque un líder ocupa un cargo.",
+      "context": "El anciano dice que ya escribió a la iglesia, pero Diótrefes «ama ser el primero» y no acepta la autoridad o influencia del anciano. El conflicto no se describe solo como choque de personalidades. El texto nombra un conjunto de conductas: acusaciones falsas y palabras maliciosas, rechazo de obreros confiables, obstrucción de miembros que quieren recibirlos y expulsión de la iglesia.\n\nComo la carta es breve, debemos evitar inventar motivos o trasfondo que no ofrece. Sin embargo, el patrón observable de liderazgo espiritual coercitivo basta para que el anciano prometa rendición de cuentas. Esto ofrece un modelo importante: no diagnosticar abuso por un solo desacuerdo, pero tampoco ignorar conducta repetida simplemente porque un líder ocupa un cargo.",
       "teaching": [
         {
           "heading": "Amar ser el primero reorienta el liderazgo hacia el estatus — 3 Juan 9",
@@ -322,7 +322,7 @@ window.NLDG_BOOK_STUDY={
         "Jesús enseña a reconocer fruto, llama a imitar su camino de servicio y llama amigos a sus discípulos. Su vida es el ejemplo final por el que se evalúan todos los modelos cristianos."
       ],
       "guardrailParagraphs": [
-        "No enseñes que las buenas obras ganan salvación. No imites a alguien solo por popularidad, dones, éxito, riqueza o respaldo amplio. No obligues encuentros cara a cara cuando hay abuso, acecho, acoso o represalia; un canal seguro puede ser más sabio."
+        "No enseñes que las buenas obras ganan salvación. No imites a alguien solo por popularidad, dones, éxito, riqueza o respaldo amplio. No obligues encuentros cara a cara con abusadores, acosadores, personas que acechan o líderes retaliatorios; un canal seguro puede ser más sabio."
       ]
     }
   ],

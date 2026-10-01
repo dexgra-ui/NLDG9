@@ -23,7 +23,7 @@
   const series=study?.series||clean(document.querySelector('.kicker')?.textContent)||'No Labels, Designed by God';
   const scripture=study?.scripture?.join(' · ')||clean(document.querySelector('[class*="scripture"],.wj-meta,.gwj-study-meta,.fyj-study-meta,.prep-meta')?.textContent)||'';
 
-  const leaderTextPattern=/\b(leader|facilitator|mentor|parent\s*\/\s*teacher|parent or teacher|adult note|nota para líderes|guía para líderes|maestro|mentor)\b/i;
+  const leaderTextPattern=/\b(leader|facilitator|mentor|parent\s*\/\s*teacher|parent or teacher|adult note|nota(?:\s+de\s+profundidad)?\s+para\s+líderes|guía para líderes|maestro|mentor)\b/i;
   const removeChrome=root=>{
     root.querySelectorAll('.lesson-actions,.wj-actions,.gwj-actions,.fyj-actions,.lesson-navigation,.complete-panel,.lesson-complete-panel,.series-navigation,.study-experience-bar,.study-view-controls,.study-notes,.discipleship-tools,.section-navigation,.breadcrumbs,.content-sequence,.coverage-print-entry,.ministry-footer,script,style').forEach(node=>node.remove());
     root.querySelectorAll('button,input,select,textarea').forEach(node=>node.remove());

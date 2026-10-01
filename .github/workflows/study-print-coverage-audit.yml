@@ -11,6 +11,7 @@ on:
       - 'print-center.js'
       - 'print-center.css'
       - 'print-center-print-safe.css'
+      - 'faith-truth-v2-print-surface.css'
       - 'current-events-series.html'
       - 'current-events-four-views.js'
       - 'es/es-framework.js'
@@ -20,6 +21,7 @@ on:
       - 'growing-with-jesus-*.html'
       - 'following-jesus-for-yourself-*.html'
       - 'scripts/study-print-coverage-audit.mjs'
+      - 'scripts/faith-truth-print-surface-audit.mjs'
       - '.github/workflows/study-print-coverage-audit.yml'
   push:
     branches: [main]
@@ -30,6 +32,7 @@ on:
       - 'print-center.js'
       - 'print-center.css'
       - 'print-center-print-safe.css'
+      - 'faith-truth-v2-print-surface.css'
       - 'current-events-series.html'
       - 'current-events-four-views.js'
       - 'es/es-framework.js'
@@ -39,6 +42,7 @@ on:
       - 'growing-with-jesus-*.html'
       - 'following-jesus-for-yourself-*.html'
       - 'scripts/study-print-coverage-audit.mjs'
+      - 'scripts/faith-truth-print-surface-audit.mjs'
       - '.github/workflows/study-print-coverage-audit.yml'
 
 permissions:
@@ -76,3 +80,6 @@ jobs:
 
       - name: Run study print coverage audit
         run: node scripts/study-print-coverage-audit.mjs
+
+      - name: Run Faith and Truth dedicated print surface audit
+        run: node scripts/faith-truth-print-surface-audit.mjs

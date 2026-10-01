@@ -36,7 +36,7 @@
  const key=`nldg-v2-teaching-week-${week}`;const notes=teaching.querySelector('[data-v2-teaching-notes]');notes.value=localStorage.getItem(key)||'';teaching.querySelector('[data-v2-save-teaching]').addEventListener('click',()=>{localStorage.setItem(key,notes.value);const status=teaching.querySelector('[data-v2-teaching-status]');status.textContent='Teaching notes saved.';setTimeout(()=>status.textContent='',1800);});
 
  const printLabels={participant:'Participant Guide',leader:'Leader Guide',teaching:'Teaching View'};
- const ensurePrintSurface=()=>{let surface=document.getElementById('v2-print-surface');if(!surface){surface=document.createElement('section');surface.id='v2-print-surface';surface.setAttribute('aria-hidden','true');document.body.appendChild(surface)}return surface;};
+ const ensurePrintSurface=()=>{let surface=document.getElementById('v2-print-surface');if(!surface){surface=document.createElement('section');surface.id='v2-print-surface';document.body.appendChild(surface)}return surface;};
  const copyFormValues=(source,clone)=>{
   const sourceTextareas=[...source.querySelectorAll('textarea')];
   [...clone.querySelectorAll('textarea')].forEach((field,index)=>{
@@ -56,13 +56,11 @@
   packet.appendChild(clone);
   return packet;
  };
- const buildPrintSurface=mode=>{
-  const surface=ensurePrintSurface();surface.innerHTML='';
-  const names=mode==='all'?['participant','leader','teaching']:[mode];
-  names.forEach(name=>{if(views[name])surface.appendChild(makePrintPacket(name,views[name]))});
-  return surface;
- };
- const printMode=mode=>{document.body.dataset.v2Print=mode;const surface=buildPrintSurface(mode);surface.getBoundingClientRect();window.print();};
+ const surface=ensurePrintSurface();
+ ['participant','leader','teaching'].forEach(name=>surface.appendChild(makePrintPacket(name,views[name])));
+ const syncTeachingNotes=()=>{const printable=surface.querySelector('[data-v2-packet="teaching"] .v2-print-notes');if(printable)printable.textContent=notes.value||'';};
+ const buildPrintSurface=mode=>{syncTeachingNotes();surface.dataset.v2SurfaceMode=mode;return surface;};
+ const printMode=mode=>{document.body.dataset.v2Print=mode;const prepared=buildPrintSurface(mode);prepared.getBoundingClientRect();window.print();};
  printPanel.querySelectorAll('[data-v2-print]').forEach(button=>button.addEventListener('click',()=>printMode(button.dataset.v2Print)));
  window.NLDGFaithTruthPrint={print:printMode,build:buildPrintSurface};
 })();

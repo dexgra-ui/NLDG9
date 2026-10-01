@@ -25,6 +25,7 @@ try{
       surfaceDisplay:surfaceStyle?.display||'missing',
       surfacePosition:surfaceStyle?.position||'missing',
       surfaceLeft:surface?.getBoundingClientRect().left??0,
+      surfaceAriaHidden:surface?.getAttribute('aria-hidden')||'',
       headerWidth:headerRect?.width||0,
       headerHeight:headerRect?.height||0
     };
@@ -32,13 +33,15 @@ try{
   expect(JSON.stringify(prebuilt.packetNames)===JSON.stringify(['participant','leader','teaching']),'WebKit sees all three print packets before the user taps Print.',`Prebuilt packet order was ${JSON.stringify(prebuilt.packetNames)}.`);
   expect(prebuilt.participantText.length>1200,'The prebuilt participant packet already contains substantial lesson text.',`Prebuilt participant packet contained only ${prebuilt.participantText.length} text characters.`);
   expect(prebuilt.surfaceDisplay!=='none'&&prebuilt.surfacePosition==='fixed'&&prebuilt.surfaceLeft<-1000&&prebuilt.headerWidth>0&&prebuilt.headerHeight>0,'WebKit lays out the offscreen packet before the print tap.',`Pre-print surface display=${prebuilt.surfaceDisplay}, position=${prebuilt.surfacePosition}, left=${Math.round(prebuilt.surfaceLeft)}, header=${Math.round(prebuilt.headerWidth)}x${Math.round(prebuilt.headerHeight)}.`);
+  expect(prebuilt.surfaceAriaHidden==='true','The prebuilt packet is excluded from normal screen accessibility/layout audits before printing.',`Pre-print aria-hidden was ${prebuilt.surfaceAriaHidden||'missing'}.`);
 
   await page.locator('.v2-view-tabs [data-view="print"]').click();
   await page.evaluate(()=>{window.__v2PrintCalls=0;window.print=()=>{window.__v2PrintCalls+=1}});
   await page.locator('[data-v2-print="participant"]').click();
-  const immediate=await page.evaluate(()=>({calls:window.__v2PrintCalls,mode:document.body.dataset.v2Print||''}));
+  const immediate=await page.evaluate(()=>({calls:window.__v2PrintCalls,mode:document.body.dataset.v2Print||'',surfaceAriaHidden:document.querySelector('#v2-print-surface')?.getAttribute('aria-hidden')||''}));
   expect(immediate.calls===1,'Participant printing remains inside the user tap in WebKit.',`WebKit saw ${immediate.calls} print calls.`);
   expect(immediate.mode==='participant','Participant print mode is active in WebKit.',`WebKit print mode was ${immediate.mode||'unset'}.`);
+  expect(immediate.surfaceAriaHidden==='','The print tap exposes the prebuilt packet to WebKit before window.print().',`WebKit print surface still had aria-hidden=${immediate.surfaceAriaHidden}.`);
 
   await page.evaluate(()=>window.dispatchEvent(new Event('afterprint')));
   const afterprintText=await page.locator('#v2-print-surface [data-v2-packet="participant"]').innerText().catch(()=>'');

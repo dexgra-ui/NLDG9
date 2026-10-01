@@ -1,0 +1,75 @@
+@media print{
+  body[data-print-center-active] .nldg-print-packet,
+  body[data-print-center-active] .nldg-print-packet *{
+    background-color:transparent!important;
+    background-image:none!important;
+    text-shadow:none!important;
+    box-shadow:none!important;
+  }
+  body[data-print-center-active] .nldg-print-packet *::before,
+  body[data-print-center-active] .nldg-print-packet *::after{
+    content:none!important;
+    display:none!important;
+    background:none!important;
+  }
+  body[data-print-center-active] .print-packet-cover{
+    display:block!important;
+    min-height:0!important;
+    margin:0 0 .22in!important;
+    padding:0 0 .16in!important;
+    border-bottom:2px solid #222!important;
+    text-align:left!important;
+    break-after:auto!important;
+    page-break-after:auto!important;
+  }
+  body[data-print-center-active] .print-packet-cover img{
+    display:none!important;
+    width:0!important;
+    max-width:0!important;
+    height:0!important;
+    max-height:0!important;
+    margin:0!important;
+  }
+  body[data-print-center-active] .print-packet-ministry{
+    margin:0 0 .06in!important;
+    font-size:9pt!important;
+  }
+  body[data-print-center-active] .print-packet-cover h1{
+    max-width:none!important;
+    margin:0!important;
+    font-size:22pt!important;
+    line-height:1.08!important;
+  }
+  body[data-print-center-active] .print-packet-subtitle{
+    margin:.08in 0 .12in!important;
+    font-size:11pt!important;
+  }
+  body[data-print-center-active] .print-packet-references{
+    display:block!important;
+    max-width:none!important;
+    padding:.08in 0!important;
+    border-top:1px solid #888!important;
+    border-bottom:1px solid #888!important;
+  }
+  body[data-print-center-active] .print-packet-references strong,
+  body[data-print-center-active] .print-packet-references span{
+    display:inline!important;
+  }
+  body[data-print-center-active] .print-packet-references strong::after{
+    content:': '!important;
+    display:inline!important;
+  }
+  body[data-print-center-active] .print-packet-purpose{
+    margin:.1in 0 0!important;
+    font-size:9.5pt!important;
+  }
+  body[data-print-center-active] .print-packet-section,
+  body[data-print-center-active] .print-packet-section section,
+  body[data-print-center-active] .print-packet-section article{
+    background:#fff!important;
+  }
+  body[data-print-center-active] .print-packet-section img{
+    max-width:100%!important;
+    height:auto!important;
+  }
+}

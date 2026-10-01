@@ -69,6 +69,49 @@ async function checkCoverage(name,url,{spanish=false,leaderPhrase=''}={}){
   expect(calls===3,`${name} invokes the browser print flow for all three choices.`,`${name} invoked print ${calls} times instead of 3.`);
 }
 
+async function checkUnifiedPrintCenter(){
+  const name='faith-truth-unified-print';
+  await open(name,'current-events-series.html?week=1');
+  await page.waitForSelector('.print-center-launch',{timeout:5000}).catch(()=>{});
+  const launch=page.locator('.print-center-launch');
+  expect((await launch.count())===1,'Faith & Truth exposes the Unified Print Center.','Faith & Truth is missing the Unified Print Center launch control.');
+  if((await launch.count())!==1)return;
+  await page.evaluate(()=>{window.__unifiedPrintCalls=0;window.print=()=>{window.__unifiedPrintCalls+=1}});
+  await launch.click();
+  await page.locator('[data-print-preset="participant"]').click();
+  await page.locator('[data-print-now]').click();
+  await page.waitForTimeout(50);
+  expect((await page.locator('.nldg-print-packet').count())===1,'Faith & Truth builds the Unified Print Center packet.','Faith & Truth did not build a print packet.');
+  expect((await page.locator('.print-packet-participant').count())===1,'Faith & Truth packet includes participant content.','Faith & Truth packet is missing participant content.');
+  expect((await page.evaluate(()=>window.__unifiedPrintCalls))===1,'Faith & Truth invokes browser printing directly from the print action.','Faith & Truth did not invoke browser printing directly.');
+  await page.emulateMedia({media:'print'});
+  const printState=await page.evaluate(()=>{
+    const packet=document.querySelector('.nldg-print-packet');
+    const cover=document.querySelector('.print-packet-cover');
+    const logo=cover?.querySelector('img');
+    const coverStyle=cover?getComputedStyle(cover):null;
+    const logoStyle=logo?getComputedStyle(logo):null;
+    const colored=[...document.querySelectorAll('.nldg-print-packet *')].filter(node=>{
+      const bg=getComputedStyle(node).backgroundColor;
+      return bg&&bg!=='rgba(0, 0, 0, 0)'&&bg!=='transparent'&&bg!=='rgb(255, 255, 255)';
+    }).slice(0,8).map(node=>({tag:node.tagName,className:node.className,bg:getComputedStyle(node).backgroundColor}));
+    return {
+      packetDisplay:packet?getComputedStyle(packet).display:'missing',
+      mainDisplay:getComputedStyle(document.querySelector('main')).display,
+      coverHeight:cover?.getBoundingClientRect().height||0,
+      coverBreakAfter:coverStyle?.breakAfter||'',
+      logoDisplay:logoStyle?.display||'missing',
+      colored
+    };
+  });
+  expect(printState.packetDisplay!=='none'&&printState.mainDisplay==='none','Faith & Truth print media isolates the generated packet.','Faith & Truth print media did not isolate the generated packet.');
+  expect(printState.logoDisplay==='none','Faith & Truth hides the raster logo in print to prevent iPhone page overflow.',`Faith & Truth print logo display was ${printState.logoDisplay}.`);
+  expect(printState.coverHeight<400,'Faith & Truth uses a compact print-safe title block instead of a full decorative cover page.',`Faith & Truth print cover height was ${Math.round(printState.coverHeight)}px.`);
+  expect(printState.coverBreakAfter!=='page','Faith & Truth no longer forces a page break after the title block.','Faith & Truth still forces a page break after the title block.');
+  expect(printState.colored.length===0,'Faith & Truth strips dark/blue decorative backgrounds from printed packet content.',`Faith & Truth retained colored print backgrounds: ${JSON.stringify(printState.colored)}.`);
+  await page.emulateMedia({media:'screen'});
+}
+
 try{
   await checkCoverage('walking-with-jesus','walking-with-jesus-study.html?week=3',{leaderPhrase:'Leader depth note'});
   await checkCoverage('growing-with-jesus','growing-with-jesus-god-made-me-on-purpose.html',{leaderPhrase:'Parent / Teacher Note'});
@@ -76,6 +119,7 @@ try{
   await checkCoverage('preparing-to-walk','preparing-walk-with-jesus.html?lesson=3');
   await checkCoverage('cross-empty-tomb','cross-empty-tomb.html?lesson=1',{leaderPhrase:'Leader depth note'});
   await checkCoverage('walking-with-jesus-spanish','es/caminando-con-jesus-estudio.html?week=3',{spanish:true,leaderPhrase:'Nota de profundidad para líderes'});
+  await checkUnifiedPrintCenter();
 
   await open('book-by-book-control','revelation-study.html?lesson=1');
   expect((await page.locator('.lesson-print-tools').count())===1,'Book-by-Book keeps its existing smart print control.','Book-by-Book lost its existing smart print control.');

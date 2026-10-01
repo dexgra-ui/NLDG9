@@ -1,0 +1,27 @@
+#v2-print-surface{display:none}
+@media print{
+ @page{margin:.55in}
+ body[data-v2-print]{margin:0!important;background:#fff!important;color:#111!important;font-family:Arial,Helvetica,sans-serif!important}
+ body[data-v2-print]>*:not(#v2-print-surface){display:none!important}
+ body[data-v2-print] #v2-print-surface{display:block!important;width:100%!important;margin:0!important;padding:0!important;background:#fff!important;color:#111!important}
+ #v2-print-surface .v2-print-surface-packet{display:block!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important;background:#fff!important;color:#111!important;font-size:10.5pt;line-height:1.45}
+ #v2-print-surface .v2-print-surface-packet+.v2-print-surface-packet{break-before:page;page-break-before:always}
+ #v2-print-surface .v2-print-surface-header{display:block!important;margin:0 0 .22in!important;padding:0 0 .14in!important;border-bottom:2px solid #222!important;background:#fff!important;color:#111!important}
+ #v2-print-surface .v2-print-surface-header p{margin:0 0 .03in!important;font-size:8.5pt!important;font-weight:800!important;letter-spacing:.08em!important;text-transform:uppercase!important}
+ #v2-print-surface .v2-print-surface-header strong{display:block!important;margin:0 0 .07in!important;font-size:9pt!important;letter-spacing:.08em!important;text-transform:uppercase!important}
+ #v2-print-surface .v2-print-surface-header h1{margin:0 0 .04in!important;font-size:22pt!important;line-height:1.08!important}
+ #v2-print-surface .v2-print-surface-header span{display:block!important;font-size:9.5pt!important;color:#444!important}
+ #v2-print-surface *,#v2-print-surface *::before,#v2-print-surface *::after{box-sizing:border-box!important;text-shadow:none!important;box-shadow:none!important;background-image:none!important}
+ #v2-print-surface *{color:#111!important}
+ #v2-print-surface *::before,#v2-print-surface *::after{background:none!important}
+ #v2-print-surface .v2-participant-guide,#v2-print-surface .v2-leader-guide,#v2-print-surface .v2-teaching-view,#v2-print-surface .v2-card,#v2-print-surface .v2-section,#v2-print-surface .v2-resource-card,#v2-print-surface .v2-leader-card,#v2-print-surface .v2-case,#v2-print-surface .v2-callout,#v2-print-surface .v2-leader-intro{display:block!important;width:100%!important;max-width:none!important;background:#fff!important;color:#111!important;border-color:#aaa!important}
+ #v2-print-surface .v2-leader-grid{display:block!important}
+ #v2-print-surface .v2-leader-grid>*{margin:0 0 .16in!important}
+ #v2-print-surface h2,#v2-print-surface h3,#v2-print-surface h4{break-after:avoid-page;page-break-after:avoid}
+ #v2-print-surface section,#v2-print-surface li,#v2-print-surface .v2-card,#v2-print-surface .v2-resource-card,#v2-print-surface .v2-leader-card{break-inside:avoid-page;page-break-inside:avoid}
+ #v2-print-surface p{orphans:3;widows:3}
+ #v2-print-surface img{max-width:100%!important;height:auto!important}
+ #v2-print-surface button,#v2-print-surface .v2-save-row,#v2-print-surface [aria-live],#v2-print-surface .v2-view-tabs{display:none!important}
+ #v2-print-surface .v2-print-notes{min-height:.65in;margin-top:.08in;padding:.08in 0;border-bottom:1px solid #999;white-space:pre-wrap}
+ #v2-print-surface .curriculum-v2-badge,#v2-print-surface .v2-section-label{background:#fff!important;border-color:#888!important;color:#333!important}
+}

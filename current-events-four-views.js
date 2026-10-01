@@ -34,5 +34,35 @@
  tabs.querySelectorAll('[role="tab"]').forEach(button=>{const replacement=button.cloneNode(true);button.replaceWith(replacement);replacement.addEventListener('click',()=>setView(replacement.dataset.view));});
  const saved=localStorage.getItem(`nldg-v2-view-${week}`);if(views[saved])setView(saved,{scroll:false});else setView('participant',{scroll:false});
  const key=`nldg-v2-teaching-week-${week}`;const notes=teaching.querySelector('[data-v2-teaching-notes]');notes.value=localStorage.getItem(key)||'';teaching.querySelector('[data-v2-save-teaching]').addEventListener('click',()=>{localStorage.setItem(key,notes.value);const status=teaching.querySelector('[data-v2-teaching-status]');status.textContent='Teaching notes saved.';setTimeout(()=>status.textContent='',1800);});
- printPanel.querySelectorAll('[data-v2-print]').forEach(button=>button.addEventListener('click',()=>{document.body.dataset.v2Print=button.dataset.v2Print;window.print();}));
+
+ const printLabels={participant:'Participant Guide',leader:'Leader Guide',teaching:'Teaching View'};
+ const ensurePrintSurface=()=>{let surface=document.getElementById('v2-print-surface');if(!surface){surface=document.createElement('section');surface.id='v2-print-surface';surface.setAttribute('aria-hidden','true');document.body.appendChild(surface)}return surface;};
+ const copyFormValues=(source,clone)=>{
+  const sourceTextareas=[...source.querySelectorAll('textarea')];
+  [...clone.querySelectorAll('textarea')].forEach((field,index)=>{
+   const replacement=document.createElement('div');replacement.className='v2-print-notes';replacement.textContent=sourceTextareas[index]?.value||'';field.replaceWith(replacement);
+  });
+ };
+ const makePrintPacket=(name,node)=>{
+  const clone=node.cloneNode(true);
+  clone.hidden=false;clone.removeAttribute('hidden');
+  clone.querySelectorAll('[hidden]').forEach(item=>{item.hidden=false;item.removeAttribute('hidden')});
+  clone.querySelectorAll('details').forEach(item=>item.open=true);
+  copyFormValues(node,clone);
+  clone.querySelectorAll('button,.v2-save-row,[aria-live]').forEach(item=>item.remove());
+  clone.querySelectorAll('[id]').forEach(item=>item.removeAttribute('id'));
+  const packet=document.createElement('article');packet.className='v2-print-surface-packet';packet.dataset.v2Packet=name;
+  packet.innerHTML=`<header class="v2-print-surface-header"><p>No Labels, Designed by God</p><strong>${escapeHtml(printLabels[name])}</strong><h1>${escapeHtml(lesson.title)}</h1><span>Faith &amp; Truth in Today’s World · Week ${week}</span></header>`;
+  packet.appendChild(clone);
+  return packet;
+ };
+ const buildPrintSurface=mode=>{
+  const surface=ensurePrintSurface();surface.innerHTML='';
+  const names=mode==='all'?['participant','leader','teaching']:[mode];
+  names.forEach(name=>{if(views[name])surface.appendChild(makePrintPacket(name,views[name]))});
+  return surface;
+ };
+ const printMode=mode=>{document.body.dataset.v2Print=mode;const surface=buildPrintSurface(mode);surface.getBoundingClientRect();window.print();};
+ printPanel.querySelectorAll('[data-v2-print]').forEach(button=>button.addEventListener('click',()=>printMode(button.dataset.v2Print)));
+ window.NLDGFaithTruthPrint={print:printMode,build:buildPrintSurface};
 })();

@@ -1,0 +1,30 @@
+@media(max-width:620px){
+  .site-header{
+    gap:10px;
+    padding-left:14px;
+    padding-right:14px;
+  }
+  .site-header .brand{
+    flex:1 1 auto;
+    min-width:0;
+    max-width:calc(100% - 72px);
+  }
+  .site-header .brand-icon{
+    flex:0 0 44px;
+    width:44px;
+    height:44px;
+  }
+  .site-header .brand span:last-child{
+    min-width:0;
+  }
+  .site-header .brand strong{
+    display:block;
+    font-size:.88rem;
+    line-height:1.15;
+    white-space:normal;
+    overflow-wrap:anywhere;
+  }
+  .site-header .menu{
+    flex:0 0 auto;
+  }
+}

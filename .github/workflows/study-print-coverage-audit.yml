@@ -22,6 +22,7 @@ on:
       - 'following-jesus-for-yourself-*.html'
       - 'scripts/study-print-coverage-audit.mjs'
       - 'scripts/faith-truth-print-surface-audit.mjs'
+      - 'scripts/faith-truth-webkit-print-audit.mjs'
       - '.github/workflows/study-print-coverage-audit.yml'
   push:
     branches: [main]
@@ -43,6 +44,7 @@ on:
       - 'following-jesus-for-yourself-*.html'
       - 'scripts/study-print-coverage-audit.mjs'
       - 'scripts/faith-truth-print-surface-audit.mjs'
+      - 'scripts/faith-truth-webkit-print-audit.mjs'
       - '.github/workflows/study-print-coverage-audit.yml'
 
 permissions:
@@ -63,7 +65,7 @@ jobs:
       - name: Install Playwright
         run: |
           npm install --no-save playwright
-          npx playwright install --with-deps chromium
+          npx playwright install --with-deps chromium webkit
 
       - name: Start local site
         run: |
@@ -83,3 +85,6 @@ jobs:
 
       - name: Run Faith and Truth dedicated print surface audit
         run: node scripts/faith-truth-print-surface-audit.mjs
+
+      - name: Run Faith and Truth WebKit print audit
+        run: node scripts/faith-truth-webkit-print-audit.mjs

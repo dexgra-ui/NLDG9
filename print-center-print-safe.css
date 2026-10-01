@@ -1,0 +1,162 @@
+@media print{
+  body[data-print-center-active] .nldg-print-packet,
+  body[data-print-center-active] .nldg-print-packet *{
+    background-color:transparent!important;
+    background-image:none!important;
+    text-shadow:none!important;
+    box-shadow:none!important;
+  }
+  body[data-print-center-active] .nldg-print-packet *::before,
+  body[data-print-center-active] .nldg-print-packet *::after{
+    content:none!important;
+    display:none!important;
+    background:none!important;
+  }
+  body[data-print-center-active] .print-packet-cover{
+    display:block!important;
+    min-height:0!important;
+    margin:0 0 .22in!important;
+    padding:0 0 .16in!important;
+    border-bottom:2px solid #222!important;
+    text-align:left!important;
+    break-after:auto!important;
+    page-break-after:auto!important;
+  }
+  body[data-print-center-active] .print-packet-cover img{
+    display:none!important;
+    width:0!important;
+    max-width:0!important;
+    height:0!important;
+    max-height:0!important;
+    margin:0!important;
+  }
+  body[data-print-center-active] .print-packet-ministry{
+    margin:0 0 .06in!important;
+    font-size:9pt!important;
+  }
+  body[data-print-center-active] .print-packet-cover h1{
+    max-width:none!important;
+    margin:0!important;
+    font-size:22pt!important;
+    line-height:1.08!important;
+  }
+  body[data-print-center-active] .print-packet-subtitle{
+    margin:.08in 0 .12in!important;
+    font-size:11pt!important;
+  }
+  body[data-print-center-active] .print-packet-references{
+    display:block!important;
+    max-width:none!important;
+    padding:.08in 0!important;
+    border-top:1px solid #888!important;
+    border-bottom:1px solid #888!important;
+  }
+  body[data-print-center-active] .print-packet-references strong,
+  body[data-print-center-active] .print-packet-references span{
+    display:inline!important;
+  }
+  body[data-print-center-active] .print-packet-references strong::after{
+    content:': '!important;
+    display:inline!important;
+  }
+  body[data-print-center-active] .print-packet-purpose{
+    margin:.1in 0 0!important;
+    font-size:9.5pt!important;
+  }
+  body[data-print-center-active] .print-packet-section,
+  body[data-print-center-active] .print-packet-section section,
+  body[data-print-center-active] .print-packet-section article{
+    background:#fff!important;
+  }
+  body[data-print-center-active] .print-packet-section img{
+    max-width:100%!important;
+    height:auto!important;
+  }
+
+  body[data-v2-print]{
+    margin:0!important;
+    background:#fff!important;
+    color:#111!important;
+    font-family:Arial,Helvetica,sans-serif!important;
+  }
+  body[data-v2-print] #series-hero,
+  body[data-v2-print] .page-hero,
+  body[data-v2-print] .lesson-page-hero,
+  body[data-v2-print] .journey-series-hero,
+  body[data-v2-print] .site-header,
+  body[data-v2-print] .ministry-footer,
+  body[data-v2-print] .section-navigation,
+  body[data-v2-print] .breadcrumbs,
+  body[data-v2-print] .lesson-sidebar,
+  body[data-v2-print] .series-lesson-toolbar,
+  body[data-v2-print] .series-lesson-nav,
+  body[data-v2-print] .lesson-complete-panel,
+  body[data-v2-print] .v2-view-tabs,
+  body[data-v2-print] .v2-print-view,
+  body[data-v2-print] .print-center-entry{
+    display:none!important;
+  }
+  body[data-v2-print] main,
+  body[data-v2-print] #series-view,
+  body[data-v2-print] .series-shell,
+  body[data-v2-print] .lesson-layout,
+  body[data-v2-print] .series-lesson{
+    display:block!important;
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    border-radius:0!important;
+    background:#fff!important;
+    background-image:none!important;
+    color:#111!important;
+    box-shadow:none!important;
+  }
+  body[data-v2-print] .series-lesson *,
+  body[data-v2-print] .v2-participant-guide *,
+  body[data-v2-print] .v2-leader-guide *,
+  body[data-v2-print] .v2-teaching-view *{
+    background-image:none!important;
+    text-shadow:none!important;
+    box-shadow:none!important;
+  }
+  body[data-v2-print] .series-lesson *::before,
+  body[data-v2-print] .series-lesson *::after{
+    content:none!important;
+    display:none!important;
+    background:none!important;
+  }
+  body[data-v2-print] .v2-participant-guide,
+  body[data-v2-print] .v2-leader-guide,
+  body[data-v2-print] .v2-teaching-view,
+  body[data-v2-print] .v2-card,
+  body[data-v2-print] .v2-section,
+  body[data-v2-print] .v2-resource-card,
+  body[data-v2-print] .v2-leader-card,
+  body[data-v2-print] .v2-case,
+  body[data-v2-print] .v2-callout{
+    background:#fff!important;
+    background-image:none!important;
+    color:#111!important;
+    box-shadow:none!important;
+  }
+  body[data-v2-print] .series-lesson p,
+  body[data-v2-print] .series-lesson li,
+  body[data-v2-print] .series-lesson dd,
+  body[data-v2-print] .series-lesson small,
+  body[data-v2-print] .series-lesson span,
+  body[data-v2-print] .series-lesson strong,
+  body[data-v2-print] .series-lesson h1,
+  body[data-v2-print] .series-lesson h2,
+  body[data-v2-print] .series-lesson h3,
+  body[data-v2-print] .series-lesson h4{
+    color:#111!important;
+  }
+  body[data-v2-print] .curriculum-v2-badge,
+  body[data-v2-print] .v2-section-label{
+    border-color:#888!important;
+    background:#fff!important;
+    color:#333!important;
+  }
+}

@@ -34,5 +34,5 @@
  tabs.querySelectorAll('[role="tab"]').forEach(button=>{const replacement=button.cloneNode(true);button.replaceWith(replacement);replacement.addEventListener('click',()=>setView(replacement.dataset.view));});
  const saved=localStorage.getItem(`nldg-v2-view-${week}`);if(views[saved])setView(saved,{scroll:false});else setView('participant',{scroll:false});
  const key=`nldg-v2-teaching-week-${week}`;const notes=teaching.querySelector('[data-v2-teaching-notes]');notes.value=localStorage.getItem(key)||'';teaching.querySelector('[data-v2-save-teaching]').addEventListener('click',()=>{localStorage.setItem(key,notes.value);const status=teaching.querySelector('[data-v2-teaching-status]');status.textContent='Teaching notes saved.';setTimeout(()=>status.textContent='',1800);});
- printPanel.querySelectorAll('[data-v2-print]').forEach(button=>button.addEventListener('click',()=>{document.body.dataset.v2Print=button.dataset.v2Print;window.print();setTimeout(()=>delete document.body.dataset.v2Print,500);}));
+ printPanel.querySelectorAll('[data-v2-print]').forEach(button=>button.addEventListener('click',()=>{document.body.dataset.v2Print=button.dataset.v2Print;window.print();}));
 })();

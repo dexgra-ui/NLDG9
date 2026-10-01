@@ -43,11 +43,19 @@
    const replacement=document.createElement('div');replacement.className='v2-print-notes';replacement.textContent=sourceTextareas[index]?.value||'';field.replaceWith(replacement);
   });
  };
+ const sanitizePrintClone=clone=>{
+  [clone,...clone.querySelectorAll('*')].forEach(item=>{
+   item.removeAttribute('hidden');
+   item.removeAttribute('aria-hidden');
+   item.removeAttribute('inert');
+   item.removeAttribute('style');
+   item.removeAttribute('tabindex');
+  });
+  clone.querySelectorAll('details').forEach(item=>item.open=true);
+ };
  const makePrintPacket=(name,node)=>{
   const clone=node.cloneNode(true);
-  clone.hidden=false;clone.removeAttribute('hidden');
-  clone.querySelectorAll('[hidden]').forEach(item=>{item.hidden=false;item.removeAttribute('hidden')});
-  clone.querySelectorAll('details').forEach(item=>item.open=true);
+  sanitizePrintClone(clone);
   copyFormValues(node,clone);
   clone.querySelectorAll('button,.v2-save-row,[aria-live]').forEach(item=>item.remove());
   clone.querySelectorAll('[id]').forEach(item=>item.removeAttribute('id'));

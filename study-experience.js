@@ -1,6 +1,10 @@
 (function(){
   const studyId=document.body.dataset.studyPage;
   if(!studyId)return;
+  const ensureCoverageStylesheet=href=>{if([...document.styleSheets].some(sheet=>sheet.href?.includes(href.split('?')[0])))return;const link=document.createElement('link');link.rel='stylesheet';link.href=href;document.head.appendChild(link);};
+  const loadCoverageScript=src=>new Promise((resolve,reject)=>{const existing=[...document.scripts].find(script=>script.src.includes(src.split('?')[0]));if(existing){resolve();return;}const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=reject;document.body.appendChild(script);});
+  ensureCoverageStylesheet('study-print-coverage.css?v=1.0.0');
+  loadCoverageScript('study-print-coverage.js?v=1.0.0').catch(error=>console.warn('Study print coverage could not load.',error));
   const studies=(window.NLDG_STUDIES||[]).filter(study=>study.status==='published');
   const study=studies.find(item=>item.id===studyId);
   if(!study)return;

@@ -43,11 +43,19 @@
    const replacement=document.createElement('div');replacement.className='v2-print-notes';replacement.textContent=sourceTextareas[index]?.value||'';field.replaceWith(replacement);
   });
  };
+ const sanitizePrintClone=clone=>{
+  [clone,...clone.querySelectorAll('*')].forEach(item=>{
+   item.removeAttribute('hidden');
+   item.removeAttribute('aria-hidden');
+   item.removeAttribute('inert');
+   item.removeAttribute('style');
+   item.removeAttribute('tabindex');
+  });
+  clone.querySelectorAll('details').forEach(item=>item.open=true);
+ };
  const makePrintPacket=(name,node)=>{
   const clone=node.cloneNode(true);
-  clone.hidden=false;clone.removeAttribute('hidden');
-  clone.querySelectorAll('[hidden]').forEach(item=>{item.hidden=false;item.removeAttribute('hidden')});
-  clone.querySelectorAll('details').forEach(item=>item.open=true);
+  sanitizePrintClone(clone);
   copyFormValues(node,clone);
   clone.querySelectorAll('button,.v2-save-row,[aria-live]').forEach(item=>item.remove());
   clone.querySelectorAll('[id]').forEach(item=>item.removeAttribute('id'));
@@ -56,13 +64,11 @@
   packet.appendChild(clone);
   return packet;
  };
- const buildPrintSurface=mode=>{
-  const surface=ensurePrintSurface();surface.innerHTML='';
-  const names=mode==='all'?['participant','leader','teaching']:[mode];
-  names.forEach(name=>{if(views[name])surface.appendChild(makePrintPacket(name,views[name]))});
-  return surface;
- };
- const printMode=mode=>{document.body.dataset.v2Print=mode;const surface=buildPrintSurface(mode);surface.getBoundingClientRect();window.print();};
+ const surface=ensurePrintSurface();
+ ['participant','leader','teaching'].forEach(name=>surface.appendChild(makePrintPacket(name,views[name])));
+ const syncTeachingNotes=()=>{const printable=surface.querySelector('[data-v2-packet="teaching"] .v2-print-notes');if(printable)printable.textContent=notes.value||'';};
+ const buildPrintSurface=mode=>{syncTeachingNotes();surface.dataset.v2SurfaceMode=mode;return surface;};
+ const printMode=mode=>{document.body.dataset.v2Print=mode;surface.removeAttribute('aria-hidden');const prepared=buildPrintSurface(mode);prepared.getBoundingClientRect();window.print();};
  printPanel.querySelectorAll('[data-v2-print]').forEach(button=>button.addEventListener('click',()=>printMode(button.dataset.v2Print)));
  window.NLDGFaithTruthPrint={print:printMode,build:buildPrintSurface};
 })();

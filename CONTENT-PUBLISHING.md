@@ -2,6 +2,15 @@
 
 The shared content registry is the source of truth for ministry discovery. A published entry automatically feeds global search, homepage sections, topic and Scripture browsing, related-content recommendations, and the generated complete-content section of the site map.
 
+## Publishing rhythm and homepage reading
+
+- Devotionals publish every Monday.
+- Beyond the Label publishes on the first of each month.
+- Articles publish twice each month; specific dates are chosen during editorial planning.
+- Bible studies publish after review and approval.
+
+The homepage reading section selects the newest published Newsletter, Devotional, and Article by `publishedAt`, excluding collection hubs and future publication dates (America/New_York). It refreshes when the shared libraries finish loading. Keep each newsletter issue in the registry as well as the newsletter archive. Register articles and devotionals in their existing libraries. The homepage has working collection links if scripts cannot load or a category has no published entries.
+
 ## Standard workflow
 
 1. Copy `templates/content-page.template.html` and rename it for the new ministry resource.

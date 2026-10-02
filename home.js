@@ -1,6 +1,19 @@
 (function(){
   const card=window.NLDG_CONTENT_CARD||function(item){return `<article class="unified-content-card"><span class="content-type">${item.type}</span><h3>${item.title}</h3><p>${item.description||''}</p><a href="${item.url}">Open resource →</a></article>`;};
   const render=(id,items)=>{const target=document.getElementById(id);if(target)target.innerHTML=items.map(card).join('');};
+  const renderReading=library=>{
+    const today=new Date().toLocaleDateString('en-CA',{timeZone:'America/New_York'});
+    const hubs=new Set(['newsletter.html','devotionals.html','articles.html']);
+    const slots=[
+      {type:'Newsletter',title:'Beyond the Label',description:'Monthly reflections on faith and following Jesus.',url:'newsletter.html'},
+      {type:'Devotional',title:'Monday devotionals',description:'Scripture-centered encouragement for the week ahead.',url:'devotionals.html'},
+      {type:'Article',title:'Faith for everyday life',description:'Thoughtful reflections to help you put faith into practice.',url:'articles.html'}
+    ];
+    const items=slots.map(slot=>library
+      .filter(item=>item.type===slot.type&&item.status==='published'&&!hubs.has(item.url)&&item.publishedAt&&item.publishedAt<=today)
+      .sort((a,b)=>b.publishedAt.localeCompare(a.publishedAt))[0]||slot);
+    render('home-reading',items);
+  };
   const continueJourney=library=>{
     let state={};
     try{state=JSON.parse(localStorage.getItem('nldg-study-state')||'{}');}catch(error){return;}
@@ -44,6 +57,7 @@
     }
     render('home-featured',featured);
     render('home-latest',latest);
+    renderReading(library);
     continueJourney(library);
   };
   window.addEventListener('nldg-library-ready',renderHome);

@@ -670,9 +670,19 @@ try{
   expect(podcastText.includes('has not launched yet'),'Podcast explicitly preserves pre-launch status.','Podcast does not clearly state that it has not launched yet.');
 
   await open('devotionals','devotionals.html');
-  await page.waitForFunction(()=>document.querySelector('#devoCurrentTitle')?.textContent?.includes('Worship After Sunday'),{timeout:5000}).catch(()=>{});
-  const currentDevotional=await page.locator('#devoCurrentTitle').innerText().catch(()=>'');
-  expect(currentDevotional.includes('Worship After Sunday'),'Devotionals shows Worship After Sunday as the current devotional.','Devotionals did not promote Worship After Sunday as current.');
+  await page.waitForFunction(()=>window.NLDG_DEVOTIONAL_LIBRARY_LOADED&&document.querySelector('#devoCurrentTitleLink')?.textContent?.trim(),null,{timeout:5000});
+  const expectedDevotional=await page.evaluate(()=>(window.NLDG_LIBRARY||[])
+    .filter(item=>item.type==='Devotional'&&item.status==='published'&&item.url&&item.url!=='devotionals.html')
+    .sort((a,b)=>String(b.publishedAt||'').localeCompare(String(a.publishedAt||''))||String(a.title||'').localeCompare(String(b.title||'')))[0]||null);
+  expect(Boolean(expectedDevotional),'Published devotional metadata is available.','No published devotional metadata was available.');
+  if(expectedDevotional){
+    const currentDevotional=(await page.locator('#devoCurrentTitleLink').innerText()).trim();
+    expect(currentDevotional===expectedDevotional.title,`Devotionals shows the newest published devotional: ${expectedDevotional.title}.`,`Devotionals showed "${currentDevotional}" instead of "${expectedDevotional.title}".`);
+    for(const selector of ['#devoCurrentTitleLink','#devoCurrentCta','#devoCurrentRead']){
+      const href=await page.locator(selector).getAttribute('href');
+      expect(href===expectedDevotional.url,`${selector} links to the newest devotional.`,`${selector} does not link to ${expectedDevotional.url}.`);
+    }
+  }
   expect((await page.locator('.section-navigation a[href="dashboard.html"]').filter({hasText:'My Journey'}).count())>0,'Devotionals shared navigation includes My Journey.','Devotionals shared navigation is missing My Journey.');
 
   const sitemapResponse=await context.request.get(`${BASE_URL}/sitemap.xml`);

@@ -1,0 +1,80 @@
+name: Lesson Reflections Audit
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'lesson-reflections.js'
+      - 'lesson-reflections.css'
+      - 'journey-lesson-reflections.js'
+      - 'dashboard.html'
+      - 'study-experience.js'
+      - 'study-print-coverage.js'
+      - 'book-study-series.js'
+      - 'current-events-series.html'
+      - 'current-events-four-views.js'
+      - 'print-center.js'
+      - 'es/lesson-reflections.js'
+      - 'es/lesson-reflections.css'
+      - 'scripts/lesson-reflections-browser-audit.mjs'
+      - 'scripts/responsive-audit.mjs'
+      - 'scripts/interactive-study-audit.mjs'
+      - 'scripts/spanish-book-series-audit.mjs'
+      - '.github/workflows/lesson-reflections-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  lesson-reflections:
+    name: Storage, My Journey, print, mobile, and Spanish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install browser audit tools
+        run: |
+          npm install --no-save playwright axe-core
+          npx playwright install --with-deps chromium
+
+      - name: Start local site
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/nldg-http.log 2>&1 &
+          echo $! > /tmp/nldg-http.pid
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4173/index.html > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/nldg-http.log
+          exit 1
+
+      - name: Run lesson reflection browser audit
+        run: node scripts/lesson-reflections-browser-audit.mjs
+
+      - name: Run responsive layout audit
+        run: node scripts/responsive-audit.mjs
+
+      - name: Run interactive study audit
+        run: node scripts/interactive-study-audit.mjs
+
+      - name: Run Spanish book series audit
+        run: node scripts/spanish-book-series-audit.mjs
+
+      - name: Upload audit reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-reflections-audit-results
+          path: |
+            responsive-audit-results
+            interactive-study-audit-results
+          if-no-files-found: warn

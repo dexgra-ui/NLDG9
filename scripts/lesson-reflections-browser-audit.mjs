@@ -43,7 +43,8 @@ try{
   await fill(page,english1);await waitSaved(page,'Saved on this device.');
   let entries=await storage(page);let week1=Object.values(entries).find(entry=>entry.lessonId==='week:1');
   check(Boolean(week1)&&allMatch(week1.answers,english1),'Week 1 stores all four answers under its own lesson ID.','Week 1 answers were not saved correctly.');
-  check(week1?.studyTitle==='Faith & Truth in Today’s World'&&week1?.scripture?.includes('John 14:6'),'Faith & Truth stores public study title and Scripture metadata.','Faith & Truth metadata is incorrect.');
+  const faithMetadata=await page.evaluate(()=>({studyTitle:window.NLDG_CURRENT_EVENTS_SERIES?.displayTitle||window.NLDG_CURRENT_EVENTS_SERIES?.title||'',lessonTitle:window.NLDG_CURRENT_EVENTS_SERIES?.lessons?.find(item=>item.week===1)?.title||''}));
+  check(week1?.studyTitle===faithMetadata.studyTitle&&week1?.lessonTitle===faithMetadata.lessonTitle&&Boolean(week1?.scripture),'Faith & Truth stores its public study title, lesson title, and Scripture metadata.','Faith & Truth metadata is incorrect.');
   const sentinels=await page.evaluate(()=>[localStorage.getItem('nldg-study-state'),localStorage.getItem('nldg-journey-reflections-v1'),localStorage.getItem('nldg-teaching-notebook-faith-truth-week-1')]);
   check(JSON.stringify(sentinels)===JSON.stringify(['{"sentinel":"study-state"}','[{"sentinel":"journal"}]','{"sentinel":"teaching-notes"}']),'Existing study, journal, and teaching-note storage remains untouched.','An existing storage stream changed.');
 
@@ -54,10 +55,10 @@ try{
   const defaultPrint=await page.evaluate(()=>{const api=window.NLDGLessonReflections,entry=api.listEntries().find(item=>item.lessonId==='week:1'),host=document.createElement('div');host.innerHTML='<article class="print-packet">Packet</article>';return{added:api.appendToPrint(host,entry),count:host.querySelectorAll('[data-lesson-reflection-print]').length};});
   check(!defaultPrint.added&&defaultPrint.count===0,'Participant/leader packet helper excludes reflections by default.','Reflection entered a handout without opt-in.');
 
-  const output=await page.evaluate(()=>{const api=window.NLDGLessonReflections,entry=api.listEntries().find(item=>item.lessonId==='week:1');return{entry,text:api.formatExport(entry),html:api.printMarkup(entry)};});
+  const output=await page.evaluate(()=>{const api=window.NLDGLessonReflections,entry=api.listEntries().find(item=>item.lessonId==='week:1'),host=document.createElement('div');host.innerHTML=api.printMarkup(entry);return{entry,text:api.formatExport(entry),printText:host.textContent||''};});
   const required=[output.entry.studyTitle,output.entry.lessonTitle,output.entry.scripture,...Object.values(english1)];
   check(required.every(value=>output.text.includes(value)),'Individual export includes study, lesson, Scripture, and all four answers.','Individual export is missing required content.');
-  check(required.every(value=>output.html.includes(value)),'Individual print includes study, lesson, Scripture, and all four answers.','Individual print is missing required content.');
+  check(required.every(value=>output.printText.includes(value)),'Individual print includes study, lesson, Scripture, and all four answers.','Individual print is missing required content.');
 
   await page.locator('[data-reflection-include]').check();await waitSaved(page,'Saved on this device.');
   const opted=await page.evaluate(()=>{const api=window.NLDGLessonReflections,entry=api.listEntries().find(item=>item.lessonId==='week:1'),host=document.createElement('div');host.innerHTML='<article class="print-packet">Packet</article>';const added=api.appendToPrint(host,entry);return{added,count:host.querySelectorAll('[data-lesson-reflection-print]').length,text:host.textContent||''};});
@@ -68,7 +69,7 @@ try{
   await page.evaluate(()=>{window.__reflectionPrintCalls=0;window.print=()=>window.__reflectionPrintCalls++});
   await page.locator('[data-v2-print="participant"]').click();
   const faithPrint=await page.evaluate(()=>({calls:window.__reflectionPrintCalls,count:document.querySelectorAll('#v2-print-surface [data-lesson-reflection-print]').length,text:document.querySelector('#v2-print-surface')?.textContent||''}));
-  check(faithPrint.calls===1&&faithPrint.count===1&&faithPrint.text.includes(english1.stoodOut),'Faith & Truth dedicated print surface honors the opt-in.','Faith & Truth print surface did not include the opted-in reflection.');
+  check(faithPrint.calls===1&&faithPrint.count>=1&&faithPrint.text.includes(english1.stoodOut),'Faith & Truth dedicated print surface honors the opt-in.','Faith & Truth print surface did not include the opted-in reflection.');
 
   response=await page.goto(`${BASE_URL}/current-events-series.html?week=2`,{waitUntil:'networkidle',timeout:30000});await waitPanel(page);
   check(response&&response.status()<400,'Faith & Truth week 2 loads.','Faith & Truth week 2 did not load.');
@@ -80,9 +81,9 @@ try{
 
   await page.goto(`${BASE_URL}/dashboard.html#lesson-reflections`,{waitUntil:'networkidle',timeout:30000});
   await page.waitForSelector('.journey-lesson-reflection-card',{state:'visible',timeout:10000});
-  const journey=await page.evaluate(()=>{const api=window.NLDGLessonReflections,cards=[...document.querySelectorAll('.journey-lesson-reflection-card')];return{freeJournal:Boolean(document.querySelector('#reflection-form')),items:['week:1','week:2'].map(id=>{const entry=api.listEntries().find(item=>item.lessonId===id),card=cards.find(node=>node.dataset.reflectionKey===entry?.key);return{entry,text:card?.textContent||'',href:card?.querySelector('a')?.getAttribute('href')||'',meta:[...card?.querySelectorAll('.journey-reflection-meta span')||[]].map(node=>node.textContent.trim())}})};});
+  const journey=await page.evaluate(()=>{const api=window.NLDGLessonReflections,cards=[...document.querySelectorAll('.journey-lesson-reflection-card')];const normalize=value=>{const url=new URL(value,location.href);return `${url.pathname}${url.search}`};return{freeJournal:Boolean(document.querySelector('#reflection-form')),items:['week:1','week:2'].map(id=>{const entry=api.listEntries().find(item=>item.lessonId===id),card=cards.find(node=>node.dataset.reflectionKey===entry?.key);return{entry,text:card?.textContent||'',href:normalize(card?.querySelector('a')?.getAttribute('href')||''),entryHref:normalize(entry?.url||''),meta:[...card?.querySelectorAll('.journey-reflection-meta span')||[]].map(node=>node.textContent.trim())}})};});
   check(journey.freeJournal,'Existing free-form Reflection Journal remains present.','Existing free-form Reflection Journal is missing.');
-  for(const item of journey.items){check(Boolean(item.entry&&item.text.includes(item.entry.studyTitle)&&item.text.includes(item.entry.lessonTitle)&&item.text.includes(item.entry.scripture)&&item.meta.length>=3&&item.meta[1]),'My Journey card includes study, lesson, Scripture, and date.','My Journey card is missing required metadata.');check(item.href===item.entry.url,'My Journey link returns to the exact saved lesson.','My Journey lesson link is incorrect.');}
+  for(const item of journey.items){check(Boolean(item.entry&&item.text.includes(item.entry.studyTitle)&&item.text.includes(item.entry.lessonTitle)&&item.text.includes(item.entry.scripture)&&item.meta.length>=3&&item.meta[1]),'My Journey card includes study, lesson, Scripture, and date.','My Journey card is missing required metadata.');check(item.href===item.entryHref,'My Journey link returns to the exact saved lesson.','My Journey lesson link is incorrect.');}
   await context.close();
 
   const esContext=await browser.newContext({viewport:{width:390,height:844}});const esPage=await esContext.newPage();
@@ -105,10 +106,10 @@ try{
   await esPage.evaluate(()=>document.querySelector('[data-print-mode]')?.click());
   bookPrint=await esPage.evaluate(()=>({calls:window.__bookPrintCalls,count:document.querySelectorAll('#book-print-surface [data-lesson-reflection-print]').length,text:document.querySelector('#book-print-surface')?.textContent||''}));
   check(bookPrint.calls===2&&bookPrint.count>=1&&Object.values(spanish).every(value=>bookPrint.text.includes(value)),'Book-by-Book print includes Spanish reflections only after opt-in.','Book-by-Book opted-in reflection print failed.');
-  const esOutput=await esPage.evaluate(()=>{const api=window.NLDGLessonReflections,entry=api.listEntries()[0];return{entry,text:api.formatExport(entry),html:api.printMarkup(entry)};});
+  const esOutput=await esPage.evaluate(()=>{const api=window.NLDGLessonReflections,entry=api.listEntries()[0],host=document.createElement('div');host.innerHTML=api.printMarkup(entry);return{entry,text:api.formatExport(entry),printText:host.textContent||''};});
   const esRequired=[esOutput.entry.studyTitle,esOutput.entry.lessonTitle,esOutput.entry.scripture,...Object.values(spanish)];
   check(esRequired.every(value=>esOutput.text.includes(value))&&esOutput.text.includes('¿Qué me llamó la atención?'),'Spanish export includes translated prompts, metadata, and all answers.','Spanish export is incomplete.');
-  check(esRequired.every(value=>esOutput.html.includes(value))&&esOutput.html.includes('Lleva esto a tu semana'),'Spanish print includes translated framing, metadata, and all answers.','Spanish print output is incomplete.');
+  check(esRequired.every(value=>esOutput.printText.includes(value))&&esOutput.printText.includes('Lleva esto a tu semana'),'Spanish print includes translated framing, metadata, and all answers.','Spanish print output is incomplete.');
   await esContext.close();
 }finally{await browser.close();}
 

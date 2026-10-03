@@ -20,7 +20,6 @@ on:
       - 'scripts/lesson-reflections-browser-audit.mjs'
       - 'scripts/responsive-audit.mjs'
       - 'scripts/interactive-study-audit.mjs'
-      - 'scripts/spanish-book-series-audit.mjs'
       - '.github/workflows/lesson-reflections-audit.yml'
 
 permissions:
@@ -65,9 +64,6 @@ jobs:
 
       - name: Run interactive study audit
         run: node scripts/interactive-study-audit.mjs
-
-      - name: Run Spanish book series audit
-        run: node scripts/spanish-book-series-audit.mjs
 
       - name: Upload audit reports
         if: always()

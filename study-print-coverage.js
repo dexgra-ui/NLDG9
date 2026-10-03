@@ -10,6 +10,10 @@
   const source=document.querySelector('.wj-study-content,.gwj-study-content,.fyj-study-content,.prep-lesson,.lesson-wrap,.study-content,.wof-study-content,.mof-study-content,.mf-study-content,article');
   if(!source)return;
 
+  const assetBase=new URL('.',document.currentScript?.src||location.href);
+  if(!document.querySelector('link[data-lesson-reflections]')){const link=document.createElement('link');link.rel='stylesheet';link.href=new URL('lesson-reflections.css?v=1.0.0',assetBase).href;link.dataset.lessonReflections='true';document.head.appendChild(link)}
+  if(!window.NLDG_LESSON_REFLECTIONS_LOADED&&!document.querySelector('script[data-lesson-reflections]')){const script=document.createElement('script');script.src=new URL('lesson-reflections.js?v=1.0.0',assetBase).href;script.dataset.lessonReflections='true';document.body.appendChild(script)}
+
   const spanish=document.documentElement.lang==='es';
   const labels=spanish?{
     print:'Imprimir',participant:'Guía del participante',leader:'Guía para líderes',both:'Imprimir ambos',lesson:'Lección',notes:'Notas'
@@ -25,7 +29,7 @@
 
   const leaderTextPattern=/\b(leader|facilitator|mentor|parent\s*\/\s*teacher|parent or teacher|adult note|nota(?:\s+de\s+profundidad)?\s+para\s+líderes|guía para líderes|maestro|mentor)\b/i;
   const removeChrome=root=>{
-    root.querySelectorAll('.lesson-actions,.wj-actions,.gwj-actions,.fyj-actions,.lesson-navigation,.complete-panel,.lesson-complete-panel,.series-navigation,.study-experience-bar,.study-view-controls,.study-notes,.discipleship-tools,.section-navigation,.breadcrumbs,.content-sequence,.coverage-print-entry,.ministry-footer,script,style').forEach(node=>node.remove());
+    root.querySelectorAll('.lesson-actions,.wj-actions,.gwj-actions,.fyj-actions,.lesson-navigation,.complete-panel,.lesson-complete-panel,.series-navigation,.study-experience-bar,.study-view-controls,.study-notes,.lesson-reflections-panel,.discipleship-tools,.section-navigation,.breadcrumbs,.content-sequence,.coverage-print-entry,.ministry-footer,script,style').forEach(node=>node.remove());
     root.querySelectorAll('button,input,select,textarea').forEach(node=>node.remove());
     root.querySelectorAll('[id]').forEach(node=>node.removeAttribute('id'));
     return root;
@@ -73,6 +77,7 @@
     const surface=ensureSurface();surface.innerHTML='';
     if(mode==='participant'||mode==='both')surface.appendChild(participantPacket());
     if(mode==='leader'||mode==='both')surface.appendChild(leaderPacket());
+    window.NLDGLessonReflections?.appendToPrint?.(surface);
     document.body.dataset.studyPrintCoverage=mode;
     document.querySelector('.coverage-print-tools')?.removeAttribute('open');
     surface.getBoundingClientRect();

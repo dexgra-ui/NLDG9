@@ -51,6 +51,7 @@
 
   const addStylesheet=href=>{if([...document.styleSheets].some(sheet=>sheet.href?.includes(href.split('?')[0])))return;const link=document.createElement('link');link.rel='stylesheet';link.href=href;document.head.appendChild(link);};
   const loadScript=src=>new Promise((resolve,reject)=>{const existing=[...document.scripts].find(script=>script.src.includes(src.split('?')[0]));if(existing){resolve();return;}const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=reject;document.body.appendChild(script);});
+  addStylesheet('lesson-reflections.css?v=1.0.0');
   addStylesheet('expanded-leader-guide.css?v=1.1.0');
   addStylesheet('teaching-dashboard.css?v=1.0.0');
   addStylesheet('teaching-notebook.css?v=1.0.0');
@@ -60,5 +61,5 @@
   addStylesheet('print-center.css?v=1.0.0');
   addStylesheet('print-center-print-safe.css?v=1.0.0');
   addStylesheet('teaching-analytics.css?v=1.0.0');
-  loadScript('leader-guide-data.js?v=1.1.1').then(()=>loadScript('expanded-leader-guide.js?v=1.1.0')).then(()=>loadScript('teaching-analytics.js?v=1.0.0')).then(()=>loadScript('teaching-dashboard.js?v=1.1.0')).then(()=>loadScript('teaching-notebook.js?v=1.1.0')).then(()=>loadScript('scripture-study-data.js?v=7.2.0')).then(()=>loadScript('scripture-study-panel.js?v=1.0.0')).then(()=>loadScript('discussion-manager.js?v=1.0.0')).then(()=>loadScript('leader-resource-drawer.js?v=1.0.0')).then(()=>loadScript('print-center.js?v=1.0.0')).then(()=>loadScript('presentation-mode.js?v=1.1.0')).catch(error=>console.warn('Study teaching tools could not load.',error));
+  loadScript('lesson-reflections.js?v=1.0.0').then(()=>loadScript('leader-guide-data.js?v=1.1.1')).then(()=>loadScript('expanded-leader-guide.js?v=1.1.0')).then(()=>loadScript('teaching-analytics.js?v=1.0.0')).then(()=>loadScript('teaching-dashboard.js?v=1.1.0')).then(()=>loadScript('teaching-notebook.js?v=1.1.0')).then(()=>loadScript('scripture-study-data.js?v=7.2.0')).then(()=>loadScript('scripture-study-panel.js?v=1.0.0')).then(()=>loadScript('discussion-manager.js?v=1.0.0')).then(()=>loadScript('leader-resource-drawer.js?v=1.0.0')).then(()=>loadScript('print-center.js?v=1.0.0')).then(()=>loadScript('presentation-mode.js?v=1.1.0')).catch(error=>console.warn('Study teaching tools could not load.',error));
 })();

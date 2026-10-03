@@ -70,7 +70,7 @@
     if(series?.lessons?.length&&week){
       const lesson=series.lessons.find(item=>Number(item.week)===week);
       if(lesson)return{
-        locale,studyId:`series:${slug(series.id||series.title||'faith-truth')}`,lessonId:`week:${week}`,studyTitle:clean(series.title)||"Faith & Truth in Today's World",
+        locale,studyId:`series:${slug(series.id||series.title||'faith-truth')}`,lessonId:`week:${week}`,studyTitle:clean(series.displayTitle)||clean(series.title)||"Faith & Truth in Today's World",
         lessonTitle:clean(lesson.title)||`${isSpanish?'Semana':'Week'} ${week}`,scripture:normalizeScripture(lesson.scripture||lesson.primaryScripture||lesson.reference),url:relativeUrl(),
         contextLabels:contextHeadings()
       };
@@ -111,11 +111,11 @@
 
   function formatExport(entry){
     const e=normalizeEntry(entry,entry?.key||'');const promptLabels=e.locale==='es'?['¿Qué me llamó la atención?','¿Qué pregunta todavía tengo?','¿Qué pondré en práctica?','¿Por qué estoy orando?']:['What stood out to me?','What question do I still have?','What will I put into practice?','What am I praying about?'];
-    const values=[e.answers.stoodOut,e.answers.question,e.answers.practice,e.answers.prayer];
+    const values=[e.answers.stoodOut,e.answers.question,e.answers.practice,e.answers.prayer];const blank=e.locale==='es'?'(en blanco)':'(blank)';
     return[
       'No Labels, Designed by God',
       e.studyTitle,e.lessonTitle,e.scripture?`${e.locale==='es'?'Escrituras':'Scripture'}: ${e.scripture}`:'',
-      '',...promptLabels.flatMap((prompt,index)=>[prompt,values[index]||'(blank)','']),
+      '',...promptLabels.flatMap((prompt,index)=>[prompt,values[index]||blank,'']),
       e.locale==='es'?'Guardado localmente en este dispositivo. No se sincroniza con otros dispositivos.':'Stored locally on this device. Does not sync across devices.'
     ].filter((line,index,array)=>line!==''||array[index-1]!=='' ).join('\n');
   }
@@ -124,8 +124,8 @@
   }
   function printMarkup(entry,{handout=false}={}){
     const e=normalizeEntry(entry,entry?.key||'');const prompts=e.locale==='es'?['¿Qué me llamó la atención?','¿Qué pregunta todavía tengo?','¿Qué pondré en práctica?','¿Por qué estoy orando?']:['What stood out to me?','What question do I still have?','What will I put into practice?','What am I praying about?'];
-    const values=[e.answers.stoodOut,e.answers.question,e.answers.practice,e.answers.prayer];
-    return `<section class="lesson-reflection-print-section${handout?' is-handout':''}" data-lesson-reflection-print><header><p>No Labels, Designed by God</p><span>${esc(e.locale==='es'?'Lleva esto a tu semana':'Carry this into your week')}</span><h2>${esc(e.studyTitle)}</h2><h3>${esc(e.lessonTitle)}</h3>${e.scripture?`<strong>${esc(e.scripture)}</strong>`:''}</header><div class="lesson-reflection-print-grid">${prompts.map((prompt,index)=>`<section><h4>${esc(prompt)}</h4><p>${esc(values[index]||labels.empty).replaceAll('\n','<br>')}</p></section>`).join('')}</div></section>`;
+    const values=[e.answers.stoodOut,e.answers.question,e.answers.practice,e.answers.prayer];const empty=e.locale==='es'?'Todavía no has escrito una respuesta.':'You have not written a response yet.';
+    return `<section class="lesson-reflection-print-section${handout?' is-handout':''}" data-lesson-reflection-print><header><p>No Labels, Designed by God</p><span>${esc(e.locale==='es'?'Lleva esto a tu semana':'Carry this into your week')}</span><h2>${esc(e.studyTitle)}</h2><h3>${esc(e.lessonTitle)}</h3>${e.scripture?`<strong>${esc(e.scripture)}</strong>`:''}</header><div class="lesson-reflection-print-grid">${prompts.map((prompt,index)=>`<section><h4>${esc(prompt)}</h4><p>${esc(values[index]||empty).replaceAll('\n','<br>')}</p></section>`).join('')}</div></section>`;
   }
   function ensureReflectionPrintSurface(){let surface=document.getElementById('lesson-reflection-print-surface');if(!surface){surface=document.createElement('section');surface.id='lesson-reflection-print-surface';surface.setAttribute('aria-hidden','true');document.body.appendChild(surface)}return surface;}
   function printEntry(entry){const surface=ensureReflectionPrintSurface();surface.innerHTML=printMarkup(entry);document.body.dataset.reflectionPrint='true';surface.getBoundingClientRect();window.print();return surface;}

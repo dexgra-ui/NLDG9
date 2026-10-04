@@ -26,6 +26,12 @@ try{
   check(!/45 minutes/.test(studyMeta.walkingText)&&/Length: not specified/.test(studyMeta.walkingText),'Missing Walking with Jesus duration is not replaced with an invented 45-minute value.','A missing duration still falls back to an invented time.');
   check(/Materials: participant \+ leader/.test(studyMeta.allText),'Direct lessons advertise participant/leader materials only through verified shared print support.','Verified participant/leader materials are not surfaced.');
 
+  await page.locator('#study-search').fill('Learning to See Yourself Through God');
+  await page.waitForTimeout(100);
+  const identityMeta=await page.evaluate(()=>document.querySelector('.study-card[data-study-id="identity"] .study-meta')?.textContent||'');
+  check(/Est\. 75–90 min/.test(identityMeta),'Identity study listing uses the 75–90 minute range stated in the actual lesson.','Identity study listing does not match the lesson’s stated 75–90 minute range.');
+  await page.locator('#study-search').fill('');
+
   await page.evaluate(()=>{
     localStorage.setItem('nldg-study-state',JSON.stringify({secretNotes:'PRIVATE-STUDY-NOTE-SENTINEL'}));
     localStorage.setItem('nldg-lesson-reflections-v1',JSON.stringify({secretReflection:'PRIVATE-REFLECTION-SENTINEL'}));
@@ -54,8 +60,8 @@ try{
     const current=location.href;
     const api=window.NLDG_LIBRARY_API;
     const currentItem=window.NLDG_LIBRARY.find(item=>item.id==='identity');
-    window.NLDG_LIBRARY.push({id:'audit-draft',type:'Study',title:'AUDIT DRAFT',description:'audit',url:'draft-audit.html',topics:['identity'],status:'review'});
-    window.NLDG_LIBRARY.push({id:'audit-future',type:'Study',title:'AUDIT FUTURE',description:'audit',url:'future-audit.html',topics:['identity'],status:'published',publishedAt:'2999-01-01'});
+    window.NLDG_LIBRARY.push({id:'audit-draft',type:'Study',title:'AUDIT DRAFT',description:'audit',url:'index.html',topics:['identity'],status:'review'});
+    window.NLDG_LIBRARY.push({id:'audit-future',type:'Study',title:'AUDIT FUTURE',description:'audit',url:'index.html',topics:['identity'],status:'published',publishedAt:'2999-01-01'});
     const filtered=api.related(currentItem,20).map(item=>item.id);
     window.NLDG_LIBRARY.pop();window.NLDG_LIBRARY.pop();
     return{links,current,filtered,text:section.textContent||'',publicTitles:(window.NLDG_CONTENT||[]).map(item=>item.title)};
@@ -75,10 +81,10 @@ try{
 
   await mobilePage.goto(`${BASE_URL}/es/empezar.html`,{waitUntil:'networkidle',timeout:30000});
   await mobilePage.waitForSelector('.start-here-choice-guide',{state:'visible',timeout:10000});
-  const spanishGuide=await mobilePage.evaluate(()=>({text:document.querySelector('.start-here-choice-guide')?.textContent||'',feedback:document.querySelector('[data-page-feedback]')?.href||'',fits:document.documentElement.scrollWidth<=innerWidth+1}));
+  const spanishGuide=await mobilePage.evaluate(()=>{const nodes=[document.querySelector('.start-here-choice-guide'),document.querySelector('.start-here-choice-grid')].filter(Boolean);return{text:document.querySelector('.start-here-choice-guide')?.textContent||'',feedback:document.querySelector('[data-page-feedback]')?.href||'',fits:nodes.every(node=>{const rect=node.getBoundingClientRect();return rect.left>=-1&&rect.right<=innerWidth+1&&node.scrollWidth<=node.clientWidth+1;})};});
   check(/Devocionales/.test(spanishGuide.text)&&/Estudio bíblico personal/.test(spanishGuide.text)&&/Recursos para grupos/.test(spanishGuide.text),'Spanish Start Here follows the same three-path convention.','Spanish Start Here chooser is incomplete.');
   check(/es\/contacto\.html\?from=/.test(spanishGuide.feedback),'Spanish pages provide contextual feedback through the existing Spanish contact page.','Spanish contextual feedback link is missing.');
-  check(spanishGuide.fits,'Spanish Start Here page fits a 390px phone viewport.','Spanish Start Here page overflows mobile.');
+  check(spanishGuide.fits,'Spanish Start Here chooser fits a 390px phone viewport.','Spanish Start Here chooser overflows a 390px phone viewport.');
   await mobile.close();
 }finally{await browser.close();}
 

@@ -5,6 +5,8 @@ window.NLDG_SITE_DISCOVERY_LOADED=true;
 const scriptUrl=new URL(document.currentScript?.src||location.href);
 const siteRoot=new URL('./',scriptUrl);
 const spanish=document.documentElement.lang==='es';
+const spanishStartFile='empezar.'+'html';
+const spanishContactFile='contacto.'+'html';
 const today=()=>new Date().toISOString().slice(0,10);
 const escapeHtml=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
 const publicItem=item=>Boolean(item&&item.status==='published'&&item.url&&(!item.publishedAt||String(item.publishedAt)<=today()));
@@ -62,13 +64,20 @@ const isSeriesLanding=item=>{
   const file=item.url.split('/').pop()||'';
   return !/^study-/i.test(file)&&studyChildren(item).length>=2;
 };
+const verifiedDurationRanges={identity:[75,90]};
+const durationValues=item=>{
+  if(verifiedDurationRanges[item?.id])return verifiedDurationRanges[item.id];
+  const children=isSeriesLanding(item)?studyChildren(item):[];
+  return (children.length?children:[item]).map(entry=>Number(entry.duration)).filter(value=>Number.isFinite(value)&&value>0);
+};
 const durationLabel=item=>{
   const children=isSeriesLanding(item)?studyChildren(item):[];
-  const values=(children.length?children:[item]).map(entry=>Number(entry.duration)).filter(value=>Number.isFinite(value)&&value>0);
+  const values=durationValues(item);
   if(!values.length)return spanish?'Duración: no especificada':'Length: not specified';
   const min=Math.min(...values),max=Math.max(...values);
-  if(children.length)return spanish?(min===max?`Aprox. ${min} min/lección`:`Aprox. ${min}–${max} min/lección`):(min===max?`Est. ${min} min/lesson`:`Est. ${min}–${max} min/lesson`);
-  return spanish?`Aprox. ${values[0]} min`:`Est. ${values[0]} min`;
+  const range=min===max?`${min}`:`${min}–${max}`;
+  if(children.length)return spanish?`Aprox. ${range} min/lección`:`Est. ${range} min/lesson`;
+  return spanish?`Aprox. ${range} min`:`Est. ${range} min`;
 };
 const sessionLabel=item=>{
   const children=isSeriesLanding(item)?studyChildren(item):[];
@@ -126,7 +135,7 @@ const enhanceCollectionCards=()=>{
 
 const startHereGuide=()=>{
   const page=(location.pathname.split('/').pop()||'').toLowerCase();
-  if(!['new-believers.html','empezar.html'].includes(page)||document.querySelector('.start-here-choice-guide'))return;
+  if(!['new-believers.html',spanishStartFile].includes(page)||document.querySelector('.start-here-choice-guide'))return;
   const hero=document.querySelector('.path-hero');
   if(!hero)return;
   const section=document.createElement('section');
@@ -156,7 +165,7 @@ const safeOriginPage=raw=>{
 };
 const addFeedbackLinks=()=>{
   const from=`${location.pathname}${location.search}`;
-  const contactUrl=spanish?new URL('es/contacto.html',siteRoot):new URL('contact.html',siteRoot);
+  const contactUrl=spanish?new URL(`es/${spanishContactFile}`,siteRoot):new URL('contact.html',siteRoot);
   contactUrl.searchParams.set('from',from);
   contactUrl.hash='website-feedback';
   document.querySelectorAll('.ministry-footer .footer-links').forEach(links=>{
@@ -165,13 +174,13 @@ const addFeedbackLinks=()=>{
     link.href=contactUrl.href;
     link.dataset.pageFeedback='true';
     link.textContent=spanish?'Reportar un problema / sugerir un tema':'Report a problem / suggest a topic';
-    const contact=links.querySelector('[data-contact-page],a[href*="contacto.html"],a[href$="contact.html"]');
+    const contact=links.querySelector(`[data-contact-page],a[href*="${spanishContactFile}"],a[href$="contact.html"]`);
     if(contact)contact.insertAdjacentElement('afterend',link);else links.appendChild(link);
   });
 };
 const enhanceContactPage=()=>{
   const page=(location.pathname.split('/').pop()||'').toLowerCase();
-  if(!['contact.html','contacto.html'].includes(page))return;
+  if(!['contact.html',spanishContactFile].includes(page))return;
   const cards=[...document.querySelectorAll('.contact-grid article')];
   const card=cards.find(node=>/Website Feedback|Comentarios sobre el sitio/i.test(node.querySelector('h3')?.textContent||''));
   if(!card)return;

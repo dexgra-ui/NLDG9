@@ -155,7 +155,7 @@ try{
   const griefJourneyCount=await page.locator('#collection-grid a[href="faith-when-your-heart-is-hurting.html"]').count();
   const collectionText=await page.locator('#collection-grid').innerText().catch(()=>'');
   const collectionHrefs=await page.locator('#collection-grid .journey-collection-card .collection-action').evaluateAll(links=>links.map(link=>link.getAttribute('href')));
-  const expectedCollectionHrefs=['new-believers.html','growing-with-jesus.html','following-jesus-for-yourself.html','standalone-studies.html','after-benediction-series.html','preferences-idols-series.html','marriage-family.html','men-of-faith.html','women-of-faith.html','difficult-questions.html','faith-when-your-heart-is-hurting.html','leadership.html'];
+  const expectedCollectionHrefs=['new-believers.html','growing-with-jesus.html','following-jesus-for-yourself.html','respecting-boundaries.html','standalone-studies.html','after-benediction-series.html','preferences-idols-series.html','marriage-family.html','men-of-faith.html','women-of-faith.html','difficult-questions.html','faith-when-your-heart-is-hurting.html','leadership.html'];
   expect(kidsJourneyCount===1,'Bible Studies shows exactly one Growing with Jesus collection card.',`Bible Studies rendered ${kidsJourneyCount} Growing with Jesus collection links.`);
   expect(youthJourneyCount===1,'Bible Studies shows exactly one Following Jesus for Yourself collection card.',`Bible Studies rendered ${youthJourneyCount} Following Jesus for Yourself collection links.`);
   expect(griefJourneyCount===1,'Bible Studies shows exactly one static Faith When Your Heart Is Hurting card.',`Bible Studies rendered ${griefJourneyCount} grief collection links.`);

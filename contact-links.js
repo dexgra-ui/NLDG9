@@ -58,7 +58,7 @@ const ensure=()=>{
    bluesky.dataset.blueskyLink='true';
    bluesky.target='_blank';
    bluesky.rel='noopener noreferrer';
-   bluesky.setAttribute('aria-label','Follow Dexter A. Graham on Bluesky');
+   bluesky.setAttribute('aria-label','Bluesky ↗ — Dexter A. Graham (opens in a new tab)');
    bluesky.textContent='Bluesky ↗';
    links.insertBefore(bluesky,contact);
   }
@@ -73,7 +73,7 @@ const ensure=()=>{
   bluesky.className='button secondary';
   bluesky.target='_blank';
   bluesky.rel='noopener noreferrer';
-  bluesky.setAttribute('aria-label','Follow Dexter A. Graham on Bluesky');
+  bluesky.setAttribute('aria-label','Follow on Bluesky ↗ — Dexter A. Graham (opens in a new tab)');
   bluesky.textContent='Follow on Bluesky ↗';
   homeConnect.appendChild(bluesky);
  }

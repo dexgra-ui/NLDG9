@@ -31,4 +31,12 @@ assert.match(run('?person=missing').profile.children[1].textContent,/could not b
 assert.equal(run('').profile,undefined);
 for(const id of ['ruth','naomi','boaz','orpah','mahlon','elimelech','obed','jesse','david'])assert.ok(result.db.records.some(r=>r.id===id),id);
 assert.match(run('?person=orpah').profile.children[1].innerHTML,/Probable|inferred|normally understood/i);
+const estherReturn='/esther-study.html?lesson=3#person-context-5';
+const estherResult=run('?person=mordecai-esther&return='+encodeURIComponent(estherReturn));
+assert.equal(estherResult.profile.children[0].href,'https://nolabelsdesignedbygod.org'+estherReturn);
+assert.equal(estherResult.profile.children[0].textContent,'← Back to Esther study');
+assert.equal(estherResult.profile.children[1].firstElementChild.id,'selected-person-mordecai-esther');
+assert.equal(estherResult.profile.scrolled,true);
+assert.match(estherResult.profile.children[1].innerHTML,/Distinct from the Mordecai named in Ezra/);
+for(const id of ['esther','mordecai-esther','haman','vashti','ahasuerus-esther','zeresh','hegai','hathach','abihail-esther'])assert.ok(result.db.records.some(r=>r.id===id),id);
 console.log('PASS: pilot IDs, exact record, family links, return context, unsafe return rejection, missing ID, direct reference, and uncertainty labels. Browser/mobile/print QA remains required.');

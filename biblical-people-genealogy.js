@@ -55,6 +55,18 @@ if(profileId){
   if(relations.length){const nav=document.createElement('nav');nav.setAttribute('aria-label','Related people');relations.forEach(id=>{const a=document.createElement('a'),url=new URL(location.href);url.searchParams.set('person',id);a.href=url.href;a.textContent=name(id);a.className='button secondary';nav.append(a,document.createTextNode(' '));});body.append(nav);}
  }else body.textContent='This person could not be found. Use the reference search below.';
  profile.append(body,returnLink());(tools||grid).before(profile);
+ // Show the requested record immediately, after images and fonts settle.
+ profile.tabIndex=-1;
+ const showProfile=()=>{
+  const navigation=window.performance?.getEntriesByType?.('navigation')[0];
+  if(navigation?.type==='back_forward')return;
+  const header=document.querySelector('.site-header');
+  profile.style.scrollMarginTop=((header?.getBoundingClientRect().height||0)+16)+'px';
+  profile.focus({preventScroll:true});
+  profile.scrollIntoView({block:'start',behavior:'auto'});
+ };
+ if(document.readyState==='complete')requestAnimationFrame(showProfile);
+ else window.addEventListener('load',()=>requestAnimationFrame(showProfile),{once:true});
 }
 function render({focusResults=false}={}){try{const rawQuery=search.value.trim(),q=normalize(rawQuery),line=lineFilter?.value||'all',kind=kindFilter?.value||'all',matched=[];for(let i=0;i<indexedRecords.length;i+=1){const item=indexedRecords[i],r=item.record;if(q&&!item.searchText.includes(q))continue;if(line!=='all'&&r.line!==line)continue;if(kind!=='all'&&r.kind!==kind)continue;matched.push({item,score:relevanceScore(item,q)});}if(q)matched.sort((a,b)=>a.score-b.score||a.item.record.name.localeCompare(b.item.record.name,'en',{sensitivity:'base'})||a.item.index-b.item.index);const filtered=q||line!=='all'||kind!=='all',cap=filtered?60:30,visible=matched.slice(0,cap).map(x=>x.item.record);grid.innerHTML=visible.map(r=>card(r,rawQuery)).join('');if(!matched.length)summary.textContent=`No matches found${q?` for “${rawQuery}”`:''}. Try an alternate spelling, relative, book, or Scripture reference.`;else if(matched.length>visible.length)summary.textContent=`Showing the first ${visible.length} of ${matched.length} matching records, ranked by name relevance.`;else if(!filtered)summary.textContent=`Showing the first ${visible.length} of ${records.length} records. Type a name or use Search to query the complete Genesis–Revelation database.`;else summary.textContent=`Showing ${matched.length} matching record${matched.length===1?'':'s'} of ${records.length} total, ranked by name relevance.`;lastQuery=q;if(focusResults&&typeof summary.scrollIntoView==='function')summary.scrollIntoView({behavior:'auto',block:'nearest'});}catch(error){console.error('Biblical people search failed:',error);summary.textContent='The database search hit an error. Please refresh the page and try again.';}}
 function scheduleRender(delay=180){if(composing)return;if(renderTimer)window.clearTimeout(renderTimer);renderTimer=window.setTimeout(()=>{renderTimer=0;render();},delay);}

@@ -1,7 +1,12 @@
-// Curated English Ruth pilot; no global inference of same-name identities.
+// Curated English Ruth and Esther pilots; never infer same-name identities globally.
 (()=>{
  const view=document.getElementById('book-view');if(!view)return;
- const people={Naomi:'naomi',Boaz:'boaz',Orpah:'orpah',Mahlon:'mahlon',Elimelech:'elimelech',Obed:'obed',Jesse:'jesse',David:'david'},seen=new Set();
+ const pilots={
+  '/ruth-study.html':{name:'Ruth',id:'ruth',people:{Naomi:'naomi',Boaz:'boaz',Orpah:'orpah',Mahlon:'mahlon',Elimelech:'elimelech',Obed:'obed',Jesse:'jesse',David:'david'}},
+  '/esther-study.html':{name:'Esther',id:'esther',people:{Mordecai:'mordecai-esther',Haman:'haman',Vashti:'vashti',Ahasuerus:'ahasuerus-esther',Zeresh:'zeresh',Hadassah:'esther',Hegai:'hegai',Hathach:'hathach',Abihail:'abihail-esther'}}
+ };
+ const pilot=pilots[location.pathname];if(!pilot)return;
+ const people=pilot.people,seen=new Set();
  function personLink(label,id,anchor){
   const target=new URL('biblical-people-genealogy.html',location.href),back=new URL(location.href);
   back.hash=anchor;target.searchParams.set('person',id);target.searchParams.set('return',back.pathname+back.search+back.hash);
@@ -12,7 +17,7 @@
   const walker=document.createTreeWalker(block,NodeFilter.SHOW_TEXT),nodes=[];
   while(walker.nextNode())if(!walker.currentNode.parentElement.closest('a,button,textarea,input'))nodes.push(walker.currentNode);
   nodes.forEach(node=>{
-   const pattern=/\b(Naomi|Boaz|Orpah|Mahlon|Elimelech|Obed|Jesse|David)\b/g;let match,last=0;const fragment=document.createDocumentFragment();
+   const pattern=new RegExp('\\b('+Object.keys(people).join('|')+')\\b','g');let match,last=0;const fragment=document.createDocumentFragment();
    while((match=pattern.exec(node.textContent))){
     if(seen.has(match[1]))continue;seen.add(match[1]);block.id=block.id||`person-context-${index}`;
     fragment.append(document.createTextNode(node.textContent.slice(last,match.index)),personLink(match[1],people[match[1]],block.id));last=pattern.lastIndex;
@@ -20,8 +25,8 @@
    if(last){fragment.append(document.createTextNode(node.textContent.slice(last)));node.replaceWith(fragment);}
   });
  });
- // Ruth is also a book title. Provide an explicit profile link, not ambiguous citation links.
- const intro=document.createElement('p');intro.className='people-pilot-help';intro.append('Explore the people in this lesson: ',personLink('Ruth','ruth','book-view'),'. Selected names below also open the biblical reference.');view.prepend(intro);
+ // The main character is also the book title: provide an explicit profile link.
+ const intro=document.createElement('p');intro.className='people-pilot-help';intro.append('Explore the people in this lesson: ',personLink(pilot.name,pilot.id,'book-view'),'. Selected names below also open the biblical reference.');view.prepend(intro);
  const style=document.createElement('style');style.textContent='.study-person-link{text-decoration:underline;text-underline-offset:.2em}.study-person-link:focus-visible{outline:3px solid currentColor;outline-offset:4px}@media print{.people-pilot-help{display:none}.study-person-link{color:inherit;text-decoration:none}}';document.head.appendChild(style);
  function restore(){const id=location.hash.slice(1);if(id==='book-view'||/^person-context-\d+$/.test(id)){const target=document.getElementById(id);if(target){target.tabIndex=-1;target.focus({preventScroll:true});target.scrollIntoView({block:'center',behavior:'auto'});}}}
  // Run after the existing lesson renderer's initial scroll reset.

@@ -44,8 +44,9 @@ const profileParams=new URLSearchParams(location.search),profileId=profileParams
 if(profileId){
  const profile=document.createElement('section');profile.className='bp-profile';profile.setAttribute('aria-label','Selected biblical person');
  let back=new URL('studies.html',location.href),label='← Back to Bible Studies';
- try{const candidate=new URL(profileParams.get('return')||'',location.href);if(candidate.origin===location.origin&&!candidate.username&&!candidate.password&&candidate.pathname==='/ruth-study.html'){
-  back=candidate;label='← Back to Ruth study';
+ const returnStudies={'/ruth-study.html':'Ruth','/esther-study.html':'Esther'};
+ try{const candidate=new URL(profileParams.get('return')||'',location.href);if(candidate.origin===location.origin&&!candidate.username&&!candidate.password&&Object.hasOwn(returnStudies,candidate.pathname)){
+  back=candidate;label=`← Back to ${returnStudies[candidate.pathname]} study`;
  }}catch{}
  const returnLink=()=>{const a=document.createElement('a');a.className='button secondary';a.href=back.href;a.textContent=label;return a;};
  profile.append(returnLink());

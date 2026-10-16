@@ -69,6 +69,9 @@
   document.getElementById('toggle-complete').onclick=()=>{const st=read(),set=new Set(st.completed||[]);set.has(x.number)?set.delete(x.number):set.add(x.number);st.completed=[...set].sort((a,b)=>a-b);save(st);location.reload()};
  }
  lesson?render(lesson):landing();
+ if(lesson && location.pathname.endsWith('/ruth-study.html')){
+  const script=document.createElement('script');script.src='study-people-pilot.js';document.head.appendChild(script);
+ }
  if(lesson){
   const reflectionStyle=document.createElement('link');reflectionStyle.rel='stylesheet';reflectionStyle.href='lesson-reflections.css?v=1.0.0';reflectionStyle.dataset.lessonReflections='true';if(!document.querySelector('link[data-lesson-reflections]'))document.head.appendChild(reflectionStyle);
   if(!window.NLDG_LESSON_REFLECTIONS_LOADED&&!document.querySelector('script[data-lesson-reflections]')){const reflectionScript=document.createElement('script');reflectionScript.src='lesson-reflections.js?v=1.0.0';reflectionScript.dataset.lessonReflections='true';document.body.appendChild(reflectionScript)}

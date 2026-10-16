@@ -21,7 +21,8 @@ assert.equal(result.profile.children[0].href,'https://nolabelsdesignedbygod.org'
 assert.match(result.profile.children[1].innerHTML,/Boaz/);
 assert.equal(result.profile.children[1].firstElementChild.id,'selected-person-boaz');
 assert.ok(result.profile.children[1].children[0].children.some(a=>a.textContent==='Ruth'));
-for(const bad of ['https://evil.example/ruth-study.html','//evil.example/ruth-study.html','javascript:alert(1)','/other.html']){
+// An existing non-study page still must be rejected by the return-path allowlist.
+for(const bad of ['https://evil.example/ruth-study.html','//evil.example/ruth-study.html','javascript:alert(1)','/index.html']){
  assert.equal(run('?person=ruth&return='+encodeURIComponent(bad)).profile.children[0].href,'https://nolabelsdesignedbygod.org/studies.html');
 }
 assert.match(run('?person=missing').profile.children[1].textContent,/could not be found/);

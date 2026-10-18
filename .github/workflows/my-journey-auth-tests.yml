@@ -1,0 +1,21 @@
+name: My Journey Auth Checks
+on:
+  pull_request:
+    paths:
+      - 'scripts/my-journey-auth*'
+      - '.github/workflows/my-journey-auth-tests.yml'
+  workflow_dispatch:
+jobs:
+  auth-tests:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Passwordless auth adapter tests
+        run: node scripts/my-journey-auth.test.mjs
+      - name: Existing sync contract tests
+        run: node scripts/my-journey-sync-contract.test.mjs

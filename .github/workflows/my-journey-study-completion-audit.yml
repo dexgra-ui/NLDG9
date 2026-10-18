@@ -1,0 +1,50 @@
+name: My Journey Study Completion Audit
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'script.js'
+      - 'personalization.js'
+      - 'study-experience.js'
+      - 'dashboard.js'
+      - 'scripts/my-journey-study-completion-audit.mjs'
+      - '.github/workflows/my-journey-study-completion-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  completion-handoff:
+    name: Bible Studies completion to My Journey
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install browser audit tools
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Start local site
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/nldg-http.log 2>&1 &
+          echo $! > /tmp/nldg-http.pid
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4173/index.html > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/nldg-http.log
+          exit 1
+
+      - name: Run My Journey completion audit
+        run: node scripts/my-journey-study-completion-audit.mjs

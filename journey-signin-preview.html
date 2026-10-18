@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Journey Sign-In Preview | NLDG</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body{background:#07152c;color:#f5f6fa;font-family:system-ui,sans-serif;margin:0}
+main{max-width:580px;margin:8vh auto;padding:24px}
+.panel{background:#142441;border:1px solid #4a6385;border-radius:18px;padding:30px}
+label,input,button{display:block;width:100%;box-sizing:border-box}input{padding:14px;border-radius:8px;margin:8px 0 18px;font-size:1rem}
+button{padding:14px;border:0;border-radius:8px;background:#dcb96d;color:#14213b;font-weight:700;cursor:pointer}
+button:disabled{opacity:.6;cursor:not-allowed}a{color:#f1d48c}
+#status{min-height:2em}small{color:#d3dbe8}
+</style></head>
+<body><main><a href="dashboard.html">← Back to My Journey</a>
+<section class="panel"><p>NO LABELS, DESIGNED BY GOD</p><h1>Keep your journey with you.</h1>
+<p>Optional accounts will let you carry your study progress across devices. You can always study without signing in.</p>
+<h2>Sign in by email</h2>
+<form id="login"><label for="email">Email address</label><input id="email" type="email" autocomplete="email" required placeholder="you@example.com">
+<button type="submit" id="send">Preview sign-in flow</button></form>
+<p id="status" role="status" aria-live="polite"></p>
+<p><small>Preview mode only. No email is sent and no information is uploaded. Your existing browser progress stays on this device. Live email sign-in requires a hosted callback page and approved redirect URL.</small></p>
+</section></main>
+<script type="module">
+const form=document.querySelector('#login'),status=document.querySelector('#status');
+form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;status.textContent='Preview successful: a real sign-in would email you a secure, single-use link. No email was sent.';});
+</script></body></html>

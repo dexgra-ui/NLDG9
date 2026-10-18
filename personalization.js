@@ -21,6 +21,47 @@
   const unique=list=>[...new Set(list.filter(Boolean))];
   const studyState=()=>read(K.studyState,{});
   const flaggedStudies=flag=>Object.entries(studyState()).filter(([,state])=>Boolean(state?.[flag])).map(([id])=>id);
+  const SERIES_COMPLETION_SOURCES=[
+    {keys:['nldg-series-after-benediction'],page:'after-benediction-series.html',param:'lesson'},
+    {keys:['nldg-series-preferences-idols'],page:'preferences-idols-series.html',param:'lesson'},
+    {keys:['nldg-faith-hurting-en','nldg-faith-hurting-es'],page:'faith-when-your-heart-is-hurting.html',param:'week'}
+  ];
+  const seriesSourceForItem=item=>{
+    const raw=String(item?.url||'');
+    const split=raw.indexOf('?');
+    const pathname=split>=0?raw.slice(0,split):raw;
+    const query=split>=0?raw.slice(split+1):'';
+    const source=SERIES_COMPLETION_SOURCES.find(entry=>entry.page===pathname);
+    if(!source)return null;
+    const number=Number(new URLSearchParams(query).get(source.param)||0);
+    return number?{...source,number}:null;
+  };
+  const readSeriesCompletion=source=>{
+    const completed=new Set();
+    source.keys.forEach(key=>{
+      const state=read(key,{completed:[]});
+      (Array.isArray(state.completed)?state.completed:[]).map(Number).filter(Number.isFinite).forEach(value=>completed.add(value));
+    });
+    return completed;
+  };
+  const seriesCompleted=()=>unique(lib().filter(item=>item.type==='Study'&&item.status==='published').filter(item=>{
+    const source=seriesSourceForItem(item);
+    return source&&readSeriesCompletion(source).has(source.number);
+  }).map(item=>item.id));
+  const isSeriesManaged=id=>Boolean(seriesSourceForItem(lib().find(item=>item.id===id)));
+  const setSeriesCompleted=(item,complete)=>{
+    const source=seriesSourceForItem(item);
+    if(!source)return false;
+    source.keys.forEach(key=>{
+      const state=read(key,{completed:[]});
+      const values=new Set((Array.isArray(state.completed)?state.completed:[]).map(Number).filter(Number.isFinite));
+      complete?values.add(source.number):values.delete(source.number);
+      state.completed=[...values].sort((a,b)=>a-b);
+      state.updated=Date.now();
+      write(key,state);
+    });
+    return true;
+  };
 
   const PLANS=[
     {id:'jesus-30',title:'30 Days with Jesus',days:30,topics:['Jesus','discipleship'],description:'Walk through the life, teaching, compassion, cross, and resurrection of Jesus.'},
@@ -37,7 +78,7 @@
   const favorites=()=>unique([...read(K.favorites,[]),...flaggedStudies('favorite')]);
   const history=()=>read(K.history,[]);
   const collections=()=>read(K.collections,[{id:'saved-for-later',name:'Saved for Later',items:[]}]);
-  const completed=()=>unique([...read(K.completed,[]),...flaggedStudies('completed')]);
+  const completed=()=>unique([...read(K.completed,[]).filter(id=>!isSeriesManaged(id)),...flaggedStudies('completed').filter(id=>!isSeriesManaged(id)),...seriesCompleted()]);
   const notes=()=>read(K.notes,[]);
   const prayers=()=>read(K.prayers,[]);
   const planState=()=>read(K.plans,{active:null,completed:[]});
@@ -67,10 +108,11 @@
   function toggleCompleted(id){
     const next=!completed().includes(id);
     const legacy=read(K.completed,[]).filter(value=>value!==id);
-    if(next)legacy.unshift(id);
-    write(K.completed,legacy);
     const item=lib().find(entry=>entry.id===id);
-    if(item?.type==='Study'||studyState()[id])updateStudyState(id,{completed:next,progress:next?100:Math.min(99,studyState()[id]?.progress||0)});
+    const seriesManaged=setSeriesCompleted(item,next);
+    if(next&&!seriesManaged)legacy.unshift(id);
+    write(K.completed,legacy);
+    if(!seriesManaged&&(item?.type==='Study'||studyState()[id]))updateStudyState(id,{completed:next,progress:next?100:Math.min(99,studyState()[id]?.progress||0)});
     emit('completed');
     return next;
   }

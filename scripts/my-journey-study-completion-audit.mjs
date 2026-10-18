@@ -37,7 +37,7 @@ try{
   const growingState=await page.evaluate(()=>JSON.parse(localStorage.getItem('nldg-study-state')||'{}').identity);
   check(Boolean(growingState?.completed),'A regular study completed from Bible Studies writes canonical completion state.','Regular Bible Studies completion did not write canonical state.');
   let text=await dashboardText(page);
-  check(text.includes("Learning to See Yourself Through God's Eyes"),'A completed study opened from Bible Studies appears in My Journey.','Completed Bible Study is missing from My Journey.');
+  check(text.includes('Learning to See Yourself Through God'),'A completed study opened from Bible Studies appears in My Journey.','Completed Bible Study is missing from My Journey.');
 
   await clearStorage(page);
   await openStudyFromLibrary(page,'Command, Conviction, or Preference?','preferences-idols-series.html?lesson=1');

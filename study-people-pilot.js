@@ -1,7 +1,8 @@
-// Curated English Ruth and Esther pilots; never infer same-name identities globally.
+// Curated English study people; never infer same-name identities globally.
 (()=>{
  const view=document.getElementById('book-view');if(!view)return;
  const pilots={
+  '/genesis-study.html':{name:'Genesis',id:'genesis',people:{Adam:'adam',Eve:'eve',Noah:'noah',Abraham:'abram',Abram:'abram',Sarah:'sarai',Sarai:'sarai',Isaac:'isaac',Rebekah:'rebekah',Jacob:'jacob',Leah:'leah',Rachel:'rachel',Joseph:'joseph'}},
   '/ruth-study.html':{name:'Ruth',id:'ruth',people:{Naomi:'naomi',Boaz:'boaz',Orpah:'orpah',Mahlon:'mahlon',Elimelech:'elimelech',Obed:'obed',Jesse:'jesse',David:'david'}},
   '/esther-study.html':{name:'Esther',id:'esther',people:{Mordecai:'mordecai-esther',Haman:'haman',Vashti:'vashti',Ahasuerus:'ahasuerus-esther',Zeresh:'zeresh',Hadassah:'esther',Hegai:'hegai',Hathach:'hathach',Abihail:'abihail-esther'}}
  };
@@ -20,7 +21,7 @@
   nodes.forEach(node=>{
    const pattern=new RegExp('\\b('+Object.keys(people).join('|')+')\\b','g');let match,last=0;const fragment=document.createDocumentFragment();
    while((match=pattern.exec(node.textContent))){
-    if(seen.has(match[1]))continue;seen.add(match[1]);block.id=block.id||`person-context-${index}`;
+    if(seen.has(people[match[1]]))continue;seen.add(people[match[1]]);block.id=block.id||`person-context-${index}`;
     fragment.append(document.createTextNode(node.textContent.slice(last,match.index)),personLink(match[1],people[match[1]],block.id));last=pattern.lastIndex;
    }
    if(last){fragment.append(document.createTextNode(node.textContent.slice(last)));node.replaceWith(fragment);}
@@ -33,12 +34,17 @@
  const label=document.createElement('label');label.htmlFor='study-people-search';label.textContent='Search people in this study';
  const input=document.createElement('input');input.type='search';input.id='study-people-search';input.placeholder='Type a name';
  const list=document.createElement('ul');list.id='study-people-list';input.setAttribute('aria-controls',list.id);
- const entries=pilot.id==='esther'?
+ const entries=pilot.id==='genesis'?
+  [['Adam','adam','Early Generations'],['Eve','eve','Early Generations'],['Noah','noah','Early Generations'],['Abraham / Abram','abram','Abraham’s Family'],['Sarah / Sarai','sarai','Abraham’s Family'],['Isaac','isaac','Abraham’s Family'],['Rebekah','rebekah','Abraham’s Family'],['Jacob','jacob','Jacob’s Family'],['Leah','leah','Jacob’s Family'],['Rachel','rachel','Jacob’s Family'],['Joseph (son of Jacob)','joseph','Jacob’s Family']]:pilot.id==='esther'?
   [['Esther / Hadassah','esther'],['Mordecai','mordecai-esther'],['King Ahasuerus','ahasuerus-esther'],['Vashti','vashti'],['Haman','haman'],['Zeresh','zeresh']]:
   [['Ruth','ruth'],['Naomi','naomi'],['Boaz','boaz'],['Orpah','orpah'],['Elimelech','elimelech'],['Mahlon','mahlon'],['Chilion / Kilion','chilion'],['Obed','obed']];
- const rows=entries.map(([name,id])=>{const row=document.createElement('li');row.append(personLink(name,id,'study-people'));list.append(row);return {name,row};});
+ const groups=new Map();
+ const rows=entries.map(([name,id,group])=>{
+  if(group&&!groups.has(group)){const row=document.createElement('li'),heading=document.createElement('h3');row.className='study-people-group';heading.textContent=group;row.append(heading);list.append(row);groups.set(group,{heading:row,rows:[]});}
+  const row=document.createElement('li');row.append(personLink(name,id,'study-people'));list.append(row);if(group)groups.get(group).rows.push(row);return {name,row};
+ });
  const status=document.createElement('p');status.setAttribute('role','status');status.setAttribute('aria-live','polite');
- const filter=()=>{const query=input.value.trim().toLowerCase();let count=0;rows.forEach(({name,row})=>{row.hidden=!name.toLowerCase().includes(query);if(!row.hidden)count++;});status.textContent=count?`${count} of ${rows.length} people shown.`:'No matching people in this study. Try another name or explore all biblical people below.';};
+ const filter=()=>{const query=input.value.trim().toLowerCase();let count=0;rows.forEach(({name,row})=>{row.hidden=!name.toLowerCase().includes(query);if(!row.hidden)count++;});groups.forEach(group=>{group.heading.hidden=group.rows.every(row=>row.hidden);});status.textContent=count?`${count} of ${rows.length} people shown.`:'No matching people in this study. Try another name or explore all biblical people below.';};
  input.addEventListener('input',filter);filter();
  const all=document.createElement('a');all.href='biblical-people-genealogy.html';all.textContent='Explore all biblical people';
  panel.append(label,input,list,status,all);view.prepend(panel);

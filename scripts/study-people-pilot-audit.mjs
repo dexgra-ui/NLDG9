@@ -40,3 +40,14 @@ assert.equal(estherResult.profile.scrolled,true);
 assert.match(estherResult.profile.children[1].innerHTML,/Distinct from the Mordecai named in Ezra/);
 for(const id of ['esther','mordecai-esther','haman','vashti','ahasuerus-esther','zeresh','hegai','hathach','abihail-esther'])assert.ok(result.db.records.some(r=>r.id===id),id);
 console.log('PASS: pilot IDs, exact record, family links, return context, unsafe return rejection, missing ID, direct reference, and uncertainty labels. Browser/mobile/print QA remains required.');
+for(const lesson of ['', '?lesson=8']){
+ const back='/genesis-study.html'+lesson+'#study-people';
+ const profile=run('?person=joseph&return='+encodeURIComponent(back)).profile;
+ assert.equal(profile.children[0].href,'https://nolabelsdesignedbygod.org'+back);
+ assert.equal(profile.children[0].textContent,'← Back to Genesis study');
+ assert.match(profile.children[1].innerHTML,/Son of Jacob and Rachel/);
+ assert.equal(profile.scrolled,true);
+}
+for(const id of ['adam','eve','noah','abram','sarai','isaac','rebekah','jacob','leah','rachel','joseph'])assert.ok(result.db.records.some(r=>r.id===id),id);
+assert.equal(run('?person=adam&return='+encodeURIComponent('https://evil.example/genesis-study.html')).profile.children[0].href,'https://nolabelsdesignedbygod.org/studies.html');
+console.log('PASS: Genesis exact identities, overview/lesson returns, profile scrolling, and unsafe return rejection.');

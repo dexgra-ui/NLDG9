@@ -31,7 +31,7 @@ form?.addEventListener('submit',async event=>{
   try{
     const {error}=await journeyClient.auth.signInWithOtp({
       email,
-      options:{emailRedirectTo:'https://nolabelsdesignedbygod.org/journey-auth.html',shouldCreateUser:true}
+      options:{emailRedirectTo:new URL('journey-auth.html',location.href).href,shouldCreateUser:true}
     });
     if(error)throw error;
     show('Check your inbox for a sign-in link. You can continue using My Journey while you wait.');

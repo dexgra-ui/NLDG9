@@ -28,6 +28,8 @@
   const progressLabel=document.getElementById('study-progress-label');
   const favoriteButton=document.getElementById('favorite-study');
   const completeButton=document.getElementById('complete-study');
+  const nativeCompleteButton=[...document.querySelectorAll('#toggle-complete,#fh-toggle,#toggle')].find(button=>button!==completeButton);
+  if(nativeCompleteButton)completeButton.hidden=true;
   const setProgress=value=>{const state=readState()[studyId]||{};const progress=state.completed?100:Math.max(0,Math.min(99,Math.round(value)));progressFill.style.width=`${progress}%`;progressLabel.textContent=state.completed?'Completed':`${progress}% complete`;};
   setProgress(current.progress||0);
   let scrollTimer;

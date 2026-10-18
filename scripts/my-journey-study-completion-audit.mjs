@@ -35,13 +35,13 @@ try{
   const page=await context.newPage();
 
   await clearStorage(page);
-  await openStudyFromLibrary(page,'God Made Me on Purpose','growing-with-jesus-god-made-me-on-purpose.html');
+  await openStudyFromLibrary(page,"Learning to See Yourself Through God's Eyes",'study-identity.html');
   await page.locator('#complete-study').waitFor({state:'visible',timeout:12000});
   await page.locator('#complete-study').click();
-  const growingState=await page.evaluate(()=>JSON.parse(localStorage.getItem('nldg-study-state')||'{}')['growing-with-jesus-1']);
+  const growingState=await page.evaluate(()=>JSON.parse(localStorage.getItem('nldg-study-state')||'{}').identity);
   check(Boolean(growingState?.completed),'A regular study completed from Bible Studies writes canonical completion state.','Regular Bible Studies completion did not write canonical state.');
   let text=await dashboardText(page);
-  check(text.includes('God Made Me on Purpose'),'A completed Growing with Jesus lesson appears in My Journey.','Growing with Jesus completion is missing from My Journey.');
+  check(text.includes("Learning to See Yourself Through God's Eyes"),'A completed study opened from Bible Studies appears in My Journey.','Completed Bible Study is missing from My Journey.');
 
   await clearStorage(page);
   await openStudyFromLibrary(page,'Command, Conviction, or Preference?','preferences-idols-series.html?lesson=1');

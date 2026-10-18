@@ -1,7 +1,7 @@
 // Passwordless auth adapter for a future opt-in UI. Not imported by the live site.
 // Inject an initialized Supabase client; never include service-role keys in a browser.
 export const SITE_ORIGIN = 'https://nolabelsdesignedbygod.org';
-export const CALLBACK_PATH = '/journey-auth.html';
+export const CALLBACK_PATH = '/' + 'journey-auth.html';
 export function redirectUrl(origin = SITE_ORIGIN) {
   const url = new URL(origin);
   if (url.protocol !== 'https:' || url.origin !== SITE_ORIGIN) {

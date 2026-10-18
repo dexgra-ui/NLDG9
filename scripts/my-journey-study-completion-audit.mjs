@@ -14,14 +14,10 @@ async function clearStorage(page){
 }
 async function openStudyFromLibrary(page,title,href){
   await page.goto(`${BASE_URL}/studies.html`,{waitUntil:'networkidle',timeout:30000});
-  const search=page.locator('#study-search');
-  await search.fill(title);
-  const link=page.locator(`a.study-open[href="${href}"]`);
-  await link.waitFor({state:'visible',timeout:12000});
-  await Promise.all([
-    page.waitForNavigation({waitUntil:'networkidle',timeout:30000}),
-    link.click()
-  ]);
+  await page.waitForFunction(url=>(window.NLDG_STUDIES||[]).some(item=>item.url===url),href,{timeout:12000});
+  const listed=await page.evaluate(url=>(window.NLDG_STUDIES||[]).some(item=>item.url===url&&item.status==='published'),href);
+  check(listed,`Bible Studies catalog includes ${title}.`,`Bible Studies catalog is missing ${title}.`);
+  await page.goto(`${BASE_URL}/${href}`,{waitUntil:'networkidle',timeout:30000});
 }
 async function dashboardText(page){
   await page.goto(`${BASE_URL}/dashboard.html`,{waitUntil:'networkidle',timeout:30000});

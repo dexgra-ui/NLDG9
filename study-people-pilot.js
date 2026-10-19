@@ -2,6 +2,7 @@
 (()=>{
  const view=document.getElementById('book-view');if(!view)return;
  const pilots={
+  '/exodus-study.html':{name:'Exodus',id:'exodus',people:{Moses:'moses',Aaron:'aaron',Miriam:'miriam',Jochebed:'jochebed',Amram:'amram',Shiphrah:'shiphrah',Puah:'puah-midwife',Zipporah:'zipporah',Jethro:'jethro',Joshua:'joshua'}},
   '/genesis-study.html':{name:'Genesis',id:'genesis',people:{Adam:'adam',Eve:'eve',Noah:'noah',Abraham:'abram',Abram:'abram',Sarah:'sarai',Sarai:'sarai',Isaac:'isaac',Rebekah:'rebekah',Jacob:'jacob',Leah:'leah',Rachel:'rachel',Joseph:'joseph'}},
   '/ruth-study.html':{name:'Ruth',id:'ruth',people:{Naomi:'naomi',Boaz:'boaz',Orpah:'orpah',Mahlon:'mahlon',Elimelech:'elimelech',Obed:'obed',Jesse:'jesse',David:'david'}},
   '/esther-study.html':{name:'Esther',id:'esther',people:{Mordecai:'mordecai-esther',Haman:'haman',Vashti:'vashti',Ahasuerus:'ahasuerus-esther',Zeresh:'zeresh',Hadassah:'esther',Hegai:'hegai',Hathach:'hathach',Abihail:'abihail-esther'}}
@@ -31,10 +32,12 @@
  const panel=document.createElement(isLesson?'details':'section');panel.id='study-people';panel.className='study-people lesson-panel';
  const heading=document.createElement(isLesson?'summary':'h2');heading.textContent='People in This Study';panel.append(heading);
  const help=document.createElement('p');help.textContent='Explore the main people across this study. Search by name or open a profile for Scripture references and recorded family relationships.';panel.append(help);
+ if(pilot.id==='exodus'){const note=document.createElement('p');note.textContent='The pharaohs in Exodus and the daughter of Pharaoh who rescues Moses are not named in the Exodus narrative. No disputed historical identity is assigned here. Jethro and Reuel remain distinct records with the identification question explained in their profiles.';panel.append(note);}
  const label=document.createElement('label');label.htmlFor='study-people-search';label.textContent='Search people in this study';
  const input=document.createElement('input');input.type='search';input.id='study-people-search';input.placeholder='Type a name';
  const list=document.createElement('ul');list.id='study-people-list';input.setAttribute('aria-controls',list.id);
- const entries=pilot.id==='genesis'?
+ const entries=pilot.id==='exodus'?
+  [['Shiphrah','shiphrah','Courage and Deliverance'],['Puah (midwife)','puah-midwife','Courage and Deliverance'],['Moses','moses','Moses’ Family'],['Aaron','aaron','Moses’ Family'],['Miriam','miriam','Moses’ Family'],['Jochebed','jochebed','Moses’ Family'],['Amram','amram','Moses’ Family'],['Zipporah','zipporah','Moses’ Family'],['Jethro','jethro','Counsel and Leadership'],['Joshua (son of Nun)','joshua','Counsel and Leadership']]:pilot.id==='genesis'?
   [['Adam','adam','Early Generations'],['Eve','eve','Early Generations'],['Noah','noah','Early Generations'],['Abraham / Abram','abram','Abraham’s Family'],['Sarah / Sarai','sarai','Abraham’s Family'],['Isaac','isaac','Abraham’s Family'],['Rebekah','rebekah','Abraham’s Family'],['Jacob','jacob','Jacob’s Family'],['Leah','leah','Jacob’s Family'],['Rachel','rachel','Jacob’s Family'],['Joseph (son of Jacob)','joseph','Jacob’s Family']]:pilot.id==='esther'?
   [['Esther / Hadassah','esther'],['Mordecai','mordecai-esther'],['King Ahasuerus','ahasuerus-esther'],['Vashti','vashti'],['Haman','haman'],['Zeresh','zeresh']]:
   [['Ruth','ruth'],['Naomi','naomi'],['Boaz','boaz'],['Orpah','orpah'],['Elimelech','elimelech'],['Mahlon','mahlon'],['Chilion / Kilion','chilion'],['Obed','obed']];

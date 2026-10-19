@@ -51,3 +51,18 @@ for(const lesson of ['', '?lesson=8']){
 for(const id of ['adam','eve','noah','abram','sarai','isaac','rebekah','jacob','leah','rachel','joseph'])assert.ok(result.db.records.some(r=>r.id===id),id);
 assert.equal(run('?person=adam&return='+encodeURIComponent('https://evil.example/genesis-study.html')).profile.children[0].href,'https://nolabelsdesignedbygod.org/studies.html');
 console.log('PASS: Genesis exact identities, overview/lesson returns, profile scrolling, and unsafe return rejection.');
+for(const lesson of ['', '?lesson=2']){
+ const back='/exodus-study.html'+lesson+'#study-people';
+ const profile=run('?person=miriam&return='+encodeURIComponent(back)).profile;
+ assert.equal(profile.children[0].href,'https://nolabelsdesignedbygod.org'+back);
+ assert.equal(profile.children[0].textContent,'← Back to Exodus study');
+ assert.match(profile.children[1].innerHTML,/<h3>Miriam<\/h3>/);
+ assert.equal(profile.scrolled,true);
+}
+const miriam=result.db.records.find(r=>r.id==='miriam');
+assert.equal(miriam.name,'Miriam');assert.equal(miriam.gender,'female');assert.equal(miriam.kind,'Person');
+assert.ok(miriam.parents.includes('amram'));assert.ok(miriam.parents.includes('jochebed'));
+for(const id of ['moses','aaron','miriam','jochebed','amram','shiphrah','puah-midwife','zipporah','jethro','joshua'])assert.ok(result.db.records.some(r=>r.id===id),id);
+assert.match(run('?person=jethro').profile.children[1].innerHTML,/unresolved|Identity not forced|not force|rather than silently/i);
+assert.equal(run('?person=moses&return='+encodeURIComponent('https://evil.example/exodus-study.html')).profile.children[0].href,'https://nolabelsdesignedbygod.org/studies.html');
+console.log('PASS: Exodus IDs, Miriam schema, exact returns, profile scroll, Jethro caveat, and unsafe return rejection.');

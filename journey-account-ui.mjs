@@ -56,7 +56,7 @@ form?.addEventListener('submit',async event=>{
     if(error)throw error;
     pendingEmail=email;verifyForm.hidden=false;verifyForm.querySelector('input').focus();
     show('Check your inbox for the six-digit sign-in code, then enter it here.');
-  }catch{show('Could not send a sign-in link. Please try again later.');}
+  }catch{show('Could not send a sign-in code. Please try again later.');}
   finally{button.disabled=false;}
 });
 journeyClient.auth.onAuthStateChange(()=>{setTimeout(render,0);});

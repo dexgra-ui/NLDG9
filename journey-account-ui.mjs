@@ -18,69 +18,45 @@ async function render(){
         show('Signed out. Your saved browser data has not been deleted.');
         window.location.reload();
       });
-      state.append(p,button);
-      const sync=document.createElement('div');
-      sync.style.marginTop='1rem';
-      const upload=document.createElement('button');
-      upload.type='button';upload.className='button secondary';upload.textContent='Back up study progress';
-      const restore=document.createElement('button');
-      restore.type='button';restore.className='button secondary';restore.textContent='Restore saved progress';
-      restore.style.marginLeft='.5rem';
-      sync.append(upload,restore);state.append(sync);
-      const safeArray=key=>{try{const value=JSON.parse(localStorage.getItem(key)||'[]');return Array.isArray(value)?value.filter(x=>typeof x==='string'&&x.length<300):[];}catch{return [];}};
-      const savedIds=()=>[...new Set([...safeArray('nldg-completed-v1'),...window.NLDG_PERSONAL?.completed?.()||[]])];
-      const favoriteIds=()=>[...new Set([...safeArray('nldg-favorites-v1'),...window.NLDG_PERSONAL?.favorites?.()||[]])];
-      const run=async(kind)=>{
-        upload.disabled=true;restore.disabled=true;
-        try{
-          const uid=data.user.id;
-          if(kind==='upload'){
-            const completed=savedIds();
-            const favorites=favoriteIds();
-            const {data:remote,error:readError}=await journeyClient.from('journey_progress').select('content_id').eq('user_id',uid).eq('lesson_id','').eq('completed',true);
-            if(readError)throw readError;
-            const missing=completed.filter(id=>!remote.some(row=>row.content_id===id));
-            if(missing.length){const {error}=await journeyClient.from('journey_progress').upsert(missing.map(id=>({user_id:uid,content_id:id,lesson_id:'',completed:true,progress_percent:100})),{onConflict:'user_id,content_id,lesson_id'});if(error)throw error;}
-            const {data:remoteFavorites,error:bookmarkError}=await journeyClient.from('journey_bookmarks').select('content_id').eq('user_id',uid);
-            if(bookmarkError)throw bookmarkError;
-            const newFavorites=favorites.filter(id=>!remoteFavorites.some(row=>row.content_id===id));
-            if(newFavorites.length){const {error}=await journeyClient.from('journey_bookmarks').upsert(newFavorites.map(id=>({user_id:uid,content_id:id})),{onConflict:'user_id,content_id'});if(error)throw error;}
-            show('Backed up '+completed.length+' completed resources and '+favorites.length+' bookmarks. Your local data remains untouched.');
-          }else{
-            const [{data:progress,error:progressError},{data:bookmarks,error:bookmarkError}]=await Promise.all([
-              journeyClient.from('journey_progress').select('content_id').eq('user_id',uid).eq('lesson_id','').eq('completed',true),
-              journeyClient.from('journey_bookmarks').select('content_id').eq('user_id',uid)
-            ]);
-            if(progressError||bookmarkError)throw progressError||bookmarkError;
-            const completed=[...new Set([...safeArray('nldg-completed-v1'),...progress.map(row=>row.content_id)])];
-            const favorites=[...new Set([...safeArray('nldg-favorites-v1'),...bookmarks.map(row=>row.content_id)])];
-            if(!confirm('Add '+progress.length+' saved completions and '+bookmarks.length+' bookmarks to this browser? Existing browser data will be kept.'))return;
-            localStorage.setItem('nldg-completed-v1',JSON.stringify(completed));
-            localStorage.setItem('nldg-favorites-v1',JSON.stringify(favorites));
-            show('Saved progress restored. Reload the dashboard to see updates.');
-          }
-        }catch(error){console.error('Journey sync failed',error);show('Sync could not finish. Your browser data was not deleted. Please try again later.');}
-        finally{upload.disabled=false;restore.disabled=false;}
-      };
-      upload.addEventListener('click',()=>run('upload'));
-      restore.addEventListener('click',()=>run('restore'));
-      show('Account connected. Study completions and bookmarks can be backed up or restored manually. Reading plans, private notes and prayers stay on this browser.');
+      form.hidden=true;verifyForm.hidden=true;state.append(p,button);
+      show('Account connected. Cross-device progress sync is not enabled yet.');
     }
   } catch {show('Account status is unavailable. You can still use My Journey without signing in.');}
 }
+let pendingEmail='';
+const verifyForm=document.createElement('form');
+verifyForm.hidden=true;
+verifyForm.setAttribute('aria-label','Verify email sign-in code');
+verifyForm.innerHTML='<label for="journey-account-code">Six-digit email code</label><input id="journey-account-code" name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required placeholder="123456"><button type="submit" class="button primary">Verify code</button>';
+form?.insertAdjacentElement('afterend',verifyForm);
+verifyForm.addEventListener('submit',async event=>{
+  event.preventDefault();
+  const code=verifyForm.querySelector('input').value.trim();
+  if(!pendingEmail||!/^[0-9]{6}$/.test(code)){show('Enter the six-digit code from your email.');return;}
+  const button=verifyForm.querySelector('button');button.disabled=true;
+  show('Verifying your code…');
+  try{
+    const {error}=await journeyClient.auth.verifyOtp({email:pendingEmail,token:code,type:'email'});
+    if(error)throw error;
+    verifyForm.hidden=true;form.hidden=true;pendingEmail='';
+    show('Signed in successfully.');await render();
+  }catch{show('Code could not be verified. Check the latest email or request a new code.');}
+  finally{button.disabled=false;}
+});
 form?.addEventListener('submit',async event=>{
   event.preventDefault();
-  const email=document.getElementById('journey-account-email').value.trim();
+  const email=document.getElementById('journey-account-email').value.trim().toLowerCase();
   const button=form.querySelector('button');button.disabled=true;
-  show('Requesting your secure email link…');
+  show('Requesting your secure email code…');
   try{
     const {error}=await journeyClient.auth.signInWithOtp({
       email,
       options:{emailRedirectTo:new URL('journey-auth.html',location.href).href,shouldCreateUser:true}
     });
     if(error)throw error;
-    show('Check your inbox for a sign-in link. You can continue using My Journey while you wait.');
-  }catch{show('Could not send a sign-in link. Please try again later.');}
+    pendingEmail=email;verifyForm.hidden=false;verifyForm.querySelector('input').focus();
+    show('Check your inbox for the six-digit sign-in code, then enter it here.');
+  }catch{show('Could not send a sign-in code. Please try again later.');}
   finally{button.disabled=false;}
 });
 journeyClient.auth.onAuthStateChange(()=>{setTimeout(render,0);});

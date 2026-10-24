@@ -61,3 +61,57 @@ form?.addEventListener('submit',async event=>{
 });
 journeyClient.auth.onAuthStateChange(()=>{setTimeout(render,0);});
 render();
+
+
+/* Explicit, device-to-device backup. No journal, prayer, reflection, or profile data. */
+const backupPanel=document.createElement('section');
+backupPanel.setAttribute('aria-label','Progress backup and restore');
+backupPanel.innerHTML='<h3>Move your progress between devices</h3><p>Download a backup of study completion, favorites, and reading plans. Restore it on your other device. This is manual, not automatic sync. Private notes, prayers, and reflections are excluded.</p><button type="button" class="button secondary" id="journey-backup">Back Up Progress</button> <button type="button" class="button secondary" id="journey-restore">Restore Progress</button><input type="file" id="journey-restore-file" accept="application/json,.json" hidden><p id="journey-transfer-status" role="status"></p>';
+document.querySelector('.journey-account')?.append(backupPanel);
+const transferStatus=backupPanel.querySelector('#journey-transfer-status');
+const transferKeys=['nldg-completed-v1','nldg-favorites-v1','nldg-plans-v1','nldg-study-state'];
+const isProgressKey=k=>/^nldg-(?:book-|series-)[a-z0-9-]+$/.test(k)&&!/(prayer|note|journal|reflection|private)/.test(k);
+const safeRead=k=>{try{return JSON.parse(localStorage.getItem(k));}catch{return null;}};
+const mergeProgress=(oldValue,newValue)=>{
+  if(Array.isArray(oldValue)&&Array.isArray(newValue)){
+    const all=[...oldValue,...newValue];
+    const seen=new Set();
+    return all.filter(item=>{const id=typeof item==='object'&&item!==null?(item.id??JSON.stringify(item)):JSON.stringify(item);if(seen.has(id))return false;seen.add(id);return true;});
+  }
+  if(oldValue&&newValue&&typeof oldValue==='object'&&typeof newValue==='object'&&!Array.isArray(oldValue)&&!Array.isArray(newValue)){
+    const out={...newValue,...oldValue};
+    for(const key of Object.keys(newValue)){
+      if(key==='completed'&&Array.isArray(newValue[key])&&Array.isArray(oldValue[key]))out[key]=mergeProgress(oldValue[key],newValue[key]);
+      else if(key in oldValue&&oldValue[key]&&newValue[key]&&typeof oldValue[key]==='object'&&typeof newValue[key]==='object')out[key]=mergeProgress(oldValue[key],newValue[key]);
+    }
+    return out;
+  }
+  return oldValue??newValue;
+};
+backupPanel.querySelector('#journey-backup').addEventListener('click',()=>{
+  const keys=[...transferKeys,...Object.keys(localStorage).filter(isProgressKey)];
+  const data={format:'nldg-progress-backup',version:1,created:new Date().toISOString(),items:{}};
+  keys.forEach(key=>{const value=safeRead(key);if(value!==null)data.items[key]=value;});
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');a.href=url;a.download='nldg-progress-backup.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  transferStatus.textContent='Backup downloaded. Keep the file private and open it on your other device to restore.';
+});
+const fileInput=backupPanel.querySelector('#journey-restore-file');
+backupPanel.querySelector('#journey-restore').addEventListener('click',()=>fileInput.click());
+fileInput.addEventListener('change',async()=>{
+  const file=fileInput.files?.[0];if(!file)return;
+  try{
+    if(file.size>1024*1024)throw Error('Backup file is too large.');
+    const data=JSON.parse(await file.text());
+    if(data?.format!=='nldg-progress-backup'||data.version!==1||!data.items||typeof data.items!=='object'||Array.isArray(data.items))throw Error('Not a supported NLDG progress backup.');
+    const entries=Object.entries(data.items).filter(([k])=>transferKeys.includes(k)||isProgressKey(k));
+    if(!entries.length)throw Error('No supported progress found.');
+    const changes=entries.map(([k,v])=>[k,JSON.stringify(mergeProgress(safeRead(k),v))]);
+    if(!confirm('Merge '+changes.length+' progress records into this device? Existing completion and favorites will be kept. Private notes and prayers will not be touched.'))return;
+    changes.forEach(([k,v])=>localStorage.setItem(k,v));
+    transferStatus.textContent='Progress restored. Reloading to update your dashboard.';
+    location.reload();
+  }catch(error){transferStatus.textContent='Restore failed: '+error.message;}
+  finally{fileInput.value='';}
+});

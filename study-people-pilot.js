@@ -2,6 +2,7 @@
 (()=>{
  const view=document.getElementById('book-view');if(!view)return;
  const pilots={
+  '/leviticus-study.html':{name:'Leviticus',id:'leviticus',people:{Moses:'moses',Aaron:'aaron',Nadab:'nadab-aaron',Abihu:'abihu',Eleazar:'eleazar-aaron',Ithamar:'ithamar',Shelomith:'shelomith-dibri',Dibri:'dibri'}},
   '/exodus-study.html':{name:'Exodus',id:'exodus',people:{Moses:'moses',Aaron:'aaron',Miriam:'miriam',Jochebed:'jochebed',Amram:'amram',Shiphrah:'shiphrah',Puah:'puah-midwife',Zipporah:'zipporah',Jethro:'jethro',Joshua:'joshua'}},
   '/genesis-study.html':{name:'Genesis',id:'genesis',people:{Adam:'adam',Eve:'eve',Noah:'noah',Abraham:'abram',Abram:'abram',Sarah:'sarai',Sarai:'sarai',Isaac:'isaac',Rebekah:'rebekah',Jacob:'jacob',Leah:'leah',Rachel:'rachel',Joseph:'joseph'}},
   '/ruth-study.html':{name:'Ruth',id:'ruth',people:{Naomi:'naomi',Boaz:'boaz',Orpah:'orpah',Mahlon:'mahlon',Elimelech:'elimelech',Obed:'obed',Jesse:'jesse',David:'david'}},
@@ -36,7 +37,8 @@
  const label=document.createElement('label');label.htmlFor='study-people-search';label.textContent='Search people in this study';
  const input=document.createElement('input');input.type='search';input.id='study-people-search';input.placeholder='Type a name';
  const list=document.createElement('ul');list.id='study-people-list';input.setAttribute('aria-controls',list.id);
- const entries=pilot.id==='exodus'?
+ const entries=pilot.id==='leviticus'?
+  [['Moses','moses','Leadership and Priesthood'],['Aaron','aaron','Leadership and Priesthood'],['Nadab (son of Aaron)','nadab-aaron','Aaron’s Sons'],['Abihu','abihu','Aaron’s Sons'],['Eleazar (son of Aaron)','eleazar-aaron','Aaron’s Sons'],['Ithamar','ithamar','Aaron’s Sons'],['Shelomith (daughter of Dibri)','shelomith-dibri','Leviticus 24'],['Dibri','dibri','Leviticus 24']]:pilot.id==='exodus'?
   [['Shiphrah','shiphrah','Courage and Deliverance'],['Puah (midwife)','puah-midwife','Courage and Deliverance'],['Moses','moses','Moses’ Family'],['Aaron','aaron','Moses’ Family'],['Miriam','miriam','Moses’ Family'],['Jochebed','jochebed','Moses’ Family'],['Amram','amram','Moses’ Family'],['Zipporah','zipporah','Moses’ Family'],['Jethro','jethro','Counsel and Leadership'],['Joshua (son of Nun)','joshua','Counsel and Leadership']]:pilot.id==='genesis'?
   [['Adam','adam','Early Generations'],['Eve','eve','Early Generations'],['Noah','noah','Early Generations'],['Abraham / Abram','abram','Abraham’s Family'],['Sarah / Sarai','sarai','Abraham’s Family'],['Isaac','isaac','Abraham’s Family'],['Rebekah','rebekah','Abraham’s Family'],['Jacob','jacob','Jacob’s Family'],['Leah','leah','Jacob’s Family'],['Rachel','rachel','Jacob’s Family'],['Joseph (son of Jacob)','joseph','Jacob’s Family']]:pilot.id==='esther'?
   [['Esther / Hadassah','esther'],['Mordecai','mordecai-esther'],['King Ahasuerus','ahasuerus-esther'],['Vashti','vashti'],['Haman','haman'],['Zeresh','zeresh']]:

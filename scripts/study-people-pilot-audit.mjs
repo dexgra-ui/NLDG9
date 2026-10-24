@@ -66,3 +66,17 @@ for(const id of ['moses','aaron','miriam','jochebed','amram','shiphrah','puah-mi
 assert.match(run('?person=jethro').profile.children[1].innerHTML,/unresolved|Identity not forced|not force|rather than silently/i);
 assert.equal(run('?person=moses&return='+encodeURIComponent('https://evil.example/exodus-study.html')).profile.children[0].href,'https://nolabelsdesignedbygod.org/studies.html');
 console.log('PASS: Exodus IDs, Miriam schema, exact returns, profile scroll, Jethro caveat, and unsafe return rejection.');
+for(const lesson of ['', '?lesson=2']){
+ const back='/leviticus-study.html'+lesson+'#study-people';
+ for(const id of ['moses','aaron','nadab-aaron','abihu','eleazar-aaron','ithamar','shelomith-dibri','dibri']){
+  const profile=run('?person='+id+'&return='+encodeURIComponent(back)).profile;
+  assert.equal(profile.children[0].href,'https://nolabelsdesignedbygod.org'+back);
+  assert.equal(profile.children[0].textContent,'← Back to Leviticus study');
+  assert.equal(profile.children[1].firstElementChild.id,'selected-person-'+id);
+  assert.equal(profile.scrolled,true);
+ }
+}
+assert.match(run('?person=nadab-aaron').profile.children[1].innerHTML,/Son of Aaron/);
+assert.match(run('?person=shelomith-dibri').profile.children[1].innerHTML,/daughter of Dibri/i);
+assert.equal(run('?person=aaron&return='+encodeURIComponent('https://evil.example/leviticus-study.html')).profile.children[0].href,'https://nolabelsdesignedbygod.org/studies.html');
+console.log('PASS: Leviticus profiles, distinct identities, overview/lesson returns, automatic scrolling and unsafe return rejection.');

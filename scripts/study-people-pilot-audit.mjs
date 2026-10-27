@@ -80,3 +80,15 @@ assert.match(run('?person=nadab-aaron').profile.children[1].innerHTML,/Son of Aa
 assert.match(run('?person=shelomith-dibri').profile.children[1].innerHTML,/daughter of Dibri/i);
 assert.equal(run('?person=aaron&return='+encodeURIComponent('https://evil.example/leviticus-study.html')).profile.children[0].href,'https://nolabelsdesignedbygod.org/studies.html');
 console.log('PASS: Leviticus profiles, distinct identities, overview/lesson returns, automatic scrolling and unsafe return rejection.');
+for(const lesson of ['', '?lesson=2']){
+ const back='/numbers-study.html'+lesson+'#study-people';
+ for(const id of ['moses','aaron','miriam','joshua','caleb-jephunneh','korah-izhar','balak','balaam','zelophehad','mahlah-zelophehad','noah-zelophehad','hoglah','milcah-zelophehad','tirzah-zelophehad']){
+  const profile=run('?person='+id+'&return='+encodeURIComponent(back)).profile;
+  assert.equal(profile.children[0].href,'https://nolabelsdesignedbygod.org'+back);
+  assert.equal(profile.children[0].textContent,'← Back to Numbers study');
+  assert.equal(profile.children[1].firstElementChild.id,'selected-person-'+id);assert.equal(profile.scrolled,true);
+ }
+}
+for(const id of ['noah-zelophehad','milcah-zelophehad'])assert.ok(result.db.records.find(r=>r.id===id).parents.includes('zelophehad'));
+assert.equal(run('?person=moses&return='+encodeURIComponent('https://evil.example/numbers-study.html')).profile.children[0].href,'https://nolabelsdesignedbygod.org/studies.html');
+console.log('PASS: Numbers profile IDs, daughters’ identities, exact overview/lesson returns and unsafe return rejection.');

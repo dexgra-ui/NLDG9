@@ -92,3 +92,15 @@ for(const lesson of ['', '?lesson=2']){
 for(const id of ['noah-zelophehad','milcah-zelophehad'])assert.ok(result.db.records.find(r=>r.id===id).parents.includes('zelophehad'));
 assert.equal(run('?person=moses&return='+encodeURIComponent('https://evil.example/numbers-study.html')).profile.children[0].href,'https://nolabelsdesignedbygod.org/studies.html');
 console.log('PASS: Numbers profile IDs, daughters’ identities, exact overview/lesson returns and unsafe return rejection.');
+for(const lesson of ['', '?lesson=2']){
+ const back='/deuteronomy-study.html'+lesson+'#study-people';
+ for(const id of ['moses','aaron','eleazar-aaron','joshua','caleb-jephunneh','abram','isaac','jacob','dathan','abiram-eliab','sihon','og','balaam']){
+  const profile=run('?person='+id+'&return='+encodeURIComponent(back)).profile;
+  assert.equal(profile.children[0].href,'https://nolabelsdesignedbygod.org'+back);
+  assert.equal(profile.children[0].textContent,'← Back to Deuteronomy study');
+  assert.equal(profile.children[1].firstElementChild.id,'selected-person-'+id);assert.equal(profile.scrolled,true);
+ }
+}
+assert.equal(run('?person=moses&return='+encodeURIComponent('https://evil.example/deuteronomy-study.html')).profile.children[0].href,'https://nolabelsdesignedbygod.org/studies.html');
+assert.match(run('?person=abiram-eliab').profile.children[1].innerHTML,/Son of Eliab/);
+console.log('PASS: Deuteronomy IDs, overview/lesson returns, profile scrolling, Abiram identity and unsafe return rejection.');

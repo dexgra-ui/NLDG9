@@ -44,7 +44,7 @@ const profileParams=new URLSearchParams(location.search),profileId=profileParams
 if(profileId){
  const profile=document.createElement('section');profile.className='bp-profile';profile.setAttribute('aria-label','Selected biblical person');
  let back=new URL('studies.html',location.href),label='← Back to Bible Studies';
- const returnStudies={'/ruth-study.html':'Ruth','/esther-study.html':'Esther','/genesis-study.html':'Genesis','/exodus-study.html':'Exodus','/leviticus-study.html':'Leviticus','/numbers-study.html':'Numbers'};
+ const returnStudies={'/ruth-study.html':'Ruth','/esther-study.html':'Esther','/genesis-study.html':'Genesis','/exodus-study.html':'Exodus','/leviticus-study.html':'Leviticus','/numbers-study.html':'Numbers','/deuteronomy-study.html':'Deuteronomy'};
  try{const candidate=new URL(profileParams.get('return')||'',location.href);if(candidate.origin===location.origin&&!candidate.username&&!candidate.password&&Object.hasOwn(returnStudies,candidate.pathname)){
   back=candidate;label=`← Back to ${returnStudies[candidate.pathname]} study`;
  }}catch{}

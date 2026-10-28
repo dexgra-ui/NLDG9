@@ -104,3 +104,17 @@ for(const lesson of ['', '?lesson=2']){
 assert.equal(run('?person=moses&return='+encodeURIComponent('https://evil.example/deuteronomy-study.html')).profile.children[0].href,'https://nolabelsdesignedbygod.org/studies.html');
 assert.match(run('?person=abiram-eliab').profile.children[1].innerHTML,/Son of Eliab/);
 console.log('PASS: Deuteronomy IDs, overview/lesson returns, profile scrolling, Abiram identity and unsafe return rejection.');
+for(const lesson of ['', '?lesson=2']){
+ const back='/joshua-study.html'+lesson+'#study-people';
+ for(const id of ['joshua','caleb-jephunneh','eleazar-aaron','phinehas','rahab','achan','othniel','achsah','adoni-zedek','jabin-hazor-joshua']){
+  const profile=run('?person='+id+'&return='+encodeURIComponent(back)).profile;
+  assert.equal(profile.children[0].href,'https://nolabelsdesignedbygod.org'+back);
+  assert.equal(profile.children[0].textContent,'← Back to Joshua study');
+  assert.equal(profile.children[1].firstElementChild.id,'selected-person-'+id);assert.equal(profile.scrolled,true);
+ }
+}
+assert.match(run('?person=jabin-hazor-joshua').profile.children[1].innerHTML,/distinct from the later Jabin/i);
+assert.match(run('?person=othniel').profile.children[1].innerHTML,/Identity not forced/);
+assert.match(run('?person=othniel').profile.children[1].innerHTML,/kinsman of: Caleb/);
+assert.equal(run('?person=rahab&return='+encodeURIComponent('https://evil.example/joshua-study.html')).profile.children[0].href,'https://nolabelsdesignedbygod.org/studies.html');
+console.log('PASS: Joshua IDs, exact returns, automatic scroll, Jabin/Othniel caveats and unsafe URL rejection.');

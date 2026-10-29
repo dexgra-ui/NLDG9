@@ -118,3 +118,17 @@ assert.match(run('?person=othniel').profile.children[1].innerHTML,/Identity not 
 assert.match(run('?person=othniel').profile.children[1].innerHTML,/kinsman of: Caleb/);
 assert.equal(run('?person=rahab&return='+encodeURIComponent('https://evil.example/joshua-study.html')).profile.children[0].href,'https://nolabelsdesignedbygod.org/studies.html');
 console.log('PASS: Joshua IDs, exact returns, automatic scroll, Jabin/Othniel caveats and unsafe URL rejection.');
+for(const lesson of ['', '?lesson=2']){
+ const back='/judges-study.html'+lesson+'#study-people';
+ for(const id of ['othniel','ehud','shamgar','deborah-judge','barak','gideon','jephthah','samson','jael','delilah','jotham-gideon','abimelech-gideon','sisera','jabin-hazor-judges']){
+  const profile=run('?person='+id+'&return='+encodeURIComponent(back)).profile;
+  assert.equal(profile.children[0].href,'https://nolabelsdesignedbygod.org'+back);
+  assert.equal(profile.children[0].textContent,'← Back to Judges study');
+  assert.equal(profile.children[1].firstElementChild.id,'selected-person-'+id);assert.equal(profile.scrolled,true);
+ }
+}
+assert.match(run('?person=jabin-hazor-judges').profile.children[1].innerHTML,/distinct from Jabin king of Hazor in Joshua/i);
+assert.equal(result.db.records.find(r=>r.id==='deborah-judge').gender,'female');
+assert.ok(result.db.records.find(r=>r.id==='abimelech-gideon').parents.includes('gideon'));
+assert.equal(run('?person=jael&return='+encodeURIComponent('https://evil.example/judges-study.html')).profile.children[0].href,'https://nolabelsdesignedbygod.org/studies.html');
+console.log('PASS: Judges IDs, exact returns, automatic scroll, distinct identities and unsafe URL rejection.');

@@ -12,20 +12,20 @@ function run(book,lesson=false,hash=''){
  vm.runInNewContext(source,{document,location,URL,Set,RegExp,setTimeout:fn=>fn()});
  return {elements,panel:elements.find(el=>el.id==='study-people'),input:elements.find(el=>el.id==='study-people-search'),list:elements.find(el=>el.id==='study-people-list')};
 }
-for(const book of ['ruth','esther','genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges'])for(const lesson of [false,true]){
+for(const book of ['ruth','esther','genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges','first-samuel'])for(const lesson of [false,true]){
  const r=run(book,lesson,'#study-people');assert.equal(r.panel.tag,lesson?'details':'section');assert.equal(r.panel.focused,true);
  if(lesson)assert.equal(r.panel.open,true);
  const personRows=r.list.children.filter(row=>row.children[0]?.tag==='a');
- const links=personRows.map(row=>row.children[0]);assert.equal(links.length,book==='judges'?14:book==='joshua'?10:book==='deuteronomy'?13:book==='numbers'?14:book==='exodus'?10:book==='genesis'?11:book==='esther'?6:8);
+ const links=personRows.map(row=>row.children[0]);assert.equal(links.length,['judges','first-samuel'].includes(book)?14:book==='joshua'?10:book==='deuteronomy'?13:book==='numbers'?14:book==='exodus'?10:book==='genesis'?11:book==='esther'?6:8);
  assert.equal(new Set(links.map(a=>new URL(a.href).searchParams.get('person'))).size,links.length);
  for(const link of links){const url=new URL(link.href);assert.equal(url.searchParams.get('return'),`/${book}-study.html${lesson?'?lesson=2':''}#study-people`);}
- r.input.value=book==='judges'?'jerubbaal':book==='joshua'?'aksah':book==='deuteronomy'?'abram':book==='numbers'?'noah':book==='leviticus'?'shelomith':book==='exodus'?'puah':book==='genesis'?'sarai':book==='esther'?'hadassah':'kilion';r.input.events.input();assert.equal(personRows.filter(row=>!row.hidden).length,1);
+ r.input.value=book==='first-samuel'?'carmel':book==='judges'?'jerubbaal':book==='joshua'?'aksah':book==='deuteronomy'?'abram':book==='numbers'?'noah':book==='leviticus'?'shelomith':book==='exodus'?'puah':book==='genesis'?'sarai':book==='esther'?'hadassah':'kilion';r.input.events.input();assert.equal(personRows.filter(row=>!row.hidden).length,1);
  if(book==='numbers')assert.equal(new URL(personRows.find(row=>!row.hidden).children[0].href).searchParams.get('person'),'noah-zelophehad');
- if(['genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges'].includes(book))assert.equal(r.list.children.filter(row=>row.className==='study-people-group'&&!row.hidden).length,1);
+ if(['genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges','first-samuel'].includes(book))assert.equal(r.list.children.filter(row=>row.className==='study-people-group'&&!row.hidden).length,1);
  r.input.value='no such person';r.input.events.input();assert.equal(r.list.children.filter(row=>!row.hidden).length,0);
  r.input.value='';r.input.events.input();assert.equal(personRows.filter(row=>!row.hidden).length,links.length);
- if(['genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges'].includes(book))assert.equal(r.list.children.filter(row=>row.className==='study-people-group'&&!row.hidden).length,3);
+ if(['genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges','first-samuel'].includes(book))assert.equal(r.list.children.filter(row=>row.className==='study-people-group'&&!row.hidden).length,3);
  if(book==='exodus'){assert.ok(r.elements.some(el=>el.textContent?.includes('not named in the Exodus narrative')));assert.ok(links.every(link=>!new URL(link.href).searchParams.get('person').includes('pharaoh')));}
 }
-assert.ok(fs.readFileSync('book-study-series.js','utf8').includes("if(['/ruth-study.html','/esther-study.html','/genesis-study.html','/exodus-study.html','/leviticus-study.html','/numbers-study.html','/deuteronomy-study.html','/joshua-study.html','/judges-study.html'].includes(location.pathname))"));
+assert.ok(fs.readFileSync('book-study-series.js','utf8').includes("if(['/ruth-study.html','/esther-study.html','/genesis-study.html','/exodus-study.html','/leviticus-study.html','/numbers-study.html','/deuteronomy-study.html','/joshua-study.html','/judges-study.html','/first-samuel-study.html'].includes(location.pathname))"));
 console.log('PASS: Ruth/Esther/Genesis overview and lesson lists, groups, aliases, empty/reset searches, unique profiles, exact returns, and reopening the lesson panel.');

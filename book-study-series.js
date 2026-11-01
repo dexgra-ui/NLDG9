@@ -69,8 +69,8 @@
   document.getElementById('toggle-complete').onclick=()=>{const st=read(),set=new Set(st.completed||[]);set.has(x.number)?set.delete(x.number):set.add(x.number);st.completed=[...set].sort((a,b)=>a-b);save(st);location.reload()};
  }
  lesson?render(lesson):landing();
- if(['/ruth-study.html','/esther-study.html','/genesis-study.html','/exodus-study.html','/leviticus-study.html','/numbers-study.html','/deuteronomy-study.html','/joshua-study.html','/judges-study.html'].includes(location.pathname)){
-  const script=document.createElement('script');script.src='study-people-pilot.js?v=10';document.head.appendChild(script);
+ if(['/ruth-study.html','/esther-study.html','/genesis-study.html','/exodus-study.html','/leviticus-study.html','/numbers-study.html','/deuteronomy-study.html','/joshua-study.html','/judges-study.html','/first-samuel-study.html'].includes(location.pathname)){
+  const script=document.createElement('script');script.src='study-people-pilot.js?v=11';document.head.appendChild(script);
  }
  if(lesson){
   const reflectionStyle=document.createElement('link');reflectionStyle.rel='stylesheet';reflectionStyle.href='lesson-reflections.css?v=1.0.0';reflectionStyle.dataset.lessonReflections='true';if(!document.querySelector('link[data-lesson-reflections]'))document.head.appendChild(reflectionStyle);

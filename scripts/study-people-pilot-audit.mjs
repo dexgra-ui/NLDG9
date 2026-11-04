@@ -160,3 +160,17 @@ assert.ok(result.db.records.find(r=>r.id==='mephibosheth-jonathan').parents.incl
 assert.equal(result.db.records.find(r=>r.id==='nathan-prophet').kind,'Prophet');
 assert.equal(run('?person=david&return='+encodeURIComponent('https://evil.example/second-samuel-study.html')).profile.children[0].href,'https://nolabelsdesignedbygod.org/studies.html');
 console.log('PASS: 2 Samuel IDs, exact returns, profile scroll, distinct Tamar/Mephibosheth/Nathan identities and unsafe URL rejection.');
+for(const lesson of ['', '?lesson=2']){
+ const back='/first-kings-study.html'+lesson+'#study-people';
+ for(const id of ['david','solomon','bathsheba','nathan-prophet','rehoboam','jeroboam-i','ahab','jezebel','elijah','elisha','ahijah-shilonite','micaiah-imlah','obadiah-ahab','naboth']){
+  const profile=run('?person='+id+'&return='+encodeURIComponent(back)).profile;
+  assert.equal(profile.children[0].href,'https://nolabelsdesignedbygod.org'+back);
+  assert.equal(profile.children[0].textContent,'← Back to 1 Kings study');
+  assert.equal(profile.children[1].firstElementChild.id,'selected-person-'+id);assert.equal(profile.scrolled,true);
+ }
+}
+assert.ok(result.db.records.find(r=>r.id==='jeroboam-i').parents.includes('nebat'));
+assert.equal(result.db.records.find(r=>r.id==='obadiah-ahab').kind,'Official');
+assert.equal(result.db.records.find(r=>r.id==='ahijah-shilonite').kind,'Prophet');
+assert.equal(run('?person=elijah&return='+encodeURIComponent('https://evil.example/first-kings-study.html')).profile.children[0].href,'https://nolabelsdesignedbygod.org/studies.html');
+console.log('PASS: 1 Kings IDs, exact returns, auto-scroll, distinct identities and unsafe URL rejection.');

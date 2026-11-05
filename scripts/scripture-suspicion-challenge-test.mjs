@@ -4,7 +4,7 @@ import vm from 'node:vm';
 const packs=[];
 const ctx={window:{NLDG_GAME_PACKS:{register:p=>packs.push(p)}},console};
 vm.createContext(ctx);
-const packFile=['game-packs','scripture-suspicion-challenge.js'].join('/');
+const packFile=['game-packs',['scripture-suspicion-challenge','.js'].join('')].join('/');
 vm.runInContext(fs.readFileSync(packFile,'utf8'),ctx);
 assert.equal(packs.length,1);
 const q=packs[0].questions;

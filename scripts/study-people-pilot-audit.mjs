@@ -189,3 +189,24 @@ assert.ok(result.db.records.find(r=>r.id==='manasseh-judah').parents.includes('h
 assert.equal(result.db.records.find(r=>r.id==='huldah').kind,'Prophet');
 assert.equal(run('?person=elisha&return='+encodeURIComponent('https://evil.example/second-kings-study.html')).profile.children[0].href,'https://nolabelsdesignedbygod.org/studies.html');
 console.log('PASS: 2 Kings IDs, exact returns, auto-scroll, distinct Joash/Manasseh identities and unsafe URL rejection.');
+
+const historyBatch={"first-chronicles":{"name":"1 Chronicles","ids":["david","saul","jonathan-saul","solomon","joab","benaiah-jehoiada","nathan-prophet","gad-prophet","asaph-singer","heman-singer","jeduthun","araunah"]},"second-chronicles":{"name":"2 Chronicles","ids":["solomon","rehoboam","abijam","asa","jehoshaphat-king","joash-judah","hezekiah","manasseh-judah","josiah","huldah","nebuchadnezzar","cyrus"]},"ezra":{"name":"Ezra","ids":["zerubbabel","jeshua-jozadak","sheshbazzar","ezra-scribe","haggai","zechariah-return-prophet","shecaniah-jehiel","cyrus","darius-ezra","artaxerxes-ezra","tattenai"]},"nehemiah":{"name":"Nehemiah","ids":["nehemiah-governor","hanani-nehemiah","hananiah-citadel","artaxerxes-ezra","ezra-scribe","eliashib-high-priest","sanballat","tobiah-ammonite","geshem","noadiah-prophetess"]}};
+for(const [book,{name,ids}] of Object.entries(historyBatch)){
+ for(const lesson of ['', '?lesson=2']){
+  const back=`/${book}-study.html${lesson}#study-people`;
+  for(const id of ids){
+   const profile=run('?person='+id+'&return='+encodeURIComponent(back)).profile;
+   assert.equal(profile.children[0].href,'https://nolabelsdesignedbygod.org'+back);
+   assert.equal(profile.children[0].textContent,'← Back to '+name+' study');
+   assert.equal(profile.children[1].firstElementChild.id,'selected-person-'+id);
+   assert.equal(profile.scrolled,true);
+  }
+ }
+ const passage=`/${book}-study.html?lesson=2#person-context-4`;
+ assert.equal(run('?person='+ids[0]+'&return='+encodeURIComponent(passage)).profile.children[0].href,'https://nolabelsdesignedbygod.org'+passage);
+ assert.equal(run('?person='+ids[0]+'&return='+encodeURIComponent(`https://evil.example/${book}-study.html`)).profile.children[0].href,'https://nolabelsdesignedbygod.org/studies.html');
+ console.log('PASS: '+name+' profiles, overview/lesson/passage returns, scrolling and unsafe return rejection.');
+}
+assert.ok(result.db.records.find(r=>r.id==='nehemiah-governor').parents.includes('hachaliah'));
+assert.ok(result.db.records.find(r=>r.id==='jeshua-jozadak').ref.includes('Ezra 3:2'));
+assert.ok(result.db.records.find(r=>r.id==='shecaniah-jehiel').parents.includes('jehiel-shecaniah'));

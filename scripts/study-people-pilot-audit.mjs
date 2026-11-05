@@ -193,6 +193,7 @@ console.log('PASS: 2 Kings IDs, exact returns, auto-scroll, distinct Joash/Manas
 const historyBatch={"first-chronicles":{"name":"1 Chronicles","ids":["david","saul","jonathan-saul","solomon","joab","benaiah-jehoiada","nathan-prophet","gad-prophet","asaph-singer","heman-singer","jeduthun","araunah"]},"second-chronicles":{"name":"2 Chronicles","ids":["solomon","rehoboam","abijam","asa","jehoshaphat-king","joash-judah","hezekiah","manasseh-judah","josiah","huldah","nebuchadnezzar","cyrus"]},"ezra":{"name":"Ezra","ids":["zerubbabel","jeshua-jozadak","sheshbazzar","ezra-scribe","haggai","zechariah-return-prophet","shecaniah-jehiel","cyrus","darius-ezra","artaxerxes-ezra","tattenai"]},"nehemiah":{"name":"Nehemiah","ids":["nehemiah-governor","hanani-nehemiah","hananiah-citadel","artaxerxes-ezra","ezra-scribe","eliashib-high-priest","sanballat","tobiah-ammonite","geshem","noadiah-prophetess"]}};
 Object.assign(historyBatch,{"job":{"name":"Job","ids":["job","eliphaz-job","bildad","zophar","elihu-job","jemimah","keziah-job","keren-happuch"]},"psalms":{"name":"Psalms","ids":["david","solomon","moses","asaph-singer","jeduthun","heman-ezrahite","ethan-ezrahite","aaron","samuel"]},"proverbs":{"name":"Proverbs","ids":["solomon","david","hezekiah","agur","lemuel"]},"ecclesiastes":{"name":"Ecclesiastes","ids":["david"]},"song-of-songs":{"name":"Song of Songs","ids":["solomon"]}});
 Object.assign(historyBatch,{"isaiah":{"name":"Isaiah","ids":["isaiah","amoz","shear-jashub","maher-shalal-hash-baz","uzziah","ahaz","hezekiah","cyrus","sennacherib","eliakim-hilkiah","shebna","jesse"]},"jeremiah":{"name":"Jeremiah","ids":["jeremiah","baruch","ebed-melech","ahikam","josiah","jehoiakim","zedekiah","jehoiachin","nebuchadnezzar","hananiah-azzur","gedaliah","ishmael-nethaniah"]},"ezekiel":{"name":"Ezekiel","ids":["ezekiel-prophet","buzi","jehoiachin","nebuchadnezzar","noah","job","daniel-ezekiel","david"]},"daniel":{"name":"Daniel","ids":["daniel-judean","hananiah-daniel","mishael-daniel","azariah-daniel","nebuchadnezzar","belshazzar","darius-mede","cyrus","ashpenaz"]}});
+Object.assign(historyBatch,{"hosea":{"name":"Hosea","ids":["hosea-prophet","beeri-hosea","gomer-hosea","diblaim","jezreel-hosea","lo-ruhamah","lo-ammi","jeroboam-ii","jacob"]},"joel":{"name":"Joel","ids":["joel-prophet","pethuel"]},"amos":{"name":"Amos","ids":["amos-prophet","amaziah-bethel","jeroboam-ii","uzziah","david"]},"obadiah":{"name":"Obadiah","ids":["obadiah-prophet","esau","jacob","joseph"]},"jonah":{"name":"Jonah","ids":["jonah","amittai"]},"micah":{"name":"Micah","ids":["micah-moresheth","jotham","ahaz","hezekiah","moses","aaron","miriam","balak","balaam","abram","jacob"]}});
 for(const [book,{name,ids}] of Object.entries(historyBatch)){
  for(const lesson of ['', '?lesson=2']){
   const back=`/${book}-study.html${lesson}#study-people`;
@@ -224,3 +225,11 @@ assert.equal(result.db.records.find(r=>r.id==='daniel-ezekiel').certainty,'unres
 assert.equal(result.db.records.find(r=>r.id==='darius-mede').certainty,'unresolved identification');
 assert.ok(result.db.records.find(r=>r.id==='baruch').parents.includes('neriah'));
 assert.ok(result.db.records.find(r=>r.id==='shear-jashub').parents.includes('isaiah'));
+
+assert.ok(result.db.records.find(r=>r.id==='hosea-prophet').parents.includes('beeri-hosea'));
+assert.ok(result.db.records.find(r=>r.id==='joel-prophet').parents.includes('pethuel'));
+assert.equal(result.db.records.find(r=>r.id==='amaziah-bethel').kind,'Priest');
+assert.equal(result.db.records.find(r=>r.id==='obadiah-prophet').kind,'Prophet');
+assert.ok(result.db.records.find(r=>r.id==='jonah').parents.includes('amittai'));
+assert.ok(result.db.records.find(r=>r.id==='jeroboam-ii').parents.includes('jehoash-israel'));
+assert.ok(result.db.records.find(r=>r.id==='micah-moresheth').ref.includes('Micah 1:1'));

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';import fs from 'node:fs';import vm from 'node:vm';
 const packs=[];const ctx={window:{NLDG_GAME_PACKS:{register:p=>packs.push(p)}},console};vm.createContext(ctx);
-vm.runInContext(fs.readFileSync('game-packs/scripture-suspicion-challenge.js','utf8'),ctx);
+vm.runInContext(fs.readFileSync(['game-packs'].join('/'),'utf8'),ctx);
 assert.equal(packs.length,1);const q=packs[0].questions;assert.equal(q.length,30);
 assert.equal(q.filter(x=>x.category==='Think Deeper').length,15);
 assert.equal(q.filter(x=>x.category==='Dig Deeper').length,15);

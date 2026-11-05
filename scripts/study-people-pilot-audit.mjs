@@ -191,6 +191,7 @@ assert.equal(run('?person=elisha&return='+encodeURIComponent('https://evil.examp
 console.log('PASS: 2 Kings IDs, exact returns, auto-scroll, distinct Joash/Manasseh identities and unsafe URL rejection.');
 
 const historyBatch={"first-chronicles":{"name":"1 Chronicles","ids":["david","saul","jonathan-saul","solomon","joab","benaiah-jehoiada","nathan-prophet","gad-prophet","asaph-singer","heman-singer","jeduthun","araunah"]},"second-chronicles":{"name":"2 Chronicles","ids":["solomon","rehoboam","abijam","asa","jehoshaphat-king","joash-judah","hezekiah","manasseh-judah","josiah","huldah","nebuchadnezzar","cyrus"]},"ezra":{"name":"Ezra","ids":["zerubbabel","jeshua-jozadak","sheshbazzar","ezra-scribe","haggai","zechariah-return-prophet","shecaniah-jehiel","cyrus","darius-ezra","artaxerxes-ezra","tattenai"]},"nehemiah":{"name":"Nehemiah","ids":["nehemiah-governor","hanani-nehemiah","hananiah-citadel","artaxerxes-ezra","ezra-scribe","eliashib-high-priest","sanballat","tobiah-ammonite","geshem","noadiah-prophetess"]}};
+Object.assign(historyBatch,{"job":{"name":"Job","ids":["job","eliphaz-job","bildad","zophar","elihu-job","jemimah","keziah-job","keren-happuch"]},"psalms":{"name":"Psalms","ids":["david","solomon","moses","asaph-singer","jeduthun","heman-ezrahite","ethan-ezrahite","aaron","samuel"]},"proverbs":{"name":"Proverbs","ids":["solomon","david","hezekiah","agur","lemuel"]},"ecclesiastes":{"name":"Ecclesiastes","ids":["david"]},"song-of-songs":{"name":"Song of Songs","ids":["solomon"]}});
 for(const [book,{name,ids}] of Object.entries(historyBatch)){
  for(const lesson of ['', '?lesson=2']){
   const back=`/${book}-study.html${lesson}#study-people`;
@@ -210,3 +211,9 @@ for(const [book,{name,ids}] of Object.entries(historyBatch)){
 assert.ok(result.db.records.find(r=>r.id==='nehemiah-governor').parents.includes('hachaliah'));
 assert.ok(result.db.records.find(r=>r.id==='jeshua-jozadak').ref.includes('Ezra 3:2'));
 assert.ok(result.db.records.find(r=>r.id==='shecaniah-jehiel').parents.includes('jehiel-shecaniah'));
+
+assert.ok(result.db.records.find(r=>r.id==='elihu-job').parents.includes('barachel'));
+assert.ok(result.db.records.find(r=>r.id==='jemimah').parents.includes('job'));
+assert.equal(result.db.records.find(r=>r.id==='heman-ezrahite').certainty,'unresolved identification');
+assert.equal(result.db.records.find(r=>r.id==='ethan-ezrahite').certainty,'unresolved identification');
+assert.ok(result.db.records.find(r=>r.id==='agur').parents.includes('jakeh'));

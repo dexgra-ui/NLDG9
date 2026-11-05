@@ -28,6 +28,8 @@ jobs:
         run: node scripts/game-pack-audit.mjs
       - name: Validate Scripture or Suspicion content
         run: node scripts/scripture-or-suspicion-audit.mjs
+      - name: Validate Scripture or Suspicion Challenge Mode
+        run: node scripts/scripture-suspicion-challenge-test.mjs
       - name: Upload game pack report
         if: always()
         uses: actions/upload-artifact@v4

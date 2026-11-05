@@ -9,7 +9,7 @@ const normalizeQuestion=(question,pack)=>({
  id:safe(question.id),game:safe(question.game),prompt:safe(question.prompt),answer:question.answer,
  choices:Array.isArray(question.choices)?question.choices:[],category:safe(question.category||'General Bible'),
  difficulty:safe(question.difficulty||'mixed'),audience:Array.isArray(question.audience)?question.audience:['mixed'],
- scripture:safe(question.scripture),packId:pack.id
+ scripture:safe(question.scripture),explanation:safe(question.explanation),packId:pack.id
 });
 const register=pack=>{
  if(!pack||!safe(pack.id)||!Array.isArray(pack.questions))throw new Error('Invalid game pack.');
@@ -36,7 +36,8 @@ const weightedShuffle=items=>{
 const select=(filters={},count=10)=>weightedShuffle(questions(filters)).slice(0,Math.max(0,count));
 const record=item=>{const history=readHistory();const key=`${item.packId}:${item.id}`;const state=history[key]||{};history[key]={timesPlayed:(state.timesPlayed||0)+1,lastPlayed:Date.now()};writeHistory(history)};
 const resetHistory=packId=>{if(!packId){localStorage.removeItem(STORAGE);return}const history=readHistory();Object.keys(history).filter(key=>key.startsWith(`${packId}:`)).forEach(key=>delete history[key]);writeHistory(history)};
+const filteredStats=filters=>{const items=questions(filters);const history=readHistory();const played=items.filter(item=>history[`${item.packId}:${item.id}`]).length;return {total:items.length,played,unused:items.length-played}};
 const stats=packId=>{const pack=packs.get(packId);if(!pack)return null;const history=readHistory();const played=pack.questions.filter(item=>history[`${packId}:${item.id}`]).length;return {total:pack.questions.length,played,unused:pack.questions.length-played}};
-window.NLDG_GAME_PACKS={register,list,questions,select,record,resetHistory,stats,version:'1.0.0'};
+window.NLDG_GAME_PACKS={register,list,questions,select,record,resetHistory,stats,filteredStats,version:'1.0.0'};
 window.dispatchEvent(new Event('nldg-game-pack-engine-ready'));
 })();

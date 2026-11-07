@@ -2,16 +2,20 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
 const source=fs.readFileSync('study-people-pilot.js','utf8');
-function run(book,lesson=false,hash=''){
+function run(book,lesson=false,hash='',sample=''){
  const elements=[];
  const make=tag=>{const el={tag,children:[],value:'',hidden:false,events:{},append(...children){this.children.push(...children);},prepend(child){this.children.unshift(child);},setAttribute(name,value){this[name]=value;},addEventListener(name,fn){this.events[name]=fn;},focus(){this.focused=true;},scrollIntoView(){this.scrolled=true;},querySelectorAll(){return [];},querySelector(){return lesson?{}:null;}};elements.push(el);return el;};
  const view=make('div');view.id='book-view';
+ let replacement;
+ if(sample)view.querySelectorAll=()=>[{id:'',closest:()=>null,sample}];
  if(book==='lamentations')view.querySelectorAll=()=>[{closest:()=>null}]; // Empty name maps must skip inline traversal.
  const document={readyState:'complete',head:make('head'),getElementById:id=>elements.find(el=>el.id===id),createElement:make};
  document.head.appendChild=child=>document.head.append(child);
+ document.createTextNode=text=>({textContent:text});document.createDocumentFragment=()=>make('fragment');
+ document.createTreeWalker=block=>{const node={textContent:block.sample,parentElement:{closest:()=>null},replaceWith(fragment){replacement=fragment;}};let visited=false;return {currentNode:node,nextNode(){if(visited)return false;visited=true;return true;}};};
  const location=new URL(`https://nolabelsdesignedbygod.org/${book}-study.html${lesson?'?lesson=2':''}${hash}`);
- vm.runInNewContext(source,{document,location,URL,Set,RegExp,setTimeout:fn=>fn()});
- return {elements,panel:elements.find(el=>el.id==='study-people'),input:elements.find(el=>el.id==='study-people-search'),list:elements.find(el=>el.id==='study-people-list')};
+ vm.runInNewContext(source,{document,location,URL,Set,RegExp,NodeFilter:{SHOW_TEXT:4},setTimeout:fn=>fn()});
+ return {elements,replacement,panel:elements.find(el=>el.id==='study-people'),input:elements.find(el=>el.id==='study-people-search'),list:elements.find(el=>el.id==='study-people-list')};
 }
 for(const book of ['ruth','esther','genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges','first-samuel','second-samuel','first-kings','second-kings',"first-chronicles","second-chronicles","ezra","nehemiah"])for(const lesson of [false,true]){
  const r=run(book,lesson,'#study-people');assert.equal(r.panel.tag,lesson?'details':'section');assert.equal(r.panel.focused,true);
@@ -29,7 +33,7 @@ for(const book of ['ruth','esther','genesis','exodus','leviticus','numbers','deu
  if(['genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges','first-samuel','second-samuel','first-kings','second-kings',"first-chronicles","second-chronicles","ezra","nehemiah"].includes(book))assert.equal(r.list.children.filter(row=>row.className==='study-people-group'&&!row.hidden).length,3);
  if(book==='exodus'){assert.ok(r.elements.some(el=>el.textContent?.includes('not named in the Exodus narrative')));assert.ok(links.every(link=>!new URL(link.href).searchParams.get('person').includes('pharaoh')));}
 }
-assert.ok(fs.readFileSync('book-study-series.js','utf8').includes("if(['/ruth-study.html','/esther-study.html','/genesis-study.html','/exodus-study.html','/leviticus-study.html','/numbers-study.html','/deuteronomy-study.html','/joshua-study.html','/judges-study.html','/first-samuel-study.html','/second-samuel-study.html','/first-kings-study.html','/second-kings-study.html','/first-chronicles-study.html','/second-chronicles-study.html','/ezra-study.html','/nehemiah-study.html','/job-study.html','/psalms-study.html','/proverbs-study.html','/ecclesiastes-study.html','/song-of-songs-study.html','/isaiah-study.html','/jeremiah-study.html','/lamentations-study.html','/ezekiel-study.html','/daniel-study.html','/hosea-study.html','/joel-study.html','/amos-study.html','/obadiah-study.html','/jonah-study.html','/micah-study.html','/nahum-study.html','/habakkuk-study.html','/zephaniah-study.html','/haggai-study.html','/zechariah-study.html','/malachi-study.html','/matthew-study.html','/mark-study.html','/luke-study.html','/john-study.html','/acts-study.html','/romans-study.html','/first-corinthians-study.html','/second-corinthians-study.html'].includes(location.pathname))"));
+assert.ok(fs.readFileSync('book-study-series.js','utf8').includes("if(['/ruth-study.html','/esther-study.html','/genesis-study.html','/exodus-study.html','/leviticus-study.html','/numbers-study.html','/deuteronomy-study.html','/joshua-study.html','/judges-study.html','/first-samuel-study.html','/second-samuel-study.html','/first-kings-study.html','/second-kings-study.html','/first-chronicles-study.html','/second-chronicles-study.html','/ezra-study.html','/nehemiah-study.html','/job-study.html','/psalms-study.html','/proverbs-study.html','/ecclesiastes-study.html','/song-of-songs-study.html','/isaiah-study.html','/jeremiah-study.html','/lamentations-study.html','/ezekiel-study.html','/daniel-study.html','/hosea-study.html','/joel-study.html','/amos-study.html','/obadiah-study.html','/jonah-study.html','/micah-study.html','/nahum-study.html','/habakkuk-study.html','/zephaniah-study.html','/haggai-study.html','/zechariah-study.html','/malachi-study.html','/matthew-study.html','/mark-study.html','/luke-study.html','/john-study.html','/acts-study.html','/romans-study.html','/first-corinthians-study.html','/second-corinthians-study.html','/galatians-study.html','/ephesians-study.html','/philippians-study.html','/colossians-study.html','/first-thessalonians-study.html','/second-thessalonians-study.html'].includes(location.pathname))"));
 console.log('PASS: All enabled study overview and lesson lists, groups, aliases, empty/reset searches, unique profiles, exact returns, and reopening the lesson panel.');
 
 const wisdomLists={"job":{"count":8,"groups":3,"search":"jemima","id":"jemimah","note":"Job’s wife and his initial children are not named. Eliphaz the Temanite is not identified here with Eliphaz son of Esau."},"psalms":{"count":9,"groups":3,"search":"ethan","id":"ethan-ezrahite","note":"Psalm headings preserve associations with named people; these labels do not settle every authorship question. Heman and Ethan the Ezrahites retain the identity cautions in their profiles. The sons of Korah are a collective group, not one named individual."},"proverbs":{"count":5,"groups":2,"search":"jakeh","id":"agur","note":"Woman Wisdom and Woman Folly are poetic personifications. Lemuel’s mother and the woman of Proverbs 31 are unnamed; Agur and Lemuel are not identified with Solomon."},"ecclesiastes":{"count":1,"groups":0,"search":"david","id":"david","note":"Ecclesiastes calls the Teacher / Preacher / Qoheleth a son of David but does not give the speaker a personal name. Solomon is a traditional identification, not an explicitly named speaker in this book. David is listed as a named reference, not as its speaker."},"song-of-songs":{"count":1,"groups":0,"search":"solomon","id":"solomon","note":"Solomon is named in the title and poem. His relationship to the lovers is debated. The Shulamite is a designation, not a supplied personal name, and the lovers are not assigned invented identities here."}};
@@ -117,3 +121,35 @@ for(const [book,c] of Object.entries(actsLetterLists))for(const lesson of [false
  r.input.value='';r.input.events.input();assert.equal(rows.filter(row=>!row.hidden).length,c.count);
 }
 console.log('PASS: Acts and letters lists, groups, short lists, identity notes, search reset and exact returns.');
+
+const paulineLists={"galatians": {"count": 10, "groups": 3, "search": "hagar", "id": "hagar", "note": "James is identified as the Lord’s brother. John among the pillars retains the profile’s contextual identification; bare James and John are not automatically linked. Hagar and Isaac appear in Paul’s scriptural comparison, not as mission coworkers. Sarah and Ishmael are not personally named in Galatians 4."}, "ephesians": {"count": 3, "groups": 0, "search": "tychicus", "id": "tychicus", "note": "Paul is named as sender in the letter. Tychicus is the named messenger; unnamed apostles, prophets, and household members are not assigned personal identities. This list does not settle historical authorship debates."}, "philippians": {"count": 7, "groups": 2, "search": "epaphroditus", "id": "epaphroditus", "note": "Euodia and Syntyche are named gospel coworkers. Epaphroditus is distinct from Epaphras in Colossians. Clement is not identified with a later historical figure, and the unnamed loyal companion is not given an invented identity."}, "colossians": {"count": 14, "groups": 3, "search": "nymphas", "id": "nympha", "note": "Jesus called Justus is distinct from Jesus Christ; bare Jesus and Justus are not automatically linked. Mark’s probable identification with John Mark and Nympha / Nymphas’s textual variants remain explained in their profiles. Luke’s profile does not assert Gospel authorship. Epaphras and Epaphroditus remain distinct."}, "first-thessalonians": {"count": 4, "groups": 2, "search": "silas", "id": "silvanus", "note": "Silvanus is probably the Silas of Acts, but the profile preserves that identification as probable. Unnamed opponents and collective groups are not assigned invented personal identities."}, "second-thessalonians": {"count": 4, "groups": 2, "search": "silas", "id": "silvanus", "note": "Silvanus is probably the Silas of Acts, but the profile preserves that identification as probable. Unnamed opponents and collective groups are not assigned invented personal identities. The man of lawlessness is not identified with a named historical or modern person."}};
+for(const [book,c] of Object.entries(paulineLists))for(const lesson of [false,true]){
+ const r=run(book,lesson,'#study-people');assert.equal(r.panel.tag,lesson?'details':'section');assert.equal(r.panel.focused,true);if(lesson)assert.equal(r.panel.open,true);
+ const rows=r.list.children.filter(row=>row.children[0]?.tag==='a');assert.equal(rows.length,c.count);
+ assert.equal(new Set(rows.map(row=>new URL(row.children[0].href).searchParams.get('person'))).size,c.count);
+ assert.ok(r.elements.some(el=>el.textContent===c.note));
+ assert.equal(r.list.children.filter(row=>row.className==='study-people-group').length,c.groups);
+ for(const row of rows)assert.equal(new URL(row.children[0].href).searchParams.get('return'),`/${book}-study.html${lesson?'?lesson=2':''}#study-people`);
+ r.input.value=c.search;r.input.events.input();const visible=rows.filter(row=>!row.hidden);assert.equal(visible.length,1);assert.equal(new URL(visible[0].children[0].href).searchParams.get('person'),c.id);
+ r.input.value='no such person';r.input.events.input();assert.equal(r.list.children.filter(row=>!row.hidden).length,0);
+ r.input.value='';r.input.events.input();assert.equal(rows.filter(row=>!row.hidden).length,c.count);
+}
+console.log('PASS: Galatians through 2 Thessalonians lists, aliases, identity notes, search/reset, groups and exact returns.');
+
+// Exercise actual text traversal: qualified names must resolve without assigning bare names.
+for(const [book,text,ids,labels] of [
+ ['galatians','Paul met James and John. Barnabas and Titus accompanied him.',['saul-paul','barnabas','titus'],['Paul','Barnabas','Titus']],
+ ['ephesians','Tychicus encouraged the believers.',['tychicus'],['Tychicus']],
+ ['philippians','Euodia and Syntyche served with Epaphroditus.',['euodia','syntyche','epaphroditus'],['Euodia','Syntyche','Epaphroditus']],
+ ['colossians','Jesus called Justus and Jesus Christ are distinct. Jesus and Justus are bare names. Nymphas welcomed the church.',['jesus-justus','jesus','nympha'],['Jesus called Justus','Jesus Christ','Nymphas']],
+ ['colossians','Mark and Luke are bare names. Mark cousin of Barnabas and Luke the beloved physician have qualified labels.',['mark-barnabas-cousin','luke-physician'],['Mark cousin of Barnabas','Luke the beloved physician']],
+ ['first-thessalonians','Silvanus and Timothy write with Paul.',['silvanus','timothy','saul-paul'],['Silvanus','Timothy','Paul']],
+ ['second-thessalonians','Paul and Silvanus speak about the man of lawlessness.',['saul-paul','silvanus'],['Paul','Silvanus']]
+]){
+ const r=run(book,true,'',text),parts=r.replacement.children,links=parts.filter(el=>el.tag==='a');
+ assert.deepEqual(links.map(a=>new URL(a.href).searchParams.get('person')),ids);
+ assert.deepEqual(links.map(a=>a.textContent),labels);
+ assert.equal(parts.map(el=>el.textContent).join(''),text);
+ for(const link of links)assert.equal(new URL(link.href).searchParams.get('return'),`/${book}-study.html?lesson=2#person-context-0`);
+}
+console.log('PASS: actual inline name traversal preserves text, distinct identities, unlinked ambiguous names and exact passage returns.');

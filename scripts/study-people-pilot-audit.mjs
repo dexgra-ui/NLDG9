@@ -286,3 +286,16 @@ assert.ok(result.db.records.find(r=>r.id==='korah-izhar').parents.includes('izha
 assert.match(result.db.records.find(r=>r.id==='antipas').ref,/Revelation 2:13/);
 assert.match(result.db.records.find(r=>r.id==='demetrius-3john').note,/silversmith/);
 console.log('PASS: final NT identities and uncertainties preserved.');
+
+for(const query of ['', '?week=1', '?week=10'])for(const anchor of ['#study-people','#person-context-4']){
+ const back='/james-series.html'+query+anchor;
+ for(const id of ['james-epistle','jesus','abram','isaac','rahab','job','elijah']){
+  const p=run('?person='+id+'&return='+encodeURIComponent(back)).profile;
+  assert.equal(p.children[0].href,'https://nolabelsdesignedbygod.org'+back);
+  assert.equal(p.children[0].textContent,'← Back to James study');
+  assert.equal(p.children[1].firstElementChild.id,'selected-person-'+id);assert.equal(p.scrolled,true);
+ }
+}
+assert.equal(result.db.records.find(r=>r.id==='james-epistle').certainty,'probable');
+for(const bad of ['https://evil.example/james-series.html?week=2','//evil.example/james-series.html','/index.html'])assert.equal(run('?person=james-epistle&return='+encodeURIComponent(bad)).profile.children[0].href,'https://nolabelsdesignedbygod.org/studies.html');
+console.log('PASS: James exact week/passage returns, selected profiles, author uncertainty and unsafe return rejection.');

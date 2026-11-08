@@ -5,7 +5,7 @@ const source=fs.readFileSync('study-people-pilot.js','utf8');
 function run(book,lesson=false,hash='',sample=''){
  const elements=[];
  const make=tag=>{const el={tag,children:[],value:'',hidden:false,events:{},append(...children){this.children.push(...children);},prepend(child){this.children.unshift(child);},setAttribute(name,value){this[name]=value;},addEventListener(name,fn){this.events[name]=fn;},focus(){this.focused=true;},scrollIntoView(){this.scrolled=true;},querySelectorAll(){return [];},querySelector(){return lesson?{}:null;}};elements.push(el);return el;};
- const view=make('div');view.id='book-view';
+ const view=make('div');view.id=book==='james'?'james-view':'book-view';
  let replacement;
  if(sample)view.querySelectorAll=()=>[{id:'',closest:()=>null,sample}];
  if(book==='lamentations')view.querySelectorAll=()=>[{closest:()=>null}]; // Empty name maps must skip inline traversal.
@@ -13,7 +13,7 @@ function run(book,lesson=false,hash='',sample=''){
  document.head.appendChild=child=>document.head.append(child);
  document.createTextNode=text=>({textContent:text});document.createDocumentFragment=()=>make('fragment');
  document.createTreeWalker=block=>{const node={textContent:block.sample,parentElement:{closest:()=>null},replaceWith(fragment){replacement=fragment;}};let visited=false;return {currentNode:node,nextNode(){if(visited)return false;visited=true;return true;}};};
- const location=new URL(`https://nolabelsdesignedbygod.org/${book}-study.html${lesson?'?lesson=2':''}${hash}`);
+ const location=new URL(`https://nolabelsdesignedbygod.org/${book==='james'?'james-series.html':`${book}-study.html`}${lesson?(book==='james'?'?week=2':'?lesson=2'):''}${hash}`);
  vm.runInNewContext(source,{document,location,URL,Set,RegExp,NodeFilter:{SHOW_TEXT:4},setTimeout:fn=>fn()});
  return {elements,replacement,panel:elements.find(el=>el.id==='study-people'),input:elements.find(el=>el.id==='study-people-search'),list:elements.find(el=>el.id==='study-people-list')};
 }
@@ -234,3 +234,20 @@ for(const [book,text,ids] of [
  for(const link of links)assert.equal(new URL(link.href).searchParams.get('return'),`/${book}-study.html?lesson=2#person-context-0`);
 }
 console.log('PASS: final NT inline traversal, identity exclusions, text and passage returns.');
+
+for(const lesson of [false,true]){
+ const r=run('james',lesson,'#study-people');
+ assert.equal(r.panel.tag,lesson?'details':'section');assert.equal(r.panel.focused,true);if(lesson)assert.equal(r.panel.open,true);
+ const rows=r.list.children.filter(row=>row.children[0]?.tag==='a');
+ assert.equal(rows.length,7);assert.equal(new Set(rows.map(row=>new URL(row.children[0].href).searchParams.get('person'))).size,7);
+ for(const row of rows)assert.equal(new URL(row.children[0].href).searchParams.get('return'),`/james-series.html${lesson?'?week=2':''}#study-people`);
+ r.input.value='abram';r.input.events.input();assert.equal(rows.filter(row=>!row.hidden).length,1);
+ r.input.value='missing person';r.input.events.input();assert.equal(r.list.children.filter(row=>!row.hidden).length,0);
+ r.input.value='';r.input.events.input();assert.equal(rows.filter(row=>!row.hidden).length,7);
+}
+const jamesText='James is traditionally identified with Jesus’ brother. Abraham, Isaac, Rahab, Job and Elijah are examples.';
+const jamesInline=run('james',true,'',jamesText).replacement.children;
+assert.deepEqual(jamesInline.filter(el=>el.tag==='a').map(a=>new URL(a.href).searchParams.get('person')),['jesus','abram','isaac','rahab','job','elijah']);
+assert.equal(jamesInline.map(el=>el.textContent).join(''),jamesText);
+for(const a of jamesInline.filter(el=>el.tag==='a'))assert.equal(new URL(a.href).searchParams.get('return'),'/james-series.html?week=2#person-context-0');
+console.log('PASS: James overview/lesson panels, search/reset, unique profiles, week-based returns, reopening and safe inline identities.');

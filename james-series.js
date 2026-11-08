@@ -74,4 +74,7 @@
   document.getElementById('toggle').onclick=()=>{const st=state(),set=new Set(st.completed||[]);set.has(x.week)?set.delete(x.week):set.add(x.week);st.completed=[...set].sort((a,b)=>a-b);save(st);location.reload()};
  }
  lesson?detail(lesson):landing();
+ if(location.pathname==='/james-series.html'){
+  const script=document.createElement('script');script.src='study-people-pilot.js?v=22';document.head.appendChild(script);
+ }
 })();

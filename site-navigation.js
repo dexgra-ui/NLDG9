@@ -101,7 +101,7 @@ function initializeNavigation(){
   nav.addEventListener('click',event=>{if(event.target.closest('a'))setOpen(false)});
   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&document.body.classList.contains('nav-open'))setOpen(false,true)});
   document.addEventListener('click',event=>{if(document.body.classList.contains('nav-open')&&!header.contains(event.target))setOpen(false)});
-  window.addEventListener('resize',()=>{if(innerWidth>1600&&document.body.classList.contains('nav-open'))setOpen(false)});
+  window.addEventListener('resize',()=>{if(innerWidth>1320&&document.body.classList.contains('nav-open'))setOpen(false)});
 
   const isWomenOfFaithPage=page==='women-of-faith.html'||page.startsWith('women-of-faith-');
   const isMenOfFaithPage=page==='men-of-faith.html'||page.startsWith('men-of-faith-');

@@ -10,8 +10,8 @@ function render(week=0,spanish=false){
  const localStorage={getItem:k=>{assert.equal(k,'nldg-series-james');return saved},setItem:(k,v)=>{assert.equal(k,'nldg-series-james');writes.push(v);saved=v}};
  const c=vm.createContext({document,location,localStorage,URL,URLSearchParams,setTimeout:fn=>fn()});c.window=c;
  for(const file of ['james-series-data.js','james-series.js'])vm.runInContext(fs.readFileSync(file,'utf8'),c);
- const loads=head.children.filter(e=>e.tag==='script');assert.equal(loads.length,spanish?0:1);
- if(!spanish){assert.match(loads[0].src,/study-people-pilot.js/);vm.runInContext(fs.readFileSync('study-people-pilot.js','utf8'),c);}
+ const loads=head.children.filter(e=>e.tag==='script');assert.equal(loads.length,spanish?0:2);
+ if(!spanish){assert.match(loads[0].src,/study-people-pilot.js/);assert.match(loads[1].src,/biblical-study-map-links.js/);vm.runInContext(fs.readFileSync('study-people-pilot.js','utf8'),c);}
  return {view,elements,toggle,writes,read:()=>JSON.parse(saved)};
 }
 for(const week of [0,1,2,3,4,5,6,7,8,9,10]){

@@ -1,5 +1,6 @@
 (()=>{
- const s=window.NLDG_BOOK_STUDY,hero=document.getElementById('book-hero');
+ const isJames=location.pathname==='/james-series.html';
+ const s=isJames?{book:'James'}:window.NLDG_BOOK_STUDY,hero=document.getElementById(isJames?'james-hero':'book-hero');
  if(!s||!hero||document.querySelector('.book-geography-resource'))return;
  const RESTORE_PARAM='nldgMapReturnY';
  const cleanReturnPath=()=>{const current=new URL(location.href);current.searchParams.delete(RESTORE_PARAM);return `${current.pathname}${current.search}${current.hash}`;};
@@ -66,7 +67,7 @@
  };
  const ids=groups[book];
  if(!ids?.length)return;
- const lesson=Number(new URLSearchParams(location.search).get('lesson')||0);
+ const lesson=Number(new URLSearchParams(location.search).get(isJames?'week':'lesson')||0);
  let note='Use the map alongside Scripture to place this book in its biblical world.';
  if(book==='genesis')note='See the wider biblical world and Abraham’s movement through Genesis 11–22. Exact ancient travel roads are not claimed.';
  else if(['exodus','leviticus','numbers','deuteronomy'].includes(book))note='Follow the wilderness setting while keeping the sea crossing, Sinai identification, and reconstructed route clearly marked as debated.';
@@ -79,6 +80,7 @@
  else if(['matthew','mark','luke','john'].includes(book))note='Read the Gospel with Galilee, Samaria, Judea, and Jerusalem in view. The maps avoid forcing the Gospel accounts into one speculative itinerary.';
  else if(book==='acts')note='Follow Acts through Paul’s missionary world with separate journey layers and reconstructed route segments clearly identified.';
  else if(ids.includes('paul'))note='Situate this letter in Paul’s missionary world. The map is geographic orientation, not a claim that every route segment can be reconstructed exactly.';
+ else if(book==='james')note='Orient the study in the wider biblical world of the twelve tribes in the Dispersion (James 1:1). The map does not claim a precise writing location, a fixed audience location, or a travel route for this letter.';
  else if(['hebrews','james','1 peter','2 peter','1 john','2 john','3 john','jude','revelation'].includes(book))note='Use the biblical-world map for regional orientation. The resource does not assign a precise writing location or audience location where the biblical text or scholarship remains uncertain.';
  if(lesson&&['matthew','mark','luke','john'].includes(book))note+=' Jerusalem is included as a second resource for Passion-week and city-context study.';
  const style=document.createElement('style');

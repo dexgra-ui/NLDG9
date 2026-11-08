@@ -76,5 +76,6 @@
  lesson?detail(lesson):landing();
  if(location.pathname==='/james-series.html'){
   const script=document.createElement('script');script.src='study-people-pilot.js?v=22';document.head.appendChild(script);
+  const geographyScript=document.createElement('script');geographyScript.src='biblical-study-map-links.js?v=1.0.1';geographyScript.async=false;document.head.appendChild(geographyScript);
  }
 })();

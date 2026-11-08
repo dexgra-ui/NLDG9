@@ -386,7 +386,7 @@ if(jamesRequired.every(exists)){
   expect('James Spanish page',read('es/santiago-estudio.html'),'../james-series.js?v=1.3.0');
   expect('James Spanish page',read('es/santiago-estudio.html'),'../nldg-i18n.js?v=1.79.0');
   expect('James English page',read('james-series.html'),'james-series-data.js?v=1.1.0');
-  expect('James English page',read('james-series.html'),'james-series.js?v=1.3.1');
+  expect('James English page',read('james-series.html'),'james-series.js?v=1.3.2');
   expect('James English page',read('james-series.html'),'nldg-i18n.js?v=1.79.0');
   expect('James route pair',i18n,`'james-series${html}':'es/santiago-estudio${html}'`);
 }

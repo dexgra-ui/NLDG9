@@ -1,7 +1,9 @@
 // Curated English study people; never infer same-name identities globally.
 (()=>{
- const view=document.getElementById('book-view');if(!view)return;
+ const isJames=location.pathname==='/james-series.html';
+ const view=document.getElementById(isJames?'james-view':'book-view');if(!view)return;
  const pilots={
+  "/james-series.html":{"name": "James", "id": "james", "people": {"Jesus": "jesus", "Abraham": "abram", "Abram": "abram", "Isaac": "isaac", "Rahab": "rahab", "Job": "job", "Elijah": "elijah"}, "note": "James identifies himself as a servant of God and of the Lord Jesus Christ. His identification with Jesus’ brother and the Jerusalem leader remains probable rather than explicitly stated in this letter. Abraham, Isaac, Rahab, Job and Elijah are scriptural examples, not contemporaries present in each lesson."},
   "/first-john-study.html":{"name": "1 John", "id": "first-john", "people": {"Jesus": "jesus", "Cain": "cain"}, "note": "This letter does not name its human sender. John is not inserted as an explicitly named author. Cain is the named negative example; his brother is not personally named in 1 John 3:12."},
   "/second-john-study.html":{"name": "2 John", "id": "second-john", "people": {"Jesus": "jesus"}, "note": "The sender calls himself the elder; the elect lady, her children, and her chosen sister are not given personal names. Whether the lady represents a person or a community is not settled by this panel. Jesus Christ is the one named person listed."},
   "/third-john-study.html":{"name": "3 John", "id": "third-john", "people": {"Gaius": "gaius-3john", "Diotrephes": "diotrephes", "Demetrius": "demetrius-3john"}, "note": "The elder does not give a personal name. Gaius is kept distinct from other New Testament men named Gaius, and Demetrius is not identified with the silversmith in Acts. Unnamed traveling believers receive no invented identities."},
@@ -70,7 +72,7 @@
  };
  const pilot=pilots[location.pathname];if(!pilot)return;
  const people=pilot.people,seen=new Set();
- const isLesson=!!view.querySelector('.book-lesson');
+ const isLesson=!!view.querySelector(isJames?'.james-lesson':'.book-lesson');
  function personLink(label,id,anchor){
   const target=new URL('biblical-people-genealogy.html',location.href),back=new URL(location.href);
   back.hash=anchor;target.searchParams.set('person',id);target.searchParams.set('return',back.pathname+back.search+back.hash);
@@ -98,7 +100,8 @@
  const label=document.createElement('label');label.htmlFor='study-people-search';label.textContent='Search people in this study';
  const input=document.createElement('input');input.type='search';input.id='study-people-search';input.placeholder='Type a name';
  const list=document.createElement('ul');list.id='study-people-list';input.setAttribute('aria-controls',list.id);
- const entries=pilot.id==="first-john"?
+ const entries=pilot.id==='james'?
+  [["James (letter sender)", "james-epistle", "Sender and Central Reference"], ["Jesus Christ", "jesus", "Sender and Central Reference"], ["Abraham / Abram", "abram", "Faith in Action"], ["Isaac", "isaac", "Faith in Action"], ["Rahab", "rahab", "Faith in Action"], ["Job", "job", "Perseverance and Prayer"], ["Elijah", "elijah", "Perseverance and Prayer"]]:pilot.id==="first-john"?
   [["Jesus Christ", "jesus"], ["Cain", "cain"]]:pilot.id==="second-john"?
   [["Jesus Christ", "jesus"]]:pilot.id==="third-john"?
   [["Gaius (recipient of 3 John)", "gaius-3john"], ["Diotrephes", "diotrephes"], ["Demetrius (commended in 3 John)", "demetrius-3john"]]:pilot.id==="jude"?
@@ -176,7 +179,7 @@
  if(!entries.length){label.hidden=true;input.hidden=true;list.hidden=true;}
  panel.append(label,input,list,status,all);view.prepend(panel);
  const style=document.createElement('style');style.textContent='.study-person-link{text-decoration:underline;text-underline-offset:.2em}.study-person-link:focus-visible,.study-people summary:focus-visible,.study-people input:focus-visible{outline:3px solid currentColor;outline-offset:4px}.study-people summary{cursor:pointer;padding:.75rem 0;font-weight:700}.study-people input{display:block;width:100%;max-width:28rem;min-height:44px;margin:.5rem 0}.study-people li a{display:inline-block;padding:.5rem 0}.study-people [hidden]{display:none!important}.study-people{scroll-margin-top:7rem}@media print{.study-people{display:none}.study-person-link{color:inherit;text-decoration:none}}';document.head.appendChild(style);
- function restore(){const id=location.hash.slice(1);if(id==='study-people'&&isLesson)panel.open=true;if(id==='study-people'||id==='book-view'||/^person-context-\d+$/.test(id)){const target=document.getElementById(id);if(target){target.tabIndex=-1;target.focus({preventScroll:true});target.scrollIntoView({block:'center',behavior:'auto'});}}}
+ function restore(){const id=location.hash.slice(1);if(id==='study-people'&&isLesson)panel.open=true;if(id==='study-people'||id==='book-view'||id==='james-view'||/^person-context-\d+$/.test(id)){const target=document.getElementById(id);if(target){target.tabIndex=-1;target.focus({preventScroll:true});target.scrollIntoView({block:'center',behavior:'auto'});}}}
  // Run after the existing lesson renderer's initial scroll reset.
  if(document.readyState==='complete')setTimeout(restore,350);else window.addEventListener('load',()=>setTimeout(restore,350),{once:true});
 })();

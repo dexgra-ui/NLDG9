@@ -223,3 +223,13 @@ footer{display:grid;grid-template-columns:1fr auto;gap:18px;padding:30px clamp(2
 @keyframes intro-progress{to{transform:scaleX(1)}}
 @media(max-width:600px){.show-site-intro .site-intro{padding:24px}.site-intro-content img{width:min(82vw,390px);max-height:42vh}.site-intro-title{max-width:330px}.site-intro-progress{width:min(74vw,360px)}}
 @media(prefers-reduced-motion:reduce){.show-site-intro .site-intro{transition:none}.site-intro-content img,.site-intro-title,.site-intro-content p,.site-intro-content button,.site-intro-progress span{animation:none}.site-intro-progress span{transform:scaleX(1)}}
+
+
+/* News & Updates unified landing page */
+.news-updates-page #latest-updates,
+.news-updates-page #beyond-the-label{scroll-margin-top:110px}
+.news-updates-page #beyond-the-label{border-top:1px solid var(--line);background:rgba(255,255,255,.018)}
+.news-updates-page #beyond-the-label .news-feature{margin-bottom:24px}
+.news-updates-page #beyond-the-label .news-feature h3{font-size:clamp(1.8rem,3vw,2.7rem);line-height:1.15;margin:12px 0}
+.news-updates-page .news-grid article a:focus-visible,
+.news-updates-page .actions a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}

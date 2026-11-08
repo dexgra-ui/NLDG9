@@ -200,6 +200,7 @@ Object.assign(historyBatch,{"acts":{"name":"Acts","ids":["jesus","simon-peter","
 Object.assign(historyBatch,{"galatians": {"name": "Galatians", "ids": ["saul-paul", "jesus", "simon-peter", "james-brother-jesus", "john-zebedee", "barnabas", "titus", "abram", "isaac", "hagar"]}, "ephesians": {"name": "Ephesians", "ids": ["saul-paul", "jesus", "tychicus"]}, "philippians": {"name": "Philippians", "ids": ["saul-paul", "timothy", "jesus", "epaphroditus", "euodia", "syntyche", "clement-philippians"]}, "colossians": {"name": "Colossians", "ids": ["saul-paul", "timothy", "jesus", "epaphras", "tychicus", "onesimus", "aristarchus", "mark-barnabas-cousin", "barnabas", "jesus-justus", "luke-physician", "demas", "nympha", "archippus"]}, "first-thessalonians": {"name": "1 Thessalonians", "ids": ["saul-paul", "silvanus", "timothy", "jesus"]}, "second-thessalonians": {"name": "2 Thessalonians", "ids": ["saul-paul", "silvanus", "timothy", "jesus"]}});
 Object.assign(historyBatch,{"first-timothy": {"name": "1 Timothy", "ids": ["saul-paul", "timothy", "jesus", "adam", "eve", "pilate", "hymenaeus", "alexander-1timothy"]}, "second-timothy": {"name": "2 Timothy", "ids": ["saul-paul", "timothy", "lois", "eunice", "jesus", "moses", "jannes", "jambres", "hymenaeus", "philetus", "alexander-coppersmith", "onesiphorus", "demas", "titus", "luke-physician", "john-mark", "tychicus", "carpus", "priscilla", "aquila"]}, "titus": {"name": "Titus", "ids": ["saul-paul", "titus", "jesus", "artemas", "tychicus", "zenas", "apollos"]}, "philemon": {"name": "Philemon", "ids": ["saul-paul", "timothy", "jesus", "philemon", "apphia", "archippus", "onesimus", "epaphras", "mark-barnabas-cousin", "aristarchus", "demas", "luke-physician"]}});
 Object.assign(historyBatch,{"hebrews": {"name": "Hebrews", "ids": ["jesus", "moses", "aaron", "melchizedek", "abram", "sarai", "isaac", "jacob", "joseph", "abel", "enoch-sethite", "noah", "rahab", "gideon", "barak", "samson", "jephthah", "david", "samuel", "joshua", "esau", "levi", "timothy"]}, "first-peter": {"name": "1 Peter", "ids": ["simon-peter", "silvanus", "mark-1peter", "jesus", "sarai", "abram", "noah"]}, "second-peter": {"name": "2 Peter", "ids": ["simon-peter", "jesus", "saul-paul", "noah", "lot", "balaam", "beor-balaam"]}});
+Object.assign(historyBatch,{"first-john": {"name": "1 John", "ids": ["jesus", "cain"]}, "second-john": {"name": "2 John", "ids": ["jesus"]}, "third-john": {"name": "3 John", "ids": ["gaius-3john", "diotrephes", "demetrius-3john"]}, "jude": {"name": "Jude", "ids": ["jude-epistle", "james-epistle", "jesus", "moses", "cain", "balaam", "korah-izhar", "enoch-sethite", "adam"]}, "revelation": {"name": "Revelation", "ids": ["john-revelation", "jesus", "antipas", "jezebel-revelation", "balaam", "balak", "david", "judah", "moses"]}});
 for(const [book,{name,ids}] of Object.entries(historyBatch)){
  for(const lesson of ['', '?lesson=2']){
   const back=`/${book}-study.html${lesson}#study-people`;
@@ -276,3 +277,12 @@ assert.equal(result.db.records.find(r=>r.id==='beor-balaam').certainty,'unresolv
 assert.ok(result.db.records.find(r=>r.id==='enoch-sethite').parents.includes('jared'));
 assert.ok(result.db.records.find(r=>r.id==='sarai').aliases.includes('Sarai'));
 console.log('PASS: Peter network probabilities, Beor distinction, Enoch lineage and Sarah alias preserved.');
+
+assert.equal(result.db.records.find(r=>r.id==='gaius-3john').certainty,'unresolved identification');
+assert.equal(result.db.records.find(r=>r.id==='jude-epistle').certainty,'probable');
+assert.equal(result.db.records.find(r=>r.id==='john-revelation').certainty,'unresolved identification');
+assert.equal(result.db.records.find(r=>r.id==='jezebel-revelation').certainty,'unresolved identification');
+assert.ok(result.db.records.find(r=>r.id==='korah-izhar').parents.includes('izhar'));
+assert.match(result.db.records.find(r=>r.id==='antipas').ref,/Revelation 2:13/);
+assert.match(result.db.records.find(r=>r.id==='demetrius-3john').note,/silversmith/);
+console.log('PASS: final NT identities and uncertainties preserved.');

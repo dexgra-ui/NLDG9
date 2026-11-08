@@ -22,17 +22,12 @@ function initializeNavigation(){
     ['Start Here','new-believers.html','start'],
     ['Bible Studies','studies.html','studies'],
     ['Devotionals','devotionals.html','devotionals'],
-    ['Prayer','prayer.html','prayer'],
     ['Articles','articles.html','articles'],
-    ['Newsletter','newsletter.html','newsletter'],
+    ['News & Updates','news.html','news'],
     ['Resource Center','resource-center.html','resources'],
-    ['Podcast','podcast.html','podcast'],
-    ['News','news.html','news'],
-    ['Search','search.html','search'],
     ['Our Ministry','about.html','about'],
     ['🎮 Games','play.html','games','play-link']
   ];
-
   const startPages=new Set(['new-believers.html','new-believer-step.html','new-believer-complete.html','new-believer-mentor.html','new-believer-mentor-session.html','new-believer-toolkit.html','new-believer-toolkit-packet.html']);
   const resourcePages=new Set(['resource-center.html','resources.html','teaching-library.html','biblical-maps.html']);
   const studyPages=new Set(['studies.html','study-library.html','dashboard.html','community.html','ministry-tools.html','ministry-assistant.html','topics.html','scripture-index.html','book-by-book.html','current-events-series.html','james-series.html','after-benediction-series.html','preferences-idols-series.html','first-john-study.html','philippians-study.html','ruth-study.html','technology-ai.html','sunday-school.html','sunday-school-lesson.html','women-of-faith.html','men-of-faith.html','marriage-family.html','marriage-family-study.html','difficult-questions.html','difficult-questions-study.html','leadership.html','leadership-study.html','walking-with-jesus.html','walking-with-jesus-study.html','growing-with-jesus.html','following-jesus-for-yourself.html','other-ancient-writings.html']);
@@ -46,7 +41,7 @@ function initializeNavigation(){
   else if(page.startsWith('devotional'))section='devotionals';
   else if(page==='prayer.html'||page.startsWith('prayer-'))section='prayer';
   else if(page.startsWith('article'))section='articles';
-  else if(page.startsWith('newsletter')||location.pathname.includes('/newsletter/'))section='newsletter';
+  else if(page.startsWith('newsletter')||location.pathname.includes('/newsletter/'))section='news';
   else if(page.startsWith('podcast'))section='podcast';
   else if(page.startsWith('news'))section='news';
   else if(page.startsWith('search')||page==='site-map.html')section='search';
@@ -167,7 +162,7 @@ function initializeNavigation(){
   }
 
   const sectionRoots={
-    start:['Start Here','new-believers.html'],studies:['Bible Studies','studies.html'],devotionals:['Devotionals','devotionals.html'],prayer:['Prayer','prayer.html'],articles:['Articles','articles.html'],newsletter:['Newsletter','newsletter.html'],resources:['Resource Center','resource-center.html'],podcast:['Podcast','podcast.html'],news:['News','news.html'],search:['Search','search.html'],about:['Our Ministry','about.html'],games:['Games','play.html']
+    start:['Start Here','new-believers.html'],studies:['Bible Studies','studies.html'],devotionals:['Devotionals','devotionals.html'],prayer:['Prayer','prayer.html'],articles:['Articles','articles.html'],resources:['Resource Center','resource-center.html'],podcast:['Podcast','podcast.html'],news:['News & Updates','news.html'],search:['Search','search.html'],about:['Our Ministry','about.html'],games:['Games','play.html']
   };
   const navigationLandingPages=new Set([
     'new-believers.html','new-believer-mentor.html','new-believer-toolkit.html',
@@ -229,12 +224,15 @@ function initializeNavigation(){
       <a href="new-believers.html">Start Here</a>
       <a href="studies.html">Bible Studies</a>
       <a href="prayer.html"${page==='prayer.html'?' aria-current="page"':''}>Prayer</a>
-      <a href="newsletter.html">Newsletter</a>
+      <a href="news.html">News & Updates</a>
+       <a href="newsletter.html">Beyond the Label</a>
       <a href="resource-center.html">Resources</a>
       <a href="play.html">Games</a>
       <a href="about.html">Our Ministry</a>
       <a href="contact.html" data-contact-page="true"${page==='contact.html'?' aria-current="page"':''}>Contact</a>
-      <a href="site-map.html">Site Map</a>
+      <a href="podcast.html">Podcast</a>
+       <a href="search.html">Search</a>
+       <a href="site-map.html">Site Map</a>
       <a href="privacy.html"${page==='privacy.html'?' aria-current="page"':''}>Privacy Policy</a>
       <a href="terms.html"${page==='terms.html'?' aria-current="page"':''}>Terms of Use</a>
       <a href="https://www.facebook.com/NoLabelsDesignedbyGod" target="_blank" rel="noopener noreferrer" aria-label="Follow No Labels, Designed by God on Facebook">Facebook ↗</a>

@@ -5,7 +5,24 @@ const nested=/\/(?:articles|devotionals|newsletter)\//i.test(location.pathname);
 const isContact=/(^|\/)contact\.html$/i.test(location.pathname);
 const root=nested?'../':'';
 const shopUrl='https://no-labels-designed-by-god-shop.fourthwall.com/';
-const blueskyUrl='https://bsky.app/profile/mayhemreigns.bsky.social';
+const socialProfiles=[
+ {key:'bluesky',name:'Bluesky',owner:'Dexter A. Graham',url:'https://bsky.app/profile/mayhemreigns.bsky.social'},
+ {key:'threads',name:'Threads',owner:'No Labels, Designed by God',url:'https://www.threads.com/@nolabelsdesignedbygod'}
+];
+const addSocialLink=(container,profile,before,follow=false)=>{
+ const marker='data-'+profile.key+'-link';
+ if(container.querySelector('a['+marker+']'))return;
+ const link=document.createElement('a');
+ link.href=profile.url;
+ link.setAttribute(marker,'true');
+ link.target='_blank';
+ link.rel='noopener noreferrer';
+ if(follow)link.className='button secondary';
+ const label=(follow?'Follow on ':'')+profile.name+' ↗';
+ link.textContent=label;
+ link.setAttribute('aria-label',label+' · '+profile.owner+' (opens in a new tab)');
+ container.insertBefore(link,before);
+};
 const i18nScript=document.createElement('script');
 i18nScript.src=new URL('nldg-i18n.js?v=1.6.0',document.currentScript?.src||location.href).href;
 i18nScript.async=false;
@@ -52,31 +69,12 @@ const ensure=()=>{
    shop.textContent='Shop';
    links.insertBefore(shop,contact);
   }
-  if(!links.querySelector('a[data-bluesky-link]')){
-   const bluesky=document.createElement('a');
-   bluesky.href=blueskyUrl;
-   bluesky.dataset.blueskyLink='true';
-   bluesky.target='_blank';
-   bluesky.rel='noopener noreferrer';
-   bluesky.setAttribute('aria-label','Bluesky ↗ — Dexter A. Graham (opens in a new tab)');
-   bluesky.textContent='Bluesky ↗';
-   links.insertBefore(bluesky,contact);
-  }
+  socialProfiles.forEach(profile=>addSocialLink(links,profile,contact));
   if(isContact)contact.setAttribute('aria-current','page');
   links.querySelectorAll('a[href="mailto:team@nolabelsdesignedbygod.org"]').forEach(link=>link.remove());
  });
  const homeConnect=document.querySelector('.connect .actions');
- if(homeConnect&&!homeConnect.querySelector('a[data-bluesky-link]')){
-  const bluesky=document.createElement('a');
-  bluesky.href=blueskyUrl;
-  bluesky.dataset.blueskyLink='true';
-  bluesky.className='button secondary';
-  bluesky.target='_blank';
-  bluesky.rel='noopener noreferrer';
-  bluesky.setAttribute('aria-label','Follow on Bluesky ↗ — Dexter A. Graham (opens in a new tab)');
-  bluesky.textContent='Follow on Bluesky ↗';
-  homeConnect.appendChild(bluesky);
- }
+ if(homeConnect)socialProfiles.forEach(profile=>addSocialLink(homeConnect,profile,null,true));
  if(isContact){const nav=document.getElementById('primary-navigation');nav?.querySelectorAll('.active').forEach(link=>link.classList.remove('active'));nav?.querySelectorAll('[aria-current="page"]').forEach(link=>link.removeAttribute('aria-current'))}
 };
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ensure,{once:true});else ensure();

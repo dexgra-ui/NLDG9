@@ -1,6 +1,6 @@
 (function(){
 const STUDIES='nldg-ministry-assistant-sessions-v7',GOALS='nldg-journey-goals-v1',REFLECTIONS='nldg-journey-reflections-v1',MEMORY='nldg-journey-memory-v1',PRAYERS='nldg-prayers-v1';
-const read=(k,f=[])=>{try{return JSON.parse(localStorage.getItem(k)||JSON.stringify(f))}catch{return f}},write=(k,v)=>localStorage.setItem(k,JSON.stringify(v)),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const read=(k,f=[])=>{try{return JSON.parse(localStorage.getItem(k)||JSON.stringify(f))}catch{return f}},write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}},esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const studies=()=>read(STUDIES,[]),goals=()=>read(GOALS,[]),reflections=()=>read(REFLECTIONS,[]),memory=()=>read(MEMORY,[]),prayers=()=>read(PRAYERS,[]);
 const studyById=(id,list=studies())=>list.find(x=>x.id===id);
 function studyName(id,list){const s=studyById(id,list);return s?(s.title||s.study?.ref||'Saved study'):''}
@@ -15,14 +15,69 @@ function render(){
  renderGoals(g,s);renderReflections(r,s);renderMemory(m);renderTestimonies(answered,s);renderTimeline(s,g,r,m,p)
 }
 function linkedStudy(id,list){const name=studyName(id,list);return name?`<p class="journey-linked">Linked study: ${esc(name)}</p>`:''}
-function renderGoals(list,s){document.querySelector('#journey-goals').innerHTML=list.length?list.map(x=>`<article><small>${esc(x.category)}</small><h3>${esc(x.title)}</h3>${linkedStudy(x.studyId,s)}<div class="journey-progress"><span style="width:${Math.max(0,Math.min(100,x.progress||0))}%"></span></div><p>${x.progress||0}% complete</p><div class="journey-actions"><button data-goal-progress="${x.id}">Update progress</button><button data-goal-complete="${x.id}">${x.complete?'Reopen':'Complete'}</button><button data-goal-delete="${x.id}">Delete</button></div></article>`).join(''):'<p class="journey-empty">No goals yet.</p>'}
-function renderReflections(list,s){document.querySelector('#journey-reflections').innerHTML=list.length?list.slice(0,8).map(x=>`<article><small>${new Date(x.created).toLocaleDateString()}</small><h3>${esc(x.title)}</h3>${linkedStudy(x.studyId,s)}<p>${esc(x.learned)}</p>${x.response?`<p><strong>Response:</strong> ${esc(x.response)}</p>`:''}<div class="journey-actions"><button data-reflection-delete="${x.id}">Delete</button></div></article>`).join(''):'<p class="journey-empty">Your reflections will appear here.</p>'}
-function renderMemory(list){document.querySelector('#journey-memory-list').innerHTML=list.length?list.map(x=>`<article><small>${esc(x.translation||'')}</small><h3>${esc(x.reference)}</h3><p>${esc(x.text)}</p><p>Confidence: ${x.confidence||1}/5${x.lastReviewed?` · Reviewed ${new Date(x.lastReviewed).toLocaleDateString()}`:''}</p><div class="journey-actions"><button data-memory-review="${x.id}">Review</button><button data-memory-reset="${x.id}">Reset confidence</button><button data-memory-delete="${x.id}">Delete</button></div></article>`).join(''):'<p class="journey-empty">No memory verses yet.</p>'}
-function renderTestimonies(list,s){document.querySelector('#journey-testimonies').innerHTML=list.length?list.sort((a,b)=>(b.answeredAt||0)-(a.answeredAt||0)).map(x=>`<article><small>${esc(x.category||'Prayer')} · Answered ${new Date(x.answeredAt||x.createdAt).toLocaleDateString()}</small><h3>${esc(x.title)}</h3>${x.details?`<p>${esc(x.details)}</p>`:''}${x.scripture?`<p><strong>Scripture:</strong> ${esc(x.scripture)}</p>`:''}${linkedStudy(x.studyId,s)}<div class="journey-actions"><button data-prayer-reopen="${x.id}">Mark Active</button></div></article>`).join(''):'<p class="journey-empty">Answered prayers will appear here as testimonies.</p>'}
+function renderGoals(list,s){document.querySelector('#journey-goals').innerHTML=list.length?list.map(x=>`<article><small>${esc(x.category)}</small><h3>${esc(x.title)}</h3>${linkedStudy(x.studyId,s)}<div class="journey-progress"><span style="width:${Math.max(0,Math.min(100,x.progress||0))}%"></span></div><p>${Math.max(0,Math.min(100,Number(x.progress)||0))}% complete</p><div class="journey-actions"><button data-goal-progress="${esc(x.id)}">Update progress</button><button data-goal-complete="${esc(x.id)}">${x.complete?'Reopen':'Complete'}</button><button data-goal-delete="${esc(x.id)}">Delete</button></div></article>`).join(''):'<p class="journey-empty">No goals yet.</p>'}
+function renderReflections(list,s){document.querySelector('#journey-reflections').innerHTML=list.length?list.slice(0,8).map(x=>`<article><small>${new Date(x.created).toLocaleDateString()}</small><h3>${esc(x.title)}</h3>${linkedStudy(x.studyId,s)}<p>${esc(x.learned)}</p>${x.response?`<p><strong>Response:</strong> ${esc(x.response)}</p>`:''}<div class="journey-actions"><button data-reflection-delete="${esc(x.id)}">Delete</button></div></article>`).join(''):'<p class="journey-empty">Your reflections will appear here.</p>'}
+function renderMemory(list){document.querySelector('#journey-memory-list').innerHTML=list.length?list.map(x=>`<article><small>${esc(x.translation||'')}</small><h3>${esc(x.reference)}</h3><p>${esc(x.text)}</p><p>Confidence: ${Math.max(1,Math.min(5,Number(x.confidence)||1))}/5${x.lastReviewed?` · Reviewed ${new Date(x.lastReviewed).toLocaleDateString()}`:''}</p><div class="journey-actions"><button data-memory-review="${esc(x.id)}">Review</button><button data-memory-reset="${esc(x.id)}">Reset confidence</button><button data-memory-delete="${esc(x.id)}">Delete</button></div></article>`).join(''):'<p class="journey-empty">No memory verses yet.</p>'}
+function renderTestimonies(list,s){document.querySelector('#journey-testimonies').innerHTML=list.length?list.sort((a,b)=>(b.answeredAt||0)-(a.answeredAt||0)).map(x=>`<article><small>${esc(x.category||'Prayer')} · Answered ${new Date(x.answeredAt||x.createdAt).toLocaleDateString()}</small><h3>${esc(x.title)}</h3>${x.details?`<p>${esc(x.details)}</p>`:''}${x.scripture?`<p><strong>Scripture:</strong> ${esc(x.scripture)}</p>`:''}${linkedStudy(x.studyId,s)}<div class="journey-actions"><button data-prayer-reopen="${esc(x.id)}">Mark Active</button></div></article>`).join(''):'<p class="journey-empty">Answered prayers will appear here as testimonies.</p>'}
 function renderTimeline(s,g,r,m,p){const items=[...s.map(x=>({date:x.updated||x.created,title:x.title||x.study?.ref||'Bible study',type:'Study'})),...g.map(x=>({date:x.updated||x.created,title:x.title,type:x.complete?'Goal completed':'Goal'})),...r.map(x=>({date:x.created,title:x.title,type:'Reflection'})),...m.map(x=>({date:x.lastReviewed||x.created,title:x.reference,type:x.lastReviewed?'Scripture reviewed':'Memory verse'})),...p.map(x=>({date:x.answeredAt||x.createdAt,title:x.title,type:x.answered?'Answered prayer':'Prayer'}))].filter(x=>x.date).sort((a,b)=>new Date(b.date)-new Date(a.date)).slice(0,16);document.querySelector('#journey-timeline').innerHTML=items.length?items.map(x=>`<article class="timeline-entry"><small>${esc(x.type)} · ${new Date(x.date).toLocaleDateString()}</small><h3>${esc(x.title)}</h3></article>`).join(''):'<p class="journey-empty">Your journey timeline will grow as you study, pray, reflect, and set goals.</p>'}
-document.querySelector('#goal-form')?.addEventListener('submit',e=>{e.preventDefault();const list=goals();list.unshift({id:crypto.randomUUID(),title:e.target.title.value.trim(),category:e.target.category.value,studyId:e.target.studyId.value,progress:Number(e.target.progress.value)||0,complete:false,created:new Date().toISOString(),updated:new Date().toISOString()});write(GOALS,list);e.target.reset();render()});
-document.querySelector('#reflection-form')?.addEventListener('submit',e=>{e.preventDefault();const list=reflections();list.unshift({id:crypto.randomUUID(),title:e.target.title.value.trim(),studyId:e.target.studyId.value,learned:e.target.learned.value.trim(),response:e.target.response.value.trim(),created:new Date().toISOString()});write(REFLECTIONS,list);e.target.reset();render()});
-document.querySelector('#memory-form')?.addEventListener('submit',e=>{e.preventDefault();const list=memory();list.unshift({id:crypto.randomUUID(),reference:e.target.reference.value.trim(),text:e.target.text.value.trim(),translation:e.target.translation.value,confidence:1,created:new Date().toISOString(),lastReviewed:null});write(MEMORY,list);e.target.reset();render()});
-document.addEventListener('click',e=>{const t=e.target;if(t.dataset.goalProgress){const list=goals(),x=list.find(v=>v.id===t.dataset.goalProgress),p=prompt('Progress percentage:',x.progress||0);if(p!==null){x.progress=Math.max(0,Math.min(100,Number(p)||0));x.complete=x.progress===100;x.updated=new Date().toISOString();write(GOALS,list);render()}}if(t.dataset.goalComplete){const list=goals(),x=list.find(v=>v.id===t.dataset.goalComplete);x.complete=!x.complete;x.progress=x.complete?100:Math.min(x.progress||0,99);x.updated=new Date().toISOString();write(GOALS,list);render()}if(t.dataset.goalDelete){write(GOALS,goals().filter(x=>x.id!==t.dataset.goalDelete));render()}if(t.dataset.reflectionDelete){write(REFLECTIONS,reflections().filter(x=>x.id!==t.dataset.reflectionDelete));render()}if(t.dataset.memoryReview){const list=memory(),x=list.find(v=>v.id===t.dataset.memoryReview);x.lastReviewed=new Date().toISOString();x.confidence=Math.min(5,(x.confidence||1)+1);write(MEMORY,list);render()}if(t.dataset.memoryReset){const list=memory(),x=list.find(v=>v.id===t.dataset.memoryReset);x.confidence=1;x.lastReviewed=null;write(MEMORY,list);render()}if(t.dataset.memoryDelete){write(MEMORY,memory().filter(x=>x.id!==t.dataset.memoryDelete));render()}if(t.dataset.prayerReopen&&window.NLDG_PERSONAL){window.NLDG_PERSONAL.togglePrayer(t.dataset.prayerReopen);render()}});
+
+const message=(formId,success,action='save')=>{
+  const element=document.getElementById(formId+'-status');
+  if(element)element.textContent=success?'Saved on this device.':`Could not ${action}. Your existing records were not changed. Please check browser storage and try again.`;
+};
+for(const id of ['goal-form','reflection-form','memory-form']){
+  const form=document.getElementById(id);
+  if(form&&!document.getElementById(id+'-status')){
+    const notice=document.createElement('p');
+    notice.id=id+'-status';notice.setAttribute('role','status');notice.setAttribute('aria-live','polite');
+    form.insertAdjacentElement('afterend',notice);
+  }
+}
+document.querySelector('#goal-form')?.addEventListener('submit',e=>{
+  e.preventDefault();
+  const list=goals();list.unshift({id:crypto.randomUUID(),title:e.target.title.value.trim(),category:e.target.category.value,studyId:e.target.studyId.value,progress:Number(e.target.progress.value)||0,complete:false,created:new Date().toISOString(),updated:new Date().toISOString()});
+  const saved=write(GOALS,list);if(saved){e.target.reset();render()}message('goal-form',saved);
+});
+document.querySelector('#reflection-form')?.addEventListener('submit',e=>{
+  e.preventDefault();
+  const list=reflections();list.unshift({id:crypto.randomUUID(),title:e.target.title.value.trim(),studyId:e.target.studyId.value,learned:e.target.learned.value.trim(),response:e.target.response.value.trim(),created:new Date().toISOString()});
+  const saved=write(REFLECTIONS,list);if(saved){e.target.reset();render()}message('reflection-form',saved);
+});
+document.querySelector('#memory-form')?.addEventListener('submit',e=>{
+  e.preventDefault();
+  const list=memory();list.unshift({id:crypto.randomUUID(),reference:e.target.reference.value.trim(),text:e.target.text.value.trim(),translation:e.target.translation.value,confidence:1,created:new Date().toISOString(),lastReviewed:null});
+  const saved=write(MEMORY,list);if(saved){e.target.reset();render()}message('memory-form',saved);
+});
+document.addEventListener('click',e=>{
+  const t=e.target;if(!t?.dataset)return;
+  if(t.dataset.goalProgress){
+    const list=goals(),x=list.find(v=>v.id===t.dataset.goalProgress);if(!x)return;
+    const p=prompt('Progress percentage:',x.progress||0);
+    if(p!==null){x.progress=Math.max(0,Math.min(100,Number(p)||0));x.complete=x.progress===100;x.updated=new Date().toISOString();const saved=write(GOALS,list);if(saved)render();message('goal-form',saved,'update your goal');}
+  }
+  if(t.dataset.goalComplete){
+    const list=goals(),x=list.find(v=>v.id===t.dataset.goalComplete);if(!x)return;
+    x.complete=!x.complete;x.progress=x.complete?100:Math.min(x.progress||0,99);x.updated=new Date().toISOString();
+    const saved=write(GOALS,list);if(saved)render();message('goal-form',saved,'update your goal');
+  }
+  if(t.dataset.goalDelete){const saved=write(GOALS,goals().filter(x=>x.id!==t.dataset.goalDelete));if(saved)render();message('goal-form',saved,'remove your goal');}
+  if(t.dataset.reflectionDelete){const saved=write(REFLECTIONS,reflections().filter(x=>x.id!==t.dataset.reflectionDelete));if(saved)render();message('reflection-form',saved,'remove your reflection');}
+  if(t.dataset.memoryReview){
+    const list=memory(),x=list.find(v=>v.id===t.dataset.memoryReview);if(!x)return;
+    x.lastReviewed=new Date().toISOString();x.confidence=Math.min(5,(x.confidence||1)+1);
+    const saved=write(MEMORY,list);if(saved)render();message('memory-form',saved,'update your memory verse');
+  }
+  if(t.dataset.memoryReset){
+    const list=memory(),x=list.find(v=>v.id===t.dataset.memoryReset);if(!x)return;
+    x.confidence=1;x.lastReviewed=null;const saved=write(MEMORY,list);if(saved)render();message('memory-form',saved,'update your memory verse');
+  }
+  if(t.dataset.memoryDelete){const saved=write(MEMORY,memory().filter(x=>x.id!==t.dataset.memoryDelete));if(saved)render();message('memory-form',saved,'remove your memory verse');}
+  if(t.dataset.prayerReopen&&window.NLDG_PERSONAL){
+    const saved=window.NLDG_PERSONAL.togglePrayer(t.dataset.prayerReopen);
+    const status=document.getElementById('prayer-save-status');
+    if(status)status.textContent=saved?'Prayer status saved on this device.':'Could not update the prayer; please try again.';
+    if(saved)render();
+  }
+});
 document.addEventListener('nldg:prayers-changed',render);render()
 })();

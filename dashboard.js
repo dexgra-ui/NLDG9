@@ -8,6 +8,8 @@
   const empty=message=>`<article class="dashboard-empty"><p>${message}</p></article>`;
   const badges=['First Study Completed','Seven-Day Reading Streak','Scripture Explorer','Prayer Warrior','Faithful Learner','Family Leader'];
   const escapeHtml=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
+  const safeLocalHref=value=>{const url=String(value||'');return /^(?:\/?)[a-z0-9][a-z0-9/_-]*\.html(?:\?[a-z0-9_=&%.-]+)?(?:#[a-z0-9_-]+)?$/i.test(url)?url:'study-library.html';};
+  const announce=(id,message)=>{const element=document.getElementById(id);if(element)element.textContent=message;};
   let bookLibraryPromise=null;
 
   function profilePhoto(profile){
@@ -130,8 +132,8 @@
     renderNotes(notes);
     renderPrayers(prayers);
     renderAchievements();
-    document.getElementById('history-list').innerHTML=history.length?history.slice(0,12).map(entry=>`<a href="${entry.url}"><span>${entry.type}</span><strong>${entry.title}</strong><small>${new Date(entry.visitedAt).toLocaleString()}</small></a>`).join(''):empty('Recently viewed content will appear here.');
-    document.getElementById('prayer-study').innerHTML='<option value="">Link to a study (optional)</option>'+library().filter(item=>item.type==='Study').map(item=>`<option value="${item.id}">${item.title}</option>`).join('');
+    document.getElementById('history-list').innerHTML=history.length?history.slice(0,12).map(entry=>`<a href="${escapeHtml(safeLocalHref(entry.url))}"><span>${escapeHtml(entry.type)}</span><strong>${escapeHtml(entry.title)}</strong><small>${new Date(entry.visitedAt).toLocaleString()}</small></a>`).join(''):empty('Recently viewed content will appear here.');
+    document.getElementById('prayer-study').innerHTML='<option value="">Link to a study (optional)</option>'+library().filter(item=>item.type==='Study').map(item=>`<option value="${escapeHtml(item.id)}">${escapeHtml(item.title)}</option>`).join('');
   }
   function renderGrowth(){
     const tracker=document.getElementById('growth-tracker');
@@ -143,16 +145,21 @@
     const plans=document.getElementById('reading-plans');
     if(state.active){
       const plan=api.plans().find(item=>item.id===state.active.id);
-      const percent=Math.round((state.active.completedDays.length/plan.days)*100);
-      active.innerHTML=`<article class="active-plan-card"><span>${percent}% complete</span><h3>${plan.title}</h3><p>Day ${Math.min(state.active.day,plan.days)} of ${plan.days}. ${plan.description}</p><progress max="${plan.days}" value="${state.active.completedDays.length}"></progress><button class="button primary" data-plan-day="${state.active.day}">Complete Today’s Reading</button></article>`;
+      if(!plan){active.innerHTML=empty('Your saved reading plan is not available in this version. Its browser data has been kept.');}
+      else{
+        const days=Array.isArray(state.active.completedDays)?state.active.completedDays:[];
+        const percent=Math.round((days.length/plan.days)*100);
+        active.innerHTML=`<article class="active-plan-card"><span>${percent}% complete</span><h3>${plan.title}</h3><p>Day ${Math.min(state.active.day,plan.days)} of ${plan.days}. ${plan.description}</p><progress max="${plan.days}" value="${days.length}"></progress><button class="button primary" data-plan-day="${state.active.day}">Complete Today’s Reading</button></article>`;
+      }
     }else active.innerHTML=empty('Choose a reading plan below to begin.');
     plans.innerHTML=api.plans().map(plan=>`<article class="plan-card"><span>${plan.days} days</span><h3>${plan.title}</h3><p>${plan.description}</p><button class="button secondary" data-start-plan="${plan.id}">Start Plan</button></article>`).join('');
   }
+
   function renderNotes(list){
-    document.getElementById('notes-list').innerHTML=list.length?list.map(note=>`<article><span>${new Date(note.updatedAt).toLocaleDateString()}</span><h3>${note.title}</h3>${note.journal?`<p>${note.journal}</p>`:''}${note.prayer?`<p><strong>Prayer:</strong> ${note.prayer}</p>`:''}${note.questions?`<p><strong>Questions:</strong> ${note.questions}</p>`:''}${note.scriptures?`<p><strong>Scriptures:</strong> ${note.scriptures}</p>`:''}<button data-delete-note="${note.id}">Delete</button></article>`).join(''):empty('Your personal journal entries will appear here.');
+    document.getElementById('notes-list').innerHTML=list.length?list.map(note=>`<article><span>${new Date(note.updatedAt).toLocaleDateString()}</span><h3>${escapeHtml(note.title)}</h3>${note.journal?`<p>${escapeHtml(note.journal)}</p>`:''}${note.prayer?`<p><strong>Prayer:</strong> ${escapeHtml(note.prayer)}</p>`:''}${note.questions?`<p><strong>Questions:</strong> ${escapeHtml(note.questions)}</p>`:''}${note.scriptures?`<p><strong>Scriptures:</strong> ${escapeHtml(note.scriptures)}</p>`:''}<button data-delete-note="${escapeHtml(note.id)}">Delete</button></article>`).join(''):empty('Your personal journal entries will appear here.');
   }
   function renderPrayers(list){
-    document.getElementById('prayer-list').innerHTML=list.length?list.map(prayer=>`<article class="${prayer.answered?'answered':''}"><span>${prayer.category}${prayer.answered?' • Answered':''}</span><h3>${prayer.title}</h3>${prayer.details?`<p>${prayer.details}</p>`:''}${prayer.scripture?`<p><strong>Scripture:</strong> ${prayer.scripture}</p>`:''}${prayer.studyId&&byId(prayer.studyId)?`<a href="${byId(prayer.studyId).url}">Linked study: ${byId(prayer.studyId).title}</a>`:''}<div><button data-answer-prayer="${prayer.id}">${prayer.answered?'Mark Active':'Mark Answered'}</button><button data-delete-prayer="${prayer.id}">Delete</button></div></article>`).join(''):empty('Add prayer requests and mark them answered as God works.');
+    document.getElementById('prayer-list').innerHTML=list.length?list.map(prayer=>`<article class="${prayer.answered?'answered':''}"><span>${escapeHtml(prayer.category)}${prayer.answered?' • Answered':''}</span><h3>${escapeHtml(prayer.title)}</h3>${prayer.details?`<p>${escapeHtml(prayer.details)}</p>`:''}${prayer.scripture?`<p><strong>Scripture:</strong> ${escapeHtml(prayer.scripture)}</p>`:''}${prayer.studyId&&byId(prayer.studyId)?`<a href="${escapeHtml(safeLocalHref(byId(prayer.studyId).url))}">Linked study: ${escapeHtml(byId(prayer.studyId).title)}</a>`:''}<div><button data-answer-prayer="${escapeHtml(prayer.id)}">${prayer.answered?'Mark Active':'Mark Answered'}</button><button data-delete-prayer="${escapeHtml(prayer.id)}">Delete</button></div></article>`).join(''):empty('Add prayer requests and mark them answered as God works.');
   }
   function renderAchievements(){
     const earned=new Set(api.achievements());
@@ -161,20 +168,34 @@
 
   document.getElementById('profile-form').addEventListener('submit',event=>{
     event.preventDefault();
-    const save=photo=>{api.saveProfile({name:document.getElementById('profile-name').value.trim(),photo:photo??api.profile().photo,interests:document.getElementById('profile-interests').value.split(',').map(value=>value.trim()).filter(Boolean),translation:document.getElementById('profile-translation').value,theme:document.getElementById('profile-theme').value,readingGoal:Number(document.getElementById('profile-goal').value)||3});document.getElementById('profile-status').textContent='Profile saved on this device.';render();};
+    const save=photo=>{
+      const result=api.saveProfile({name:document.getElementById('profile-name').value.trim(),photo:photo??api.profile().photo,interests:document.getElementById('profile-interests').value.split(',').map(value=>value.trim()).filter(Boolean),translation:document.getElementById('profile-translation').value,theme:document.getElementById('profile-theme').value,readingGoal:Number(document.getElementById('profile-goal').value)||3});
+      announce('profile-status',result?'Profile saved on this device.':'Unable to save your profile. Check browser storage and try again.');
+      if(result)render();
+    };
     const file=document.getElementById('profile-photo').files[0];
-    if(file){const reader=new FileReader();reader.onload=()=>save(reader.result);reader.readAsDataURL(file);}else save();
+    if(file){const reader=new FileReader();reader.onload=()=>save(reader.result);reader.onerror=()=>announce('profile-status','Could not read that photo. Your profile was not changed.');reader.readAsDataURL(file);}else save();
   });
-  document.getElementById('quick-note-form').addEventListener('submit',event=>{event.preventDefault();api.saveNote({title:document.getElementById('note-title').value,journal:document.getElementById('note-journal').value,prayer:document.getElementById('note-prayer').value,questions:document.getElementById('note-questions').value,scriptures:document.getElementById('note-scriptures').value});event.target.reset();render();});
-  document.getElementById('prayer-form').addEventListener('submit',event=>{event.preventDefault();api.addPrayer({title:document.getElementById('prayer-title').value,category:document.getElementById('prayer-category').value,scripture:document.getElementById('prayer-scripture').value,studyId:document.getElementById('prayer-study').value,details:document.getElementById('prayer-details').value});event.target.reset();render();});
+  document.getElementById('quick-note-form').addEventListener('submit',event=>{
+    event.preventDefault();
+    const saved=api.saveNote({title:document.getElementById('note-title').value,journal:document.getElementById('note-journal').value,prayer:document.getElementById('note-prayer').value,questions:document.getElementById('note-questions').value,scriptures:document.getElementById('note-scriptures').value});
+    announce('note-save-status',saved?'Note saved on this device.':'Could not save your note. Your text is still in the form; check browser storage and try again.');
+    if(saved){event.target.reset();render();}
+  });
+  document.getElementById('prayer-form').addEventListener('submit',event=>{
+    event.preventDefault();
+    const saved=api.addPrayer({title:document.getElementById('prayer-title').value,category:document.getElementById('prayer-category').value,scripture:document.getElementById('prayer-scripture').value,studyId:document.getElementById('prayer-study').value,details:document.getElementById('prayer-details').value});
+    announce('prayer-save-status',saved?'Prayer saved on this device.':'Could not save your prayer. Your text is still in the form; check browser storage and try again.');
+    if(saved){event.target.reset();render();}
+  });
   document.getElementById('export-notes').addEventListener('click',api.exportNotes);
   document.addEventListener('click',event=>{
     const target=event.target;
-    if(target.matches('[data-start-plan]')){api.startPlan(target.dataset.startPlan);render();}
-    if(target.matches('[data-plan-day]')){api.markPlanDay(target.dataset.planDay);render();}
-    if(target.matches('[data-delete-note]')){api.removeNote(target.dataset.deleteNote);render();}
-    if(target.matches('[data-answer-prayer]')){api.togglePrayer(target.dataset.answerPrayer);render();}
-    if(target.matches('[data-delete-prayer]')){api.removePrayer(target.dataset.deletePrayer);render();}
+    if(target.matches('[data-start-plan]')){const result=api.startPlan(target.dataset.startPlan);announce('plan-save-status',result?'Reading plan started on this device.':'Could not save your reading plan. Please try again.');if(result)render();}
+    if(target.matches('[data-plan-day]')){const result=api.markPlanDay(target.dataset.planDay);announce('plan-save-status',result?'Reading day saved on this device.':'Could not save your reading progress. Please try again.');if(result)render();}
+    if(target.matches('[data-delete-note]')){const ok=api.removeNote(target.dataset.deleteNote);announce('note-save-status',ok?'Note removed from this device.':'Could not remove your note. Please try again.');if(ok)render();}
+    if(target.matches('[data-answer-prayer]')){const ok=api.togglePrayer(target.dataset.answerPrayer);announce('prayer-save-status',ok?'Prayer status saved on this device.':'Could not update the prayer status. Please try again.');if(ok)render();}
+    if(target.matches('[data-delete-prayer]')){const ok=api.removePrayer(target.dataset.deletePrayer);announce('prayer-save-status',ok?'Prayer removed from this device.':'Could not remove the prayer. Please try again.');if(ok)render();}
   });
   ['favorites','completed','notes','prayers','plans','profile'].forEach(name=>document.addEventListener(`nldg:${name}-changed`,render));
   window.addEventListener('nldg-library-ready',render);

@@ -74,7 +74,7 @@
   ];
 
   const profile=()=>read(K.profile,{name:'',photo:'',interests:[],translation:'NIV',theme:'system',readingGoal:3,createdAt:Date.now()});
-  const saveProfile=value=>{const next={...profile(),...value,updatedAt:Date.now()};write(K.profile,next);document.documentElement.dataset.theme=next.theme||'system';emit('profile');return next;};
+  const saveProfile=value=>{const next={...profile(),...value,updatedAt:Date.now()};if(!write(K.profile,next))return null;document.documentElement.dataset.theme=next.theme||'system';emit('profile');return next;};
   const favorites=()=>unique([...read(K.favorites,[]),...flaggedStudies('favorite')]);
   const history=()=>read(K.history,[]);
   const collections=()=>read(K.collections,[{id:'saved-for-later',name:'Saved for Later',items:[]}]);
@@ -120,14 +120,14 @@
     const list=notes();
     const item={id:note.id||`note-${Date.now()}`,contentId:note.contentId||current()?.id||'',title:note.title||current()?.title||'Personal Note',journal:note.journal||'',prayer:note.prayer||'',questions:note.questions||'',scriptures:note.scriptures||'',updatedAt:Date.now()};
     const next=[item,...list.filter(value=>value.id!==item.id)];
-    write(K.notes,next);emit('notes');return item;
+    if(!write(K.notes,next))return null;emit('notes');return item;
   }
-  function removeNote(id){write(K.notes,notes().filter(value=>value.id!==id));emit('notes');}
-  function addPrayer(value){const item={id:`prayer-${Date.now()}`,title:value.title||'Prayer Request',category:value.category||'Personal',scripture:value.scripture||'',studyId:value.studyId||'',details:value.details||'',answered:false,createdAt:Date.now()};write(K.prayers,[item,...prayers()]);emit('prayers');return item;}
-  function togglePrayer(id){const list=prayers();const prayer=list.find(value=>value.id===id);if(prayer){prayer.answered=!prayer.answered;prayer.answeredAt=prayer.answered?Date.now():null;write(K.prayers,list);emit('prayers');}return prayer;}
-  function removePrayer(id){write(K.prayers,prayers().filter(value=>value.id!==id));emit('prayers');}
-  function startPlan(id){const plan=PLANS.find(value=>value.id===id);if(!plan)return null;const state=planState();state.active={id,day:1,completedDays:[],startedAt:Date.now(),updatedAt:Date.now()};write(K.plans,state);emit('plans');return state.active;}
-  function markPlanDay(day){const state=planState();if(!state.active)return;const number=Number(day);if(!state.active.completedDays.includes(number))state.active.completedDays.push(number);state.active.day=Math.min((PLANS.find(value=>value.id===state.active.id)?.days||number),number+1);state.active.updatedAt=Date.now();const plan=PLANS.find(value=>value.id===state.active.id);if(plan&&state.active.completedDays.length>=plan.days){state.completed=[...(state.completed||[]),{...state.active,completedAt:Date.now()}];state.active=null;}write(K.plans,state);updateStreak();emit('plans');}
+  function removeNote(id){if(!write(K.notes,notes().filter(value=>value.id!==id)))return false;emit('notes');return true;}
+  function addPrayer(value){const item={id:`prayer-${Date.now()}`,title:value.title||'Prayer Request',category:value.category||'Personal',scripture:value.scripture||'',studyId:value.studyId||'',details:value.details||'',answered:false,createdAt:Date.now()};if(!write(K.prayers,[item,...prayers()]))return null;emit('prayers');return item;}
+  function togglePrayer(id){const list=prayers();const prayer=list.find(value=>value.id===id);if(prayer){prayer.answered=!prayer.answered;prayer.answeredAt=prayer.answered?Date.now():null;if(!write(K.prayers,list))return null;emit('prayers');}return prayer;}
+  function removePrayer(id){if(!write(K.prayers,prayers().filter(value=>value.id!==id)))return false;emit('prayers');return true;}
+  function startPlan(id){const plan=PLANS.find(value=>value.id===id);if(!plan)return null;const state=planState();state.active={id,day:1,completedDays:[],startedAt:Date.now(),updatedAt:Date.now()};if(!write(K.plans,state))return null;emit('plans');return state.active;}
+  function markPlanDay(day){const state=planState();if(!state.active)return;const number=Number(day);if(!state.active.completedDays.includes(number))state.active.completedDays.push(number);state.active.day=Math.min((PLANS.find(value=>value.id===state.active.id)?.days||number),number+1);state.active.updatedAt=Date.now();const plan=PLANS.find(value=>value.id===state.active.id);if(plan&&state.active.completedDays.length>=plan.days){state.completed=[...(state.completed||[]),{...state.active,completedAt:Date.now()}];state.active=null;}if(!write(K.plans,state))return false;updateStreak();emit('plans');return true;}
   function addToCollection(collectionId,itemId){const list=collections(),collection=list.find(value=>value.id===collectionId);if(!collection)return false;if(!collection.items.includes(itemId))collection.items.unshift(itemId);write(K.collections,list);emit('collections');return true;}
   function createCollection(name){const clean=String(name||'').trim();if(!clean)return null;const list=collections(),item={id:`collection-${Date.now()}`,name:clean,items:[]};list.push(item);write(K.collections,list);emit('collections');return item;}
   function updateStreak(){const today=new Date().toISOString().slice(0,10),state=read(K.streak,{dates:[]});if(!state.dates.includes(today))state.dates.push(today);state.dates=state.dates.slice(-60);write(K.streak,state);}

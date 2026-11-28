@@ -12,7 +12,8 @@ async function render(){
       const p=document.createElement('p');p.textContent='Signed in as '+(data.user.email||'your account');
       const button=document.createElement('button');button.type='button';button.className='button secondary';button.textContent='Sign out';
       button.addEventListener('click',async()=>{
-        if(!window.confirm('Sign out? Your notes, prayers, reflections and study progress will remain in this browser and may still be visible to anyone using it. Signing out does not clear or back up this information.'))return;
+        if(!window.confirm('Sign out? Your account journal notes will be hidden. Browser-only notes, prayers, reflections, and study progress will remain on this device and may be visible to anyone using its browser profile.'))return;
+        document.dispatchEvent(new Event('nldg:account-notes-lock'));
         button.disabled=true;
         try{
           const {error}=await journeyClient.auth.signOut();
@@ -20,11 +21,12 @@ async function render(){
           window.location.reload();
         }catch{
           show('Unable to sign out. Please try again.');
+          window.NLDG_ACCOUNT_NOTES?.refresh();
           button.disabled=false;
         }
       });
       form.hidden=true;verifyForm.hidden=true;state.append(p,button);
-      show('Account connected. Cross-device progress sync is not enabled yet.');
+      show('Account connected. Signed-in journal notes can be saved across devices. Other study progress is still stored in this browser.');
     }
   } catch {show('Account status is unavailable. You can still use My Journey without signing in.');}
 }

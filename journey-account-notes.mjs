@@ -159,11 +159,16 @@ importConfirm?.addEventListener('click',async()=>{
   }finally{importConfirm.disabled=false;}
 });
 document.addEventListener('nldg:account-notes-state',updateImport);
-document.addEventListener('nldg:account-notes-lock',()=>{
+const lockNotes=()=>{
   generation+=1;
   publish({mode:'loading',userId:null,notes:[],message:'Updating account access…'});
-});
-journeyClient.auth.onAuthStateChange((event)=>{
+};
+document.addEventListener('nldg:account-notes-lock',lockNotes);
+journeyClient.auth.onAuthStateChange((event,session)=>{
+  if(event==='SIGNED_OUT'||(event==='SIGNED_IN'&&session?.user?.id!==current.userId)){
+    // Lock synchronously, including auth changes initiated in other tabs.
+    lockNotes();
+  }
   if(['INITIAL_SESSION','SIGNED_IN','SIGNED_OUT','USER_UPDATED'].includes(event))setTimeout(load,0);
 });
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&current.mode==='account')load();});

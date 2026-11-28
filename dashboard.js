@@ -145,8 +145,12 @@
     const plans=document.getElementById('reading-plans');
     if(state.active){
       const plan=api.plans().find(item=>item.id===state.active.id);
-      const percent=Math.round((state.active.completedDays.length/plan.days)*100);
-      active.innerHTML=`<article class="active-plan-card"><span>${percent}% complete</span><h3>${plan.title}</h3><p>Day ${Math.min(state.active.day,plan.days)} of ${plan.days}. ${plan.description}</p><progress max="${plan.days}" value="${state.active.completedDays.length}"></progress><button class="button primary" data-plan-day="${state.active.day}">Complete Today’s Reading</button></article>`;
+      if(!plan){active.innerHTML=empty('Your saved reading plan is not available in this version. Its browser data has been kept.');}
+      else{
+        const days=Array.isArray(state.active.completedDays)?state.active.completedDays:[];
+        const percent=Math.round((days.length/plan.days)*100);
+        active.innerHTML=`<article class="active-plan-card"><span>${percent}% complete</span><h3>${plan.title}</h3><p>Day ${Math.min(state.active.day,plan.days)} of ${plan.days}. ${plan.description}</p><progress max="${plan.days}" value="${days.length}"></progress><button class="button primary" data-plan-day="${state.active.day}">Complete Today’s Reading</button></article>`;
+      }
     }else active.innerHTML=empty('Choose a reading plan below to begin.');
     plans.innerHTML=api.plans().map(plan=>`<article class="plan-card"><span>${plan.days} days</span><h3>${plan.title}</h3><p>${plan.description}</p><button class="button secondary" data-start-plan="${plan.id}">Start Plan</button></article>`).join('');
   }

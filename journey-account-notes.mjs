@@ -12,7 +12,7 @@ const publish=next=>{
   document.dispatchEvent(new CustomEvent('nldg:account-notes-state',{detail:next}));
 };
 const errorMessage='Account notes are unavailable. No browser notes were uploaded or erased. Please try again.';
-const normalizeText=(value,max=20000)=>String(value??'').slice(0,max);
+const normalizeText=(value,max=20000)=>{const text=String(value??'');if(text.length>max)throw Error('Note field is too long to save. The original text was preserved.');return text;};
 const normalizeNote=note=>({
   title:normalizeText(note.title,240),
   journal:normalizeText(note.journal),
@@ -23,7 +23,9 @@ const normalizeNote=note=>({
 });
 const fromRow=row=>{
   const body=row.body&&typeof row.body==='object'&&!Array.isArray(row.body)?row.body:{};
-  return {id:String(row.entry_id),...normalizeNote(body),updatedAt:Date.parse(row.updated_at)||Date.now()};
+  const fields=['title','journal','prayer','questions','scriptures','contentId'];
+  const saved=Object.fromEntries(fields.map(field=>[field,String(body[field]??'')]));
+  return {id:String(row.entry_id),...saved,updatedAt:Date.parse(row.updated_at)||Date.now()};
 };
 async function resolveUser(){
   const {data,error}=await journeyClient.auth.getUser();

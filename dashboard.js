@@ -11,6 +11,34 @@
   const safeLocalHref=value=>{const url=String(value||'');return /^(?:\/?)[a-z0-9][a-z0-9/_-]*\.html(?:\?[a-z0-9_=&%.-]+)?(?:#[a-z0-9_-]+)?$/i.test(url)?url:'study-library.html';};
   const announce=(id,message)=>{const element=document.getElementById(id);if(element)element.textContent=message;};
   let bookLibraryPromise=null;
+  // Do not read browser notes into My Journey until account access is resolved.
+  let noteAccess={mode:'loading',notes:[],message:'Checking account notes…'};
+  let localNotesVisible=false;
+  function renderNoteAccess(){
+    const panel=document.getElementById('note-access-panel');
+    const body=document.getElementById('note-private-area');
+    if(!panel||!body)return;
+    const {mode}=noteAccess;
+    if(mode==='account'){
+      body.hidden=false;
+      panel.textContent='Signed-in journal notes are stored in your account and can be opened on other devices.';
+    }else if(mode==='guest'){
+      body.hidden=!localNotesVisible;
+      if(localNotesVisible)panel.textContent='Showing notes saved in this browser only. They are not backed up to an account and may be visible to anyone using this browser profile.';
+      else panel.innerHTML='<p>Browser-only notes may be visible to other people using this device. <button type="button" class="button secondary" data-reveal-browser-notes>Show browser notes</button></p>';
+    }else{
+      body.hidden=true;
+      if(mode==='error')panel.innerHTML='<p>Account access could not be verified. Personal notes are hidden to protect them. <button type="button" class="button secondary" data-retry-account-notes>Try again</button></p>';
+      else panel.textContent='Checking account access before showing personal notes…';
+    }
+  }
+  function exportAccountNotes(list){
+    const text=list.map(note=>[String(note.title||'Untitled note'),String(note.journal||''),String(note.prayer||''),String(note.questions||''),String(note.scriptures||'')].join('\n')).join('\n\n---\n\n');
+    const blob=new Blob([text||'No saved account notes.'],{type:'text/plain;charset=utf-8'});
+    const url=URL.createObjectURL(blob),a=document.createElement('a');
+    a.href=url;a.download='nldg-my-journey-account-notes.txt';document.body.append(a);a.click();a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+  }
 
   function profilePhoto(profile){
     const image=document.getElementById('profile-photo-preview');
@@ -107,7 +135,7 @@
     const favorites=api.favorites();
     const history=api.history();
     const completed=api.completed();
-    const notes=api.notes();
+    const notes=noteAccess.mode==='account'?noteAccess.notes:(noteAccess.mode==='guest'&&localNotesVisible?api.notes():[]);
     const prayers=api.prayers();
     const planState=api.planState();
     document.getElementById('profile-name').value=profile.name||'';
@@ -119,7 +147,7 @@
     document.getElementById('dashboard-greeting').textContent=profile.name?`Welcome back, ${profile.name}.`:'Your journey with God.';
     document.getElementById('stat-streak').textContent=`${api.streak()} day${api.streak()===1?'':'s'}`;
     document.getElementById('stat-completed').textContent=completed.length;
-    document.getElementById('stat-notes').textContent=notes.length;
+    document.getElementById('stat-notes').textContent=(noteAccess.mode==='account'||(noteAccess.mode==='guest'&&localNotesVisible))?notes.length:'—';
     document.getElementById('stat-prayers').textContent=prayers.filter(item=>!item.answered).length;
     renderGrowth();
     renderBookProgress();
@@ -129,6 +157,7 @@
     document.getElementById('completed-grid').innerHTML=completed.map(byId).filter(Boolean).map(card).join('')||empty('Completed studies will appear here.');
     document.getElementById('recommendations-grid').innerHTML=api.recommendations(4).map(card).join('');
     renderPlans(planState);
+    renderNoteAccess();
     renderNotes(notes);
     renderPrayers(prayers);
     renderAchievements();
@@ -176,11 +205,29 @@
     const file=document.getElementById('profile-photo').files[0];
     if(file){const reader=new FileReader();reader.onload=()=>save(reader.result);reader.onerror=()=>announce('profile-status','Could not read that photo. Your profile was not changed.');reader.readAsDataURL(file);}else save();
   });
-  document.getElementById('quick-note-form').addEventListener('submit',event=>{
+  document.getElementById('quick-note-form').addEventListener('submit',async event=>{
     event.preventDefault();
-    const saved=api.saveNote({title:document.getElementById('note-title').value,journal:document.getElementById('note-journal').value,prayer:document.getElementById('note-prayer').value,questions:document.getElementById('note-questions').value,scriptures:document.getElementById('note-scriptures').value});
-    announce('note-save-status',saved?'Note saved on this device.':'Could not save your note. Your text is still in the form; check browser storage and try again.');
-    if(saved){event.target.reset();render();}
+    const mode=noteAccess.mode;
+    if(mode!=='account'&&!(mode==='guest'&&localNotesVisible)){
+      announce('note-save-status','Account access is not ready. Your note has not been saved.');return;
+    }
+    const values={title:document.getElementById('note-title').value,journal:document.getElementById('note-journal').value,prayer:document.getElementById('note-prayer').value,questions:document.getElementById('note-questions').value,scriptures:document.getElementById('note-scriptures').value};
+    if(mode==='guest'){
+      const saved=api.saveNote(values);
+      announce('note-save-status',saved?'Note saved in this browser only.':'Could not save your browser note. Your text remains in the form.');
+      if(saved){event.target.reset();render();}
+      return;
+    }
+    const button=event.target.querySelector('button[type="submit"]');
+    if(button)button.disabled=true;
+    announce('note-save-status','Saving your note to your account…');
+    try{
+      await window.NLDG_ACCOUNT_NOTES.create(values);
+      event.target.reset();announce('note-save-status','Note saved to your account. It is available on your other signed-in devices.');
+    }catch(error){
+      console.error('Account note save failed',error);
+      announce('note-save-status','Could not save this note to your account. Your text remains in the form; please try again.');
+    }finally{if(button)button.disabled=false;}
   });
   document.getElementById('prayer-form').addEventListener('submit',event=>{
     event.preventDefault();
@@ -188,16 +235,40 @@
     announce('prayer-save-status',saved?'Prayer saved on this device.':'Could not save your prayer. Your text is still in the form; check browser storage and try again.');
     if(saved){event.target.reset();render();}
   });
-  document.getElementById('export-notes').addEventListener('click',api.exportNotes);
+  document.getElementById('export-notes').addEventListener('click',()=>{
+    if(noteAccess.mode==='account')exportAccountNotes(noteAccess.notes);
+    else if(noteAccess.mode==='guest'&&localNotesVisible)api.exportNotes();
+  });
   document.addEventListener('click',event=>{
     const target=event.target;
     if(target.matches('[data-start-plan]')){const result=api.startPlan(target.dataset.startPlan);announce('plan-save-status',result?'Reading plan started on this device.':'Could not save your reading plan. Please try again.');if(result)render();}
     if(target.matches('[data-plan-day]')){const result=api.markPlanDay(target.dataset.planDay);announce('plan-save-status',result?'Reading day saved on this device.':'Could not save your reading progress. Please try again.');if(result)render();}
-    if(target.matches('[data-delete-note]')){const ok=api.removeNote(target.dataset.deleteNote);announce('note-save-status',ok?'Note removed from this device.':'Could not remove your note. Please try again.');if(ok)render();}
+    if(target.matches('[data-reveal-browser-notes]')&&noteAccess.mode==='guest'){localNotesVisible=true;render();return;}
+    if(target.matches('[data-retry-account-notes]')){window.NLDG_ACCOUNT_NOTES?.refresh();return;}
+    if(target.matches('[data-delete-note]')){
+      if(noteAccess.mode==='account'){
+        if(!window.confirm('Delete this note from your account? This will remove it across devices.'))return;
+        target.disabled=true;
+        announce('note-save-status','Deleting your account note…');
+        window.NLDG_ACCOUNT_NOTES.remove(target.dataset.deleteNote)
+          .then(()=>announce('note-save-status','Note deleted from your account.'))
+          .catch(error=>{console.error('Account note deletion failed',error);announce('note-save-status','Could not delete that account note. Please try again.');})
+          .finally(()=>{target.disabled=false;});
+      }else if(noteAccess.mode==='guest'&&localNotesVisible){
+        const ok=api.removeNote(target.dataset.deleteNote);
+        announce('note-save-status',ok?'Browser note removed.':'Could not remove your browser note. Please try again.');
+        if(ok)render();
+      }
+    }
     if(target.matches('[data-answer-prayer]')){const ok=api.togglePrayer(target.dataset.answerPrayer);announce('prayer-save-status',ok?'Prayer status saved on this device.':'Could not update the prayer status. Please try again.');if(ok)render();}
     if(target.matches('[data-delete-prayer]')){const ok=api.removePrayer(target.dataset.deletePrayer);announce('prayer-save-status',ok?'Prayer removed from this device.':'Could not remove the prayer. Please try again.');if(ok)render();}
   });
   ['favorites','completed','notes','prayers','plans','profile'].forEach(name=>document.addEventListener(`nldg:${name}-changed`,render));
+  document.addEventListener('nldg:account-notes-state',event=>{
+    noteAccess=event.detail;
+    if(noteAccess.mode!=='guest')localNotesVisible=false;
+    render();
+  });
   window.addEventListener('nldg-library-ready',render);
   window.addEventListener('storage',render);
   render();
